@@ -1,0 +1,27 @@
+type: object
+description: Required by VISA and MasterCard for domestic UK transactions processed by Financial Institutions. [Read more](https://docs.checkout.com/reference/merchant-api-reference/complex-request-objects/visa-requirements-for-financial-institutions)
+properties:
+  dob:
+    type: string
+    format: date
+    description: The recipient's date of birth in yyyy-mm-dd format
+    example: "1985-05-15"
+  account_number:
+    type: string
+    description: The first six digits and the last four digits of the primary recipient's card, without spaces, or, up to ten characters of the primary recipient's account number
+    minLength: 10
+    maxLength: 10
+    example: "5555554444"
+  zip:
+    type: string
+    description: The first part of the UK postcode for example W1T 4TJ would be W1T
+    example: W1T 
+  last_name:
+    type: string
+    description: The last name of the recipient
+    example: Jones
+required:
+  - dob
+  - account_number
+  - zip
+  - last_name

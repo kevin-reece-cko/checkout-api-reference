@@ -1,0 +1,6 @@
+name: hash
+in: path
+description: The token identifier string
+schema:
+  type: string
+required: true

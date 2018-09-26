@@ -1,0 +1,10 @@
+type: object
+properties:
+  label:
+    type: string
+    maxLength: 30
+    description: Additional information field which is shown on the payment form (label)
+  text:
+    type: string
+    maxLength: 80
+    description: Additional information field which is shown on the payment form (text)

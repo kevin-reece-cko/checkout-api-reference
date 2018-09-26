@@ -1,0 +1,26 @@
+type: object
+description: A token payment source
+required:
+  - token
+allOf:
+  - $ref: "#/components/schemas/PaymentRequestSource"
+  - type: object
+    properties:
+      type:
+        type: string
+        description: The payment source type. With the exception of some alternative payment methods, this is inferred automatically
+        enum:
+          - token
+      token:
+        type: string
+        description: The Checkout token for example a card, wallet or alternative payment token
+        example: tok_ubfj2q76miwundwlk72vxt2i7q
+      billing_address:
+        description: The payment source owner's billing address. This will override the billing address specified during tokenisation
+        allOf:
+          - $ref: '#/components/schemas/Address'
+      phone:
+        description: The payment source owner's phone number. This will override the phone number specified during tokenisation
+        allOf:
+          - $ref: '#/components/schemas/PhoneNumber'
+

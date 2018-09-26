@@ -1,0 +1,3 @@
+description: Unique identifer of the request
+schema:
+  type: string

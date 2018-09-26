@@ -1,0 +1,7 @@
+name: expand
+in: query
+schema:
+  type: string
+description: >-
+  Expand response to get full related object intead of ID.  See the expand
+  guide for more info.

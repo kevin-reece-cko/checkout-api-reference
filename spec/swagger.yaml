@@ -1,0 +1,64 @@
+openapi: '3.0.1'
+info:
+  version: '1.0.0'
+  title: Checkout.com API Reference
+  contact:
+    name: Checkout Support
+    url: 'https://checkout.com'
+    email: support@checkout.com
+  license:
+    name: Checkout.com
+    url: 'https://checkout.com/api/license/'
+  termsOfService: 'https://checkout.com/terms/'
+  description: >
+    # Introduction
+
+    The Checkout.com API is built on HTTP. Our API is RESTful. It has predictable
+    resource URLs.  It returns HTTP response codes to indicate errors.  It also
+    accepts and returns JSON in the HTTP body.
+
+
+    You can use your favorite HTTP/REST library for your programming language to use Checkout's API,
+    or you can use one of our SDKs (currently available in
+    [PHP](https://github.com/checkout/checkout-php-library),
+    [.NET](https://github.com/checkout/checkout-net-library) and
+    [Java](https://github.com/checkout/checkout-java-library)).
+
+    # Authentication
+
+    When you sign up for an account, you are given a secret and public API key
+    pair. You authenticate with the Checkout.com API by providing the appropriate key in
+    the request Authorization header.
+
+
+    Never share your secret keys. Keep them guarded and secure.
+servers:
+  - url: https://api.checkout.com
+    description: Live API
+  - url: https://api.sandbox.checkout.com
+    description: Sandbox API
+tags:
+  - name: Payments
+    description: |
+      Unified payments API
+  - name: Webhooks
+    description: >
+      Webhooks are designed to notify your systems when certain/all registered
+      events happen in near real-time.
+
+      They allow you to collect information about those events. Checkout.com can send
+      these information via POST to an URL of your choice.
+  - name: Files
+    description: |
+      Upload files to be used as input to other APIs
+x-tagGroups:
+  - name: Gateway
+    tags:
+      - Payments
+      - Tokens
+      - Sources
+      - Files
+  - name: Broadcast
+    tags:
+      - Events
+      - Webhooks

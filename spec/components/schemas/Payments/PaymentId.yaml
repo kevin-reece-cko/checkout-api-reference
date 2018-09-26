@@ -1,0 +1,5 @@
+type: string
+description: The payment identifier
+maxLength: 30
+minLength: 30
+example: "pay_y3oqhf46pyzuxjbcn2giaqnb44"

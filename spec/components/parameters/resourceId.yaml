@@ -1,0 +1,6 @@
+name: id
+in: path
+description: The resource identifier string
+schema:
+  type: string
+required: true

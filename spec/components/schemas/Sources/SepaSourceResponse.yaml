@@ -1,0 +1,41 @@
+type: object
+description: The SEPA mandate details
+allOf:
+  - $ref: '#/components/schemas/AddSourceResponse'
+  - type: object
+    properties:
+      type:
+        type: string
+        enum:
+          - sepa
+      source_data:
+        type: object
+        description: SEPA direct debit details
+        properties:
+          mandate_reference:
+            type: string
+            description: The direct debit mandate reference
+            example: "MANDXI9809809"
+      _links:
+        type: object
+        description: The links related to the PayPal payment source
+        readOnly: true
+        minItems: 1
+        properties:
+          self:
+            type: object
+            allOf:
+              - $ref: '#/components/schemas/Link'
+            description: The URI of the payment source
+          cancel:
+            type: object
+            allOf:
+              - $ref: '#/components/schemas/Link'
+            description: A link to Cancel the SEPA direct debit mandate
+          response-code:
+            type: object
+            allOf:
+              - $ref: '#/components/schemas/Link'
+            description: A link to the full response code details
+            example:
+              href: "https://api.checkout.com/refs/response-codes/10000"

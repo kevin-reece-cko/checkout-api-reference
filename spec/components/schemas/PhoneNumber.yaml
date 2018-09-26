@@ -1,0 +1,11 @@
+type: object
+description: A phone number
+properties:
+  country_code: 
+    type: string
+    description: The international country calling code. Required for some risk checks.
+    example: "+1"
+  number:
+    type: string
+    description: The phone number
+    example: 415 555 2671

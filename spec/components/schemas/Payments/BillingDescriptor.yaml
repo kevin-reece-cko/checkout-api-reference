@@ -1,0 +1,18 @@
+type: object
+description: |
+  An optional dynamic billing descriptor displayed on the account owner's statement. [Read more](https://docs.checkout.com/reference/merchant-api-reference/complex-request-objects/dynamic-descriptor)
+properties:
+  name:
+    type: string
+    description: Dynamic description of the charge
+    example: "SUPERHEROES.COM"
+    maxLength: 25
+  city:
+    type: string
+    description: City where the charge originated	
+    minimum: 1
+    example: "GOTHAM"
+    maxLength: 13
+required:
+  - name
+  - city

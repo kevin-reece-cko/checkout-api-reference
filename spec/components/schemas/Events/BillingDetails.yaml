@@ -1,0 +1,22 @@
+type: object
+properties:
+  address_line_1:
+    type: string
+    example: 372 Weimann Lane
+  address_line_2:
+    type: string
+    example: Rolfson Alley
+  post_code:
+    type: string
+    example: ew1 7zb
+  country:
+    type: string
+    example: SJ
+  city:
+    type: string
+    example: North Benedicthaven
+  state:
+    type: string
+    example: Georgia
+  phone:
+    $ref: '#/components/schemas/Phone'

@@ -1,0 +1,31 @@
+type: object
+description: Giropay Source
+allOf:
+  - $ref: "#/components/schemas/PaymentRequestSource"
+  - type: object
+    required:
+      - purpose
+      - bic
+    properties:
+      type:
+        type: string
+        description: The payment source type.
+        enum:
+          - giropay
+      purpose:
+        type: string
+        maxLength: 27
+        description: Purpose
+      bic:
+        type: string
+        maxLength: 11
+        description: BIC (8 or 11-digits)
+      iban:
+        type: string
+        maxLength: 34
+        description: IBAN without whitespaces. This parameter is optional.
+      info_fields:
+        type: array
+        maxItems: 5
+        items:
+          $ref: "#/components/schemas/GiropayPaymentInfo"

@@ -1,0 +1,32 @@
+type: object
+description: Apple Pay Token Request
+allOf:
+  - $ref: '#/components/schemas/TokenRequest'
+  - type: object
+    properties:
+      type:
+        type: string
+        enum:
+          - googlepay
+      token_data:
+        type: object
+        description: The Google Pay Payment Token
+        properties:
+          signature:
+            type: string
+            description: Verifies the message came from Google. The signature is created using ECDSA.
+          protocolVersion:
+            type: string
+            description: Identifies which encryption/signing scheme this message has been created. In this way, the protocol can evolve over time if needed. If it is not set, assume ECv0.
+          signedMessage:
+            type: string
+            description: A serialized JSON string containing the encryptedMessage, ephemeralPublicKey and tag. To simplify the signature verification process, this value is serialized.
+        example:
+          {
+            "protocolVersion": "ECv1",
+            "signature": "TJVA95OrM7E2cBab30RMHrHDcEfxjoYZgeFONFh7HgQ",
+            "signedMessage": "{\"encryptedMessage\":
+                              \"ZW5jcnlwdGVkTWVzc2FnZQ==\",
+                              \"ephemeralPublicKey\": \"ZXBoZW1lcmFsUHVibGljS2V5\",
+                              \"tag\": \"c2lnbmF0dXJl\"}"
+          }
