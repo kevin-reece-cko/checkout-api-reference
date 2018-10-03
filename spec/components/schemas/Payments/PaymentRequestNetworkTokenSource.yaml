@@ -1,0 +1,61 @@
+type: object
+description: A network token payment source
+allOf:
+  - $ref: "#/components/schemas/PaymentRequestSource"
+  - type: object
+    required:
+      - type
+      - token
+      - expiry_month
+      - expiry_year
+      - eci
+      - token_cryptogram
+    properties:
+      type:
+        type: string
+        description: The payment source type
+        enum:
+          - network_token
+      token:
+        type: string
+        description: The network token PAN
+        example: "4543474002249996"
+      expiry_month:
+        type: integer
+        description: The two-digit expiry month of the token
+        minimum: 1
+        example: 6
+      expiry_year:
+        type: integer
+        description: The four-digit expiry year of the token
+        example: 2025
+      eci:
+        type: string
+        description: The Electronic Commerce Indicator security level associated with the token or 3D-Secure enrollment result
+        example: "05"
+      token_cryptogram:
+        type: string
+        description: Cryptographic identifier used by card schemes to validate the token verification result
+        example: hv8mUFzPzRZoCAAAAAEQBDMAAAA=
+      cryptogram:
+        type: string
+        description: Cryptographic identifier used by the card schemes to validate the cardholder authentication result (3D-Secure)
+        example: AgAAAAAAAIR8CQrXcIhbQAAAAAA=
+      name:
+        type: string
+        description: The cardholder name
+        example: "Bruce Wayne"
+      cvv:
+        type: string
+        description: The card verification value/code. 3 digits, except for Amex (4 digits).
+        example: "956"
+        minLength: 3
+        maxLength: 4
+      billing_address:
+        description: The cardholder's billing address
+        allOf:
+          - $ref: '#/components/schemas/Address'
+      phone:
+        description: The cardholder's phone number
+        allOf:
+          - $ref: '#/components/schemas/PhoneNumber'

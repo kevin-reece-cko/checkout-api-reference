@@ -92,6 +92,12 @@ properties:
     type: string
     description: Your reference for the payment
     example: ORD-5023-4E89
+  eci:
+    type: string
+    description: |
+      The final Electronic Commerce Indicator security level used to authorize the payment. 
+      Applicable for 3D-Secure, digital wallets and network token payments.
+    example: "06"  
   _links:
     type: object
     description: The links related to the payment
