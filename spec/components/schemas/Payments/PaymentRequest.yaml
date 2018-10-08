@@ -89,11 +89,8 @@ properties:
       For payments that use stored card details such as recurring payments,
       an existing payment identifier from the recurring series or the Scheme Transaction Id. [Read more](https://docs.checkout.com/docs/stored-card-details).
     example: "pay_fun26akvvjjerahhctaq2uzhu4"
-  skip_risk_check:
-    type: boolean
-    description: Indicates whether risk checks for the requested payment should be skipped
-    default: false
-    example: true
+  risk:
+    $ref: '#/components/schemas/RiskRequest'
   success_url:
     type: string
     format: uri
