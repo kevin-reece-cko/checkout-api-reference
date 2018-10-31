@@ -98,6 +98,10 @@ properties:
       The final Electronic Commerce Indicator security level used to authorize the payment. 
       Applicable for 3D-Secure, digital wallets and network token payments.
     example: "06"  
+  scheme_id:
+    type: string
+    description: |
+      The scheme transaction identifier
   _links:
     type: object
     description: The links related to the payment
