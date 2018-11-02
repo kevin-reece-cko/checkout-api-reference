@@ -65,7 +65,7 @@ properties:
     example: Authorized
   3ds:
     type: object
-    description: Provides information relating to the processing of 3D-Secure payments
+    description: Provides information relating to the processing of 3-D Secure payments
     allOf:
       - $ref: '#/components/schemas/3dsData'
   risk:
@@ -132,7 +132,7 @@ properties:
     type: string
     description: |
       The final Electronic Commerce Indicator security level used to authorize the payment. 
-      Applicable for 3D-Secure, digital wallets and network token payments.
+      Applicable for 3-D Secure, digital wallets and network token payments.
     example: "06"  
   scheme_id:
     type: string
