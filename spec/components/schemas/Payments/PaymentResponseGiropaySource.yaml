@@ -1,0 +1,30 @@
+type: object
+description: A Giropay payment source
+allOf:
+  - $ref: "#/components/schemas/PaymentResponseSource"
+  - type: object
+    properties:
+      type:
+        type: string
+        description: The payment source type
+        enum:
+          - giropay
+      purpose:
+        type: string
+        maxLength: 27
+        description: Purpose
+        example: Set of 3 masks
+      bic:
+        type: string
+        maxLength: 11
+        description: BIC (8 or 11-digits)
+        example: TESTDETT421
+      iban: 
+        type: string
+        maxLength: 34
+        description: IBAN without whitespaces 
+        example: DE46940594210000012345
+      account_holder: 
+        type: string
+        description: Account holder information
+        example: Test GmbH & Co. KG 
