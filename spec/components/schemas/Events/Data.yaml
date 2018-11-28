@@ -51,7 +51,7 @@ properties:
     example: "Approved"
   3ds:
     type: object
-    description: Provides 3D-Secure enrollment status if the payment was downgraded to Non-3DS
+    description: Provides 3-D Secure enrollment status if the payment was downgraded to non-3D Secure
     allOf:
       - $ref: '#/components/schemas/3dsEnrollmentData'
     example:
