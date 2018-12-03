@@ -41,6 +41,6 @@ allOf:
             type: string
             description: The type of the mandate
             enum:
-              - "Single"
-              - "Recurring"
-            example: "Recurring"
+              - "single"
+              - "recurring"
+            example: "recurring"
