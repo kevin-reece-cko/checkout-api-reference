@@ -10,10 +10,12 @@
     "gulp-connect": "^4.2.0",
     "gulp-util": "^3.0.7",
     "portfinder": "^1.0.3",
+    "request": "2.88.0",
     "shelljs": "^0.7.0",
     "swagger-repo": "^1.0.0",
     "swagger-ui": "^2.1.4",
-    "swagger-cli": "2.1.0"
+    "swagger-cli": "2.1.0",
+    "yamljs": "0.3.0"
   },
   "private": true,
   "scripts": {
@@ -22,6 +24,7 @@
     "swagger": "swagger-repo",
     "test": "swagger-cli validate --no-schema web_deploy/swagger.yaml",
     "start": "gulp serve",
-    "deploy-branch": "node ./scripts/deploy-branch.js"
+    "deploy-branch": "node ./scripts/deploy-branch.js",
+    "sync-generated-specs": "node ./scripts/sync-generated-specs.js"
   }
 }
