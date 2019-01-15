@@ -33,6 +33,7 @@ var buildPaymentSource = function(requestData, paymentSourceName) {
   if (requestData.properties.type) {
     delete requestData.properties.type;
   }
+  addDescriptionToKlarnaPassthroughObjects(requestData, paymentSourceName);
   return {
     type: 'object',
     description: paymentSourceName + ' Source',
@@ -45,6 +46,18 @@ var buildPaymentSource = function(requestData, paymentSourceName) {
       }
     ]
   };
+};
+
+var addDescriptionToKlarnaPassthroughObjects = function(requestData, paymentSourceName) {
+  Object.keys(requestData.properties).forEach(propertyName => {
+    var property = requestData.properties[propertyName];
+    if (property['x-cko-passthrough'] === true && property['x-klarna-docs']) {
+      var apmPropertyName = property['x-klarna-name'] || propertyName;
+      var apmPropertyDocs = property['x-klarna-docs'];
+      property.description += '  \nThis object is passed directly to ' + paymentSourceName + ' as `' + apmPropertyName + '`, \
+                                so for the object definition use the [' + paymentSourceName + ' documentation](' + apmPropertyDocs + ').';
+    }
+  });
 };
 
 var thenBuildOutputAndWrite = function(buildOutputFunction, outputFilePath) {
