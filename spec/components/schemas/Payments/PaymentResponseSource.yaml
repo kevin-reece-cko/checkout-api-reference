@@ -9,10 +9,11 @@ discriminator:
     boleto: '#/components/schemas/03_PaymentResponseBoletoSource'
     giropay: '#/components/schemas/04_PaymentResponseGiropaySource'
     ideal: '#/components/schemas/05_PaymentResponseIdealSource'
-    poli: '#/components/schemas/06_PaymentResponsePoliSource'
-    qiwi: '#/components/schemas/07_PaymentResponseQiwiSource'
-    safetypay: '#/components/schemas/08_PaymentResponseSafetyPaySource'
-    sofort: '#/components/schemas/09_PaymentResponseSofortSource'
+    klarna: '#/components/schemas/06_PaymentResponseKlarnaSource'
+    poli: '#/components/schemas/07_PaymentResponsePoliSource'
+    qiwi: '#/components/schemas/08_PaymentResponseQiwiSource'
+    safetypay: '#/components/schemas/09_PaymentResponseSafetyPaySource'
+    sofort: '#/components/schemas/10_PaymentResponseSofortSource'
 
 required:
   - type

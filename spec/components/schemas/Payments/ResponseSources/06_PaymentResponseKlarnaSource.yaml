@@ -12,12 +12,3 @@ allOf:
       order_id:
         type: string
         description: 'Klarna order identifier'
-        readOnly: true
-      status:
-        type: string
-        description: 'Klarna order status'
-        readOnly: true
-      fraud_status:
-        type: string
-        description: 'Klarna order fraud status'
-        readOnly: true
