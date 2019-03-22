@@ -42,6 +42,11 @@ allOf:
         description: | 
           The Electronic Commerce Indicator security level associated with the token. Optional if `previous_payment_id` is specified and `3ds.enabled` is false.
         example: "05"
+      stored:
+        type: boolean
+        description: Must be set to `true` for payments that use stored card details. [Read more](https://docs.checkout.com/v2/docs/stored-card-details).
+        default: false
+        example: true
       name:
         type: string
         description: The cardholder name
