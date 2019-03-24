@@ -107,16 +107,17 @@ properties:
       - $ref: '#/components/schemas/IPAddress'
   recipient:
     $ref: '#/components/schemas/PaymentRecipient'
+  processing:
+    type: object
+    description: Use the processing object to influence or override the data sent during card processing
+    properties:
+      mid:
+        type: string
+        description: Overrides the default Merchant/Acceptor identifier (MID) configured on your account
+        example: "1234567"
   metadata:
     type: object
     description: Set of key/value pairs that you can attach to a payment. It can be useful for storing additional information in a structured format
     example:
       coupon_code: "NY2018"
       partner_id: 123989
-  # items:
-  #   type: array
-  #   items:
-  #     - $ref: '#/components/schemas/Item'
-  #   minItems: 0
-  #   description: |
-  #     The items or products associated with the payment
