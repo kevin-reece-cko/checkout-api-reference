@@ -32,11 +32,13 @@ allOf:
         description: 'Allow merchant to trigger auto capturing.'
         x-klarna-docs: 'https://developers.klarna.com/api/#payments-api__create-a-new-order__auto_capture'
       billing_address:
-        description: "Customer's billing address.  \nThis object is passed directly to Klarna as `billing_address`,                                 so for the object definition use the [Klarna documentation](https://developers.klarna.com/api/#payments-api__create-a-new-order__billing_address)."
+        type: object
+        description: "Customer's billing address.  \nThis object is passed directly to Klarna as `billing_address`, \nso for the object definition use the [Klarna documentation](https://developers.klarna.com/api/#payments-api__create-a-new-order__billing_address)."
         x-klarna-docs: 'https://developers.klarna.com/api/#payments-api__create-a-new-order__billing_address'
         x-cko-passthrough: true
       shipping_address:
-        description: "Customer's shipping address.  \nThis object is passed directly to Klarna as `shipping_address`,                                 so for the object definition use the [Klarna documentation](https://developers.klarna.com/api/#payments-api__create-a-new-order__shipping_address)."
+        type: object
+        description: "Customer's shipping address.  \nThis object is passed directly to Klarna as `shipping_address`, \nso for the object definition use the [Klarna documentation](https://developers.klarna.com/api/#payments-api__create-a-new-order__shipping_address)."
         x-klarna-docs: 'https://developers.klarna.com/api/#payments-api__create-a-new-order__shipping_address'
         x-cko-passthrough: true
       tax_amount:
@@ -45,23 +47,23 @@ allOf:
         x-klarna-name: order_tax_amount
         x-klarna-docs: 'https://developers.klarna.com/api/#payments-api__create-a-new-order__order_tax_amount'
       products:
-        type: object
-        description: "The applicable order lines.  \nThis object is passed directly to Klarna as `order_lines`,                                 so for the object definition use the [Klarna documentation](https://developers.klarna.com/api/#payments-api__create-a-new-order__order_lines)."
+        type: array
+        description: "The applicable order lines.  \nThis object is passed directly to Klarna as `order_lines`, \nso for the object definition use the [Klarna documentation](https://developers.klarna.com/api/#payments-api__create-a-new-order__order_lines)."
         x-klarna-name: order_lines
         x-cko-passthrough: true
         x-klarna-docs: 'https://developers.klarna.com/api/#payments-api__create-a-new-order__order_lines'
       customer:
         type: object
-        description: "Information about the liable customer of the order.  \nThis object is passed directly to Klarna as `customer`,                                 so for the object definition use the [Klarna documentation](https://developers.klarna.com/api/#payments-api__create-a-new-order__customer)."
+        description: "Information about the liable customer of the order.  \nThis object is passed directly to Klarna as `customer`, \nso for the object definition use the [Klarna documentation](https://developers.klarna.com/api/#payments-api__create-a-new-order__customer)."
         x-klarna-docs: 'https://developers.klarna.com/api/#payments-api__create-a-new-order__customer'
         x-cko-passthrough: true
       merchant_reference1:
         type: string
-        description: 'Used for storing merchant''s internal order number or other reference.  If set, will be shown on the confirmation page as "order number"  (max 255 characters).'
+        description: 'Used for storing merchant''s internal order number or other reference.  If set, will be shown on the confirmation page as "order number" (max 255 characters).'
         x-klarna-docs: 'https://developers.klarna.com/api/#payments-api__create-a-new-order__merchant_reference1'
       merchant_reference2:
         type: string
-        description: 'Used for storing merchant''s internal order number or other reference  (max 255 characters).'
+        description: 'Used for storing merchant''s internal order number or other reference (max 255 characters).'
         x-klarna-docs: 'https://developers.klarna.com/api/#payments-api__create-a-new-order__merchant_reference2'
       merchant_data:
         type: string
@@ -69,6 +71,6 @@ allOf:
         x-klarna-docs: 'https://developers.klarna.com/api/#payments-api__create-a-new-order__merchant_data'
       attachment:
         type: object
-        description: "Additional purchase information required for some industries.  \nThis object is passed directly to Klarna as `attachment`,                                 so for the object definition use the [Klarna documentation](https://developers.klarna.com/api/#payments-api__create-a-new-order__attachment)."
+        description: "Additional purchase information required for some industries.  \nThis object is passed directly to Klarna as `attachment`, \nso for the object definition use the [Klarna documentation](https://developers.klarna.com/api/#payments-api__create-a-new-order__attachment)."
         x-cko-passthrough: true
         x-klarna-docs: 'https://developers.klarna.com/api/#payments-api__create-a-new-order__attachment'

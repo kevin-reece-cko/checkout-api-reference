@@ -65,8 +65,8 @@ var addDescriptionToKlarnaPassthroughObjects = function(requestData, paymentSour
     if (property['x-cko-passthrough'] === true && property['x-klarna-docs']) {
       var apmPropertyName = property['x-klarna-name'] || propertyName;
       var apmPropertyDocs = property['x-klarna-docs'];
-      property.description += '  \nThis object is passed directly to ' + paymentSourceName + ' as `' + apmPropertyName + '`, \
-                                so for the object definition use the [' + paymentSourceName + ' documentation](' + apmPropertyDocs + ').';
+      property.description += '  \nThis object is passed directly to ' + paymentSourceName + ' as `' + apmPropertyName + '`, ' +
+                                '\nso for the object definition use the [' + paymentSourceName + ' documentation](' + apmPropertyDocs + ').';
     }
   });
 };
