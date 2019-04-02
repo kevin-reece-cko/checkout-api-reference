@@ -14,7 +14,7 @@ discriminator:
     qiwi: '#/components/schemas/08_PaymentResponseQiwiSource'
     safetypay: '#/components/schemas/09_PaymentResponseSafetyPaySource'
     sofort: '#/components/schemas/10_PaymentResponseSofortSource'
-
+    bancontact: '#/components/schemas/15_PaymentResponseBancontactSource'
 required:
   - type
 
