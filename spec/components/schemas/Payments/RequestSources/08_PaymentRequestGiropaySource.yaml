@@ -1,26 +1,41 @@
+###
+# Warning: this file was auto generated from OpenAPI specs using 'npm run sync-generated-specs'. Do not manually edit. 
+###
 type: object
-description: Giropay Source
+description: 'Giropay Source'
 allOf:
-  - $ref: "#/components/schemas/PaymentRequestSource"
-  - type: object
+  -
+    $ref: '#/components/schemas/PaymentRequestSource'
+  -
+    type: object
     required:
       - purpose
       - bic
     properties:
       purpose:
-        type: string
         maxLength: 27
-        description: Purpose
+        type: string
+        description: 'Purpose of the payment as appearing on customer''s bank statement.'
       bic:
-        type: string
         maxLength: 11
-        description: BIC (8 or 11-digits)
-      iban:
         type: string
+        description: 'BIC (8 or 11-digits)'
+      iban:
         maxLength: 34
-        description: IBAN without whitespaces. This parameter is optional.
+        type: string
+        description: 'IBAN without whitespaces. This parameter is optional.'
       info_fields:
-        type: array
         maxItems: 5
+        type: array
         items:
-          $ref: "#/components/schemas/GiropayPaymentInfo"
+          type: object
+          properties:
+            label:
+              maxLength: 30
+              type: string
+              description: 'Additional information field which is shown on the payment form (label)'
+            text:
+              maxLength: 80
+              type: string
+              description: 'Additional information field which is shown on the payment form (text)'
+          additionalProperties: false
