@@ -9,7 +9,6 @@ required:
   - status
   - response_code
   - processed_on
-  - customer
   - source
   - _links
 properties:
@@ -81,7 +80,7 @@ properties:
       - $ref: '#/components/schemas/PaymentResponseSource'
   customer:
     type: object
-    description: The customer to which this payment is linked
+    description: The customer associated with the payment if provided in the request
     allOf:
       - $ref: '#/components/schemas/PaymentResponseCustomer'
   processed_on:
