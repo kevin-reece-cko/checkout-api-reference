@@ -3,7 +3,6 @@ description: Payment response
 required:
   - id
   - status
-  - customer
 properties:
   id:
     description: Payment unique identifier
@@ -21,7 +20,7 @@ properties:
     example: ORD-5023-4E89
   customer:
     type: object
-    description: The customer to which this payment is linked
+    description: The customer associated with the payment if provided in the request
     allOf:
       - $ref: '#/components/schemas/PaymentResponseCustomer'
   3ds:
