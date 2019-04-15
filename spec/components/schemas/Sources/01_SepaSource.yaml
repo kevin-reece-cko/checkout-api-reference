@@ -2,6 +2,7 @@ type: object
 description: A SEPA payment source
 required:
   - billing_address
+  - source_data
 allOf:
   - $ref: '#/components/schemas/SourceRequest'
   - type: object
