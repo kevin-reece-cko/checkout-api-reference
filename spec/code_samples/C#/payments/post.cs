@@ -1,3 +1,4 @@
+var api = CheckoutApi.Create("your secret key");
 var tokenSource = new TokenSource("tok_ubfj2q76miwundwlk72vxt2i7q");
 var paymentRequest = new PaymentRequest<TokenSource>(tokenSource, Currency.USD, 5600)
 {
@@ -8,7 +9,7 @@ var paymentRequest = new PaymentRequest<TokenSource>(tokenSource, Currency.USD, 
 
 try
 {
-    var response = await Api.Payments.RequestAsync(paymentRequest);
+    var response = await api.Payments.RequestAsync(paymentRequest);
 
     if (response.IsPending && response.Pending.RequiresRedirect())
     {
