@@ -1,5 +1,5 @@
 type: object
-description: '- Source'
+description: 'KNet Source'
 allOf:
   -
     $ref: '#/components/schemas/PaymentResponseSource'
@@ -12,10 +12,10 @@ allOf:
           - en
         type: string
         description: >-
-          This field enables the Issuer's site to select the Consumer's preferred language 
-          (e.g. the language selected on the Merchant's site), if the Issuer's site supports this. 
-          Code list in accordance with ISO 639-1. (Arabic = 'ar', English = 'en'). 
-          NOTE: 'ar' corresponds to 'ARA' and 'en' - to 'USA' values accepted by KNet Gateway. '
+          This field enables the Issuer's site to select the Consumer's preferred language
+          (e.g. the language selected on the Merchant's site), if the Issuer's site supports this.
+          Code list in accordance with ISO 639-1. (Arabic = 'ar', English = 'en').
+          NOTE: 'ar' corresponds to 'ARA' and 'en' - to 'USA' values accepted by KNet Gateway.
       user_defined_field1:
         type: string
         description: >-
