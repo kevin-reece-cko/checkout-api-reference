@@ -14,6 +14,7 @@ discriminator:
     giropay: '#/components/schemas/PaymentRequestGiropaySource'
     ideal: '#/components/schemas/PaymentRequestIdealSource'
     klarna: '#/components/schemas/PaymentRequestKlarnaSource'
+    knet: '#/components/schemas/PaymentRequestKNetSource'
     poli: '#/components/schemas/PaymentRequestPoliSource'
     qiwi: '#/components/schemas/PaymentRequestQiwiSource'
     safetypay: '#/components/schemas/PaymentRequestSafetyPaySource'
