@@ -70,3 +70,56 @@ allOf:
           Some special characters in this field are blacklisted by KNet.
           Note that user_defined_field5 must be omitted when the ptlf field is not empty. This restriction
           exists because a PTLF value is passed to KNet Gateway as user defined field 5.
+      knet_payment_id:
+        type: string
+        description: The payment identifier assigned by KNet Gateway.
+      knet_result:
+        type: string
+        description: >-
+          The state of the payment, returned by KNet Gateway after the customer is redirected from
+          the payment page.
+      inquiry_result:
+        type: string
+        description: >-
+          The state of the payment, retunrned by KNet Gateway in the response from the payment inquiry.
+          This field is populated in rare cases when the redirection from the payment page did not occur
+          properly.
+      bank_reference:
+        type: string
+        example: 123456789012
+        description: 'The result transaction reference, given by some banks/institutions.'
+      knet_transaction_id:
+        type: string
+        example: 1234567890123456
+        description: The transaction identifier assigned by KNet Gateway.
+      auth_code:
+        type: string
+        example: 999554
+        description: The resulting authorization code from the issuing bank.
+      auth_response_code:
+        type: string
+        example: 5
+        description: >-
+          The auth response code / reason code relating to the issuing bank
+          authorization code.
+      post_date:
+        type: string
+        example: 1127
+        description: >-
+          The transaction date in the authorization system format, with the
+          value defined by the issuing bank, so may not match the actual
+          transaction date. The format is `MMDD`.
+      avr:
+        type: string
+        example: A
+        description: >-
+          The Address Verification Response returned from the address
+          verification service.
+      error:
+        type: string
+        example: IPAY0100044
+        description: The KNET error code for transaction processing.
+      error_text:
+        type: string
+        example: IPAY0100044-Problem occured while loading payment page.
+        description: 'The KNET text detail for the error, including an error code.'
