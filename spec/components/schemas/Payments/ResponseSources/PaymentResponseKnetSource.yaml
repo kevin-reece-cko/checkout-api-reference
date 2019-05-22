@@ -21,19 +21,19 @@ allOf:
         description: >-
           User defined field can be used to pass and store any additional transaction data
           required to be archived with the transaction and available as a searching criteria.
-          Some special characters in this field are blacklisted by KNet.
+          Only alphanumeric characters and spaces are allowed.
       user_defined_field2:
         type: string
         description: >-
           User defined field can be used to pass and store any additional transaction data
           required to be archived with the transaction and available as a searching criteria.
-          Some special characters in this field are blacklisted by KNet.
+          Only alphanumeric characters and spaces are allowed.
       user_defined_field3:
         type: string
         description: >-
           User defined field can be used to pass and store any additional transaction data
           required to be archived with the transaction and available as a searching criteria.
-          Some special characters in this field are blacklisted by KNet.
+          Only alphanumeric characters and spaces are allowed.
           Note that this field must be omitted when the card_token field is not empty. This restriction
           exists because a card token is passed to KNet Gateway as user defined field 3.
       user_defined_field4:
@@ -41,13 +41,13 @@ allOf:
         description: >-
           User defined field can be used to pass and store any additional transaction data
           required to be archived with the transaction and available as a searching criteria.
-          Some special characters in this field are blacklisted by KNet.
+          Only alphanumeric characters and spaces are allowed.
       user_defined_field5:
         type: string
         description: >-
           User defined field can be used to pass and store any additional transaction data
           required to be archived with the transaction and available as a searching criteria.
-          Some special characters in this field are blacklisted by KNet.
+          Only alphanumeric characters and spaces are allowed.
           Note that this field must be omitted when the ptlf field is not empty. This restriction
           exists because a PTLF value is passed to KNet Gateway as user defined field 5.
       card_token:
@@ -67,7 +67,7 @@ allOf:
         maxLength: 45
         description: >-
           This is an ID for merchant PTLF functionality tracking.
-          Some special characters in this field are blacklisted by KNet.
+          Only alphanumeric characters are allowed.
           Note that user_defined_field5 must be omitted when the ptlf field is not empty. This restriction
           exists because a PTLF value is passed to KNet Gateway as user defined field 5.
       knet_payment_id:
