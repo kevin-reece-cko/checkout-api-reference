@@ -5,7 +5,6 @@ discriminator:
     sepa: '#/components/schemas/01_SepaSourceResponse'
 required:
   - type
-  - customer
   - response_code
 properties:
   id:
@@ -22,6 +21,6 @@ properties:
     example: "10000"
   customer:
     type: object
-    description: The customer to which the payment source is linked
+    description: The customer associated with the payment source if provided in the request
     allOf:
       - $ref: '#/components/schemas/SourceResponseCustomer'
