@@ -17,6 +17,8 @@ var syncPaymentSources = function()
   syncPaymentResponse('Ideal', 'http://sb-gateway-internal.cko.lon/ideal-internal-api/relations/gw/payment');
   syncPaymentRequest('Klarna', 'http://sb-gateway-internal.cko.lon/klarna-internal/relations/gw/pay');
   syncPaymentResponse('Klarna', 'http://sb-gateway-internal.cko.lon/klarna-internal/relations/gw/payment');
+  syncPaymentResponse('Bancontact', 'http://sb-gateway-internal.cko.lon/ppro-internal/bancontact/relations/gw/pay');
+  syncPaymentResponse('Bancontact', 'http://sb-gateway-internal.cko.lon/ppro-internal/bancontact/relations/gw/payment');
 }
 
 var syncPaymentRequest = function(paymentSourceName, paymentSpecUrl) {
