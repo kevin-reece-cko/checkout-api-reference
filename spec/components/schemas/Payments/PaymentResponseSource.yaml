@@ -17,6 +17,7 @@ discriminator:
     safetypay: '#/components/schemas/PaymentResponseSafetyPaySource'
     sofort: '#/components/schemas/PaymentResponseSofortSource'
     bancontact: '#/components/schemas/PaymentResponseBancontactSource'
+    fawry: '#/components/schemas/PaymentResponseFawrySource'
 required:
   - type
 

@@ -1,0 +1,46 @@
+###
+# Warning: this file was auto generated from OpenAPI specs using 'npm run sync-generated-specs'. Do not manually edit. 
+###
+type: object
+description: 'Fawry Source'
+allOf:
+  -
+    $ref: '#/components/schemas/PaymentRequestSource'
+  -
+    type: object
+    required:
+      - description
+      - products
+      - customer_email
+      - customer_mobile
+    properties:
+      description:
+        type: string
+      customer_profile_id:
+        type: string
+      customer_email:
+        type: string
+      customer_mobile:
+        type: string
+      expires_on:
+        type: string
+        format: 'ISO 8601 date and time'
+      products:
+        type: array
+        items:
+          required:
+            - product_id
+            - quantity
+            - price
+            - description
+          type: object
+          properties:
+            product_id:
+              type: string
+            quantity:
+              type: integer
+            price:
+              type: integer
+              description: 'The price of the item.  Expressed using Checkout.com''s standard rules for calculating payment values.'
+            description:
+              type: string
