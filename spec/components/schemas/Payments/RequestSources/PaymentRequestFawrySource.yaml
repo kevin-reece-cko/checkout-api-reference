@@ -15,6 +15,7 @@ allOf:
       - customer_mobile
     properties:
       description:
+        maxLength: 265
         type: string
         description: 'The payment description.'
       customer_profile_id:
@@ -41,6 +42,7 @@ allOf:
           type: object
           properties:
             product_id:
+              maxLength: 265
               type: string
               description: 'The id of the product.'
             quantity:
@@ -50,6 +52,7 @@ allOf:
               type: integer
               description: 'The price of the item.  Expressed using Checkout.com''s standard rules for calculating payment values.'
             description:
+              maxLength: 265
               type: string
               description: 'The description of the product.'
         description: 'List of Products'
