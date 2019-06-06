@@ -15,6 +15,7 @@ discriminator:
     poli: '#/components/schemas/PaymentResponsePoliSource'
     sofort: '#/components/schemas/PaymentResponseSofortSource'
     bancontact: '#/components/schemas/PaymentResponseBancontactSource'
+    fawry: '#/components/schemas/PaymentResponseFawrySource'
 required:
   - type
 

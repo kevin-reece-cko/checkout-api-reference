@@ -18,6 +18,7 @@ discriminator:
     poli: '#/components/schemas/PaymentRequestPoliSource'
     sofort: '#/components/schemas/PaymentRequestSofortSource'
     bancontact: '#/components/schemas/PaymentRequestBancontactSource'
+    fawry: '#/components/schemas/PaymentRequestFawrySource'
 required:
   - type
 properties:
