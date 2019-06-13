@@ -16,6 +16,7 @@ discriminator:
     sofort: '#/components/schemas/PaymentResponseSofortSource'
     bancontact: '#/components/schemas/PaymentResponseBancontactSource'
     fawry: '#/components/schemas/PaymentResponseFawrySource'
+    qpay: '#/components/schemas/PaymentResponseQPaySource'
 required:
   - type
 
