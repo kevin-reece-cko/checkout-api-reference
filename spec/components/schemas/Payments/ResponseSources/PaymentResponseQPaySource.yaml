@@ -11,4 +11,4 @@ allOf:
     properties:
       description:
         type: string
-        description: 'Alphanumeric string containing a narrative description of the payment order.'
+        description: 'Alphanumeric string containing a description of the payment order.'
