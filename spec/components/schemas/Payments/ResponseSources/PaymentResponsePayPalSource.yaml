@@ -1,0 +1,8 @@
+type: object
+allOf:
+  - $ref: "#/components/schemas/PaymentResponseSource"
+  - type: object
+    properties:
+      reference:
+        type: string
+        description: The unique payment reference identifier from the payment request

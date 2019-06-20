@@ -20,6 +20,7 @@ discriminator:
     bancontact: '#/components/schemas/PaymentRequestBancontactSource'
     fawry: '#/components/schemas/PaymentRequestFawrySource'
     qpay: '#/components/schemas/PaymentRequestQPaySource'
+    paypal: '#/components/schemas/PaymentRequestPayPalSource'
 required:
   - type
 properties:

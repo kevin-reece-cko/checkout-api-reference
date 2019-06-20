@@ -17,6 +17,7 @@ discriminator:
     bancontact: '#/components/schemas/PaymentResponseBancontactSource'
     fawry: '#/components/schemas/PaymentResponseFawrySource'
     qpay: '#/components/schemas/PaymentResponseQPaySource'
+    paypal: '#/components/schemas/PaymentResponsePayPalSource'
 required:
   - type
 
