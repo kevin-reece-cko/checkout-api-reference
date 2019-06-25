@@ -1,10 +1,9 @@
 type: object
 required:
+  -invoice_number
 allOf:
   - $ref: "#/components/schemas/PaymentRequestSource"
   - type: object
-    required: 
-      -invoice_number
     properties:
       invoice_number:
         type: string
