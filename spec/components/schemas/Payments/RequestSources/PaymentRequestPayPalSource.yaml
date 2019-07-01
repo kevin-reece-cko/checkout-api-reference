@@ -38,27 +38,22 @@ allOf:
           ota_type: "airline"
           ota_start_city: "SKG"
       order:
-        type: string
-        enum: ["y", "n"]
-        default: "n"
+        type: boolean
+        default: false
         description: >
           Set this flag to y to use the Deferred Settlement (Order / Auth / Capture) flow. 
           This will only create an order for a customer's approval and will require an additional API authorisation call before a capture.
-          Default value is "n" if omitted.
       collection:
-        type: string
-        enum: ["y", "n"]
-        default: "n"
+        type: boolean
+        default: false
         description: > 
-          Set this to y if the products will be collected by the customer.
+          Set this to true if the products will be collected by the customer.
       display_shipping:
-        type: string
-        enum: ["y", "n"]
-        default: "n"
+        type: boolean
+        default: false
         description: >
           Applies to ECS transactions only.
           Set this flag to y if the shipping details from PayPal should be displayed on the payment screen.
-          Default value is "n" if omitted.
       passenger_name:
         type: string
         minLength: 1
