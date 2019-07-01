@@ -27,11 +27,16 @@ allOf:
           Character limit: 127 single-byte alphanumeric characters.
           Width: 190px
           Height: 60px
-      stc_{key}: 
-        type: string
+      stc: 
+        type: object
+        additionalProperties:
+          type: string
         description: >
           These details are used by Paypal to perform a pre-transaction risk management evaluation.
-          The {key} used should be the same one as agreed between the merchant and PayPal.
+          The property names should be the same one as agreed between the merchant and PayPal.
+        example:
+          ota_type: "airline"
+          ota_start_city: "SKG"
       order:
         type: string
         enum: ["y", "n"]
