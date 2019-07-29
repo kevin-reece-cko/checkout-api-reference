@@ -23,6 +23,8 @@ var syncPaymentSources = function()
   syncPaymentResponse('Bancontact', 'http://sb-gateway-internal.cko.lon/ppro-internal/bancontact/relations/gw/payment');
   syncPaymentRequest('Fawry', 'http://sb-gateway-internal.cko.lon/fawry-internal/relations/gw/pay');
   syncPaymentResponse('Fawry', 'http://sb-gateway-internal.cko.lon/fawry-internal/relations/gw/payment');
+  syncPaymentRequest('QPay', 'http://sb-gateway-internal.cko.lon/qpay-internal/relations/gw/pay');
+  syncPaymentResponse('QPay', 'http://sb-gateway-internal.cko.lon/qpay-internal/relations/gw/payment');
   syncPaymentRequest('P24', 'http://sb-gateway-internal.cko.lon/ppro-internal/p24/relations/gw/pay');
   syncPaymentResponse('P24', 'http://sb-gateway-internal.cko.lon/ppro-internal/p24/relations/gw/payment');
 }
