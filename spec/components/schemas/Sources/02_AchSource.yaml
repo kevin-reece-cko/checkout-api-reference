@@ -52,7 +52,7 @@ allOf:
             example: "ExampleCompany.com"
           company_name:
             type: string
-            description: The name of the company (for corporate accounts)
+            description: The name of the company (required for corporate accounts)
             minLength: 1
-            maxLength: 100
-            example: "recurring"
+            maxLength: 40
+            example: "Checkout.com"
