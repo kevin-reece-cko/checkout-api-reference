@@ -36,11 +36,6 @@ get:
       description: Search for an event by payment ID
       schema:
         type: string
-    - name: reference
-      in: query
-      description: Search for an event by reference
-      schema:
-        type: string
   responses:
     '200':
       description: Events retrieved successfully
