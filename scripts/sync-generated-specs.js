@@ -27,6 +27,8 @@ var syncPaymentSources = function()
   syncPaymentResponse('QPay', 'http://sb-gateway-internal.cko.lon/qpay-internal/relations/gw/payment');
   syncPaymentRequest('P24', 'http://sb-gateway-internal.cko.lon/ppro-internal/p24/relations/gw/pay');
   syncPaymentResponse('P24', 'http://sb-gateway-internal.cko.lon/ppro-internal/p24/relations/gw/payment');
+  syncPaymentRequest('BenefitPay', 'http://sb-gateway-internal.cko.lon/benefitpay-internal/relations/gw/pay');
+  syncPaymentResponse('BenefitPay', 'http://sb-gateway-internal.cko.lon/benefitpay-internal/relations/gw/payment');
 }
 
 var syncPaymentRequest = function(paymentSourceName, paymentSpecUrl) {

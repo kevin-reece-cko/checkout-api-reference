@@ -1,0 +1,17 @@
+###
+# Warning: this file was auto generated from OpenAPI specs using 'npm run sync-generated-specs'. Do not manually edit. 
+###
+type: object
+description: 'BenefitPay Source'
+allOf:
+  -
+    $ref: '#/components/schemas/PaymentResponseSource'
+  -
+    type: object
+    properties:
+      reference_number:
+        type: string
+        description: 'Unique transaction reference number from BenefitPay'
+      qr_data:
+        type: string
+        description: 'String for generating the QR code to be scanned'
