@@ -15,3 +15,12 @@ allOf:
       qr_data:
         type: string
         description: 'String for generating the QR code to be scanned'
+      failure_reason:
+        type: string
+        description: 'High level reason for error with payment'
+      error_code:
+        type: string
+        description: 'Error code returned from BenefitPay'
+      error_description:
+        type: string
+        description: 'Error description returned from BenefitPay'
