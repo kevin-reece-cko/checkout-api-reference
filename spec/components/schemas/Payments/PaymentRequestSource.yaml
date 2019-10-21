@@ -9,6 +9,7 @@ discriminator:
     customer: '#/components/schemas/04_PaymentRequestCustomerSource'
     network_token: '#/components/schemas/05_PaymentRequestNetworkTokenSource'
     alipay: '#/components/schemas/PaymentRequestAlipaySource'
+    benefitpay: '#/components/schemas/PaymentRequestBenefitPaySource'
     boleto: '#/components/schemas/PaymentRequestBoletoSource'
     eps: '#/components/schemas/PaymentRequestEpsSource'
     giropay: '#/components/schemas/PaymentRequestGiropaySource'
