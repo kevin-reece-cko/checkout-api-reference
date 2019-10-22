@@ -37,6 +37,8 @@ allOf:
         example:
           ota_type: "airline"
           ota_start_city: "SKG"
+      
+      #TODO These are all fields supported by the legacy API but not by UPAPI (yet)
       #order:
       #  type: boolean
       #  default: false
