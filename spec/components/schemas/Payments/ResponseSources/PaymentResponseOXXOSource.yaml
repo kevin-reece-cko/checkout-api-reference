@@ -1,0 +1,29 @@
+###
+# Warning: this file was auto generated from OpenAPI specs using 'npm run sync-generated-specs'. Do not manually edit. 
+###
+type: object
+description: 'OXXO Source'
+allOf:
+  -
+    $ref: '#/components/schemas/PaymentResponseSource'
+  -
+    type: object
+    properties:
+      status_message:
+        type: string
+        description: 'Error details'
+        example: 'Rejected by bank'
+      status_code:
+        enum:
+          - rejected_by_bank
+          - insufficient_amount
+          - score_validation
+          - max_attempts_reached
+          - duplicated_payment
+          - rejected_due_to_high_risk
+          - invalid_transaction
+          - amount_exceeded
+          - error_in_acquirer
+        type: string
+        description: 'Status code'
+        example: rejected_by_bank
