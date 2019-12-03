@@ -9,21 +9,21 @@ allOf:
   -
     type: object
     properties:
-      status_message:
+      failure_reason:
         type: string
         description: 'Error details'
-        example: 'Rejected by bank'
-      status_code:
+        example: 'Third party response: Rejected (Error code: 300)'
+      failure_code:
         enum:
-          - rejected_by_bank
-          - insufficient_amount
-          - score_validation
-          - max_attempts_reached
-          - duplicated_payment
-          - rejected_due_to_high_risk
-          - invalid_transaction
-          - amount_exceeded
-          - error_in_acquirer
+          - third_party_invalid_credentials
+          - third_party_access_denied
+          - third_party_invalid_request
+          - third_party_invalid_parameter
+          - third_party_invalid_transaction_status
+          - third_party_rejected
+          - third_party_amount_exceeded
+          - third_party_timeout
+          - third_party_error
         type: string
-        description: 'Status code'
-        example: rejected_by_bank
+        description: 'Error code'
+        example: third_party_rejected
