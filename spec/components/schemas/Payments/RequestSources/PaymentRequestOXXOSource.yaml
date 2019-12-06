@@ -22,7 +22,7 @@ allOf:
         enum:
           - MX
         type: string
-        description: 'User''s country code. ISO 3166-1 alpha-2 code.'
+        description: 'Payer''s country code. ISO 3166-1 alpha-2 code.'
       payer:
         required:
           - name
@@ -33,23 +33,15 @@ allOf:
           name:
             maxLength: 100
             type: string
-            description: 'User''s full name.'
+            description: 'Payer''s full name.'
           email:
             maxLength: 100
             type: string
-            description: 'User’s email address.'
-          birth_date:
-            pattern: ^\d\d-\d\d-\d\d\d\d$
-            type: string
-            description: 'User’s birthdate (DD-MM-YYYY).'
-          phone:
-            maxLength: 20
-            type: string
-            description: 'User’s phone.'
+            description: 'Payer''s email address.'
           document:
             maxLength: 100
             type: string
-            description: 'User’s personal identification number in Mexico (CURP).'
+            description: 'Payer''s personal identification number in Mexico (CURP).'
         description: 'Payer object'
       description:
         maxLength: 200

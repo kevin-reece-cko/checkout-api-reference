@@ -11,7 +11,7 @@ allOf:
     properties:
       failure_reason:
         type: string
-        description: 'Error details'
+        description: 'Reason of payment failure'
         example: 'Third party response: Rejected (Error code: 300)'
       failure_code:
         enum:
@@ -25,5 +25,5 @@ allOf:
           - third_party_timeout
           - third_party_error
         type: string
-        description: 'Error code'
+        description: 'Failure code'
         example: third_party_rejected
