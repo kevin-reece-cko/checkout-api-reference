@@ -9,6 +9,7 @@ allOf:
   -
     type: object
     required:
+      - integration_type
       - country
       - payer
     properties:
@@ -43,7 +44,3 @@ allOf:
             type: string
             description: 'Payer''s personal identification number in Mexico (CURP).'
         description: 'Payer object'
-      description:
-        maxLength: 200
-        type: string
-        description: 'Payment description.'
