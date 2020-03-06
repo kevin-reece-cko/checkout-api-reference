@@ -1,22 +1,51 @@
+###
+# Warning: this file was auto generated from OpenAPI specs using 'npm run sync-generated-specs'. Do not manually edit. 
+###
 type: object
-description: AstroPay Boleto Source
-required:
-  - birthDate
-  - cpf
-  - customerName
+description: 'Boleto Source'
 allOf:
-  - $ref: "#/components/schemas/PaymentRequestSource"
-  - type: object
+  -
+    $ref: '#/components/schemas/PaymentRequestSource'
+  -
+    type: object
+    required:
+      - integration_type
+      - country
+      - payer
     properties:
-      birthDate:
+      integration_type:
+        enum:
+          - direct
+          - redirect
         type: string
-        description: The customer's date of birth (YYYY-MM-DD)
-        example: 1977-04-28
-      cpf:
+        description: "The type of the integration:\n  - `direct`: a ticket object is returned, which a merchant can use to render a ticket to a customer; no redirect url is returned\n  - `redirect`: a redirect url is returned, which the merchant redirects the customer to, to continue payment"
+      country:
+        maxLength: 2
+        enum:
+          - BR
         type: string
-        description: The Brazilian personal tax identifier (Cadastro de Pessoas Físicas)
-        example: 123.456.789-00
-      customerName:
+        description: 'Payer''s country code. ISO 3166-1 alpha-2 code.'
+      description:
+        maxLength: 200
         type: string
-        description: The customer's name
-        example: Igor Toupee
+        description: 'Payment description'
+      payer:
+        required:
+          - name
+          - email
+          - document
+        type: object
+        properties:
+          name:
+            maxLength: 100
+            type: string
+            description: 'Payer''s full name.'
+          email:
+            maxLength: 100
+            type: string
+            description: 'Payer''s email address.'
+          document:
+            maxLength: 100
+            type: string
+            description: 'Payer''s document identifier in Brasil, namely, Cadastro de Pessoas Físicas (CPF) or Cadastro Nacional da Pessoa Jurídica (CNPJ).'
+        description: 'Payer object'
