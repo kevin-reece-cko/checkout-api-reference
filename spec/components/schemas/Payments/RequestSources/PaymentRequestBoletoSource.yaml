@@ -47,5 +47,5 @@ allOf:
           document:
             maxLength: 100
             type: string
-            description: 'Payer''s document identifier in Brasil, namely, Cadastro de Pessoas Físicas (CPF) or Cadastro Nacional da Pessoa Jurídica (CNPJ).'
+            description: 'Payer''s document identifier in Brazil, namely, Cadastro de Pessoas Físicas (CPF) or Cadastro Nacional da Pessoa Jurídica (CNPJ).'
         description: 'Payer object'
