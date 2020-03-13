@@ -57,7 +57,8 @@ var sync = function(paymentSpecUrl, buildPaymentResponseFunction, outputFilePath
   request({ url: paymentSpecUrl, json: true}, thenBuildOutputAndWrite(buildOutputFunction, outputFilePath));
 };
 
-var processObjectSchema = function(outputSchema, inputSchema) {
+// Copy properties that should be included in the merchant-facing API specification
+var copyRelevantProperties = function(outputSchema, inputSchema) {
   if (!inputSchema)
     return;
 
@@ -94,6 +95,7 @@ var processObjectSchema = function(outputSchema, inputSchema) {
       delete outputSchema.oneOf.properties.type;
     }
   }
+
   return outputSchema;
 }
 
@@ -102,7 +104,7 @@ var getFunctionToBuildPaymentRequest = function(paymentSourceName) {
     var properties = responseBody.put.requestBody.content['application/json'].schema.properties;
     var requestData = {};
     if (properties) {
-      processObjectSchema(requestData, properties.request_data);
+      copyRelevantProperties(requestData, properties.request_data);
     }
     addDescriptionToKlarnaPassthroughObjects(requestData, paymentSourceName);
     return {
@@ -134,7 +136,7 @@ var getFunctionToBuildPaymentResponse = function(paymentSourceName) {
     var properties = responseBody.get.responses[200].content['application/json'].schema.properties;
     var responseData = {};
     if (properties) {
-      processObjectSchema(responseData, properties.response_data);
+      copyRelevantProperties(responseData, properties.response_data);
     }
     return {
       type: 'object',
