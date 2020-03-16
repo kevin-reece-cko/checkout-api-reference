@@ -15,15 +15,20 @@ allOf:
     properties:
       integration_type:
         enum:
+          - direct
           - redirect
         type: string
-        description: "The type of the integration.   \nCurrently only `redirect`, for which a redirect url is returned,  which the merchant redirects the customer to, to continue payment"
+        description: "The type of the integration:\n  - `direct`: a ticket object is returned, which a merchant can use to render a ticket to a customer; no redirect url is returned\n  - `redirect`: a redirect url is returned, which the merchant redirects the customer to, to continue payment"
       country:
         maxLength: 2
         enum:
           - MX
         type: string
         description: 'Payer''s country code. ISO 3166-1 alpha-2 code.'
+      description:
+        maxLength: 200
+        type: string
+        description: 'Payment description'
       payer:
         required:
           - name
@@ -42,5 +47,5 @@ allOf:
           document:
             maxLength: 100
             type: string
-            description: 'Payer''s personal identification number in Mexico (CURP).'
+            description: 'Payer''s document identifier in Mexico, namely, Unique Population Registry Code (CURP).'
         description: 'Payer object'
