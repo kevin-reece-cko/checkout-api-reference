@@ -3,6 +3,7 @@ discriminator:
   propertyName: type
   mapping:
     sepa: '#/components/schemas/01_SepaSourceResponse'
+    ach: '#/components/schemas/AddSourceResponse'
 required:
   - type
   - response_code
@@ -17,7 +18,7 @@ properties:
     example: "sepa"
   response_code:
     type: string
-    description: Gateway response code
+    description: The Gateway response code
     example: "10000"
   customer:
     type: object

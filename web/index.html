@@ -2,69 +2,53 @@
 <html>
 
 <head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-83886670-8"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-83886670-8');
+  </script>
   <title>Checkout.com API Reference</title>
   <!-- needed for adaptive design -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      color: #444;
-    }
-
-    p {
-      color: #444;
-    }
-
-    h1,
-    h1 a {
-      color: #000 !important;
-    }
-
-    a,
-    .active,
-    ul[role=navigation] label:hover,
-    .loading {
-      color: #35ad88 !important;
-    }
-
-    a:hover {
-      color: #305e4c !important;
-    }
-
-    /* For titles, use (rgb(0, 0, 0) / #000)
-For links and visited links, use (rgb(53,173,136) / #35ad88)
-For hovered links, use (rgb(48,94,76) / #305e4c) */
-
-    /* Version */
-    .api-info span {
-      display: none;
-    }
-
-    /* Download */
-    .api-info p > a {
-      border-color: #35ad88;
-    }
-
-    .api-info p > a {
-      border-color: #35ad88;
-    }
-
-    .api-info p > a:hover {
-      border-color: #305e4c;
-    }
-
-    .scrollbar-container ul:first-child+div {
-      display: none;
-    }
-  </style>
+  <link rel="stylesheet" type="text/css" href="./index.css" />
+  <link
+    rel="apple-touch-icon"
+    sizes="180x180"
+    href="./favicons/apple-touch-icon-180x180.png"
+  />
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="32x32"
+    href="./favicons/favicon-32x32.png"
+  />
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="16x16"
+    href="./favicons/favicon-16x16.png"
+  />
+  <link
+    rel="mask-icon"
+    href="./favicons/favicon.32.safari.svg"
+    color="#00122C"
+  />
+  <link rel="shortcut icon" href="./favicons/favicon.ico"/>
+  <meta name="msapplication-TileColor" content="#00122C"/>
+  <meta
+    name="msapplication-config"
+    content="./favicons/browserconfig.xml"
+  />
 </head>
 
 <body>
   <redoc spec-url="./swagger.yaml" hide-loading hide-download-button>
   </redoc>
-  <script src="https://cdn.jsdelivr.net/npm/redoc@next/bundles/redoc.standalone.js"> </script>
+  <script src="https://cdn.jsdelivr.net/npm/redoc@2.0.0-rc.23/bundles/redoc.standalone.js"> </script>
 </body>
 
 </html>

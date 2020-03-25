@@ -19,12 +19,22 @@ var syncPaymentSources = function()
   syncPaymentResponse('Klarna', 'http://sb-gateway-internal.cko.lon/klarna-internal/relations/gw/payment');
   syncPaymentRequest('Knet', 'http://sb-gateway-internal.cko.lon/knet-internal/relations/gw/pay');
   syncPaymentResponse('Knet', 'http://sb-gateway-internal.cko.lon/knet-internal/relations/gw/payment');
-  syncPaymentResponse('Bancontact', 'http://sb-gateway-internal.cko.lon/ppro-internal/bancontact/relations/gw/pay');
+  syncPaymentRequest('Bancontact', 'http://sb-gateway-internal.cko.lon/ppro-internal/bancontact/relations/gw/pay');
   syncPaymentResponse('Bancontact', 'http://sb-gateway-internal.cko.lon/ppro-internal/bancontact/relations/gw/payment');
   syncPaymentRequest('Fawry', 'http://sb-gateway-internal.cko.lon/fawry-internal/relations/gw/pay');
   syncPaymentResponse('Fawry', 'http://sb-gateway-internal.cko.lon/fawry-internal/relations/gw/payment');
   syncPaymentRequest('QPay', 'http://sb-gateway-internal.cko.lon/qpay-internal/relations/gw/pay');
   syncPaymentResponse('QPay', 'http://sb-gateway-internal.cko.lon/qpay-internal/relations/gw/payment');
+  syncPaymentRequest('P24', 'http://sb-gateway-internal.cko.lon/ppro-internal/p24/relations/gw/pay');
+  syncPaymentResponse('P24', 'http://sb-gateway-internal.cko.lon/ppro-internal/p24/relations/gw/payment');
+  syncPaymentRequest('Multibanco', 'http://sb-gateway-internal.cko.lon/ppro-internal/multibanco/relations/gw/pay');
+  syncPaymentResponse('Multibanco', 'http://sb-gateway-internal.cko.lon/ppro-internal/multibanco/relations/gw/payment');
+  syncPaymentRequest('BenefitPay', 'http://sb-gateway-internal.cko.lon/benefitpay-internal/relations/gw/pay');
+  syncPaymentResponse('BenefitPay', 'http://sb-gateway-internal.cko.lon/benefitpay-internal/relations/gw/payment');
+  syncPaymentRequest('OXXO', 'http://sb-gateway-internal.cko.lon/dlocal-internal/oxxo/relations/gw/pay');
+  syncPaymentResponse('OXXO', 'http://sb-gateway-internal.cko.lon/dlocal-internal/oxxo/relations/gw/payment');
+  syncPaymentRequest('Boleto', 'http://sb-gateway-internal.cko.lon/dlocal-internal/boleto/relations/gw/pay');
+  syncPaymentResponse('Boleto', 'http://sb-gateway-internal.cko.lon/dlocal-internal/boleto/relations/gw/payment');
 }
 
 var syncPaymentRequest = function(paymentSourceName, paymentSpecUrl) {
@@ -47,11 +57,54 @@ var sync = function(paymentSpecUrl, buildPaymentResponseFunction, outputFilePath
   request({ url: paymentSpecUrl, json: true}, thenBuildOutputAndWrite(buildOutputFunction, outputFilePath));
 };
 
+// Copy properties that should be included in the merchant-facing API specification
+var copyRelevantProperties = function(outputSchema, inputSchema) {
+  if (!inputSchema)
+    return;
+
+  outputSchema.type = 'object';
+
+  if (inputSchema.required) {
+    outputSchema.required = inputSchema.required;
+  }
+  
+  if (inputSchema.properties) {
+    outputSchema.properties = inputSchema.properties;
+    if (outputSchema.properties.type) {
+      delete outputSchema.properties.type;
+    }
+  }
+
+  if (inputSchema.allOf) {
+    outputSchema.allOf = inputSchema.allOf;
+    if (outputSchema.allOf.properties && outputSchema.allOf.properties.type) {
+      delete outputSchema.allOf.properties.type;
+    }
+  }
+
+  if (inputSchema.anyOf) {
+    outputSchema.anyOf = inputSchema.anyOf;
+    if (outputSchema.anyOf.properties && outputSchema.anyOf.properties.type) {
+      delete outputSchema.anyOf.properties.type;
+    }
+  }
+
+  if (inputSchema.oneOf) {
+    outputSchema.oneOf = properties.response_data.oneOf;
+    if (outputSchema.oneOf.properties && outputSchema.oneOf.properties.type) {
+      delete outputSchema.oneOf.properties.type;
+    }
+  }
+
+  return outputSchema;
+}
+
 var getFunctionToBuildPaymentRequest = function(paymentSourceName) {
   return function(responseBody) {
-    var requestData = responseBody.put.requestBody.content['application/json'].schema.properties.request_data;
-    if (requestData.properties.type) {
-      delete requestData.properties.type;
+    var properties = responseBody.put.requestBody.content['application/json'].schema.properties;
+    var requestData = {};
+    if (properties) {
+      copyRelevantProperties(requestData, properties.request_data);
     }
     addDescriptionToKlarnaPassthroughObjects(requestData, paymentSourceName);
     return {
@@ -59,11 +112,8 @@ var getFunctionToBuildPaymentRequest = function(paymentSourceName) {
       description: paymentSourceName + ' Source',
       allOf: [{
           $ref: '#/components/schemas/PaymentRequestSource',
-        }, {
-          type: 'object',
-          required: requestData.required,
-          properties: requestData.properties
-        }
+        }, 
+        requestData
       ]
     };
   };
@@ -84,22 +134,17 @@ var addDescriptionToKlarnaPassthroughObjects = function(requestData, paymentSour
 var getFunctionToBuildPaymentResponse = function(paymentSourceName) {
   return function(responseBody) {
     var properties = responseBody.get.responses[200].content['application/json'].schema.properties;
-    var responseDataProperties = null;
+    var responseData = {};
     if (properties) {
-      responseDataProperties = properties.response_data.properties;
-      if (responseDataProperties && responseDataProperties.type) {
-        delete responseDataProperties.type;
-      }
+      copyRelevantProperties(responseData, properties.response_data);
     }
     return {
       type: 'object',
       description: paymentSourceName + ' Source',
       allOf: [{
           $ref: '#/components/schemas/PaymentResponseSource',
-        }, {
-          type: 'object',
-          properties: responseDataProperties
-        }
+        }, 
+        responseData
       ]
     };
   };

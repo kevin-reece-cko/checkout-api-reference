@@ -169,20 +169,23 @@ namespace OpenApiGenerator
         static string GetCodeSampleText(string path, string verb)
         {
             var text = "";
-            var codeSample = GetCodeSample(path, verb);
+            var codeSamples = GetCodeSample(path, verb);
 
-            if (codeSample == null)
-                return text;
+            if(!codeSamples.Any()) return text;
 
             text += $"      x-code-samples:\n";
-            text += $"        - lang: {codeSample.Language}\n";
-            text += $"          source: {codeSample.SampleString}\n";
+            foreach (var sample in codeSamples)
+            {
+                text += $"        - lang: {sample.Language}\n";
+                text += $"          source: {sample.SampleString}\n";
+            }
+
             return text;
         }
 
-        static CodeSample GetCodeSample(string path, string verb)
+        static IEnumerable<CodeSample> GetCodeSample(string path, string verb)
         {
-            return _codeSamples.FirstOrDefault(x => string.Equals(x.Path, path, StringComparison.InvariantCultureIgnoreCase) && string.Equals(x.HttpVerb, verb, StringComparison.InvariantCultureIgnoreCase));
+            return _codeSamples.Where(x => string.Equals(x.Path, path, StringComparison.InvariantCultureIgnoreCase) && string.Equals(x.HttpVerb, verb, StringComparison.InvariantCultureIgnoreCase));
         }
 
         static void LoadCodeSamples()
@@ -205,7 +208,7 @@ namespace OpenApiGenerator
                 });
             }
         }
-        
+
         private static IEnumerable<string> GetSpecFiles(string relativePath, string searchPattern)
         {
             return Directory.GetFiles($"{_specDirectory}/{relativePath}", searchPattern, SearchOption.AllDirectories)
