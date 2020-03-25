@@ -43,7 +43,7 @@ allOf:
       #  type: boolean
       #  default: false
       #  description: >
-      #    Set this flag to y to use the Deferred Settlement (Order / Auth / Capture) flow. 
+      #    Set this flag to 'true' to use the Deferred Settlement (Order / Auth / Capture) flow. 
       #    This will only create an order for a customer's approval and will require an additional API authorisation call before a capture.
       #collection:
       #  type: boolean
@@ -55,7 +55,7 @@ allOf:
       #  default: false
       #  description: >
       #    Applies to ECS transactions only.
-      #    Set this flag to y if the shipping details from PayPal should be displayed on the payment screen.
+      #    Set this flag to 'true' if the shipping details from PayPal should be displayed on the payment screen.
       #airline_details:
       #  type: object
       #  description: >
