@@ -18,6 +18,7 @@ discriminator:
     knet: '#/components/schemas/PaymentRequestKnetSource'
     oxxo: '#/components/schemas/PaymentRequestOXXOSource'
     p24: '#/components/schemas/PaymentRequestP24Source'
+    paypal: '#/components/schemas/PaymentRequestPayPalSource'
     poli: '#/components/schemas/PaymentRequestPoliSource'
     sofort: '#/components/schemas/PaymentRequestSofortSource'
     bancontact: '#/components/schemas/PaymentRequestBancontactSource'
