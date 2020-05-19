@@ -1,9 +1,9 @@
 type: object
-discriminator:
-  propertyName: type
-  mapping:
-    sepa: '#/components/schemas/01_SepaAddress'
-    ach: '#/components/schemas/Address'
+required:
+  - address_line1
+  - city
+  - zip
+  - country
 properties:
   address_line1: 
     type: string
