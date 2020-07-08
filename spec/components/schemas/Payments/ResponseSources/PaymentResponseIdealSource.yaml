@@ -8,6 +8,9 @@ allOf:
     $ref: '#/components/schemas/PaymentResponseSource'
   -
     type: object
+    required:
+      - description
+      - bic
     properties:
       description:
         maxLength: 27
