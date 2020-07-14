@@ -1,0 +1,14 @@
+type: object
+required:
+  - type
+  - fingerprint
+properties:
+    type:
+        description: The underlying instrument type (for instruments created from Checkout.com tokens, this will reflect the type of instrument that was tokenized)
+        type: string
+        example: card
+    fingerprint:
+        type: string
+        description: A token that can uniquely identify this card across all customers and can be shared with merchants.
+        pattern: ^([a-z0-9]{26})$
+        example: vnsdrvikkvre3dtrjjvlm5du4q
