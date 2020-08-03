@@ -28,6 +28,7 @@ discriminator:
     fawry: '#/components/schemas/PaymentRequestFawrySource'
     qpay: '#/components/schemas/PaymentRequestQPaySource'
     multibanco: '#/components/schemas/PaymentRequestMultibancoSource'
+    dLocal: '#/components/schemas/06_PaymentRequestdLocalSource'
 required:
   - type
 properties:
