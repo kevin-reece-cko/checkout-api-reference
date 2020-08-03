@@ -1,5 +1,6 @@
 type: object
 required:
+  - id
   - type
   - fingerprint
   - expiry_month
@@ -7,13 +8,17 @@ required:
   - last4
   - bin
 properties:
+    id:
+        description: The base 32 encoded instrument id for the retrieved instrument
+        type: string
+        example: src_lmyvsjadlxxu7kqlgevt6ebkra
     type:
-        description: The underlying instrument type (for instruments created from Checkout.com tokens, this will reflect the type of instrument that was tokenized)
+        description: The instrument type
         type: string
         example: card
     fingerprint:
         type: string
-        description: A token that can uniquely identify this card across all customers and can be shared with merchants.
+        description: A token that can uniquely identify this card across all customers
         pattern: ^([a-z0-9]{26})$
         example: vnsdrvikkvre3dtrjjvlm5du4q
     expiry_month:
@@ -28,7 +33,7 @@ properties:
         example: 2025
         minLength: 4
         maxLength: 4
-    cardholder_name:
+    name:
         description: The name of the cardholder
         type: string
         example: John Test

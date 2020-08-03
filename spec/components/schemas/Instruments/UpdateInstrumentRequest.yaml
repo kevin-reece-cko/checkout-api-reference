@@ -12,7 +12,7 @@ properties:
         example: 2025
         minLength: 4
         maxLength: 4
-    cardholder_name:
+    name:
         description: The name of the cardholder
         type: string
         example: John Test
@@ -37,6 +37,6 @@ properties:
                 type: string 
                 example: cus_gajmdgunwwlehbctuj6a3sifpm
             default: 
-                description: True, if this instrument is set as the default for the customer
+                description: If true, sets this instrument as the default for the customer
                 type: string
                 example: true
