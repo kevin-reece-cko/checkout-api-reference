@@ -41,3 +41,4 @@ src/OpenApiGenerator/obj/*
 
 .idea
 /src/OpenApiGenerator/.vs/
+.vscode/settings.json

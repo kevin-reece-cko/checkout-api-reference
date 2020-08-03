@@ -11,6 +11,7 @@ try {
       signature: "MIAGCSqGbGUg...",
       header: {
         ephemeralPublicKey: "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgA...",
+        publicKeyHash: "tqYV+tmG9aMh+l/K6cicUnPqkb1gUiLjSTM9gEz6...",
         transactionId: "3cee89679130a4b...",
       },
     },
