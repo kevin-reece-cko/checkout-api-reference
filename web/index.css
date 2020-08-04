@@ -118,12 +118,12 @@ body {
 
 /* Main areas */
 
-.api-content {
+.kjSShW {
   background-color: var(--background) !important;
 }
 
-.menu-content {
-  background-color: var(--sidebar-background) !important;
+.api-content {
+  background-color: var(--background) !important;
 }
 
 /* Logo */
@@ -199,6 +199,10 @@ h2 {
 h3 {
   font-size: 18px !important;
   line-height: 24px !important;
+}
+
+h4 {
+  color: var(--secondary-text) !important;
 }
 
 h5.shv3r-4.gLzrjW {
@@ -335,10 +339,10 @@ td.dz44d2-1 {
 }
 
 li.sc-eNQAEJ.gYsnwL {
-  background: var(--primary-button);
-  border: 1px solid var(--primary-button);
+  background: var(--primary-button) !important;
+  border: 1px solid var(--primary-button) !important;
   font-weight: 500;
-  color: var(--primary-button-color);
+  color: var(--primary-button-color) !important;
 }
 
 li.sc-eNQAEJ.jdXjUh {
@@ -363,9 +367,10 @@ li.sc-eNQAEJ.jdXjUh {
   color: var(--secondary-text) !important;
 }
 
-.irpqyy .react-tabs__tab--selected {
+.react-tabs__tab-list .react-tabs__tab--selected {
   background-color: var(--secondary-button) !important;
   color: var(--primary-button-color) !important;
+  border-color: var(--secondary-button) !important;
 }
 
 .jXDsIv {
@@ -448,15 +453,16 @@ span.sc-jlyJG.evvbxn {
   top: 0;
   width: 300px !important;
   border-right: 1px solid var(--background-contrast);
+  background-color: var(--sidebar-background) !important;
 }
 
 /* Search box */
 
 div[role="search"] {
   margin: 20px !important;
-  border: 1px solid var(--background-contrast);
+  border: 1px solid var(--background-contrast) !important;
   border-radius: 3px;
-  background: var(--background-contrast);
+  background: var(--background-contrast) !important;
 }
 
 .search-input {
@@ -522,8 +528,8 @@ label.active, span.sc-gwVKww.SmuWE.active {
 
 /* Endpoint drop-down */
 
-.dHLKeu, .fVaxnA {
-  background-color: var(--background-contrast) !important;
+.hgxMbQ, .goYvPl {
+  background-color: var(--url-area) !important;
   border-radius: 0 !important;
 }
 
@@ -556,6 +562,7 @@ span.token.punctuation {
 .react-tabs__tab-panel, .react-tabs__tab {
   background: var(--code-background) !important;
   color: var(--code-bracket) !important;
+  border-color: var(--background-contrast) !important;
 }
 
 ul>li.react-tabs__tab, ul>li.tab-success, ul>li.tab-error {
@@ -564,27 +571,30 @@ ul>li.react-tabs__tab, ul>li.tab-success, ul>li.tab-error {
   border-width: 2px 0 0 0 !important;
 }
 
-ul>li.tab-success {
-  color: var(--cko-light-green) !important;
+.react-tabs__tab-list .tab-success {
   border-color: var(--cko-light-green) !important;
-}
-
-ul>li.tab-error {
-  color: var(--cko-light-red) !important;
-  border-color: var(--cko-light-red) !important;
-}
-
-ul>li.tab-success.react-tabs__tab--selected {
+  background-color: var(--cko-light-green) !important;
   color: var(--cko-white) !important;
-  border-color: var(--cko-light-green) !important;
-  background: var(--cko-light-green) !important;
+}
+
+.react-tabs__tab-list .tab-error {
+  border-color: var(--cko-light-red) !important;
+  background-color: var(--cko-light-red) !important;
+  color: var(--cko-white) !important;
+}
+
+.tab-success.react-tabs__tab--selected {
+  color: var(--cko-white) !important;
+  border-color: var(--cko-green) !important;
+  background: var(--cko-green) !important;
   opacity: 1;
 }
 
-ul>li.tab-error.react-tabs__tab--selected {
+.tab-error.react-tabs__tab--selected {
   color: var(--cko-white) !important;
-  border-color: var(--cko-light-red) !important;
-  background: var(--cko-light-red) !important;
+  border-color: var(--cko-red) !important;
+  background: var(--cko-red) !important;
+  opacity: 1;
 }
 
 .diZwLN>ul>li {
@@ -742,4 +752,20 @@ caption {
 code span {
   font-family: Courier, monospace !important;
   font-style: normal;
+}
+
+.celZWI {
+  background-color: var(--background) !important;
+}
+
+.hndQyM label {
+  color: var(--secondary-text) !important;
+}
+
+.hjRNaf polygon {
+  fill: var(--secondary-text) !important;
+}
+
+.sc-bxivhb li {
+  color: var(--secondary-text) !important;
 }
