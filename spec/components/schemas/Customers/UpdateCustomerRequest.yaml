@@ -12,4 +12,4 @@ properties:
     default: 
         description: The instrument ID for this customer’s default instrument
         type: string
-        example: cus_imu3wifxfvlebpqqq5usjrze6y
+        example: src_imu3wifxfvlebpqqq5usjrze6y
