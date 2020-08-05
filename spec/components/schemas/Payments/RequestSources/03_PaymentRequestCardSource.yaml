@@ -28,7 +28,7 @@ allOf:
         example: 2025
       name:
         type: string
-        description: The name of the cardholder; a Required field when processing via dLocal;
+        description: The name of the cardholder
         example: "Bruce Wayne"
       cvv:
         type: string
