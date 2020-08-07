@@ -126,19 +126,19 @@ properties:
             example: "MX"
           payer:
             type: object
-            description: Details about the purchaser; These details may or may not be similar to the Cardholder's.  
+            description: Details about the merchant's customer; These details may or may not be the same as that of the card holder's.  
             properties:
               document:
                 type: string
-                description: The parchaser's personal identification number. The identification required is country-specific. See the <a href="https://docs.dlocal.com/api-documentation/payins-api-reference/country-reference#documents" target="_blank">dLocal documentation</a> for more information.
-                example: "DocumentId"
+                description: The customer's personal identification number. The identification required is country-specific. See the <a href="https://docs.dlocal.com/api-documentation/payins-api-reference/country-reference#documents" target="_blank">dLocal documentation</a> for more information.
+                example: "5305305305"
               name:
                 type: string
-                description: The parchaser's full name.
+                description: The customer's full name.
                 example: "John Doe"
               email:
                 type: string
-                description: The parchaser's email address.
+                description: The customer's email address.
                 example: "john.doe@example.com"
           installments:
             type: object
