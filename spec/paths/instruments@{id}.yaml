@@ -29,7 +29,7 @@ get:
       description: Unauthorized
     '404':
       description: Instrument not found
-put:
+patch:
   security:
     - ApiSecretKey: []
   tags:
