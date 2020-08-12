@@ -1,0 +1,75 @@
+get:
+  security:
+    - ApiSecretKey: []
+  tags:
+    - Instruments
+  summary: Get instrument details
+  description: Returns details of an instrument
+  parameters:
+    - in: path
+      name: id
+      schema:
+        type: string
+        pattern: "^(src)_(\\w{26})$"
+      required: true
+      description: The instrument id
+  responses:
+    '200':
+      description: Instrument retrieved successfully
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/RetrieveInstrumentResponse'
+      headers:
+        Cko-Request-Id:
+          $ref: "#/components/headers/Cko-Request-Id"
+        Cko-Version:
+          $ref: "#/components/headers/Cko-Version"
+    '401':
+      description: Unauthorized
+    '404':
+      description: Instrument not found
+patch:
+  security:
+    - ApiSecretKey: []
+  tags:
+    - Instruments
+  summary: Update instrument details
+  description: Update details of an instrument
+  parameters:
+    - in: path
+      name: id
+      schema:
+        type: string
+        pattern: "^(src)_(\\w{26})$"
+      required: true
+      description: The instrument id
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: '#/components/schemas/UpdateInstrumentRequest'
+  responses:
+    '200':
+      description: Instrument updated successfully
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/UpdateInstrumentResponse'
+      headers:
+        Cko-Request-Id:
+          $ref: "#/components/headers/Cko-Request-Id"
+        Cko-Version:
+          $ref: "#/components/headers/Cko-Version"
+    '401':
+      description: Unauthorized
+    '422':
+      description: Invalid data was sent
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ValidationError'
+    '404':
+      description: Instrument not found
+      

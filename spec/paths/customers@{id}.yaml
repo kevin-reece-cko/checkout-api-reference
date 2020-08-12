@@ -1,0 +1,35 @@
+patch:
+  security:
+    - ApiSecretKey: []
+  tags:
+    - Customers
+  summary: Update customer details
+  description: Update details of a customer
+  parameters:
+    - in: path
+      name: id
+      schema:
+        type: string
+        pattern: "^(cus)_(\\w{26})$"
+      required: true
+      description: The customer id
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: '#/components/schemas/UpdateCustomerRequest'
+  responses:
+    '204':
+      description: Customer updated successfully
+    '401':
+      description: Unauthorized
+    '422':
+      description: Invalid data was sent
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ValidationError'
+    '404':
+      description: Customer not found
+      

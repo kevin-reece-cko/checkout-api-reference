@@ -1,0 +1,15 @@
+type: object
+description: The customer attached to the instrument
+properties:
+    email: 
+        description: The email address of the customer
+        type: string
+        example: JohnTest@test.com
+    name: 
+        description: The name of the customer
+        type: string
+        example: John Test
+    default: 
+        description: The instrument ID for this customer’s default instrument
+        type: string
+        example: src_imu3wifxfvlebpqqq5usjrze6y
