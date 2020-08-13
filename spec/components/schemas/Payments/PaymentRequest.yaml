@@ -126,7 +126,7 @@ properties:
             example: "MX"
           payer:
             type: object
-            description: Details about the merchant's customer; These details may or may not be the same as that of the card holder's.  
+            description: Details about the customer. These details may differ from those of the cardholder.
             properties:
               document:
                 type: string
