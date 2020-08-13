@@ -31,10 +31,12 @@ properties:
   reference:
     type: string
     description: A reference you can later use to identify this payment, such as an order number
+    maxLength: 50
     example: "ORD-5023-4E89"
   description:
     type: string
     description: A description of the payment
+    maxLength: 100
     example: "Set of 3 masks"
   capture:
     type: boolean
@@ -64,10 +66,12 @@ properties:
         type: string
         format: email
         description: An optional email address to associate with the customer
+        maxLength: 255
         example: "jokershere@gmail.com"
       name:
         type: string
         description: The customer's name. This will only set the name for *new* customers
+        maxLength: 255
         example: "Jack Napier"
   billing_descriptor:
     $ref: '#/components/schemas/BillingDescriptor'
@@ -97,11 +101,13 @@ properties:
     type: string
     format: uri
     description: For redirect payment methods, this overrides the default success redirect URL configured on your account
+    maxLength: 255
     example: "http://example.com/payments/success"
   failure_url:
     type: string
     format: uri
     description: For redirect payment methods, this overrides the default failure redirect URL configured on your account
+    maxLength: 255
     example: "http://example.com/payments/fail"
   payment_ip:
     description: The IP address used to make the payment. Required for some risk checks

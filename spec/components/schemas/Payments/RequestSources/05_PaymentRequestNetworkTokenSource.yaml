@@ -40,11 +40,13 @@ allOf:
       cryptogram:
         type: string
         description: The Base64 encoded cryptographic identifier (TAVV) used by card schemes to validate the token verification result. Optional if `previous_payment_id` is specified and `3ds.enabled` is false
+        maxLength: 50
         example: hv8mUFzPzRZoCAAAAAEQBDMAAAA=
       eci:
         type: string
         description: |
           The Electronic Commerce Indicator (ECI) security level associated with the token. Optional if `previous_payment_id` is specified and `3ds.enabled` is false
+        maxLength: 2
         example: "05"
       stored:
         type: boolean
