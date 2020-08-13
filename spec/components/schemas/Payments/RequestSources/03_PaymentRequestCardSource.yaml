@@ -12,6 +12,7 @@ allOf:
       number:
         type: string
         description: The card number (without separators)
+        maxLength: 19
         example: "4543474002249996"
       expiry_month:
         type: integer
@@ -29,6 +30,7 @@ allOf:
       name:
         type: string
         description: The name of the cardholder
+        maxLength: 255
         example: "Bruce Wayne"
       cvv:
         type: string

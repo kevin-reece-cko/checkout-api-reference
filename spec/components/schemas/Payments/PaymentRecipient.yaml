@@ -5,6 +5,7 @@ properties:
     type: string
     format: date
     description: The recipient's date of birth (yyyy-mm-dd)
+    maxLength: 10
     example: "1985-05-15"
   account_number:
     type: string
@@ -15,12 +16,15 @@ properties:
   zip:
     type: string
     description: The first part of the UK postcode (e.g., W1T 4TJ would be W1T)
+    maxLength: 50
     example: "W1T"
   first_name:
     type: string
     description: The recipient's first name
+    maxLength: 50
     example: "John"
   last_name:
     type: string
     description: The recipient's last name
+    maxLength: 50
     example: "Jones"
