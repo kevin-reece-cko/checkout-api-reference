@@ -30,7 +30,7 @@ properties:
     example: Recurring
   reference:
     type: string
-    description: A reference you can later use to identify this payment, such as an order number; a Required field when processing via dLocal or Bambora.
+    description: A reference you can later use to identify this payment, such as an order number. Required when processing via dLocal or Bambora.
     example: "ORD-5023-4E89"
   description:
     type: string
