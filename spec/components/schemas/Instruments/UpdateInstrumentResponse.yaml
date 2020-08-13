@@ -1,0 +1,14 @@
+type: object
+required:
+  - type
+  - fingerprint
+properties:
+    type:
+        description: The instrument type
+        type: string
+        example: card
+    fingerprint:
+        type: string
+        description: A token that can uniquely identify this card across all customers.
+        pattern: ^([a-z0-9]{26})$
+        example: vnsdrvikkvre3dtrjjvlm5du4q

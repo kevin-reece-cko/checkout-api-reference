@@ -2,7 +2,9 @@ type: object
 properties:
   country_code:
     type: string
+    description: The international <a href="https://docs.checkout.com/resources/codes/country-codes" target="blank">country calling code</a>
     example: '975'
   number:
     type: string
     example: '174217187'
+    description: The phone number
