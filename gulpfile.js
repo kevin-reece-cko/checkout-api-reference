@@ -6,9 +6,14 @@ var connect = require('connect');
 var cors = require('cors');
 var portfinder = require('portfinder');
 var swaggerRepo = require('swagger-repo');
+var fs = require('fs');
 const { watch } = require('gulp');
 
 var DIST_DIR = 'web_deploy';
+
+if (!fs.existsSync(DIST_DIR)) {
+    fs.mkdirSync(DIST_DIR);
+}
 
 gulp.task('build', function () {
     return gulp.src(DIST_DIR).pipe(exec('npm run build'));

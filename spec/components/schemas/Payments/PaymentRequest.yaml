@@ -30,7 +30,7 @@ properties:
     example: Recurring
   reference:
     type: string
-    description: A reference you can later use to identify this payment, such as an order number
+    description: A reference you can later use to identify this payment, such as an order number. Required when processing via dLocal or Bambora.
     maxLength: 50
     example: "ORD-5023-4E89"
   description:
@@ -133,19 +133,19 @@ properties:
             example: "MX"
           payer:
             type: object
-            description: Details about the cardholder.
+            description: Details about the customer. These details may differ from those of the cardholder.
             properties:
               document:
                 type: string
-                description: The cardholder's personal identification number. The identification required is country-specific. See the <a href="https://docs.dlocal.com/api-documentation/payins-api-reference/country-reference#documents" target="_blank">dLocal documentation</a> for more information.
-                example: "DocumentId"
+                description: The customer's personal identification number. The identification required is country-specific. See the <a href="https://docs.dlocal.com/api-documentation/payins-api-reference/country-reference#documents" target="_blank">dLocal documentation</a> for more information.
+                example: "5305305305"
               name:
                 type: string
-                description: The cardholder's full name.
+                description: The customer's full name.
                 example: "John Doe"
               email:
                 type: string
-                description: The cardholder's email address.
+                description: The customer's email address.
                 example: "john.doe@example.com"
           installments:
             type: object

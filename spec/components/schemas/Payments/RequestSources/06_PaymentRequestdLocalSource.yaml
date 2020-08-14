@@ -1,0 +1,12 @@
+type: object
+description: A card payment source
+allOf:
+  - $ref: "#/components/schemas/PaymentRequestSource"
+  - $ref: "#/components/schemas/03_PaymentRequestCardSource"
+  - type: object
+    properties:
+      number:
+        type: string
+        description: The LATAM local card scheme card number (without separators)
+        example: "4543474002249996" 
+ 
