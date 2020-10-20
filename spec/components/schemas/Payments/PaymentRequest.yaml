@@ -28,6 +28,9 @@ properties:
       - MOTO
     default: Regular
     example: Recurring
+  merchant_initiated:
+    type: boolean
+    description: Flags the payment as a merchant-initiated transaction (MIT). <a href="https://docs.checkout.com/quickstart/use-an-existing-card/stored-card-details" target="_blank">Must be set to `true` for all MITs</a>.
   reference:
     type: string
     description: A reference you can later use to identify this payment, such as an order number. Required when processing via dLocal or Bambora.
