@@ -121,7 +121,54 @@ properties:
     properties:
       senderInformation:
         type: object
-        description: Allows you to send <a href="https://docs.checkout.com/payment-actions/pay-out-to-a-card/sender-data-for-payouts" target="_blank">additional data</a> required for Visa Direct Original Credit Transaction (OCT) and Mastercard Moneysend payments.
+        description: Allows you to send additional data required for Visa Direct Original Credit Transaction (OCT) and Mastercard Moneysend payments. Only required when sending transactions on behalf of another person or business. <a href="https://docs.checkout.com/payment-actions/pay-out-to-a-card/sender-data-for-payouts" target="_blank">See our documentation for specific requirements</a>.
+        properties:
+          reference:
+            type: string
+            description: Merchant's unique customer ID.
+            maxLength: 19
+          accountNumber:
+            type: string
+            description: The account number.
+            maxLength: 19
+          firstName:
+            type: string
+            description: The first name.
+            maxLength: 15
+          lastName:
+            type: string
+            description: The last name.
+            maxLength: 15
+          address:
+            type: string
+            description: The address.
+            maxLength: 35
+          city:
+            type: string
+            description: The address city.
+            maxLength: 25
+          state:
+            type: string
+            description: The state or province of the address country (<a href="https://en.wikipedia.org/wiki/ISO_3166-2" target="_blank">ISO 3166-2 code</a> of up to three alphanumeric characters).
+            maxLength: 3
+          country:
+            type: string
+            description: The address country (two-letter <a href="https://docs.checkout.com/resources/codes/country-codes" target="_blank">ISO country code</a>).
+            maxLength: 2
+          postalCode:
+            type: string
+            description: The post/zip code.<br><i>Only required for Mastercard transactions</i>.
+            maxLength: 10
+          sourceOfFunds:
+            type: string
+            description: The source of the funds.
+            enum:
+            - Credit
+            - Debit
+            - Prepaid
+            - DepositAccount
+            - MobileMoneyAccount
+            - Cash
   metadata:
     type: object
     description: Allows you to store additional information about a transaction with custom fields and up to five user-defined fields (`udf1` to `udf5`), which can be used for reporting purposes. `udf1` is also used for some of our risk rules.
