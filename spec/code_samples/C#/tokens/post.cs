@@ -1,4 +1,4 @@
-var api = CheckoutApi.Create("your secret key");
+var api = CheckoutApi.Create("your secret key", useSandbox: true, "your public key");
 var tokenData = new Dictionary<string, object>
 {
   { "version", "EC_v1" },
