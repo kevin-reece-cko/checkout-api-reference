@@ -37,6 +37,6 @@ properties:
                 type: string 
                 example: cus_gajmdgunwwlehbctuj6a3sifpm
             default: 
-                description: If true, sets this instrument as the default for the customer
+                description: If true, sets this instrument as the default for the customer (if false, no changes are actioned)
                 type: boolean
                 example: true

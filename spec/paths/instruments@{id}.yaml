@@ -43,7 +43,7 @@ patch:
         type: string
         pattern: "^(src)_(\\w{26})$"
       required: true
-      description: The instrument id
+      description: The instrument ID
   requestBody:
     required: true
     content:
