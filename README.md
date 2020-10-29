@@ -34,7 +34,7 @@
 1. Your contribution should have a JIRA ticket on the [Documentation Board](https://checkout.atlassian.net/projects/DOCS/board)
 2. Name your branch `<type>/<JIRA-issue-key>-<JIRA-issue-title>`  
 *for example: "task/DOCS-534-add-oas3-operationid"*
-3. Work, push, commit
+3. Work, commit, push
 4. Have a break, drink some coffee
 5. Repeat (3) through (4) until finished
 6. Create a PR and request review from  
