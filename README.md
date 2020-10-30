@@ -18,7 +18,7 @@
 
 1. Install [Node JS](https://nodejs.org/)
 2. Install [dotnet cli](https://dotnet.microsoft.com/download)
-3. Clone repo and iside the repo directory
+3. Clone repo and inside the repo directory
     - Run `npm install`
 
 ### Usage
