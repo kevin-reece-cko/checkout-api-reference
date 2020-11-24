@@ -25,6 +25,7 @@ discriminator:
     fawry: '#/components/schemas/PaymentResponseFawrySource'
     qpay: '#/components/schemas/PaymentResponseQPaySource'
     multibanco: '#/components/schemas/PaymentResponseMultibancoSource'
+    sofortv2: '#/components/schemas/PaymentResponseSofortV2Source'
 required:
   - type
 

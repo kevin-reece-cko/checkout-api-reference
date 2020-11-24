@@ -1,4 +1,20 @@
+###
+# Warning: this file was auto generated from OpenAPI specs using 'npm run sync-generated-specs'. Do not manually edit. 
+###
 type: object
-description: A Sofort payment source
+description: 'Sofort Source'
 allOf:
-  - $ref: "#/components/schemas/PaymentResponseSource"
+  -
+    $ref: '#/components/schemas/PaymentResponseSource'
+  -
+    type: object
+    properties:
+      iban:
+        type: string
+        description: 'IBAN of a payer, available when a payment is authorised.'
+      bic:
+        type: string
+        description: 'BIC of a payer, available when a payment is authorised.'
+      account_holder_name:
+        type: string
+        description: 'The name of a payer, available when a payment is authorised.'

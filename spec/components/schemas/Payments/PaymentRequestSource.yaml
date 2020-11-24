@@ -29,6 +29,7 @@ discriminator:
     qpay: '#/components/schemas/PaymentRequestQPaySource'
     multibanco: '#/components/schemas/PaymentRequestMultibancoSource'
     dLocal: '#/components/schemas/06_PaymentRequestdLocalSource'
+    sofortv2: '#/components/schemas/PaymentRequestSofortV2Source'
 required:
   - type
 properties:
