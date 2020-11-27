@@ -123,7 +123,7 @@ var getFunctionToBuildPaymentResponse = function(paymentSourceName) {
 var getFunctionToBuildYaml = function(buildOutputFunction) {
   return function(responseBody) {
     var builtOutput = buildOutputFunction(responseBody);
-    var generatedFileWarningComment = '###\n# Warning: this file was auto generated from OpenAPI specs using \'npm run sync-generated-specs\'. Do not manually edit. \n###\n';
+    var generatedFileWarningComment = '###\n# Warning: this file was auto generated from OpenAPI specs. Do not manually edit. \n###\n';
     return generatedFileWarningComment + YAML.stringify(builtOutput, 20, 2);
   };
 };

@@ -1,4 +1,6 @@
-var specs = require('./specs');
+// To run this script use the command 'npm run sync-generated-apm-specs-legacy-aws-env' on the LON VPN Profile. 
+
+var specs = require('./sync-specs');
 
 specs.syncPaymentRequest('Giropay', 'http://sb-gateway-internal.cko.lon/giropay-internal/giropay/relations/gw/pay');
 specs.syncPaymentResponse('Giropay', 'http://sb-gateway-internal.cko.lon/giropay-internal/giropay/relations/gw/payment');
@@ -32,5 +34,3 @@ specs.syncPaymentRequest('RapiPago', 'http://sb-gateway-internal.cko.lon/dlocal-
 specs.syncPaymentResponse('RapiPago', 'http://sb-gateway-internal.cko.lon/dlocal-internal/rapipago/relations/gw/payment');
 specs.syncPaymentRequest('Baloto', 'http://sb-gateway-internal.cko.lon/dlocal-internal/baloto/relations/gw/pay');
 specs.syncPaymentResponse('Baloto', 'http://sb-gateway-internal.cko.lon/dlocal-internal/baloto/relations/gw/payment');
-specs.syncPaymentRequest('Sofort', 'https://apm-sofort.cko-sbox.ckotech.co/relations/gw/pay');
-specs.syncPaymentResponse('Sofort', 'https://apm-sofort.cko-sbox.ckotech.co/relations/gw/payment');
