@@ -1,4 +1,17 @@
+###
+# Warning: this file was auto generated from OpenAPI specs using 'npm run sync-generated-specs'. Do not manually edit. 
+###
 type: object
-description: Sofort Source
+description: 'Sofort Source'
 allOf:
-  - $ref: "#/components/schemas/PaymentRequestSource"
+  -
+    $ref: '#/components/schemas/PaymentRequestSource'
+  -
+    type: object
+    properties:
+      countryCode:
+        type: string
+        description: 'The ISO 3166-1 alpha-2 country code. For example DE, FR, IT.'
+      languageCode:
+        type: string
+        description: 'The ISO 639-1 language code. For example de, fr, it.'

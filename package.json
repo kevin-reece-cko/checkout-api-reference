@@ -26,6 +26,7 @@
     "test": "swagger-cli validate --no-schema web_deploy/swagger.yaml",
     "start": "gulp serve",
     "deploy-branch": "node ./scripts/deploy-branch.js",
-    "sync-generated-specs": "node ./scripts/sync-generated-specs.js"
+    "sync-generated-apm-specs": "node ./scripts/sync-generated-apm-specs.js",
+    "sync-generated-apm-specs-legacy-aws-env": "node ./scripts/sync-generated-apm-specs-legacy-aws-env.js"
   }
 }

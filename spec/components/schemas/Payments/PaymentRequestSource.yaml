@@ -23,12 +23,12 @@ discriminator:
     paypal: '#/components/schemas/PaymentRequestPayPalSource'
     poli: '#/components/schemas/PaymentRequestPoliSource'
     rapipago: '#/components/schemas/PaymentRequestRapiPagoSource'
-    sofort: '#/components/schemas/PaymentRequestSofortSource'
     bancontact: '#/components/schemas/PaymentRequestBancontactSource'
     fawry: '#/components/schemas/PaymentRequestFawrySource'
     qpay: '#/components/schemas/PaymentRequestQPaySource'
     multibanco: '#/components/schemas/PaymentRequestMultibancoSource'
     dLocal: '#/components/schemas/06_PaymentRequestdLocalSource'
+    sofort: '#/components/schemas/PaymentRequestSofortSource'
 required:
   - type
 properties:

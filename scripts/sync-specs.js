@@ -7,42 +7,6 @@ require('shelljs/global');
 set('-e');
 set('-v');
 
-var syncPaymentSources = function()
-{
-  syncPaymentRequest('Giropay', 'http://sb-gateway-internal.cko.lon/giropay-internal/giropay/relations/gw/pay');
-  syncPaymentResponse('Giropay', 'http://sb-gateway-internal.cko.lon/giropay-internal/giropay/relations/gw/payment');
-  syncPaymentRequest('Eps', 'http://sb-gateway-internal.cko.lon/giropay-internal/eps/relations/gw/pay');
-  syncPaymentResponse('Eps', 'http://sb-gateway-internal.cko.lon/giropay-internal/eps/relations/gw/payment');
-  syncPaymentRequest('Ideal', 'http://sb-gateway-internal.cko.lon/ideal-internal-api/relations/gw/pay');
-  syncPaymentResponse('Ideal', 'http://sb-gateway-internal.cko.lon/ideal-internal-api/relations/gw/payment');
-  syncPaymentRequest('Klarna', 'http://sb-gateway-internal.cko.lon/klarna-internal/relations/gw/pay');
-  syncPaymentResponse('Klarna', 'http://sb-gateway-internal.cko.lon/klarna-internal/relations/gw/payment');
-  syncPaymentRequest('Knet', 'http://sb-gateway-internal.cko.lon/knet-internal/relations/gw/pay');
-  syncPaymentResponse('Knet', 'http://sb-gateway-internal.cko.lon/knet-internal/relations/gw/payment');
-  syncPaymentRequest('Bancontact', 'http://sb-gateway-internal.cko.lon/ppro-internal/bancontact/relations/gw/pay');
-  syncPaymentResponse('Bancontact', 'http://sb-gateway-internal.cko.lon/ppro-internal/bancontact/relations/gw/payment');
-  syncPaymentRequest('Fawry', 'http://sb-gateway-internal.cko.lon/fawry-internal/relations/gw/pay');
-  syncPaymentResponse('Fawry', 'http://sb-gateway-internal.cko.lon/fawry-internal/relations/gw/payment');
-  syncPaymentRequest('QPay', 'http://sb-gateway-internal.cko.lon/qpay-internal/relations/gw/pay');
-  syncPaymentResponse('QPay', 'http://sb-gateway-internal.cko.lon/qpay-internal/relations/gw/payment');
-  syncPaymentRequest('P24', 'http://sb-gateway-internal.cko.lon/ppro-internal/p24/relations/gw/pay');
-  syncPaymentResponse('P24', 'http://sb-gateway-internal.cko.lon/ppro-internal/p24/relations/gw/payment');
-  syncPaymentRequest('Multibanco', 'http://sb-gateway-internal.cko.lon/ppro-internal/multibanco/relations/gw/pay');
-  syncPaymentResponse('Multibanco', 'http://sb-gateway-internal.cko.lon/ppro-internal/multibanco/relations/gw/payment');
-  syncPaymentRequest('BenefitPay', 'http://sb-gateway-internal.cko.lon/benefitpay-internal/relations/gw/pay');
-  syncPaymentResponse('BenefitPay', 'http://sb-gateway-internal.cko.lon/benefitpay-internal/relations/gw/payment');
-  syncPaymentRequest('OXXO', 'http://sb-gateway-internal.cko.lon/dlocal-internal/oxxo/relations/gw/pay');
-  syncPaymentResponse('OXXO', 'http://sb-gateway-internal.cko.lon/dlocal-internal/oxxo/relations/gw/payment');
-  syncPaymentRequest('Boleto', 'http://sb-gateway-internal.cko.lon/dlocal-internal/boleto/relations/gw/pay');
-  syncPaymentResponse('Boleto', 'http://sb-gateway-internal.cko.lon/dlocal-internal/boleto/relations/gw/payment');
-  syncPaymentRequest('PagoFacil', 'http://sb-gateway-internal.cko.lon/dlocal-internal/pagofacil/relations/gw/pay');
-  syncPaymentResponse('PagoFacil', 'http://sb-gateway-internal.cko.lon/dlocal-internal/pagofacil/relations/gw/payment');
-  syncPaymentRequest('RapiPago', 'http://sb-gateway-internal.cko.lon/dlocal-internal/rapipago/relations/gw/pay');
-  syncPaymentResponse('RapiPago', 'http://sb-gateway-internal.cko.lon/dlocal-internal/rapipago/relations/gw/payment');
-  syncPaymentRequest('Baloto', 'http://sb-gateway-internal.cko.lon/dlocal-internal/baloto/relations/gw/pay');
-  syncPaymentResponse('Baloto', 'http://sb-gateway-internal.cko.lon/dlocal-internal/baloto/relations/gw/payment');
-}
-
 var syncPaymentRequest = function(paymentSourceName, paymentSpecUrl) {
   var outputFilename =  'PaymentRequest' + paymentSourceName + 'Source.yaml'
   var outputFilePath = 'spec/components/schemas/Payments/RequestSources/' + outputFilename;
@@ -159,7 +123,7 @@ var getFunctionToBuildPaymentResponse = function(paymentSourceName) {
 var getFunctionToBuildYaml = function(buildOutputFunction) {
   return function(responseBody) {
     var builtOutput = buildOutputFunction(responseBody);
-    var generatedFileWarningComment = '###\n# Warning: this file was auto generated from OpenAPI specs using \'npm run sync-generated-specs\'. Do not manually edit. \n###\n';
+    var generatedFileWarningComment = '###\n# Warning: this file was auto generated from OpenAPI specs. Do not manually edit. \n###\n';
     return generatedFileWarningComment + YAML.stringify(builtOutput, 20, 2);
   };
 };
@@ -193,4 +157,5 @@ var thenHandleFileWrite = function(outputFilePath) {
   }
 }; 
 
-syncPaymentSources();
+exports.syncPaymentRequest = syncPaymentRequest;
+exports.syncPaymentResponse = syncPaymentResponse;
