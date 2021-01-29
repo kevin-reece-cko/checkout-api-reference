@@ -39,5 +39,5 @@ properties:
     enum:
       - low_value
       - secure_corporate_payment
-      - 3ds_outage
+      - trusted_listing
     example: "low_value"
