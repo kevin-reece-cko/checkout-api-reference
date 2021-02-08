@@ -112,7 +112,11 @@ body {
 
 /* General text elements */
 
-.redoc-wrap p, h1, h1 a, h3, th, td, span.sc-jKJlTe.eZZMfQ {
+.redoc-wrap p, h1, h1 a, h3, th, td, span.sc-jKJlTe.eZZMfQ,label.jIStei,
+span.sc-fzqKxP.dvqdvD,
+h5, 
+span.sc-fzpkJw.hctKJM, 
+body.dark button span {
   color: var(--secondary-text) !important;
 }
 
@@ -283,7 +287,7 @@ span.sc-cHGsZl.sc-jqCOkK.beUper {
   background: none;
 }
 
-code, .evgDyP, .sc-cHGsZl.sc-jbKcbu.bMfIUD {
+code, .evgDyP, .sc-cHGsZl.sc-jbKcbu.bMfIUD{
   font-family: Courier, monospace !important;
   font-style: italic !important;
   background: var(--S10) !important;
@@ -338,14 +342,14 @@ td.dz44d2-1 {
   font-family: Courier, monospace;
 }
 
-li.sc-eNQAEJ.gYsnwL {
+.fvfRMB { /*Redoc upgrate changed these to buttons not li*/
   background: var(--primary-button) !important;
   border: 1px solid var(--primary-button) !important;
   font-weight: 500;
   color: var(--primary-button-color) !important;
 }
 
-li.sc-eNQAEJ.jdXjUh {
+.kCktTl {
   color: var(--primary-text);
   border: 1px solid var(--border);
   background-color: unset;
@@ -766,6 +770,65 @@ code span {
   fill: var(--secondary-text) !important;
 }
 
-.sc-bxivhb li {
+div.sc-AxhCb.iWvlZG li {
   color: var(--secondary-text) !important;
+}
+
+/*Chrisi quick fixes */
+
+/*DARK THEME CHANGES*/
+
+/*Just stuck to the navy color - so had to remove it and then insert it with css*/
+body.dark div.logiML
+ {
+  background-color: transparent !important;
+  background: url('favicons/white-logo.svg') no-repeat center;
+  padding-top: 50px;
+}
+body.dark div.sc-fzppip img {
+  display: none;
+}
+
+/* LIGHT THEME CHANGES */
+
+/*Logo really close to the top on the light theme*/
+body.light div.logiML {
+  padding-top: 40px;
+}
+
+/*BOTH THEME CHANGES*/
+
+/*New darker background appeared */
+
+body.light div.eIeJha,
+body.dark div.eIeJha {
+  background-color: transparent;
+}
+
+/*There are new boxes above the response examples*/
+
+body.light span.yvLAA {
+  font-weight: 800;
+  top: 0;
+  color: var(--cko-dark-blue);
+}
+
+body.light div.hHgrjJ {
+  color: white;
+  padding: 1.5em 1.6em 0.9em 0.9em;
+}
+
+body.light div.iFDKZT.iFDKZT {
+  padding: 1.2em 2em 0.9em 0.9em;
+}
+
+/*Plus symbols were white on the responses*/
+
+.fAIZSm .collapsed > .collapser::after {
+  color: var(--code-param);
+}
+
+/*Changing the endpoint drop down to navy*/
+button.sc-qQmou.hnIgFW{
+  background-color: var(--url-area) !important;
 }
