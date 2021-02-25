@@ -35,9 +35,9 @@ properties:
     example: "2.0.1"
   exemption:
     type: string
-    description: Specifies an exemption reason so that the payment is not processed using 3D Secure authentication
+    description: Specifies an exemption reason so that the payment is not processed using 3D Secure authentication. Learn more about exemptions in our <a href="https://docs.checkout.com/risk-management/sca-compliance-guide#SCAcomplianceguide-PossibleSCAexemptionsexemptions">SCA compliance guide</a>.
     enum:
       - low_value
       - secure_corporate_payment
-      - 3ds_outage
+      - trusted_listing
     example: "low_value"

@@ -32,7 +32,7 @@
 
 ### Contribute
 
-1. Your contribution should have a JIRA ticket on the [Documentation Board](https://checkout.atlassian.net/projects/DOCS/board)
+1. Your contribution should have a JIRA ticket on the [Documentation Board](https://checkout.atlassian.net/secure/RapidBoard.jspa?rapidView=543&projectKey=DOC)
 2. Name your branch `<type>/<JIRA-issue-key>-<JIRA-issue-title>`  
 *for example: "task/DOCS-534-add-oas3-operationid"*
 3. Work, commit, push
@@ -40,7 +40,7 @@
 5. Repeat (3) through (4) until finished
 6. Create a PR and request review from  
     - a peer developer (if necessary)
-    - [@Toby Knott](https://github.com/toby-knott-cko) and [@Jack Hutchinson](https://github.com/jack-hutchinson-cko)
+    - [@Toby Knott](https://github.com/toby-knott-cko), [@Jack Hutchinson](https://github.com/jack-hutchinson-cko), [@Chrisi Webster](https://github.com/chrisi-webster-cko), or [@Cristina Szilagyi](https://github.com/cristina-szilagyi-cko)
 7. After merging the PR, please check if your branch can be deleted
 
 ### Troubleshooting
