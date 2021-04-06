@@ -77,6 +77,11 @@ x-tagGroups:
     tags: 
       - Tokens
       - Sources
+      - Instruments
+  - name: Manage customers
+    tags: 
+      - Customers
+      - Instruments
   - name: Notifications
     tags:
       - Events
@@ -84,6 +89,6 @@ x-tagGroups:
   - name: Disputes 
     tags: 
       - Disputes
-  - name: Reconciliation
+  - name: Statements and reporting
     tags: 
       - Reconciliation
