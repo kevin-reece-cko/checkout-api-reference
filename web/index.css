@@ -117,7 +117,7 @@ span.sc-fzqKxP.dvqdvD,
 h5, 
 span.sc-fzpkJw.hctKJM, 
 body.dark button span {
-  color: var(--secondary-text) !important;
+  color: var(--secondary-text)!important;
 }
 
 /* Main areas */
@@ -462,6 +462,10 @@ span.sc-jlyJG.evvbxn {
   width: 300px !important;
   border-right: 1px solid var(--background-contrast);
   background-color: var(--sidebar-background) !important;
+}
+
+[type="group"] > span {
+  color: var(--secondary-text);
 }
 
 /* Search box */
