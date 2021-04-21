@@ -1,18 +1,19 @@
 type: object
-description: The customer attached to the instrument
+description: The customer details
+required:
+  - email
 properties:
     email: 
-        description: The email address of the customer
         type: string
+        format: email
+        description: The customer's email address
+        maxLength: 255
         example: JohnTest@test.com
-    name: 
-        description: The name of the customer
+    name:
         type: string
+        description: The customer's name
+        maxLength: 255
         example: John Test
-    default: 
-        description: The instrument ID for this customer’s default instrument
-        type: string
-        example: src_imu3wifxfvlebpqqq5usjrze6y
     phone:
         type: object
         description: The customer's phone number
