@@ -19,7 +19,7 @@ Review from the documentation team is now mandatory. You won't be able to merge 
 
 - Marketplaces
 - Web interfaces
-- General updates with
+- General updates
 
 ### [@Cristina Szilagyi](https://github.com/cristina-szilagyi-cko)
 
