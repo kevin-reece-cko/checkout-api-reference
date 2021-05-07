@@ -1,27 +1,27 @@
-openapi: '3.0.1'
+openapi: "3.0.1"
 info:
-  version: '1.0.0'
+  version: "1.0.0"
   title: Checkout.com API Reference
   x-logo:
     url: "https://assets.checkout.com/docs/logos/logo-checkout-api-dark.svg"
     altText: "Checkout.com API logo"
   contact:
     name: Checkout.com Support
-    url: 'https://checkout.com'
+    url: "https://checkout.com"
     email: support@checkout.com
   license:
     name: Checkout.com
-    url: 'https://checkout.com/api/license/'
-  termsOfService: 'https://checkout.com/terms/'
+    url: "https://checkout.com/api/license/"
+  termsOfService: "https://checkout.com/terms/"
   description: >
     ## Get started
 
     Checkout.com provides a collection of APIs that enable you to process and manage payments. Our APIs accept and return JSON in the HTTP body, and return standard <a href="https://docs.checkout.com/resources/codes/http-response-codes">HTTP response codes</a>. 
 
     You can consume the APIs directly using your favorite HTTP/REST library or make use of one of our <a href="https://docs.checkout.com/quickstart/integrate/sdks" target="_blank">SDKs</a>.  
-    
+
     We have a testing environment called sandbox, which you can <a href="https://www.checkout.com/get-test-account">sign up for</a> to test API calls without affecting live data.
-    
+
     ### Looking for more guidance?
 
     Depending on what integration you need, we've provided <a href="https://docs.checkout.com/quickstart/">guides to get you set up</a>.
@@ -72,22 +72,19 @@ x-tagGroups:
       - Payments
       - Payment Links
       - Hosted Payments Page
-  - name: Payment methods
-    tags: 
+  - name: Stored payment details
+    tags:
       - Tokens
       - Sources
       - Instruments
-  - name: Manage customers
-    tags: 
       - Customers
-      - Instruments
   - name: Notifications
     tags:
       - Events
       - Webhooks
-  - name: Disputes 
-    tags: 
+  - name: Disputes
+    tags:
       - Disputes
   - name: Statements and reporting
-    tags: 
+    tags:
       - Reconciliation
