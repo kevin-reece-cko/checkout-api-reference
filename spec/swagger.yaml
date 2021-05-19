@@ -18,17 +18,17 @@ info:
 
     Checkout.com provides a collection of APIs that enable you to process and manage payments. Our APIs accept and return JSON in the HTTP body, and return standard <a href="https://docs.checkout.com/resources/codes/http-response-codes">HTTP response codes</a>. 
 
-    You can consume the APIs directly using your favorite HTTP/REST library or make use of one of our <a href="https://docs.checkout.com/quickstart/integrate/sdks" target="_blank">SDKs</a>.  
+    You can consume the APIs directly using your favorite HTTP/REST library or make use of one of our <a href="https://docs.checkout.com/integrate/sdks" target="_blank">SDKs</a>.  
 
     We have a testing environment called sandbox, which you can <a href="https://www.checkout.com/get-test-account">sign up for</a> to test API calls without affecting live data.
 
     ### Looking for more guidance?
 
-    Depending on what integration you need, we've provided <a href="https://docs.checkout.com/quickstart/">guides to get you set up</a>.
+    Depending on what integration you need, we've provided <a href="https://docs.checkout.com/integrate/">guides to get you set up</a>.
 
     ### Not using APIs?
 
-    We've partnered with many popular <a href="https://docs.checkout.com/quickstart/integrate/e-commerce-platforms">e-commerce platforms</a> so you can get up and running quickly, processing online payments with one of our e-commerce plugins.
+    We've partnered with many popular <a href="https://docs.checkout.com/integrate/e-commerce-platforms">e-commerce platforms</a> so you can get up and running quickly, processing online payments with one of our e-commerce plugins.
 
     # Authentication
 
