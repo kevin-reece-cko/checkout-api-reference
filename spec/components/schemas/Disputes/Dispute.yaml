@@ -21,7 +21,7 @@ properties:
   reason_code:
     type: string
     description: The reason code provided by the card scheme
-    example: "C42"
+    example: "10.4"
   status:
     type: string
     description: The current status of the dispute

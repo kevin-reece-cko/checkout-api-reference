@@ -23,6 +23,10 @@ properties:
     type: string
     description: The currency the payment was made in
     example: "GBP"
+  reason_code:
+    type: string
+    description: The reason code provided by the card scheme
+    example: "12.4"
   payment_id:
     type: string
     description: The unique payment identifier
