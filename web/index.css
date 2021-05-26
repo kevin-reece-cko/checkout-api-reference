@@ -77,7 +77,7 @@
   --sidebar-background: var(--cko-dark-blue);
   --toggle-bg: var(--S500);
   --primary-text: var(--cko-white);
-  --secondary-text: var(--cko-light-grey);
+  --secondary-text: var(--S10);
   --logo: url("./favicons/white-logo.svg");
   --header-link: url("./favicons/link-gray.svg");
   --link-color: var(--cko-bright-blue);
