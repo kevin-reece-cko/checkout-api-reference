@@ -1,7 +1,46 @@
 @import "font.css";
 
 :root {
-  --primary-dark-blue: #0C1141;
+  --S00: #FFFFFF;
+  --S05: #E6E7EC;
+  --S10: #F0F3F7;
+  --S20: #B6B8C6;
+  --S90: #9EA0B4;
+  --S100: #8688A0;
+  --S300: #6D708E;
+  --S500: #55587B;
+  --S700: #3D4168;
+  --S800: #242955;
+  --S1000: #0C1142;
+  --Y10: #141407;
+  --Y20: #FFFFEE;
+  --Y30: #FFFFE9;
+  --Y40: #FFFFE3;
+  --Y50: #FFFFDE;
+  --Y60: #FFFFD8;
+  --Y70: #FFFFD3;
+  --Y80: #FFFFCE;
+  --Y500: #F3C25D;
+  --T10: #D5F6F8;
+  --T20: #C0F2F4;
+  --T40: #AAEEF1;
+  --T60: #95EAED;
+  --T80: #80E5E9;
+  --T100: #6BE1E6;
+  --T200: #55DDE2;
+  --T300: #40D8DF;
+  --T500: #3AB9F4;
+  --B500: #0082D9;
+  --P10: #F5F5FC;
+  --P600: #6964B3;
+  --R10: #FFF8F7;
+  --R500: #EE6D5F;
+  --R800: #CC4B3D;
+  --G20: #E4F4F0;
+  --G500: #00B48F;
+  --G700: #009E7E;
+
+  --primary-dark-blue: var(--S1000);
   --secondary-dark-blue: #0C1142;
   --cko-dark-blue: #090C30;
   --cko-dark-contrast-blue: #242955;
@@ -31,17 +70,6 @@
   --cko-http-patch-color: #fab82b;
   --cko-http-del-color: #fd755f;
 
-  --S00: #FFFFFF;
-  --S05: #E6E7EC;
-  --S10: #F0F3F7;
-  --S20: #B6B8C6;
-  --S90: #9EA0B4;
-  --S100: #8688A0;
-  --S300: #6D708E;
-  --S500: #55587B;
-  --S700: #3D4168;
-  --S800: #242955;
-  --S1000: #0C1142;
 }
 
 .dark {
@@ -70,6 +98,7 @@
   --code-value-link: var(--cko-green);
   --code-value-bool: var(--cko-green);
   --code-value-number: var(--T500);
+  --code-label-background: var(--S800);
   --primary-button-color: var(--cko-dark-blue);
   --example-area-background: var(--cko-dark-blue);
   --request-body-content-background: var(--cko-dark-blue);
@@ -105,6 +134,7 @@
   --code-value-link: var(--cko-green);
   --code-value-bool: var(--cko-green);
   --code-value-number: var(--cko-red);
+  --code-label-background: var(--P10);
   --primary-button-color: var(--cko-dark-blue);
   --example-area-background: var(--cko-white);
   --request-body-content-background: var(--cko-white);
@@ -217,8 +247,13 @@ span.sc-fzpkJw.hctKJM {
   color: var(--secondary-text)!important;
 }
 
-body.dark button {
-  color: var(--primary-text)!important;
+button {
+  border-radius: 4px;
+  padding: 3px 8px;
+}
+
+.eDnpFZ {
+  color: var(--R500);
 }
 
 /* Main areas */
@@ -300,7 +335,7 @@ ul[role="navigation"] label:hover {
 /* Hyperlink hover */
 
 a:hover {
-  color: var(--link-hover) !important;
+  color: var(--primary-text) !important;
   text-decoration: underline !important;
 }
 
@@ -600,6 +635,11 @@ span.sc-jlyJG.evvbxn {
   color: var(--secondary-text);
 }
 
+code {
+  background-color: var(--code-label-background)!important;
+  color: var(--primary-text)!important;
+}
+
 /* Search box */
 
 div[role="search"] {
@@ -615,7 +655,7 @@ div[role="search"] {
 }
 
 input.search-input {
-  font-weight: 300;
+  font-weight: 400;
   color: var(--primary-text);
 }
 
