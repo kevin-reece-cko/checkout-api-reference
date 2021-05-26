@@ -4,8 +4,8 @@
   --cko-dark-contrast-blue: #121a58; */
   --primary-dark-blue: #0C1141;
   --secondary-dark-blue: #0C1142;
-  --cko-dark-blue: #202124;
-  --cko-dark-contrast-blue: #2c3034;
+  --cko-dark-blue: #090C30;
+  --cko-dark-contrast-blue: #242955;
   --cko-green: #02b48f;
   --cko-light-green: rgb(45, 179, 136, 0.5);
   --cko-light-green: rgb(45, 179, 136, 0.5);
@@ -31,11 +31,24 @@
   --cko-http-put-color: #b77ba1;
   --cko-http-patch-color: #fab82b;
   --cko-http-del-color: #fd755f;
+
+  --S00: #FFFFFF;
+  --S05: #E6E7EC;
+  --S10: #F0F3F7;
+  --S20: #B6B8C6;
+  --S90: #9EA0B4;
+  --S100: #8688A0;
+  --S300: #6D708E;
+  --S500: #55587B;
+  --S700: #3D4168;
+  --S800: #242955;
+  --S1000: #0C1142;
 }
 
 .dark {
   --background: var(--cko-dark-blue);
   --sidebar-background: var(--cko-dark-blue);
+  --toggle-bg: var(--S500);
   --primary-text: var(--cko-white);
   --secondary-text: var(--cko-light-grey);
   --logo: url("./favicons/white-logo.svg");
@@ -53,11 +66,11 @@
   --secondary-button: var(--cko-yellow);
   --code-background: var(--cko-dark-contrast-blue);
   --code-bracket: var(--cko-code-yellow);
-  --code-param: var(--cko-code-blue);
-  --code-string: var(--cko-code-green);
+  --code-param: white;
+  --code-string: var(--cko-red);
   --code-value-link: var(--cko-green);
   --code-value-bool: var(--cko-green);
-  --code-value-number: var(--cko-bright-blue);
+  --code-value-number: var(--T500);
   --primary-button-color: var(--cko-dark-blue);
   --example-area-background: var(--cko-dark-blue);
   --request-body-content-background: var(--cko-dark-blue);
@@ -70,6 +83,7 @@
 .light {
   --background: var(--cko-white);
   --sidebar-background: var(--cko-grey-tint-blue);
+  --toggle-bg: var(--S1000);
   --primary-text: var(--primary-dark-blue);
   --secondary-text: var(--secondary-dark-blue);
   --logo: url("./favicons/dark-logo.svg");
@@ -88,10 +102,10 @@
   --code-background: var(--sidebar-background);
   --code-bracket: var(--cko-code-gray);
   --code-param: var(--cko-code-light-blue);
-  --code-string: var(--cko-code-orange);
+  --code-string: #6964B3;
   --code-value-link: var(--cko-green);
   --code-value-bool: var(--cko-green);
-  --code-value-number: var(--cko-bright-blue);
+  --code-value-number: var(--cko-red);
   --primary-button-color: var(--cko-dark-blue);
   --example-area-background: var(--cko-white);
   --request-body-content-background: var(--cko-white);
@@ -101,8 +115,93 @@
   --url-area: var(--primary-dark-blue);
 }
 
+/*===========================================
+ = 	              	Fonts	              	  =
+============================================*/
+
+@font-face {
+  font-family: 'Graphik LCG Web';
+  src: url('./fonts/Graphik-Super-Cy-Gr-Web.woff2') format('woff2'),
+       url('./fonts/Graphik-Super-Cy-Gr-Web.woff') format('woff');
+  font-weight:  900;
+  font-style:   normal;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: 'Graphik LCG Web';
+  src: url('./fonts/Graphik-Black-Cy-Gr-Web.woff2') format('woff2'),
+       url('./fonts/Graphik-Black-Cy-Gr-Web.woff') format('woff');
+  font-weight:  800;
+  font-style:   normal;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: 'Graphik LCG Web';
+  src: url('./fonts/Graphik-Bold-Cy-Gr-Web.woff2') format('woff2'),
+       url('./fonts/Graphik-Bold-Cy-Gr-Web.woff') format('woff');
+  font-weight:  700;
+  font-style:   normal;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: 'Graphik LCG Web';
+  src: url('./fonts/Graphik-Semibold-Cy-Gr-Web.woff2') format('woff2'),
+       url('./fonts/Graphik-Semibold-Cy-Gr-Web.woff') format('woff');
+  font-weight:  600;
+  font-style:   normal;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: 'Graphik LCG Web';
+  src: url('./fonts/Graphik-Medium-Cy-Gr-Web.woff2') format('woff2'),
+       url('./fonts/Graphik-Medium-Cy-Gr-Web.woff') format('woff');
+  font-weight:  500;
+  font-style:   normal;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: 'Graphik LCG Web';
+  src: url('./fonts/Graphik-Regular-Cy-Gr-Web.woff2') format('woff2'),
+       url('./fonts/Graphik-Regular-Cy-Gr-Web.woff') format('woff');
+  font-weight:  400;
+  font-style:   normal;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: 'Graphik LCG Web';
+  src: url('./fonts/Graphik-Light-Cy-Gr-Web.woff2') format('woff2'),
+       url('./fonts/Graphik-Light-Cy-Gr-Web.woff') format('woff');
+  font-weight:  300;
+  font-style:   normal;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: 'Graphik LCG Web';
+  src: url('./fonts/Graphik-Extralight-Cy-Gr-Web.woff2') format('woff2'),
+       url('./fonts/Graphik-Extralight-Cy-Gr-Web.woff') format('woff');
+  font-weight:  200;
+  font-style:   normal;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: 'Graphik LCG Web';
+  src: url('./fonts/Graphik-Thin-Cy-Gr-Web.woff2') format('woff2'),
+       url('./fonts/Graphik-Thin-Cy-Gr-Web.woff') format('woff');
+  font-weight:  100;
+  font-style:   normal;
+  font-stretch: normal;
+}
+
 * {
-  font-family: Arial, sans-serif !important;
+  font-family: "Graphik LCG Web", Arial, sans-serif !important;
 }
 
 body {
@@ -115,9 +214,12 @@ body {
 .redoc-wrap p, h1, h1 a, h3, th, td, span.sc-jKJlTe.eZZMfQ,label.jIStei,
 span.sc-fzqKxP.dvqdvD,
 h5, 
-span.sc-fzpkJw.hctKJM, 
-body.dark button span {
+span.sc-fzpkJw.hctKJM {
   color: var(--secondary-text)!important;
+}
+
+body.dark button {
+  color: var(--primary-text)!important;
 }
 
 /* Main areas */
@@ -159,7 +261,16 @@ img.sc-kafWEX.hZCbNs {
 /* Hyperlinks color */
 
 a {
-  color: var(--link-color) !important;
+  color: var(--primary-text)!important;
+  font-weight: 600;
+}
+
+.ldExJi, .iwWBsD, .hKsEtX {
+  color: var(--primary-text)!important;
+}
+
+.jHQZJv {
+  background-color: var(--cko-dark-contrast-blue);
 }
 
 b, strong {
@@ -180,7 +291,7 @@ ul[role="navigation"] label:hover {
 }
 
 [role="menuitem"] > span {
-  color: var(--secondary-text)!important;
+  color: var(--primary-text)!important;
 }
 
 .jwVCIw {
@@ -201,24 +312,26 @@ p {
   font-weight: normal;
 }
 
-h1, h2, h3 {
-  font-weight: 400 !important;
-}
-
 h1 {
   font-size: 40px !important;
   line-height: 44px !important;
+  font-weight: 600!important;
+  color: var(--primary-text)!important;
 }
 
 h2 {
   font-size: 24px !important;
   line-height: 32px !important;
   color: var(--subtitle) !important;
+  font-weight: 600!important;
+  color: var(--primary-text)!important;
 }
 
 h3 {
   font-size: 18px !important;
   line-height: 24px !important;
+  font-weight: 400 !important;
+  color: var(--primary-text)!important;
 }
 
 h4 {
@@ -248,6 +361,14 @@ h1.sc-htoDjs.sc-fYxtnH.dTJWQH {
 .sc-ksYbfQ.sc-hmzhuo.jsTAxL {
   text-transform: uppercase;
   color: var(--required);
+}
+
+.dcDVxm {
+  background-color: var(--cko-dark-contrast-blue)!important;
+}
+
+.hHgrjJ {
+  background-color: var(--cko-dark-blue)!important;
 }
 
 /* Border between params */
@@ -741,7 +862,7 @@ caption {
   z-index: 100;
   top: 20px;
   right: 20px;
-  background-color: grey;
+  background-color: var(--toggle-bg);
   border-radius: 30px;
   cursor: pointer;
   display: flex;
