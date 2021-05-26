@@ -53,11 +53,11 @@
   --secondary-button: var(--cko-yellow);
   --code-background: var(--cko-dark-contrast-blue);
   --code-bracket: var(--cko-code-yellow);
-  --code-param: var(--cko-code-blue);
-  --code-string: var(--cko-code-green);
+  --code-param: white;
+  --code-string: var(--cko-red);
   --code-value-link: var(--cko-green);
   --code-value-bool: var(--cko-green);
-  --code-value-number: var(--cko-bright-blue);
+  --code-value-number: var(--T500);
   --primary-button-color: var(--cko-dark-blue);
   --example-area-background: var(--cko-dark-blue);
   --request-body-content-background: var(--cko-dark-blue);
@@ -88,10 +88,10 @@
   --code-background: var(--sidebar-background);
   --code-bracket: var(--cko-code-gray);
   --code-param: var(--cko-code-light-blue);
-  --code-string: var(--cko-code-orange);
+  --code-string: #6964B3;
   --code-value-link: var(--cko-green);
   --code-value-bool: var(--cko-green);
-  --code-value-number: var(--cko-bright-blue);
+  --code-value-number: var(--cko-red);
   --primary-button-color: var(--cko-dark-blue);
   --example-area-background: var(--cko-white);
   --request-body-content-background: var(--cko-white);
