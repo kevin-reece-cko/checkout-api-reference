@@ -59,7 +59,7 @@
   --background-contrast: var(--cko-dark-contrast-blue);
   --subtitle: var(--cko-yellow);
   --required: var(--cko-red);
-  --border: var(--cko-dark-contrast-blue);
+  --border: var(--S700);
   --field-params: var(--cko-yellow);
   --param-rule: var(--cko-green);
   --primary-button: var(--cko-bright-blue);
@@ -94,7 +94,7 @@
   --background-contrast: var(--cko-white);
   --subtitle: var(--cko-dark-blue);
   --required: var(--cko-red);
-  --border: var(--cko-contrast-gray);
+  --border: var(--S05);
   --field-params: var(--cko-code-blue);
   --param-rule: var(--cko-green);
   --primary-button: var(--cko-bright-blue);
@@ -389,15 +389,15 @@ td.sc-kgoBCf.kGwPhO {
 }
 
 .security-details table {
-  border: 1px solid var(--secondary-text) !important;
+  border: 1px solid var(--border) !important;
 }
 
 .security-details th {
-  border: 1px solid var(--secondary-text) !important;
+  border: 1px solid var(--border) !important;
 }
 
 .security-details td {
-  border: 1px solid var(--secondary-text) !important;
+  border: 1px solid var(--border) !important;
 }
 
 /* Request body schema background */
