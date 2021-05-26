@@ -4,8 +4,8 @@
   --cko-dark-contrast-blue: #121a58; */
   --primary-dark-blue: #0C1141;
   --secondary-dark-blue: #0C1142;
-  --cko-dark-blue: #202124;
-  --cko-dark-contrast-blue: #2c3034;
+  --cko-dark-blue: #090C30;
+  --cko-dark-contrast-blue: #242955;
   --cko-green: #02b48f;
   --cko-light-green: rgb(45, 179, 136, 0.5);
   --cko-light-green: rgb(45, 179, 136, 0.5);
@@ -200,9 +200,12 @@ body {
 .redoc-wrap p, h1, h1 a, h3, th, td, span.sc-jKJlTe.eZZMfQ,label.jIStei,
 span.sc-fzqKxP.dvqdvD,
 h5, 
-span.sc-fzpkJw.hctKJM, 
-body.dark button span {
+span.sc-fzpkJw.hctKJM {
   color: var(--secondary-text)!important;
+}
+
+body.dark button {
+  color: var(--primary-text)!important;
 }
 
 /* Main areas */
@@ -244,7 +247,16 @@ img.sc-kafWEX.hZCbNs {
 /* Hyperlinks color */
 
 a {
-  color: var(--link-color) !important;
+  color: var(--primary-text)!important;
+  font-weight: 600;
+}
+
+.ldExJi, .iwWBsD, .hKsEtX {
+  color: var(--primary-text)!important;
+}
+
+.jHQZJv {
+  background-color: var(--cko-dark-contrast-blue);
 }
 
 b, strong {
@@ -265,7 +277,7 @@ ul[role="navigation"] label:hover {
 }
 
 [role="menuitem"] > span {
-  color: var(--secondary-text)!important;
+  color: var(--primary-text)!important;
 }
 
 .jwVCIw {
@@ -290,6 +302,7 @@ h1 {
   font-size: 40px !important;
   line-height: 44px !important;
   font-weight: 600!important;
+  color: var(--primary-text)!important;
 }
 
 h2 {
@@ -297,12 +310,14 @@ h2 {
   line-height: 32px !important;
   color: var(--subtitle) !important;
   font-weight: 600!important;
+  color: var(--primary-text)!important;
 }
 
 h3 {
   font-size: 18px !important;
   line-height: 24px !important;
   font-weight: 400 !important;
+  color: var(--primary-text)!important;
 }
 
 h4 {
@@ -332,6 +347,14 @@ h1.sc-htoDjs.sc-fYxtnH.dTJWQH {
 .sc-ksYbfQ.sc-hmzhuo.jsTAxL {
   text-transform: uppercase;
   color: var(--required);
+}
+
+.dcDVxm {
+  background-color: var(--cko-dark-contrast-blue)!important;
+}
+
+.hHgrjJ {
+  background-color: var(--cko-dark-blue)!important;
 }
 
 /* Border between params */
