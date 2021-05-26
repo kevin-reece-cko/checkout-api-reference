@@ -6,10 +6,11 @@ get:
   summary: Get Payment Link details
   operationId: getPaymentLinkDetails
   description: |
-    Retrieve details about a specific Payment Link session using its ID returned when the session was created. <br> <br>For more information, see the <a targer="_blank" href="https://docs.checkout.com/integrate/payment-links">Payment Links documentation</a>.
+    Retrieve details about a specific Payment Link session using its ID returned when the session was created. In the response, you will see the status of the Payment Link.<br> <br>For more information, see the <a target="_blank" href="https://docs.checkout.com/integrate/payment-links">Payment Links documentation</a>.
   parameters:
     - in: path
       name: id
+      required: true
       schema:
         allOf:
           - $ref: "#/components/schemas/PaymentLinkId"
