@@ -101,8 +101,93 @@
   --url-area: var(--primary-dark-blue);
 }
 
+/*===========================================
+ = 	              	Fonts	              	  =
+============================================*/
+
+@font-face {
+  font-family: 'Graphik LCG Web';
+  src: url('./fonts/Graphik-Super-Cy-Gr-Web.woff2') format('woff2'),
+       url('./fonts/Graphik-Super-Cy-Gr-Web.woff') format('woff');
+  font-weight:  900;
+  font-style:   normal;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: 'Graphik LCG Web';
+  src: url('./fonts/Graphik-Black-Cy-Gr-Web.woff2') format('woff2'),
+       url('./fonts/Graphik-Black-Cy-Gr-Web.woff') format('woff');
+  font-weight:  800;
+  font-style:   normal;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: 'Graphik LCG Web';
+  src: url('./fonts/Graphik-Bold-Cy-Gr-Web.woff2') format('woff2'),
+       url('./fonts/Graphik-Bold-Cy-Gr-Web.woff') format('woff');
+  font-weight:  700;
+  font-style:   normal;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: 'Graphik LCG Web';
+  src: url('./fonts/Graphik-Semibold-Cy-Gr-Web.woff2') format('woff2'),
+       url('./fonts/Graphik-Semibold-Cy-Gr-Web.woff') format('woff');
+  font-weight:  600;
+  font-style:   normal;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: 'Graphik LCG Web';
+  src: url('./fonts/Graphik-Medium-Cy-Gr-Web.woff2') format('woff2'),
+       url('./fonts/Graphik-Medium-Cy-Gr-Web.woff') format('woff');
+  font-weight:  500;
+  font-style:   normal;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: 'Graphik LCG Web';
+  src: url('./fonts/Graphik-Regular-Cy-Gr-Web.woff2') format('woff2'),
+       url('./fonts/Graphik-Regular-Cy-Gr-Web.woff') format('woff');
+  font-weight:  400;
+  font-style:   normal;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: 'Graphik LCG Web';
+  src: url('./fonts/Graphik-Light-Cy-Gr-Web.woff2') format('woff2'),
+       url('./fonts/Graphik-Light-Cy-Gr-Web.woff') format('woff');
+  font-weight:  300;
+  font-style:   normal;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: 'Graphik LCG Web';
+  src: url('./fonts/Graphik-Extralight-Cy-Gr-Web.woff2') format('woff2'),
+       url('./fonts/Graphik-Extralight-Cy-Gr-Web.woff') format('woff');
+  font-weight:  200;
+  font-style:   normal;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: 'Graphik LCG Web';
+  src: url('./fonts/Graphik-Thin-Cy-Gr-Web.woff2') format('woff2'),
+       url('./fonts/Graphik-Thin-Cy-Gr-Web.woff') format('woff');
+  font-weight:  100;
+  font-style:   normal;
+  font-stretch: normal;
+}
+
 * {
-  font-family: Arial, sans-serif !important;
+  font-family: "Graphik LCG Web", Arial, sans-serif !important;
 }
 
 body {
@@ -201,24 +286,23 @@ p {
   font-weight: normal;
 }
 
-h1, h2, h3 {
-  font-weight: 400 !important;
-}
-
 h1 {
   font-size: 40px !important;
   line-height: 44px !important;
+  font-weight: 600!important;
 }
 
 h2 {
   font-size: 24px !important;
   line-height: 32px !important;
   color: var(--subtitle) !important;
+  font-weight: 600!important;
 }
 
 h3 {
   font-size: 18px !important;
   line-height: 24px !important;
+  font-weight: 400 !important;
 }
 
 h4 {
