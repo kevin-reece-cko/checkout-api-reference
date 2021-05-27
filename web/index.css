@@ -41,17 +41,17 @@
   --G700: #009E7E;
 
   --primary-dark-blue: var(--S1000);
-  --secondary-dark-blue: #0C1142;
+  --secondary-dark-blue: var(--S800);
   --cko-dark-blue: #090C30;
-  --cko-dark-contrast-blue: #242955;
+  --cko-dark-contrast-blue: var(--S800);
   --cko-green: #02b48f;
   --cko-light-green: rgb(45, 179, 136, 0.5);
   --cko-light-green: rgb(45, 179, 136, 0.5);
   --cko-bright-blue: #2ad4db;
   --cko-light-blue: #d5f6f9;
-  --cko-grey-tint-blue: #E6E7ED;
+  --cko-grey-tint-blue: var(--S05);
   --cko-contrast-gray: #CECFD9;
-  --cko-yellow: #ffffc8;
+  --cko-yellow: var(--Y80);
   --cko-white: #fff;
   --cko-light-grey: #b7b8c6;
   --cko-code-yellow: #D4D5A5;
@@ -80,6 +80,7 @@
   --secondary-text: var(--S10);
   --logo: url("./favicons/white-logo.svg");
   --header-link: url("./favicons/link-gray.svg");
+  --endpoint-dropdown: var(--S500);
   --link-color: var(--cko-bright-blue);
   --link-hover: var(--cko-light-blue);
   --active: var(--cko-light-blue);
@@ -98,6 +99,7 @@
   --code-value-link: var(--cko-green);
   --code-value-bool: var(--cko-green);
   --code-value-number: var(--T500);
+  --code-type: var(--S1000);
   --code-label-background: var(--S800);
   --primary-button-color: var(--cko-dark-blue);
   --example-area-background: var(--cko-dark-blue);
@@ -116,6 +118,7 @@
   --secondary-text: var(--secondary-dark-blue);
   --logo: url("./favicons/dark-logo.svg");
   --header-link: url("./favicons/link-blue.svg");
+  --endpoint-dropdown: var(--S05);
   --link-color: var(--cko-green);
   --link-hover: var(--cko-dark-blue);
   --active: var(--cko-dark-blue);
@@ -135,6 +138,7 @@
   --code-value-bool: var(--cko-green);
   --code-value-number: var(--cko-red);
   --code-label-background: var(--P10);
+  --code-type: var(--S800);
   --primary-button-color: var(--cko-dark-blue);
   --example-area-background: var(--cko-white);
   --request-body-content-background: var(--cko-white);
@@ -324,6 +328,10 @@ ul[role="navigation"] label:hover {
   background: var(--background-contrast)!important;
 }
 
+[role="menuitem"] > span.operation-type {
+  color: white!important;
+}
+
 [role="menuitem"] > span {
   color: var(--primary-text)!important;
 }
@@ -397,12 +405,16 @@ h1.sc-htoDjs.sc-fYxtnH.dTJWQH {
   color: var(--required);
 }
 
-.dcDVxm {
+.dcDVxm, .jrkSYj {
   background-color: var(--cko-dark-contrast-blue)!important;
 }
 
 .hHgrjJ {
-  background-color: var(--cko-dark-blue)!important;
+  background-color: var(--code-type)!important;
+}
+
+.djymDt {
+  background-color: var(--endpoint-dropdown)!important;
 }
 
 /* Border between params */
@@ -461,7 +473,6 @@ span.sc-cHGsZl.sc-jqCOkK.beUper {
 code, .evgDyP, .sc-cHGsZl.sc-jbKcbu.bMfIUD{
   font-family: Courier, monospace !important;
   font-style: italic !important;
-  background: var(--S10) !important;
   padding: 2px !important;
   border-radius: 3px !important;
   color: var(--S500) !important;
@@ -546,6 +557,20 @@ td.dz44d2-1 {
   background-color: var(--secondary-button) !important;
   color: var(--primary-button-color) !important;
   border-color: var(--secondary-button) !important;
+}
+
+.hHuJoM > .react-tabs__tab-panel {
+  border-radius: 8px!important;
+  border: 1px solid var(--border)!important;
+}
+
+.dcDVxm {
+  border-radius: 4px!important;
+}
+
+.djymDt {
+  box-shadow: none!important;
+  border: 1px solid var(--border)!important;
 }
 
 .jXDsIv {
@@ -636,7 +661,6 @@ span.sc-jlyJG.evvbxn {
 }
 
 code {
-  background-color: var(--code-label-background)!important;
   color: var(--primary-text)!important;
 }
 
@@ -753,12 +777,30 @@ span.sc-dqBHgY.iENVAs {
 
 span.token.punctuation {
   border: none !important;
+  background-color: transparent!important;
 }
 
 .react-tabs__tab-panel, .react-tabs__tab {
   background: var(--code-background) !important;
-  color: var(--code-bracket) !important;
+  color: var(--code-string) !important;
   border-color: var(--background-contrast) !important;
+}
+
+.eLPRJp .token.atrule, .eLPRJp .token.attr-value, .eLPRJp .token.keyword {
+  color: var(--R800)!important;
+}
+
+.heGpRL {
+  top: 0px!important;
+  color: var(--S05)!important;
+}
+
+.hNIqAi {
+  right: 32px!important;
+}
+
+code a {
+  font-weight: 500;
 }
 
 ul>li.react-tabs__tab, ul>li.tab-success, ul>li.tab-error {
