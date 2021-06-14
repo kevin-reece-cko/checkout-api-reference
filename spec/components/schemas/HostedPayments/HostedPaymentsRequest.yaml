@@ -115,7 +115,6 @@ properties:
     enum:
       - en-GB
       - nl-NL
-      - it-IT
       - fr-FR
     default: en-GB
   3ds:
