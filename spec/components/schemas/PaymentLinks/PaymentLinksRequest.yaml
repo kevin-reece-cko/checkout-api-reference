@@ -116,3 +116,12 @@ properties:
     format: uri
     description: If provided, the success page will include a button that redirects your customer to the provided URL.
     example: https://example.com/success
+  locale:
+    type: string
+    description: Creates a translated version of the page in the specified language
+    enum:
+      - en-GB
+      - nl-NL
+      - it-IT
+      - fr-FR
+    default: en-GB

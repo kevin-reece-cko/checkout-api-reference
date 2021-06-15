@@ -109,6 +109,15 @@ properties:
     title: The Metadata Schema
     description: Allows you to store additional information about the transaction. This object only allows one level of depth, so cannot accept non-primitive data types such as objects or arrays.
     additionalProperties: true
+  locale:
+    type: string
+    description: Creates a translated version of the page in the specified language
+    enum:
+      - en-GB
+      - nl-NL
+      - it-IT
+      - fr-FR
+    default: en-GB
   3ds:
     type: object
     description: Information required for 3D Secure payments
