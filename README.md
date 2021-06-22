@@ -73,6 +73,6 @@ Review from the documentation team is now mandatory. You won't be able to merge 
 
 ### Troubleshooting
 
-- Verify if Node.js is installed `node --version`, using v12
+- Verify if Node.js is installed `node --version`, using v14
 - Verify if Gulp is installed `gulp --version`, using v4.0.2
 - Verify if dotnet is installed `dotnet --version`, using v5.0.102
