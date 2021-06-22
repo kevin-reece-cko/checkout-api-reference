@@ -1,0 +1,28 @@
+name: Node.js CI
+
+on: [pull_request]
+
+env:
+  CI: true
+
+jobs:
+  run-checks:
+    runs-on: ubuntu-latest
+
+    steps:         
+      - uses: actions/checkout@v2      
+      
+      - uses: actions/setup-node@v2.1.5
+        with:
+          node-version: 10.x
+
+      - name: Install node modules
+        run: npm i --ignore-scripts
+              
+      - name: Build ABC & NAS specs
+        run: npm run build:all
+
+      - name: Validate schema
+        run: npm run test
+          
+        
