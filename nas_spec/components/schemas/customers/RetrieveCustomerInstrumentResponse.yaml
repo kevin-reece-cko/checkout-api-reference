@@ -1,0 +1,13 @@
+type: object
+discriminator:
+  propertyName: type
+  mapping:
+    bank_account: '#/components/schemas/RetrieveCustomerBankAccountInstrumentResponse'
+    card: '#/components/schemas/RetrieveCustomerCardInstrumentResponse'
+required:
+  - type
+properties:
+  type:
+    description: The instrument type
+    type: string
+    example: "card"

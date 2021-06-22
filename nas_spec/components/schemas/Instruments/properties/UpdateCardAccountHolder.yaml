@@ -1,0 +1,24 @@
+type: object
+description: The account holder details
+properties:
+  first_name:
+    description: |
+      The first name of the account holder 
+    type: string
+    example: "John"
+
+  last_name:
+    description: | 
+      The last name of the account holder
+    type: string
+    example: "Smith"
+
+  billing_address:
+    description: The billing address of the account holder
+    allOf:
+      - $ref: "#/components/schemas/Address"
+
+  phone:
+    description: The phone number of the account holder
+    allOf:
+      - $ref: "#/components/schemas/PhoneNumber"

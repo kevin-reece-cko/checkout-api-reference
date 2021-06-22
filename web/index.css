@@ -324,6 +324,11 @@ ul[role="navigation"] label:hover {
   background: var(--background-contrast)!important;
 }
 
+label.sc-fzocqA.gkLUAa.-depth0:hover {
+  background: var(--background)!important;
+  font-weight: 400!important;
+}
+
 [role="menuitem"] > span.operation-type {
   color: white!important;
 }
@@ -449,6 +454,18 @@ td.sc-kgoBCf.kGwPhO {
   background-color: var(--background)!important;
 }
 
+.react-tabs__tab-panel > div > pre {
+  border: none!important;
+}
+
+.kUtIRQ .sc-fznKkj polygon {
+  fill: var(--icon-color)!important;
+}
+
+span, span::before, span::after {
+  color: var(--primary-text)!important
+}
+
 /* Field names */
 
 td.sc-cSHVUG.sc-chPdSV {
@@ -542,6 +559,10 @@ td.dz44d2-1 {
 }
 
 /* Deselected tabs */
+
+li {
+  color: var(--primary-text)!important;
+}
 
 .irpqyy>ul>li {
   font-weight: 500 !important;
@@ -665,9 +686,9 @@ code {
 
 div[role="search"] {
   margin: 20px !important;
-  border: 1px solid var(--background-contrast) !important;
-  border-radius: 3px;
-  background: var(--background-contrast) !important;
+  border: 1px solid var(--background-contrast)!important;
+  border-radius: 8px;
+  background: var(--background-contrast)!important;
 }
 
 .search-input {
