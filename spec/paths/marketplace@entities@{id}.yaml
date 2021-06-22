@@ -1,0 +1,227 @@
+parameters:
+  - in: path
+    name: id
+    description: The id of the sub-entity
+    required: true
+    allowEmptyValue: false
+    example: ent_w4jelhppmfiufdnatam37wrfc4
+    style: simple
+    schema:
+      type: string
+get:
+  summary: Get sub-entity details
+  security:
+    - OAuth:
+      - marketplace
+  responses:
+    '200':
+      description: Sub-entity retrieved successfully
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/EntityExtendedResponse'
+          examples:
+            Company:
+              value:
+                id: ent_wxglze3wwywujg4nna5fb7ldli
+                reference: superhero1234
+                capabilities:
+                  payments:
+                    enabled: false
+                contact_details:
+                  phone:
+                    number: "2345678910"
+                profile:
+                  urls:
+                  - https://www.superheroexample.com
+                  mccs:
+                  - "5669"
+                company:
+                  business_registration_number: "452349600005"
+                  legal_name: Super Hero Masks Inc.
+                  trading_name: Super Hero Masks
+                  principal_address:
+                    address_line1: 90 Tottenham Court Road
+                    city: London
+                    zip: W1T4TJ
+                    country: GB
+                  registered_address:
+                    address_line1: 90 Tottenham Court Road
+                    city: London
+                    zip: W1T4TJ
+                    country: GB
+                  representatives:
+                  - first_name: John
+                    middle_name: 
+                    last_name: Doe
+                    address:
+                      address_line1: 90 Tottenham Court Road
+                      city: London
+                      zip: W1T4TJ
+                      country: GB
+                    identification:
+                      national_id_number: AB123456C
+                    phone:
+                      number: "2345678910"
+                _links:
+                  self:
+                    href: https://api.checkout.com/marketplace/entities/ent_wxglze3wwywujg4nna5fb7ldli
+            Individual:
+              value:
+                id: ent_wxglze3wwywujg4nna5fb7ldli
+                reference: superhero1234
+                capabilities:
+                  payments:
+                    enabled: false
+                contact_details:
+                  phone:
+                    number: "2345678910"
+                profile:
+                  urls:
+                  - https://www.superheroexample.com
+                  mccs:
+                  - "5669"
+                individual:
+                  first_name: John
+                  middle_name: Paul
+                  last_name: Doe
+                  trading_name: Super Hero Masks
+                  legal_name: John Paul Doe
+                  national_tax_id: "1234567"
+                  registered_address:
+                    address_line1: 90 Tottenham Court Road
+                    city: London
+                    zip: W1T4TJ
+                    country: GB
+                _links:
+                  self:
+                    href: https://api.checkout.com/marketplace/entities/ent_wxglze3wwywujg4nna5fb7ldli
+      headers:
+        Cko-Version:
+          $ref: '#/components/headers/Cko-Version'
+        Cko-Request-Id:
+          $ref: '#/components/headers/Cko-Request-Id'
+    '401':
+      description: Unauthorized
+    '404':
+      description: Sub-entity not found
+    '422':
+      description: Invalid data was sent
+      content:
+        application/json:
+          schema:
+            allOf:
+              - $ref: '#/components/schemas/ValidationError'
+              - type: object
+                properties:
+                  error_codes:
+                    example:
+                      - error_code1
+                      - error_code2
+  tags:
+    - Marketplace
+put:
+  description: |
+    You can update all fields under the ContactDetails, Profile, and Company objects. 
+    Please note that when you update a sub-entity we may conduct further due diligence checks when necessary. During these checks, your payment capabilities will remain the same.
+  summary: Update sub-entity details
+  requestBody:
+    required: true
+    description: The sub-entity to be updated
+    content:
+      application/json:
+        schema:
+          $ref: "#/components/schemas/EntityUpdateRequest"
+        examples:
+          Company:
+            value:
+              contact_details: 
+                phone:
+                  number: 2345678910
+              profile:
+                urls:
+                  - https://www.superheroexample.com
+                mccs:
+                  - 5669
+              company:
+                business_registration_number: "452349600005"
+                legal_name: "Super Hero Masks Inc."
+                trading_name: "Super Hero Masks"
+                principal_address: 
+                  address_line1: "90 Tottenham Court Road"
+                  city: "London"
+                  zip: "W1T4TJ"
+                  country: "GB"
+                registered_address:
+                  address_line1: "90 Tottenham Court Road"
+                  city: "London"
+                  zip: "W1T4TJ"
+                  country: "GB"
+                representatives: 
+                  - first_name: "John"
+                    last_name: "Doe"
+                    address: 
+                      address_line1: "90 Tottenham Court Road"
+                      city: "London"
+                      zip: "W1T4TJ"
+                      country: "GB"
+                    identification:
+                      description: Identification of the representative, used for verification
+                      national_id_number: "AB123456C"
+                    phone:
+                      number: 2345678910
+          Individual:
+            value:
+              contact_details:
+                phone:
+                  number: 2345678910
+              profile:
+                urls:
+                  - https://www.superheroexample.com
+                mccs:
+                  - 5669
+              individual:
+                first_name: "John"
+                last_name: "Doe"
+                trading_name: "John's Super Hero Masks"
+                registered_address:
+                  address_line1: "90 Tottenham Court Road"
+                  city: "London"
+                  zip: "W1T4TJ"
+                  country: "GB"
+                national_tax_id: "TAX123456"
+  security:
+    - OAuth:
+      - marketplace
+  responses:
+    "200":
+      description: Sub-entity updated successfully
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/EntityBasicResponseWithLinks"
+      headers:
+        Cko-Version:
+          $ref: "#/components/headers/Cko-Version"
+        Cko-Request-Id:
+          $ref: "#/components/headers/Cko-Request-Id"
+    "401":
+      description: Unauthorized
+    "404":
+      description: Sub-entity not found
+    "422":
+      description: Invalid data was sent
+      content:
+        application/json:
+          schema:
+            allOf:
+              - $ref: '#/components/schemas/ValidationError'
+              - type: object
+                properties:
+                  error_codes:
+                    example:
+                      - error_code1
+                      - error_code2
+  tags:
+    - Marketplace
+  x-nas-only: true

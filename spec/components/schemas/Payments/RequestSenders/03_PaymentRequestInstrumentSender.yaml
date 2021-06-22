@@ -1,0 +1,10 @@
+type: object
+description: Store a previously tokenized instrument
+allOf:
+  - $ref: '#/components/schemas/PaymentRequestSender'
+required:
+  - type
+properties:
+  type:
+    type: string
+    description: The sender type. If set to `instrument`, the sender information (name and address) will be retrieved from the payment instrument.

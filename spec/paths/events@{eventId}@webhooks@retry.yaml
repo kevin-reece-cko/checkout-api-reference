@@ -3,6 +3,7 @@ post:
     - ApiSecretKey: []
   tags:
     - Events
+  x-abc-only: true
   summary: Retry all webhooks
   operationId: retryAllWebhooks
   description: Retries all webhook notifications configured for the specified event

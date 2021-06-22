@@ -3,6 +3,7 @@ get:
     - ApiSecretKey: []
   tags:
     - Webhooks
+  x-abc-only: true
   summary: Retrieve webhook
   operationId: retrieveWebhook
   description: |

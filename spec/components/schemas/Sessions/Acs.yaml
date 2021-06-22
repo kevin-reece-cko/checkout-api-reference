@@ -1,0 +1,72 @@
+type: object
+required:
+  - reference_number
+  - transaction_id
+  - operator_id
+  - challenge_mandated
+description: "The access control server (ACS) information. Can be empty if the session is still pending or if communication with the ACS failed. This will be available when the channel data and issuer fingerprint result have been provided."
+properties:
+  reference_number:
+    description: EMVCo-assigned unique identifier to track approved ACS
+    type: string
+    maxLength: 32
+    example: ACSRefNum1234
+  transaction_id:
+    description: Universally unique transaction identifier assigned by the ACS
+    type: string
+    minLength: 36
+    maxLength: 36
+    example: be481bd1-1f1d-4ef8-9fa8-0fb2a38e3c87
+  operator_id:
+    description: DS assigned ACS identifier
+    type: string
+    maxLength: 32
+    example: ACSRefNum1234
+  url:
+    description: Fully qualified URL of the ACS to be used for the challenge
+    type: string
+    maxLength: 2048
+    example: https://server.acsdomainname.com
+  signed_content:
+    description: >
+      Contains the JSON web signature (JWS) compact serialization created by the ACS for a challenged app authentication.
+      (Example has been truncated for readability.)
+    type: string
+    maxLength: 512
+    example: eyJ4NWMiOlsiTUlJQjdEQ0NBWktnQXdJQkFnSVZBSzIxWEc5SVBCL083QzZjUTBvRlJJUkIwWDI0TUFvR0NDcUdTTTQ5QkFNQ01INHhDekFKQm
+  challenge_mandated:
+    type: boolean
+    description: Indicates whether a challenge is required for the transaction to be authorized
+  authentication_type:
+    type: string    
+    pattern: "^\\d{2}$"
+    description: >
+      The type of authentication as returned from the ACS provider. <br/>
+      • 01 = Static <br/>
+      • 02 = Dynamic <br/>
+      • 03 = OOB <br/>
+      • 04-79 = Reserved for EMVCo future use <br/>
+      • 80-99 = Reserved for DS use
+  challenge_cancel_reason:
+    type: string
+    description: Indicator informing the ACS and the DS that the authentication has been cancelled
+    enum:
+      - cardholder_cancel
+      - transaction_timed_out
+      - challenge_timed_out
+      - transaction_error
+      - unknown
+      - sdk_timed_out
+  interface:
+    type: string
+    enum:
+      - native_ui
+      - html
+  ui_template:
+    type: string
+    enum:
+      - text
+      - single_select
+      - multi_select
+      - oob
+      - html_other

@@ -1,0 +1,14 @@
+type: object
+description: Condition that enables a source
+required:
+  - events
+allOf:
+  - $ref: '#/components/schemas/get-workflow-condition'
+  - type: object
+    required:
+      - events
+    properties:
+      events:
+        $ref: '#/components/schemas/source-events-hashmap'
+      _links:
+        $ref: '#/components/schemas/workflow-condition-links'

@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Linq;
 using Microsoft.OpenApi.Readers;
 using Microsoft.OpenApi.Writers;
-using System.Net.Http;
 using System.Text;
 
 namespace OpenApiGenerator
@@ -17,25 +16,26 @@ namespace OpenApiGenerator
         static string _jsonOutputFile = "output/swagger.json";
         static List<CodeSample> _codeSamples = new List<CodeSample>();
         static string[] httpVerbs = new[] { "get", "put", "post", "delete", "options", "head", "patch", "trace" };
-
+        static string filterOutAccount = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") == "abc" ? "nas" : "abc";
         static void Main(string[] args)
-        {
+        { 
             try
             {
                 RefreshOutputDirectory();
 
-                // start building up the yaml file
-                using (StreamReader sr = File.OpenText($"{_specDirectory}/swagger.yaml"))
+                List<string> quotelist = File.ReadAllLines($"{_specDirectory}/swagger.yaml").ToList();
+                for(var i = 0; i < quotelist.Count(); i++)
                 {
-                    using (TextWriter writer = File.CreateText(_yamlOutputFile))
+                    if(quotelist[i].Contains($"x-{filterOutAccount}"))
                     {
-                        var s = "";
-                        while ((s = sr.ReadLine()) != null)
-                        {
-                            writer.WriteLine(s);
-                        }
+                        quotelist.RemoveAt(i);
+                        quotelist.RemoveAt(i - 1);
+                        quotelist.RemoveAt(i - 2);
+                        i -= 3;
                     }
                 }
+
+                File.WriteAllLines(_yamlOutputFile, quotelist.ToArray());
 
                 // append paths and components to yaml file
                 AddPaths();
@@ -45,7 +45,6 @@ namespace OpenApiGenerator
                 var str = File.ReadAllText(_yamlOutputFile);
                 var openApiDocument = new OpenApiStringReader().Read(str, out var diagnostic);
 
-                // log any errors
                 foreach (var error in diagnostic.Errors)
                 {
                     Console.WriteLine(error.Message);
@@ -63,6 +62,12 @@ namespace OpenApiGenerator
                 Console.WriteLine(e);
                 throw;
             }
+        }
+
+        static void DeleteLastTwoLines(string filepath)
+        {
+            string[] lines = File.ReadAllLines(filepath);
+            File.WriteAllLines(filepath, lines.Take(lines.Count() - 2));
         }
 
         static void RefreshOutputDirectory()
@@ -102,6 +107,7 @@ namespace OpenApiGenerator
             var yamlSchemaFiles = GetSpecFiles($"/components/{component}/", "*.yaml");
             var text = $"  {component}:\n";
             text += GetComponentsText(yamlSchemaFiles);
+                        
             File.AppendAllText(_yamlOutputFile, text, Encoding.UTF8);
         }
 
@@ -137,6 +143,13 @@ namespace OpenApiGenerator
 
             foreach (var file in yamlPathFiles)
             {
+                using (StreamReader sr = new StreamReader(file))
+                {
+                    string contents = sr.ReadToEnd();
+                    if (contents.Contains($"x-{filterOutAccount}"))
+                        continue;
+                }
+
                 var fileInfo = new FileInfo(file);
                 var path = "";
 
@@ -147,11 +160,12 @@ namespace OpenApiGenerator
 
                     var s = "";
                     var currentVerb = "";
+             
                     while ((s = sr.ReadLine()) != null)
                     {
                         if (httpVerbs.Contains($"{s.TrimEnd(':')}"))
                         {
-                            if (!string.IsNullOrEmpty(currentVerb))
+                            if (!string.IsNullOrEmpty(currentVerb) )
                             {
                                 text += GetCodeSampleText(path, currentVerb);
                             }
@@ -162,7 +176,7 @@ namespace OpenApiGenerator
                     text += GetCodeSampleText(path, currentVerb);
                 }
             }
-
+            
             File.AppendAllText(_yamlOutputFile, text, Encoding.UTF8);
         }
 
@@ -171,7 +185,7 @@ namespace OpenApiGenerator
             var text = "";
             var codeSamples = GetCodeSample(path, verb);
 
-            if(!codeSamples.Any()) return text;
+            if (!codeSamples.Any()) return text;
 
             text += $"      x-code-samples:\n";
             foreach (var sample in codeSamples)

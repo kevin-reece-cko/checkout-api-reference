@@ -1,0 +1,14 @@
+type: object
+title: CreateRequest
+allOf:
+  - type: object
+    properties:
+      reference:
+        type: string
+        description: "A unique reference you can later use to identify this sub-entity"
+        minLength: 1
+        maxLength: 15
+        example: superhero1234
+  - $ref: "#/components/schemas/EntityUpdateRequest"
+required:
+  - reference

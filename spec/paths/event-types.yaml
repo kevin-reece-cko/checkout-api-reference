@@ -3,6 +3,7 @@ get:
     - ApiSecretKey: []
   tags:
     - Events
+  x-abc-only: true
   summary: Retrieve event types
   operationId: retrieveEventTypes
   description: Retrieve a list of event types grouped by their respective version that you can configure on your webhooks.

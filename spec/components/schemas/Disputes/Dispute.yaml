@@ -5,14 +5,22 @@ properties:
     pattern: "^(dsp)_(\\w{22})$"
     description: The dispute identifier. This is the same as the payment action ID
     example: "dsp_rbhwd2qrg13uhrp2newf"
+  entity_id:
+    type: string
+    description: The client entity linked to this dispute
+    example: "ent_wxglze3wwywujg4nna5fb7ldli"
+  sub_entity_id:
+    type: string
+    description: The sub-entity linked to this dispute
+    example: "ent_uzm3uxtssvmuxnyrfdffcyjxeu"
   category:
     type: string
-    description: The reason for the dispute. [Find out more](https://docs.checkout.com/risk-management/disputes#Disputes-Disputereasonsandrecommendedevidence)
+    description: The reason for the dispute. [Find out more](https://docs.checkout.com/four/risk-management/disputes#Disputes-Disputereasonsandrecommendedevidence)
     enum: [fraudulent, unrecognized, canceled_recurring, product_service_not_received, not_as_described, credit_not_issued, duplicate, incorrect_amount, general]
     example: "fraudulent"
   amount:
     type: number
-    description: The amount that is being disputed, in the processing currency
+    description: The amount that is being disputed, in the processing currency. This amount can be positive or negative depending on the type of transaction the dispute is received against
     example: 999
   currency:
     type: string
@@ -21,7 +29,7 @@ properties:
   reason_code:
     type: string
     description: The reason code provided by the card scheme
-    example: "10.4"
+    example: "C42"
   status:
     type: string
     description: The current status of the dispute
@@ -36,7 +44,7 @@ properties:
     type: array
     description: <i>This list and the dispute categories will change over time. Your evidence logic should be informed by this field, not hard coded.</i>
     items: 
-      type: string
+      type: strings
       enum: [proof_of_delivery_or_service, invoice_or_receipt, invoice_showing_distinct_transactions, customer_communication, refund_or_cancellation_policy, recurring_transaction_agreement, additional_evidence]
       example: "proof_of_delivery_or_service"
   evidence_required_by:
@@ -56,32 +64,9 @@ properties:
     example: "2018-08-04T10:53:13Z"
   payment:
     type: object
-    properties:
-      id:
-        type: string
-        description: The payment identifier
-        example: "pay_88cb4e671m1da22e9bbbyx"
-      amount:
-        type: number
-        description: The amount that is being disputed, in the processing currency
-        example: 999
-      currency:
-        type: string
-        description: The payment currency
-        example: "GBP"
-      method:
-        type: string
-        description: The payment method used
-        example: "Visa"
-      arn:
-        type: string
-        description: The acquirer reference number (ARN)
-        example: "AA246873253573571073808"
-      processed_on:
-        type: string
-        format: ISO-8601
-        description: The date and time at which the payment was requested
-        example: "2018-08-01T08:18:10Z"
+    description: Provides details for the payment linked to the dispute
+    allOf:
+      - $ref: '#/components/schemas/PaymentData'
   _links:
     type: object
     properties:
@@ -91,7 +76,7 @@ properties:
           href:
             example: "https://api.checkout.com/disputes/dsp_rbhwd2qrg13uhrp2newf"
       evidence:
-        description: The dispute evidence retrieval endopint
+        description: The dispute evidence retrieval endpoint
         properties:    
           href:
             example: "https://api.checkout.com/disputes/dsp_rbhwd2qrg13uhrp2newf/evidence"

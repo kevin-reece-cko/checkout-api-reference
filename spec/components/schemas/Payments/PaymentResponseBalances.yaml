@@ -1,0 +1,33 @@
+type: object
+description: The balances of the payment
+required:
+  - id
+properties:
+  total_authorized:
+    type: integer
+    description: The total amount that has been authorized
+    example: 6540
+  total_voided:
+    type: integer
+    description: The total amount that has been voided
+    example: 0
+  available_to_void:
+    type: integer
+    description: The total amount that is still available for voiding
+    example: 6540
+  total_captured:
+    type: integer
+    description: The total amount that has been captured
+    example: 0
+  available_to_capture:
+    type: integer
+    description: The total amount that is still available for capture
+    example: 6540
+  total_refunded:
+    type: integer
+    description: The total amount that has been refunded
+    example: 0
+  available_to_refund:
+    type: integer
+    description: The total amount that is still available for refund
+    example: 0

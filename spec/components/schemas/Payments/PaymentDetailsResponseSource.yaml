@@ -1,0 +1,18 @@
+type: object
+description: Payment source
+
+discriminator:
+  propertyName: type
+  mapping:
+    card: '#/components/schemas/01_PaymentResponseCardSource'
+    currency_account: '#/components/schemas/02_PaymentResponseCurrencyAccountSource'
+required:
+  - type
+
+properties:
+  type:
+    type: string
+    description: |
+      The payment source type. For any payment request sources that result in a card token (token, source ID, etc.),
+      this will be `card`
+    example: "card"

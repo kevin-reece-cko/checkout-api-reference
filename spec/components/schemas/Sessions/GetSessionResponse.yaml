@@ -1,0 +1,89 @@
+required:
+  - id
+  - transaction_id
+  - scheme
+  - amount
+  - currency
+  - authentication_type
+  - authentication_category
+  - status
+  - protocol_version
+  - _links
+properties:
+  id:
+    $ref: '#/components/schemas/SessionId'
+  session_secret:
+    $ref: '#/components/schemas/SessionSecret'
+  transaction_id:
+    description: The transaction identifier that needs to be provided when communicating directly with the Access Control Server (ACS)
+    type: string
+    minLength: 36
+    maxLength: 36
+    example: 9aea641d-0549-4222-9ca9-d90b43a4f38c
+  scheme:    
+    type: string
+    description: Indicates the scheme this authentication is carried out against
+    enum:
+      - visa
+      - mastercard
+      - jcb
+      - amex
+      - diners
+  amount:
+    $ref: '#/components/schemas/Amount'
+  currency:
+    $ref: '#/components/schemas/Currency'
+  completed:
+    type: boolean
+    description: Indicates whether this session has been completed
+    example: false
+  challenged:
+    type: boolean
+    description: Indicates whether this session involved a challenge. This will only be set after communication with the scheme is finished. 
+    example: true
+  authentication_type:
+    $ref: '#/components/schemas/AuthenticationType'
+  authentication_category:
+    $ref: '#/components/schemas/Category'
+  certificates:
+    $ref: '#/components/schemas/DsPublicKeys'
+  status:
+    $ref: '#/components/schemas/Status'
+  status_reason:
+    $ref: '#/components/schemas/StatusReason'
+  approved:
+    $ref: '#/components/schemas/Approved'
+  protocol_version:
+    $ref: '#/components/schemas/ProtocolVersion'
+  reference:
+    $ref: '#/components/schemas/Reference'
+  transaction_type:
+    $ref: '#/components/schemas/TransactionType'
+  next_actions:
+    $ref: '#/components/schemas/NextActions'
+  ds:
+    $ref: '#/components/schemas/Ds'
+  acs:
+    $ref: '#/components/schemas/Acs'
+  response_code:
+    $ref: '#/components/schemas/ResponseCode'
+  response_status_reason:
+    $ref: '#/components/schemas/ResponseStatusReason'
+  pareq:
+    $ref: '#/components/schemas/Pareq'
+  cryptogram:
+    $ref: '#/components/schemas/Cryptogram'
+  eci:
+    $ref: '#/components/schemas/Eci'
+  xid:
+    type: string
+    description: The xid value to use for authorization
+    example: XSUErNftqkiTdlkpSk8p32GWOFA
+  cardholder_info:
+    type: string
+    description: May provide cardholder information from the DS to be presented to the cardholder
+    example: Card declined. Please contact your issuing bank.
+  card:
+    $ref: '#/components/schemas/CardInfo'
+  _links:
+    $ref: '#/components/schemas/GetSessionLinks'

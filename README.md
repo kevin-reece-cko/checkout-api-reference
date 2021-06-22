@@ -6,7 +6,7 @@
 
 ## NOTE
 
-Review from the documentation team is now mandatory. You won't be able to merge changes until we have reviewed. Use the list below to see which Technical Writer is a assigned to you. We will approve on the same day. Contact [@Chrisi Webster](https://github.com/chrisi-webster-cko) if your assigned Technical Writer is away or unable to help.
+Review from the documentation team is now mandatory. You won't be able to merge changes until we have reviewed. Use the list below to see which Technical Writer is a assigned to you. We will approve on the same day. Contact [@Chrisi Webster](https://github.com/chrisi-webster-cko) if your assigned Technical Writer is away or unable to help!
 
 ### [@Toby Knott](https://github.com/toby-knott-cko)
 

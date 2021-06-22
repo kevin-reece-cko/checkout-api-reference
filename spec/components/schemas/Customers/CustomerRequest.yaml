@@ -1,0 +1,19 @@
+type: object
+description: The customer's details
+properties:
+  id:
+    type: string
+    pattern: "^(cus)_(\\w{26})$"
+    description: The identifier of an existing customer
+    example: "cus_y3oqhf46pyzuxjbcn2giaqnb44"
+  email:
+    type: string
+    format: email
+    description: The customer's email address
+    maxLength: 255
+    example: "jokershere@gmail.com"
+  name:
+    type: string
+    description: The customer's name
+    maxLength: 255
+    example: "Jack Napier"

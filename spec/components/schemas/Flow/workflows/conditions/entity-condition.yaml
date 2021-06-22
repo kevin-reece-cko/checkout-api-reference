@@ -1,0 +1,12 @@
+type: object
+description: Condition that filters based on the entity
+required:
+  - entities
+allOf:
+  - $ref: '#/components/schemas/workflow-condition'
+  - type: object
+    required:
+      - entities
+    properties:
+      entities:
+        $ref: '#/components/schemas/source-entity-hashmap'

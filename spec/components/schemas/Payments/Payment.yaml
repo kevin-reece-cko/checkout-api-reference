@@ -33,7 +33,7 @@ properties:
     example: 6540
   currency:
     type: string
-    description: The three-letter <a href="https://docs.checkout.com/resources/codes/currency-codes" target="blank">ISO currency code</a> of the payment
+    description: The three-letter <a href="https://docs.checkout.com/docs/currency-codes" target="blank">ISO currency code</a> of the payment
     example: USD
     maxLength: 3
     minLength: 3
@@ -44,6 +44,7 @@ properties:
       - Regular
       - Recurring
       - MOTO
+      - Installment
     default: Regular
     example: Recurring
   reference:
@@ -58,6 +59,9 @@ properties:
     type: boolean
     description: Whether the payment was successful
     example: true
+  expires_on:
+    type: string
+    description: The timestamp (ISO 8601 code) for when the authorization's validity period expires
   status:
     type: string
     description: The status of the payment
@@ -74,6 +78,11 @@ properties:
       - Cancelled
       - Paid
     example: Authorized
+  balances:
+    type: object
+    description: The payment balances
+    allOf:
+      - $ref: '#/components/schemas/PaymentResponseBalances'
   3ds:
     type: object
     description: Provides information relating to the processing of 3D Secure payments
@@ -125,6 +134,8 @@ properties:
     description: The IP address used to make the payment
     allOf:
       - $ref: '#/components/schemas/IPAddress'
+  marketplace:
+    $ref: '#/components/schemas/MarketplaceData'
   recipient:
     $ref: '#/components/schemas/PaymentRecipient'
   metadata:
@@ -137,7 +148,7 @@ properties:
     type: string
     description: |
       The final Electronic Commerce Indicator (ECI) security level used to authorize the payment. 
-      Applicable for 3D Secure, digital wallets, and network token payments
+      Applicable for 3D Secure and network token payments
     example: "06"  
   scheme_id:
     type: string
@@ -169,6 +180,11 @@ properties:
         allOf:
           - $ref: '#/components/schemas/Link'
         description: A link to the payment's associated actions
+      authorize:
+        type: object
+        allOf:
+          - $ref: '#/components/schemas/Link'
+        description: A link to increment the authorization, where applicable
       void:
         type: object
         allOf:
@@ -189,5 +205,7 @@ properties:
         href: "https://api.checkout.com/payments/pay_y3oqhf46pyzuxjbcn2giaqnb44"
       actions:
         href: "https://api.checkout.com/payments/pay_y3oqhf46pyzuxjbcn2giaqnb44/actions"
+      authorize:
+        href: "https://api.checkout.com/payments/pay_y3oqhf46pyzuxjbcn2giaqnb44/authorizations"
       refund:
         href: "https://api.checkout.com/payments/pay_y3oqhf46pyzuxjbcn2giaqnb44/refund"

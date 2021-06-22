@@ -25,7 +25,7 @@ properties:
     example: 6540
   currency:
     type: string
-    description: The three-letter <a href="https://docs.checkout.com/resources/codes/currency-codes" target="blank">ISO currency code</a> of the payment
+    description: The three-letter <a href="https://docs.checkout.com/four/resources/codes/currency-codes" target="_blank">ISO currency code</a> of the payment
     example: USD
     maxLength: 3
     minLength: 3
@@ -56,6 +56,9 @@ properties:
     type: string
     description: The Gateway response summary
     example: "Approved"
+  expires_on:
+    type: string
+    description: The timestamp (ISO 8601 code) for when the authorization's validity period expires
   3ds:
     type: object
     description: Provides 3D Secure enrollment status if the payment was downgraded to non-3D Secure
@@ -87,7 +90,12 @@ properties:
     type: object
     description: The customer associated with the payment, if provided in the request
     allOf:
-      - $ref: '#/components/schemas/PaymentResponseCustomer'
+      - $ref: '#/components/schemas/CustomerResponse'
+  balances:
+    type: object
+    description: The payment balances
+    allOf:
+      - $ref: '#/components/schemas/PaymentResponseBalances'
   processed_on:
     description: The date/time the payment was processed
     allOf:
@@ -112,7 +120,7 @@ properties:
     type: string
     description:
       The final Electronic Commerce Indicator (ECI) security level used to authorize the payment. 
-      Applicable for 3D Secure, digital wallet, and network token payments
+      Applicable for 3D Secure and network token payments
     example: "06"  
   scheme_id:
     type: string
@@ -137,6 +145,11 @@ properties:
         allOf:
           - $ref: '#/components/schemas/Link'
         description: A link to the payment's associated actions
+      authorize:
+        type: object
+        allOf:
+          - $ref: '#/components/schemas/Link'
+        description: A link to increment the authorization, where applicable
       void:
         type: object
         allOf:
@@ -157,6 +170,8 @@ properties:
         href: "https://api.checkout.com/payments/pay_y3oqhf46pyzuxjbcn2giaqnb44"
       actions:
         href: "https://api.checkout.com/payments/pay_y3oqhf46pyzuxjbcn2giaqnb44/actions"
+      authorize:
+        href: "https://api.checkout.com/payments/pay_y3oqhf46pyzuxjbcn2giaqnb44/authorizations"
       void:
         href: "https://api.checkout.com/payments/pay_y3oqhf46pyzuxjbcn2giaqnb44/voids"
       capture:

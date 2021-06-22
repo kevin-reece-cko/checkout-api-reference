@@ -1,0 +1,36 @@
+type: object
+required:
+  - source_currency
+  - destination_currency
+  - processing_channel_id
+properties:
+  source_currency:
+    type: string
+    description: The source three-letter <a href="https://docs.checkout.com/four/resources/codes/currency-codes" target="_blank">ISO currency code</a>
+    example: GBP
+  source_amount:
+    type: integer
+    description: |
+      The amount to be converted from the source currency in the minor currency unit.
+
+      The amount must be provided in the <a href="https://docs.checkout.com/four/resources/calculating-the-amount" target="_blank">minor currency unit</a>.
+    example: 30000
+  destination_currency:
+    type: string
+    description: The destination three-letter <a href="https://docs.checkout.com/four/resources/codes/currency-codes" target="_blank">ISO currency code</a>
+    example: USD
+  destination_amount:
+    type: integer
+    description: |
+      The amount to be converted to the destination currency in the minor currency unit.
+
+      The amount must be provided in the <a href="https://docs.checkout.com/four/resources/calculating-the-amount" target="_blank">minor currency unit</a>.
+  processing_channel_id:
+    type: string
+    description: The processing channel used for the payment
+    example: "pc_abcdefghijklmnopqrstuvwxyz"
+example:
+  source_currency: GBP
+  source_amount: 30000
+  destination_currency: USD
+  processing_channel_id: "pc_abcdefghijklmnopqrstuvwxyz"

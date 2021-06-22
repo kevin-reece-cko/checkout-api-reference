@@ -1,0 +1,22 @@
+type: object
+description: "The directory server (DS) information. Can be empty if the session is pending or communication with the DS failed"
+required:
+  - reference_number
+  - transaction_id
+properties:
+  ds_id:
+    description: Required if the session is deemed app-based. Registered application provider identifier (RID) that is unique to the payment system. RIDs are defined by the ISO 7816-5 standard. Used as part of the device data encryption process.
+    type: string
+    maxLength: 32
+    example: A000000003
+  reference_number:
+    description: EMVCo-assigned unique identifier to track approved DS
+    type: string
+    maxLength: 32
+    example: VISA.V 17 0003
+  transaction_id:
+    description: Universally unique transaction identifier assigned by the DS
+    type: string
+    minLength: 36
+    maxLength: 36
+    example: 9aea641d-0549-4222-9ca9-d90b43a4f38c

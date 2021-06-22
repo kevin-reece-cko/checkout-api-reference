@@ -3,6 +3,7 @@ get:
     - ApiSecretKey: []
   tags:
     - Events
+  x-abc-only: true
   summary: Retrieve event notification
   operationId: retrieveEventNotification
   description: Retrieves the attempts for a specific event notification

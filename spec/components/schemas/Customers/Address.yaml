@@ -18,7 +18,6 @@ properties:
   state:
     type: string
     description: The address state
-    maxLength: 50
     example: London
   zip:
     type: string
@@ -27,7 +26,7 @@ properties:
     example: W1T 4TJ
   country:
     type: string
-    description: The two-letter <a href="https://docs.checkout.com/resources/codes/country-codes" target="blank">ISO country code</a> of the address
+    description: The two-letter <a href="https://docs.checkout.com/four/resources/codes/country-codes" target="_blank">ISO country code</a> of the address
     example: GB
     maxLength: 2
     minLength: 2

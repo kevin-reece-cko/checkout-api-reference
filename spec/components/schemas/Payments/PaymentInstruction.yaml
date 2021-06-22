@@ -1,0 +1,31 @@
+type: object
+description: Details about the instruction for payouts to bank accounts
+properties:
+  purpose:
+    type: string
+    description: An optional description of the payout purpose, for example `Insurance claim` or `Remittance`
+    example: "Remittance"
+  charge_bearer: 
+    type: string
+    description: Who should be charged the payout fee<br><i>Only required if making a payout using an international scheme<i>.
+    enum:
+      - OUR
+      - SHA
+  repair:
+    type: boolean
+    description: Determines whether the payout details can be modified to attempt to prevent a payout from being returned
+  scheme:
+    type: string
+    description: The preferred payment scheme or network the bank transfer will be sent through
+    enum:
+      - swift
+      - local
+      - instant
+  quote_id:
+    type: string
+    allOf:
+      - $ref: '#/components/schemas/QuoteId'
+    description: The FX quote identifier. If omitted, and the source and destination currencies differ, the current market exchange rate will be used
+    minLength: 30
+    maxLength: 30
+    pattern: ^(qte)_[a-z2-7]{26}$

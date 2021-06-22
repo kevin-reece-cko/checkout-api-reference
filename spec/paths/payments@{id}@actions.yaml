@@ -1,10 +1,12 @@
 get:
-  security:
-    - ApiSecretKey: []
   tags:
     - Payments
+  security: 
+    - OAuth: 
+      - gateway
+      - gateway:payment-details
+    - ApiSecretKey: []
   summary: Get payment actions
-  operationId: getPaymentActions
   description: |
     Returns all the actions associated with a payment ordered by processing date in descending order (latest first).
   parameters:

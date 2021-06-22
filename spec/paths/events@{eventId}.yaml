@@ -3,6 +3,7 @@ get:
     - ApiSecretKey: []
   tags:
     - Events
+  x-abc-only: true
   summary: Retrieve event
   operationId: retrieveEvent
   description: |

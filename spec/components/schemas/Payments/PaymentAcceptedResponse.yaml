@@ -22,12 +22,17 @@ properties:
     type: object
     description: The customer associated with the payment, if provided in the request
     allOf:
-      - $ref: '#/components/schemas/PaymentResponseCustomer'
+      - $ref: '#/components/schemas/CustomerResponse'
   3ds:
     type: object
     description: Provides 3D Secure enrollment status
     allOf:
       - $ref: '#/components/schemas/3dsEnrollmentData'
+  instruction:
+    type: object
+    description: Instruction details for payouts to bank accounts
+    allOf:
+      - $ref: '#/components/schemas/PaymentInstructionResponse'
   _links:
     type: object
     description: The links related to the payment

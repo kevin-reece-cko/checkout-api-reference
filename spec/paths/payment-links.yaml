@@ -3,6 +3,7 @@ post:
     - ApiSecretKey: []
   tags:
     - Payment Links
+  x-abc-only: true
   summary: Create a Payment Link
   operationId: createAPaymentLinkSession
   description: |

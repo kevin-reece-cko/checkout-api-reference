@@ -1,0 +1,13 @@
+type: object
+description: A currency account source
+required:
+  - id
+allOf:
+  - $ref: "#/components/schemas/PayoutRequestSource"
+  - type: object
+    properties:
+      id:
+        type: string
+        pattern: "^(ca)_(\\w{26})$"
+        description: The ID of the currency account to be debited <br><i>The source currency is inferred from the currency account</i>.
+        example: ca_y3oqhf46pyzuxjbcn2giaqnb44

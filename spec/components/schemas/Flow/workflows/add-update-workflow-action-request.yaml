@@ -1,0 +1,23 @@
+type: object
+description: The workflow action
+discriminator:
+  propertyName: type
+  mapping:
+    webhook: '#/components/schemas/webhook-action'
+    #slack: '#/components/schemas/slack-action'
+    #simulator: '#/components/schemas/simulator-action'
+required:
+  - type
+properties:
+  type:
+    type: string
+    description: The type of workflow action
+    example: webhook
+example:
+  {
+      "type": "webhook",
+      "url": "https://example.com/webhooks",
+      "headers": {
+        "Authorization": "70ed20ff-ba31-4ea3-b3ef-772f2be1cbdf"
+      }
+  }

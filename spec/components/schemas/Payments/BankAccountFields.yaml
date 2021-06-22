@@ -1,0 +1,111 @@
+type: object
+properties:
+  sections:
+    type: array
+    items:
+      type: object
+      required:
+        - name
+      properties:
+        name:
+          type: string
+          description: The name of the section
+          example: Account Details
+        fields:
+          type: array
+          items:
+            type: object
+            required:
+              - id
+              - display
+              - type
+              - required
+            properties:
+              id:
+                type: string
+                desription: The field identifier
+                example: account_holder.first_name
+              section:
+                type: string
+                description: The section to display the field in
+                example: account
+              display:
+                type: string
+                description: The field's display name
+                example: First name
+              help_text:
+                type: string
+                description: The help text that explains the purpose of the field
+                example: The account holder's first name. Required if type is individual.
+              type:
+                type: string
+                description: The type of field
+                example: string
+              required:
+                type: boolean
+                description: Whether the field is required
+                example: true
+              validation_regex:
+                type: string
+                description: A regular expression that can be used to validate the input of the field
+                example: ^[A-Z]{2,2}[0-9]{2,2}[a-zA-Z0-9]{1,18}$
+              min_length:
+                type: integer
+                description: The minimum length of the field
+                example: 22
+              max_length:
+                type: integer
+                description: The maximum length of the field
+                example: 22
+              allowed_options:
+                type: array
+                description: The allowed options for the field
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: string
+                      description: The option identifier
+                      example: "1"
+                    display:
+                      type: string
+                      description: The option display value
+                      example: Beneficiary
+              dependencies:
+                type: array
+                description: The field's dependencies
+                items:
+                  type: object
+                  properties:
+                    field_id:
+                      type: string
+                      description: The field identifier
+                      example: entity_type
+                    value:
+                      type: string
+                      description: The value of the dependent field that match in order for this field to be displayed
+example:
+  sections:
+    - name: Account Details
+      fields:
+        - id: iban
+          type: string
+          display: IBAN
+          description: Number (which can contain letters) that identifies the account
+          section: account
+          required: true
+          validation_regex: ^[A-Z]{2,2}[0-9]{2,2}[a-zA-Z0-9]{1,18}$
+          min_length: 22
+          max_length: 22
+        - id: account_holder.first_name
+          type: string
+          display: First name
+          description: The account holder's first name
+          section: account
+          required: true
+        - id: account_holder.last_name
+          type: string
+          display: First name
+          description: The account holder's last name
+          section: account
+          required: true

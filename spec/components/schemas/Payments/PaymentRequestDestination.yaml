@@ -1,15 +1,14 @@
 type: object
-description: The destination of the payout.<br><i>Use to pay out to a card</i>.
+description: The destination of the payout
 discriminator:
   propertyName: type
   mapping:
-    token: '#/components/schemas/01_PaymentRequestTokenDestination'
-    id: '#/components/schemas/02_PaymentRequestIdDestination'
-    card: '#/components/schemas/03_PaymentRequestCardDestination'
+    id: '#/components/schemas/01_PaymentRequestIdDestination'
+    bank_account: '#/components/schemas/02_PaymentBankAccountDestination'
 required:
   - type
 properties:
   type:
     type: string
-    description: The payout destination type
-    example: "token"
+    description: The payout destination type <br><i>The parameters for `bank_account` depend on the destination country and currency. <a href="https://docs.checkout.com/pay-to-bank/payout-formatting" taret="_blank">See our docs for details</a></i>.
+    example: "id"

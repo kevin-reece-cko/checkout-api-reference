@@ -1,9 +1,9 @@
 type: object
 required:
-    - file
+    - path
     - purpose
 properties:
-  file:
+  path:
     type: string
     description: The path of the file to upload, and its type. <br><i>This must be a local path.</i>
     example: "file=@/path/receipt.png;type=image/png"

@@ -1,16 +1,14 @@
 post:
-  security:
-    - ApiPublicKey: []
   tags:
     - Tokens
+  security: 
+    - ApiPublicKey: []
   summary: Request a token
-  operationId: requestAToken
   description: |
-    Exchange a digital wallet payment token or card details for a reference token that can be used later to request a card payment. Tokens are single use and expire after 15 minutes. 
+    Exchange card details for a reference token that can be used later to request a card payment. Tokens are single use and expire after 15 minutes. 
     To create a token, please authenticate using your public key. 
 
-    **Please note:** You should only use the `card` type for testing purposes.
-
+    **Please note:** You should only use this for testing purposes.
   requestBody:
     content:
       application/json:

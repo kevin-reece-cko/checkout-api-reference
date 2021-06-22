@@ -1,0 +1,7 @@
+type: object
+description: Instruction details for payouts to bank accounts
+properties:
+  value_date:
+    description: The date (in ISO 8601 format) on which the recipient's account will be credited
+    type: string
+    format: date

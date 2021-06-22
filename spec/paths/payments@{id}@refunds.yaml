@@ -1,16 +1,17 @@
 post:
-  security:
-    - ApiSecretKey: []
   tags:
     - Payments
+  security: 
+    - OAuth: 
+      - gateway
+      - gateway:payment-refunds
+    - ApiSecretKey: []
   summary: Refund a payment
-  operationId: refundAPayment
   description: |
     Refunds a payment if supported by the payment method.
 
-    For card payments, refund requests are processed asynchronously. You can use [webhooks](#tag/Webhooks) to be notified if the refund is successful.
+    For card payments, refund requests are processed asynchronously. You can use [workflows](#tag/Workflows) to be notified if the refund is successful.
   parameters:
-    - $ref: '#/components/parameters/ckoIdempotencyKey'
     - in: path
       name: id
       schema:

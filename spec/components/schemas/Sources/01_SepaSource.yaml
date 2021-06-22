@@ -7,10 +7,6 @@ allOf:
   - $ref: '#/components/schemas/SourceRequest'
   - type: object
     properties:
-      billing_address:
-        description: The payment source owner's billing address
-        allOf:
-        - $ref: '#/components/schemas/01_SepaAddress'
       source_data:
         type: object
         description: Additional data required to create SEPA payment sources
@@ -18,6 +14,7 @@ allOf:
           - first_name
           - last_name
           - account_iban
+          - bic
           - billing_descriptor
           - mandate_type
         properties:

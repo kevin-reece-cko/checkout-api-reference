@@ -1,0 +1,12 @@
+type: object
+description: A bank account payment destination
+allOf:
+  - $ref: "#/components/schemas/PaymentResponseDestination"
+  - type: object
+    required:
+      - id
+    properties:
+      id:
+        type: string
+        description: The payment instrument identifier
+        pattern: ^(src)_(\w{26})$

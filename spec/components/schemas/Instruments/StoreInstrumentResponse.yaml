@@ -1,0 +1,18 @@
+type: object
+description: The response for type of instrument stored
+required:
+  - type
+  - id
+discriminator:
+  propertyName: type
+  mapping:
+    bank_account: '#/components/schemas/StoreBankAccountInstrumentResponse'
+properties:
+  type:
+    description: The type of instrument
+    type: string
+  id:
+    description: The unique identifier of the payment source or destination that can be used later for payments
+    type: string
+    example: "src_wmlfc3zyhqzehihu7giusaaawu"
+

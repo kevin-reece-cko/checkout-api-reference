@@ -1,16 +1,15 @@
 post:
   security:
+    - OAuth:
+      - gateway
+      - gateway:payment
     - ApiSecretKey: []
   tags:
     - Payments
   summary: Request a payment or payout
   operationId: requestAPaymentOrPayout
   description: |
-    To accept payments from <a href="https://docs.checkout.com/payment-methods/cards" target="blank">cards</a>, <a href="https://docs.checkout.com/payment-methods/wallets" target="blank">digital wallets</a> and many <a href="https://docs.checkout.com/payment-methods/" target="blank">alternative payment methods</a>, specify the `source.type` field, along with the source-specific data.
-
-    To <a href="https://docs.checkout.com/payment-actions/card-payouts" target="blank">pay out to a card</a>, specify the destination of your payout using the `destination.type` field, along with the destination-specific data.
-
-    To verify the success of the payment, check the `approved` field in the response.
+    Send a payment or payout 
   parameters:
     - $ref: '#/components/parameters/ckoIdempotencyKey'
   requestBody:
@@ -19,57 +18,80 @@ post:
         schema:
           oneOf:
             - $ref: '#/components/schemas/PaymentRequest'
-            - $ref: '#/components/schemas/Payout'
-        example:
-          source:
-            type: token
-            token: tok_4gzeau5o2uqubbk6fufs3m7p54
-          amount: 6540
-          currency: USD
-          payment_type: Recurring
-          reference: "ORD-5023-4E89"
-          description: "Set of 3 masks"
-          capture: true
-          capture_on: "2019-09-10T10:11:12Z"
-          customer:
-            id: "cus_udst2tfldj6upmye2reztkmm4i"
-            email: "jokershere@gmail.com"
-            name: "Jack Napier"
-          billing_descriptor:
-            name: SUPERHEROES.COM
-            city: GOTHAM
-          shipping:
-            address:
-              address_line1: Checkout.com
-              address_line2: 90 Tottenham Court Road
-              city: London
-              state: London
-              zip: W1T 4TJ
-              country: GB
-            phone:
-              country_code: "+1"
-              number: 415 555 2671
-          3ds:
-            enabled: true
-            attempt_n3d: true
-            eci: "05"
-            cryptogram: AgAAAAAAAIR8CQrXcIhbQAAAAAA=
-            xid: MDAwMDAwMDAwMDAwMDAwMzIyNzY=
-            version: "2.0.1"
-          previous_payment_id: "pay_fun26akvvjjerahhctaq2uzhu4"
-          risk:
-            enabled: false
-          success_url: "http://example.com/payments/success"
-          failure_url: "http://example.com/payments/fail"
-          payment_ip: "90.197.169.245"
-          recipient:
-            dob: "1985-05-15"
-            account_number: "5555554444"
-            zip: W1T
-            last_name: Jones
-          metadata:
-            coupon_code: "NY2018"
-            partner_id: 123989
+            - $ref: '#/components/schemas/PayoutRequest'
+        examples:
+          Payment:
+            value: 
+              source:
+                type: token
+                token: tok_4gzeau5o2uqubbk6fufs3m7p54
+              amount: 6540
+              currency: USD
+              payment_type: Recurring
+              reference: "ORD-5023-4E89"
+              description: "Set of 3 masks"
+              capture: true
+              capture_on: "2019-09-10T10:11:12Z"
+              customer:
+                id: "cus_udst2tfldj6upmye2reztkmm4i"
+                email: "jokershere@gmail.com"
+                name: "Jack Napier"
+              billing_descriptor:
+                name: SUPERHEROES.COM
+                city: GOTHAM
+              shipping:
+                address:
+                  address_line1: Checkout.com
+                  address_line2: 90 Tottenham Court Road
+                  city: London
+                  state: London
+                  zip: W1T 4TJ
+                  country: GB
+                phone:
+                  country_code: "+1"
+                  number: 415 555 2671
+              3ds:
+                enabled: true
+                attempt_n3d: true
+                eci: "05"
+                cryptogram: AgAAAAAAAIR8CQrXcIhbQAAAAAA=
+                xid: MDAwMDAwMDAwMDAwMDAwMzIyNzY=
+                version: "2.0.1"
+              previous_payment_id: "pay_fun26akvvjjerahhctaq2uzhu4"
+              risk:
+                enabled: false
+              success_url: "http://example.com/payments/success"
+              failure_url: "http://example.com/payments/fail"
+              payment_ip: "90.197.169.245"
+              recipient:
+                dob: "1985-05-15"
+                account_number: "5555554444"
+                zip: W1T
+                last_name: Jones
+              metadata:
+                coupon_code: "NY2018"
+                partner_id: 123989
+          Payout:
+            value:
+              source:
+                type: "currency_account"
+                id: "ca_y3oqhf46pyzuxjbcn2giaqnb44"
+              destination:
+                type: "id"
+                id: "src_gsd2agaqd2sernz5tpcfv555nq"
+              amount: 1000
+              currency: GBP
+              reference: "PO-215-5721"
+              billing_descriptor:
+                reference: "Withdrawal"
+              sender:
+                type: "instrument"
+                reference: "8285282045818"
+              instruction:
+                purpose: "Withdrawal"
+                scheme: "local"
+                quote_id: "qte_mbabizu24mvu3mela5njyhpit4"
+              processing_channel_id: "pc_hpswyyx23geezflc2ocz3exn4y"
 
   responses:
     '201':
@@ -126,9 +148,9 @@ post:
               action:
                 href: "https://api.sandbox.checkout.com/payments/pay_mbabizu24mvu3mela5njyhpit4/actions"
               void:
-                href: "https://api.sandbox.checkout.com/payments/pay_mbabizu24mvu3mela5njyhpit4/voids"
-              capture:
                 href: "https://api.sandbox.checkout.com/payments/pay_mbabizu24mvu3mela5njyhpit4/captures"
+              capture:
+                href: "https://api.sandbox.checkout.com/payments/pay_mbabizu24mvu3mela5njyhpit4/voids"
       headers:
         Cko-Request-Id:
           $ref: "#/components/headers/Cko-Request-Id"

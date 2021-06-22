@@ -7,8 +7,8 @@ await api.Payments.CaptureAsync(paymentId);
 // Or partial capture
 var captureRequest = new CaptureRequest
 {
-  Reference = "your reference",
-  Amount = 100
+    Reference = "your reference",
+    Amount = 100
 };
 
 await api.Payments.CaptureAsync(paymentId, captureRequest);

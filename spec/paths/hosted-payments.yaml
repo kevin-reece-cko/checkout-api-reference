@@ -3,6 +3,7 @@ post:
     - ApiSecretKey: []
   tags:
     - Hosted Payments Page
+  x-abc-only: true
   summary: Create a Hosted Payments Page session
   operationId: createAHostedPaymentsSession
   description: |

@@ -20,6 +20,7 @@ properties:
       - Capture
       - Refund
       - Payout
+      - Return
   processed_on:
     description: The date/time the action was processed
     allOf:
@@ -44,6 +45,15 @@ properties:
     type: string
     description: The Gateway response summary
     example: "Approved"
+  authorization_type:
+    type: string
+    description: The authorization type
+    enum:
+      - Final
+      - Estimated
+      - Incremental
+    default: Final
+    Example: Estimated 
   reference:
     type: string
     description: Your reference for the action

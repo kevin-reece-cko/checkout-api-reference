@@ -3,9 +3,8 @@ description: The source of the payment
 discriminator:
   propertyName: type
   mapping:
-    applepay: '#/components/schemas/01_ApplePayTokenRequest'
-    googlepay: '#/components/schemas/02_GooglePayTokenRequest'
-    card: '#/components/schemas/03_CardTokenRequest'
+    card: "#/components/schemas/01_CardTokenRequest"
+    googlepay: "#/components/schemas/02_GooglePayTokenRequest"
 required:
   - type
 properties:

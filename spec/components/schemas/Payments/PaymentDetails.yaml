@@ -1,0 +1,216 @@
+type: object
+description: Payment response
+required:
+  - id
+  - requested_on
+  - amount
+  - currency
+  - status
+  - approved
+  - _links
+properties:
+  id:
+    description: Payment unique identifier
+    allOf:
+      - $ref: '#/components/schemas/PaymentId'
+  requested_on:
+    description: The date/time the payment was requested
+    allOf:
+      - $ref: '#/components/schemas/ServerTimestamp'
+  source:
+    description: The source of the payment
+    type: object
+    allOf:
+      - $ref: '#/components/schemas/PaymentDetailsResponseSource'
+  destination:
+    description: The destination of the payment
+    type: object
+    allOf:
+      - $ref: '#/components/schemas/PaymentResponseDestination'
+  amount:
+    type: integer
+    description: The original payment amount
+    example: 6540
+  currency:
+    type: string
+    description: The three-letter <a href="https://docs.checkout.com/four/resources/codes/currency-codes" target="_blank">ISO currency code</a> of the payment
+    example: USD
+    maxLength: 3
+    minLength: 3
+  payment_type:
+    type: string
+    description: This must be specified for card payments where the cardholder is not present (i.e., recurring or mail order / telephone order)
+    enum:
+      - Regular
+      - Recurring
+      - MOTO
+      - Installment
+    default: Regular
+    example: Recurring
+  reference:
+    type: string
+    description: Your reference for the payment
+    example: ORD-5023-4E89
+  description:
+    type: string
+    description: A description of the payment
+    example: Set of 3 masks
+  approved:
+    type: boolean
+    description: Whether the payment was successful
+    example: true
+  expires_on:
+    type: string
+    description: The timestamp (ISO 8601 code) for when the authorization's validity period expires
+  status:
+    type: string
+    description: The status of the payment
+    enum:
+      - Pending
+      - Authorized
+      - Card Verified
+      - Voided
+      - Partially Captured
+      - Captured
+      - Partially Refunded
+      - Refunded
+      - Declined
+      - Cancelled
+      - Paid
+    example: Authorized
+  balances:
+    type: object
+    description: The payment balances
+    allOf:
+      - $ref: '#/components/schemas/PaymentResponseBalances'
+  3ds:
+    type: object
+    description: Provides information relating to the processing of 3D Secure payments
+    allOf:
+      - $ref: '#/components/schemas/3dsData'
+  risk:
+    type: object
+    description: Returns the payments risk assessment results
+    properties:
+      flagged:
+        type: boolean
+        description: Whether the payment was flagged by a risk check
+        default: false
+        example: true
+  customer:
+    type: object
+    description: The customer to which this payment is linked
+    properties:
+      id:
+        type: string
+        pattern: "^(cus)_(\\w{26})$"
+        description: The unique identifier of the customer. This can be passed as a source when making a payment
+        example: "cus_y3oqhf46pyzuxjbcn2giaqnb44"
+      email:
+        type: string
+        description: The customer's email address
+        example: "jokershere@gmail.com"
+      name:
+        type: string
+        description: The customer's name
+        example: "Jack Napier"
+    required:
+      - id
+  billing_descriptor:
+    $ref: '#/components/schemas/BillingDescriptor'
+  shipping:
+    type: object
+    description: The payment shipping details
+    properties:
+      address:
+        description: The shipping address
+        allOf:
+          - $ref: '#/components/schemas/Address'
+      phone:
+        description: The phone number associated with the shipping address
+        allOf:
+          - $ref: '#/components/schemas/PhoneNumber'
+  payment_ip:
+    description: The IP address used to make the payment
+    allOf:
+      - $ref: '#/components/schemas/IPAddress'
+  sender:
+    description: Information about the sender of the payment's funds
+    type: object
+    allOf:
+      - $ref: '#/components/schemas/PaymentDetailsResponseSender'
+  marketplace:
+    $ref: '#/components/schemas/MarketplaceData'
+  recipient:
+    $ref: '#/components/schemas/PaymentRecipient'
+  metadata:
+    type: object
+    description: A set of key-value pairs that you can attach to a payment. It can be useful for storing additional information in a structured format
+    example:
+      coupon_code: "NY2018"
+      partner_id: 123989
+  eci:
+    type: string
+    description: |
+      The final Electronic Commerce Indicator (ECI) security level used to authorize the payment. 
+      Applicable for 3D Secure and network token payments
+    example: "06"  
+  scheme_id:
+    type: string
+    description: |
+      The scheme transaction identifier
+    example: "488341541494658"
+  actions:
+    type: array
+    items:
+      $ref: '#/components/schemas/PaymentActionSummary'
+    description: |
+      A summary of the payment's actions, 
+      returned when a session ID is used to get the payment details
+  _links:
+    type: object
+    description: The links related to the payment
+    minItems: 2
+    required:
+      - self
+      - actions
+    properties:
+      self:
+        type: object
+        allOf:
+          - $ref: '#/components/schemas/Link'
+        description: The URI of the payment
+      actions:
+        type: object
+        allOf:
+          - $ref: '#/components/schemas/Link'
+        description: A link to the payment's associated actions
+      authorize:
+        type: object
+        allOf:
+          - $ref: '#/components/schemas/Link'
+        description: A link to increment the authorization, where applicable
+      void:
+        type: object
+        allOf:
+          - $ref: '#/components/schemas/Link'
+        description: A link to void the payment, where applicable
+      capture:
+        type: object
+        allOf:
+          - $ref: '#/components/schemas/Link'
+        description: A link to capture the payment, where applicable
+      refund:
+        type: object
+        allOf:
+          - $ref: '#/components/schemas/Link'
+        description: A link to refund the payment, where applicable
+    example:
+      self:
+        href: "https://api.checkout.com/payments/pay_y3oqhf46pyzuxjbcn2giaqnb44"
+      actions:
+        href: "https://api.checkout.com/payments/pay_y3oqhf46pyzuxjbcn2giaqnb44/actions"
+      authorize:
+        href: "https://api.checkout.com/payments/pay_y3oqhf46pyzuxjbcn2giaqnb44/authorizations"
+      refund:
+        href: "https://api.checkout.com/payments/pay_y3oqhf46pyzuxjbcn2giaqnb44/refund"

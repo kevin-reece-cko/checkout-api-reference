@@ -1,0 +1,38 @@
+type: object
+required:
+  - source
+  - destination
+  - amount
+  - currency
+  - billing_descriptor
+  - processing_channel_id
+properties:
+  source: 
+    $ref: '#/components/schemas/PayoutRequestSource'
+  destination:
+    $ref: '#/components/schemas/PaymentRequestDestination'
+  amount:
+    type: integer
+    description: The amount you want to pay out to the destination account. The exact format <a href="https://docs.checkout.com/four/resources/calculating-the-amount" target="_blank">depends on the currency</a>. <br><i>You must specify <b>either</b> `amount` <b>or</b> `source.amount`.</i>
+    minimum: 0
+    example: 6540
+  currency:
+    type: string
+    description: |
+      The three-letter <a href="https://docs.checkout.com/four/resources/codes/currency-codes" target="blank">ISO code</a> of the destination currency <br><i>The currency should match that of the destination account</i>.
+    example: USD
+    maxLength: 3
+    minLength: 3
+  reference:
+    type: string
+    description: An internal reference you can later use to identify this payout
+    example: "Withdrawal"
+  billing_descriptor:
+    $ref: '#/components/schemas/PayoutBillingDescriptor'
+  sender:
+    $ref: '#/components/schemas/PayoutSender'
+  instruction:
+    $ref: '#/components/schemas/PaymentInstruction'
+  processing_channel_id:
+    type: string
+    description: The processing channel identifier

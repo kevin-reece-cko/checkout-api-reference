@@ -3,6 +3,7 @@ post:
     - ApiSecretKey: []
   tags:
     - Sources
+  x-abc-only: true  
   summary: Add a payment source
   operationId: addAPaymentSource
   description: |

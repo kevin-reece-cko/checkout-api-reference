@@ -1,4 +1,4 @@
 type: object
 description: Google Pay Token Response
 allOf:
-  - $ref: '#/components/schemas/TokenResponse'
+  - $ref: "#/components/schemas/TokenResponse"

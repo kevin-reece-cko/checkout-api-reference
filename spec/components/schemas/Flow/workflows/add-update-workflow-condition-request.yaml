@@ -1,0 +1,25 @@
+type: object
+description: The workflow condition
+discriminator:
+  propertyName: type
+  mapping:
+    event: '#/components/schemas/event-condition'
+    entity: '#/components/schemas/entity-condition'
+required:
+  - type
+properties:
+  type:
+    type: string
+    description: The type of the workflow condition
+    example: event
+example:
+  {
+    "type": "event",
+    "events": {
+      "gateway": [
+          "payment_approved",
+          "payment_pending",
+          "payment_declined"
+      ]
+    }
+  }

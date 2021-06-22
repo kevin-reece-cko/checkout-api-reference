@@ -1,0 +1,12 @@
+type: object
+description: An existing payment instrument
+required:
+  - id
+allOf:
+  - $ref: "#/components/schemas/PaymentRequestDestination"
+  - type: object
+    properties:
+      id:
+        type: string
+        description: The payment instrument identifier
+        example: src_wmlfc3zyhqzehihu7giusaaawu

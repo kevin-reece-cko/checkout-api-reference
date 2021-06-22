@@ -1,7 +1,5 @@
 type: object
 required:
-  - destination
-  - amount
   - currency
 properties:
   destination:

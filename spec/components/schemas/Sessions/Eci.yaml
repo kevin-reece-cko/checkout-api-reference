@@ -1,0 +1,8 @@
+description: > 
+  Electronic Commerce Indicator. 
+  Please be advised that this field will only be included in responses when authenticating with a valid OAuth token and not when authenticating
+  with `session_secret`.
+type: string
+minLength: 2
+maxLength: 2
+example: "05"
