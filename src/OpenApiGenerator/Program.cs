@@ -12,6 +12,7 @@ namespace OpenApiGenerator
     {
         static string _outputDirectory = "output";
         static string _specDirectory = "spec";
+        static string _specSwagger = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") == "abc" ? "spec/abc-swagger.yaml" : "spec/nas-swagger.yaml";
         static string _yamlOutputFile = "output/swagger.yaml";
         static string _jsonOutputFile = "output/swagger.json";
         static List<CodeSample> _codeSamples = new List<CodeSample>();
@@ -23,7 +24,7 @@ namespace OpenApiGenerator
             {
                 RefreshOutputDirectory();
 
-                List<string> quotelist = File.ReadAllLines($"{_specDirectory}/swagger.yaml").ToList();
+                List<string> quotelist = File.ReadAllLines($"{_specSwagger}").ToList();
                 for(var i = 0; i < quotelist.Count(); i++)
                 {
                     if(quotelist[i].Contains($"x-{filterOutAccount}"))
