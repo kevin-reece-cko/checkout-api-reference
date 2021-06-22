@@ -270,10 +270,6 @@ button {
   background-color: var(--background) !important;
 }
 
-td > div {
-  background-color: var(--background)!important;
-}
-
 td > button {
   color: var(--secondary-text)!important;
 }
@@ -425,31 +421,32 @@ td.sc-kgoBCf.kGwPhO {
 
 /* Security details table */
 
-.security-details th {
+.security-details th, th {
   font-weight: 500 !important;
+  border: 1px solid var(--border)!important;
   color: var(--title-color) !important;
 }
 
-.security-details tr {
+.security-details tr, tr {
   background-color: var(--background-contrast) !important;
 }
 
 .security-details table {
-  border: 1px solid var(--border) !important;
+  border: 1px solid var(--border)!important;
 }
 
-.security-details th {
-  border: 1px solid var(--border) !important;
-}
-
-.security-details td {
-  border: 1px solid var(--border) !important;
+.security-details td, td {
+  border: 1px solid var(--border)!important;
 }
 
 /* Request body schema background */
 
 .sc-kpOJdX.icucAR {
   background: var(--request-body-content-background) !important;
+}
+
+.eXkYNB {
+  background-color: var(--background)!important;
 }
 
 /* Field names */
@@ -853,6 +850,16 @@ ul>li.react-tabs__tab, ul>li.tab-success, ul>li.tab-error {
 }
 
 /* Code samples */
+
+pre {
+	background: var(--code-label-background)!important;
+	border-radius: 8px;
+	border: 1px solid var(--border)!important;
+}
+
+code {
+  border: none!important;
+}
 
 span.property.token.string {
   color: var(--code-param) !important;
