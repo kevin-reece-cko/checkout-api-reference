@@ -16,7 +16,7 @@ if (!fs.existsSync(DIST_DIR)) {
 }
 
 gulp.task('build', function () {
-    return gulp.src(DIST_DIR).pipe(exec('npm run build'));
+    return gulp.src(DIST_DIR).pipe(exec('npm run build:all'));
 });
 
 gulp.task('reload', gulp.series('build', function () {

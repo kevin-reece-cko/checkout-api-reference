@@ -450,10 +450,6 @@ td.sc-kgoBCf.kGwPhO {
   background: var(--request-body-content-background) !important;
 }
 
-.eXkYNB {
-  background-color: var(--background)!important;
-}
-
 .react-tabs__tab-panel > div > pre {
   border: none!important;
 }
@@ -736,6 +732,7 @@ label.active, span.sc-gwVKww.SmuWE.active {
 }
 
 .eXkYNB {
+  background: transparent!important;
   padding-top: 24px;
 }
 
