@@ -1,0 +1,28 @@
+type: object
+required:
+  - path
+  - type
+  - purpose
+properties:
+  type:
+    type: string
+    enum:
+      - passport
+      - national_identity_card
+      - driving_licence
+      - citizen_card
+      - residence_permit
+      - electoral_id
+    description: The type of identification being uploaded.
+    example: "passport"
+  purpose:
+    type: string
+    description: The purpose of the file upload.
+    enum:
+      # - bank_verification
+      - identification
+    example: "identification"
+  path:
+    type: string
+    description: The <strong>local</strong> path of the file to upload, and its type.
+    example: "file=@/path/passport.png;type=image/png"

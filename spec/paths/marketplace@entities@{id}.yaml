@@ -1,7 +1,8 @@
 parameters:
   - in: path
     name: id
-    description: The id of the sub-entity
+    description: The ID of the sub-entity.
+
     required: true
     allowEmptyValue: false
     example: ent_w4jelhppmfiufdnatam37wrfc4
@@ -9,17 +10,18 @@ parameters:
     schema:
       type: string
 get:
+  description: Use this endpoint to retrieve a sub-entity and its full details.
   summary: Get sub-entity details
   security:
     - OAuth:
-      - marketplace
+        - marketplace
   responses:
-    '200':
+    "200":
       description: Sub-entity retrieved successfully
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/EntityExtendedResponse'
+            $ref: "#/components/schemas/EntityExtendedResponse"
           examples:
             Company:
               value:
@@ -28,14 +30,17 @@ get:
                 capabilities:
                   payments:
                     enabled: false
+                  payouts:
+                    enabled: false
+                status: pending
                 contact_details:
                   phone:
                     number: "2345678910"
                 profile:
                   urls:
-                  - https://www.superheroexample.com
+                    - https://www.superheroexample.com
                   mccs:
-                  - "5669"
+                    - "5669"
                 company:
                   business_registration_number: "452349600005"
                   legal_name: Super Hero Masks Inc.
@@ -51,18 +56,29 @@ get:
                     zip: W1T4TJ
                     country: GB
                   representatives:
-                  - first_name: John
-                    middle_name: 
-                    last_name: Doe
-                    address:
-                      address_line1: 90 Tottenham Court Road
-                      city: London
-                      zip: W1T4TJ
-                      country: GB
-                    identification:
-                      national_id_number: AB123456C
-                    phone:
-                      number: "2345678910"
+                    - first_name: John
+                      middle_name:
+                      last_name: Doe
+                      address:
+                        address_line1: 90 Tottenham Court Road
+                        city: London
+                        zip: W1T4TJ
+                        country: GB
+                      identification:
+                        national_id_number: "AB123456C"
+                        document:
+                          type: "driving_license"
+                          front: "file_wxglze3wwywujg4nna5fb7ldli"
+                          back: "file_adglze3wwywujg4nna5fb7l1sg"
+                      phone:
+                        number: "2345678910"
+                      date_of_birth:
+                        day: 05
+                        month: 06
+                        year: 1995
+                instruments:
+                  - id: src_hmnkhxlshf3uhljow7zt7sf2cq
+                    label: Peter's Personal Account
                 _links:
                   self:
                     href: https://api.checkout.com/marketplace/entities/ent_wxglze3wwywujg4nna5fb7ldli
@@ -73,14 +89,16 @@ get:
                 capabilities:
                   payments:
                     enabled: false
+                  payouts:
+                    enabled: false
                 contact_details:
                   phone:
                     number: "2345678910"
                 profile:
                   urls:
-                  - https://www.superheroexample.com
+                    - https://www.superheroexample.com
                   mccs:
-                  - "5669"
+                    - "5669"
                 individual:
                   first_name: John
                   middle_name: Paul
@@ -93,25 +111,38 @@ get:
                     city: London
                     zip: W1T4TJ
                     country: GB
+                  date_of_birth:
+                    day: 05
+                    month: 06
+                    year: 1995
+                  identification:
+                    national_id_number: "AB123456C"
+                    document:
+                      type: "driving_license"
+                      front: "file_wxglze3wwywujg4nna5fb7ldli"
+                      back: "file_adglze3wwywujg4nna5fb7l1sg"
+                instruments:
+                  - id: src_hmnkhxlshf3uhljow7zt7sf2cq
+                    label: Peter's Personal Account
                 _links:
                   self:
                     href: https://api.checkout.com/marketplace/entities/ent_wxglze3wwywujg4nna5fb7ldli
       headers:
         Cko-Version:
-          $ref: '#/components/headers/Cko-Version'
+          $ref: "#/components/headers/Cko-Version"
         Cko-Request-Id:
-          $ref: '#/components/headers/Cko-Request-Id'
-    '401':
+          $ref: "#/components/headers/Cko-Request-Id"
+    "401":
       description: Unauthorized
-    '404':
+    "404":
       description: Sub-entity not found
-    '422':
+    "422":
       description: Invalid data was sent
       content:
         application/json:
           schema:
             allOf:
-              - $ref: '#/components/schemas/ValidationError'
+              - $ref: "#/components/schemas/ValidationError"
               - type: object
                 properties:
                   error_codes:
@@ -122,12 +153,12 @@ get:
     - Marketplace
 put:
   description: |
-    You can update all fields under the ContactDetails, Profile, and Company objects. 
-    Please note that when you update a sub-entity we may conduct further due diligence checks when necessary. During these checks, your payment capabilities will remain the same.
+    You can update all fields under the Contact details, Profile, and Company objects. You can also add <strong>identification</strong> information to complete due diligence requirements.<br><br>
+    <strong>Note:</strong> when you update a sub-entity we may conduct further due diligence checks when necessary. During these checks, your payment capabilities will remain the same.
   summary: Update sub-entity details
   requestBody:
     required: true
-    description: The sub-entity to be updated
+    description: The sub-entity to be updated.
     content:
       application/json:
         schema:
@@ -135,19 +166,19 @@ put:
         examples:
           Company:
             value:
-              contact_details: 
+              contact_details:
                 phone:
-                  number: 2345678910
+                  number: "2345678910"
               profile:
                 urls:
                   - https://www.superheroexample.com
                 mccs:
-                  - 5669
+                  - "5669"
               company:
                 business_registration_number: "452349600005"
                 legal_name: "Super Hero Masks Inc."
                 trading_name: "Super Hero Masks"
-                principal_address: 
+                principal_address:
                   address_line1: "90 Tottenham Court Road"
                   city: "London"
                   zip: "W1T4TJ"
@@ -157,29 +188,32 @@ put:
                   city: "London"
                   zip: "W1T4TJ"
                   country: "GB"
-                representatives: 
+                representatives:
                   - first_name: "John"
                     last_name: "Doe"
-                    address: 
+                    address:
                       address_line1: "90 Tottenham Court Road"
                       city: "London"
                       zip: "W1T4TJ"
                       country: "GB"
                     identification:
-                      description: Identification of the representative, used for verification
                       national_id_number: "AB123456C"
                     phone:
-                      number: 2345678910
+                      number: "2345678910"
+                    date_of_birth:
+                      day: 05
+                      month: 06
+                      year: 1995
           Individual:
             value:
               contact_details:
                 phone:
-                  number: 2345678910
+                  number: "2345678910"
               profile:
                 urls:
                   - https://www.superheroexample.com
                 mccs:
-                  - 5669
+                  - "5669"
               individual:
                 first_name: "John"
                 last_name: "Doe"
@@ -190,9 +224,15 @@ put:
                   zip: "W1T4TJ"
                   country: "GB"
                 national_tax_id: "TAX123456"
+                date_of_birth:
+                  day: 05
+                  month: 06
+                  year: 1995
+                identification:
+                  national_id_number: "AB123456C"
   security:
     - OAuth:
-      - marketplace
+        - marketplace
   responses:
     "200":
       description: Sub-entity updated successfully
@@ -215,7 +255,7 @@ put:
         application/json:
           schema:
             allOf:
-              - $ref: '#/components/schemas/ValidationError'
+              - $ref: "#/components/schemas/ValidationError"
               - type: object
                 properties:
                   error_codes:
