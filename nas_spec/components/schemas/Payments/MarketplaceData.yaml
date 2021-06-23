@@ -1,0 +1,7 @@
+type: object
+description: Information related to marketplace payments
+properties:
+  sub_entity_id:
+    type: string
+    description: The sub-entity that the payment is being processed on behalf of
+    example: 'ent_rgyzti4x74xubmu72m6r3pvksa'

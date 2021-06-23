@@ -1,0 +1,14 @@
+type: object
+description: Action that invokes the Flow simulator
+required:
+  - api_key
+allOf:
+  #- $ref: '#/components/schemas/workflow-action'
+  - type: object
+    required:
+      - api_key
+    properties:
+      api_key:
+        type: string
+        description: The simulator API key (any value supported)
+        example: 'secret123'

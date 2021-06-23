@@ -1,0 +1,57 @@
+type: object
+description: Payment response
+required:
+  - id
+  - status
+properties:
+  id:
+    description: The payment's unique identifier
+    readOnly: true
+    allOf:
+      - $ref: '#/components/schemas/PaymentId'
+  status:
+    type: string
+    description: The status of the payment
+    enum:
+      - Pending
+  reference:
+    type: string
+    description: Your reference for the payment request
+    example: ORD-5023-4E89
+  customer:
+    type: object
+    description: The customer associated with the payment, if provided in the request
+    allOf:
+      - $ref: '#/components/schemas/CustomerResponse'
+  3ds:
+    type: object
+    description: Provides 3D Secure enrollment status
+    allOf:
+      - $ref: '#/components/schemas/3dsEnrollmentData'
+  instruction:
+    type: object
+    description: Instruction details for payouts to bank accounts
+    allOf:
+      - $ref: '#/components/schemas/PaymentInstructionResponse'
+  _links:
+    type: object
+    description: The links related to the payment
+    readOnly: true
+    minItems: 2
+    properties:
+      self:
+        type: object
+        allOf:
+          - $ref: '#/components/schemas/Link'
+        description: The URI of the payment
+        example:
+          href: 'https://api.checkout.com/payments/pay_mbabizu24mvu3mela5njyhpit4'
+      redirect:
+        type: object
+        allOf:
+          - $ref: '#/components/schemas/Link'
+        description: The URI that the customer should be redirected to in order to complete the payment
+        example:
+          href: 'https://api.checkout.com/3ds/pay_mbabizu24mvu3mela5njyhpit4'
+    required:
+      - self

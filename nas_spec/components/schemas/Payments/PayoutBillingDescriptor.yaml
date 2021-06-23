@@ -1,0 +1,9 @@
+type: object
+required: reference
+description: |
+  The dynamic billing descriptor displayed on the recipient's bank account statement
+properties:
+  reference:
+    type: string
+    description: |
+      The reference that should be shown on the statement

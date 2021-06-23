@@ -1,0 +1,23 @@
+type: string
+description: >
+  When the Session is unavailable this will point to the reason it is so.  <br/><br/>
+
+  • ares_error = There was an issue in the Authentication response we got back from the Directory Server (scheme server - 3DS2) <br/>
+  • ares_status = The status was set to the status in the Authentication response we got back from the Directory Server (scheme server - 3DS2) <br/>
+  • veres_error = There was an issue in the Verification response we got back from the Directory Server (scheme server - 3DS1) <br/>
+  • veres_status = The status was set to the status in the Verification response we got back from the Directory Server (scheme server - 3DS1) <br/>
+  • pares_error = There was an issue in the Payer Authentication response we got back from the Access Control Server (issuer server - 3DS1) <br/>
+  • pares_status = The status was set to the status in the Payer Authentication response we got back from the Access Control Server (issuer server - 3DS1) <br/>
+  • rreq_error = There was an issue in the Response we got back from the Access Control Server (issuer server - 3DS2) <br/>
+  • rreq_status = The status was set to the status in the Response we got back from the Access Control Server (issuer server - 3DS2) <br/>
+  • risk_declined = The status was set to declined because the Risk engine recommended we decline the authentication <br/>
+enum:
+  - ares_error
+  - ares_status
+  - veres_error
+  - veres_status
+  - pares_error
+  - pares_status
+  - rreq_error
+  - rreq_status
+  - risk_declined

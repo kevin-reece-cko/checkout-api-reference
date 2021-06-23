@@ -1,0 +1,27 @@
+type: object
+description: Void response
+required:
+  - action_id
+properties:
+  action_id:
+    description: The unique identifier for the void action
+    allOf:
+      - $ref: '#/components/schemas/ActionId'
+  reference:
+    type: string
+    description: Your reference for the void request
+    example: 'ORD-5023-4E89'
+  _links:
+    type: object
+    description: The links related to the void
+    readOnly: true
+    minItems: 2
+    properties:
+      payment:
+        type: object
+        allOf:
+          - $ref: '#/components/schemas/Link'
+        example:
+          href: 'https://api.checkout.com/payments/pay_y3oqhf46pyzuxjbcn2giaqnb44'
+    required:
+      - payment

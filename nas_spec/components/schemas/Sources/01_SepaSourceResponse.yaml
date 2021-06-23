@@ -1,0 +1,30 @@
+type: object
+description: The SEPA mandate details
+allOf:
+  - $ref: '#/components/schemas/AddSourceResponse'
+  - type: object
+    properties:
+      response_data:
+        type: object
+        description: SEPA Direct Debit details
+        properties:
+          mandate_reference:
+            type: string
+            description: The Direct Debit mandate reference
+            example: 'MANDXI9809809'
+      _links:
+        type: object
+        description: The links related to the SEPA payment source
+        readOnly: true
+        minItems: 1
+        properties:
+          self:
+            type: object
+            allOf:
+              - $ref: '#/components/schemas/Link'
+            description: The URI of the payment source
+          cancel:
+            type: object
+            allOf:
+              - $ref: '#/components/schemas/Link'
+            description: A link to cancel the SEPA Direct Debit mandate

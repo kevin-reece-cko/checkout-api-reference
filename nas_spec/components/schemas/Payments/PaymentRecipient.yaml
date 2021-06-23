@@ -1,0 +1,36 @@
+type: object
+description: Information about the recipient of the payment's funds. Relevant for [Account Funding Transactions](https://docs.checkout.com/four/payments/manage-payments/account-funding-transactions) and VISA or Mastercard [domestic UK transactions processed by financial institutions](https://docs.checkout.com/four/payments/regulation-support/requirements-for-financial-institutions).
+properties:
+  dob:
+    type: string
+    format: date
+    description: The recipient's date of birth (yyyy-mm-dd)
+    maxLength: 10
+    example: '1985-05-15'
+  account_number:
+    type: string
+    description: The first six digits and the last four digits of the primary recipient's card, without spaces, or up to ten digits of the primary recipient's account number
+    minLength: 10
+    maxLength: 10
+    example: '5555554444'
+  zip:
+    type: string
+    description: The first part of the UK postcode (e.g., W1T 4TJ would be W1T)
+    maxLength: 10
+    example: 'W1T'
+  first_name:
+    type: string
+    description: The recipient's first name
+    maxLength: 50
+    example: 'John'
+  last_name:
+    type: string
+    description: The recipient's last name
+    maxLength: 50
+    example: 'Jones'
+  country:
+    type: string
+    description: The country ([two-letter ISO country code](https://docs.checkout.com/four/resources/codes/country-codes)) of the recipient's address
+    minLength: 2
+    maxLength: 2
+    example: 'GB'

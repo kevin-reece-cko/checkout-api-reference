@@ -1,0 +1,25 @@
+allOf:
+  - $ref: '#/components/schemas/GetSessionLinks'
+properties:
+  redirect_url:
+    type: object
+    description: >
+      The link to which the cardholder should be redirected. </br>
+      Only available when the `hosted` value is `true`.
+    properties:
+      required:
+        - href
+      href:
+        type: string
+        maxLength: 100
+        example: http://3ds2.checkout.com/interceptor/sid_y3oqhf46pyzuxjbcn2giaqnb44
+  collect_channel_data:
+    type: object
+    description: The URI to send device information to. Only available if `next_actions` contains `collect_data`
+    properties:
+      required:
+        - href
+      href:
+        type: string
+        maxLength: 100
+        example: https://api.checkout.com/sessions/sid_y3oqhf46pyzuxjbcn2giaqnb441/collect-data

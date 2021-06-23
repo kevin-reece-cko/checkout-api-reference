@@ -1,0 +1,22 @@
+type: object
+properties:
+  address_line_1:
+    type: string
+    example: 333 Cormier Bypass
+  address_line_2:
+    type: string
+    example: Rolfson Alley
+  post_code:
+    type: string
+    example: BR3 6TK
+  country:
+    type: string
+    example: GB
+  city:
+    type: string
+    example: Bromley
+  state:
+    type: string
+    example: Greater London
+  phone:
+    $ref: '#/components/schemas/Phone'

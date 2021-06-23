@@ -1,0 +1,27 @@
+type: object
+discriminator:
+  propertyName: type
+  mapping:
+    sepa: '#/components/schemas/01_SepaSourceResponse'
+    ach: '#/components/schemas/AddSourceResponse'
+required:
+  - type
+  - response_code
+properties:
+  id:
+    type: string
+    description: The unique identifier of the payment source that can be used later for payments
+    example: src_y3oqhf46pyzuxjbcn2giaqnb44
+  type:
+    type: string
+    description: The payment source type
+    example: 'sepa'
+  response_code:
+    type: string
+    description: The Gateway response code
+    example: '10000'
+  customer:
+    type: object
+    description: The customer associated with the payment source if provided in the request
+    allOf:
+      - $ref: '#/components/schemas/SourceResponseCustomer'

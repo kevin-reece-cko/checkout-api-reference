@@ -1,0 +1,15 @@
+type: object
+description: Payment destination
+discriminator:
+  propertyName: type
+  mapping:
+    #card: '#/components/schemas/01_PaymentResponseCardDestination'
+    bank_account: '#/components/schemas/02_PaymentResponseBankAccountDestination'
+required:
+  - type
+properties:
+  type:
+    type: string
+    description: |
+      The payment destination type.
+    example: 'card'

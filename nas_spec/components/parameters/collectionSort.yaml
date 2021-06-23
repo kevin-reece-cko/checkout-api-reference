@@ -1,0 +1,10 @@
+name: sort
+in: query
+style: form
+schema:
+  type: array
+  items:
+    type: string
+description: >-
+  The collection items sort field and order (prefix with "-" for descending
+  sort).

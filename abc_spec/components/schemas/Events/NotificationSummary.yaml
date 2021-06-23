@@ -1,0 +1,20 @@
+type: object
+properties:
+  id:
+    $ref: '#/components/schemas/NotificationId'
+  url:
+    type: string
+    description: The notification endpoint
+    example: https://example.com/webhooks
+  success:
+    type: boolean
+    description: Whether the notification eventually succeeded
+    example: false
+  _links:
+    type: object
+    description: The links related to the notification
+    properties:
+      self:
+        type: string
+        example:
+          href: https://api.checkout.com/events/evt_az5sblvku4ge3dwpztvyizgcau/notifications/ntf_az5sblvku4ge3dwpztvyizgcau

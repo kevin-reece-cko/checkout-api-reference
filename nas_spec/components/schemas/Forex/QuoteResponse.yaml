@@ -1,0 +1,34 @@
+type: object
+properties:
+  id:
+    description: The quote's unique identifier
+    allOf:
+      - $ref: '#/components/schemas/QuoteId'
+  source_currency:
+    type: string
+    description: The source three-letter <a href="https://docs.checkout.com/four/resources/codes/currency-codes" target="_blank">ISO currency code</a>
+    example: GBP
+  source_amount:
+    type: integer
+    description: The source currency amount
+    example: 30000
+  destination_currency:
+    type: string
+    description: The destination three-letter <a href="https://docs.checkout.com/four/resources/codes/currency-codes" target="_blank">ISO currency code</a>
+    example: USD
+  destination_amount:
+    type: integer
+    description: The destination currency amount
+    example: 35700
+  rate:
+    type: number
+    description: The quoted rate
+    example: 1.19
+  expires_on:
+    type: string
+    format: date-time
+    description: The date/time that the quote expires
+  is_single_use:
+    type: boolean
+    description: If the quote is restricted to a single use, or can be confirmed multiple times before expiry
+    example: false

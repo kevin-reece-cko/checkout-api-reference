@@ -1,0 +1,5 @@
+name: criteria
+in: query
+schema:
+  type: string
+description: The json criteria for collection

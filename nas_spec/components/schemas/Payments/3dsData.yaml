@@ -1,0 +1,47 @@
+type: object
+properties:
+  downgraded:
+    type: boolean
+    description: Inidicates whether this was a 3D Secure payment downgraded to non-3D Secure (when `attempt_n3d` is specified)
+    example: false
+  enrolled:
+    type: string
+    description: >
+      Indicates the 3D Secure enrollment status of the issuer
+        * `Y` - Issuer enrolled
+        * `N` - Customer not enrolled
+        * `U` - Unknown
+    example: Y
+  signature_valid:
+    type: string
+    description: Verification to ensure the integrity of the response
+    example: Y
+  authentication_response:
+    type: string
+    description: >
+      Indicates whether or not the cardholder was authenticated
+        * `Y` - Customer authenticated
+        * `N` - Customer not authenticated
+        * `A` - An authentication attempt occurred but could not be completed
+        * `U` - Unable to perform authentication
+    example: Y
+  cryptogram:
+    type: string
+    description: Base64 encoded cryptographic identifier (CAVV) used by the card schemes to validate the integrity of the 3D secure payment data
+    example: hv8mUFzPzRZoCAAAAAEQBDMAAAA=
+  xid:
+    type: string
+    description: Unique identifier for the transaction assigned by the MPI
+    example: MDAwMDAwMDAwMDAwMDAwMzIyNzY=
+  version:
+    type: string
+    description: Indicates the version of 3D Secure that was used for authentication
+    example: '2.1.0'
+  exemption:
+    type: string
+    enum:
+      - low_value
+      - secure_corporate_payment
+      - trusted_listing
+    description: Specifies an exemption reason so that the payment is not processed using 3D Secure authentication. Learn more about exemptions in our <a href="https://docs.checkout.com/four/payments/regulation-support/sca-compliance-guide#SCAcomplianceguide-PossibleSCAexemptionsexemptions" target="_blank">SCA compliance guide</a>
+    example: 'low_value'

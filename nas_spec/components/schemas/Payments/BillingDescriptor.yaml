@@ -1,0 +1,28 @@
+type: object
+description: |
+  An optional dynamic billing descriptor displayed on the account owner's statement.
+properties:
+  name:
+    type: string
+    description: |
+      A dynamic description of the payment. 
+      Applies to card payments only.
+    example: 'SUPERHEROES.COM'
+    maxLength: 25
+  city:
+    type: string
+    description: |
+      The city from which the payment originated. 
+      Applies to card payments only.
+    minimum: 1
+    example: 'GOTHAM'
+    maxLength: 13
+  reference:
+    type: string
+    description: |
+      The reference that should be shown on the statement. 
+      Required for payouts to bank accounts.
+    maxLength: 50
+required:
+  - name
+  - city

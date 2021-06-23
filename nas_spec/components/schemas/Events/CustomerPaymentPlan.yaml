@@ -1,0 +1,38 @@
+type: object
+properties:
+  id:
+    type: string
+  customer_plan_id:
+    type: string
+  card_id:
+    type: string
+  customer_id:
+    type: string
+  name:
+    type: string
+  plan_track_id:
+    type: string
+  auto_cap_time:
+    type: string
+  value:
+    type: integer
+  currency:
+    type: string
+  cycle:
+    type: string
+  recurring_count:
+    type: integer
+  recurring_count_left:
+    type: integer
+  total_collected_value:
+    type: integer
+  total_collected_count:
+    type: integer
+  current_recurring_status:
+    type: integer
+  start_date:
+    type: string
+  previous_recurring_date:
+    type: string
+  next_recurring_date:
+    type: string

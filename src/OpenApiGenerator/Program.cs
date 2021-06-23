@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Linq;
 using Microsoft.OpenApi.Readers;
 using Microsoft.OpenApi.Writers;
-using System.Net.Http;
 using System.Text;
 
 namespace OpenApiGenerator
@@ -12,13 +11,13 @@ namespace OpenApiGenerator
     class Program
     {
         static string _outputDirectory = "output";
-        static string _specDirectory = "spec";
+        static string _specDirectory = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") == "abc" ? "abc_spec" : "nas_spec";
         static string _yamlOutputFile = "output/swagger.yaml";
         static string _jsonOutputFile = "output/swagger.json";
         static List<CodeSample> _codeSamples = new List<CodeSample>();
         static string[] httpVerbs = new[] { "get", "put", "post", "delete", "options", "head", "patch", "trace" };
-
-        static void Main(string[] args)
+        static string filterOutAccount = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") == "abc" ? "nas" : "abc";
+       static void Main(string[] args)
         {
             try
             {

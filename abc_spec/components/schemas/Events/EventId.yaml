@@ -1,0 +1,5 @@
+type: string
+description: The unique event identifier
+maxLength: 30
+minLength: 30
+example: 'evt_az5sblvku4ge3dwpztvyizgcau'

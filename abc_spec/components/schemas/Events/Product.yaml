@@ -1,0 +1,26 @@
+type: object
+properties:
+  name:
+    type: string
+    example: Tablet 1 gold limited
+  description:
+    type: string
+    example: Nokia Lumia
+  sku:
+    type: string
+    example: 1aab2aa
+  price:
+    type: integer
+    example: 100
+  quantity:
+    type: integer
+    example: 1
+  image:
+    type: string
+    example: 'http://www.test_Jabari.com/'
+  shipping_cost:
+    type: integer
+    example: 10
+  tracking_url:
+    type: string
+    example: 'https://www.tracker.com'

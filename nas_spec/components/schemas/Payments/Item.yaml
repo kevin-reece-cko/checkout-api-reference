@@ -1,0 +1,37 @@
+type: object
+description: The order line item or product that is being purchased
+properties:
+  sku:
+    type: string
+    description: The stock-keeping unit (SKU) identifier of the item
+    example: 858818ac
+  name:
+    type: string
+    description: The name of the item or product
+    example: Kevlar batterang
+  description:
+    type: string
+    description: A description of the item or product
+    example: The fastest, hardest batterang known to man
+  image_url:
+    type: string
+    format: uri
+    description: The URL of an image of the item or product
+    example: http://example.com/batterang.jpg
+  price:
+    type: number
+    description: The unit price of the item or product in the minor currency unit
+    example: 34.50
+  quantity:
+    type: number
+    description: The number of the items purchased
+    example: 2
+  shipping_cost:
+    type: number
+    description: The shipping cost of the item
+    example: 2.99
+  shipping_tracking_url:
+    type: string
+    format: uri
+    description: A URL to track the shipping status of the item
+    example: http://www.dhl.co.uk/en/express/tracking.html?AWB=41f280bbe12cd787b47c&brand=DHL

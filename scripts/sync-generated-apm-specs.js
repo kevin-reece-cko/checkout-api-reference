@@ -1,4 +1,4 @@
-// To run this script use the command 'npm run sync-generated-apm-specs' on the IRE VPN Profile. 
+// To run this script use the command 'npm run sync-generated-apm-specs' on the IRE VPN Profile.
 
 var specs = require('./sync-specs');
 

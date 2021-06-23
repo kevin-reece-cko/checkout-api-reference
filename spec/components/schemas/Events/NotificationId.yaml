@@ -1,5 +1,0 @@
-type: string
-description: The unique notification identifier
-maxLength: 30
-minLength: 30
-example: "ntf_az5sblvku4ge3dwpztvyizgcau"

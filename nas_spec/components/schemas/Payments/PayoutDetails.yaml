@@ -1,0 +1,128 @@
+type: object
+description: Payment response
+properties:
+  id:
+    description: Payment unique identifier
+    allOf:
+      - $ref: '#/components/schemas/PaymentId'
+  requested_on:
+    description: The date/time the payment was requested
+    allOf:
+      - $ref: '#/components/schemas/ServerTimestamp'
+  source:
+    description: The source of the payout
+    type: object
+    properties:
+      id:
+        type: string
+        description: The payment source identifier, which can be used for subsequent payments
+        example: ca_y3oqhf46pyzuxjbcn2giaqnb44
+      type:
+        type: string
+        description: The payment source type. This is always `currency_account` for payouts.
+        example: currency_account
+  destination:
+    description: The destination of the payout
+    type: object
+    properties:
+      type:
+        type: string
+        description: The payout destination type
+        example: bank_account
+      id:
+        type: string
+        description: The payment instrument identifier
+        example: src_4pakgjwmv5re5m5ivqohsqpxnm
+  amount:
+    type: integer
+    description: The original payout amount
+    example: 1000
+  currency:
+    type: string
+    description: The three-letter <a href="https://docs.checkout.com/four/resources/codes/currency-codes" target="_blank">ISO currency code</a> of the payment
+    example: GBP
+    maxLength: 3
+    minLength: 3
+  reference:
+    type: string
+    description: Your reference for the payout
+    example: PO-215-5721
+  billing_descriptor:
+    type: object
+    description: Details about the billing descriptor
+    properties:
+      reference:
+        type: string
+        description: The reference that is displayed on the account holder's statement
+        example: Withdrawal
+  status:
+    type: string
+    description: The status of the payout
+    enum:
+      - Pending
+      - Paid
+      - Declined
+      - Returned
+    example: Pending
+  approved:
+    type: boolean
+    description: Whether the authorization was successful
+    example: true
+  sender:
+    description: Information about the sender of the payment's funds
+    type: object
+    allOf:
+      - $ref: '#/components/schemas/PaymentDetailsResponseSender'
+  instruction:
+    description: Details about the instruction for payouts to bank accounts <br><i>The fields will depend on which ones were included in the request</i>.
+    type: object
+    properties:
+      value_date:
+        type: string
+        description: The date (in ISO 8601 format) on which the recipient's account will be credited
+      purpose:
+        type: string
+        description: An optional description of the payout purpose, like `Insurance_claim` or `Remittance`
+      charge_bearer:
+        type: string
+        description: Who should be charged the payout fee
+        enum:
+          - OUR
+          - SHA
+      repair:
+        type: boolean
+        description: Determines whether the payout details cna be modified to attempt to prevent a payout from being returned
+      scheme:
+        type: string
+        description: The preferred payment scheme or network the bank transfer will be sent through
+        enum:
+          - swift
+          - local
+          - instant
+      quote_id:
+        type: string
+        description: The FX quote identifier
+    example:
+      value_date: '2020-06-13T01:49:19.1864428Z'
+      purpose: Wallet Withdrawal
+      quote_id: qte_xrhaw53z5m6ehbbxz2n6n5lk74
+  _links:
+    type: object
+    description: Links related to the payouts
+    properties:
+      self:
+        type: object
+        description: The direct link to the payout
+        properties:
+          href:
+            type: string
+            description: The link URL
+            example: https://api.sandbox.checkout.com/payments/pay_gwlowf7eap7uzm4cyaaqoq62au
+      actions:
+        type: object
+        description: The link to the list of actions related to the payout
+        properties:
+          href:
+            type: string
+            description: The link URL
+            example: https://api.sandbox.checkout.com/payments/pay_gwlowf7eap7uzm4cyaaqoq62au/actions

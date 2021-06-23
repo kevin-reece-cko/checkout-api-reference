@@ -1,0 +1,4 @@
+type: string
+description: The protocol version number of the specification used by the API for authentication
+maxLength: 50
+example: '2.2.0'

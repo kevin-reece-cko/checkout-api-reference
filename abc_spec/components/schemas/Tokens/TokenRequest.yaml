@@ -1,0 +1,15 @@
+type: object
+description: The source of the payment
+discriminator:
+  propertyName: type
+  mapping:
+    applepay: '#/components/schemas/01_ApplePayTokenRequest'
+    googlepay: '#/components/schemas/02_GooglePayTokenRequest'
+    card: '#/components/schemas/03_CardTokenRequest'
+required:
+  - type
+properties:
+  type:
+    type: string
+    description: The type of card details to be tokenized
+    example: 'card'

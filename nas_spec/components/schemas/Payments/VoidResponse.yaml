@@ -1,0 +1,64 @@
+type: object
+description: Payment response
+required:
+  - id
+  - action_id
+  - amount
+  - currency
+  - status
+  - response_code
+  - processed_on
+  - _links
+properties:
+  id:
+    description: The unique payment identifier
+    allOf:
+      - $ref: '#/components/schemas/PaymentId'
+  action_id:
+    description: The unique identifier for the void action
+    allOf:
+      - $ref: '#/components/schemas/ActionId'
+  amount:
+    type: integer
+    description: The void amount
+    example: 6540
+  currency:
+    type: string
+    description: The three-letter <a href="https://docs.checkout.com/docs/currency-codes" target="blank">ISO currency code</a> of the payment
+    example: USD
+    maxLength: 3
+    minLength: 3
+  status:
+    type: string
+    description: The status of the payment
+    example: 'Voided'
+  response_code:
+    type: string
+    description: The Gateway response code
+    example: '10000'
+  response_summary:
+    type: string
+    description: The Gateway response summary
+    example: 'Approved'
+  processed_on:
+    description: The date/time the void was processed
+    allOf:
+      - $ref: '#/components/schemas/ServerTimestamp'
+  reference:
+    type: string
+    description: Your reference for the void request
+    example: ORD-5023-4E89
+  _links:
+    type: object
+    description: The links related to the payment
+    minItems: 1
+    properties:
+      payment:
+        type: object
+        allOf:
+          - $ref: '#/components/schemas/Link'
+        description: The URI of the payment
+        example:
+          href: 'https://api.checkout.com/payments/pay_y3oqhf46pyzuxjbcn2giaqnb44'
+    required:
+      - payment

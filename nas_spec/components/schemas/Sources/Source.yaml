@@ -1,0 +1,32 @@
+type: object
+required:
+  - type
+properties:
+  id:
+    type: string
+    description: The unique identifier of the payment source that can be later used for payments
+    example: src_y3oqhf46pyzuxjbcn2giaqnb44
+  type:
+    type: string
+    description: The payment source type
+    example: 'sepa'
+  _links:
+    type: object
+    description: The links related to the payment source
+    readOnly: true
+    minItems: 1
+    required:
+      - self
+    properties:
+      self:
+        type: object
+        allOf:
+          - $ref: '#/components/schemas/Link'
+        description: The URI of the payment source
+        example:
+          href: https://api.checkout.com/sources/src_y3oqhf46pyzuxjbcn2giaqnb44
+    example:
+      self:
+        href: https://api.checkout.com/sources/src_y3oqhf46pyzuxjbcn2giaqnb44
+      'sepa:mandate':
+        href: https://api.checkout.com/sepa/mandates/src_y3oqhf46pyzuxjbcn2giaqnb44

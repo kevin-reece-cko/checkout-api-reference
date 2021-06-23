@@ -1,0 +1,21 @@
+type: object
+description: The batch request
+required:
+  - file_id
+  - action
+properties:
+  file_id:
+    type: string
+    pattern: "^file_(\\w{26})$"
+    description: The identifier of the batch file previously uploaded via the [Files API](#tag/Files)
+    example: 'file_6lbss42ezvoufcb2beo76rvwly'
+  action:
+    type: string
+    description: The action to be performed against the batch
+    enum:
+      - payment
+    example: 'payment'
+  reference:
+    type: string
+    description: Your reference for the batch. If provided, this will be validated against the batch file's header
+    example: payments-20180701

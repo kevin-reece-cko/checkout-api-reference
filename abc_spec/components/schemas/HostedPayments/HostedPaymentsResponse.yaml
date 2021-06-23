@@ -1,0 +1,25 @@
+type: object
+required:
+  - _links
+properties:
+  reference:
+    type: string
+    description: A reference you can later use to identify this payment, such as an order number
+    example: ORD-5023-4E89
+  _links:
+    type: object
+    description: The links related to the hosted payment
+    readOnly: true
+    minItems: 1
+    properties:
+      redirect:
+        type: object
+        allOf:
+          - $ref: '#/components/schemas/Link'
+        example:
+          href: 'https://pay.sandbox.checkout.com/page/xGQBg0AXl3cM'
+example:
+  reference: 'ORD-123A'
+  _links:
+    redirect:
+      href: 'https://pay.sandbox.checkout.com/page/xGQBg0AXl3cM'
