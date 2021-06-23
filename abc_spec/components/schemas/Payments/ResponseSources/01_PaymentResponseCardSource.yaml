@@ -1,7 +1,7 @@
 type: object
 description: A card payment source
 allOf:
-  - $ref: "#/components/schemas/PaymentResponseSource"
+  - $ref: '#/components/schemas/PaymentResponseSource'
   - type: object
     required:
       - expiry_month
@@ -26,24 +26,24 @@ allOf:
       name:
         type: string
         description: The cardholder's name
-        example: "Bruce Wayne"
+        example: 'Bruce Wayne'
       scheme:
         type: string
         description: The card scheme
-        example: "VISA"
+        example: 'VISA'
       last4:
         type: string
         description: The last four digits of the card number
-        example: "9996"
+        example: '9996'
       fingerprint:
         type: string
         description: Uniquely identifies this particular card number. You can use this to compare cards across customers.
-        example: "F639CAB2745BEE4140BF86DF6B6D6"
+        example: 'F639CAB2745BEE4140BF86DF6B6D6'
       bin:
         type: string
         description: The card issuer's Bank Identification Number (BIN)
         maxLength: 6
-        example: "454347"
+        example: '454347'
       card_type:
         type: string
         description: The card type
@@ -64,17 +64,17 @@ allOf:
       issuer:
         type: string
         description: The name of the card issuer
-        example: "GOTHAM STATE BANK"
+        example: 'GOTHAM STATE BANK'
       issuer_country:
         type: string
         maxLength: 2
         minLength: 2
         description: The card issuer's country (<a href="https://docs.checkout.com/resources/codes/country-codes" target="blank">two-letter ISO code</a>)
-        example: "US"
+        example: 'US'
       product_id:
         type: string
         description: The issuer/card scheme product identifier
-        example: "F"
+        example: 'F'
       product_type:
         type: string
         description: The issuer/card scheme product type
@@ -98,4 +98,4 @@ allOf:
       payment_account_reference:
         type: string
         description: A unique reference to the underlying card for network tokens (e.g., Apple Pay, Google Pay)
-        example: "EUNIX9AX7THOOJIEJ2AP6OOFAHGH4"
+        example: 'EUNIX9AX7THOOJIEJ2AP6OOFAHGH4'

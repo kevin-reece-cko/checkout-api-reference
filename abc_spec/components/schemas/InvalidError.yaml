@@ -1,5 +1,5 @@
 allOf:
-  - $ref: "#/components/schemas/Error"
+  - $ref: '#/components/schemas/Error'
   - type: object
     properties:
       details:

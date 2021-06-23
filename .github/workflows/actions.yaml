@@ -9,16 +9,16 @@ jobs:
   run-checks:
     runs-on: ubuntu-latest
 
-    steps:         
-      - uses: actions/checkout@v2      
-      
+    steps:
+      - uses: actions/checkout@v2
+
       - uses: actions/setup-node@v2.1.5
         with:
           node-version: 14.x
 
       - name: Install node modules
         run: npm i --ignore-scripts
-              
+
       - name: Build ABC & NAS specs
         run: npm run build:all
 
@@ -26,5 +26,3 @@ jobs:
         run: |
           npm run test:abc
           npm run test:nas
-          
-        

@@ -1,10 +1,10 @@
 post:
   tags:
     - Disputes
-  security: 
-    - OAuth: 
-      - disputes
-      - disputes:accept
+  security:
+    - OAuth:
+        - disputes
+        - disputes:accept
     - ApiSecretKey: []
   summary: Accept dispute
   description: >-

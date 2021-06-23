@@ -1,10 +1,10 @@
 type: object
 properties:
-  event_id: 
+  event_id:
     type: string
     description: The unique event identifier
     example: evt_az5sblvku4ge3dwpztvyizgcau
-  workflow_action_id: 
+  workflow_action_id:
     type: string
     description: The worfklow action identifier
     example: wfa_uzkxpffkvpiu5fe3h5ira7sqpa
@@ -39,13 +39,13 @@ properties:
     example:
       - timestamp: '2019-05-23T08:26:59Z'
         success: false
-        result: 
+        result:
           status_code: '500'
           summary: Server Error
         is_final: false
       - timestamp: '2019-05-23T08:27:01Z'
         success: true
-        result: 
+        result:
           status_code: '200'
           summary: OK
         is_final: true

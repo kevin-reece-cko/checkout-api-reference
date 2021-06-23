@@ -1,6 +1,6 @@
 description: >
   Only available as a result of a 3DS2 authentication. 
-  
+
   The response from the DS or ACS which indicates whether a transaction qualifies as an authenticated transaction or account verification. <br/>
   Only available if communication with the scheme was successful and the Session is in a final state. <br/><br/>
   • Y = Authentication Verification Successful. <br/>
@@ -13,11 +13,11 @@ description: >
   • I = Informational Only; 3DS Requestor challenge preference acknowledged.
 type: string
 enum:
-  - "Y"
-  - "N"
-  - "U"
-  - "A"
-  - "C"
-  - "D"
-  - "R"
-  - "I"
+  - 'Y'
+  - 'N'
+  - 'U'
+  - 'A'
+  - 'C'
+  - 'D'
+  - 'R'
+  - 'I'

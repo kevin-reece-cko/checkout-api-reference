@@ -12,4 +12,4 @@ properties:
   type:
     type: string
     description: The type of card details to be tokenized
-    example: "card"
+    example: 'card'

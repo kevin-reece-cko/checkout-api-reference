@@ -10,7 +10,7 @@ allOf:
       billing_address:
         description: The payment source owner's billing address
         allOf:
-        - $ref: '#/components/schemas/01_SepaAddress'
+          - $ref: '#/components/schemas/01_SepaAddress'
       source_data:
         type: object
         description: Additional data required to create SEPA payment sources
@@ -24,27 +24,27 @@ allOf:
           first_name:
             type: string
             description: The account holder's first name
-            example: "Marcus"
+            example: 'Marcus'
           last_name:
             type: string
             description: The account holder's last name
-            example: "Barrilius Maximus"
+            example: 'Barrilius Maximus'
           account_iban:
             type: string
             description: The account IBAN
-            example: "DE25100100101234567893"
+            example: 'DE25100100101234567893'
           bic:
             type: string
             description: The account BIC
-            example: "PBNKDEFFXXX"
+            example: 'PBNKDEFFXXX'
           billing_descriptor:
             type: string
             description: The billing descriptor
-            example: "ExampleCompany.com"
+            example: 'ExampleCompany.com'
           mandate_type:
             type: string
             description: The type of mandate
             enum:
-              - "single"
-              - "recurring"
-            example: "recurring"
+              - 'single'
+              - 'recurring'
+            example: 'recurring'

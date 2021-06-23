@@ -3,7 +3,7 @@ description: A currency account source
 required:
   - id
 allOf:
-  - $ref: "#/components/schemas/PayoutRequestSource"
+  - $ref: '#/components/schemas/PayoutRequestSource'
   - type: object
     properties:
       id:

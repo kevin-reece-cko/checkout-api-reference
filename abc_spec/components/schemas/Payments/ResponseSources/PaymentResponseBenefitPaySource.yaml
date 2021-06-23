@@ -1,13 +1,11 @@
 ###
-# Warning: this file was auto generated from OpenAPI specs using 'npm run sync-generated-specs'. Do not manually edit. 
+# Warning: this file was auto generated from OpenAPI specs using 'npm run sync-generated-specs'. Do not manually edit.
 ###
 type: object
 description: 'BenefitPay Source'
 allOf:
-  -
-    $ref: '#/components/schemas/PaymentResponseSource'
-  -
-    type: object
+  - $ref: '#/components/schemas/PaymentResponseSource'
+  - type: object
     properties:
       reference_number:
         type: string

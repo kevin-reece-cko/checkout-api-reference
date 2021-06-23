@@ -3,7 +3,7 @@ description: An existing payment instrument
 required:
   - id
 allOf:
-  - $ref: "#/components/schemas/PaymentRequestDestination"
+  - $ref: '#/components/schemas/PaymentRequestDestination'
   - type: object
     properties:
       id:

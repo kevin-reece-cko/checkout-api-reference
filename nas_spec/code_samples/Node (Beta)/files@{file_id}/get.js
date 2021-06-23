@@ -1,5 +1,5 @@
-import { Checkout } from "checkout-node-sdk";
+import { Checkout } from 'checkout-node-sdk';
 
-const cko = new Checkout("sk_XXXX");
+const cko = new Checkout('sk_XXXX');
 
-const getFile = await cko.files.getFile("file_zna32sccqbwevd3ldmejtplbhu");
+const getFile = await cko.files.getFile('file_zna32sccqbwevd3ldmejtplbhu');

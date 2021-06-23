@@ -6,8 +6,8 @@ get:
       description: Sandbox API
   security:
     - OAuth:
-      - flow
-      - flow:events
+        - flow
+        - flow:events
   tags:
     - Workflows
   summary: Get an event
@@ -28,14 +28,14 @@ get:
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/get-event-response'        
+            $ref: '#/components/schemas/get-event-response'
       headers:
         Cko-Request-Id:
           schema:
-            $ref: "#/components/headers/Cko-Request-Id"
+            $ref: '#/components/headers/Cko-Request-Id'
         Cko-Version:
           schema:
-            $ref: "#/components/headers/Cko-Version"    
+            $ref: '#/components/headers/Cko-Version'
     '401':
       description: Unauthorized
     '404':

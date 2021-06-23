@@ -1,18 +1,18 @@
 type: object
 description: Update bank account details
 allOf:
-  - $ref: "#/components/schemas/UpdateInstrumentRequest"
+  - $ref: '#/components/schemas/UpdateInstrumentRequest'
   - type: object
 properties:
   type:
     description: This field is used for illustration purposes and does not need to be provided in the request.
     type: string
-    enum: ["card", "bank_account"]
+    enum: ['card', 'bank_account']
 
   account_type:
     description: The type of account
     type: string
-    enum: 
+    enum:
       - savings
       - current
       - cash
@@ -59,12 +59,10 @@ properties:
     example: GB
 
   account_holder:
-    $ref: "#/components/schemas/AccountHolder"
+    $ref: '#/components/schemas/AccountHolder'
 
   bank:
-    $ref: "#/components/schemas/BankDetails"
+    $ref: '#/components/schemas/BankDetails'
 
   customer:
-    $ref: "#/components/schemas/UpdateCustomerRequest"
-
-
+    $ref: '#/components/schemas/UpdateCustomerRequest'

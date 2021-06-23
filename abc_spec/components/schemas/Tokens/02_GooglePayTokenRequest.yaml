@@ -19,10 +19,10 @@ allOf:
             description: A serialized JSON string containing the encryptedMessage, ephemeralPublicKey, and tag. To simplify the signature verification process, this value is serialized
         example:
           {
-            "protocolVersion": "ECv1",
-            "signature": "TJVA95OrM7E2cBab30RMHrHDcEfxjoYZgeFONFh7HgQ",
-            "signedMessage": "{\"encryptedMessage\":
-                              \"ZW5jcnlwdGVkTWVzc2FnZQ==\",
-                              \"ephemeralPublicKey\": \"ZXBoZW1lcmFsUHVibGljS2V5\",
-                              \"tag\": \"c2lnbmF0dXJl\"}"
+            'protocolVersion': 'ECv1',
+            'signature': 'TJVA95OrM7E2cBab30RMHrHDcEfxjoYZgeFONFh7HgQ',
+            'signedMessage': '{"encryptedMessage":
+              "ZW5jcnlwdGVkTWVzc2FnZQ==",
+              "ephemeralPublicKey": "ZXBoZW1lcmFsUHVibGljS2V5",
+              "tag": "c2lnbmF0dXJl"}',
           }

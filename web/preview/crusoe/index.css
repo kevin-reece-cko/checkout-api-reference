@@ -1,19 +1,19 @@
 @import '../../index.css';
 
 .dark {
-  --logo-crusoe: url("../../favicons/white-logo.svg");
-  --header-link-crusoe: url("../../favicons/link-gray.svg");
+	--logo-crusoe: url('../../favicons/white-logo.svg');
+	--header-link-crusoe: url('../../favicons/link-gray.svg');
 }
 
 .light {
-  --logo-crusoe: url("../../favicons/dark-logo.svg");
-  --header-link-crusoe: url("../../favicons/link-blue.svg");
+	--logo-crusoe: url('../../favicons/dark-logo.svg');
+	--header-link-crusoe: url('../../favicons/link-blue.svg');
 }
 
 .jrEndp {
-  content: var(--logo-crusoe)!important;
+	content: var(--logo-crusoe) !important;
 }
 
 .sc-VigVT::before {
-  background-image: var(--header-link-crusoe)!important;
+	background-image: var(--header-link-crusoe) !important;
 }

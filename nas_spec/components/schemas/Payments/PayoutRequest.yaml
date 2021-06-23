@@ -7,7 +7,7 @@ required:
   - billing_descriptor
   - processing_channel_id
 properties:
-  source: 
+  source:
     $ref: '#/components/schemas/PayoutRequestSource'
   destination:
     $ref: '#/components/schemas/PaymentRequestDestination'
@@ -26,7 +26,7 @@ properties:
   reference:
     type: string
     description: An internal reference you can later use to identify this payout
-    example: "Withdrawal"
+    example: 'Withdrawal'
   billing_descriptor:
     $ref: '#/components/schemas/PayoutBillingDescriptor'
   sender:

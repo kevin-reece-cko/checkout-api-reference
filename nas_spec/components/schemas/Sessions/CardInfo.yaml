@@ -19,12 +19,12 @@ properties:
       card_type:
         type: string
         description: The card type.
-        enum: ["DEBIT", "CREDIT", "PREPAID", "CHARGE", "DEFERRED DEBIT"]
+        enum: ['DEBIT', 'CREDIT', 'PREPAID', 'CHARGE', 'DEFERRED DEBIT']
         example: CREDIT
       card_category:
         type: string
         description: The card category.
-        enum: [ "COMMERCIAL", "CONSUMER"]
+        enum: ['COMMERCIAL', 'CONSUMER']
         example: CONSUMER
       issuer_name:
         type: string
@@ -42,7 +42,4 @@ properties:
       product_type:
         type: string
         description: The issuer/card scheme product type.
-        example: "Debit MasterCard® Card"
-
-
-        
+        example: 'Debit MasterCard® Card'

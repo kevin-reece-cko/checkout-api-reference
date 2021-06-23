@@ -1,8 +1,8 @@
 put:
   security:
     - OAuth:
-      - sessions:app
-      - sessions:browser
+        - sessions:app
+        - sessions:browser
     - SessionSecret: []
   summary: Update a session
   description: Update a session by providing information about the environment.

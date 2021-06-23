@@ -15,5 +15,4 @@ properties:
   id:
     description: The unique identifier of the payment source or destination that can be used later for payments
     type: string
-    example: "src_wmlfc3zyhqzehihu7giusaaawu"
-
+    example: 'src_wmlfc3zyhqzehihu7giusaaawu'

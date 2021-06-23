@@ -5,7 +5,7 @@ properties:
     items:
       type: object
       properties:
-        id: 
+        id:
           type: string
           description: The unique event identifier
           example: evt_az5sblvku4ge3dwpztvyizgcau

@@ -1,18 +1,18 @@
 type: object
 title: Profile
-description: "Information about the profile of the sub-entity, primarily regarding the products/services offered."
+description: 'Information about the profile of the sub-entity, primarily regarding the products/services offered.'
 properties:
   urls:
     type: array
-    description: "A collection of website URLs the sub-entity accepts payments on. The array of items, when joined together with a space, should be no longer than 4,000 characters."
+    description: 'A collection of website URLs the sub-entity accepts payments on. The array of items, when joined together with a space, should be no longer than 4,000 characters.'
     minItems: 1
     maxItems: 100
     items:
       type: string
-      description: "A URL of a website the sub-entity accepts payments on."
+      description: 'A URL of a website the sub-entity accepts payments on.'
       minLength: 4
       maxLength: 300
-      example: "https://www.superheroexample.com"
+      example: 'https://www.superheroexample.com'
   mccs:
     type: array
     description: "A collection of 4-digit ISO 18245 merchant category codes classifying the sub-entity's industry."
@@ -23,7 +23,7 @@ properties:
       description: "A 4-digit ISO 18245 merchant category code classifying the sub-entity's industry."
       minLength: 4
       maxLength: 4
-      example: "5669"
+      example: '5669'
   default_holding_currency:
     type: string
     description: |
@@ -31,4 +31,4 @@ properties:
     format: ISO 4217
     minLength: 3
     maxLength: 3
-    example: "GBP"
+    example: 'GBP'

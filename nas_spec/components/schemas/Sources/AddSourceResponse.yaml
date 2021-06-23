@@ -15,11 +15,11 @@ properties:
   type:
     type: string
     description: The payment source type
-    example: "sepa"
+    example: 'sepa'
   response_code:
     type: string
     description: The Gateway response code
-    example: "10000"
+    example: '10000'
   customer:
     type: object
     description: The customer associated with the payment source if provided in the request

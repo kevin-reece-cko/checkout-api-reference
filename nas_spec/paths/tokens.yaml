@@ -1,7 +1,7 @@
 post:
   tags:
     - Tokens
-  security: 
+  security:
     - ApiPublicKey: []
   summary: Request a token
   description: |
@@ -23,9 +23,9 @@ post:
             $ref: '#/components/schemas/TokenResponse'
       headers:
         Cko-Request-Id:
-          $ref: "#/components/headers/Cko-Request-Id"
+          $ref: '#/components/headers/Cko-Request-Id'
         Cko-Version:
-          $ref: "#/components/headers/Cko-Version"
+          $ref: '#/components/headers/Cko-Version'
     '401':
       description: Unauthorized
     '422':

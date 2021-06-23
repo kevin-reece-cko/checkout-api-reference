@@ -5,7 +5,7 @@ servers:
     description: Sandbox API
 post:
   summary: Request an access token
-  tags: 
+  tags:
     - Access
   responses:
     '200':
@@ -35,12 +35,12 @@ post:
               error:
                 type: string
                 enum:
-                 - invalid_request
-                 - invalid_client
-                 - invalid_grant
-                 - unauthorized_client
-                 - unsupported_grant_type
-                 - invalid_scope
+                  - invalid_request
+                  - invalid_client
+                  - invalid_grant
+                  - unauthorized_client
+                  - unsupported_grant_type
+                  - invalid_scope
   description: OAuth endpoint to exchange your access key ID and access key secret for an access token.
   requestBody:
     content:
@@ -55,10 +55,10 @@ post:
               example: client_credentials
             client_id:
               type: string
-              description: "Access key ID"
+              description: 'Access key ID'
             client_secret:
               type: string
-              description: "Access key secret"
+              description: 'Access key secret'
             scope:
               type: string
               description: The access key scope

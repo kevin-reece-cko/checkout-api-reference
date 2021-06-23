@@ -11,7 +11,7 @@ properties:
     type: string
     description: |
       The payment destination type.
-    example: "card"
+    example: 'card'
   id:
     type: string
     description: |

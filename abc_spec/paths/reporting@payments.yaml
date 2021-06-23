@@ -1,7 +1,7 @@
 servers:
   - url: https://api.checkout.com
     description: Live API
-    
+
 get:
   security:
     - ApiSecretKey: []
@@ -9,8 +9,7 @@ get:
     - Reconciliation
   summary: Get JSON payments report
   operationId: getJsonPaymentsReport
-  description:
-    Returns a JSON report containing all payments within your specified parameters.
+  description: Returns a JSON report containing all payments within your specified parameters.
     You can reconcile the data from this report against your statements (which can be found in the <a href="https://hub.checkout.com/login" target="_blank">Hub</a>), the list of payments in the Hub (using the `Reference` field) or your own systems.
     *Note:* no payments from before 7 February 2019 at 00.00.00 UTC will appear when using the payments endpoint. To view earlier payments, please contact our support team.
 
@@ -53,9 +52,9 @@ get:
             $ref: '#/components/schemas/PaymentsReportResponse'
       headers:
         Cko-Request-Id:
-          $ref: "#/components/headers/Cko-Request-Id"
+          $ref: '#/components/headers/Cko-Request-Id'
         Cko-Version:
-          $ref: "#/components/headers/Cko-Version"
+          $ref: '#/components/headers/Cko-Version'
     '422':
       description: Invalid data was sent
       content:

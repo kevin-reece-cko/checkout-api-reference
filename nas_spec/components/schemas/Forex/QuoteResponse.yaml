@@ -30,5 +30,5 @@ properties:
     description: The date/time that the quote expires
   is_single_use:
     type: boolean
-    description : If the quote is restricted to a single use, or can be confirmed multiple times before expiry
-    example: false 
+    description: If the quote is restricted to a single use, or can be confirmed multiple times before expiry
+    example: false

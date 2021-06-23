@@ -1,10 +1,10 @@
 get:
   tags:
     - Disputes
-  security: 
-    - OAuth: 
-      - disputes
-      - disputes:view
+  security:
+    - OAuth:
+        - disputes
+        - disputes:view
     - ApiSecretKey: []
   summary: Get disputes
   description: >-
@@ -106,7 +106,8 @@ get:
       schema:
         type: boolean
       required: false
-      description: If `true`, only returns disputes of the specific channel that the secret key is associated with. Otherwise, returns all disputes for that
+      description:
+        If `true`, only returns disputes of the specific channel that the secret key is associated with. Otherwise, returns all disputes for that
         business
   responses:
     '200':

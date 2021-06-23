@@ -5,4 +5,4 @@ allOf:
     properties:
       id:
         readOnly: false
-  - $ref: "#/components/schemas/EntityRepresentative"
+  - $ref: '#/components/schemas/EntityRepresentative'

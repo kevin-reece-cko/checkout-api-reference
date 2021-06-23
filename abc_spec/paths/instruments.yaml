@@ -19,12 +19,12 @@ post:
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/InstrumentResponse'  
+            $ref: '#/components/schemas/InstrumentResponse'
     '401':
       description: Unauthorized
     '422':
       description: Invalid data was sent
       content:
         application/json:
-         schema:
-           $ref: '#/components/schemas/ValidationError'
+          schema:
+            $ref: '#/components/schemas/ValidationError'

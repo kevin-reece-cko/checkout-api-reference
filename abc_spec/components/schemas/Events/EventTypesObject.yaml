@@ -2,7 +2,7 @@ type: object
 properties:
   version:
     type: string
-    example: "2.0"
+    example: '2.0'
   event_types:
     type: array
     items:

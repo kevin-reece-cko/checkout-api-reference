@@ -13,7 +13,7 @@ properties:
     maxLength: 15
     example: superhero1234
   capabilities:
-    $ref: "#/components/schemas/EntityCapabilities"
+    $ref: '#/components/schemas/EntityCapabilities'
   status:
     type: string
     title: Status
@@ -31,4 +31,4 @@ properties:
     title: Requirements Due
     description: The requirements due for this sub-entity before we will perform due diligence checks
     items:
-      $ref: "#/components/schemas/EntityRequirement"
+      $ref: '#/components/schemas/EntityRequirement'

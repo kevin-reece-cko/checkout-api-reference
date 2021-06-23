@@ -8,13 +8,13 @@ required:
   - first_name
   - last_name
 allOf:
-  - $ref: "#/components/schemas/PaymentRequestDestination"
+  - $ref: '#/components/schemas/PaymentRequestDestination'
   - type: object
     properties:
       number:
         type: string
         description: The card number
-        example: "4543474002249996"
+        example: '4543474002249996'
       expiry_month:
         type: integer
         description: The expiry month of the card
@@ -39,7 +39,7 @@ allOf:
       name:
         type: string
         description: The cardholder's name
-        example: "Bruce Wayne"
+        example: 'Bruce Wayne'
       billing_address:
         description: The payout destination owner's billing address
         allOf:

@@ -1,7 +1,7 @@
 type: object
 additionalProperties: true
 properties:
-  id: 
+  id:
     type: string
     description: The unique event identifier
     example: evt_az5sblvku4ge3dwpztvyizgcau
@@ -43,7 +43,7 @@ properties:
   #         items:
   #           type: object
   #           properties:
-  #             id: 
+  #             id:
   #               type: string
   #               description: The worfklow action identifier
   #               example: wfa_uzkxpffkvpiu5fe3h5ira7sqpa
@@ -77,8 +77,6 @@ properties:
   #                   description: Workflow action results for this event
   #               example:
   #                 self:
-  #                   href: "https://api.checkout.com/events/evt_az5sblvku4ge3dwpztvyizgcau/actions/wfa_uzkxpffkvpiu5fe3h5ira7sqpa"  
+  #                   href: "https://api.checkout.com/events/evt_az5sblvku4ge3dwpztvyizgcau/actions/wfa_uzkxpffkvpiu5fe3h5ira7sqpa"
   _links:
     $ref: '#/components/schemas/event-links'
-
-        

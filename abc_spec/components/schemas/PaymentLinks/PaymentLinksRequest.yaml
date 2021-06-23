@@ -56,14 +56,14 @@ properties:
         required:
           - country
         allOf:
-          - $ref: "#/components/schemas/Address"
+          - $ref: '#/components/schemas/Address'
       phone:
         type: object
         description: The customer's phone number
         required:
           - number
         allOf:
-          - $ref: "#/components/schemas/PhoneNumber"
+          - $ref: '#/components/schemas/PhoneNumber'
   products:
     type: array
     description: Details about the products in the order.
@@ -110,7 +110,7 @@ properties:
         description: Determines whether to attempt a 3D Secure payment as non-3D Secure should the card issuer not be enrolled.
         default: false
   risk:
-    $ref: "#/components/schemas/RiskRequest"
+    $ref: '#/components/schemas/RiskRequest'
   return_url:
     type: string
     format: uri

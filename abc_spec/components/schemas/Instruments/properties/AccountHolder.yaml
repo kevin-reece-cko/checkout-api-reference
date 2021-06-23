@@ -12,18 +12,18 @@ properties:
 
   first_name:
     description: |
-      The account holder's first name 
+      The account holder's first name
     type: string
-    example: "John"
+    example: 'John'
 
   last_name:
-    description: | 
+    description: |
       The account holder's last name
     type: string
-    example: "Smith"
+    example: 'Smith'
 
   company_name:
-    description: | 
+    description: |
       The legal name of a registered company that holds the account
     type: string
     example: Test company
@@ -31,13 +31,13 @@ properties:
   tax_id:
     description: The account holder's tax number/reference
     type: string
-    example: "123456"
+    example: '123456'
 
   date_of_birth:
     description: The account holder's date of birth in `YYYY-MM-DD` format
     type: string
     format: date
-    example: "1986-01-01"
+    example: '1986-01-01'
 
   country_of_birth:
     description: The two-letter <a href="https://docs.checkout.com/four/resources/codes/country-codes" target="_blank">ISO country code</a> of the account holder's country of birth
@@ -55,15 +55,15 @@ properties:
   billing_address:
     description: The billing address of the account holder
     allOf:
-      - $ref: "#/components/schemas/Address"
+      - $ref: '#/components/schemas/Address'
 
   phone:
     description: The phone number of the account holder
     allOf:
-      - $ref: "#/components/schemas/PhoneNumber"
+      - $ref: '#/components/schemas/PhoneNumber'
 
   identification:
-    $ref: "#/components/schemas/AccountHolderIdentification"
+    $ref: '#/components/schemas/AccountHolderIdentification'
 
   email:
     description: The account holder's email address

@@ -16,11 +16,11 @@ properties:
     type: string
     format: date-time
     description: The `from` query parameter
-    example: "2018-01-01T00:00:00Z"
+    example: '2018-01-01T00:00:00Z'
   to:
     type: string
     format: date-time
-    example: "2018-01-15T12:00:00Z"
+    example: '2018-01-15T12:00:00Z'
     description: The `to` query parameter
   data:
     type: array

@@ -1,4 +1,4 @@
 type: string
 format: ipv4
 maxLength: 45
-example: "90.197.169.245"
+example: '90.197.169.245'

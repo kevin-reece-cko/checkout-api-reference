@@ -3,7 +3,7 @@ description: A token payment source
 required:
   - token
 allOf:
-  - $ref: "#/components/schemas/PaymentRequestSource"
+  - $ref: '#/components/schemas/PaymentRequestSource'
   - type: object
     properties:
       token:
@@ -19,4 +19,3 @@ allOf:
         description: The customer's phone number. This will override the phone number specified during tokenization
         allOf:
           - $ref: '#/components/schemas/PhoneNumber'
-

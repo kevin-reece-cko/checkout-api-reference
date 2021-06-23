@@ -1,18 +1,18 @@
-openapi: "3.0.1"
+openapi: '3.0.1'
 info:
-  version: "1.0.0"
+  version: '1.0.0'
   title: Checkout.com API Reference
   x-logo:
-    url: "https://assets.checkout.com/docs/logos/logo-checkout-api-dark.svg"
-    altText: "Checkout.com API logo"
+    url: 'https://assets.checkout.com/docs/logos/logo-checkout-api-dark.svg'
+    altText: 'Checkout.com API logo'
   contact:
     name: Checkout.com Support
-    url: "https://checkout.com"
+    url: 'https://checkout.com'
     email: support@checkout.com
   license:
     name: Checkout.com
-    url: "https://checkout.com/api/license/"
-  termsOfService: "https://checkout.com/terms/"
+    url: 'https://checkout.com/api/license/'
+  termsOfService: 'https://checkout.com/terms/'
   description: >
     ## Get started
 

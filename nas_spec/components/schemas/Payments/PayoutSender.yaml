@@ -16,4 +16,4 @@ properties:
     description: The type of sender. If set to `instrument`, the sender information (name and address) will be retrieved from the payment instrument. This is for the cases where the sender and recipient are the same entity. The only field that needs to be provided is the sender reference to uniquely identify the sender.
   reference:
     type: string
-    description: The unique reference for the sender. 
+    description: The unique reference for the sender.

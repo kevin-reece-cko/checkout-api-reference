@@ -1,18 +1,16 @@
 ###
-# Warning: this file was auto generated from OpenAPI specs using 'npm run sync-generated-specs'. Do not manually edit. 
+# Warning: this file was auto generated from OpenAPI specs using 'npm run sync-generated-specs'. Do not manually edit.
 ###
 type: object
 description: 'Giropay Source'
 allOf:
-  -
-    $ref: '#/components/schemas/PaymentResponseSource'
-  -
-    type: object
+  - $ref: '#/components/schemas/PaymentResponseSource'
+  - type: object
     properties:
       purpose:
         maxLength: 27
         type: string
-        description: 'Purpose of the payment as appearing on customer''s bank statement.'
+        description: "Purpose of the payment as appearing on customer's bank statement."
       bic:
         maxLength: 11
         type: string

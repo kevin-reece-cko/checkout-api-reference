@@ -6,8 +6,8 @@ get:
       description: Sandbox API
   security:
     - OAuth:
-      - flow
-      - flow:workflows
+        - flow
+        - flow:workflows
   tags:
     - Workflows
   summary: Get all workflows
@@ -23,15 +23,14 @@ get:
       headers:
         Cko-Request-Id:
           schema:
-            $ref: "#/components/headers/Cko-Request-Id"
+            $ref: '#/components/headers/Cko-Request-Id'
         Cko-Version:
           schema:
-            $ref: "#/components/headers/Cko-Version"
+            $ref: '#/components/headers/Cko-Version'
     '401':
       description: Unauthorized
     '500':
       description: Internal Error
-
 
 post:
   servers:
@@ -41,8 +40,8 @@ post:
       description: Sandbox API
   security:
     - OAuth:
-      - flow
-      - flow:workflows
+        - flow
+        - flow:workflows
   tags:
     - Workflows
   summary: Add a workflow
@@ -64,17 +63,17 @@ post:
       headers:
         Cko-Request-Id:
           schema:
-            $ref: "#/components/headers/Cko-Request-Id"
+            $ref: '#/components/headers/Cko-Request-Id'
         Cko-Version:
           schema:
-            $ref: "#/components/headers/Cko-Version"
+            $ref: '#/components/headers/Cko-Version'
     '401':
       description: Unauthorized
     '422':
       description: Invalid data was sent
       content:
         application/json:
-         schema:
-           $ref: '#/components/schemas/ValidationError'
+          schema:
+            $ref: '#/components/schemas/ValidationError'
     '500':
       description: Internal Error

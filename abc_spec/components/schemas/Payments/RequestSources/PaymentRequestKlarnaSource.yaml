@@ -1,13 +1,11 @@
 ###
-# Warning: this file was auto generated from OpenAPI specs using 'npm run sync-generated-specs'. Do not manually edit. 
+# Warning: this file was auto generated from OpenAPI specs using 'npm run sync-generated-specs'. Do not manually edit.
 ###
 type: object
 description: 'Klarna Source'
 allOf:
-  -
-    $ref: '#/components/schemas/PaymentRequestSource'
-  -
-    type: object
+  - $ref: '#/components/schemas/PaymentRequestSource'
+  - type: object
     required:
       - authorization_token
       - locale
@@ -21,7 +19,7 @@ allOf:
         description: 'Klarna authentication token, obtained by the merchant during client transaction authorization.'
       locale:
         type: string
-        description: 'RFC 1766 customer''s locale. Optional, default taken from business settings.'
+        description: "RFC 1766 customer's locale. Optional, default taken from business settings."
         x-klarna-docs: 'https://developers.klarna.com/api/#payments-api__create-a-new-order__locale'
       purchase_country:
         type: string
@@ -65,7 +63,7 @@ allOf:
         x-klarna-docs: 'https://developers.klarna.com/api/#payments-api__create-a-new-order__merchant_reference1'
       merchant_reference2:
         type: string
-        description: 'Used for storing merchant''s internal order number or other reference (max 255 characters).'
+        description: "Used for storing merchant's internal order number or other reference (max 255 characters)."
         x-klarna-docs: 'https://developers.klarna.com/api/#payments-api__create-a-new-order__merchant_reference2'
       merchant_data:
         type: string

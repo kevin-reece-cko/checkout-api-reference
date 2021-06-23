@@ -4,7 +4,7 @@ properties:
   type:
     description: The type of identification used to identify the account holder
     type: string
-    enum: 
+    enum:
       - passport
       - driving_licence
       - national_id

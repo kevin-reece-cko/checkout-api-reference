@@ -1,5 +1,5 @@
 allOf:
-  - $ref: '#/components/schemas/GetSessionLinks'  
+  - $ref: '#/components/schemas/GetSessionLinks'
 properties:
   redirect_url:
     type: object

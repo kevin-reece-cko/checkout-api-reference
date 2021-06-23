@@ -1,7 +1,7 @@
 type: object
 description: A network token payment source
 allOf:
-  - $ref: "#/components/schemas/PaymentRequestSource"
+  - $ref: '#/components/schemas/PaymentRequestSource'
   - type: object
     required:
       - type
@@ -15,7 +15,7 @@ allOf:
       token:
         type: string
         description: The network token PAN
-        example: "4543474002249996"
+        example: '4543474002249996'
       expiry_month:
         type: integer
         description: The expiry month of the token
@@ -31,12 +31,12 @@ allOf:
         maxLength: 4
       token_type:
         type: string
-        description: The type of token 
+        description: The type of token
         enum:
           - vts
           - mdes
           - applepay
-          - googlepay 
+          - googlepay
       cryptogram:
         type: string
         description: The Base64 encoded cryptographic identifier (TAVV) used by card schemes to validate the token verification result. Optional if `previous_payment_id` is specified and `3ds.enabled` is false
@@ -46,8 +46,8 @@ allOf:
         type: string
         description: |
           The Electronic Commerce Indicator (ECI) security level associated with the token. Optional if `previous_payment_id` is specified and `3ds.enabled` is false
-        maxLength: 2  
-        example: "05"
+        maxLength: 2
+        example: '05'
       stored:
         type: boolean
         description: This must be set to `true` for payments that use <a href="https://docs.checkout.com/docs/stored-card-details" target="blank">stored card details</a>
@@ -56,11 +56,11 @@ allOf:
       name:
         type: string
         description: The customer's name
-        example: "Bruce Wayne"
+        example: 'Bruce Wayne'
       cvv:
         type: string
         description: The card verification value/code. 3 digits, except for Amex (4 digits)
-        example: "956"
+        example: '956'
         minLength: 3
         maxLength: 4
       billing_address:

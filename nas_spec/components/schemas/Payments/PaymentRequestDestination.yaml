@@ -11,4 +11,4 @@ properties:
   type:
     type: string
     description: The payout destination type <br><i>The parameters for `bank_account` depend on the destination country and currency. <a href="https://docs.checkout.com/pay-to-bank/payout-formatting" taret="_blank">See our docs for details</a></i>.
-    example: "id"
+    example: 'id'

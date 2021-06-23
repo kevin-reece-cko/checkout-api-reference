@@ -1,10 +1,8 @@
 type: object
 description: 'KNet Source'
 allOf:
-  -
-    $ref: '#/components/schemas/PaymentRequestSource'
-  -
-    type: object
+  - $ref: '#/components/schemas/PaymentRequestSource'
+  - type: object
     required:
       - language
     properties:
@@ -14,8 +12,7 @@ allOf:
           - ar
           - en
         type: string
-        description:
-          This field enables the issuer's site to select the consumer's preferred language
+        description: This field enables the issuer's site to select the consumer's preferred language
           (e.g. the language selected on the merchant's site), if the issuer's site supports this.
           Code list in accordance with ISO 639-1. (Arabic = 'ar', English = 'en').
           Note that 'ar' corresponds to 'ARA' and 'en' to 'USA' values accepted by KNet Gateway

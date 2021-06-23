@@ -70,7 +70,6 @@ properties:
       • some_resource_already_exists = Usually with an error type `conflict`. The resource you are trying to create already exists (not relevant for Sessions with an auto-generated id). <br/>
       • some_resource_not_found = Usually with an error type `not_found`. The resource you are trying to get does not exist. <br/>
 
-
     type: array
     items:
       type: string

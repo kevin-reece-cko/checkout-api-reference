@@ -28,9 +28,9 @@ properties:
   processing_channel_id:
     type: string
     description: The processing channel used for the payment
-    example: "pc_abcdefghijklmnopqrstuvwxyz"
+    example: 'pc_abcdefghijklmnopqrstuvwxyz'
 example:
   source_currency: GBP
   source_amount: 30000
   destination_currency: USD
-  processing_channel_id: "pc_abcdefghijklmnopqrstuvwxyz"
+  processing_channel_id: 'pc_abcdefghijklmnopqrstuvwxyz'

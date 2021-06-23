@@ -4,13 +4,13 @@ properties:
   id:
     type: string
     description: The file identifier
-    example: "file_6lbss42ezvoufcb2beo76rvwly"
+    example: 'file_6lbss42ezvoufcb2beo76rvwly'
   filename:
     type: string
     description: The filename, including its extension
-    example: "receipt.jpg"
+    example: 'receipt.jpg'
   purpose:
-    $ref: "#/components/schemas/FilePurpose"
+    $ref: '#/components/schemas/FilePurpose'
   size:
     type: integer
     description: The size of the file upload object (in bytes)
@@ -19,17 +19,17 @@ properties:
     type: string
     format: ISO-8601
     description: The date and time file was uploaded (in UTC)
-    example: "2019-05-17T16:48:52Z"
+    example: '2019-05-17T16:48:52Z'
   _links:
     type: object
     properties:
       self:
         description: The file information retrieval URL
-        properties:    
+        properties:
           href:
-            example: "https://api.checkout.com/files/file_6lbss42ezvoufcb2beo76rvwly"
+            example: 'https://api.checkout.com/files/file_6lbss42ezvoufcb2beo76rvwly'
       download:
         description: The temporary file download URL. This expires after 60 minutes
-        properties:    
+        properties:
           href:
-            example: "https://file-bucket.s3.eu-west-1.amazonaws.com/ucdac/ucdac/6lbss42ezvoufcb2beo76rvwly?X-Amz-Expires=3600&x-amz-security-token=FQoDYXdzENL%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEa"
+            example: 'https://file-bucket.s3.eu-west-1.amazonaws.com/ucdac/ucdac/6lbss42ezvoufcb2beo76rvwly?X-Amz-Expires=3600&x-amz-security-token=FQoDYXdzENL%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEa'

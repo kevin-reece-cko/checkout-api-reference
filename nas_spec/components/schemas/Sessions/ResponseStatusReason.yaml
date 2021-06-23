@@ -1,6 +1,6 @@
 description: >
   Only available as a result of a 3DS2 authentication. 
-  
+
   The response from the DS or ACS which provides information on why the `response_code` field has the specified value.  <br/>
   Only available when `response_code` is not `Y`.  <br/><br/>
 
@@ -30,5 +30,5 @@ description: >
   • 24 = 3DS Requestor Decoupled Max Expiry Time exceeded <br/>
   • 25 = Decoupled Authentication was provided insufficient time to authenticate cardholder. ACS will not make attempt <br/>
   • 26 = Authentication attempted but not performed by the cardholder <br/>
-example: "01"
+example: '01'
 type: string

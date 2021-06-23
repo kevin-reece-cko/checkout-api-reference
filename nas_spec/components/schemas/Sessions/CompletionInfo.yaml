@@ -1,6 +1,6 @@
 ﻿required:
   - type
-description: The redirect information needed for callbacks or redirects after the payment is completed 
+description: The redirect information needed for callbacks or redirects after the payment is completed
 discriminator:
   propertyName: type
   mapping:
@@ -9,7 +9,7 @@ discriminator:
 properties:
   type:
     type: string
-    enum: 
+    enum:
       - hosted
       - non_hosted
     description: >
@@ -17,7 +17,6 @@ properties:
       When this value is `hosted`, the response will be `501 Not Implemented`.
     maxLength: 10
     example: non_hosted
-example: 
+example:
   type: non_hosted
   callback_url: https://merchant.com/callback
-  

@@ -22,20 +22,20 @@ get:
         maxLength: 255
       description: The customer's email address. Required if `id` is not provided.
   responses:
-    "200":
+    '200':
       description: Customer retrieved successfully
       content:
         application/json:
           schema:
-            $ref: "#/components/schemas/RetrieveCustomerResponse"
+            $ref: '#/components/schemas/RetrieveCustomerResponse'
       headers:
         Cko-Request-Id:
-          $ref: "#/components/headers/Cko-Request-Id"
+          $ref: '#/components/headers/Cko-Request-Id'
         Cko-Version:
-          $ref: "#/components/headers/Cko-Version"
-    "401":
+          $ref: '#/components/headers/Cko-Version'
+    '401':
       description: Unauthorized
-    "404":
+    '404':
       description: Customer not found
 
 patch:
@@ -60,19 +60,19 @@ patch:
     content:
       application/json:
         schema:
-          $ref: "#/components/schemas/UpdateCustomerDetailsRequest"
+          $ref: '#/components/schemas/UpdateCustomerDetailsRequest'
   responses:
-    "204":
+    '204':
       description: Customer updated successfully
-    "401":
+    '401':
       description: Unauthorized
-    "422":
+    '422':
       description: Invalid data was sent
       content:
         application/json:
           schema:
-            $ref: "#/components/schemas/ValidationError"
-    "404":
+            $ref: '#/components/schemas/ValidationError'
+    '404':
       description: Customer not found
 
 delete:
@@ -93,9 +93,9 @@ delete:
         pattern: "^(cus)_(\\w{26})$"
       description: The customer ID
   responses:
-    "204":
+    '204':
       description: Customer deleted successfully
-    "401":
+    '401':
       description: Unauthorized
-    "404":
+    '404':
       description: Customer not found or not associated with client

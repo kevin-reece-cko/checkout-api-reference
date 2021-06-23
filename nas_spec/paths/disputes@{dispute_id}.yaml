@@ -1,10 +1,10 @@
 get:
   tags:
     - Disputes
-  security: 
-    - OAuth: 
-      - disputes
-      - disputes:view
+  security:
+    - OAuth:
+        - disputes
+        - disputes:view
     - ApiSecretKey: []
   summary: Get dispute details
   description: Returns all the details of a dispute using the dispute identifier.

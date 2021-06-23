@@ -31,15 +31,15 @@ properties:
   status:
     type: string
     description: The status of the payment
-    example: "Voided"
+    example: 'Voided'
   response_code:
     type: string
     description: The Gateway response code
-    example: "10000"
+    example: '10000'
   response_summary:
     type: string
     description: The Gateway response summary
-    example: "Approved"
+    example: 'Approved'
   processed_on:
     description: The date/time the void was processed
     allOf:
@@ -59,8 +59,6 @@ properties:
           - $ref: '#/components/schemas/Link'
         description: The URI of the payment
         example:
-          href: "https://api.checkout.com/payments/pay_y3oqhf46pyzuxjbcn2giaqnb44"
+          href: 'https://api.checkout.com/payments/pay_y3oqhf46pyzuxjbcn2giaqnb44'
     required:
       - payment
-
-

@@ -3,7 +3,7 @@ description: An existing payment source
 required:
   - id
 allOf:
-  - $ref: "#/components/schemas/PaymentRequestSource"
+  - $ref: '#/components/schemas/PaymentRequestSource'
   - type: object
     properties:
       id:
@@ -14,6 +14,6 @@ allOf:
       cvv:
         type: string
         description: The card verification value/code (for card sources). 3 digits, except for Amex (4 digits)
-        example: "956"
+        example: '956'
         minLength: 3
         maxLength: 4

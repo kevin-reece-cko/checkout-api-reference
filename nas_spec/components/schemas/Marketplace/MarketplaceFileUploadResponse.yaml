@@ -4,7 +4,7 @@ properties:
   id:
     type: string
     description: The file identifier
-    example: "file_6lbss42ezvoufcb2beo76rvwly"
+    example: 'file_6lbss42ezvoufcb2beo76rvwly'
   _links:
     type: object
     properties:
@@ -12,4 +12,4 @@ properties:
         description: The file information retrieval URL
         properties:
           href:
-            example: "https://files.checkout.com/files/file_6lbss42ezvoufcb2beo76rvwly"
+            example: 'https://files.checkout.com/files/file_6lbss42ezvoufcb2beo76rvwly'

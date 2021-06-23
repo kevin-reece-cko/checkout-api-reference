@@ -1,7 +1,7 @@
 type: object
 description: A card payment source
 allOf:
-  - $ref: "#/components/schemas/PaymentRequestSource"
+  - $ref: '#/components/schemas/PaymentRequestSource'
   - type: object
     required:
       - type
@@ -13,7 +13,7 @@ allOf:
         type: string
         description: The card number (without separators)
         maxLength: 19
-        example: "4543474002249996"
+        example: '4543474002249996'
       expiry_month:
         type: integer
         description: The expiry month of the card
@@ -31,11 +31,11 @@ allOf:
         type: string
         description: The name of the cardholder
         maxLength: 255
-        example: "Bruce Wayne"
+        example: 'Bruce Wayne'
       cvv:
         type: string
         description: The card verification value/code. 3 digits, except for Amex (4 digits)
-        example: "956"
+        example: '956'
         minLength: 3
         maxLength: 4
       stored:

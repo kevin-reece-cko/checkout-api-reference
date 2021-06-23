@@ -4,7 +4,7 @@ required:
   - transaction_id
   - operator_id
   - challenge_mandated
-description: "The access control server (ACS) information. Can be empty if the session is still pending or if communication with the ACS failed. This will be available when the channel data and issuer fingerprint result have been provided."
+description: 'The access control server (ACS) information. Can be empty if the session is still pending or if communication with the ACS failed. This will be available when the channel data and issuer fingerprint result have been provided.'
 properties:
   reference_number:
     description: EMVCo-assigned unique identifier to track approved ACS
@@ -38,7 +38,7 @@ properties:
     type: boolean
     description: Indicates whether a challenge is required for the transaction to be authorized
   authentication_type:
-    type: string    
+    type: string
     pattern: "^\\d{2}$"
     description: >
       The type of authentication as returned from the ACS provider. <br/>

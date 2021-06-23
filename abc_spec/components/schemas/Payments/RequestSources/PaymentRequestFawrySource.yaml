@@ -1,13 +1,11 @@
 ###
-# Warning: this file was auto generated from OpenAPI specs using 'npm run sync-generated-specs'. Do not manually edit. 
+# Warning: this file was auto generated from OpenAPI specs using 'npm run sync-generated-specs'. Do not manually edit.
 ###
 type: object
 description: 'Fawry Source'
 allOf:
-  -
-    $ref: '#/components/schemas/PaymentRequestSource'
-  -
-    type: object
+  - $ref: '#/components/schemas/PaymentRequestSource'
+  - type: object
     required:
       - description
       - products
@@ -20,13 +18,13 @@ allOf:
         description: 'The payment description.'
       customer_profile_id:
         type: string
-        description: 'The customer''s id within merchant''s system.'
+        description: "The customer's id within merchant's system."
       customer_email:
         type: string
-        description: 'The customer''s email address.'
+        description: "The customer's email address."
       customer_mobile:
         type: string
-        description: 'The customer''s mobile phone number.'
+        description: "The customer's mobile phone number."
       expires_on:
         type: string
         description: 'The date on which the payment expires.'
@@ -50,7 +48,7 @@ allOf:
               description: 'The quantity of the product.'
             price:
               type: integer
-              description: 'The price of the item.  Expressed using Checkout.com''s standard rules for calculating payment values.'
+              description: "The price of the item.  Expressed using Checkout.com's standard rules for calculating payment values."
             description:
               maxLength: 265
               type: string

@@ -3,13 +3,13 @@ description: An existing payment instrument
 required:
   - country
 allOf:
-  - $ref: "#/components/schemas/PaymentRequestDestination"
+  - $ref: '#/components/schemas/PaymentRequestDestination'
   - type: object
     properties:
       account_type:
         description: The type of account
         type: string
-        enum: 
+        enum:
           - savings
           - current
           - cash
@@ -19,7 +19,7 @@ allOf:
         description: Number (which can contain letters) that identifies the account
         type: string
         example: '13654567455'
-        
+
       bank_code:
         description: Code that identifies the bank
         type: string
@@ -51,7 +51,7 @@ allOf:
         example: GB
 
       account_holder:
-        $ref: "#/components/schemas/AccountHolder"
+        $ref: '#/components/schemas/AccountHolder'
 
       bank:
-        $ref: "#/components/schemas/BankDetails"
+        $ref: '#/components/schemas/BankDetails'

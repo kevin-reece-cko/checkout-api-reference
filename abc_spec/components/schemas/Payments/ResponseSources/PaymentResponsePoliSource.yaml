@@ -1,4 +1,4 @@
 type: object
 description: A POLi payment source
 allOf:
-  - $ref: "#/components/schemas/PaymentResponseSource"
+  - $ref: '#/components/schemas/PaymentResponseSource'

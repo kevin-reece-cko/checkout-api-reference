@@ -1,10 +1,8 @@
 type: object
 description: 'KNet Source'
 allOf:
-  -
-    $ref: '#/components/schemas/PaymentResponseSource'
-  -
-    type: object
+  - $ref: '#/components/schemas/PaymentResponseSource'
+  - type: object
     properties:
       language:
         enum:

@@ -24,9 +24,9 @@ get:
             $ref: '#/components/schemas/PaymentActionsResponse'
       headers:
         Cko-Request-Id:
-          $ref: "#/components/headers/Cko-Request-Id"
+          $ref: '#/components/headers/Cko-Request-Id'
         Cko-Version:
-          $ref: "#/components/headers/Cko-Version"
+          $ref: '#/components/headers/Cko-Version'
     '401':
       description: Unauthorized
     '404':

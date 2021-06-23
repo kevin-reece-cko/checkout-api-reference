@@ -8,11 +8,11 @@ properties:
   type:
     description: The underlying instrument type (for instruments created from Checkout.com tokens, this will reflect the type of instrument that was tokenized).
     type: string
-    example: "card"
+    example: 'card'
   id:
     description: The unique identifier of the payment source or destination that can be used later for payments
     type: string
-    example: "src_wmlfc3zyhqzehihu7giusaaawu"
+    example: 'src_wmlfc3zyhqzehihu7giusaaawu'
   fingerprint:
     type: string
     description: A token that can uniquely identify this instrument across all customers
@@ -21,7 +21,7 @@ properties:
   customer:
     $ref: '#/components/schemas/CustomerResponse'
   bank:
-    $ref: "#/components/schemas/BankDetails"
+    $ref: '#/components/schemas/BankDetails'
   swift_bic:
     description: 8 or 11 character code which identifies the bank or bank branch
     type: string

@@ -1,5 +1,5 @@
 type: object
-description: "The directory server (DS) information. Can be empty if the session is pending or communication with the DS failed"
+description: 'The directory server (DS) information. Can be empty if the session is pending or communication with the DS failed'
 required:
   - reference_number
   - transaction_id

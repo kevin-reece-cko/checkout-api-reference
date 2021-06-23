@@ -12,9 +12,9 @@ required:
 properties:
   type:
     type: string
-    default: "card"
+    default: 'card'
     description: The payment source type
-    example: "card"
+    example: 'card'
   billing_address:
     description: The customer's billing address. Any special characters will be replaced.
     allOf:

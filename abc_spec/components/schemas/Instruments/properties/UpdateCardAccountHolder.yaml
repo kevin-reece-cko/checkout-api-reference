@@ -3,22 +3,22 @@ description: The account holder details
 properties:
   first_name:
     description: |
-      First name of the instrument owner 
+      First name of the instrument owner
     type: string
-    example: "John"
+    example: 'John'
 
   last_name:
-    description: | 
+    description: |
       Last name of the instrument owner.
     type: string
-    example: "Smith"
+    example: 'Smith'
 
   billing_address:
     description: The billing address of the account holder
     allOf:
-      - $ref: "#/components/schemas/Address"
+      - $ref: '#/components/schemas/Address'
 
   phone:
     description: The phone number of the account holder
     allOf:
-      - $ref: "#/components/schemas/PhoneNumber"
+      - $ref: '#/components/schemas/PhoneNumber'

@@ -1,7 +1,7 @@
 type: object
 description: Store token details
 allOf:
-  - $ref: "#/components/schemas/StoreInstrumentRequest"
+  - $ref: '#/components/schemas/StoreInstrumentRequest'
   - type: object
 required:
   - token
@@ -15,11 +15,9 @@ properties:
     description: The Checkout.com token
     pattern: ^(tok)_(\w{26})$ | ^(card_tok)_(\w{12})$
     example: tok_asoto22g2fsu7prwomy12sgfsa
-    
+
   account_holder:
-    $ref: "#/components/schemas/StoreAccountHolderTokenRequest"
+    $ref: '#/components/schemas/StoreAccountHolderTokenRequest'
 
   customer:
-    $ref: "#/components/schemas/StoreCustomerInstrumentRequest"
-
-
+    $ref: '#/components/schemas/StoreCustomerInstrumentRequest'

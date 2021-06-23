@@ -20,4 +20,4 @@ properties:
   reference:
     type: string
     description: The sender's reference for the payout
-    example: "8285282045818"
+    example: '8285282045818'

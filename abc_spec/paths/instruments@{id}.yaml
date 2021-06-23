@@ -23,9 +23,9 @@ get:
             $ref: '#/components/schemas/RetrieveInstrumentResponse'
       headers:
         Cko-Request-Id:
-          $ref: "#/components/headers/Cko-Request-Id"
+          $ref: '#/components/headers/Cko-Request-Id'
         Cko-Version:
-          $ref: "#/components/headers/Cko-Version"
+          $ref: '#/components/headers/Cko-Version'
     '401':
       description: Unauthorized
     '404':
@@ -63,9 +63,9 @@ patch:
             $ref: '#/components/schemas/UpdateInstrumentResponse'
       headers:
         Cko-Request-Id:
-          $ref: "#/components/headers/Cko-Request-Id"
+          $ref: '#/components/headers/Cko-Request-Id'
         Cko-Version:
-          $ref: "#/components/headers/Cko-Version"
+          $ref: '#/components/headers/Cko-Version'
     '401':
       description: Unauthorized
     '422':

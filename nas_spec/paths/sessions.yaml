@@ -3,14 +3,14 @@ post:
     - Sessions
   security:
     - OAuth:
-      - sessions:app
-      - sessions:browser
+        - sessions:app
+        - sessions:browser
   summary: Request a session
   description: |
     Create a payment session to authenticate a cardholder before requesting a payment.
     Payment sessions can be linked to one or more payments (in the case of recurring and other merchant-initiated payments).
 
-    The `next_actions` object in the response tells you which actions can be performed next. 
+    The `next_actions` object in the response tells you which actions can be performed next.
 
   requestBody:
     content:
@@ -26,9 +26,9 @@ post:
             $ref: '#/components/schemas/CreateSessionOkResponse'
       headers:
         Cko-Request-Id:
-          $ref: "#/components/headers/Cko-Request-Id"
+          $ref: '#/components/headers/Cko-Request-Id'
         Cko-Version:
-          $ref: "#/components/headers/Cko-Version"
+          $ref: '#/components/headers/Cko-Version'
     '202':
       description: Session accepted and further action required
       content:
@@ -37,9 +37,9 @@ post:
             $ref: '#/components/schemas/CreateSessionAcceptedResponse'
       headers:
         Cko-Request-Id:
-          $ref: "#/components/headers/Cko-Request-Id"
+          $ref: '#/components/headers/Cko-Request-Id'
         Cko-Version:
-          $ref: "#/components/headers/Cko-Version"
+          $ref: '#/components/headers/Cko-Version'
     '401':
       description: Unauthorized
     '403':

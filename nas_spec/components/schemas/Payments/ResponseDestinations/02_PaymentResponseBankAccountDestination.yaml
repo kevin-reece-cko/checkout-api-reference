@@ -1,7 +1,7 @@
 type: object
 description: A bank account payment destination
 allOf:
-  - $ref: "#/components/schemas/PaymentResponseDestination"
+  - $ref: '#/components/schemas/PaymentResponseDestination'
   - type: object
     required:
       - id

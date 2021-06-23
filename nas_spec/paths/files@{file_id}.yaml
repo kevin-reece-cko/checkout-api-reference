@@ -1,10 +1,10 @@
 get:
   tags:
     - Disputes
-  security: 
-    - OAuth: 
-      - disputes
-      - disputes:view
+  security:
+    - OAuth:
+        - disputes
+        - disputes:view
     - ApiSecretKey: []
   summary: Get file information
   description: Retrieve information about a file that was previously uploaded.

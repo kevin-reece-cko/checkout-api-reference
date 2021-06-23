@@ -3,8 +3,8 @@ description: The source of the payment
 discriminator:
   propertyName: type
   mapping:
-    card: "#/components/schemas/01_CardTokenResponse"
-    googlepay: "#/components/schemas/02_GooglePayTokenResponse"
+    card: '#/components/schemas/01_CardTokenResponse'
+    googlepay: '#/components/schemas/02_GooglePayTokenResponse'
 required:
   - type
   - token
@@ -17,7 +17,7 @@ properties:
   type:
     type: string
     description: The type of card details to be tokenized
-    example: "card"
+    example: 'card'
   token:
     type: string
     description: The reference token
@@ -25,7 +25,7 @@ properties:
   expires_on:
     description: The date/time the token will expire
     allOf:
-      - $ref: "#/components/schemas/ServerTimestamp"
+      - $ref: '#/components/schemas/ServerTimestamp'
   expiry_month:
     type: integer
     description: The expiry month
@@ -42,15 +42,15 @@ properties:
   scheme:
     type: string
     description: The card scheme
-    example: "VISA"
+    example: 'VISA'
   last4:
     type: string
     description: The last four digits of the card number
-    example: "9996"
+    example: '9996'
   bin:
     type: string
     description: The card issuer BIN
-    example: "454347"
+    example: '454347'
   card_type:
     type: string
     description: The card type
@@ -71,17 +71,17 @@ properties:
   issuer:
     type: string
     description: The name of the card issuer
-    example: "GOTHAM STATE BANK"
+    example: 'GOTHAM STATE BANK'
   issuer_country:
     type: string
     maxLength: 2
     minLength: 2
     description: The card issuer country ISO-2 code
-    example: "US"
+    example: 'US'
   product_id:
     type: string
     description: The issuer/card scheme product identifier
-    example: "F"
+    example: 'F'
   product_type:
     type: string
     description: The issuer/card scheme product type

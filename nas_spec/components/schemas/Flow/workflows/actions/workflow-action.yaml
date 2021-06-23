@@ -6,11 +6,10 @@ discriminator:
     webhook: '#/components/schemas/webhook-action'
     #simulator: '#/components/schemas/simulator-action'
     #slack: '#/components/schemas/slack-action'
-required: 
+required:
   - type
 properties:
   type:
     type: string
     description: The type of workflow action
     example: webhook
-  

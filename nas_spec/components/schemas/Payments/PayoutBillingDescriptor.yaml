@@ -5,5 +5,5 @@ description: |
 properties:
   reference:
     type: string
-    description: | 
+    description: |
       The reference that should be shown on the statement

@@ -3,7 +3,7 @@ title: Links
 properties:
   _links:
     additionalProperties:
-      $ref: "#/components/schemas/Link"
+      $ref: '#/components/schemas/Link'
     example:
       self:
-        href: "https://api.checkout.com/marketplace/entities/ent_wxglze3wwywujg4nna5fb7ldli"
+        href: 'https://api.checkout.com/marketplace/entities/ent_wxglze3wwywujg4nna5fb7ldli'

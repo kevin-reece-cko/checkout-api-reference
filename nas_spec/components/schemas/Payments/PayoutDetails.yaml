@@ -103,7 +103,7 @@ properties:
         type: string
         description: The FX quote identifier
     example:
-      value_date: "2020-06-13T01:49:19.1864428Z"
+      value_date: '2020-06-13T01:49:19.1864428Z'
       purpose: Wallet Withdrawal
       quote_id: qte_xrhaw53z5m6ehbbxz2n6n5lk74
   _links:

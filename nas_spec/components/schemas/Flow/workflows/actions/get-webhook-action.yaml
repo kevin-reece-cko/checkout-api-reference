@@ -20,10 +20,11 @@ allOf:
           type: string
           description: The HTTP header value
         example:
-          Authorization: "70ed20ff-ba31-4ea3-b3ef-772f2be1cbdf"
+          Authorization: '70ed20ff-ba31-4ea3-b3ef-772f2be1cbdf'
       signature:
         type: object
-        description: Used to produce a signature of the webhook contents that will be included in the `Cko-Signature` header.
+        description:
+          Used to produce a signature of the webhook contents that will be included in the `Cko-Signature` header.
           This value can be computed by you on receipt of a webhook to validate its authenticity.
         required:
           - key

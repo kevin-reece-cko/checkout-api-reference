@@ -1,9 +1,9 @@
 get:
   tags:
     - Instruments
-  security: 
-    - OAuth: 
-      - payout:bank-details
+  security:
+    - OAuth:
+        - payout:bank-details
   summary: Get bank account field formatting
   description: |
     Returns the bank account field formatting required to create bank account instruments or perform payouts for the specified country and currency.
@@ -15,7 +15,7 @@ get:
         minLength: 2
         maxLength: 2
       required: true
-      description: | 
+      description: |
         The two-letter <a href="https://docs.checkout.com/four/resources/codes/country-codes" target="_blank">ISO country code</a>
     - in: path
       name: currency
@@ -24,7 +24,7 @@ get:
         minLength: 3
         maxLength: 3
       required: true
-      description: | 
+      description: |
         The three-letter <a href="https://docs.checkout.com/four/resources/codes/currency-codes" target="_blank">ISO currency code</a>
     - in: query
       name: account-holder-type
@@ -34,7 +34,7 @@ get:
           - individual
           - corporate
           - government
-      description: | 
+      description: |
         The type of account holder that will be used to filter the fields returned
     - in: query
       name: payment-network
@@ -47,7 +47,7 @@ get:
           - ach
           - fedwire
           - swift
-      description: | 
+      description: |
         The banking network that will be used to filter the fields returned
   responses:
     '200':
@@ -58,9 +58,9 @@ get:
             $ref: '#/components/schemas/BankAccountFields'
       headers:
         Cko-Request-Id:
-          $ref: "#/components/headers/Cko-Request-Id"
+          $ref: '#/components/headers/Cko-Request-Id'
         Cko-Version:
-          $ref: "#/components/headers/Cko-Version"
+          $ref: '#/components/headers/Cko-Version'
     '401':
       description: Unauthorized
     '404':

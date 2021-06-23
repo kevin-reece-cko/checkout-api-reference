@@ -1,6 +1,6 @@
 type: object
 properties:
-  id: 
+  id:
     type: string
     description: The workflow action identifier
     example: wfa_wlu3wxc26jounofs5iez75qaqa

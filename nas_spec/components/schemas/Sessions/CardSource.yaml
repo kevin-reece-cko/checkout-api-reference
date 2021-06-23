@@ -1,6 +1,6 @@
 ﻿type: object
 allOf:
-  - $ref: "#/components/schemas/SessionSource"
+  - $ref: '#/components/schemas/SessionSource'
   - type: object
     required:
       - type
@@ -11,7 +11,7 @@ allOf:
       number:
         type: string
         description: The card number (without separators)
-        example: "4543474002249996"
+        example: '4543474002249996'
         minLength: 13
         maxLength: 19
       expiry_month:
@@ -32,9 +32,9 @@ allOf:
         description: The name of the cardholder. Any special characters will be replaced.
         minLength: 2
         maxLength: 45
-        example: "Bruce Wayne"
+        example: 'Bruce Wayne'
       email:
         type: string
         description: The email of the cardholder
         maxLength: 254
-        example: "bruce.wayne@email.com"
+        example: 'bruce.wayne@email.com'

@@ -20,7 +20,7 @@ properties:
     minLength: 36
     maxLength: 36
     example: 9aea641d-0549-4222-9ca9-d90b43a4f38c
-  scheme:    
+  scheme:
     type: string
     description: Indicates the scheme this authentication is carried out against
     enum:
@@ -39,7 +39,7 @@ properties:
     example: false
   challenged:
     type: boolean
-    description: Indicates whether this session involved a challenge. This will only be set after communication with the scheme is finished. 
+    description: Indicates whether this session involved a challenge. This will only be set after communication with the scheme is finished.
     example: true
   authentication_type:
     $ref: '#/components/schemas/AuthenticationType'

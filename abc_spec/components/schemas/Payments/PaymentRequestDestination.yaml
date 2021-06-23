@@ -12,4 +12,4 @@ properties:
   type:
     type: string
     description: The payout destination type
-    example: "token"
+    example: 'token'

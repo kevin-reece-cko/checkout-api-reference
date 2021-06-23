@@ -1,10 +1,10 @@
 type: object
-description: Public certificates specific to a Directory Server (DS) for encrypting device data and verifying ACS signed content. Required when channel is `app`.  
+description: Public certificates specific to a Directory Server (DS) for encrypting device data and verifying ACS signed content. Required when channel is `app`.
 required:
   - ds_public
   - ca_public
 properties:
-  ds_public: 
+  ds_public:
     type: string
     maxLength: 1024
     description: A public certificate provided by the DS for encrytion of device data. It is a base64 URL encoded <a href="https://tools.ietf.org/html/rfc7517" target="_blank">JSON web key</a>.

@@ -10,4 +10,4 @@ properties:
   type:
     description: The instrument type
     type: string
-    example: "card"
+    example: 'card'

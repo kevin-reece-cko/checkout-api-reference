@@ -6,13 +6,13 @@ get:
   summary: Get disputes
   operationId: getDisputes
   description:
-    Returns a list of all disputes against your business. The results will be returned in reverse chronological order, 
+    Returns a list of all disputes against your business. The results will be returned in reverse chronological order,
     showing the last modified dispute (for example, where you've recently added a piece of evidence) first.
     You can use the optional parameters below to skip or limit results.
   parameters:
     - in: query
       name: limit
-      schema: 
+      schema:
         type: integer
         minimum: 1
         maximum: 250
@@ -79,17 +79,17 @@ get:
       required: false
       description: If `true`, only returns disputes of the specific channel that the secret key is associated with. Otherwise, returns all disputes for that business
   responses:
-    "200":
+    '200':
       description: Disputes retrieved successfully
       content:
         application/json:
           schema:
-            $ref: "#/components/schemas/DisputePaged"
-    "401":
+            $ref: '#/components/schemas/DisputePaged'
+    '401':
       description: Unauthorized
-    "422":
+    '422':
       description: Unprocessable paging
       content:
         application/json:
           schema:
-            $ref: "#/components/schemas/PagingError"
+            $ref: '#/components/schemas/PagingError'

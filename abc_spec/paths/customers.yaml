@@ -18,12 +18,12 @@ post:
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/CustomerCreateResponse'  
+            $ref: '#/components/schemas/CustomerCreateResponse'
     '401':
       description: Unauthorized
     '422':
       description: Invalid data was sent
       content:
         application/json:
-         schema:
-           $ref: '#/components/schemas/ValidationError'
+          schema:
+            $ref: '#/components/schemas/ValidationError'

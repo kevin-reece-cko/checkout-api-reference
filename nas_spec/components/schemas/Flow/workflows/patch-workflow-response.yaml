@@ -1,6 +1,6 @@
 type: object
 properties:
-  name: 
+  name:
     type: string
     description: The name of the workflow
-    example: "Webhooks workflow"
+    example: 'Webhooks workflow'

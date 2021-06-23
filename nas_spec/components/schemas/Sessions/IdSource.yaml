@@ -1,6 +1,6 @@
 type: object
 allOf:
-  - $ref: "#/components/schemas/SessionSource"
+  - $ref: '#/components/schemas/SessionSource'
   - type: object
     required:
       - id
@@ -8,5 +8,5 @@ allOf:
       id:
         type: string
         description: The card instrument id
-        example: "src_4gzeau5o2uqubbk6fufs3m7p54"
+        example: 'src_4gzeau5o2uqubbk6fufs3m7p54'
         maxLength: 100

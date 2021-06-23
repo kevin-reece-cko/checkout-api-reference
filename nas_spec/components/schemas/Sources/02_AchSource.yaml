@@ -21,11 +21,11 @@ allOf:
             type: string
             description: The type of Direct Debit account
             enum:
-              - "Checking"
-              - "Savings"
-              - "Corporate"
-              - "CorpSavings"
-            example: "Checking"
+              - 'Checking'
+              - 'Savings'
+              - 'Corporate'
+              - 'CorpSavings'
+            example: 'Checking'
           account_number:
             type: integer
             description: The account number of the Direct Debit account
@@ -43,16 +43,16 @@ allOf:
             description: The account holder's full name
             minLength: 1
             maxLength: 100
-            example: "John Doe"
+            example: 'John Doe'
           billing_descriptor:
             type: string
             description: The billing descriptor
             minLength: 1
             maxLength: 15
-            example: "ExampleCompany.com"
+            example: 'ExampleCompany.com'
           company_name:
             type: string
             description: The name of the company (required for corporate accounts)
             minLength: 1
             maxLength: 40
-            example: "Checkout.com"
+            example: 'Checkout.com'

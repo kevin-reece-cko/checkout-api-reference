@@ -105,15 +105,15 @@ properties:
         type: string
         pattern: "^(cus)_(\\w{26})$"
         description: The unique identifier of the customer. This can be passed as a source when making a payment
-        example: "cus_y3oqhf46pyzuxjbcn2giaqnb44"
+        example: 'cus_y3oqhf46pyzuxjbcn2giaqnb44'
       email:
         type: string
         description: The customer's email address
-        example: "jokershere@gmail.com"
+        example: 'jokershere@gmail.com'
       name:
         type: string
         description: The customer's name
-        example: "Jack Napier"
+        example: 'Jack Napier'
     required:
       - id
   billing_descriptor:
@@ -147,19 +147,19 @@ properties:
     type: object
     description: A set of key-value pairs that you can attach to a payment. It can be useful for storing additional information in a structured format
     example:
-      coupon_code: "NY2018"
+      coupon_code: 'NY2018'
       partner_id: 123989
   eci:
     type: string
     description: |
       The final Electronic Commerce Indicator (ECI) security level used to authorize the payment. 
       Applicable for 3D Secure and network token payments
-    example: "06"  
+    example: '06'
   scheme_id:
     type: string
     description: |
       The scheme transaction identifier
-    example: "488341541494658"
+    example: '488341541494658'
   actions:
     type: array
     items:
@@ -207,10 +207,10 @@ properties:
         description: A link to refund the payment, where applicable
     example:
       self:
-        href: "https://api.checkout.com/payments/pay_y3oqhf46pyzuxjbcn2giaqnb44"
+        href: 'https://api.checkout.com/payments/pay_y3oqhf46pyzuxjbcn2giaqnb44'
       actions:
-        href: "https://api.checkout.com/payments/pay_y3oqhf46pyzuxjbcn2giaqnb44/actions"
+        href: 'https://api.checkout.com/payments/pay_y3oqhf46pyzuxjbcn2giaqnb44/actions'
       authorize:
-        href: "https://api.checkout.com/payments/pay_y3oqhf46pyzuxjbcn2giaqnb44/authorizations"
+        href: 'https://api.checkout.com/payments/pay_y3oqhf46pyzuxjbcn2giaqnb44/authorizations'
       refund:
-        href: "https://api.checkout.com/payments/pay_y3oqhf46pyzuxjbcn2giaqnb44/refund"
+        href: 'https://api.checkout.com/payments/pay_y3oqhf46pyzuxjbcn2giaqnb44/refund'

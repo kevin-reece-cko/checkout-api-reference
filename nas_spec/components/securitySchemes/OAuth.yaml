@@ -41,33 +41,33 @@ flows:
     tokenUrl: See table above
     scopes:
       vault: Access to all Vault resources
-      "vault:instruments": Create instruments
-      "vault:tokenization": Tokenize payment instruments
+      'vault:instruments': Create instruments
+      'vault:tokenization': Tokenize payment instruments
       gateway: Access to all Gateway resources
-      "gateway:payment": Request payments
-      "gateway:payment-details": Get payment details
-      "gateway:payment-authorizations": Increment authorizations
-      "gateway:payment-voids": Void payments
-      "gateway:payment-captures": Capture payments
-      "gateway:payment-refunds": Refund payments
-      "fx": Foreign exchange services
-      "payouts:bank-details": Get bank details
+      'gateway:payment': Request payments
+      'gateway:payment-details': Get payment details
+      'gateway:payment-authorizations': Increment authorizations
+      'gateway:payment-voids': Void payments
+      'gateway:payment-captures': Capture payments
+      'gateway:payment-refunds': Refund payments
+      'fx': Foreign exchange services
+      'payouts:bank-details': Get bank details
       sessions: Access to all Sessions resources
-      "sessions:app": App-based authentication
-      "sessions:browser": Browser-based authentication
+      'sessions:app': App-based authentication
+      'sessions:browser': Browser-based authentication
       disputes: Access to all Disputes resources
-      "disputes:view": View disputes
-      "disputes:provide-evidence": Provide dispute evidence
-      "disputes:accept": Accept disputes
+      'disputes:view': View disputes
+      'disputes:provide-evidence': Provide dispute evidence
+      'disputes:accept': Accept disputes
       marketplace: Manage sub-entities
       flow: Access to all Flow resources
-      "flow:workflows": Manage workflows
-      "flow:events": Retrieve events
+      'flow:workflows': Manage workflows
+      'flow:events': Retrieve events
       files: Access to all Files resources
-      "files:retrieve": Retrieve files
-      "files:upload": Upload files
-      "issuing:client": Access to all client-related resources
-      "issuing:partner": Access to all partner-related resources
+      'files:retrieve': Retrieve files
+      'files:upload': Upload files
+      'issuing:client': Access to all client-related resources
+      'issuing:partner': Access to all partner-related resources
       risk: Access to all Risk resources
-      "risk:assessment": Manage risk assessment
-      "risk:settings": Manage risk settings
+      'risk:assessment': Manage risk assessment
+      'risk:settings': Manage risk settings

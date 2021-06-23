@@ -31,9 +31,9 @@ get:
             $ref: '#/components/schemas/PaymentsReportResponse'
       headers:
         Cko-Request-Id:
-          $ref: "#/components/headers/Cko-Request-Id"
+          $ref: '#/components/headers/Cko-Request-Id'
         Cko-Version:
-          $ref: "#/components/headers/Cko-Version"
+          $ref: '#/components/headers/Cko-Version'
     '422':
       description: Invalid data was sent
       content:

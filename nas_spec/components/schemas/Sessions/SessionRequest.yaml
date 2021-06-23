@@ -10,10 +10,10 @@ properties:
     type: integer
     description: |
       The payment amount in the major currency.
-      
+
       This value is required for 3DS1 authentications.
-      
-      
+
+
       Omitting this value will set `authentication_category` to `non_payment` and renders the authentication as 3DS2 only.
     minimum: 0
     maxLength: 48
@@ -40,9 +40,9 @@ properties:
   reference:
     $ref: '#/components/schemas/Reference'
   transaction_type:
-      $ref: '#/components/schemas/TransactionType'
+    $ref: '#/components/schemas/TransactionType'
   shipping_address:
-      $ref: '#/components/schemas/SessionAddress'
+    $ref: '#/components/schemas/SessionAddress'
   completion:
     $ref: '#/components/schemas/CompletionInfo'
   channel_data:

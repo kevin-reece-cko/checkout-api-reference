@@ -4,8 +4,8 @@ properties:
   purpose:
     type: string
     description: An optional description of the payout purpose, for example `Insurance claim` or `Remittance`
-    example: "Remittance"
-  charge_bearer: 
+    example: 'Remittance'
+  charge_bearer:
     type: string
     description: Who should be charged the payout fee<br><i>Only required if making a payout using an international scheme<i>.
     enum:

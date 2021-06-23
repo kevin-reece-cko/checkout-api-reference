@@ -3,8 +3,8 @@ get:
     - Sessions
   security:
     - OAuth:
-      - sessions:app
-      - sessions:browser
+        - sessions:app
+        - sessions:browser
     - SessionSecret: []
   summary: Get session details
   description: |
@@ -21,7 +21,7 @@ get:
       description: Optionally provide the type of channnel so you only get the relevant actions
       schema:
         type: string
-        enum: 
+        enum:
           - browser
           - app
         description: If a value is not provided, and if the `status` is `pending`, then `next_actions` will return `collect_channel_data` and if available, `issuer_fingerprint`.
@@ -35,9 +35,9 @@ get:
             $ref: '#/components/schemas/GetSessionResponse'
       headers:
         Cko-Request-Id:
-          $ref: "#/components/headers/Cko-Request-Id"
+          $ref: '#/components/headers/Cko-Request-Id'
         Cko-Version:
-          $ref: "#/components/headers/Cko-Version"
+          $ref: '#/components/headers/Cko-Version'
     '401':
       description: Unauthorized
     '403':

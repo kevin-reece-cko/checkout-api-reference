@@ -13,7 +13,6 @@ properties:
     type: string
   fingerprint:
     description: A token that can uniquely identify this instrument across all customers
-    pattern: "^([a-z0-9]{26})$"
+    pattern: '^([a-z0-9]{26})$'
     type: string
-    example: "smoua2sbuqhupeofwbe77n5nsm"
-
+    example: 'smoua2sbuqhupeofwbe77n5nsm'

@@ -20,9 +20,8 @@ properties:
   response_code:
     type: string
     description: The Gateway response code
-    example: "10000"
+    example: '10000'
   response_summary:
     type: string
     description: The Gateway response summary
-    example: "Approved"
-
+    example: 'Approved'

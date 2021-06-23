@@ -21,25 +21,25 @@ properties:
     example: Parker
   company_name:
     title: Company name
-    description: "The legal name of a registered company that holds the account. Required if `type` is `corporate`."
+    description: 'The legal name of a registered company that holds the account. Required if `type` is `corporate`.'
     type: string
     example: Super Hero Masks Inc.
   tax_id:
     title: Tax ID
     description: The account holder's tax number/reference.
     type: string
-    example: "123456"
+    example: '123456'
   date_of_birth:
     title: Date of birth
     description: The account holder's date of birth.
     allOf:
-      - $ref: "#/components/schemas/DateOfBirth"
+      - $ref: '#/components/schemas/DateOfBirth'
   country_of_birth:
     title: Country of birth
     description: The two-letter ISO country code of the account holder's country of birth.
     type: string
     format: ISO 3166-1
-    example: "GB"
+    example: 'GB'
   residential_status:
     title: Residental status
     description: The two-letter ISO country code of the account holder's country of birth.
@@ -51,14 +51,14 @@ properties:
     title: Billing address
     description: The billing address of the account holder.
     allOf:
-      - $ref: "#/components/schemas/EntityAddress"
+      - $ref: '#/components/schemas/EntityAddress'
   phone:
     title: Phone
     description: The phone number of the account holder.
     allOf:
-      - $ref: "#/components/schemas/EntityPhone"
+      - $ref: '#/components/schemas/EntityPhone'
   identification:
-    $ref: "#/components/schemas/MarketplaceAccountHolderIdentification"
+    $ref: '#/components/schemas/MarketplaceAccountHolderIdentification'
   email:
     title: Email
     description: The account holder's email address.

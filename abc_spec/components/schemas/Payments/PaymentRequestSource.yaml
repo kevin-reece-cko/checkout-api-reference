@@ -35,4 +35,4 @@ properties:
   type:
     type: string
     description: The payment source type <br> *Note:* *To make a payment with full card details, you must be <a href="https://docs.checkout.com/risk-management/pci-compliance" target="blank">SAQ D PCI compliant</a>*
-    example: "card"
+    example: 'card'

@@ -7,15 +7,15 @@ required:
   - currency
   - country
 allOf:
-  - $ref: "#/components/schemas/RetrieveCustomerInstrumentResponse"
+  - $ref: '#/components/schemas/RetrieveCustomerInstrumentResponse'
 properties:
   type:
     description: The type of instrument
-    type: string    
+    type: string
   id:
     description: The unique identifier of the payment source or destination that can be used later for payments
     type: string
-    example: "src_wmlfc3zyhqzehihu7giusaaawu" 
+    example: 'src_wmlfc3zyhqzehihu7giusaaawu'
 
   fingerprint:
     type: string
@@ -35,7 +35,7 @@ properties:
   account_number:
     description: Number (which can contain letters) that identifies the account
     type: string
-    example: "13654567455"
+    example: '13654567455'
 
   bank_code:
     description: Code that identifies the bank
@@ -45,7 +45,7 @@ properties:
   branch_code:
     description: Code that identifies the bank branch
     type: string
-    example: "6443"
+    example: '6443'
 
   iban:
     description: Internationally agreed standard for identifying bank account
@@ -60,7 +60,7 @@ properties:
   swift_bic:
     description: 8 or 11 character code which identifies the bank or bank branch
     type: string
-    example: "37040044"
+    example: '37040044'
 
   currency:
     description: The three-letter <a href="https://docs.checkout.com/four/resources/codes/currency-codes" target="_blank">ISO currency code</a> of the account's currency
@@ -73,7 +73,7 @@ properties:
     example: GB
 
   account_holder:
-    $ref: "#/components/schemas/AccountHolder"
+    $ref: '#/components/schemas/AccountHolder'
 
   bank:
-    $ref: "#/components/schemas/BankDetails"
+    $ref: '#/components/schemas/BankDetails'

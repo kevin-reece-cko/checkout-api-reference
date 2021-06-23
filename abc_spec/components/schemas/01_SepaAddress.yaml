@@ -5,7 +5,7 @@ required:
   - zip
   - country
 properties:
-  address_line1: 
+  address_line1:
     type: string
     description: The first line of the address
     example: Brandenburger Tor

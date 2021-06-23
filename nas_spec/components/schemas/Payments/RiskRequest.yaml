@@ -3,7 +3,7 @@ description: Configures the risk assessment performed during the processing of t
 required:
   - enabled
 properties:
-  enabled: 
+  enabled:
     type: boolean
     description: Whether a risk assessment should be performed
     default: true

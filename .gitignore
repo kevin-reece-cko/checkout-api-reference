@@ -35,10 +35,10 @@ node_modules
 package-lock\.json
 
 src/OpenApiGenerator/bin/*
-
 src/OpenApiGenerator/obj/*
+/src/OpenApiGenerator/.vs/
+
 .DS_Store
 
 .idea
-/src/OpenApiGenerator/.vs/
 .vscode/settings.json

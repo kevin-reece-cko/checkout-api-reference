@@ -11,7 +11,7 @@ allOf:
           mandate_reference:
             type: string
             description: The Direct Debit mandate reference
-            example: "MANDXI9809809"
+            example: 'MANDXI9809809'
       _links:
         type: object
         description: The links related to the SEPA payment source

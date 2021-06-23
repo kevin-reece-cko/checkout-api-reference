@@ -2,7 +2,7 @@ type: object
 required:
   - invoice_number
 allOf:
-  - $ref: "#/components/schemas/PaymentRequestSource"
+  - $ref: '#/components/schemas/PaymentRequestSource'
   - type: object
     properties:
       invoice_number:
@@ -27,7 +27,7 @@ allOf:
           Character limit: 127 single-byte alphanumeric characters.
           Width: 190px
           Height: 60px
-      stc: 
+      stc:
         type: object
         additionalProperties:
           type: string
@@ -35,20 +35,20 @@ allOf:
           These details are used by Paypal to perform a pre-transaction risk management evaluation.
           The property names should be the same one as agreed between the merchant and PayPal.
         example:
-          ota_type: "airline"
-          ota_start_city: "SKG"
-      
+          ota_type: 'airline'
+          ota_start_city: 'SKG'
+
       #TODO These are all fields supported by the legacy API but not by UPAPI (yet)
       #order:
       #  type: boolean
       #  default: false
       #  description: >
-      #    Set this flag to 'true' to use the Deferred Settlement (Order / Auth / Capture) flow. 
+      #    Set this flag to 'true' to use the Deferred Settlement (Order / Auth / Capture) flow.
       #    This will only create an order for a customer's approval and will require an additional API authorisation call before a capture.
       #collection:
       #  type: boolean
       #  default: false
-      #  description: > 
+      #  description: >
       #    Set this to true if the products will be collected by the customer.
       #display_shipping:
       #  type: boolean
@@ -72,8 +72,8 @@ allOf:
       #      minLength: 8
       #      maxLength: 8
       #      description: >
-      #        Date when the ticket was issued to the buyer. 
-      #        In case of multiple issuances of the same ticket to a buyer, the merchant should use the last ticket date. 
+      #        Date when the ticket was issued to the buyer.
+      #        In case of multiple issuances of the same ticket to a buyer, the merchant should use the last ticket date.
       #        The date is in the format YYYYMMDD.
       #    travel_agency_name:
       #      type: string

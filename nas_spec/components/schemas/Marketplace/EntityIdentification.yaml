@@ -10,8 +10,8 @@ properties:
     example: AB123456C
   document:
     type: object
-    description: "A legal document used to verify identity."
-    properties: 
+    description: 'A legal document used to verify identity.'
+    properties:
       type:
         type: string
         description: The type of document.

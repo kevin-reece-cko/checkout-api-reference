@@ -37,12 +37,12 @@ properties:
     type: string
     description: A reference you can later use to identify this payment, such as an order number
     maxLength: 50
-    example: "ORD-5023-4E89"
+    example: 'ORD-5023-4E89'
   description:
     type: string
     description: A description of the payment
     maxLength: 100
-    example: "Set of 3 masks"
+    example: 'Set of 3 masks'
   authorization_type:
     type: string
     description: The authorization type
@@ -50,7 +50,7 @@ properties:
       - Final
       - Estimated
     default: Final
-    Example: Estimated 
+    Example: Estimated
   capture:
     type: boolean
     description: Whether to capture the payment (if applicable)
@@ -83,14 +83,14 @@ properties:
   processing_channel_id:
     type: string
     description: The processing channel to be used for the payment
-    example: "mer_q4dbxom5jbgudnjzjpz7j2z6uq"
+    example: 'mer_q4dbxom5jbgudnjzjpz7j2z6uq'
   previous_payment_id:
     type: string
     description: |
       For payments that use <a href="https://docs.checkout.com/four/payments/use-saved-card-details/about-stored-card-details" target="blank">stored card details</a>, such as recurring payments –
       an existing payment identifier from the recurring series or the Scheme Transaction ID
     maxLength: 100
-    example: "pay_fun26akvvjjerahhctaq2uzhu4"
+    example: 'pay_fun26akvvjjerahhctaq2uzhu4'
   risk:
     $ref: '#/components/schemas/RiskRequest'
   success_url:
@@ -98,13 +98,13 @@ properties:
     format: uri
     description: For redirect payment methods, this overrides the default success redirect URL configured on your account
     maxLength: 255
-    example: "http://example.com/payments/success"
+    example: 'http://example.com/payments/success'
   failure_url:
     type: string
     format: uri
     description: For redirect payment methods, this overrides the default failure redirect URL configured on your account
     maxLength: 255
-    example: "http://example.com/payments/fail"
+    example: 'http://example.com/payments/fail'
   payment_ip:
     description: The IP address used to make the payment. Required for some risk checks
     allOf:
@@ -121,4 +121,4 @@ properties:
     type: object
     description: Allows you to store additional information about a transaction with custom fields and up to five user-defined fields (`udf1` to `udf5`), which can be used for reporting purposes. `udf1` is also used for some of our risk rules. **Note** that this object only allows one level of depth, so cannot accept non-primitive data types such as objects or arrays.
     example:
-      coupon_code: "NY2018"
+      coupon_code: 'NY2018'

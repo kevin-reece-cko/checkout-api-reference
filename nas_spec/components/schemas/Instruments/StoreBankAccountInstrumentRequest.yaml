@@ -1,7 +1,7 @@
 type: object
 description: Store bank account details
 allOf:
-  - $ref: "#/components/schemas/StoreInstrumentRequest"
+  - $ref: '#/components/schemas/StoreInstrumentRequest'
   - type: object
 required:
   - currency
@@ -14,7 +14,7 @@ properties:
   account_type:
     description: The type of account
     type: string
-    enum: 
+    enum:
       - savings
       - current
       - cash
@@ -61,16 +61,14 @@ properties:
     example: GB
 
   account_holder:
-    $ref: "#/components/schemas/AccountHolder"
+    $ref: '#/components/schemas/AccountHolder'
 
   bank:
-    $ref: "#/components/schemas/BankDetails"
+    $ref: '#/components/schemas/BankDetails'
 
   # intermediary_bank:
   #   $ref: "#/components/schemas/bank_account_intermediary_bank"
   #   description: Details of the intermediary bank
 
   customer:
-    $ref: "#/components/schemas/StoreCustomerInstrumentRequest"
-
-
+    $ref: '#/components/schemas/StoreCustomerInstrumentRequest'

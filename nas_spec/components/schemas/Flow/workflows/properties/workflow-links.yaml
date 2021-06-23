@@ -11,4 +11,4 @@ properties:
     description: The URI of the workflow
 example:
   self:
-    href: "https://api.checkout.com/workflows/wf_wlu3wxc26jounofs5iez75qaqa" 
+    href: 'https://api.checkout.com/workflows/wf_wlu3wxc26jounofs5iez75qaqa'

@@ -16,22 +16,22 @@ post:
     content:
       multipart/form-data:
         schema:
-          $ref: "#/components/schemas/MarketplaceFile"
+          $ref: '#/components/schemas/MarketplaceFile'
   responses:
-    "200":
+    '200':
       description: File uploaded successfully
       content:
         application/json:
           schema:
-            $ref: "#/components/schemas/MarketplaceFileUploadResponse"
+            $ref: '#/components/schemas/MarketplaceFileUploadResponse'
       headers:
         Cko-Request-Id:
-          $ref: "#/components/headers/Cko-Request-Id"
+          $ref: '#/components/headers/Cko-Request-Id'
         Cko-Version:
-          $ref: "#/components/headers/Cko-Version"
-    "401":
+          $ref: '#/components/headers/Cko-Version'
+    '401':
       description: Unauthorized
-    "422":
+    '422':
       description: Unprocessable
-    "429":
+    '429':
       description: Too many requests

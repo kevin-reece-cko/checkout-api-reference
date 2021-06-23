@@ -3,7 +3,7 @@ description: A Payment Link that has received a payment
 required:
   - payment_id
 allOf:
-  - $ref: "#/components/schemas/GetPaymentLinkResponse"
+  - $ref: '#/components/schemas/GetPaymentLinkResponse'
   - type: object
     properties:
       payment_id:
@@ -13,4 +13,4 @@ allOf:
           - payment
           - payment_actions
         allOf:
-          - $ref: "#/components/schemas/PaymentLinkResponseLinks"
+          - $ref: '#/components/schemas/PaymentLinkResponseLinks'

@@ -18,7 +18,7 @@ properties:
   type:
     type: string
     description: The type of card details to be tokenized
-    example: "card"
+    example: 'card'
   token:
     type: string
     description: The reference token
@@ -43,15 +43,15 @@ properties:
   scheme:
     type: string
     description: The card scheme
-    example: "VISA"
+    example: 'VISA'
   last4:
     type: string
     description: The last four digits of the card number
-    example: "9996"
+    example: '9996'
   bin:
     type: string
     description: The card issuer BIN
-    example: "454347"
+    example: '454347'
   card_type:
     type: string
     description: The card type
@@ -72,17 +72,17 @@ properties:
   issuer:
     type: string
     description: The name of the card issuer
-    example: "GOTHAM STATE BANK"
+    example: 'GOTHAM STATE BANK'
   issuer_country:
     type: string
     maxLength: 2
     minLength: 2
     description: The card issuer country ISO-2 code
-    example: "US"
+    example: 'US'
   product_id:
     type: string
     description: The issuer/card scheme product identifier
-    example: "F"
+    example: 'F'
   product_type:
     type: string
     description: The issuer/card scheme product type

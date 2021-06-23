@@ -40,15 +40,15 @@ properties:
   auth_code:
     type: string
     description: The acquirer authorization code, if the payment was authorized.
-    example: "643381"
+    example: '643381'
   response_code:
     type: string
     description: The gateway response code
-    example: "10000"
+    example: '10000'
   response_summary:
     type: string
     description: The gateway response summary
-    example: "Approved"
+    example: 'Approved'
   3ds:
     type: object
     description: Provides 3D Secure enrollment status if the payment was downgraded to non-3D Secure
@@ -84,5 +84,5 @@ properties:
     type: object
     description: A set of key-value pairs that you can attach to a payment. It can be useful for storing additional information in a structured format.
     example:
-      coupon_code: "NY2018"
+      coupon_code: 'NY2018'
       partner_id: 123989

@@ -15,7 +15,7 @@ properties:
     maximum: 12
     example: 03
   year:
-    type: number  
+    type: number
     description: The year they were born.
     minimum: 1900
     example: 1985

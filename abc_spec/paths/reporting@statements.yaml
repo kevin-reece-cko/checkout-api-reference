@@ -33,17 +33,17 @@ get:
       content:
         application/json:
           schema:
-            $ref: "#/components/schemas/StatementsReportResponse"
+            $ref: '#/components/schemas/StatementsReportResponse'
       headers:
         Cko-Request-Id:
-          $ref: "#/components/headers/Cko-Request-Id"
+          $ref: '#/components/headers/Cko-Request-Id'
         Cko-Version:
-          $ref: "#/components/headers/Cko-Version"
+          $ref: '#/components/headers/Cko-Version'
     '422':
       description: Invalid data was sent
       content:
         application/json:
           schema:
-            $ref: "#/components/schemas/ValidationError"
+            $ref: '#/components/schemas/ValidationError'
     '502':
       description: Bad gateway

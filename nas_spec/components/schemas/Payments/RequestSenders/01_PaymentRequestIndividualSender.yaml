@@ -14,11 +14,11 @@ properties:
   first_name:
     type: string
     description: The sender's first name
-    example: "John"
+    example: 'John'
   last_name:
     type: string
     description: The sender's last name
-    example: "Jones"
+    example: 'Jones'
   address:
     description: The sender's address
     allOf:

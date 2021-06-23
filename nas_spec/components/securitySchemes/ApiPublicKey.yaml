@@ -1,13 +1,13 @@
-description: | 
-      Public keys are used for client-side authentication, and should only be used in JavaScript or native applications.
-      
-      #### Format
+description: |
+  Public keys are used for client-side authentication, and should only be used in JavaScript or native applications.
 
-      - Sandbox `pk_sbox_xxxxxxxxxxxxxxxxxxxxxxxxxx`
+  #### Format
 
-      - Production `pk_xxxxxxxxxxxxxxxxxxxxxxxxxx`
+  - Sandbox `pk_sbox_xxxxxxxxxxxxxxxxxxxxxxxxxx`
 
-      When specifying your public key in the Authorization header, you must include the `Bearer` prefix. For example, `Bearer {{public API key}}`.
+  - Production `pk_xxxxxxxxxxxxxxxxxxxxxxxxxx`
+
+  When specifying your public key in the Authorization header, you must include the `Bearer` prefix. For example, `Bearer {{public API key}}`.
 name: Authorization
 type: apiKey
 in: Header
