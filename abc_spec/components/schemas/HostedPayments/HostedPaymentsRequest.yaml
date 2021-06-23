@@ -117,6 +117,8 @@ properties:
       - nl-NL
       - it-IT
       - fr-FR
+      - es-ES
+      - de-DE
     default: en-GB
   3ds:
     type: object
