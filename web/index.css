@@ -443,15 +443,13 @@ td.sc-kgoBCf.kGwPhO {
 
 /* Security details table */
 
-.security-details th,
-th {
+.security-details th {
 	font-weight: 500 !important;
 	border: 1px solid var(--border) !important;
 	color: var(--title-color) !important;
 }
 
-.security-details tr,
-tr {
+.security-details tr {
 	background-color: var(--background-contrast) !important;
 }
 
@@ -459,8 +457,7 @@ tr {
 	border: 1px solid var(--border) !important;
 }
 
-.security-details td,
-td {
+.security-details td {
 	border: 1px solid var(--border) !important;
 }
 
