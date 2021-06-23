@@ -23,7 +23,8 @@ gulp.task(
 );
 
 gulp.task('watch', (cb) => {
-	watch('spec/**/*', gulp.series('reload'));
+	watch('abc_spec/**/*', gulp.series('reload'));
+	watch('nas_spec/**/*', gulp.series('reload'));
 	watch('web/**/*', gulp.series('reload'));
 	cb();
 });
