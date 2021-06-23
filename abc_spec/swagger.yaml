@@ -34,7 +34,7 @@ info:
 
     When you sign up for an account, you are given a secret and public API key
     pair. You authenticate with our API by providing the appropriate key in
-    the request Authorization header.
+    the request Authorization header. 
 
     Never share your secret keys. Keep them guarded and secure.
 servers:
