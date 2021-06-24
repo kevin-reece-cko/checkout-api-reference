@@ -63,6 +63,8 @@ tags:
     description: Keep track of and act on your open disputes (also known as chargebacks) to submit the best possible response.
   - name: Reconciliation
     description: Quickly find all fees associated with each of your payments, so you can concentrate on the important stuff while streamlining your financial reporting.
+  - name: Risk
+    description: Evaluate the risk of a transaction at the pre-authentication and pre-capture stages of the payment process.
   # - name: Files
   #   description: |
   #     Upload files to be used as input to other APIs
