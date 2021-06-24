@@ -82,6 +82,7 @@ x-tagGroups:
     tags:
       - Sessions
       - Disputes
+      - Risk
   - name: Notifications
     tags:
       - Workflows
