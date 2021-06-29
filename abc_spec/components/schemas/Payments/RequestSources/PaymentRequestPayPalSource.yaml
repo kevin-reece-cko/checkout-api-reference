@@ -11,7 +11,7 @@ allOf:
         maxLength: 256
         description: >
           PayPal recommends using this field to associate transactions with your internal tracking IDs or invoice numbers; 
-          populating the invoice ID field will help you pull transaction information at a later date using only your internal ID.
+          populating the invoice ID field will help you pull transaction information at a later date using only your internal ID. <br><br><strong>Note:</strong> The invoice number must be a unique value.
       recipient_name:
         maxLength: 128
         type: string
