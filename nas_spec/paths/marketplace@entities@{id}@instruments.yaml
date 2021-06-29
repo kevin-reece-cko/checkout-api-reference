@@ -36,6 +36,9 @@ post:
                   state: London
                   zip: W1T 4TJ
                   country: GB
+              document:
+                type: bank_statement
+                file_id: file_wxglze3wwywujg4nna5fb7ldli
   security:
     - OAuth:
         - marketplace
