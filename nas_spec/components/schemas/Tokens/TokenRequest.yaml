@@ -5,6 +5,7 @@ discriminator:
   mapping:
     card: '#/components/schemas/01_CardTokenRequest'
     googlepay: '#/components/schemas/02_GooglePayTokenRequest'
+    applepay: '#/components/schemas/03_ApplePayTokenRequest'
 required:
   - type
 properties:
