@@ -13,13 +13,14 @@ properties:
       - citizen_card
       - residence_permit
       - electoral_id
-    description: The type of identification being uploaded.
+      - bank_statement
+    description: The type of document being uploaded.
     example: 'passport'
   purpose:
     type: string
     description: The purpose of the file upload.
     enum:
-      # - bank_verification
+      - bank_verification
       - identification
     example: 'identification'
   path:
