@@ -11,4 +11,8 @@ properties:
     description: The URI of the event
 example:
   self:
-    href: 'https://api.checkout.com/events/evt_az5sblvku4ge3dwpztvyizgcau'
+    href: 'https://api.checkout.com/workflows/events/evt_az5sblvku4ge3dwpztvyizgcau'
+  payment:
+    href: 'https://api.checkout.com/payments/pay_wlu3wxc26jounofs5iez75qaqa'
+  dispute:
+    href: 'https://api.checkout.com/disputes/dsp_jfh5iqceqau0qw3ccf3p'
