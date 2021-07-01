@@ -5,14 +5,14 @@ required:
 properties: 
   decision:
     type: string
-    description: Checkout recommended decision
+    description: The recommended action based on our more restrictive risk settings
     enum: 
     - capture
     - void
     - flag
     example: capture
   reasons:
-    description: How the decision was concluded
+    description: The reasons for the decision
     type: array
     items:
       type: string
