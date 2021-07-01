@@ -1,7 +1,6 @@
 type: object
 required:
   - currency
-  - processing_channel_id
 properties:
   source:
     $ref: '#/components/schemas/PaymentRequestSource'
