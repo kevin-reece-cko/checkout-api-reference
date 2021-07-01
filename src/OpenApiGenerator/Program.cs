@@ -5,6 +5,7 @@ using System.Linq;
 using Microsoft.OpenApi.Readers;
 using Microsoft.OpenApi.Writers;
 using System.Text;
+using System.Text.RegularExpressions;
 
 namespace OpenApiGenerator
 {
@@ -16,8 +17,8 @@ namespace OpenApiGenerator
         static string _jsonOutputFile = "output/swagger.json";
         static List<CodeSample> _codeSamples = new List<CodeSample>();
         static string[] httpVerbs = new[] { "get", "put", "post", "delete", "options", "head", "patch", "trace" };
-        static string filterOutAccount = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") == "abc" ? "nas" : "abc";
-       static void Main(string[] args)
+        
+        static void Main(string[] args)
         {
             try
             {
@@ -142,6 +143,7 @@ namespace OpenApiGenerator
                 using (StreamReader sr = new StreamReader(file))
                 {
                     path = fileInfo.Name.Substring(0, fileInfo.Name.IndexOf(".")).Replace("@", "/");
+                    path = new Regex(@"^_.+").Replace(path, "");
                     text += ($"  /{path}:\n");
 
                     var s = "";

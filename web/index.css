@@ -475,7 +475,6 @@ td.sc-kgoBCf.kGwPhO {
 	fill: var(--icon-color) !important;
 }
 
-span,
 span::before,
 span::after {
 	color: var(--primary-text) !important;
