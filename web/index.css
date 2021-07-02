@@ -480,6 +480,10 @@ span::after {
 	color: var(--primary-text) !important;
 }
 
+.hSfQgO .sc-fzpjYC, .hSfQgO .sc-fzpjYC .sc-fzpjYC .sc-fzpjYC, .hSfQgO .sc-fzpjYC .sc-fzpjYC .sc-fzpjYC .sc-fzpjYC .sc-fzpjYC {
+	background: var(--background)!important;
+}
+
 /* Field names */
 
 td.sc-cSHVUG.sc-chPdSV {
