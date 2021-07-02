@@ -1,0 +1,8 @@
+type: object
+description: Allows you to attach additional information to the assessment in key-value pairs. You can reference these properties in your custom risk rules.
+additionalProperties:
+  type: string
+example:
+  VoucherCode: "loyalty_10"
+  discountApplied: "10"
+  customer_id: "2190EF321"

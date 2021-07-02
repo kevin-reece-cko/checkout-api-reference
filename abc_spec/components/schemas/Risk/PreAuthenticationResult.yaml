@@ -1,0 +1,19 @@
+type: object 
+required: 
+  - decision
+description: The assessment result
+properties: 
+  decision:
+    type: string
+    description: The recommended action based on the assessment
+    enum: 
+    - try_exemptions
+    - try_frictionless
+    - no_preference
+    - force_challenge
+    - decline
+    example: try_frictionless
+  details:
+    description: The reasons for the decision
+    type: string
+    example: "low_value_item_rule"

@@ -1,0 +1,21 @@
+type: object 
+required: 
+  - decision
+  - reasons
+properties: 
+  decision:
+    type: string
+    description: The recommended action based on our more restrictive risk settings
+    enum: 
+    - try_exemptions
+    - try_frictionless
+    - no_preference
+    - force_challenge
+    - decline
+    example: decline
+  reasons:
+    description: The reasons for the decision
+    type: array
+    items:
+      type: string
+    example: [decline_list_email, decline_list_shipping]
