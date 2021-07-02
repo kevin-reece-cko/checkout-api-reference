@@ -438,7 +438,7 @@ td.sc-kgoBCf.kGwPhO {
 }
 
 .dropdown-selector-value {
-	color: white!important;
+	color: var(--S1000)!important;
 }
 
 /* Security details table */
@@ -598,6 +598,8 @@ li {
 	background-color: var(--secondary-button) !important;
 	color: var(--primary-button-color) !important;
 	border-color: var(--secondary-button) !important;
+	border-radius: 4px!important;
+	font-weight: 500!important;
 }
 
 .hHuJoM > .react-tabs__tab-panel {
@@ -1120,6 +1122,10 @@ body.light div.hHgrjJ {
 
 body.light div.iFDKZT.iFDKZT {
 	padding: 1.2em 2em 0.9em 0.9em;
+}
+
+.hHgrjJ {
+	padding: 1.4em 0.9em 0.6em;
 }
 
 /*Plus symbols were white on the responses*/
