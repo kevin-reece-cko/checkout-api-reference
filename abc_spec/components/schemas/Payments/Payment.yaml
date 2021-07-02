@@ -71,7 +71,7 @@ properties:
       - Partially Refunded
       - Refunded
       - Declined
-      - Cancelled
+      - Canceled
       - Paid
     example: Authorized
   3ds:

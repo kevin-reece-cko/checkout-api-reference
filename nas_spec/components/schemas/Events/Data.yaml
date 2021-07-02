@@ -35,7 +35,7 @@ properties:
       - Partially Refunded
       - Refunded
       - Declined
-      - Cancelled
+      - Canceled
     example: Authorized
   auth_code:
     type: string
