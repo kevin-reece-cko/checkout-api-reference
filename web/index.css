@@ -253,7 +253,8 @@ span.sc-jKJlTe.eZZMfQ,
 label.jIStei,
 span.sc-fzqKxP.dvqdvD,
 h5,
-span.sc-fzpkJw.hctKJM {
+span.sc-fzpkJw.hctKJM,
+span.sc-fzqzlV.sc-fzoxnE.dpLlWm {
 	color: var(--secondary-text) !important;
 }
 
@@ -423,7 +424,7 @@ h1.sc-htoDjs.sc-fYxtnH.dTJWQH {
 	background-color: var(--cko-dark-contrast-blue) !important;
 }
 
-.hHgrjJ {
+.hHgrjJ, .iFDKZT.iFDKZT {
 	background-color: var(--code-type) !important;
 }
 
@@ -439,6 +440,14 @@ td.sc-kgoBCf.kGwPhO {
 
 .dropdown-selector-value {
 	color: var(--S1000)!important;
+}
+
+.react-tabs__tab-panel .sc-fzpmMD.gBfPiy.dropdown-selector-value {
+	color: var(--required)!important;
+}
+
+.iFDKZT.iFDKZT {
+	padding: 1.4em 0.9em 0.6em 1em!important;
 }
 
 /* Security details table */
@@ -602,9 +611,13 @@ li {
 	font-weight: 500!important;
 }
 
-.hHuJoM > .react-tabs__tab-panel {
+.hHuJoM > .react-tabs__tab-panel--selected {
 	border-radius: 8px !important;
 	border: 1px solid var(--border) !important;
+}
+
+.hHuJoM > ul > li.tab-error {
+	border-radius: 4px!important;
 }
 
 .dcDVxm {
@@ -861,7 +874,8 @@ ul > li.react-tabs__tab,
 ul > li.tab-success,
 ul > li.tab-error {
 	margin: 0 5px !important;
-	border-radius: 0 !important;
+	font-weight: 500!important;
+	border-radius: 4px!important;
 	border-width: 2px 0 0 0 !important;
 }
 
@@ -1125,7 +1139,7 @@ body.light div.iFDKZT.iFDKZT {
 }
 
 .hHgrjJ {
-	padding: 1.4em 0.9em 0.6em;
+	padding: 1.4em 0.9em 0.6em!important;
 }
 
 /*Plus symbols were white on the responses*/
