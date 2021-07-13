@@ -75,7 +75,7 @@ properties:
       - Partially Refunded
       - Refunded
       - Declined
-      - Cancelled
+      - Canceled
       - Paid
     example: Authorized
   balances:
