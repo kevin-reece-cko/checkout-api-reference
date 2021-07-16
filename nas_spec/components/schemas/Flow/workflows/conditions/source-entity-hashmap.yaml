@@ -1,4 +1,6 @@
 type: array
+items:
+  type: string
 minItems: 1
 pattern: ^ent_[a-z0-9]{26}$
 description: ent_axclravnqf5u5ejkweijnp5zc4

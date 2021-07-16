@@ -11,12 +11,14 @@ get:
   parameters:
     - in: path
       name: id
+      required: true
       schema:
         type: string
         pattern: "^(cus)_(\\w{26})$"
       description: The customer's ID. Required if `email` is not provided.
     - in: path
       name: email
+      required: true
       schema:
         type: string
         format: email

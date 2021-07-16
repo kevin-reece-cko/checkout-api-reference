@@ -74,7 +74,7 @@ properties:
     type: object
     description: A legal document used to verify the bank account.
     properties:
-      type:
+      bank_statement:
         type: string
         description: The type of document.
         enum:

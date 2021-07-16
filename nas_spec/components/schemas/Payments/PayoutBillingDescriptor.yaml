@@ -1,5 +1,5 @@
 type: object
-required: reference
+required: [reference]
 description: |
   The dynamic billing descriptor displayed on the recipient's bank account statement
 properties:

@@ -9,39 +9,39 @@ properties:
       The URI to send the 3ds method completion indicator to. Use this if device information was sent when requesting a session. 
       Only available if `next_actions` contains `issuer_fingerprint`
     properties:
-      required:
-        - href
       href:
         type: string
         maxLength: 100
         example: https://api.checkout.com/sessions/sid_y3oqhf46pyzuxjbcn2giaqnb441/issuer-fingerprint
+    required:
+      - href
   collect_channel_data:
     type: object
     description: The URI to send device information to. Only available if `next_actions` contains `collect_data`
     properties:
-      required:
-        - href
       href:
         type: string
         maxLength: 100
         example: https://api.checkout.com/sessions/sid_y3oqhf46pyzuxjbcn2giaqnb441/collect-data
+    required:
+      - href
   three_ds_method_url:
     type: object
     description: The URI of the Issuer FingerPrint (3DS Method). Only available if `next_actions` contains `issuer_fingerprint`
     properties:
-      required:
-        - href
       href:
         type: string
         maxLength: 100
         example: https://api.hbsc.com/3dsmethod?tx=123456
+    required:
+      - href
   complete:
     type: object
     description: The URI to signal the session as complete. Only available if `next_actions` contains `complete`
     properties:
-      required:
-        - href
       href:
         type: string
         maxLength: 100
         example: https://api.checkout.com/sessions/sid_y3oqhf46pyzuxjbcn2giaqnb441/complete
+    required:
+      - href

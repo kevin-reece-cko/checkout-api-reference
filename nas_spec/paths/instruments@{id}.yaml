@@ -51,8 +51,8 @@ patch:
       required: true
       schema:
         type: string
+        pattern: '^(src_)[a-z0-9]{26}$'
       example: src_ubfj2q76miwundwlk72vxt2i7q
-      pattern: '^(src_)[[a-z0-9]]{{26}}$)'
       description: The instrument ID
   requestBody:
     required: true
@@ -102,8 +102,8 @@ delete:
       required: true
       schema:
         type: string
+        pattern: '^(src_)[a-z0-9]{26}$'
       example: src_ubfj2q76miwundwlk72vxt2i7q
-      pattern: '^(src_)[[a-z0-9]]{{26}}$)'
       description: The ID of the payment instrument to be deleted
   responses:
     '204':

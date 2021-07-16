@@ -28,5 +28,7 @@ properties:
     example: 'src_wmlfc3zyhqzehihu7giusaaawu'
   instruments:
     type: array
+    items:
+      type: string
     description: The IDs of the instruments you want to link to this customer
     example: ['src_y3oqhf46pyzuxjbcn2giaqnb44', 'src_wmlfc3zyhqzehihu7giusaaawu']

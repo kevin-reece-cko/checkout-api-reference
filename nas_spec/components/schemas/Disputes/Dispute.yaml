@@ -68,7 +68,9 @@ properties:
     type: array
     description: <i>This list and the dispute categories will change over time. Your evidence logic should be informed by this field, not hard coded.</i>
     items:
-      type: strings
+      type: array
+      items:
+        type: string
       enum:
         [
           proof_of_delivery_or_service,

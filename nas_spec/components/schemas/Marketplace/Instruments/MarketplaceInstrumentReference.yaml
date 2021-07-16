@@ -24,12 +24,13 @@ properties:
     type: object
     description: A legal document used to verify the bank account.
     properties:
-      type: string
-      description: The type of document.
-      enum:
-        - bank_statement
-      default: bank_statement
-      example: bank_statement
+      bank_statement:
+        type: string
+        description: The type of document.
+        enum:
+          - bank_statement
+        default: bank_statement
+        example: bank_statement
       file_id:
         type: string
         description: The ID of the file representing the uploaded document.

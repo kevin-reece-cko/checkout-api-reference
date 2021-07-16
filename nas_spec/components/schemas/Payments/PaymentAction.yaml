@@ -53,7 +53,7 @@ properties:
       - Estimated
       - Incremental
     default: Final
-    Example: Estimated
+    example: Estimated
   reference:
     type: string
     description: Your reference for the action

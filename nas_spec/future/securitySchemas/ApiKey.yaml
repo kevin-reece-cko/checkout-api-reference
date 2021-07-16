@@ -5,4 +5,4 @@ description: >
   You can find your API keys, and generate new ones, in your <a href="https://hub.checkout.com/login" target="blank">Hub account</a>.
 name: Authorization
 type: apiKey
-in: Header
+in: header
