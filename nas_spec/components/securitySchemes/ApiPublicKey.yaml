@@ -10,4 +10,4 @@ description: |
   When specifying your public key in the Authorization header, you must include the `Bearer` prefix. For example, `Bearer {{public API key}}`.
 name: Authorization
 type: apiKey
-in: Header
+in: header

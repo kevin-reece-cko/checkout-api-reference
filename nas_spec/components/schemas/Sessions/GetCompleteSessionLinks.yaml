@@ -7,9 +7,9 @@ properties:
     type: object
     description: The URI to signal the session as complete. Only available if `next_actions` contains `complete`
     properties:
-      required:
-        - href
       href:
         type: string
         maxLength: 100
         example: https://api.checkout.com/sessions/sid_y3oqhf46pyzuxjbcn2giaqnb441/complete
+    required:
+      - href

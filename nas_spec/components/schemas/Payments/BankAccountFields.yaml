@@ -23,7 +23,7 @@ properties:
             properties:
               id:
                 type: string
-                desription: The field identifier
+                description: The field identifier
                 example: account_holder.first_name
               section:
                 type: string

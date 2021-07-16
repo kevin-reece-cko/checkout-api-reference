@@ -30,8 +30,7 @@ allOf:
           - key
         properties:
           method:
-            type: enum
-              - HMACSHA256
+            type: string
             description: The signing method, defaults to HMAC SHA256
             example: HMACSHA256
           key:

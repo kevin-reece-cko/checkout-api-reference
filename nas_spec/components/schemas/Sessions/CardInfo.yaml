@@ -32,7 +32,7 @@ properties:
         example: Checkout
       issuer_country:
         type: string
-        regex: ^[A-Z]{2}
+        pattern: ^[A-Z]{2}
         description: The two letter alpha country code of the card issuer.
         example: GB
       product_id:

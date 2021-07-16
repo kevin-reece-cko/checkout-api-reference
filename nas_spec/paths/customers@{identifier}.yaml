@@ -10,18 +10,23 @@ get:
   description: Returns the details of a customer and their payment instruments.
   parameters:
     - in: path
-      name: id
+      name: identifier
+      required: true
+      description: The customer's ID or email
       schema:
         type: string
-        pattern: "^(cus)_(\\w{26})$"
-      description: The customer's ID. Required if `email` is not provided.
-    - in: path
-      name: email
-      schema:
-        type: string
-        format: email
-        maxLength: 255
-      description: The customer's email address. Required if `id` is not provided.
+        properties:
+          id:
+            type: string
+            pattern: "^(cus)_(\\w{26})$"
+          email:
+            type: string
+            format: email
+            maxLength: 255
+        additionalProperties: false
+        oneOf:
+          - required: [id]
+          - required: [email]
   responses:
     '200':
       description: Customer retrieved successfully
@@ -51,12 +56,12 @@ patch:
   description: Update the details of a customer and link payment instruments to them.
   parameters:
     - in: path
-      name: id
+      name: identifier
       schema:
         type: string
         pattern: "^(cus)_(\\w{26})$"
       required: true
-      description: The customer ID
+      description: The customer's ID
   requestBody:
     required: true
     content:
@@ -89,12 +94,12 @@ delete:
   description: Delete a customer and all of their linked payment instruments.
   parameters:
     - in: path
-      name: id
+      name: identifier
       required: true
       schema:
         type: string
         pattern: "^(cus)_(\\w{26})$"
-      description: The customer ID
+      description: The customer's ID
   responses:
     '204':
       description: Customer deleted successfully

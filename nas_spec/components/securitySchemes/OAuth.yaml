@@ -38,7 +38,7 @@ description: |
 
 flows:
   clientCredentials:
-    tokenUrl: See table above
+    tokenUrl: string
     scopes:
       vault: Access to all Vault resources
       'vault:instruments': Create instruments
