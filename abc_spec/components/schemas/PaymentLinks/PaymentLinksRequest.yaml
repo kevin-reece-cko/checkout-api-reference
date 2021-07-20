@@ -19,6 +19,7 @@ properties:
     type: string
     description: A reference you can later use to identify this payment, such as an order number.<br><i>Required for PayPal payments<i>.
     example: ORD-123A
+    maxLength: 50
   description:
     type: string
     description: A description of the payment.
