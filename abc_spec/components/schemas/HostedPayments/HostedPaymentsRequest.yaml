@@ -21,10 +21,12 @@ properties:
     type: string
     description: A reference you can later use to identify this payment, such as an order number
     example: ORD-123A
+    maxLength: 50
   description:
     type: string
     description: A description of the payment
     example: Payment for Gold Necklace
+    maxLength: 100
   customer:
     type: object
     description: The customer's details
@@ -34,10 +36,12 @@ properties:
         format: email
         description: An optional email address to associate with the customer
         example: jokershere@email.com
+        maxLength: 255
       name:
         type: string
         description: The customer's name. This will only set the name for new customers
         example: Jack Napier
+        maxLength: 255
   billing:
     type: object
     additionalProperties: false
@@ -94,16 +98,19 @@ properties:
     format: uri
     description: For redirect payment methods, this overrides the default success redirect URL configured on your account
     example: https://example.com/payments/success
+    maxLength: 255
   cancel_url:
     type: string
     format: uri
     description: The URL to which the customer should be directed if they cancel the payment
     example: https://example.com/payments/cancel
+    maxLength: 255
   failure_url:
     type: string
     format: uri
     description: For redirect payment methods, this overrides the default failure redirect URL configured on your account
     example: https://example.com/payments/failure
+    maxLength: 255
   metadata:
     type: object
     title: The Metadata Schema

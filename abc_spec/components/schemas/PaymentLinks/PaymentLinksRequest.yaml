@@ -23,6 +23,7 @@ properties:
     type: string
     description: A description of the payment.
     example: Payment for Gold Necklace
+    maxLength: 100
   expires_in:
     type: integer
     description: The time for which the link remains valid, in seconds.
@@ -39,10 +40,12 @@ properties:
         format: email
         description: An email address to associate with the customer.
         example: jokershere@email.com
+        maxLength: 255
       name:
         type: string
         description: The customer's name. This will only set the name for new customers.
         example: Jack Napier
+        maxLength: 255
   billing:
     type: object
     additionalProperties: false
@@ -116,6 +119,7 @@ properties:
     format: uri
     description: If provided, the success page will include a button that redirects your customer to the provided URL.
     example: https://example.com/success
+    maxLength: 255
   locale:
     type: string
     description: Creates a translated version of the page in the specified language
