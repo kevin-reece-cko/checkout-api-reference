@@ -1,7 +1,7 @@
 type: object
 description: A card payment source
 allOf:
-  - $ref: "#/components/schemas/PaymentRequestSource"
+  - $ref: '#/components/schemas/RiskPaymentRequestSource'
   - type: object
     required:
       - type

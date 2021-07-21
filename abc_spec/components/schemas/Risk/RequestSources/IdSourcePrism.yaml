@@ -3,7 +3,7 @@ description: An existing payment source
 required:
   - id
 allOf:
-  - $ref: "#/components/schemas/PaymentRequestSource"
+  - $ref: '#/components/schemas/RiskPaymentRequestSource'
   - type: object
     properties:
       id:
