@@ -3,10 +3,10 @@ description: The source of the payment.<br>
 discriminator:
   propertyName: type
   mapping:
-    #token: '#/components/schemas/01_PaymentRequestTokenSource'
-    #id: '#/components/schemas/IdSourcePrism'
+    token: '#/components/schemas/01_PaymentRequestTokenSource'
+    id: '#/components/schemas/IdSourcePrism'
     card: '#/components/schemas/CardSourcePrism'
-    #customer: '#/components/schemas/CustomerSourcePrism'
+    customer: '#/components/schemas/CustomerSourcePrism'
     # network_token: '#/components/schemas/05_PaymentRequestNetworkTokenSource'
     # alipay: '#/components/schemas/PaymentRequestAlipaySource'
     # benefitpay: '#/components/schemas/PaymentRequestBenefitPaySource'
