@@ -35,4 +35,5 @@ properties:
     $ref: '#/components/schemas/PaymentInstruction'
   processing_channel_id:
     type: string
+    pattern: "^(pc)_(\\w{26})$"
     description: The processing channel identifier

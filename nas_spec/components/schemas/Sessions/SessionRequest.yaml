@@ -27,6 +27,7 @@ properties:
     minLength: 3
   processing_channel_id:
     type: string
+    pattern: "^(pc)_(\\w{26})$"
     description: |
       The processing channel to be used for the session. Required if this was not set in the request for the OAuth token.
   marketplace:

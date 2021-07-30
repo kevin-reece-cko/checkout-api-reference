@@ -10,8 +10,9 @@ properties:
     example: 'act_mbabizu24mvu3mela5njyhpit4'
   processing_channel_id:
     type: string
+    pattern: "^(pc)_(\\w{26})$"
     description: The processing channel used for the payment
-    example: 'mer_q4dbxom5jbgudnjzjpz7j2z6uq'
+    example: 'pc_q4dbxom5jbgudnjzjpz7j2z6uq'
   amount:
     type: number
     description: The amount that is being disputed, in the processing currency
