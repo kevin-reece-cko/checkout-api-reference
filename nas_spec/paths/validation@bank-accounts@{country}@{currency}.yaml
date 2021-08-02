@@ -3,7 +3,7 @@ get:
     - Instruments
   security:
     - OAuth:
-        - payout:bank-details
+        - payouts:bank-details
   summary: Get bank account field formatting
   description: |
     Returns the bank account field formatting required to create bank account instruments or perform payouts for the specified country and currency.
