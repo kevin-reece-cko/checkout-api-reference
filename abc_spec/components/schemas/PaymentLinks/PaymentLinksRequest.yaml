@@ -68,6 +68,15 @@ properties:
           - number
         allOf:
           - $ref: '#/components/schemas/PhoneNumber'
+  recipient:
+    $ref: '#/components/schemas/PaymentRecipient'
+  processing:
+    type: object
+    description: Use the processing object to influence or override the data sent during card processing
+    properties:
+      aft:
+        type: boolean
+        description: Indicates whether the payment is an [Account Funding Transaction](https://docs.checkout.com/payment-actions/account-funding-transactions)
   products:
     type: array
     description: Details about the products in the order.
