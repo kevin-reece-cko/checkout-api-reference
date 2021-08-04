@@ -135,6 +135,10 @@ properties:
           payer:
             type: object
             description: Details about the customer. These details may differ from those of the cardholder.
+            required:
+              - document
+              - name
+              - email
             properties:
               document:
                 type: string
