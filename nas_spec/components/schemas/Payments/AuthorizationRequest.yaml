@@ -3,7 +3,7 @@ properties:
   amount:
     type: integer
     description: |
-      The amount to increase the authorization by. Omit the amount or provide a value of `0` to extend the authorization validity period (Mastercard-only)
+      The amount to increase the authorization by. Omit the amount or provide a value of `0` to extend the authorization validity period
     minimum: 0
     example: 6540
   reference:
