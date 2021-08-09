@@ -9,7 +9,7 @@ post:
   summary: Request a payment or payout
   operationId: requestAPaymentOrPayout
   description: |
-    Send a payment or payout
+    Send a payment or payout.<br><br><b>Note</b>: successful payout requests will always return a 202 response.
   parameters:
     - $ref: '#/components/parameters/ckoIdempotencyKey'
   requestBody:
@@ -161,7 +161,9 @@ post:
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/PaymentAcceptedResponse'
+            oneOf:
+              - $ref: '#/components/schemas/PaymentAcceptedResponse'
+              - $ref: '#/components/schemas/PayoutAcceptedResponse'
       headers:
         Cko-Request-Id:
           $ref: '#/components/headers/Cko-Request-Id'
@@ -174,7 +176,19 @@ post:
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/ValidationError'
+            type: object
+            properties:
+              request_id:
+                type: string
+                example: 0HL80RJLS76I7
+              error_type:
+                type: string
+                example: request_invalid
+              error_codes:
+                type: array
+                items:
+                  type: string
+                  example: duplicate_request
     '422':
       description: Invalid data was sent
       content:
