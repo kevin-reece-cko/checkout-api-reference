@@ -9,6 +9,7 @@ properties:
   capture_type:
     type: string
     description: The type of capture. If set to `Final`, the remaining available-to-capture balance will be voided
+    default: Final
     enum:
       - NonFinal
       - Final
