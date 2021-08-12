@@ -31,7 +31,7 @@ properties:
     example: Recurring
   merchant_initiated:
     type: boolean
-    description: Flags the payment as a merchant-initiated transaction (MIT). <a href="https://docs.checkout.com/four/payments/use-saved-card-details/about-stored-card-details" target="_blank">Must be set to `true` for all MITs</a>.
+    description: Flags the payment as a merchant-initiated transaction (MIT). <a href="https://docs.checkout.com/four/payments/accept-payments/use-saved-details/about-stored-card-details" target="_blank">Must be set to `true` for all MITs</a>.
   reference:
     type: string
     description: A reference you can later use to identify this payment, such as an order number
