@@ -38,8 +38,8 @@ properties:
         type: string
         format: email
         description: An optional email address to associate with the customer
-        example: 'jokershere@gmail.com'
+        example: 'brucewayne@gmail.com'
       name:
         type: string
         description: The customer's name. This will only set the name for *new* customers
-        example: 'Jack Napier'
+        example: 'Bruce Wayne'

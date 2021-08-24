@@ -8,12 +8,12 @@ properties:
     format: email
     description: The customer's email address
     maxLength: 255
-    example: 'jokershere@gmail.com'
+    example: 'brucewayne@gmail.com'
   name:
     type: string
     description: The customer's name
     maxLength: 255
-    example: 'Jack Napier'
+    example: 'Bruce Wayne'
   phone:
     description: The customer's phone number
     allOf:

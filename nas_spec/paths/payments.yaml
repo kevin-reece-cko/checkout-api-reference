@@ -34,8 +34,8 @@ post:
               capture_on: '2019-09-10T10:11:12Z'
               customer:
                 id: 'cus_udst2tfldj6upmye2reztkmm4i'
-                email: 'jokershere@gmail.com'
-                name: 'Jack Napier'
+                email: 'brucewayne@gmail.com'
+                name: 'Bruce Wayne'
               billing_descriptor:
                 name: SUPERHEROES.COM
                 city: GOTHAM
@@ -133,8 +133,8 @@ post:
               bin: '424242'
             customer:
               id: 'cus_udst2tfldj6upmye2reztkmm4i'
-              email: 'jokershere@gmail.com'
-              name: 'Jack Napier'
+              email: 'brucewayne@gmail.com'
+              name: 'Bruce Wayne'
             processed_on: '2019-09-10T10:11:12Z'
             reference: 'ORD-5023-4E89'
             processing:
