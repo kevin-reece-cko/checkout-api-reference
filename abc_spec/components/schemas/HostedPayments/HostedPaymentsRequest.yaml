@@ -35,12 +35,12 @@ properties:
         type: string
         format: email
         description: An optional email address to associate with the customer
-        example: jokershere@email.com
+        example: brucewayne@email.com
         maxLength: 255
       name:
         type: string
         description: The customer's name. This will only set the name for new customers
-        example: Jack Napier
+        example: Bruce Wayne
         maxLength: 255
   billing:
     type: object

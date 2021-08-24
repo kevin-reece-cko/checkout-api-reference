@@ -68,12 +68,12 @@ properties:
         format: email
         description: The customer's email address. Providing this will create a new customer, unless you have already stored a customer with the same email.
         maxLength: 255
-        example: 'jokershere@gmail.com'
+        example: 'brucewayne@gmail.com'
       name:
         type: string
         description: The customer's name. This will only set the name for *new* customers
         maxLength: 255
-        example: 'Jack Napier'
+        example: 'Bruce Wayne'
   billing_descriptor:
     $ref: '#/components/schemas/BillingDescriptor'
   shipping:

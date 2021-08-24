@@ -16,5 +16,5 @@ allOf:
       #   format: email
       #   description: The customer's email address. Required if `id` is not provided
       #   maxLength: 255
-      #   example: "jokershere@gmail.com"
+      #   example: "brucewayne@gmail.com"
 

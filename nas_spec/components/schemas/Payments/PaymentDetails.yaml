@@ -110,11 +110,11 @@ properties:
       email:
         type: string
         description: The customer's email address
-        example: 'jokershere@gmail.com'
+        example: 'brucewayne@gmail.com'
       name:
         type: string
         description: The customer's name
-        example: 'Jack Napier'
+        example: 'Bruce Wayne'
     required:
       - id
   billing_descriptor:
