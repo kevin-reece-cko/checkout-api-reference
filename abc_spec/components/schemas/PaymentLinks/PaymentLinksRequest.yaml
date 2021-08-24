@@ -47,6 +47,26 @@ properties:
         description: The customer's name. This will only set the name for new customers.
         example: Jack Napier
         maxLength: 255
+  shipping:
+    type: object
+    description: The address any products are being sent to.
+    required:
+      - address
+    properties:
+      address:
+        type: object
+        description: The customer's address to ship to.
+        required:
+          - country
+        allOf:
+          - $ref: '#/components/schemas/Address'
+      phone:
+        type: object
+        description: The customer's phone number
+        required:
+          - number
+        allOf:
+          - $ref: '#/components/schemas/PhoneNumber'
   billing:
     type: object
     additionalProperties: false
