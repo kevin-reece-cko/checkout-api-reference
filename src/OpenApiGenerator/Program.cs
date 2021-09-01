@@ -144,7 +144,6 @@ namespace OpenApiGenerator
                 {
                     path = fileInfo.Name.Substring(0, fileInfo.Name.IndexOf(".")).Replace("@", "/");
                     path = new Regex(@"^_.+").Replace(path, "");
-                    text += ($"  /{path}:\n");
 
                     var s = "";
                     var currentVerb = "";
