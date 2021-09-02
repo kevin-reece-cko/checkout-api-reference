@@ -11,3 +11,4 @@ description: |
 name: Authorization
 type: apiKey
 in: header
+x-cko-type: publicKey
