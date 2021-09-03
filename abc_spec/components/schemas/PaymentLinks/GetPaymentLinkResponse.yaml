@@ -12,6 +12,7 @@ required:
   - amount
   - currency
   - expires_on
+  - created_on
   - billing
   - _links
 
@@ -48,6 +49,11 @@ properties:
     type: string
     description: A description of the payment.
     example: Payment for Gold Necklace
+  created_on:
+    type: string
+    description: The date and time when the Payment Link was created.
+    format: ISO 8601 date and time
+    example: '2021-08-19T20:25:28.725Z'
   expires_on:
     type: string
     description: The date and time when the Payment Link expires.
