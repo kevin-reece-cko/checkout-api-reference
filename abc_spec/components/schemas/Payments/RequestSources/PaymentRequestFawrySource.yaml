@@ -28,7 +28,7 @@ allOf:
       expires_on:
         type: string
         description: 'The date on which the payment expires.'
-        format: 'ISO 8601 date and time'
+        format: 'date-time'
       products:
         type: array
         items:
