@@ -182,11 +182,11 @@ properties:
         example: false
   capture:
     type: boolean
-    description: Whether to capture the payment (if applicable)
+    description: Whether to capture the payment (if applicable).
     example: true
   capture_on:
     description: |
       A timestamp (ISO 8601 code) that determines when the payment should be captured.
-      Providing this field will automatically set `capture` to true
+      Providing this field will automatically set `capture` to true.
     allOf:
       - $ref: '#/components/schemas/Timestamp'
