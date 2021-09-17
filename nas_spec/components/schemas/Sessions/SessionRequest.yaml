@@ -38,6 +38,8 @@ properties:
     $ref: '#/components/schemas/Category'
   challenge_indicator:
     $ref: '#/components/schemas/ChallengeIndicator'
+  billing_descriptor:
+    $ref: '#/components/schemas/SessionsBillingDescriptor'
   reference:
     $ref: '#/components/schemas/Reference'
   transaction_type:

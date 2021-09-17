@@ -1,0 +1,8 @@
+type: object
+description: An optional dynamic billing descriptor.
+properties:
+  name:
+    type: string
+    description: "A dynamic description of the payment that replaces the Merchant Name that is displayed in 3DS Challenge window. Applies to card payments only. Special characters allowed: `.` `!` `*` `-` `=` `_`"
+    example: "SUPERHEROES.COM"    
+    maxLength: 25
