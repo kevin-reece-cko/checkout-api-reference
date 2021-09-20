@@ -12,4 +12,23 @@ properties:
   type:
     type: string
     description: The type of card details to be tokenized
-    example: 'card'
+example: {
+  "type": "card",
+  "number": "4543474002249996",
+  "expiry_month": 6,
+  "expiry_year": 2025,
+  "name": "Bruce Wayne",
+  "cvv": "956",
+  "billing_address": {
+    "address_line1": "Checkout.com",
+    "address_line2": "90 Tottenham Court Road",
+    "city": "London",
+    "state": "London",
+    "zip": "W1T 4TJ",
+    "country": "GB"
+  },
+  "phone": {
+    "number": "4155552671",
+    "country_code": "+1"
+  }
+}

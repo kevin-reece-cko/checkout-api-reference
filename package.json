@@ -1,43 +1,45 @@
 {
-	"name": "gateway-openapi-spec",
-	"version": "0.0.1",
-	"private": true,
-	"dependencies": {
-		"connect": "^3.7.0",
-		"cors": "^2.8.5",
-		"dotnet-sdk-3.1": "^3.1.1007",
-		"gulp": "^4.0.2",
-		"gulp-connect": "^5.7.0",
-		"gulp-exec": "^5.0.0",
-		"gulp-util": "^3.0.8",
-		"portfinder": "^1.0.28",
-		"prettier": "^2.3.1",
-		"request": "2.88.0",
-		"shelljs": "^0.8.4",
-		"swagger-cli": "4.0.4",
-		"swagger-repo": "^2.0.0-rc.15",
-		"swagger-ui": "^3.49.0",
-		"yamljs": "0.3.0"
-	},
-	"scripts": {
-		"build:abc": "ACCOUNT=abc node ./scripts/build.js",
-		"build:all": "ACCOUNT=abc node ./scripts/build.js && ACCOUNT=nas node ./scripts/build.js",
-		"build:nas": "ACCOUNT=nas node ./scripts/build.js",
-		"test:abc": "swagger-cli validate --no-schema web_deploy/swagger.yaml",
-		"test:nas": "swagger-cli validate --no-schema web_deploy/preview/crusoe/swagger.yaml",
-		"prettier": "npx prettier --write '**/*.{js,yaml}'",
-		"start": "gulp serve",
-		"swagger": "swagger-repo",
-		"sync-generated-apm-specs": "node ./scripts/sync-generated-apm-specs.js",
-		"sync-generated-apm-specs-legacy-aws-env": "node ./scripts/sync-generated-apm-specs-legacy-aws-env.js"
-	},
-	"prettier": {
-		"printWidth": 120,
-		"tabWidth": 2,
-		"useTabs": true,
-		"semi": true,
-		"singleQuote": true,
-		"trailingComma": "es5",
-		"bracketSpacing": true
-	}
+  "name": "gateway-openapi-spec",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "cko-openapi-to-postmanv2": "git+https://github.com/checkout/openapi-to-postman.git",
+    "connect": "^3.7.0",
+    "cors": "^2.8.5",
+    "dotnet-sdk-3.1": "^3.1.1007",
+    "gulp": "^4.0.2",
+    "gulp-connect": "^5.7.0",
+    "gulp-exec": "^5.0.0",
+    "gulp-util": "^3.0.8",
+    "portfinder": "^1.0.28",
+    "prettier": "^2.3.1",
+    "request": "2.88.0",
+    "shelljs": "^0.8.4",
+    "swagger-cli": "4.0.4",
+    "swagger-repo": "^2.0.0-rc.15",
+    "swagger-ui": "^3.49.0",
+    "yamljs": "0.3.0"
+  },
+  "scripts": {
+    "build:abc": "ACCOUNT=abc node ./scripts/build.js",
+    "build:all": "ACCOUNT=abc node ./scripts/build.js && ACCOUNT=nas node ./scripts/build.js",
+    "build:nas": "ACCOUNT=nas node ./scripts/build.js",
+    "test:abc": "swagger-cli validate --no-schema web_deploy/swagger.yaml",
+    "test:nas": "swagger-cli validate --no-schema web_deploy/preview/crusoe/swagger.yaml",
+    "prettier": "npx prettier --write '**/*.{js,yaml}'",
+    "start": "gulp serve",
+    "swagger": "swagger-repo",
+    "sync-generated-apm-specs": "node ./scripts/sync-generated-apm-specs.js",
+    "sync-generated-apm-specs-legacy-aws-env": "node ./scripts/sync-generated-apm-specs-legacy-aws-env.js",
+    "postman": "node ./scripts/generate-cko-collection.js"
+  },
+  "prettier": {
+    "printWidth": 120,
+    "tabWidth": 2,
+    "useTabs": true,
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "es5",
+    "bracketSpacing": true
+  }
 }

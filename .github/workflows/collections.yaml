@@ -1,6 +1,9 @@
-name: Node.js CI
+name: Deploy Open API postman collection
 
-on: [pull_request]
+on:
+  push:
+    branches:
+      - master
 
 env:
   CI: true
@@ -19,10 +22,5 @@ jobs:
       - name: Install node modules
         run: npm ci --ignore-scripts
 
-      - name: Build ABC & NAS specs
-        run: npm run build:all
-
-      - name: Validate schema
-        run: |
-          npm run test:abc
-          npm run test:nas
+      - name: Deploy Open API Postman collection
+        run: npm run postman 
