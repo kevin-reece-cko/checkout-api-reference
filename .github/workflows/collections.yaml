@@ -1,9 +1,10 @@
 name: Deploy Open API postman collection
 
 on:
-  push:
+  pull_request:
     branches:
       - master
+    types: [closed]
 
 env:
   CI: true
@@ -27,3 +28,10 @@ jobs:
 
       - name: Deploy Open API Postman collection
         run: npm run postman 
+
+      - name: Commit Postman collection
+        run: |
+          git config user.email "$GITHUB_ACTOR@users.noreply.github.com" && git config user.name "$GITHUB_ACTOR"
+          git add .
+          git commit -m 'Add cko_collection_beta.json'
+          git push origin master
