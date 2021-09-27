@@ -27,11 +27,11 @@ Review from the documentation team is now mandatory. You won't be able to merge 
 - 3DS Authentication
 - Issuing
 
-### [Neal Goldsmith]
+### [@Neal Goldsmith](https://github.com/neal-goldsmith-cko)
 
-- Prism
+- Prism (risk)
 - Disputes
-- Reconciliation API
+- Reporting
 
 ---
 
@@ -75,7 +75,7 @@ Review from the documentation team is now mandatory. You won't be able to merge 
 5. Repeat (3) through (4) until finished
 6. Create a PR and request review from
    - a peer developer (if necessary)
-   - [@Ben Ahmady](https://github.com/ben-ahmady-cko), [@Jack Hutchinson](https://github.com/jack-hutchinson-cko), [@Chrisi Webster](https://github.com/chrisi-webster-cko), or [@Cristina Szilagyi](https://github.com/cristina-szilagyi-cko)
+   - [@Ben Ahmady](https://github.com/ben-ahmady-cko), [@Jack Hutchinson](https://github.com/jack-hutchinson-cko), [@Chrisi Webster](https://github.com/chrisi-webster-cko), [@Cristina Szilagyi](https://github.com/cristina-szilagyi-cko), or [@Neal Goldsmith](https://github.com/neal-goldsmith-cko)
 7. After merging the PR, please check if your branch can be deleted
 
 ### Troubleshooting
