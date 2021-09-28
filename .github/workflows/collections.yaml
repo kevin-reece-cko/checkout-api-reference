@@ -37,16 +37,19 @@ jobs:
     runs-on: ubuntu-latest
     needs: generate-collection
     steps:
-      - uses: actions/download-artifact@v2
-        with:
-          name: collection
-
       - name: Fetch Checkout Postman repository
         uses: actions/checkout@v2
         with:
           token: ${{secrets.PAT}}
           repository: checkout/checkout-postman
           ref: main
+
+      - uses: actions/download-artifact@v2
+        with:
+          name: collection
+
+      - name: List everything
+        run: ls -R
           
       - name: Commit collection
         run: |
