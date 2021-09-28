@@ -52,7 +52,7 @@ jobs:
         run: |
           git config user.email "$GITHUB_ACTOR@users.noreply.github.com" && git config user.name "$GITHUB_ACTOR"
           git branch -m "postman-collection"
-          git add .
+          git add ./cko_collection_beta.json
           git commit -m 'Upload new CKO collection'
           git push origin HEAD
           
