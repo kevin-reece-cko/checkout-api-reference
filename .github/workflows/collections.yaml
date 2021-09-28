@@ -41,6 +41,9 @@ jobs:
         with:
           name: collection
 
+      - name: Display structure of downloaded files
+        run: ls -R
+
       - name: Fetch Checkout Postman repository
         uses: actions/checkout@v2
         with:
