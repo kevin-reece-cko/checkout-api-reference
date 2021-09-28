@@ -44,7 +44,7 @@ jobs:
       - name: Fetch Checkout Postman repository
         uses: actions/checkout@v2
         with:
-          github-token: ${{secrets.PAT}}
+          token: ${{secrets.PAT}}
           repository: checkout/checkout-postman
           ref: main
           
