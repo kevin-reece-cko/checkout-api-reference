@@ -17,9 +17,9 @@ info:
   description: >
     ##  Get started
 
-    Checkout.com provides a collection of APIs that enable you to process and manage payments. Our APIs accept and return JSON in the HTTP body, and return standard <a href="https://docs.checkout.com/four/resources/codes/http-response-codes">HTTP response codes</a>. 
+    Checkout.com provides a collection of APIs that enable you to process and manage payments. Our APIs accept and return JSON in the HTTP body, and return standard <a href="https://docs.checkout.com/four/resources/codes/http-response-codes">HTTP response codes</a>.
 
-    You can consume the APIs directly using your favorite HTTP/REST library.  
+    You can consume the APIs directly using your favorite HTTP/REST library.
 
     We have a testing environment called sandbox, which you can <a href="https://www.checkout.com/get-test-account">sign up for</a> to test API calls without affecting live data.
 
@@ -45,6 +45,10 @@ tags:
     description: Create an access token to begin using our APIs.
   - name: Payments
     description: Process and manage payments from a variety of sources and to various destinations all within one integration.
+  - name: Payment Links
+    description: Create a Payment Link to accept and process payment details.
+  - name: Hosted Payments Page
+    description: Create a Hosted Payments Page to accept and process payment details.
   # - name: Sources
   #   description: Create a payment source for a customer that you can use for one or more payments.
   - name: Tokens
@@ -64,7 +68,7 @@ tags:
   - name: Risk
     description: Evaluate the risk of a transaction at the pre-authentication and pre-capture stages of the payment process.
   - name: Apple Pay
-    description: Manage your Apple Pay certificates in order to process payments via Apple Pay.  
+    description: Manage your Apple Pay certificates in order to process payments via Apple Pay.
   # - name: Files
   #   description: |
   #     Upload files to be used as input to other APIs
@@ -76,6 +80,8 @@ x-tagGroups:
   - name: Handle payments and payouts
     tags:
       - Payments
+      - Payment Links
+      - Hosted Payments Page
       - Forex
       - Apple Pay
   - name: Stored payment details
