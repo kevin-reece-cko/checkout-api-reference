@@ -28,8 +28,16 @@
 		</div>
 		<script src="js/theme.js"></script>
 
-		<redoc spec-url="./swagger.yaml"></redoc>
+		<div id="redocly_container"></div>
+		
+		<script src="https://cdn.redoc.ly/reference-docs/latest/redocly-reference-docs.min.js"></script>
+		<script>
+			RedoclyReferenceDocs.init(
+			'./swagger.yaml',
+			{ licenseKey: 'eyJ0IjpmYWxzZSwiaSI6MTYzMzUyNTUxNSwiZSI6MTY2NDM2Njc2NywiaCI6WyJyZWRvYy5seSIsImNoZWNrb3V0LmNvbSJdLCJzIjoicG9ydGFsIn0=.Dhl+Fb/JsC9tCRnuzVbAnUaEzD+A0mJ4xdaOGhQ7sGWeVuChp6AEsSTJ3m61czudbEMWS4mdlenMI5qKn61i/Q==' },
+			document.querySelector('#redocly_container')
+		  );
+		</script>
 
-		<script src="https://cdn.jsdelivr.net/npm/redoc@2.0.0-rc.40/bundles/redoc.standalone.js"></script>
 	</body>
 </html>
