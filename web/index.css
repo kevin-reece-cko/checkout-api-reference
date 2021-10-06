@@ -295,7 +295,7 @@ img.sc-kafWEX.hZCbNs {
 
 /* Overwrite swagger logo with own logo file */
 
-.jrEndp {
+.kyCarw {
 	content: var(--logo) !important;
 }
 
@@ -305,6 +305,72 @@ a {
 	color: var(--primary-text) !important;
 	font-weight: 600;
 }
+
+/* Redocly upgrade */
+
+.hTuscY {
+	padding-top: 24px;
+}
+
+.ylWvJ {
+	background-color: transparent !important;
+}
+
+.iBYONX,
+.kxZWSs {
+	color: var(--primary-text) !important;
+}
+
+.hYVplw {
+	top: -4px !important;
+	color: var(--secondary-text) !important;
+}
+
+.gKYSwG,
+.fTwFWY {
+	background-color: var(--cko-dark-blue) !important;
+}
+
+.jlBRpC,
+.gVuaOf,
+.bqjPeJ {
+	background-color: var(--sidebar-background) !important;
+}
+
+.bqjPeJ {
+	border-left: 1px solid var(--border);
+}
+
+.dzBcKB {
+	background-color: var(--primary-dark-blue) !important;
+}
+
+.ksvBCj span {
+	color: var(--primary-text) !important;
+}
+
+.gAApEQ {
+	color: white !important;
+}
+
+.gDidrK.gDidrK {
+	background-color: transparent !important;
+}
+
+pre .CodeMirror-line {
+	background: var(--code-label-background) !important;
+	border: none !important;
+}
+
+.CodeMirror-matchingbracket {
+	outline: none !important;
+}
+
+.CodeMirror-lines {
+	padding: 0 !important;
+}
+
+/* redocly upgrade */
 
 .ldExJi,
 .iwWBsD,
@@ -424,7 +490,8 @@ h1.sc-htoDjs.sc-fYxtnH.dTJWQH {
 	background-color: var(--cko-dark-contrast-blue) !important;
 }
 
-.hHgrjJ, .iFDKZT.iFDKZT {
+.hHgrjJ,
+.iFDKZT.iFDKZT {
 	background-color: var(--code-type) !important;
 }
 
@@ -439,15 +506,15 @@ td.sc-kgoBCf.kGwPhO {
 }
 
 .dropdown-selector-value {
-	color: var(--S1000)!important;
+	color: var(--S1000) !important;
 }
 
 .react-tabs__tab-panel .sc-fzpmMD.gBfPiy.dropdown-selector-value {
-	color: var(--required)!important;
+	color: var(--required) !important;
 }
 
 .iFDKZT.iFDKZT {
-	padding: 1.4em 0.9em 0.6em 1em!important;
+	padding: 1.4em 0.9em 0.6em 1em !important;
 }
 
 /* Security details table */
@@ -489,8 +556,10 @@ span::after {
 	color: var(--primary-text) !important;
 }
 
-.hSfQgO .sc-fzpjYC, .hSfQgO .sc-fzpjYC .sc-fzpjYC .sc-fzpjYC, .hSfQgO .sc-fzpjYC .sc-fzpjYC .sc-fzpjYC .sc-fzpjYC .sc-fzpjYC {
-	background: var(--background)!important;
+.hSfQgO .sc-fzpjYC,
+.hSfQgO .sc-fzpjYC .sc-fzpjYC .sc-fzpjYC,
+.hSfQgO .sc-fzpjYC .sc-fzpjYC .sc-fzpjYC .sc-fzpjYC .sc-fzpjYC {
+	background: var(--background) !important;
 }
 
 /* Field names */
@@ -607,8 +676,8 @@ li {
 	background-color: var(--secondary-button) !important;
 	color: var(--primary-button-color) !important;
 	border-color: var(--secondary-button) !important;
-	border-radius: 4px!important;
-	font-weight: 500!important;
+	border-radius: 4px !important;
+	font-weight: 500 !important;
 }
 
 .hHuJoM > .react-tabs__tab-panel--selected {
@@ -617,7 +686,7 @@ li {
 }
 
 .hHuJoM > ul > li.tab-error {
-	border-radius: 4px!important;
+	border-radius: 4px !important;
 }
 
 .dcDVxm {
@@ -874,8 +943,8 @@ ul > li.react-tabs__tab,
 ul > li.tab-success,
 ul > li.tab-error {
 	margin: 0 5px !important;
-	font-weight: 500!important;
-	border-radius: 4px!important;
+	font-weight: 500 !important;
+	border-radius: 4px !important;
 	border-width: 2px 0 0 0 !important;
 }
 
@@ -1139,7 +1208,7 @@ body.light div.iFDKZT.iFDKZT {
 }
 
 .hHgrjJ {
-	padding: 1.4em 0.9em 0.6em!important;
+	padding: 1.4em 0.9em 0.6em !important;
 }
 
 /*Plus symbols were white on the responses*/
