@@ -122,7 +122,7 @@ properties:
     properties:
       senderInformation:
         type: object
-        description: Allows you to send additional data required for Visa Direct Original Credit Transaction (OCT) and Mastercard Moneysend payments. Only required when sending transactions on behalf of another person or business. <a href="https://docs.checkout.com/payment-actions/pay-out-to-a-card/sender-data-for-payouts" target="_blank">See our documentation for specific requirements</a>.
+        description: Allows you to send additional data required for Visa Direct Original Credit Transaction (OCT) and Mastercard Moneysend payments. Only required when sending transactions on behalf of another person or business. <a href="https://docs.checkout.com/card-payouts/sender-data-for-card-payouts" target="_blank">See our documentation for specific requirements</a>.
         properties:
           reference:
             type: string
