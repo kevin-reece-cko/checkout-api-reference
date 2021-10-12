@@ -31,7 +31,8 @@
     "swagger": "swagger-repo",
     "sync-generated-apm-specs": "node ./scripts/sync-generated-apm-specs.js",
     "sync-generated-apm-specs-legacy-aws-env": "node ./scripts/sync-generated-apm-specs-legacy-aws-env.js",
-    "postman": "node ./scripts/generate-cko-collection.js"
+    "postman": "node ./scripts/generate-cko-collection.js",
+    "postman_clean": "python3 ./scripts/postman_placeholders.py"
   },
   "prettier": {
     "printWidth": 120,

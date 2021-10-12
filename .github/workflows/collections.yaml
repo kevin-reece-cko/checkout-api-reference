@@ -15,7 +15,9 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-
+      - uses: actions/setup-python@v2
+  	with:
+    	  python-version: '3.x'
       - uses: actions/setup-node@v2.1.5
         with:
           node-version: 14.x
@@ -28,6 +30,9 @@ jobs:
 
       - name: Deploy Open API Postman collection
         run: npm run postman 
+      
+      - name: Clean up hard-coded IDs in Postman collection
+        run: npm run postman_clean
           
       - uses: actions/upload-artifact@v2
         with:
