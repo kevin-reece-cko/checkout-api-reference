@@ -29,15 +29,43 @@
 		<script src="js/theme.js"></script>
 
 		<div id="redocly_container"></div>
-		
+
 		<script src="https://cdn.redoc.ly/reference-docs/latest/redocly-reference-docs.min.js"></script>
 		<script>
 			RedoclyReferenceDocs.init(
-			'./swagger.yaml',
-			{ licenseKey: 'eyJ0IjpmYWxzZSwiaSI6MTYzMzU5ODg2OSwiZSI6MTY2NDM2Njc2NywiaCI6WyJyZWRvYy5seSIsImNoZWNrb3V0LmNvbSIsImNoZWNrb3V0LWFwaS1yZWZlcmVuY2UtNHM0dDliYW80LWNrby1kb2NzLnZlcmNlbC5hcHAvIl0sInMiOiJwb3J0YWwifQ==.RZnoGj4aOl6hXmkD930zae3rvdbnPCCpYTxhkwT0buzfoS3AorqWPwbaG8sVaNHQVgO2gRdZ/1E1iBw9yef+3g==' },
-			document.querySelector('#redocly_container')
-		  );
+				'./swagger.yaml',
+				{
+					licenseKey:
+						'eyJ0IjpmYWxzZSwiaSI6MTYzMzU5ODg2OSwiZSI6MTY2NDM2Njc2NywiaCI6WyJyZWRvYy5seSIsImNoZWNrb3V0LmNvbSIsImNoZWNrb3V0LWFwaS1yZWZlcmVuY2UtNHM0dDliYW80LWNrby1kb2NzLnZlcmNlbC5hcHAvIl0sInMiOiJwb3J0YWwifQ==.RZnoGj4aOl6hXmkD930zae3rvdbnPCCpYTxhkwT0buzfoS3AorqWPwbaG8sVaNHQVgO2gRdZ/1E1iBw9yef+3g==',
+					pagination: 'section',
+					generateCodeSamples: {
+						languages: [
+							{ lang: 'curl' },
+							{ lang: 'Node.js' },
+							{ lang: 'JavaScript', label: 'JS' },
+							{ lang: 'Java' },
+							{ lang: 'C#' },
+							{ lang: 'Python' },
+						],
+					},
+					skipOptionalParameters: true,
+					ctrlFHijack: true,
+					hideLoading: true,
+					menuToggle: true,
+					nativeScrollbars: true,
+					sidebarLinks: {
+						placement: 'before-info',
+						label: 'Changelog',
+						link: 'https://docs.checkout.com',
+						target: '_blank',
+						placement: 'end',
+						label: 'test',
+						link: 'https://docs.checkout.com',
+						target: '_blank',
+					},
+				},
+				document.querySelector('#redocly_container')
+			);
 		</script>
-
 	</body>
 </html>
