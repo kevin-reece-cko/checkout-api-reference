@@ -170,6 +170,29 @@ properties:
               - DepositAccount
               - MobileMoneyAccount
               - Cash
+      purpose:
+        type: string
+        description: Contains the purpose of the transaction. Required when the destination country is Argentina, Bangladesh, Egypt or India. Mandatory from 15th October 2021.
+        enum:
+          - donations
+          - education
+          - emergency_need
+          - expatriation
+          - family_support
+          - financial_services
+          - gifts
+          - income
+          - insurance
+          - investment
+          - it_services
+          - leisure
+          - loan_payment
+          - medical_treatment
+          - other
+          - pension
+          - royalties
+          - savings
+          - travel_and_tourism
   metadata:
     type: object
     description: Allows you to store additional information about a transaction with custom fields and up to five user-defined fields (`udf1` to `udf5`), which can be used for reporting purposes. `udf1` is also used for some of our risk rules.
