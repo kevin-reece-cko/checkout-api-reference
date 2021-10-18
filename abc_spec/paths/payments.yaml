@@ -119,6 +119,7 @@
               processing:
                 retrieval_reference_number: '909913440644'
                 acquirer_transaction_id: '440644309099499894406'
+                recommendation_code: "02"
               eci: '06'
               scheme_id: '489341065491658'
               _links:
