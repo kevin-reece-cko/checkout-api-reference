@@ -190,3 +190,10 @@ properties:
       Providing this field will automatically set `capture` to true.
     allOf:
       - $ref: '#/components/schemas/Timestamp'
+  processing_channel_id:
+    type: string
+    pattern: "^(pc)_(\\w{26})$"
+    description: The processing channel to be used for the payment
+    example: 'pc_q4dbxom5jbgudnjzjpz7j2z6uq'
+  marketplace:
+    $ref: '#/components/schemas/MarketplaceData'
