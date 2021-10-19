@@ -35,6 +35,13 @@ info:
 
     Never share your client credentials, API keys, or access tokens. Keep them guarded and secure.
 
+    # Changelog
+
+     | Date          |      Description of change                                        |
+     |---------------|-------------------------------------------------------------------|
+     | 18.10.2021    |  Added the `marketplaces.sub-entities` object to support split payments.  |
+     | 12.10.2021    |  Added Hosted Payments Page and Payment Links to specification.   |
+
 servers:
   - url: https://api.checkout.com
     description: Live API
