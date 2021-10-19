@@ -74,6 +74,7 @@
 .dark {
 	--background: var(--cko-dark-blue);
 	--sidebar-background: var(--cko-dark-blue);
+	--secondary-background: var(--S300);
 	--toggle-bg: var(--S500);
 	--primary-text: var(--cko-white);
 	--secondary-text: var(--S10);
@@ -112,6 +113,7 @@
 .light {
 	--background: var(--cko-white);
 	--sidebar-background: var(--cko-grey-tint-blue);
+	--secondary-background: white;
 	--toggle-bg: var(--S1000);
 	--primary-text: var(--primary-dark-blue);
 	--secondary-text: var(--secondary-dark-blue);
@@ -353,8 +355,24 @@ a {
 	color: white !important;
 }
 
-.gDidrK.gDidrK {
-	background-color: transparent !important;
+.gDidrK.gDidrK,
+.iBYONX,
+.jARayQ {
+	background-color: var(--secondary-background) !important;
+	border-radius: 4px;
+}
+
+.fPNCvC {
+	padding: 16px 24px;
+	font-size: 16px;
+	margin: 8px 0 0 0;
+	background: var(--code-background) !important;
+}
+
+.fYVjas,
+.eNIZVD,
+.kBMEku {
+	color: var(--title-color) !important;
 }
 
 pre .CodeMirror-line {
