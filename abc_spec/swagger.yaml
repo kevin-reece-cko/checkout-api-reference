@@ -37,6 +37,14 @@ info:
     the request Authorization header. 
 
     Never share your secret keys. Keep them guarded and secure.
+
+    # Changelog
+
+     | Date          |      Description of change                                        |
+     |---------------|-------------------------------------------------------------------|
+     | 18.10.2021    |  Added `processing.purpose` to card payouts.                      |
+     | 18.10.2021    |  Added `recommendation_code` to payment response.                 |
+
 servers:
   - url: https://api.checkout.com
     description: Live API
