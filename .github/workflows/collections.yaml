@@ -4,7 +4,7 @@ on:
   pull_request:
     branches:
       - master
-    types: [closed]
+    types: [ closed ]
 
 env:
   CI: true
@@ -16,8 +16,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-python@v2
-  	with:
-    	  python-version: '3.x'
+        with:
+          python-version: 3.x
       - uses: actions/setup-node@v2.1.5
         with:
           node-version: 14.x
@@ -29,16 +29,16 @@ jobs:
         run: npm run build:all
 
       - name: Deploy Open API Postman collection
-        run: npm run postman 
-      
+        run: npm run postman
+
       - name: Clean up hard-coded IDs in Postman collection
         run: npm run postman_clean
-          
+
       - uses: actions/upload-artifact@v2
         with:
           name: collection
           path: ./cko_collection_beta.json
-        
+
   publish-collection:
     runs-on: ubuntu-latest
     needs: generate-collection
@@ -53,7 +53,7 @@ jobs:
       - uses: actions/download-artifact@v2
         with:
           name: collection
-          
+
       - name: Commit collection
         run: |
           git config user.email "$GITHUB_ACTOR@users.noreply.github.com" && git config user.name "$GITHUB_ACTOR"
@@ -61,7 +61,7 @@ jobs:
           git add cko_collection_beta.json
           git commit -m 'Upload new CKO collection'
           git push origin HEAD
-          
+
       - uses: actions/github-script@v4
         with:
           github-token: ${{secrets.PAT}}
