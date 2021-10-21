@@ -74,6 +74,7 @@
 .dark {
 	--background: var(--cko-dark-blue);
 	--sidebar-background: var(--cko-dark-blue);
+	--table-background: var(--cko-dark-blue);
 	--toggle-bg: var(--S500);
 	--primary-text: var(--cko-white);
 	--secondary-text: var(--S10);
@@ -112,6 +113,7 @@
 .light {
 	--background: var(--cko-white);
 	--sidebar-background: var(--cko-grey-tint-blue);
+	--table-background: var(--cko-white);
 	--toggle-bg: var(--S1000);
 	--primary-text: var(--primary-dark-blue);
 	--secondary-text: var(--secondary-dark-blue);
@@ -256,6 +258,11 @@ h5,
 span.sc-fzpkJw.hctKJM,
 span.sc-fzqzlV.sc-fzoxnE.dpLlWm {
 	color: var(--secondary-text) !important;
+}
+
+td,
+th {
+	background: var(--table-background);
 }
 
 button {
@@ -424,7 +431,8 @@ h1.sc-htoDjs.sc-fYxtnH.dTJWQH {
 	background-color: var(--cko-dark-contrast-blue) !important;
 }
 
-.hHgrjJ, .iFDKZT.iFDKZT {
+.hHgrjJ,
+.iFDKZT.iFDKZT {
 	background-color: var(--code-type) !important;
 }
 
@@ -439,15 +447,15 @@ td.sc-kgoBCf.kGwPhO {
 }
 
 .dropdown-selector-value {
-	color: var(--S1000)!important;
+	color: var(--S1000) !important;
 }
 
 .react-tabs__tab-panel .sc-fzpmMD.gBfPiy.dropdown-selector-value {
-	color: var(--required)!important;
+	color: var(--required) !important;
 }
 
 .iFDKZT.iFDKZT {
-	padding: 1.4em 0.9em 0.6em 1em!important;
+	padding: 1.4em 0.9em 0.6em 1em !important;
 }
 
 /* Security details table */
@@ -489,8 +497,10 @@ span::after {
 	color: var(--primary-text) !important;
 }
 
-.hSfQgO .sc-fzpjYC, .hSfQgO .sc-fzpjYC .sc-fzpjYC .sc-fzpjYC, .hSfQgO .sc-fzpjYC .sc-fzpjYC .sc-fzpjYC .sc-fzpjYC .sc-fzpjYC {
-	background: var(--background)!important;
+.hSfQgO .sc-fzpjYC,
+.hSfQgO .sc-fzpjYC .sc-fzpjYC .sc-fzpjYC,
+.hSfQgO .sc-fzpjYC .sc-fzpjYC .sc-fzpjYC .sc-fzpjYC .sc-fzpjYC {
+	background: var(--background) !important;
 }
 
 /* Field names */
@@ -607,8 +617,8 @@ li {
 	background-color: var(--secondary-button) !important;
 	color: var(--primary-button-color) !important;
 	border-color: var(--secondary-button) !important;
-	border-radius: 4px!important;
-	font-weight: 500!important;
+	border-radius: 4px !important;
+	font-weight: 500 !important;
 }
 
 .hHuJoM > .react-tabs__tab-panel--selected {
@@ -617,7 +627,7 @@ li {
 }
 
 .hHuJoM > ul > li.tab-error {
-	border-radius: 4px!important;
+	border-radius: 4px !important;
 }
 
 .dcDVxm {
@@ -874,8 +884,8 @@ ul > li.react-tabs__tab,
 ul > li.tab-success,
 ul > li.tab-error {
 	margin: 0 5px !important;
-	font-weight: 500!important;
-	border-radius: 4px!important;
+	font-weight: 500 !important;
+	border-radius: 4px !important;
 	border-width: 2px 0 0 0 !important;
 }
 
@@ -1139,7 +1149,7 @@ body.light div.iFDKZT.iFDKZT {
 }
 
 .hHgrjJ {
-	padding: 1.4em 0.9em 0.6em!important;
+	padding: 1.4em 0.9em 0.6em !important;
 }
 
 /*Plus symbols were white on the responses*/
