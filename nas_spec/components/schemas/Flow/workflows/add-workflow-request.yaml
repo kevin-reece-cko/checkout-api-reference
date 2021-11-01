@@ -52,6 +52,7 @@ example:
             },
         },
         { 'type': 'entity', 'entities': ['ent_xyfdshfudosfdshfdiosfds', 'ent_fidjosfjdisofdjsifdosfu'] },
+        { 'type': 'processing_channel', 'processing_channels': ['pc_axclravnqf5u5ejkweijnp5zc4'] },
       ],
     'actions':
       [

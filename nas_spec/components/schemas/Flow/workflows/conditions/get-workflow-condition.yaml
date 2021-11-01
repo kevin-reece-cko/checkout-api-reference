@@ -5,6 +5,7 @@ discriminator:
   mapping:
     event: '#/components/schemas/get-event-condition'
     entity: '#/components/schemas/get-entity-condition'
+    processing_channel: '#/components/schemas/get-processing-channel-condition'
 required:
   - id
   - type
