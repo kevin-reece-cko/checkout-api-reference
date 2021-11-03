@@ -8,6 +8,12 @@ properties:
     type: string
     description: The correlation ID across scans for a given transaction
     example: "ras_c4oqhf46pyzuxjbcn2giaqnb44"
+  score: 
+    type: integer
+    description: The risk score calculated by Checkout. Absent if not enough data provided.
+    example: 55
+    minimum: 0
+    maximum: 100
   result:
     description: The scan result based on your pre-capture risk settings
     allOf:
