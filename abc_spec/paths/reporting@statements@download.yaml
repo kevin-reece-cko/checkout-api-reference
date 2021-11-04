@@ -1,16 +1,15 @@
-/reporting/statements/download:
-  servers:
-    - url: https://api.checkout.com
-      description: Live API
+servers:
+  - url: https://api.checkout.com
+    description: Live API
 
-  get:
-    security:
-      - ApiSecretKey: []
-    tags:
-      - Reconciliation
-    responses:
-      '200':
-        description: CSV downloaded successfully
-    summary: Get CSV statements report
-    operationId: getCsvStatementsReport
-    description: In addition to the JSON format returned by the `reporting/statements` endpoint, you can also download a CSV report containing the same data.
+get:
+  security:
+    - ApiSecretKey: [ ]
+  tags:
+    - Reconciliation
+  responses:
+    '200':
+      description: CSV downloaded successfully
+  summary: Get CSV statements report
+  operationId: getCsvStatementsReport
+  description: In addition to the JSON format returned by the `reporting/statements` endpoint, you can also download a CSV report containing the same data.

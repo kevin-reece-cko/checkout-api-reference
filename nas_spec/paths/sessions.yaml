@@ -1,65 +1,64 @@
-/sessions:
-  post:
-    tags:
-      - Sessions
-    security:
-      - OAuth:
-          - sessions:app
-          - sessions:browser
-    summary: Request a session
-    description: |
-      Create a payment session to authenticate a cardholder before requesting a payment.
-      Payment sessions can be linked to one or more payments (in the case of recurring and other merchant-initiated payments).
+post:
+  tags:
+    - Sessions
+  security:
+    - OAuth:
+        - sessions:app
+        - sessions:browser
+  summary: Request a session
+  description: |
+    Create a payment session to authenticate a cardholder before requesting a payment.
+    Payment sessions can be linked to one or more payments (in the case of recurring and other merchant-initiated payments).
 
-      The `next_actions` object in the response tells you which actions can be performed next.
+    The `next_actions` object in the response tells you which actions can be performed next.
 
-    requestBody:
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: '#/components/schemas/SessionRequest'
+  responses:
+    '201':
+      description: Session processed successfully
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/SessionRequest'
-    responses:
-      '201':
-        description: Session processed successfully
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/CreateSessionOkResponse'
-        headers:
-          Cko-Request-Id:
-            $ref: '#/components/headers/Cko-Request-Id'
-          Cko-Version:
-            $ref: '#/components/headers/Cko-Version'
-      '202':
-        description: Session accepted and further action required
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/CreateSessionAcceptedResponse'
-        headers:
-          Cko-Request-Id:
-            $ref: '#/components/headers/Cko-Request-Id'
-          Cko-Version:
-            $ref: '#/components/headers/Cko-Version'
-      '401':
-        description: Unauthorized
-      '403':
-        description: Forbidden. This can happen when the OAuth token scope is `sessions:app`, but the `channel_data` property in the request is browser related.
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/ErrorResponse'
-      '422':
-        description: Invalid data was sent
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/ErrorResponse'
-      '501':
-        description: Not Implemented
-      '503':
-        description: Service not available. A temporary server error.
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/ErrorResponse'
+            $ref: '#/components/schemas/CreateSessionOkResponse'
+      headers:
+        Cko-Request-Id:
+          $ref: '#/components/headers/Cko-Request-Id'
+        Cko-Version:
+          $ref: '#/components/headers/Cko-Version'
+    '202':
+      description: Session accepted and further action required
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/CreateSessionAcceptedResponse'
+      headers:
+        Cko-Request-Id:
+          $ref: '#/components/headers/Cko-Request-Id'
+        Cko-Version:
+          $ref: '#/components/headers/Cko-Version'
+    '401':
+      description: Unauthorized
+    '403':
+      description: Forbidden. This can happen when the OAuth token scope is `sessions:app`, but the `channel_data` property in the request is browser related.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+    '422':
+      description: Invalid data was sent
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+    '501':
+      description: Not Implemented
+    '503':
+      description: Service not available. A temporary server error.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'

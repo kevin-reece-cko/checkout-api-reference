@@ -1,37 +1,36 @@
-/events/{eventId}/webhooks/{webhookId}/retry:
-  post:
-    security:
-      - ApiSecretKey: []
-    tags:
-      - Events
-    summary: Retry webhook
-    operationId: retryWebhook
-    description: Retries a specific webhook notification for the given event
-    parameters:
-      - in: path
-        name: eventId
-        schema:
-          type: string
-          pattern: "^(evt)_(\\w{26})$"
-        required: true
-        description: The event identifier
-      - in: path
-        name: webhookId
-        schema:
-          type: string
-          pattern: "^(wh)_(\\w{32})$"
-        required: true
-        description: The webhook identifier
-        example: 'wh_387ac7a83a054e37ae140105429d76b5'
-    responses:
-      '202':
-        description: Retry accepted
-        headers:
-          Cko-Request-Id:
-            $ref: '#/components/headers/Cko-Request-Id'
-          Cko-Version:
-            $ref: '#/components/headers/Cko-Version'
-      '401':
-        description: Unauthorized
-      '404':
-        description: Event or webhook not found
+post:
+  security:
+    - ApiSecretKey: [ ]
+  tags:
+    - Events
+  summary: Retry webhook
+  operationId: retryWebhook
+  description: Retries a specific webhook notification for the given event
+  parameters:
+    - in: path
+      name: eventId
+      schema:
+        type: string
+        pattern: "^(evt)_(\\w{26})$"
+      required: true
+      description: The event identifier
+    - in: path
+      name: webhookId
+      schema:
+        type: string
+        pattern: "^(wh)_(\\w{32})$"
+      required: true
+      description: The webhook identifier
+      example: 'wh_387ac7a83a054e37ae140105429d76b5'
+  responses:
+    '202':
+      description: Retry accepted
+      headers:
+        Cko-Request-Id:
+          $ref: '#/components/headers/Cko-Request-Id'
+        Cko-Version:
+          $ref: '#/components/headers/Cko-Version'
+    '401':
+      description: Unauthorized
+    '404':
+      description: Event or webhook not found

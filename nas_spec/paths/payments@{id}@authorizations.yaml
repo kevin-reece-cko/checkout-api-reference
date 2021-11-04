@@ -1,52 +1,51 @@
-/payments/{id}/authorizations:
-  post:
-    tags:
-      - Payments
-    security:
-      - OAuth:
-          - gateway
-          - gateway:payment-authorizations
-      - ApiSecretKey: []
-    summary: Increment authorization
-    description: |
-      Request an incremental authorization to increase the authorization amount or extend the authorization's validity period.
+post:
+  tags:
+    - Payments
+  security:
+    - OAuth:
+        - gateway
+        - gateway:payment-authorizations
+    - ApiSecretKey: [ ]
+  summary: Increment authorization
+  description: |
+    Request an incremental authorization to increase the authorization amount or extend the authorization's validity period.
 
-    parameters:
-      - in: path
-        name: id
+  parameters:
+    - in: path
+      name: id
+      schema:
+        type: string
+        pattern: "^(pay)_(\\w{26})$"
+      required: true
+      description: The payment identifier
+  requestBody:
+    content:
+      application/json:
         schema:
-          type: string
-          pattern: "^(pay)_(\\w{26})$"
-        required: true
-        description: The payment identifier
-    requestBody:
+          $ref: '#/components/schemas/AuthorizationRequest'
+  responses:
+    '201':
+      description: Authorization processed successfully
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/AuthorizationRequest'
-    responses:
-      '201':
-        description: Authorization processed successfully
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/AuthorizationResponse'
-        headers:
-          Cko-Request-Id:
-            $ref: '#/components/headers/Cko-Request-Id'
-          Cko-Version:
-            $ref: '#/components/headers/Cko-Version'
-      '401':
-        description: Unauthorized
-      '403':
-        description: Capture not allowed
-      '422':
-        description: Invalid data was sent
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/ValidationError'
-      '404':
-        description: Payment not found
-      '502':
-        description: Bad gateway
+            $ref: '#/components/schemas/AuthorizationResponse'
+      headers:
+        Cko-Request-Id:
+          $ref: '#/components/headers/Cko-Request-Id'
+        Cko-Version:
+          $ref: '#/components/headers/Cko-Version'
+    '401':
+      description: Unauthorized
+    '403':
+      description: Capture not allowed
+    '422':
+      description: Invalid data was sent
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ValidationError'
+    '404':
+      description: Payment not found
+    '502':
+      description: Bad gateway

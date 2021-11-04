@@ -1,51 +1,50 @@
-/workflows/events/{eventId}/workflow/{workflowId}/reflow:
-  post:
-    security:
-      - OAuth:
-          - flow
-          - flow:reflow
-      - ApiSecretKey: []
-    tags:
-      - Workflows
-    summary: Reflow by event and workflow
-    description: |
-      Reflows a past event by event ID and workflow ID. Triggers all the actions of a specific event and workflow combination if the event denoted by the event ID matches the workflow conditions.
-    parameters:
-      - in: path
-        name: eventId
-        schema:
-          type: string
-          pattern: ^evt_[a-z0-9]{26}$
-        required: true
-        description: The unique identifier for the event to be reflowed.
-        example: evt_x5zm2po6kimubhlfitgt2mfwgi
-      - in: path
-        name: workflowId
-        schema:
-          type: string
-          pattern: ^wf_[a-z0-9]{26}$
-        required: true
-        description: The identifier of the workflow whose actions you want to trigger.
-        example: wf_c8zm2po6kimubhlfitgt2mferf
-    responses:
-      '202':
-        description: Event reflow initiated successfully
-        headers:
-          Cko-Request-Id:
-            schema:
-              $ref: '#/components/headers/Cko-Request-Id'
-          Cko-Version:
-            schema:
-              $ref: '#/components/headers/Cko-Version'
-      '401':
-        description: Unauthorized
-      '404':
-        description: Events for reflow not found
-      '422':
-        description: Invalid data was sent
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/event-id-validation-error'
-      '500':
-        description: Internal Error
+post:
+  security:
+    - OAuth:
+        - flow
+        - flow:reflow
+    - ApiSecretKey: [ ]
+  tags:
+    - Workflows
+  summary: Reflow by event and workflow
+  description: |
+    Reflows a past event by event ID and workflow ID. Triggers all the actions of a specific event and workflow combination if the event denoted by the event ID matches the workflow conditions.
+  parameters:
+    - in: path
+      name: eventId
+      schema:
+        type: string
+        pattern: ^evt_[a-z0-9]{26}$
+      required: true
+      description: The unique identifier for the event to be reflowed.
+      example: evt_x5zm2po6kimubhlfitgt2mfwgi
+    - in: path
+      name: workflowId
+      schema:
+        type: string
+        pattern: ^wf_[a-z0-9]{26}$
+      required: true
+      description: The identifier of the workflow whose actions you want to trigger.
+      example: wf_c8zm2po6kimubhlfitgt2mferf
+  responses:
+    '202':
+      description: Event reflow initiated successfully
+      headers:
+        Cko-Request-Id:
+          schema:
+            $ref: '#/components/headers/Cko-Request-Id'
+        Cko-Version:
+          schema:
+            $ref: '#/components/headers/Cko-Version'
+    '401':
+      description: Unauthorized
+    '404':
+      description: Events for reflow not found
+    '422':
+      description: Invalid data was sent
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/event-id-validation-error'
+    '500':
+      description: Internal Error

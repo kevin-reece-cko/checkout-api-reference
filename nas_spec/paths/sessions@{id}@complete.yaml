@@ -1,58 +1,57 @@
-/sessions/{id}/complete:
-  post:
-    security:
-      - OAuth:
-          - sessions:app
-          - sessions:browser
-      - SessionSecret: []
-    summary: Complete a session
-    description: |
-      Completes a session by posting the the following request to the callback URL (only relevant for non hosted sessions):
-      ```
-      {
-         "session_id": "sid_llraltf4jlwu5dxdtprcv7ba5i",
-         "amount" : 6540,
-         "currency": "USD",
-         "status": "approved",
-         "authentication_type": "regular",
-         "authentication_category": "payment",
-         "reference": "ORD-5023-4E89",
-         "approved": true,
-         "protocol_version": "2.1.0",
-         "response_code": "Y",
-         "response_reason": "01",
-         "cryptogram": "MTIzNDU2Nzg5MDA5ODc2NTQzMjE=",
-         "eci": "05",
-         "xid": "XSUErNftqkiTdlkpSk8p32GWOFA",
-         "cardholder_info": "Card declined. Please contact your issuing bank.",
-         "challenged": true
-      }
-      ```
-      <br/>
-      The fields of the above are the same as they would be in a GET session response
-    tags:
-      - Sessions
-    parameters:
-      - name: id
-        in: path
-        description: Session ID
-        required: true
-        schema:
-          type: string
-    responses:
-      '204':
-        description: Session completed successfully
-      '401':
-        description: Unauthorized
-      '403':
-        description: Forbidden
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/ErrorResponse'
-      '404':
-        description: Session not found
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/ErrorResponse'
+post:
+  security:
+    - OAuth:
+        - sessions:app
+        - sessions:browser
+    - SessionSecret: [ ]
+  summary: Complete a session
+  description: |
+    Completes a session by posting the the following request to the callback URL (only relevant for non hosted sessions):
+    ```
+    {
+       "session_id": "sid_llraltf4jlwu5dxdtprcv7ba5i",
+       "amount" : 6540,
+       "currency": "USD",
+       "status": "approved",
+       "authentication_type": "regular",
+       "authentication_category": "payment",
+       "reference": "ORD-5023-4E89",
+       "approved": true,
+       "protocol_version": "2.1.0",
+       "response_code": "Y",
+       "response_reason": "01",
+       "cryptogram": "MTIzNDU2Nzg5MDA5ODc2NTQzMjE=",
+       "eci": "05",
+       "xid": "XSUErNftqkiTdlkpSk8p32GWOFA",
+       "cardholder_info": "Card declined. Please contact your issuing bank.",
+       "challenged": true
+    }
+    ```
+    <br/>
+    The fields of the above are the same as they would be in a GET session response
+  tags:
+    - Sessions
+  parameters:
+    - name: id
+      in: path
+      description: Session ID
+      required: true
+      schema:
+        type: string
+  responses:
+    '204':
+      description: Session completed successfully
+    '401':
+      description: Unauthorized
+    '403':
+      description: Forbidden
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+    '404':
+      description: Session not found
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'

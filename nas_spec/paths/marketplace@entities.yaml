@@ -1,122 +1,121 @@
-/marketplace/entities:
-  post:
-    description: |
-      Onboard a sub-entity so they can start receiving payments. Once created, Checkout.com will run due diligence checks.
-      If the checks are successful, we'll enable payment capabilities for that sub-entity and they will start receiving payments.
-    summary: Onboard a sub-entity
-    requestBody:
-      required: true
-      description: The sub-entity to be onboarded.
+post:
+  description: |
+    Onboard a sub-entity so they can start receiving payments. Once created, Checkout.com will run due diligence checks.
+    If the checks are successful, we'll enable payment capabilities for that sub-entity and they will start receiving payments.
+  summary: Onboard a sub-entity
+  requestBody:
+    required: true
+    description: The sub-entity to be onboarded.
+    content:
+      application/json:
+        schema:
+          $ref: '#/components/schemas/EntityCreateRequest'
+        examples:
+          Company:
+            value:
+              reference: superhero1234
+              contact_details:
+                phone:
+                  number: '2345678910'
+              profile:
+                urls:
+                  - https://www.superheroexample.com
+                mccs:
+                  - '5669'
+              company:
+                business_registration_number: '452349600005'
+                legal_name: 'Super Hero Masks Inc.'
+                trading_name: 'Super Hero Masks'
+                principal_address:
+                  address_line1: '90 Tottenham Court Road'
+                  city: 'London'
+                  zip: 'W1T4TJ'
+                  country: 'GB'
+                registered_address:
+                  address_line1: '90 Tottenham Court Road'
+                  city: 'London'
+                  zip: 'W1T4TJ'
+                  country: 'GB'
+                representatives:
+                  - first_name: 'John'
+                    last_name: 'Doe'
+                    address:
+                      address_line1: '90 Tottenham Court Road'
+                      city: 'London'
+                      zip: 'W1T4TJ'
+                      country: 'GB'
+                    identification:
+                      national_id_number: 'AB123456C'
+                    phone:
+                      number: '2345678910'
+                    date_of_birth:
+                      day: 05
+                      month: 06
+                      year: 1995
+          Individual:
+            value:
+              reference: superhero1234
+              contact_details:
+                phone:
+                  number: '2345678910'
+              profile:
+                urls:
+                  - https://www.superheroexample.com
+                mccs:
+                  - '5669'
+              individual:
+                first_name: 'John'
+                last_name: 'Doe'
+                trading_name: "John's Super Hero Masks"
+                registered_address:
+                  address_line1: '90 Tottenham Court Road'
+                  city: 'London'
+                  zip: 'W1T4TJ'
+                  country: 'GB'
+                national_tax_id: 'TAX123456'
+                date_of_birth:
+                  day: 05
+                  month: 06
+                  year: 1995
+                identification:
+                  national_id_number: 'AB123456C'
+  security:
+    - OAuth:
+        - marketplace
+  responses:
+    '201':
+      description: Sub-entity onboarded successfully
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/EntityCreateRequest'
-          examples:
-            Company:
-              value:
-                reference: superhero1234
-                contact_details:
-                  phone:
-                    number: '2345678910'
-                profile:
-                  urls:
-                    - https://www.superheroexample.com
-                  mccs:
-                    - '5669'
-                company:
-                  business_registration_number: '452349600005'
-                  legal_name: 'Super Hero Masks Inc.'
-                  trading_name: 'Super Hero Masks'
-                  principal_address:
-                    address_line1: '90 Tottenham Court Road'
-                    city: 'London'
-                    zip: 'W1T4TJ'
-                    country: 'GB'
-                  registered_address:
-                    address_line1: '90 Tottenham Court Road'
-                    city: 'London'
-                    zip: 'W1T4TJ'
-                    country: 'GB'
-                  representatives:
-                    - first_name: 'John'
-                      last_name: 'Doe'
-                      address:
-                        address_line1: '90 Tottenham Court Road'
-                        city: 'London'
-                        zip: 'W1T4TJ'
-                        country: 'GB'
-                      identification:
-                        national_id_number: 'AB123456C'
-                      phone:
-                        number: '2345678910'
-                      date_of_birth:
-                        day: 05
-                        month: 06
-                        year: 1995
-            Individual:
-              value:
-                reference: superhero1234
-                contact_details:
-                  phone:
-                    number: '2345678910'
-                profile:
-                  urls:
-                    - https://www.superheroexample.com
-                  mccs:
-                    - '5669'
-                individual:
-                  first_name: 'John'
-                  last_name: 'Doe'
-                  trading_name: "John's Super Hero Masks"
-                  registered_address:
-                    address_line1: '90 Tottenham Court Road'
-                    city: 'London'
-                    zip: 'W1T4TJ'
-                    country: 'GB'
-                  national_tax_id: 'TAX123456'
-                  date_of_birth:
-                    day: 05
-                    month: 06
-                    year: 1995
-                  identification:
-                    national_id_number: 'AB123456C'
-    security:
-      - OAuth:
-          - marketplace
-    responses:
-      '201':
-        description: Sub-entity onboarded successfully
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/EntityBasicResponseWithLinks'
-        headers:
-          Cko-Version:
-            $ref: '#/components/headers/Cko-Version'
-          Cko-Request-Id:
-            $ref: '#/components/headers/Cko-Request-Id'
-      '400':
-        description: Bad Request
-      '401':
-        description: Unauthorized
-      '409':
-        description: Sub-entity onboarding request conflicted with an existing sub-entity
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/EntityLinks'
-      '422':
-        description: Invalid data was sent
-        content:
-          application/json:
-            schema:
-              allOf:
-                - $ref: '#/components/schemas/ValidationError'
-                - type: object
-                  properties:
-                    error_codes:
-                      example:
-                        - error_code1
-                        - error_code2
-    tags:
-      - Marketplace
+            $ref: '#/components/schemas/EntityBasicResponseWithLinks'
+      headers:
+        Cko-Version:
+          $ref: '#/components/headers/Cko-Version'
+        Cko-Request-Id:
+          $ref: '#/components/headers/Cko-Request-Id'
+    '400':
+      description: Bad Request
+    '401':
+      description: Unauthorized
+    '409':
+      description: Sub-entity onboarding request conflicted with an existing sub-entity
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/EntityLinks'
+    '422':
+      description: Invalid data was sent
+      content:
+        application/json:
+          schema:
+            allOf:
+              - $ref: '#/components/schemas/ValidationError'
+              - type: object
+                properties:
+                  error_codes:
+                    example:
+                      - error_code1
+                      - error_code2
+  tags:
+    - Marketplace

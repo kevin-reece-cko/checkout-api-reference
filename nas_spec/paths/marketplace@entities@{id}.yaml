@@ -1,172 +1,38 @@
-/marketplace/entities/{id}:
-  parameters:
-    - in: path
-      name: id
-      description: The ID of the sub-entity.
+parameters:
+  - in: path
+    name: id
+    description: The ID of the sub-entity.
 
-      required: true
-      allowEmptyValue: false
-      example: ent_w4jelhppmfiufdnatam37wrfc4
-      style: simple
-      schema:
-        type: string
-  get:
-    description: Use this endpoint to retrieve a sub-entity and its full details.
-    summary: Get sub-entity details
-    security:
-      - OAuth:
-          - marketplace
-    responses:
-      '200':
-        description: Sub-entity retrieved successfully
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/EntityExtendedResponse'
-            examples:
-              Company:
-                value:
-                  id: ent_wxglze3wwywujg4nna5fb7ldli
-                  reference: superhero1234
-                  capabilities:
-                    payments:
-                      enabled: false
-                    payouts:
-                      enabled: false
-                  status: pending
-                  contact_details:
-                    phone:
-                      number: '2345678910'
-                  profile:
-                    urls:
-                      - https://www.superheroexample.com
-                    mccs:
-                      - '5669'
-                  company:
-                    business_registration_number: '452349600005'
-                    legal_name: Super Hero Masks Inc.
-                    trading_name: Super Hero Masks
-                    principal_address:
-                      address_line1: 90 Tottenham Court Road
-                      city: London
-                      zip: W1T4TJ
-                      country: GB
-                    registered_address:
-                      address_line1: 90 Tottenham Court Road
-                      city: London
-                      zip: W1T4TJ
-                      country: GB
-                    representatives:
-                      - first_name: John
-                        middle_name:
-                        last_name: Doe
-                        address:
-                          address_line1: 90 Tottenham Court Road
-                          city: London
-                          zip: W1T4TJ
-                          country: GB
-                        identification:
-                          national_id_number: 'AB123456C'
-                          document:
-                            type: 'driving_license'
-                            front: 'file_wxglze3wwywujg4nna5fb7ldli'
-                            back: 'file_adglze3wwywujg4nna5fb7l1sg'
-                        phone:
-                          number: '2345678910'
-                        date_of_birth:
-                          day: 05
-                          month: 06
-                          year: 1995
-                  instruments:
-                    - id: src_hmnkhxlshf3uhljow7zt7sf2cq
-                      label: Peter's Personal Account
-                  _links:
-                    self:
-                      href: https://api.checkout.com/marketplace/entities/ent_wxglze3wwywujg4nna5fb7ldli
-              Individual:
-                value:
-                  id: ent_wxglze3wwywujg4nna5fb7ldli
-                  reference: superhero1234
-                  capabilities:
-                    payments:
-                      enabled: false
-                    payouts:
-                      enabled: false
-                  contact_details:
-                    phone:
-                      number: '2345678910'
-                  profile:
-                    urls:
-                      - https://www.superheroexample.com
-                    mccs:
-                      - '5669'
-                  individual:
-                    first_name: John
-                    middle_name: Paul
-                    last_name: Doe
-                    trading_name: Super Hero Masks
-                    legal_name: John Paul Doe
-                    national_tax_id: '1234567'
-                    registered_address:
-                      address_line1: 90 Tottenham Court Road
-                      city: London
-                      zip: W1T4TJ
-                      country: GB
-                    date_of_birth:
-                      day: 05
-                      month: 06
-                      year: 1995
-                    identification:
-                      national_id_number: 'AB123456C'
-                      document:
-                        type: 'driving_license'
-                        front: 'file_wxglze3wwywujg4nna5fb7ldli'
-                        back: 'file_adglze3wwywujg4nna5fb7l1sg'
-                  instruments:
-                    - id: src_hmnkhxlshf3uhljow7zt7sf2cq
-                      label: Peter's Personal Account
-                  _links:
-                    self:
-                      href: https://api.checkout.com/marketplace/entities/ent_wxglze3wwywujg4nna5fb7ldli
-        headers:
-          Cko-Version:
-            $ref: '#/components/headers/Cko-Version'
-          Cko-Request-Id:
-            $ref: '#/components/headers/Cko-Request-Id'
-      '401':
-        description: Unauthorized
-      '404':
-        description: Sub-entity not found
-      '422':
-        description: Invalid data was sent
-        content:
-          application/json:
-            schema:
-              allOf:
-                - $ref: '#/components/schemas/ValidationError'
-                - type: object
-                  properties:
-                    error_codes:
-                      example:
-                        - error_code1
-                        - error_code2
-    tags:
-      - Marketplace
-  put:
-    description: |
-      You can update all fields under the Contact details, Profile, and Company objects. You can also add <strong>identification</strong> information to complete due diligence requirements.<br><br>
-      <strong>Note:</strong> when you update a sub-entity we may conduct further due diligence checks when necessary. During these checks, your payment capabilities will remain the same.
-    summary: Update sub-entity details
-    requestBody:
-      required: true
-      description: The sub-entity to be updated.
+    required: true
+    allowEmptyValue: false
+    example: ent_w4jelhppmfiufdnatam37wrfc4
+    style: simple
+    schema:
+      type: string
+get:
+  description: Use this endpoint to retrieve a sub-entity and its full details.
+  summary: Get sub-entity details
+  security:
+    - OAuth:
+        - marketplace
+  responses:
+    '200':
+      description: Sub-entity retrieved successfully
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/EntityUpdateRequest'
+            $ref: '#/components/schemas/EntityExtendedResponse'
           examples:
             Company:
               value:
+                id: ent_wxglze3wwywujg4nna5fb7ldli
+                reference: superhero1234
+                capabilities:
+                  payments:
+                    enabled: false
+                  payouts:
+                    enabled: false
+                status: pending
                 contact_details:
                   phone:
                     number: '2345678910'
@@ -177,36 +43,54 @@
                     - '5669'
                 company:
                   business_registration_number: '452349600005'
-                  legal_name: 'Super Hero Masks Inc.'
-                  trading_name: 'Super Hero Masks'
+                  legal_name: Super Hero Masks Inc.
+                  trading_name: Super Hero Masks
                   principal_address:
-                    address_line1: '90 Tottenham Court Road'
-                    city: 'London'
-                    zip: 'W1T4TJ'
-                    country: 'GB'
+                    address_line1: 90 Tottenham Court Road
+                    city: London
+                    zip: W1T4TJ
+                    country: GB
                   registered_address:
-                    address_line1: '90 Tottenham Court Road'
-                    city: 'London'
-                    zip: 'W1T4TJ'
-                    country: 'GB'
+                    address_line1: 90 Tottenham Court Road
+                    city: London
+                    zip: W1T4TJ
+                    country: GB
                   representatives:
-                    - first_name: 'John'
-                      last_name: 'Doe'
+                    - first_name: John
+                      middle_name:
+                      last_name: Doe
                       address:
-                        address_line1: '90 Tottenham Court Road'
-                        city: 'London'
-                        zip: 'W1T4TJ'
-                        country: 'GB'
+                        address_line1: 90 Tottenham Court Road
+                        city: London
+                        zip: W1T4TJ
+                        country: GB
                       identification:
                         national_id_number: 'AB123456C'
+                        document:
+                          type: 'driving_license'
+                          front: 'file_wxglze3wwywujg4nna5fb7ldli'
+                          back: 'file_adglze3wwywujg4nna5fb7l1sg'
                       phone:
                         number: '2345678910'
                       date_of_birth:
                         day: 05
                         month: 06
                         year: 1995
+                instruments:
+                  - id: src_hmnkhxlshf3uhljow7zt7sf2cq
+                    label: Peter's Personal Account
+                _links:
+                  self:
+                    href: https://api.checkout.com/marketplace/entities/ent_wxglze3wwywujg4nna5fb7ldli
             Individual:
               value:
+                id: ent_wxglze3wwywujg4nna5fb7ldli
+                reference: superhero1234
+                capabilities:
+                  payments:
+                    enabled: false
+                  payouts:
+                    enabled: false
                 contact_details:
                   phone:
                     number: '2345678910'
@@ -216,52 +100,167 @@
                   mccs:
                     - '5669'
                 individual:
-                  first_name: 'John'
-                  last_name: 'Doe'
-                  trading_name: "John's Super Hero Masks"
+                  first_name: John
+                  middle_name: Paul
+                  last_name: Doe
+                  trading_name: Super Hero Masks
+                  legal_name: John Paul Doe
+                  national_tax_id: '1234567'
                   registered_address:
-                    address_line1: '90 Tottenham Court Road'
-                    city: 'London'
-                    zip: 'W1T4TJ'
-                    country: 'GB'
-                  national_tax_id: 'TAX123456'
+                    address_line1: 90 Tottenham Court Road
+                    city: London
+                    zip: W1T4TJ
+                    country: GB
                   date_of_birth:
                     day: 05
                     month: 06
                     year: 1995
                   identification:
                     national_id_number: 'AB123456C'
-    security:
-      - OAuth:
-          - marketplace
-    responses:
-      '200':
-        description: Sub-entity updated successfully
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/EntityBasicResponseWithLinks'
-        headers:
-          Cko-Version:
-            $ref: '#/components/headers/Cko-Version'
-          Cko-Request-Id:
-            $ref: '#/components/headers/Cko-Request-Id'
-      '401':
-        description: Unauthorized
-      '404':
-        description: Sub-entity not found
-      '422':
-        description: Invalid data was sent
-        content:
-          application/json:
-            schema:
-              allOf:
-                - $ref: '#/components/schemas/ValidationError'
-                - type: object
-                  properties:
-                    error_codes:
-                      example:
-                        - error_code1
-                        - error_code2
-    tags:
-      - Marketplace
+                    document:
+                      type: 'driving_license'
+                      front: 'file_wxglze3wwywujg4nna5fb7ldli'
+                      back: 'file_adglze3wwywujg4nna5fb7l1sg'
+                instruments:
+                  - id: src_hmnkhxlshf3uhljow7zt7sf2cq
+                    label: Peter's Personal Account
+                _links:
+                  self:
+                    href: https://api.checkout.com/marketplace/entities/ent_wxglze3wwywujg4nna5fb7ldli
+      headers:
+        Cko-Version:
+          $ref: '#/components/headers/Cko-Version'
+        Cko-Request-Id:
+          $ref: '#/components/headers/Cko-Request-Id'
+    '401':
+      description: Unauthorized
+    '404':
+      description: Sub-entity not found
+    '422':
+      description: Invalid data was sent
+      content:
+        application/json:
+          schema:
+            allOf:
+              - $ref: '#/components/schemas/ValidationError'
+              - type: object
+                properties:
+                  error_codes:
+                    example:
+                      - error_code1
+                      - error_code2
+  tags:
+    - Marketplace
+put:
+  description: |
+    You can update all fields under the Contact details, Profile, and Company objects. You can also add <strong>identification</strong> information to complete due diligence requirements.<br><br>
+    <strong>Note:</strong> when you update a sub-entity we may conduct further due diligence checks when necessary. During these checks, your payment capabilities will remain the same.
+  summary: Update sub-entity details
+  requestBody:
+    required: true
+    description: The sub-entity to be updated.
+    content:
+      application/json:
+        schema:
+          $ref: '#/components/schemas/EntityUpdateRequest'
+        examples:
+          Company:
+            value:
+              contact_details:
+                phone:
+                  number: '2345678910'
+              profile:
+                urls:
+                  - https://www.superheroexample.com
+                mccs:
+                  - '5669'
+              company:
+                business_registration_number: '452349600005'
+                legal_name: 'Super Hero Masks Inc.'
+                trading_name: 'Super Hero Masks'
+                principal_address:
+                  address_line1: '90 Tottenham Court Road'
+                  city: 'London'
+                  zip: 'W1T4TJ'
+                  country: 'GB'
+                registered_address:
+                  address_line1: '90 Tottenham Court Road'
+                  city: 'London'
+                  zip: 'W1T4TJ'
+                  country: 'GB'
+                representatives:
+                  - first_name: 'John'
+                    last_name: 'Doe'
+                    address:
+                      address_line1: '90 Tottenham Court Road'
+                      city: 'London'
+                      zip: 'W1T4TJ'
+                      country: 'GB'
+                    identification:
+                      national_id_number: 'AB123456C'
+                    phone:
+                      number: '2345678910'
+                    date_of_birth:
+                      day: 05
+                      month: 06
+                      year: 1995
+          Individual:
+            value:
+              contact_details:
+                phone:
+                  number: '2345678910'
+              profile:
+                urls:
+                  - https://www.superheroexample.com
+                mccs:
+                  - '5669'
+              individual:
+                first_name: 'John'
+                last_name: 'Doe'
+                trading_name: "John's Super Hero Masks"
+                registered_address:
+                  address_line1: '90 Tottenham Court Road'
+                  city: 'London'
+                  zip: 'W1T4TJ'
+                  country: 'GB'
+                national_tax_id: 'TAX123456'
+                date_of_birth:
+                  day: 05
+                  month: 06
+                  year: 1995
+                identification:
+                  national_id_number: 'AB123456C'
+  security:
+    - OAuth:
+        - marketplace
+  responses:
+    '200':
+      description: Sub-entity updated successfully
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/EntityBasicResponseWithLinks'
+      headers:
+        Cko-Version:
+          $ref: '#/components/headers/Cko-Version'
+        Cko-Request-Id:
+          $ref: '#/components/headers/Cko-Request-Id'
+    '401':
+      description: Unauthorized
+    '404':
+      description: Sub-entity not found
+    '422':
+      description: Invalid data was sent
+      content:
+        application/json:
+          schema:
+            allOf:
+              - $ref: '#/components/schemas/ValidationError'
+              - type: object
+                properties:
+                  error_codes:
+                    example:
+                      - error_code1
+                      - error_code2
+  tags:
+    - Marketplace

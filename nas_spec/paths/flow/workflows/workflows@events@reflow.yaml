@@ -1,42 +1,41 @@
-/workflows/events/reflow:
-  post:
-    security:
-      - OAuth:
-          - flow
-          - flow:reflow
-      - ApiSecretKey: []
-    tags:
-      - Workflows
-    summary: Reflow
-    description: |
-      Reflow past events attached to multiple event IDs and workflow IDs, or to multiple subject IDs and workflow IDs. If you don't specify any workflow IDs, all matching workflows will be retriggered.
-    requestBody:
-      required: true
+post:
+  security:
+    - OAuth:
+        - flow
+        - flow:reflow
+    - ApiSecretKey: [ ]
+  tags:
+    - Workflows
+  summary: Reflow
+  description: |
+    Reflow past events attached to multiple event IDs and workflow IDs, or to multiple subject IDs and workflow IDs. If you don't specify any workflow IDs, all matching workflows will be retriggered.
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          oneOf:
+            - $ref: '#/components/schemas/reflow-events-by-event-and-workflow-ids'
+            - $ref: '#/components/schemas/reflow-events-by-subject-and-workflow-ids'
+  responses:
+    '202':
+      description: Event reflow initiated successfully
+      headers:
+        Cko-Request-Id:
+          schema:
+            $ref: '#/components/headers/Cko-Request-Id'
+        Cko-Version:
+          schema:
+            $ref: '#/components/headers/Cko-Version'
+    '401':
+      description: Unauthorized
+    '404':
+      description: Events for reflow not found
+    '422':
+      description: Invalid data was sent
       content:
         application/json:
           schema:
-            oneOf:
-              - $ref: '#/components/schemas/reflow-events-by-event-and-workflow-ids'
-              - $ref: '#/components/schemas/reflow-events-by-subject-and-workflow-ids'
-    responses:
-      '202':
-        description: Event reflow initiated successfully
-        headers:
-          Cko-Request-Id:
-            schema:
-              $ref: '#/components/headers/Cko-Request-Id'
-          Cko-Version:
-            schema:
-              $ref: '#/components/headers/Cko-Version'
-      '401':
-        description: Unauthorized
-      '404':
-        description: Events for reflow not found
-      '422':
-        description: Invalid data was sent
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/ids-validation-error'
-      '500':
-        description: Internal Error
+            $ref: '#/components/schemas/ids-validation-error'
+    '500':
+      description: Internal Error

@@ -1,21 +1,20 @@
-/risk/assessments/pre-authentication:
-  post:
-    security:
-      - ApiSecretKey: []
-    tags:
-      - Risk
-    summary: Request a pre-authentication risk scan
-    operationId: preAuthenticationRiskAssessment
-    description: |
-      Perform a pre-authentication fraud assessment using your defined risk settings.
+post:
+  security:
+    - ApiSecretKey: [ ]
+  tags:
+    - Risk
+  summary: Request a pre-authentication risk scan
+  operationId: preAuthenticationRiskAssessment
+  description: |
+    Perform a pre-authentication fraud assessment using your defined risk settings.
     #parameters:
-     # - $ref: '#/components/parameters/ckoIdempotencyKey'
-    requestBody:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/PreAuthenticationAssessmentRequest'
-    responses:
+  # - $ref: '#/components/parameters/ckoIdempotencyKey'
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: '#/components/schemas/PreAuthenticationAssessmentRequest'
+  responses:
     #   '200':
     #     description: Transaction already assessed
     #     content:
@@ -26,25 +25,25 @@
     #         $ref: "#/components/headers/Cko-Request-Id"
     #       Cko-Version:
     #         $ref: "#/components/headers/Cko-Version"
-      '201':
-        description: Transaction assessed successfully
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/PreAuthenticationAssessmentResponse'
-          Cko-Request-Id:
-            schema:
-              $ref: "#/components/headers/Cko-Request-Id"
-          Cko-Version:
-            schema:
-              $ref: "#/components/headers/Cko-Version"
-      '401':
-        description: Unauthorized
-      '422':
-        description: Invalid data was sent
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/ValidationError'
-      '502':
-        description: Bad gateway
+    '201':
+      description: Transaction assessed successfully
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/PreAuthenticationAssessmentResponse'
+        Cko-Request-Id:
+          schema:
+            $ref: "#/components/headers/Cko-Request-Id"
+        Cko-Version:
+          schema:
+            $ref: "#/components/headers/Cko-Version"
+    '401':
+      description: Unauthorized
+    '422':
+      description: Invalid data was sent
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ValidationError'
+    '502':
+      description: Bad gateway

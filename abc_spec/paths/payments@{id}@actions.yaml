@@ -1,34 +1,33 @@
-/payments/{id}/actions:
-  get:
-    security:
-      - ApiSecretKey: []
-    tags:
-      - Payments
-    summary: Get payment actions
-    operationId: getPaymentActions
-    description: |
-      Returns all the actions associated with a payment ordered by processing date in descending order (latest first).
-    parameters:
-      - in: path
-        name: id
-        schema:
-          type: string
-          pattern: "^(pay)_(\\w{26})$"
-        required: true
-        description: The payment identifier
-    responses:
-      '200':
-        description: Payment actions retrieved successfully
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/PaymentActionsResponse'
-        headers:
-          Cko-Request-Id:
-            $ref: '#/components/headers/Cko-Request-Id'
-          Cko-Version:
-            $ref: '#/components/headers/Cko-Version'
-      '401':
-        description: Unauthorized
-      '404':
-        description: Payment not found
+get:
+  security:
+    - ApiSecretKey: [ ]
+  tags:
+    - Payments
+  summary: Get payment actions
+  operationId: getPaymentActions
+  description: |
+    Returns all the actions associated with a payment ordered by processing date in descending order (latest first).
+  parameters:
+    - in: path
+      name: id
+      schema:
+        type: string
+        pattern: "^(pay)_(\\w{26})$"
+      required: true
+      description: The payment identifier
+  responses:
+    '200':
+      description: Payment actions retrieved successfully
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/PaymentActionsResponse'
+      headers:
+        Cko-Request-Id:
+          $ref: '#/components/headers/Cko-Request-Id'
+        Cko-Version:
+          $ref: '#/components/headers/Cko-Version'
+    '401':
+      description: Unauthorized
+    '404':
+      description: Payment not found
