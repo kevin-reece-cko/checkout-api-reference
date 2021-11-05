@@ -48,8 +48,8 @@ info:
 
      | Date          |      Description of change                                        |
      |---------------|-------------------------------------------------------------------|
-     | 18.10.2021    |  Added the `marketplaces.sub-entities` object to support split payments.  |
-     | 12.10.2021    |  Added Hosted Payments Page and Payment Links to specification.   |
+     | 2021/10/18    |  Added the `marketplaces.sub-entities` object to support split payments.  |
+     | 2021/10/12    |  Added Hosted Payments Page and Payment Links to specification.   |
 
 servers:
   - url: https://api.checkout.com

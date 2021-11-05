@@ -51,8 +51,8 @@ info:
 
      | Date          |      Description of change                                        |
      |---------------|-------------------------------------------------------------------|
-     | 18.10.2021    |  Added `processing.purpose` to card payouts.                      |
-     | 18.10.2021    |  Added `recommendation_code` to payment response.                 |
+     | 2021/10/18    |  Added `processing.purpose` to card payouts.                      |
+     | 2021/10/18    |  Added `recommendation_code` to payment response.                 |
 
 servers:
   - url: https://api.checkout.com
