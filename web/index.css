@@ -306,6 +306,20 @@ img.sc-kafWEX.hZCbNs {
 	content: var(--logo) !important;
 }
 
+.settings-button {
+	position: absolute;
+	top: 22px;
+	right: 88px;
+	padding: 0 !important;
+	border: none !important;
+	z-index: 99;
+	font-size: 16px !important;
+}
+
+.settings-button:hover {
+	background-color: none !important;
+}
+
 /* Hyperlinks color */
 
 a {
