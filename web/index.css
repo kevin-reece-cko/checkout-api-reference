@@ -306,10 +306,6 @@ img.sc-kafWEX.hZCbNs {
 	content: var(--logo) !important;
 }
 
-.footer {
-	display: flex;
-}
-
 .footer-block {
 	background: var(--sidebar-background) !important;
 	width: 291px;
@@ -320,6 +316,11 @@ img.sc-kafWEX.hZCbNs {
 	justify-content: space-between;
 	padding: 24px;
 	width: calc(100% - 291px - 48px);
+
+	position: relative;
+	bottom: 64px;
+	left: 291px;
+	z-index: 99999;
 }
 
 .footer-link {
@@ -345,7 +346,7 @@ img.sc-kafWEX.hZCbNs {
 .onetrust-button {
 	background: none !important;
 	border: none !important;
-	padding: 0 !important;
+	padding: 0 0 4px 0 !important;
 	margin: 0 !important;
 	font-size: 11px !important;
 	color: var(--primary-text) !important;
