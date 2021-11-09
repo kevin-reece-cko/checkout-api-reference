@@ -241,6 +241,7 @@
 body {
 	margin: 0;
 	background-color: var(--background);
+	height: 100vh;
 }
 
 /* General text elements */
