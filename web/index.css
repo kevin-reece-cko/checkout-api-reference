@@ -307,6 +307,14 @@ img.sc-kafWEX.hZCbNs {
 	content: var(--logo) !important;
 }
 
+.showFooter {
+	display: flex !important;
+}
+
+.footerParent {
+	display: none;
+}
+
 .footer-block {
 	background: var(--sidebar-background) !important;
 	width: 291px;
@@ -330,7 +338,7 @@ img.sc-kafWEX.hZCbNs {
 	text-decoration: none;
 }
 
-.footer-link {
+.footer-link:hover {
 	text-decoration: underline;
 }
 
