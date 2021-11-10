@@ -1,62 +1,61 @@
-﻿/workflows/{workflowId}/conditions/{workflowConditionId}:
-  put:
-    servers:
-      - url: https://api.checkout.com
-        description: Live API
-      - url: https://api.sandbox.checkout.com
-        description: Sandbox API
-    security:
-      - OAuth:
-          - flow
-          - flow:workflows
-      - ApiSecretKey: []
-    tags:
-      - Workflows
-    summary: Update a workflow condition
-    description: |
-      Update a workflow condition.
-    parameters:
-      - in: path
-        name: workflowId
-        schema:
-          type: string
-          pattern: ^wf_[a-z0-9]{26}$
-        required: true
-        description: The workflow identifier
-        example: wf_c7svxlvo2bbuva4f6s3xu4f7wm
-      - in: path
-        name: workflowConditionId
-        schema:
-          type: string
-          pattern: ^wfc_[a-z0-9]{26}$
-        required: true
-        description: The workflow condition identifier
-        example: wfc_d5estuyxzshubhly2wu3hloehi
-    requestBody:
+﻿put:
+  servers:
+    - url: https://api.checkout.com
+      description: Live API
+    - url: https://api.sandbox.checkout.com
+      description: Sandbox API
+  security:
+    - OAuth:
+        - flow
+        - flow:workflows
+    - ApiSecretKey: [ ]
+  tags:
+    - Workflows
+  summary: Update a workflow condition
+  description: |
+    Update a workflow condition.
+  parameters:
+    - in: path
+      name: workflowId
+      schema:
+        type: string
+        pattern: ^wf_[a-z0-9]{26}$
       required: true
+      description: The workflow identifier
+      example: wf_c7svxlvo2bbuva4f6s3xu4f7wm
+    - in: path
+      name: workflowConditionId
+      schema:
+        type: string
+        pattern: ^wfc_[a-z0-9]{26}$
+      required: true
+      description: The workflow condition identifier
+      example: wfc_d5estuyxzshubhly2wu3hloehi
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: '#/components/schemas/add-update-workflow-condition-request'
+  responses:
+    '200':
+      description: Workflow condition updated successfully
+      headers:
+        Cko-Request-Id:
+          schema:
+            $ref: '#/components/headers/Cko-Request-Id'
+        Cko-Version:
+          schema:
+            $ref: '#/components/headers/Cko-Version'
+    '401':
+      description: Unauthorized
+    '404':
+      description: Workflow or workflow condition not found
+    '422':
+      description: Invalid data was sent
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/add-update-workflow-condition-request'
-    responses:
-      '200':
-        description: Workflow condition updated successfully
-        headers:
-          Cko-Request-Id:
-            schema:
-              $ref: '#/components/headers/Cko-Request-Id'
-          Cko-Version:
-            schema:
-              $ref: '#/components/headers/Cko-Version'
-      '401':
-        description: Unauthorized
-      '404':
-        description: Workflow or workflow condition not found
-      '422':
-        description: Invalid data was sent
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/ValidationError'
-      '500':
-        description: Internal Error
+            $ref: '#/components/schemas/ValidationError'
+    '500':
+      description: Internal Error

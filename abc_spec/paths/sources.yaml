@@ -1,39 +1,38 @@
-/sources:
-  post:
-    security:
-      - ApiSecretKey: []
-    tags:
-      - Sources
-    summary: Add a payment source
-    operationId: addAPaymentSource
-    description: |
-      Add a reusable payment source, like a <a href="https://docs.checkout.com/payment-methods/direct-debit/sepa-direct-debit" target="blank">SEPA Direct Debit</a>, that you can later use to make one or more payments.
-      Payment sources are linked to a specific customer and cannot be shared between customers.
+post:
+  security:
+    - ApiSecretKey: [ ]
+  tags:
+    - Sources
+  summary: Add a payment source
+  operationId: addAPaymentSource
+  description: |
+    Add a reusable payment source, like a <a href="https://docs.checkout.com/payment-methods/direct-debit/sepa-direct-debit" target="blank">SEPA Direct Debit</a>, that you can later use to make one or more payments.
+    Payment sources are linked to a specific customer and cannot be shared between customers.
 
-    requestBody:
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: '#/components/schemas/SourceRequest'
+  responses:
+    '201':
+      description: Payment source added successfully
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/SourceRequest'
-    responses:
-      '201':
-        description: Payment source added successfully
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/AddSourceResponse'
-        headers:
-          Cko-Request-Id:
-            $ref: '#/components/headers/Cko-Request-Id'
-          Cko-Version:
-            $ref: '#/components/headers/Cko-Version'
-      '401':
-        description: Unauthorized
-      '422':
-        description: Invalid data was sent
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/ValidationError'
-      '502':
-        description: Bad gateway
+            $ref: '#/components/schemas/AddSourceResponse'
+      headers:
+        Cko-Request-Id:
+          $ref: '#/components/headers/Cko-Request-Id'
+        Cko-Version:
+          $ref: '#/components/headers/Cko-Version'
+    '401':
+      description: Unauthorized
+    '422':
+      description: Invalid data was sent
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ValidationError'
+    '502':
+      description: Bad gateway

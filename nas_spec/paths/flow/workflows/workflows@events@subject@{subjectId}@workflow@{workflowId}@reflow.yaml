@@ -1,51 +1,50 @@
-/workflows/events/subject/{subjectId}/workflow/{workflowId}/reflow:
-  post:
-    security:
-      - OAuth:
-          - flow
-          - flow:reflow
-      - ApiSecretKey: []
-    tags:
-      - Workflows
-    summary: Reflow by subject and workflow
-    description: |
-      Reflows the events associated with a subject ID (for example, a payment ID or a dispute ID) and triggers the actions of the specified workflow if the conditions match.
-    parameters:
-      - in: path
-        name: subjectId
-        schema:
-          type: string
-          pattern: ^[a-z]{3}_[a-z0-9]{26}$
-        required: true
-        description: The subject identifier (for example, a payment ID or a dispute ID). The events associated with these subjects will be reflowed.
-        example: pay_x5zm2po6kimubhlfitgt2mfwgi
-      - in: path
-        name: workflowId
-        schema:
-          type: string
-          pattern: ^wf_[a-z0-9]{26}$
-        required: true
-        description: The identifier of the workflow whose actions you want to trigger.
-        example: wf_c8zm2po6kimubhlfitgt2mferf
-    responses:
-      '202':
-        description: Event reflow initiated successfully
-        headers:
-          Cko-Request-Id:
-            schema:
-              $ref: '#/components/headers/Cko-Request-Id'
-          Cko-Version:
-            schema:
-              $ref: '#/components/headers/Cko-Version'
-      '401':
-        description: Unauthorized
-      '404':
-        description: Events for reflow not found
-      '422':
-        description: Invalid data was sent
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/subject-id-validation-error'
-      '500':
-        description: Internal Error
+post:
+  security:
+    - OAuth:
+        - flow
+        - flow:reflow
+    - ApiSecretKey: [ ]
+  tags:
+    - Workflows
+  summary: Reflow by subject and workflow
+  description: |
+    Reflows the events associated with a subject ID (for example, a payment ID or a dispute ID) and triggers the actions of the specified workflow if the conditions match.
+  parameters:
+    - in: path
+      name: subjectId
+      schema:
+        type: string
+        pattern: ^[a-z]{3}_[a-z0-9]{26}$
+      required: true
+      description: The subject identifier (for example, a payment ID or a dispute ID). The events associated with these subjects will be reflowed.
+      example: pay_x5zm2po6kimubhlfitgt2mfwgi
+    - in: path
+      name: workflowId
+      schema:
+        type: string
+        pattern: ^wf_[a-z0-9]{26}$
+      required: true
+      description: The identifier of the workflow whose actions you want to trigger.
+      example: wf_c8zm2po6kimubhlfitgt2mferf
+  responses:
+    '202':
+      description: Event reflow initiated successfully
+      headers:
+        Cko-Request-Id:
+          schema:
+            $ref: '#/components/headers/Cko-Request-Id'
+        Cko-Version:
+          schema:
+            $ref: '#/components/headers/Cko-Version'
+    '401':
+      description: Unauthorized
+    '404':
+      description: Events for reflow not found
+    '422':
+      description: Invalid data was sent
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/subject-id-validation-error'
+    '500':
+      description: Internal Error

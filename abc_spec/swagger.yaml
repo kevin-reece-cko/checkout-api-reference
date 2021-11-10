@@ -22,6 +22,15 @@ info:
 
     We have a testing environment called sandbox, which you can <a href="https://www.checkout.com/get-test-account">sign up for</a> to test API calls without affecting live data.
 
+    ### Base URLs
+
+    Use the following base URLs when making requests to the APIs:
+
+      | Environment   |      Base URL                                        |
+      |---------------|------------------------------------------------------|
+      | Sandbox       |  https://api.sandbox.checkout.com/                   |
+      | Production    |  https://api.checkout.com/                           |
+
     ### Looking for more guidance?
 
     Depending on what integration you need, we've provided <a href="https://docs.checkout.com/integrate/">guides to get you set up</a>.
@@ -37,6 +46,14 @@ info:
     the request Authorization header.
 
     Never share your secret keys. Keep them guarded and secure.
+
+    # Changelog
+
+     | Date          |      Description of change                                        |
+     |---------------|-------------------------------------------------------------------|
+     | 2021/10/18    |  Added `processing.purpose` to card payouts.                      |
+     | 2021/10/18    |  Added `recommendation_code` to payment response.                 |
+
 servers:
   - url: https://api.checkout.com
     description: Live API

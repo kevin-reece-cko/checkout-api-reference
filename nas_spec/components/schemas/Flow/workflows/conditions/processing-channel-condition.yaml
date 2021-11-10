@@ -1,0 +1,12 @@
+type: object
+description: Condition that filters based on the NAS processing channel. It's not applicable for MBC accounts
+required:
+  - processing_channels
+allOf:
+  - $ref: '#/components/schemas/workflow-condition'
+  - type: object
+    required:
+      - processing_channels
+    properties:
+      processing_channels:
+        $ref: '#/components/schemas/source-processing-channel-hashmap'

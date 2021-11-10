@@ -1,38 +1,37 @@
-/:
-  post:
-    tags:
-      - Marketplace
-    security:
-      - OAuth:
-          - files
-    servers:
-      - url: https://files.checkout.com
-        description: Production server
-      - url: https://files.sandbox.checkout.com
-        description: Sandbox server
-    summary: Upload a file
-    description: >-
-      Our <a href="https://docs.checkout.com/four/d-marketplaces" target="_blank">Marketplace</a> solution provides an easy way to upload identity documentation required for full due diligence. Please <strong>note</strong> that the sub-domain – https://files.checkout.com – is slightly different to Checkout.com's other endpoints. <br><br>Read the <a href="https://docs.checkout.com/four/marketplaces/upload-a-file" target="_blank">documentation</a> for more information.
-    requestBody:
+post:
+  tags:
+    - Marketplace
+  security:
+    - OAuth:
+        - files
+  servers:
+    - url: https://files.checkout.com
+      description: Production server
+    - url: https://files.sandbox.checkout.com
+      description: Sandbox server
+  summary: Upload a file
+  description: >-
+    Our <a href="https://docs.checkout.com/four/d-marketplaces" target="_blank">Marketplace</a> solution provides an easy way to upload identity documentation required for full due diligence. Please <strong>note</strong> that the sub-domain – https://files.checkout.com – is slightly different to Checkout.com's other endpoints. <br><br>Read the <a href="https://docs.checkout.com/four/marketplaces/upload-a-file" target="_blank">documentation</a> for more information.
+  requestBody:
+    content:
+      multipart/form-data:
+        schema:
+          $ref: '#/components/schemas/MarketplaceFile'
+  responses:
+    '200':
+      description: File uploaded successfully
       content:
-        multipart/form-data:
+        application/json:
           schema:
-            $ref: '#/components/schemas/MarketplaceFile'
-    responses:
-      '200':
-        description: File uploaded successfully
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/MarketplaceFileUploadResponse'
-        headers:
-          Cko-Request-Id:
-            $ref: '#/components/headers/Cko-Request-Id'
-          Cko-Version:
-            $ref: '#/components/headers/Cko-Version'
-      '401':
-        description: Unauthorized
-      '422':
-        description: Unprocessable
-      '429':
-        description: Too many requests
+            $ref: '#/components/schemas/MarketplaceFileUploadResponse'
+      headers:
+        Cko-Request-Id:
+          $ref: '#/components/headers/Cko-Request-Id'
+        Cko-Version:
+          $ref: '#/components/headers/Cko-Version'
+    '401':
+      description: Unauthorized
+    '422':
+      description: Unprocessable
+    '429':
+      description: Too many requests

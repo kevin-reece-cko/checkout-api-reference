@@ -1,52 +1,51 @@
-/payments/{id}/captures:
-  post:
-    security:
-      - ApiSecretKey: []
-    tags:
-      - Payments
-    summary: Capture a payment
-    operationId: captureAPayment
-    description: |
-      Captures a payment if supported by the payment method.
+post:
+  security:
+    - ApiSecretKey: [ ]
+  tags:
+    - Payments
+  summary: Capture a payment
+  operationId: captureAPayment
+  description: |
+    Captures a payment if supported by the payment method.
 
-      For card payments, capture requests are processed asynchronously. You can use [webhooks](#tag/Webhooks) to be notified if the capture is successful.
-    parameters:
-      - $ref: '#/components/parameters/ckoIdempotencyKey'
-      - in: path
-        name: id
+    For card payments, capture requests are processed asynchronously. You can use [webhooks](#tag/Webhooks) to be notified if the capture is successful.
+  parameters:
+    - $ref: '#/components/parameters/ckoIdempotencyKey'
+    - in: path
+      name: id
+      schema:
+        type: string
+        pattern: "^(pay)_(\\w{26})$"
+      required: true
+      description: The payment identifier
+  requestBody:
+    content:
+      application/json:
         schema:
-          type: string
-          pattern: "^(pay)_(\\w{26})$"
-        required: true
-        description: The payment identifier
-    requestBody:
+          $ref: '#/components/schemas/CaptureRequest'
+  responses:
+    '202':
+      description: Capture accepted
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/CaptureRequest'
-    responses:
-      '202':
-        description: Capture accepted
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/CaptureAcceptedResponse'
-        headers:
-          Cko-Request-Id:
-            $ref: '#/components/headers/Cko-Request-Id'
-          Cko-Version:
-            $ref: '#/components/headers/Cko-Version'
-      '401':
-        description: Unauthorized
-      '403':
-        description: Capture not allowed
-      '422':
-        description: Invalid data was sent
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/ValidationError'
-      '404':
-        description: Payment not found
-      '502':
-        description: Bad gateway
+            $ref: '#/components/schemas/CaptureAcceptedResponse'
+      headers:
+        Cko-Request-Id:
+          $ref: '#/components/headers/Cko-Request-Id'
+        Cko-Version:
+          $ref: '#/components/headers/Cko-Version'
+    '401':
+      description: Unauthorized
+    '403':
+      description: Capture not allowed
+    '422':
+      description: Invalid data was sent
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ValidationError'
+    '404':
+      description: Payment not found
+    '502':
+      description: Bad gateway

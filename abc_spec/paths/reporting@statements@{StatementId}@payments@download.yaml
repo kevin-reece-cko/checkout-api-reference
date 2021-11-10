@@ -1,24 +1,23 @@
-/reporting/statements/{StatementId}/payments/download:
-  servers:
-    - url: https://api.checkout.com
-      description: Live API
+servers:
+  - url: https://api.checkout.com
+    description: Live API
 
-  get:
-    security:
-      - ApiSecretKey: []
-    tags:
-      - Reconciliation
-    summary: Get CSV single statement report
-    operationId: GetCsvSingleStatementReport
-    description: Downloads a CSV statement report containing all of the data related to a specific statement, based on the statement's identifier.
-    responses:
-      '200':
-        description: CSV downloaded successfully
-    parameters:
-      - in: path
-        name: StatementId
-        example: '190110B107654'
-        schema:
-          type: string
-        required: true
-        description: The unique statement identifier
+get:
+  security:
+    - ApiSecretKey: [ ]
+  tags:
+    - Reconciliation
+  summary: Get CSV single statement report
+  operationId: GetCsvSingleStatementReport
+  description: Downloads a CSV statement report containing all of the data related to a specific statement, based on the statement's identifier.
+  responses:
+    '200':
+      description: CSV downloaded successfully
+  parameters:
+    - in: path
+      name: StatementId
+      example: '190110B107654'
+      schema:
+        type: string
+      required: true
+      description: The unique statement identifier

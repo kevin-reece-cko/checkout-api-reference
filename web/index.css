@@ -75,6 +75,7 @@
 	--background: var(--cko-dark-blue);
 	--sidebar-background: var(--cko-dark-blue);
 	--secondary-background: var(--S300);
+	--table-background: var(--cko-dark-blue);
 	--toggle-bg: var(--S500);
 	--primary-text: var(--cko-white);
 	--secondary-text: var(--S10);
@@ -114,6 +115,7 @@
 	--background: var(--cko-white);
 	--sidebar-background: var(--cko-grey-tint-blue);
 	--secondary-background: white;
+	--table-background: var(--cko-white);
 	--toggle-bg: var(--S1000);
 	--primary-text: var(--primary-dark-blue);
 	--secondary-text: var(--secondary-dark-blue);
@@ -241,6 +243,7 @@
 body {
 	margin: 0;
 	background-color: var(--background);
+	height: 100vh;
 }
 
 /* General text elements */
@@ -258,6 +261,11 @@ h5,
 span.sc-fzpkJw.hctKJM,
 span.sc-fzqzlV.sc-fzoxnE.dpLlWm {
 	color: var(--secondary-text) !important;
+}
+
+td,
+th {
+	background: var(--table-background);
 }
 
 button {
@@ -299,6 +307,61 @@ img.sc-kafWEX.hZCbNs {
 
 .kyCarw {
 	content: var(--logo) !important;
+}
+
+.showFooter {
+	display: flex !important;
+}
+
+.footerParent {
+	display: none;
+}
+
+.footer-block {
+	background: var(--sidebar-background) !important;
+	width: 291px;
+}
+
+.footer-wrapper {
+	display: flex;
+	justify-content: space-between;
+	padding: 24px;
+	width: calc(100% - 291px - 48px);
+
+	position: relative;
+	bottom: 64px;
+	left: 291px;
+	z-index: 99999;
+}
+
+.footer-link {
+	font-size: 11px;
+	font-weight: normal;
+	text-decoration: none;
+}
+
+.footer-link:hover {
+	text-decoration: underline;
+}
+
+.footer-link-list {
+	display: flex;
+	gap: 40px;
+}
+
+.footer-item-cko {
+	font-weight: 500;
+	font-size: 14px;
+	color: var(--primary-text) !important;
+}
+
+.onetrust-button {
+	background: none !important;
+	border: none !important;
+	padding: 0 0 4px 0 !important;
+	margin: 0 !important;
+	font-size: 11px !important;
+	color: var(--primary-text) !important;
 }
 
 /* Hyperlinks color */
@@ -1012,7 +1075,6 @@ ul > li.tab-error {
 /* Code samples */
 
 pre {
-	background: var(--code-label-background) !important;
 	border-radius: 8px;
 	border: 1px solid var(--border) !important;
 }

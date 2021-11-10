@@ -1,141 +1,140 @@
-﻿/workflows/{workflowId}:
-  get:
-    servers:
-      - url: https://api.checkout.com
-        description: Live API
-      - url: https://api.sandbox.checkout.com
-        description: Sandbox API
-    security:
-      - OAuth:
-          - flow
-          - flow:workflows
-      - ApiSecretKey: []
-    tags:
-      - Workflows
-    summary: Get a workflow
-    description: |
-      Get the details of a workflow
-    parameters:
-      - in: path
-        name: workflowId
-        schema:
-          type: string
-          pattern: ^wf_[a-z0-9]{26}$
-        required: true
-        description: The workflow identifier
-        example: wf_c7svxlvo2bbuva4f6s3xu4f7wm
-    responses:
-      '200':
-        description: Workflow retrieved successfully
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/get-workflow-response'
-        headers:
-          Cko-Request-Id:
-            schema:
-              $ref: '#/components/headers/Cko-Request-Id'
-          Cko-Version:
-            schema:
-              $ref: '#/components/headers/Cko-Version'
-      '401':
-        description: Unauthorized
-      '404':
-        description: Workflow not found
-      '500':
-        description: Internal Error
-
-  delete:
-    servers:
-      - url: https://api.checkout.com
-        description: Live API
-      - url: https://api.sandbox.checkout.com
-        description: Sandbox API
-    security:
-      - OAuth:
-          - flow
-          - flow:workflows
-      - ApiSecretKey: []
-    tags:
-      - Workflows
-    summary: Remove a workflow
-    description: |
-      Removes a workflow so it is no longer being executed.
-      Actions of already executed workflows will be still processed.
-    parameters:
-      - in: path
-        name: workflowId
-        schema:
-          type: string
-          pattern: ^wf_[a-z0-9]{26}$
-        required: true
-        description: The workflow identifier
-        example: wf_c7svxlvo2bbuva4f6s3xu4f7wm
-    responses:
-      '204':
-        description: Workflow removed successfully
-        headers:
-          Cko-Request-Id:
-            schema:
-              $ref: '#/components/headers/Cko-Request-Id'
-          Cko-Version:
-            schema:
-              $ref: '#/components/headers/Cko-Version'
-      '401':
-        description: Unauthorized
-      '404':
-        description: Workflow not found
-      '500':
-        description: Internal Error
-
-  patch:
-    servers:
-      - url: https://api.checkout.com
-        description: Live API
-      - url: https://api.sandbox.checkout.com
-        description: Sandbox API
-    security:
-      - OAuth:
-          - flow
-          - flow:workflows
-      - ApiSecretKey: []
-    tags:
-      - Workflows
-    summary: Patch a workflow
-    description: |
-      Update the name of a workflow.
-    parameters:
-      - in: path
-        name: workflowId
-        schema:
-          type: string
-          pattern: ^wf_[a-z0-9]{26}$
-        required: true
-        description: The workflow identifier
-        example: wf_c7svxlvo2bbuva4f6s3xu4f7wm
-    requestBody:
+﻿get:
+  servers:
+    - url: https://api.checkout.com
+      description: Live API
+    - url: https://api.sandbox.checkout.com
+      description: Sandbox API
+  security:
+    - OAuth:
+        - flow
+        - flow:workflows
+    - ApiSecretKey: [ ]
+  tags:
+    - Workflows
+  summary: Get a workflow
+  description: |
+    Get the details of a workflow
+  parameters:
+    - in: path
+      name: workflowId
+      schema:
+        type: string
+        pattern: ^wf_[a-z0-9]{26}$
       required: true
+      description: The workflow identifier
+      example: wf_c7svxlvo2bbuva4f6s3xu4f7wm
+  responses:
+    '200':
+      description: Workflow retrieved successfully
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/patch-workflow-request'
-    responses:
-      '200':
-        description: Workflow updated successfully
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/patch-workflow-response'
-        headers:
-          Cko-Request-Id:
-            schema:
-              $ref: '#/components/headers/Cko-Request-Id'
-          Cko-Version:
-            schema:
-              $ref: '#/components/headers/Cko-Version'
-      '401':
-        description: Unauthorized
-      '404':
-        description: Workflow not found
-      '500':
-        description: Internal Error
+            $ref: '#/components/schemas/get-workflow-response'
+      headers:
+        Cko-Request-Id:
+          schema:
+            $ref: '#/components/headers/Cko-Request-Id'
+        Cko-Version:
+          schema:
+            $ref: '#/components/headers/Cko-Version'
+    '401':
+      description: Unauthorized
+    '404':
+      description: Workflow not found
+    '500':
+      description: Internal Error
+
+delete:
+  servers:
+    - url: https://api.checkout.com
+      description: Live API
+    - url: https://api.sandbox.checkout.com
+      description: Sandbox API
+  security:
+    - OAuth:
+        - flow
+        - flow:workflows
+    - ApiSecretKey: [ ]
+  tags:
+    - Workflows
+  summary: Remove a workflow
+  description: |
+    Removes a workflow so it is no longer being executed.
+    Actions of already executed workflows will be still processed.
+  parameters:
+    - in: path
+      name: workflowId
+      schema:
+        type: string
+        pattern: ^wf_[a-z0-9]{26}$
+      required: true
+      description: The workflow identifier
+      example: wf_c7svxlvo2bbuva4f6s3xu4f7wm
+  responses:
+    '204':
+      description: Workflow removed successfully
+      headers:
+        Cko-Request-Id:
+          schema:
+            $ref: '#/components/headers/Cko-Request-Id'
+        Cko-Version:
+          schema:
+            $ref: '#/components/headers/Cko-Version'
+    '401':
+      description: Unauthorized
+    '404':
+      description: Workflow not found
+    '500':
+      description: Internal Error
+
+patch:
+  servers:
+    - url: https://api.checkout.com
+      description: Live API
+    - url: https://api.sandbox.checkout.com
+      description: Sandbox API
+  security:
+    - OAuth:
+        - flow
+        - flow:workflows
+    - ApiSecretKey: [ ]
+  tags:
+    - Workflows
+  summary: Patch a workflow
+  description: |
+    Update the name of a workflow.
+  parameters:
+    - in: path
+      name: workflowId
+      schema:
+        type: string
+        pattern: ^wf_[a-z0-9]{26}$
+      required: true
+      description: The workflow identifier
+      example: wf_c7svxlvo2bbuva4f6s3xu4f7wm
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: '#/components/schemas/patch-workflow-request'
+  responses:
+    '200':
+      description: Workflow updated successfully
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/patch-workflow-response'
+      headers:
+        Cko-Request-Id:
+          schema:
+            $ref: '#/components/headers/Cko-Request-Id'
+        Cko-Version:
+          schema:
+            $ref: '#/components/headers/Cko-Version'
+    '401':
+      description: Unauthorized
+    '404':
+      description: Workflow not found
+    '500':
+      description: Internal Error

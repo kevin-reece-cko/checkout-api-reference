@@ -1,29 +1,28 @@
-/events/{eventId}/webhooks/retry:
-  post:
-    security:
-      - ApiSecretKey: []
-    tags:
-      - Events
-    summary: Retry all webhooks
-    operationId: retryAllWebhooks
-    description: Retries all webhook notifications configured for the specified event
-    parameters:
-      - in: path
-        name: eventId
-        schema:
-          type: string
-          pattern: "^(evt)_(\\w{26})$"
-        required: true
-        description: The event identifier
-    responses:
-      '202':
-        description: Retry accepted
-        headers:
-          Cko-Request-Id:
-            $ref: '#/components/headers/Cko-Request-Id'
-          Cko-Version:
-            $ref: '#/components/headers/Cko-Version'
-      '401':
-        description: Unauthorized
-      '404':
-        description: Event or webhook not found
+post:
+  security:
+    - ApiSecretKey: [ ]
+  tags:
+    - Events
+  summary: Retry all webhooks
+  operationId: retryAllWebhooks
+  description: Retries all webhook notifications configured for the specified event
+  parameters:
+    - in: path
+      name: eventId
+      schema:
+        type: string
+        pattern: "^(evt)_(\\w{26})$"
+      required: true
+      description: The event identifier
+  responses:
+    '202':
+      description: Retry accepted
+      headers:
+        Cko-Request-Id:
+          $ref: '#/components/headers/Cko-Request-Id'
+        Cko-Version:
+          $ref: '#/components/headers/Cko-Version'
+    '401':
+      description: Unauthorized
+    '404':
+      description: Event or webhook not found

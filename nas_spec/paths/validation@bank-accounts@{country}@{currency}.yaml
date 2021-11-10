@@ -1,74 +1,73 @@
-/validation/bank-accounts/{country}/{currency}:
-  get:
-    tags:
-      - Instruments
-    security:
-      - OAuth:
-          - payouts:bank-details
-    summary: Get bank account field formatting
-    description: |
-      Returns the bank account field formatting required to create bank account instruments or perform payouts for the specified country and currency.
-    parameters:
-      - in: path
-        name: country
-        schema:
-          type: string
-          minLength: 2
-          maxLength: 2
-        required: true
-        description: |
-          The two-letter <a href="https://docs.checkout.com/four/resources/codes/country-codes" target="_blank">ISO country code</a>
-      - in: path
-        name: currency
-        schema:
-          type: string
-          minLength: 3
-          maxLength: 3
-        required: true
-        description: |
-          The three-letter <a href="https://docs.checkout.com/four/resources/codes/currency-codes" target="_blank">ISO currency code</a>
-      - in: query
-        name: account-holder-type
-        schema:
-          type: string
-          enum:
-            - individual
-            - corporate
-            - government
-        description: |
-          The type of account holder that will be used to filter the fields returned
-      - in: query
-        name: payment-network
-        schema:
-          type: string
-          enum:
-            - local
-            - sepa
-            - fps
-            - ach
-            - fedwire
-            - swift
-        description: |
-          The banking network that will be used to filter the fields returned
-    responses:
-      '200':
-        description: Bank account fields retrieved successfully
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/BankAccountFields'
-        headers:
-          Cko-Request-Id:
-            $ref: '#/components/headers/Cko-Request-Id'
-          Cko-Version:
-            $ref: '#/components/headers/Cko-Version'
-      '401':
-        description: Unauthorized
-      '404':
-        description: Fields not found
-      '422':
-        description: Invalid data was sent
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/ValidationError'
+get:
+  tags:
+    - Instruments
+  security:
+    - OAuth:
+        - payouts:bank-details
+  summary: Get bank account field formatting
+  description: |
+    Returns the bank account field formatting required to create bank account instruments or perform payouts for the specified country and currency.
+  parameters:
+    - in: path
+      name: country
+      schema:
+        type: string
+        minLength: 2
+        maxLength: 2
+      required: true
+      description: |
+        The two-letter <a href="https://docs.checkout.com/four/resources/codes/country-codes" target="_blank">ISO country code</a>
+    - in: path
+      name: currency
+      schema:
+        type: string
+        minLength: 3
+        maxLength: 3
+      required: true
+      description: |
+        The three-letter <a href="https://docs.checkout.com/four/resources/codes/currency-codes" target="_blank">ISO currency code</a>
+    - in: query
+      name: account-holder-type
+      schema:
+        type: string
+        enum:
+          - individual
+          - corporate
+          - government
+      description: |
+        The type of account holder that will be used to filter the fields returned
+    - in: query
+      name: payment-network
+      schema:
+        type: string
+        enum:
+          - local
+          - sepa
+          - fps
+          - ach
+          - fedwire
+          - swift
+      description: |
+        The banking network that will be used to filter the fields returned
+  responses:
+    '200':
+      description: Bank account fields retrieved successfully
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/BankAccountFields'
+      headers:
+        Cko-Request-Id:
+          $ref: '#/components/headers/Cko-Request-Id'
+        Cko-Version:
+          $ref: '#/components/headers/Cko-Version'
+    '401':
+      description: Unauthorized
+    '404':
+      description: Fields not found
+    '422':
+      description: Invalid data was sent
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ValidationError'

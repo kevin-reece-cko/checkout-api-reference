@@ -122,7 +122,7 @@ properties:
     properties:
       senderInformation:
         type: object
-        description: Allows you to send additional data required for Visa Direct Original Credit Transaction (OCT) and Mastercard Moneysend payments. Only required when sending transactions on behalf of another person or business. <a href="https://docs.checkout.com/payment-actions/pay-out-to-a-card/sender-data-for-payouts" target="_blank">See our documentation for specific requirements</a>.
+        description: Allows you to send additional data required for Visa Direct Original Credit Transaction (OCT) and Mastercard Moneysend payments. Only required when sending transactions on behalf of another person or business. <a href="https://docs.checkout.com/card-payouts/sender-data-for-card-payouts" target="_blank">See our documentation for specific requirements</a>.
         properties:
           reference:
             type: string
@@ -170,6 +170,29 @@ properties:
               - DepositAccount
               - MobileMoneyAccount
               - Cash
+      purpose:
+        type: string
+        description: Contains the purpose of the transaction. Required when the destination country is Argentina, Bangladesh, Egypt or India. Mandatory from 15th October 2021.
+        enum:
+          - donations
+          - education
+          - emergency_need
+          - expatriation
+          - family_support
+          - financial_services
+          - gifts
+          - income
+          - insurance
+          - investment
+          - it_services
+          - leisure
+          - loan_payment
+          - medical_treatment
+          - other
+          - pension
+          - royalties
+          - savings
+          - travel_and_tourism
   metadata:
     type: object
     description: Allows you to store additional information about a transaction with custom fields and up to five user-defined fields (`udf1` to `udf5`), which can be used for reporting purposes. `udf1` is also used for some of our risk rules.

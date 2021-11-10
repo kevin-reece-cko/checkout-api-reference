@@ -40,4 +40,5 @@ properties:
       - low_value
       - secure_corporate_payment
       - trusted_listing
+      - transaction_risk_assessment
     example: 'low_value'

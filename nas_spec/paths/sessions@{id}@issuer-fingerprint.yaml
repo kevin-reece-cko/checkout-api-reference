@@ -1,50 +1,49 @@
-/sessions/{id}/issuer-fingerprint:
-  put:
-    security:
-      - OAuth:
-          - sessions:browser
-      - SessionSecret: []
-    summary: Update session 3DS Method completion indicator
-    description: Update the session's 3DS Method completion indicator based on the result of accessing the 3DS Method URL.
-    tags:
-      - Sessions
-    parameters:
-      - name: id
-        in: path
-        description: Session ID
-        required: true
-        schema:
-          type: string
-    requestBody:
+put:
+  security:
+    - OAuth:
+        - sessions:browser
+    - SessionSecret: [ ]
+  summary: Update session 3DS Method completion indicator
+  description: Update the session's 3DS Method completion indicator based on the result of accessing the 3DS Method URL.
+  tags:
+    - Sessions
+  parameters:
+    - name: id
+      in: path
+      description: Session ID
       required: true
+      schema:
+        type: string
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: '#/components/schemas/ThreeDsMethodCompletion'
+  responses:
+    '200':
+      description: Session updated successfully
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/ThreeDsMethodCompletion'
-    responses:
-      '200':
-        description: Session updated successfully
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/GetSessionResponseAfterChannelDataSupplied'
-      '401':
-        description: Unauthorized
-      '403':
-        description: Forbidden
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/ErrorResponse'
-      '404':
-        description: Session not found
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/ErrorResponse'
-      '422':
-        description: Unprocessable channel information
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/ErrorResponse'
+            $ref: '#/components/schemas/GetSessionResponseAfterChannelDataSupplied'
+    '401':
+      description: Unauthorized
+    '403':
+      description: Forbidden
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+    '404':
+      description: Session not found
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+    '422':
+      description: Unprocessable channel information
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'

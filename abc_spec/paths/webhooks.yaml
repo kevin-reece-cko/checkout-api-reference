@@ -1,66 +1,65 @@
-/webhooks:
-  get:
-    security:
-      - ApiSecretKey: []
-    tags:
-      - Webhooks
-    summary: Retrieve webhooks
-    operationId: retrieveWebhooks
-    description: |
-      Retrieves the webhooks configured for the channel identified by your API key
-    parameters: []
-    responses:
-      '200':
-        description: Configured webhooks
-        content:
-          application/json:
-            schema:
-              type: array
-              items:
-                $ref: '#/components/schemas/Webhook'
-        headers:
-          Cko-Request-Id:
-            $ref: '#/components/headers/Cko-Request-Id'
-          Cko-Version:
-            $ref: '#/components/headers/Cko-Version'
-      '204':
-        description: No webhooks configured
-      '401':
-        description: Unauthorized
-
-  post:
-    security:
-      - ApiSecretKey: []
-    tags:
-      - Webhooks
-    summary: Register webhook
-    operationId: registerWebhook
-    description: |
-      Register a new webhook endpoint that Checkout.com will post all or selected events to
-    requestBody:
+get:
+  security:
+    - ApiSecretKey: [ ]
+  tags:
+    - Webhooks
+  summary: Retrieve webhooks
+  operationId: retrieveWebhooks
+  description: |
+    Retrieves the webhooks configured for the channel identified by your API key
+  parameters: [ ]
+  responses:
+    '200':
+      description: Configured webhooks
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/WebhookRequest'
-    responses:
-      '201':
-        description: Webhook registered successfully
-        content:
-          application/json:
-            schema:
+            type: array
+            items:
               $ref: '#/components/schemas/Webhook'
-        headers:
-          Cko-Request-Id:
-            $ref: '#/components/headers/Cko-Request-Id'
-          Cko-Version:
-            $ref: '#/components/headers/Cko-Version'
-      '401':
-        description: Unauthorized
-      '422':
-        description: Invalid data was sent
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/ValidationError'
-      '409':
-        description: URL already registered for another webhook
+      headers:
+        Cko-Request-Id:
+          $ref: '#/components/headers/Cko-Request-Id'
+        Cko-Version:
+          $ref: '#/components/headers/Cko-Version'
+    '204':
+      description: No webhooks configured
+    '401':
+      description: Unauthorized
+
+post:
+  security:
+    - ApiSecretKey: [ ]
+  tags:
+    - Webhooks
+  summary: Register webhook
+  operationId: registerWebhook
+  description: |
+    Register a new webhook endpoint that Checkout.com will post all or selected events to
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: '#/components/schemas/WebhookRequest'
+  responses:
+    '201':
+      description: Webhook registered successfully
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Webhook'
+      headers:
+        Cko-Request-Id:
+          $ref: '#/components/headers/Cko-Request-Id'
+        Cko-Version:
+          $ref: '#/components/headers/Cko-Version'
+    '401':
+      description: Unauthorized
+    '422':
+      description: Invalid data was sent
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ValidationError'
+    '409':
+      description: URL already registered for another webhook

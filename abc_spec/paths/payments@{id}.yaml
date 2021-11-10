@@ -1,40 +1,39 @@
-/payments/{id}:
-  get:
-    security:
-      - ApiSecretKey: []
-    tags:
-      - Payments
-    summary: Get payment details
-    operationId: getPaymentDetails
-    description: |
-      Returns the details of the payment with the specified identifier string.
+get:
+  security:
+    - ApiSecretKey: [ ]
+  tags:
+    - Payments
+  summary: Get payment details
+  operationId: getPaymentDetails
+  description: |
+    Returns the details of the payment with the specified identifier string.
 
-      If the payment method requires a redirection to a third party (e.g., 3D Secure),
-      the redirect URL back to your site will include a `cko-session-id` query parameter
-      containing a payment session ID that can be used to obtain the details of the payment, for example:
+    If the payment method requires a redirection to a third party (e.g., 3D Secure),
+    the redirect URL back to your site will include a `cko-session-id` query parameter
+    containing a payment session ID that can be used to obtain the details of the payment, for example:
 
-      http://example.com/success?cko-session-id=sid_ubfj2q76miwundwlk72vxt2i7q.
-    parameters:
-      - in: path
-        name: id
-        schema:
-          type: string
-          pattern: "^(pay|sid)_(\\w{26})$"
-        required: true
-        description: The payment or payment session identifier
-    responses:
-      '200':
-        description: Payment retrieved successfully
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/Payment'
-        headers:
-          Cko-Request-Id:
-            $ref: '#/components/headers/Cko-Request-Id'
-          Cko-Version:
-            $ref: '#/components/headers/Cko-Version'
-      '401':
-        description: Unauthorized
-      '404':
-        description: Payment not found
+    http://example.com/success?cko-session-id=sid_ubfj2q76miwundwlk72vxt2i7q.
+  parameters:
+    - in: path
+      name: id
+      schema:
+        type: string
+        pattern: "^(pay|sid)_(\\w{26})$"
+      required: true
+      description: The payment or payment session identifier
+  responses:
+    '200':
+      description: Payment retrieved successfully
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Payment'
+      headers:
+        Cko-Request-Id:
+          $ref: '#/components/headers/Cko-Request-Id'
+        Cko-Version:
+          $ref: '#/components/headers/Cko-Version'
+    '401':
+      description: Unauthorized
+    '404':
+      description: Payment not found

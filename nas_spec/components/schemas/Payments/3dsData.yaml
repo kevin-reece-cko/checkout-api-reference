@@ -43,5 +43,6 @@ properties:
       - low_value
       - secure_corporate_payment
       - trusted_listing
+      - transaction_risk_assessment
     description: Specifies an exemption reason so that the payment is not processed using 3D Secure authentication. Learn more about exemptions in our <a href="https://docs.checkout.com/four/payments/regulation-support/sca-compliance-guide#SCAcomplianceguide-PossibleSCAexemptionsexemptions" target="_blank">SCA compliance guide</a>
     example: 'low_value'

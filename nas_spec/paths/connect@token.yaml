@@ -1,72 +1,71 @@
-/connect/token:
-  servers:
-    - url: https://access.checkout.com
-      description: Live API
-    - url: https://access.sandbox.checkout.com
-      description: Sandbox API
-  post:
-    summary: Request an access token
-    tags:
-      - Access
-    responses:
-      '200':
-        description: OK - A successful access token response as per [RFC6749](https://tools.ietf.org/html/rfc6749#section-4.4.3)
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                access_token:
-                  type: string
-                  example: 2YotnFZFEjr1zCsicMWpAA
-                token_type:
-                  type: string
-                  example: example
-                expires_in:
-                  type: number
-                  example: 3600
-
-      '400':
-        description: Bad request - An unsuccessful access token response as per [RFC6749](https://tools.ietf.org/html/rfc6749#section-4.4.3)
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                error:
-                  type: string
-                  enum:
-                    - invalid_request
-                    - invalid_client
-                    - invalid_grant
-                    - unauthorized_client
-                    - unsupported_grant_type
-                    - invalid_scope
-    description: OAuth endpoint to exchange your access key ID and access key secret for an access token.
-    requestBody:
+servers:
+  - url: https://access.checkout.com
+    description: Live API
+  - url: https://access.sandbox.checkout.com
+    description: Sandbox API
+post:
+  summary: Request an access token
+  tags:
+    - Access
+  responses:
+    '200':
+      description: OK - A successful access token response as per [RFC6749](https://tools.ietf.org/html/rfc6749#section-4.4.3)
       content:
-        application/x-www-form-urlencoded:
+        application/json:
           schema:
             type: object
             properties:
-              grant_type:
+              access_token:
+                type: string
+                example: 2YotnFZFEjr1zCsicMWpAA
+              token_type:
+                type: string
+                example: example
+              expires_in:
+                type: number
+                example: 3600
+
+    '400':
+      description: Bad request - An unsuccessful access token response as per [RFC6749](https://tools.ietf.org/html/rfc6749#section-4.4.3)
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              error:
                 type: string
                 enum:
-                  - client_credentials
-                example: client_credentials
-              client_id:
-                type: string
-                description: 'Access key ID'
-              client_secret:
-                type: string
-                description: 'Access key secret'
-              scope:
-                type: string
-                description: The access key scope
-                example: gateway
-          examples:
-            example-1:
-              value:
-                grant_type: client_credentials
-                client_id: ack_clckqmmnyfiupexjew7shh5ahe
-                client_secret: Pmg36sDWQ9WxtPR3
+                  - invalid_request
+                  - invalid_client
+                  - invalid_grant
+                  - unauthorized_client
+                  - unsupported_grant_type
+                  - invalid_scope
+  description: OAuth endpoint to exchange your access key ID and access key secret for an access token.
+  requestBody:
+    content:
+      application/x-www-form-urlencoded:
+        schema:
+          type: object
+          properties:
+            grant_type:
+              type: string
+              enum:
+                - client_credentials
+              example: client_credentials
+            client_id:
+              type: string
+              description: 'Access key ID'
+            client_secret:
+              type: string
+              description: 'Access key secret'
+            scope:
+              type: string
+              description: The access key scope
+              example: gateway
+        examples:
+          example-1:
+            value:
+              grant_type: client_credentials
+              client_id: ack_clckqmmnyfiupexjew7shh5ahe
+              client_secret: Pmg36sDWQ9WxtPR3

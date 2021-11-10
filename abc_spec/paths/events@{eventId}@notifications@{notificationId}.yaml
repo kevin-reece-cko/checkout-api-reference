@@ -1,40 +1,39 @@
-/events/{eventId}/notifications/{notificationId}:
-  get:
-    security:
-      - ApiSecretKey: []
-    tags:
-      - Events
-    summary: Retrieve event notification
-    operationId: retrieveEventNotification
-    description: Retrieves the attempts for a specific event notification
-    parameters:
-      - in: path
-        name: eventId
-        schema:
-          type: string
-          pattern: "^(evt)_(\\w{26})$"
-        required: true
-        description: The event identifier
-      - in: path
-        name: notificationId
-        schema:
-          type: string
-          pattern: "^(ntf)_(\\w{26})$"
-        required: true
-        description: The notification identifier
-    responses:
-      '200':
-        description: Notification retrieved successfully
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/Notification'
-        headers:
-          Cko-Request-Id:
-            $ref: '#/components/headers/Cko-Request-Id'
-          Cko-Version:
-            $ref: '#/components/headers/Cko-Version'
-      '401':
-        description: Unauthorized
-      '404':
-        description: Event or notification not found
+get:
+  security:
+    - ApiSecretKey: [ ]
+  tags:
+    - Events
+  summary: Retrieve event notification
+  operationId: retrieveEventNotification
+  description: Retrieves the attempts for a specific event notification
+  parameters:
+    - in: path
+      name: eventId
+      schema:
+        type: string
+        pattern: "^(evt)_(\\w{26})$"
+      required: true
+      description: The event identifier
+    - in: path
+      name: notificationId
+      schema:
+        type: string
+        pattern: "^(ntf)_(\\w{26})$"
+      required: true
+      description: The notification identifier
+  responses:
+    '200':
+      description: Notification retrieved successfully
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Notification'
+      headers:
+        Cko-Request-Id:
+          $ref: '#/components/headers/Cko-Request-Id'
+        Cko-Version:
+          $ref: '#/components/headers/Cko-Version'
+    '401':
+      description: Unauthorized
+    '404':
+      description: Event or notification not found

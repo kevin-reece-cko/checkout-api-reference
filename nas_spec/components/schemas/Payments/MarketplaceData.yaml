@@ -5,3 +5,57 @@ properties:
     type: string
     description: The sub-entity that the payment is being processed on behalf of
     example: 'ent_rgyzti4x74xubmu72m6r3pvksa'
+  sub_entities:
+    type: array
+    description: The sub-entities that the payment is being processed on behalf of - use for split payments.
+    minItems: 1
+    maxItems: 10
+    items:
+      type: object
+      required:
+        - id
+        - amount
+      title: SubEntities
+      properties:
+        id:
+          type: string
+          description: 'The id of the sub-entity.'
+          example: 'ent_w4jelhppmfiufdnatam37wrfc4'
+        amount:
+          type: integer
+          description: |
+            The split amount - this will be credited to your sub-entity's currency account. The sum of all split amounts must be equal to the payment amount.      
+
+            The amount must be provided in the <a href="https://docs.checkout.com/four/resources/calculating-the-amount" target="blank">minor currency unit</a>.
+          minimum: 0
+          example: 1000
+        reference:
+          type: string
+          description: A reference you can later use to identify this split, such as an order number.
+          maxLength: 50
+          example: 'ORD-5023-4E89'
+        commission:
+          type: object
+          title: Commission
+          description: |
+            Commission you'd like to collect from this split - this will be credited to your currency account. The commission cannot exceed the split amount.
+
+            Commission = (`amount` * `commission.percentage`) + `commission.amount`
+          properties:
+            amount:
+              type: integer
+              description: |
+                Optional fixed amount of commission to collect.
+
+                The amount must be provided in the <a href="https://docs.checkout.com/four/resources/calculating-the-amount" target="blank">minor currency unit</a>.
+              minimum: 0
+              example: 1000
+            percentage:
+              type: number
+              description: |
+                Optional percentage of commission to collect.
+
+                Supports up to 8 decimal places.
+              minimum: 0
+              maximum: 100
+              example: 1.125

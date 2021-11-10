@@ -1,43 +1,42 @@
-/forex/quotes:
-  post:
-    tags:
-      - Forex
-    security:
-      - OAuth:
-          - fx
-    summary: Request a quote
-    description: |
-      Request an exchange rate between a source and destination currency pair that will be used to process one or more payouts. You must submit a payout with the FX quote identifier before the quote expires. If the FX quote identifier is omitted from a payout, and the source and destination currencies differ, the current market exchange rate will be used.
-    requestBody:
+post:
+  tags:
+    - Forex
+  security:
+    - OAuth:
+        - fx
+  summary: Request a quote
+  description: |
+    Request an exchange rate between a source and destination currency pair that will be used to process one or more payouts. You must submit a payout with the FX quote identifier before the quote expires. If the FX quote identifier is omitted from a payout, and the source and destination currencies differ, the current market exchange rate will be used.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: '#/components/schemas/QuoteRequest'
+  responses:
+    '201':
+      description: Quote created
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/QuoteRequest'
-    responses:
-      '201':
-        description: Quote created
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/QuoteResponse'
-        headers:
-          Cko-Request-Id:
-            $ref: '#/components/headers/Cko-Request-Id'
-          Cko-Version:
-            $ref: '#/components/headers/Cko-Version'
-      '401':
-        description: Unauthorized
-      '429':
-        description: Too many requests or duplicate request detected
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/ValidationError'
-      '422':
-        description: Invalid data was sent
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/ValidationError'
-      '502':
-        description: Bad gateway
+            $ref: '#/components/schemas/QuoteResponse'
+      headers:
+        Cko-Request-Id:
+          $ref: '#/components/headers/Cko-Request-Id'
+        Cko-Version:
+          $ref: '#/components/headers/Cko-Version'
+    '401':
+      description: Unauthorized
+    '429':
+      description: Too many requests or duplicate request detected
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ValidationError'
+    '422':
+      description: Invalid data was sent
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ValidationError'
+    '502':
+      description: Bad gateway
