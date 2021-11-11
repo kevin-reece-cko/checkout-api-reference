@@ -23,3 +23,22 @@ properties:
     description: The sender's address
     allOf:
       - $ref: '#/components/schemas/Address'
+  identification:
+    type: object
+    properties:
+      type:
+        type: string
+        description: The type of identification used to identify the sender
+        enum:
+          - passport
+          - driving_licence
+          - national_id
+        example: driving_licence
+      number:
+        type: string
+        description: The identification number
+        example: 1234
+      issuing_country:
+        type: string
+        description: The two-letter ISO country code of the country that issued the identification
+        example: GT
