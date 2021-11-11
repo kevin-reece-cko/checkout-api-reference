@@ -69,6 +69,14 @@
 	--cko-http-put-color: #b77ba1;
 	--cko-http-patch-color: #fab82b;
 	--cko-http-del-color: #fd755f;
+
+	--token-string: var(--P600);
+	--token-number: var(--B500);
+	--token-property: var(--S1000);
+	--token-keyword: var(--S700);
+	--token-class: var(--G700);
+	--token-operator: var(--S90);
+	--token-comment: var(--S700);
 }
 
 .dark {
@@ -109,6 +117,13 @@
 	--icon-color: var(--cko-light-grey);
 	--sidebar-option-hover: var(--cko-dark-contrast-blue);
 	--url-area: var(--cko-dark-contrast-blue);
+	--token-string: var(--R500);
+	--token-number: var(--T500);
+	--token-property: var(--S10);
+	--token-keyword: var(--S05);
+	--token-class: var(--Y500);
+	--token-operator: var(--S90);
+	--token-comment: white;
 }
 
 .light {
@@ -373,20 +388,80 @@ a {
 
 /* Redocly upgrade */
 
+.react-codemirror2 {
+	flex: initial !important;
+}
+
 .CodeMirror pre.CodeMirror-line,
 .CodeMirror pre.CodeMirror-line-like {
 	background: var(--code-background) !important;
 	color: var(--primary-text) !important;
 }
 
-.sc-bCwfaz {
-	background: var(--code-background) !important;
+small {
+	font-size: 14px !important;
 }
 
-.cm-s-material .cm-property,
-.cm-s-material .cm-string,
-.cm-s-material .cm-number {
+/* API key secret input for redocly try in browser */
+.gsyRVd,
+.sc-liAPKD {
 	color: var(--primary-text) !important;
+}
+
+.hvgDcX > .react-tabs__tab-panel--selected,
+.dJUjkw > .react-tabs__tab-panel,
+.gKYSwG {
+	border-radius: 4px;
+}
+
+.gDidrK.gDidrK .dropdown-arrow {
+	border-top-color: var(--primary-text) !important;
+}
+
+.dXFovK,
+.kxZWSs,
+.eFiUoA {
+	font-weight: 600;
+}
+
+.fiwzSi span {
+	font-weight: 600;
+	color: var(--primary-text) !important;
+}
+
+.bWwHur.dropdown {
+	background: var(--background) !important;
+}
+
+.bWwHur.dropdown .dropdown-selector {
+	border-bottom-color: var(--border) !important;
+	font-weight: 500;
+}
+
+.cm-s-material.CodeMirror {
+	background-color: transparent !important;
+}
+
+.cm-s-material .cm-string {
+	color: var(--token-string) !important;
+}
+
+.bcvdhv,
+.cm-s-material .cm-property,
+div.CodeMirror span.CodeMirror-matchingbracket {
+	color: var(--primary-text) !important;
+}
+
+.cm-s-material .cm-atom {
+	color: var(--token-number) !important;
+}
+
+.cm-s-material .cm-number {
+	color: var(--token-number) !important;
+}
+
+.kQxPNF {
+	background-color: var(--sidebar-background) !important;
 }
 
 .bWwHur {
@@ -402,7 +477,8 @@ a {
 }
 
 .iBYONX,
-.kxZWSs {
+.kxZWSs,
+.fElMzr {
 	color: var(--primary-text) !important;
 }
 
@@ -419,7 +495,11 @@ a {
 .jlBRpC,
 .gVuaOf,
 .bqjPeJ {
-	background-color: var(--sidebar-background) !important;
+	background-color: var(--background) !important;
+}
+
+.kQxPNF {
+	border-left: 1px solid var(--border);
 }
 
 .bqjPeJ {
@@ -438,12 +518,12 @@ a {
 	color: white !important;
 }
 
-.gDidrK.gDidrK,
+/* .gDidrK.gDidrK,
 .iBYONX,
 .jARayQ {
 	background-color: var(--secondary-background) !important;
 	border-radius: 4px;
-}
+} */
 
 .fPNCvC {
 	padding: 16px 24px;
