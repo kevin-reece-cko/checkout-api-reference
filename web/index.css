@@ -71,7 +71,7 @@
 	--cko-http-del-color: #fd755f;
 
 	--token-string: var(--P600);
-	--token-number: var(--B500);
+	--token-number: var(--R800);
 	--token-property: var(--S1000);
 	--token-keyword: var(--S700);
 	--token-class: var(--G700);
@@ -404,7 +404,8 @@ small {
 
 /* API key secret input for redocly try in browser */
 .gsyRVd,
-.sc-liAPKD {
+.sc-liAPKD,
+.cgQuQk {
 	color: var(--primary-text) !important;
 }
 
@@ -412,6 +413,10 @@ small {
 .dJUjkw > .react-tabs__tab-panel,
 .gKYSwG {
 	border-radius: 4px;
+}
+
+.kxZWSs {
+	border-bottom: none !important;
 }
 
 .gDidrK.gDidrK .dropdown-arrow {
@@ -446,22 +451,45 @@ small {
 	color: var(--token-string) !important;
 }
 
+.yWXGs {
+	position: absolute;
+	bottom: 56px;
+}
+
 .bcvdhv,
 .cm-s-material .cm-property,
-div.CodeMirror span.CodeMirror-matchingbracket {
+div.CodeMirror span.CodeMirror-matchingbracket,
+.cm-s-material .CodeMirror-matchingbracket {
 	color: var(--primary-text) !important;
 }
 
 .cm-s-material .cm-atom {
-	color: var(--token-number) !important;
+	color: var(--code-value-bool) !important;
+}
+
+.gsyRVd {
+	background: var(--background) !important;
+	border-radius: 4px;
+	padding-left: 8px;
 }
 
 .cm-s-material .cm-number {
 	color: var(--token-number) !important;
 }
 
-.kQxPNF {
+.ldKBrj {
 	background-color: var(--sidebar-background) !important;
+	border-left: 1px solid var(--border) !important;
+}
+
+.bNCpbN {
+	background-color: var(--S800) !important;
+	color: var(--S10) !important;
+}
+
+.jeWenh {
+	background-color: var(--S10) !important;
+	color: var(--S800) !important;
 }
 
 .bWwHur {
