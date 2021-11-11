@@ -415,6 +415,36 @@ small {
 	border-radius: 4px;
 }
 
+.iBYONX {
+	background-color: transparent !important;
+}
+
+.gDidrK.gDidrK .dropdown-selector-value {
+	font-weight: 500;
+	font-size: 16px;
+}
+
+.gDidrK.gDidrK .dropdown-selector-value {
+	font-size: 14px;
+}
+
+.CodeMirror-scroll {
+	background-color: var(--sidebar-background) !important;
+}
+
+.react-codemirror2 {
+	height: 100%;
+	justify-content: flex-start !important;
+}
+
+.jeWenh {
+	border-radius: 4px 0 0 4px;
+}
+
+.bNCpbN {
+	border-radius: 0 4px 4px 0;
+}
+
 .kxZWSs {
 	border-bottom: none !important;
 }
@@ -453,7 +483,7 @@ small {
 
 .yWXGs {
 	position: absolute;
-	bottom: 56px;
+	bottom: 40px;
 }
 
 .bcvdhv,
@@ -477,7 +507,8 @@ div.CodeMirror span.CodeMirror-matchingbracket,
 	color: var(--token-number) !important;
 }
 
-.ldKBrj {
+.ldKBrj,
+.kQxPNF {
 	background-color: var(--sidebar-background) !important;
 	border-left: 1px solid var(--border) !important;
 }
