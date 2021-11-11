@@ -373,6 +373,22 @@ a {
 
 /* Redocly upgrade */
 
+.CodeMirror pre.CodeMirror-line,
+.CodeMirror pre.CodeMirror-line-like {
+	background: var(--code-background) !important;
+	color: var(--primary-text) !important;
+}
+
+.sc-bCwfaz {
+	background: var(--code-background) !important;
+}
+
+.cm-s-material .cm-property,
+.cm-s-material .cm-string,
+.cm-s-material .cm-number {
+	color: var(--primary-text) !important;
+}
+
 .bWwHur {
 	background: inherit !important;
 }
@@ -1184,8 +1200,8 @@ caption {
 .toggle-track {
 	position: absolute;
 	z-index: 100;
-	top: 20px;
-	right: 20px;
+	top: 12px;
+	right: 36px;
 	background-color: var(--toggle-bg);
 	border-radius: 30px;
 	cursor: pointer;
