@@ -17,9 +17,9 @@ properties:
         allOf:
           - $ref: '#/components/schemas/Link'
         example:
-          href: 'https://pay.sandbox.checkout.com/page/xGQBg0AXl3cM'
+          href: 'https://pay.sandbox.checkout.com/page/hpp_xGQBg0AXl3cM'
 example:
   reference: 'ORD-123A'
   _links:
     redirect:
-      href: 'https://pay.sandbox.checkout.com/page/xGQBg0AXl3cM'
+      href: 'https://pay.sandbox.checkout.com/page/hpp_xGQBg0AXl3cM'
