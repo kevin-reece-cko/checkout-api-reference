@@ -1,6 +1,6 @@
 type: object
 description: |
-  An optional dynamic billing descriptor displayed on the account owner's statement
+  An optional description that is displayed on the customer's statement identifying a purchase.
 properties:
   name:
     type: string
