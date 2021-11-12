@@ -346,7 +346,7 @@ img.sc-kafWEX.hZCbNs {
 	position: relative;
 	bottom: 64px;
 	left: 291px;
-	z-index: 99999;
+	z-index: 109;
 }
 
 .footer-link {
@@ -387,6 +387,12 @@ a {
 }
 
 /* Redocly upgrade */
+
+div[data-cy='console'] {
+	background-color: var(--sidebar-background) !important;
+	border-left: 1px solid var(--border) !important;
+	z-index: 110 !important;
+}
 
 .react-codemirror2 {
 	flex: initial !important;
@@ -508,9 +514,11 @@ div.CodeMirror span.CodeMirror-matchingbracket,
 }
 
 .ldKBrj,
-.kQxPNF {
+.kQxPNF,
+.ejBsIH {
 	background-color: var(--sidebar-background) !important;
 	border-left: 1px solid var(--border) !important;
+	z-index: 110 !important;
 }
 
 .bNCpbN {
@@ -540,8 +548,7 @@ div.CodeMirror span.CodeMirror-matchingbracket,
 .fElMzr {
 	color: var(--primary-text) !important;
 }
-
-.hYVplw {
+.ejBsIH .hYVplw {
 	top: -4px !important;
 	color: var(--secondary-text) !important;
 }
