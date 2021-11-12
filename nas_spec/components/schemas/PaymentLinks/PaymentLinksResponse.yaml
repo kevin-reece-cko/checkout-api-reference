@@ -4,9 +4,9 @@ required:
   - _links
 properties:
   id:
-    type: string
-    description: The Payment Link ID.
-    example: 'pl_ELqQJXdXzabU'
+    example: pl_ELqQJXdXzabU
+    allOf:
+      - $ref: '#/components/schemas/PaymentLinkId'
   expires_on:
     type: string
     description: The date and time when the Payment Link expires.

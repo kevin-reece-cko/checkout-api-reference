@@ -4,9 +4,9 @@ required:
   - _links
 properties:
   id:
-    type: string
-    description: The Hosted Payments Page ID.
     example: 'hpp_xGQBg0AXl3cM'
+    allOf:
+      - $ref: '#/components/schemas/HostedPaymentId'
   reference:
     type: string
     description: A reference you can later use to identify this payment, such as an order number.
