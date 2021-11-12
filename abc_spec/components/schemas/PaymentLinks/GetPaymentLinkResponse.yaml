@@ -27,12 +27,16 @@ properties:
       - Active
       - Payment Received
       - Expired
-    description: "The status of the Payment Link:\n  - `Active`: The Payment Link can accept a payment from the customer. A payment may have been attempted by the customer but not completed successfully.\n  - `Payment Received`: A payment has been received successfully using this Payment Link.\n  - `Expired`: The Payment Link has expired and can no longer be accessed."
+    description: |
+      The status of the Payment Link:
+        - `Active`: The Payment Link can accept a payment from the customer. A payment may have been attempted by the customer but not completed successfully.
+        - `Payment Received`: A payment has been received successfully using this Payment Link.
+        - `Expired`: The Payment Link has expired and can no longer be accessed.
     example: Active
   payment_id:
     type: string
     description: Unique identifier for an in progress or completed payment for this Payment Link.
-    example: undefined
+    example:
   amount:
     type: integer
     description: The original payment amount.
