@@ -308,7 +308,8 @@ img.sc-kafWEX.hZCbNs {
 }
 
 .showFooter {
-	display: flex !important;
+	display: block !important;
+	height: 0;
 }
 
 .footerParent {
@@ -323,7 +324,7 @@ img.sc-kafWEX.hZCbNs {
 .footer-wrapper {
 	display: flex;
 	justify-content: space-between;
-	padding: 24px;
+	padding: 32px 24px 8px;
 	width: calc(100% - 291px - 48px);
 
 	position: relative;
