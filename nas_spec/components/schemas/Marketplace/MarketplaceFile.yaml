@@ -1,21 +1,8 @@
 type: object
 required:
   - path
-  - type
   - purpose
 properties:
-  type:
-    type: string
-    enum:
-      - passport
-      - national_identity_card
-      - driving_licence
-      - citizen_card
-      - residence_permit
-      - electoral_id
-      - bank_statement
-    description: The type of document being uploaded.
-    example: 'passport'
   purpose:
     type: string
     description: The purpose of the file upload.
