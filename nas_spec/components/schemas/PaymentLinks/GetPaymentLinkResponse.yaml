@@ -59,6 +59,13 @@ properties:
     description: The date and time when the Payment Link expires.
     format: date-time
     example: '2021-08-20T20:25:28+08:00'
+  processing_channel_id:
+    type: string
+    pattern: "^(pc)_(\\w{26})$"
+    description: The processing channel to be used for the payment
+    example: 'pc_q4dbxom5jbgudnjzjpz7j2z6uq'
+  marketplace:
+    $ref: '#/components/schemas/MarketplaceData'
   customer:
     type: object
     description: The customer's details.
