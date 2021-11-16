@@ -23,15 +23,6 @@ info:
 
     We have a testing environment called sandbox, which you can <a href="https://www.checkout.com/get-test-account">sign up for</a> to test API calls without affecting live data.
 
-    ### Base URLs
-
-    Use the following base URLs when making requests to the APIs:
-
-      | Environment   |      Base URL                                        |
-      |---------------|------------------------------------------------------|
-      | Sandbox       |  https://access.sandbox.checkout.com/                |
-      | Production    |  https://access.checkout.com/                        |
-
     # Authentication
 
     When you sign up for an account, you are given a public key, and either a set of client credentials or a secret key. You authenticate with our API by following the appropriate authentication flow, using either your API keys or your client credentials.
