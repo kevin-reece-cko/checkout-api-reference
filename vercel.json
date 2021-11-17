@@ -1,3 +1,10 @@
 {
+  "headers": [
+    {
+      "headers": [
+        { "key": "Access-Control-Allow-Headers", "value": "X-User-Agent" }
+      ]
+    }
+  ],
   "trailingSlash": true
 }
