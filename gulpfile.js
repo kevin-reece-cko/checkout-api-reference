@@ -55,7 +55,7 @@ gulp.task('start_site', (cb) => {
 					livereload: true,
 					port: port,
 					middleware: (_, __) => {
-						return [cors()];
+						return [cors({ allowedHeaders: 'X-User-Agent' })];
 					},
 				},
 				function () {
