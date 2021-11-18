@@ -1,5 +1,3 @@
-@import 'font.css';
-
 :root {
 	--S00: #ffffff;
 	--S05: #e6e7ec;
@@ -326,6 +324,7 @@ img.sc-kafWEX.hZCbNs {
 
 .showFooter {
 	display: flex !important;
+	height: 0px;
 }
 
 .footerParent {
@@ -340,12 +339,12 @@ img.sc-kafWEX.hZCbNs {
 .footer-wrapper {
 	display: flex;
 	justify-content: space-between;
-	padding: 24px;
+	padding: 24px 40px;
 	width: calc(100% - 291px - 48px);
 
 	position: relative;
 	bottom: 64px;
-	left: 291px;
+	left: 0;
 	z-index: 109;
 }
 
@@ -387,6 +386,10 @@ a {
 }
 
 /* Redocly upgrade */
+
+.CodeMirror-focused div.CodeMirror-cursors {
+	visibility: visible;
+}
 
 div[data-cy='console'] {
 	background-color: var(--sidebar-background) !important;
@@ -436,6 +439,10 @@ small {
 
 .CodeMirror-scroll {
 	background-color: var(--sidebar-background) !important;
+}
+
+.CodeMirror-line::selection {
+	background-color: red;
 }
 
 .react-codemirror2 {
@@ -551,6 +558,14 @@ div.CodeMirror span.CodeMirror-matchingbracket,
 .ejBsIH .hYVplw {
 	top: -4px !important;
 	color: var(--secondary-text) !important;
+}
+
+.hYVplw {
+	top: 0px !important;
+}
+
+.CodeMirror-line {
+	border: none !important;
 }
 
 .gKYSwG,
@@ -753,7 +768,7 @@ td.sc-kgoBCf.kGwPhO {
 }
 
 .dropdown-selector-value {
-	color: var(--S1000) !important;
+	color: var(--primary-text) !important;
 }
 
 .react-tabs__tab-panel .sc-fzpmMD.gBfPiy.dropdown-selector-value {

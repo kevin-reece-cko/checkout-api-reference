@@ -46,16 +46,17 @@ gulp.task('edit', () => {
 
 gulp.task('start_site', (cb) => {
 	return portfinder
-		.getPortPromise({ port: 3000 })
+		.getPortPromise({ port: 3001 })
 		.then((port) => {
 			// `port` is guaranteed to be a free port in this scope.
+			const corsOptions = { allowedHeaders: 'X-User-Agent' };
 			gulpConnect.server(
 				{
 					root: [DIST_DIR],
 					livereload: true,
 					port: port,
 					middleware: (_, __) => {
-						return [cors({ allowedHeaders: 'X-User-Agent' })];
+						return [cors(corsOptions)];
 					},
 				},
 				function () {
