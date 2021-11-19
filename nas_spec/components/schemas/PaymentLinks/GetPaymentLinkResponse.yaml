@@ -79,6 +79,19 @@ properties:
         type: string
         description: The customer's name.
         example: Bruce Wayne
+  shipping:
+    type: object
+    description: The address any products are being sent to.
+    required:
+      - address
+    properties:
+      address:
+        type: object
+        description: The customer's address to ship to.
+        required:
+          - country
+        allOf:
+          - $ref: '#/components/schemas/Address'
   billing:
     type: object
     additionalProperties: false
@@ -131,5 +144,27 @@ properties:
   return_url:
     type: string
     format: uri
-    description: The provided success page where your customer will be redirected to.
+    description: If provided, the success page will include a button that redirects your customer to the provided URL.
     example: https://example.com/success
+    maxLength: 255
+  locale:
+    type: string
+    description: Creates a translated version of the page in the specified language
+    enum:
+      - de-DE
+      - en-GB
+      - fr-FR
+      - it-IT
+      - nl-NL
+      - es-ES
+      - zh-HK
+      - zh-TW
+      - zh-CN
+      - ja-JP
+      - fil-PH
+      - id-ID
+      - ms-MY
+      - th-TH
+      - vi-VN
+      - hi-IN
+    default: en-GB
