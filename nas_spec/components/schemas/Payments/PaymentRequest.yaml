@@ -97,13 +97,13 @@ properties:
     type: string
     format: uri
     description: For redirect payment methods, this overrides the default success redirect URL configured on your account
-    maxLength: 1024
+    maxLength: 255
     example: 'http://example.com/payments/success'
   failure_url:
     type: string
     format: uri
     description: For redirect payment methods, this overrides the default failure redirect URL configured on your account
-    maxLength: 1024
+    maxLength: 255
     example: 'http://example.com/payments/fail'
   payment_ip:
     description: The IP address used to make the payment. Required for some risk checks
