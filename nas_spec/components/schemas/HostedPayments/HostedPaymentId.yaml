@@ -1,0 +1,5 @@
+type: string
+pattern: '^hpp_[A-Za-z0-9_-]{12}$'
+description: The unique identifier for a Hosted Payments Page.
+maxLength: 16
+minLength: 16

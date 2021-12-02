@@ -27,12 +27,16 @@ properties:
       - Active
       - Payment Received
       - Expired
-    description: "The status of the Payment Link:\n  - `Active`: The Payment Link can accept a payment from the customer. A payment may have been attempted by the customer but not completed successfully.\n  - `Payment Received`: A payment has been received successfully using this Payment Link.\n  - `Expired`: The Payment Link has expired and can no longer be accessed."
+    description: |
+      The status of the Payment Link:
+        - `Active`: The Payment Link can accept a payment from the customer. A payment may have been attempted by the customer but not completed successfully.
+        - `Payment Received`: A payment has been received successfully using this Payment Link.
+        - `Expired`: The Payment Link has expired and can no longer be accessed.
     example: Active
   payment_id:
     type: string
     description: Unique identifier for an in progress or completed payment for this Payment Link.
-    example: undefined
+    example:
   amount:
     type: integer
     description: The original payment amount.
@@ -79,6 +83,19 @@ properties:
         type: string
         description: The customer's name.
         example: Bruce Wayne
+  shipping:
+    type: object
+    description: The address any products are being sent to.
+    required:
+      - address
+    properties:
+      address:
+        type: object
+        description: The customer's address to ship to.
+        required:
+          - country
+        allOf:
+          - $ref: '#/components/schemas/Address'
   billing:
     type: object
     additionalProperties: false
@@ -131,5 +148,27 @@ properties:
   return_url:
     type: string
     format: uri
-    description: The provided success page where your customer will be redirected to.
+    description: If provided, the success page will include a button that redirects your customer to the provided URL.
     example: https://example.com/success
+    maxLength: 255
+  locale:
+    type: string
+    description: Creates a translated version of the page in the specified language
+    enum:
+      - de-DE
+      - en-GB
+      - fr-FR
+      - it-IT
+      - nl-NL
+      - es-ES
+      - zh-HK
+      - zh-TW
+      - zh-CN
+      - ja-JP
+      - fil-PH
+      - id-ID
+      - ms-MY
+      - th-TH
+      - vi-VN
+      - hi-IN
+    default: en-GB

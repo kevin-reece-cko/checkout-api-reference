@@ -49,14 +49,13 @@ gulp.task('start_site', (cb) => {
 		.getPortPromise({ port: 3001 })
 		.then((port) => {
 			// `port` is guaranteed to be a free port in this scope.
-			const corsOptions = { allowedHeaders: 'X-User-Agent' };
 			gulpConnect.server(
 				{
 					root: [DIST_DIR],
 					livereload: true,
 					port: port,
 					middleware: (_, __) => {
-						return [cors(corsOptions)];
+						return [cors()];
 					},
 				},
 				function () {

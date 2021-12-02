@@ -2,37 +2,38 @@ type: object
 discriminator:
   propertyName: status
   mapping:
-    Active: '#/components/schemas/PaymentLinkResponseStatusActive'
-    Payment Received: '#/components/schemas/PaymentLinkResponseStatusPaymentReceived'
-    Expired: '#/components/schemas/PaymentLinkResponseStatusExpired'
+    Payment Pending: '#/components/schemas/GetHostedPaymentsResponseStatusPaymentPending'
+    Payment Received: '#/components/schemas/GetHostedPaymentsResponseStatusPaymentReceived'
+    Expired: '#/components/schemas/GetHostedPaymentsResponseStatusExpired'
 
 required:
   - id
   - status
   - amount
   - currency
-  - expires_on
-  - created_on
   - billing
+  - success_url
+  - cancel_url
+  - failure_url
   - _links
 
 properties:
   id:
-    example: pl_ELqQJXdXzabU
+    example: hpp_xGQBg0AXl3cM
     allOf:
-      - $ref: '#/components/schemas/PaymentLinkId'
+      - $ref: '#/components/schemas/HostedPaymentId'
   status:
     type: string
     enum:
-      - Active
+      - Payment Pending
       - Payment Received
       - Expired
     description: |
-      The status of the Payment Link:
-        - `Active`: The Payment Link can accept a payment from the customer. A payment may have been attempted by the customer but not completed successfully.
-        - `Payment Received`: A payment has been received successfully using this Payment Link.
-        - `Expired`: The Payment Link has expired and can no longer be accessed.
-    example: Active
+      The status of the Hosted Payments Page:
+        - `Payment Pending`: The Hosted Payments Page can accept a payment from the customer. A payment may have been attempted by the customer but not completed successfully.
+        - `Payment Received`: A payment has been received successfully using this Hosted Payments Page.
+        - `Expired`: The Hosted Payments Page has expired and can no longer be accessed.
+    example: Payment Pending
   payment_id:
     type: string
     description: Unique identifier for an in progress or completed payment for this Payment Link.
@@ -53,16 +54,6 @@ properties:
     type: string
     description: A description of the payment.
     example: Payment for Gold Necklace
-  created_on:
-    type: string
-    description: The date and time when the Payment Link was created.
-    format: date-time
-    example: '2021-08-19T20:25:28.725Z'
-  expires_on:
-    type: string
-    description: The date and time when the Payment Link expires.
-    format: date-time
-    example: '2021-08-20T20:25:28+08:00'
   customer:
     type: object
     description: The customer's details.
@@ -76,19 +67,6 @@ properties:
         type: string
         description: The customer's name.
         example: Bruce Wayne
-  shipping:
-    type: object
-    description: The address any products are being sent to.
-    required:
-      - address
-    properties:
-      address:
-        type: object
-        description: The customer's address to ship to.
-        required:
-          - country
-        allOf:
-          - $ref: '#/components/schemas/Address'
   billing:
     type: object
     additionalProperties: false
@@ -118,7 +96,6 @@ properties:
       additionalProperties: false
       required:
         - name
-        - quantity
         - price
       properties:
         name:
@@ -135,33 +112,20 @@ properties:
           example: 200
   metadata:
     type: object
-    title: The Metadata Schema
     description: Any additional information stored at the point of creation.
     additionalProperties: true
-  return_url:
+  success_url:
     type: string
     format: uri
-    description: If provided, the success page will include a button that redirects your customer to the provided URL.
+    description: The provided URL your customer will be redirected to upon a successful payment.
     example: https://example.com/success
-    maxLength: 255
-  locale:
+  cancel_url:
     type: string
-    description: Creates a translated version of the page in the specified language
-    enum:
-      - de-DE
-      - en-GB
-      - fr-FR
-      - it-IT
-      - nl-NL
-      - es-ES
-      - zh-HK
-      - zh-TW
-      - zh-CN
-      - ja-JP
-      - fil-PH
-      - id-ID
-      - ms-MY
-      - th-TH
-      - vi-VN
-      - hi-IN
-    default: en-GB
+    format: uri
+    description: The provided URL your customer will be redirected to if the payment is cancelled.
+    example: https://example.com/cancel
+  failure_url:
+    type: string
+    format: uri
+    description: The provided URL your customer will be redirected to upon a failed payment.
+    example: https://example.com/failure

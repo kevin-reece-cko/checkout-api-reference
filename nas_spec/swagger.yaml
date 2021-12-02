@@ -23,15 +23,6 @@ info:
 
     We have a testing environment called sandbox, which you can <a href="https://www.checkout.com/get-test-account">sign up for</a> to test API calls without affecting live data.
 
-    ### Base URLs
-
-    Use the following base URLs when making requests to the APIs:
-
-      | Environment   |      Base URL                                        |
-      |---------------|------------------------------------------------------|
-      | Sandbox       |  https://access.sandbox.checkout.com/                |
-      | Production    |  https://access.checkout.com/                        |
-
     # Authentication
 
     When you sign up for an account, you are given a public key, and either a set of client credentials or a secret key. You authenticate with our API by following the appropriate authentication flow, using either your API keys or your client credentials.
@@ -46,11 +37,13 @@ info:
 
     # Changelog
 
-     | Date          |      Description of change                                        |
-     |---------------|-------------------------------------------------------------------|
-     | 2021/10/18    |  Added the `marketplaces.sub-entities` object to support split payments.  |
-     | 2021/10/12    |  Added Hosted Payments Page and Payment Links to specification.   |
-
+      | Date       | Description of change                                                         |
+      | ---------- | ----------------------------------------------------------------------------- |
+      | 2021/11/11 | Added `3ds.challenge_indicator` to card payment requests.                     |
+      | 2021/11/03 | Adds `identification` object under parent `sender` object in payment request.  |
+      | 2021/10/18 | Added the `marketplaces.sub-entities` object to support split payments.       |
+#      | 2021/10/12 | Added Hosted Payments Page and Payment Links to specification.                 |
+#     | 2021/11/19 | Added specification for "Get Hosted Payments Page details" endpoint.           | Move to top when this is live again
 servers:
   - url: https://api.checkout.com
     description: Live API
@@ -61,10 +54,10 @@ tags:
     description: Create an access token to begin using our APIs.
   - name: Payments
     description: Process and manage payments from a variety of sources and to various destinations all within one integration.
-  - name: Payment Links
-    description: Create a Payment Link to accept and process payment details.
-  - name: Hosted Payments Page
-    description: Create a Hosted Payments Page to accept and process payment details.
+#  - name: Payment Links
+#    description: Create a Payment Link to accept and process payment details.
+#  - name: Hosted Payments Page
+#    description: Create a Hosted Payments Page to accept and process payment details.
   # - name: Sources
   #   description: Create a payment source for a customer that you can use for one or more payments.
   - name: Tokens
@@ -96,8 +89,8 @@ x-tagGroups:
   - name: Handle payments and payouts
     tags:
       - Payments
-      - Payment Links
-      - Hosted Payments Page
+#      - Payment Links
+#      - Hosted Payments Page
       - Forex
       - Apple Pay
   - name: Stored payment details
