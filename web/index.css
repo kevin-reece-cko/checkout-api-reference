@@ -149,7 +149,7 @@
 	--code-background: var(--sidebar-background);
 	--code-bracket: var(--cko-code-gray);
 	--code-param: var(--cko-code-light-blue);
-	--code-string: #6964b3;
+	--code-string: var(--primary-dark-blue);
 	--code-value-link: var(--cko-green);
 	--code-value-bool: var(--cko-green);
 	--code-value-number: var(--cko-red);
@@ -1186,6 +1186,23 @@ span.token.punctuation {
 .eLPRJp .token.attr-value,
 .eLPRJp .token.keyword {
 	color: var(--R800) !important;
+}
+
+.token.keyword {
+	color: var(--R800) !important;
+}
+
+.iBYONX {
+	line-height: 3em !important;
+}
+
+.jARayQ {
+	background-color: var(--background) !important;
+	border-radius: 4px;
+}
+
+.hYVplw {
+	color: var(--primary-text) !important;
 }
 
 .heGpRL {
