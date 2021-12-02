@@ -1,21 +1,20 @@
 # Checkout.com API reference
 
-Checkout.com APIs accept and return JSON in the HTTP body, and return standard [HTTP response codes](https://docs.checkout.com/resources/codes/http-response-codes).
+Checkout.com APIs accept and return JSON in the HTTP body, and return standard [HTTP response codes](https://www.checkout.com/docs/resources/codes/http-response-codes).
 
-Our API Reference is written using the OpenAPI specification. We have one spec for the [current account structure](https://api-reference.checkout.com/) and one for the [new account structure](https://api-reference.checkout.com/preview/crusoe). Merchants can download the specs using the download button on either version of the API reference.
+Our API reference is written using the OpenAPI specification. We have one spec for the [current account structure](https://api-reference.checkout.com/) and one for the [new account structure](https://api-reference.checkout.com/preview/crusoe). Merchants can download the specs using the download button on either version of the API reference.
 
-The API Reference is hosted on Vercel.
+The API reference is hosted on Vercel.
 
 ---
 
 ## Owners
 
-The Tech Docs team own the API reference and work closely with product teams to produce guides on the [main documentation](https://docs.checkout.com) site and the API Reference. Each Technical Writer is assigned specific product areas.
+The Tech Docs team own the API reference and work closely with product teams to produce guides on the [main documentation](https://www.checkout.com/docs) site and the API reference.
 
-- [@Ben Ahmady](https://github.com/ben-ahmady-cko): Payments (Gateway), Payouts (including FX), Notifications, Vault
-- [@Chrisi Webster](https://github.com/chrisi-webster-cko): Marketplaces, Payment interfaces, General updates
-- [@Cristina Szilagyi](https://github.com/cristina-szilagyi-cko): APMs, 3DS Authentication (including Sessions), Issuing
-- [@Neal Goldsmith](https://github.com/neal-goldsmith-cko): Prism (risk), Disputes, Reporting
+- [@Ben Ahmady](https://github.com/ben-ahmady-cko)
+- [@Chrisi Webster](https://github.com/chrisi-webster-cko)
+- [@Cristina Szilagyi](https://github.com/cristina-szilagyi-cko)
 
 ---
 
