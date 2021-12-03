@@ -92,6 +92,7 @@
 	--link-hover: var(--cko-light-blue);
 	--active: var(--cko-light-blue);
 	--background-contrast: var(--cko-dark-contrast-blue);
+	--background-contrast-focus: var(--S500);
 	--subtitle: var(--cko-yellow);
 	--required: var(--cko-red);
 	--border: var(--S700);
@@ -139,6 +140,7 @@
 	--link-hover: var(--cko-dark-blue);
 	--active: var(--cko-dark-blue);
 	--background-contrast: var(--cko-white);
+	--background-contrast-focus: var(--S10);
 	--subtitle: var(--cko-dark-blue);
 	--required: var(--cko-red);
 	--border: var(--S05);
@@ -484,6 +486,15 @@ small {
 
 .bNCpbN {
 	border-radius: 0 4px 4px 0;
+}
+
+.jaBfxR {
+	background: var(--background-contrast) !important;
+}
+
+.jaBfxR .sc-ikXwFM:hover,
+.jaBfxR .sc-ikXwFM.active {
+	background: var(--background-contrast-focus) !important;
 }
 
 .kxZWSs {
