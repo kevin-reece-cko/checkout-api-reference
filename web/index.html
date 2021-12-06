@@ -2,14 +2,14 @@
 <html>
 
 <head>
-	<script defer type="text/javascript"
-		src="https://cdn-ukwest.onetrust.com/consent/9be650fa-1b77-4848-b2d7-a3118f92e672-test/OtAutoBlock.js"></script>
 	<script defer src="https://cdn-ukwest.onetrust.com/scripttemplates/otSDKStub.js" data-language="en"
 		type="text/javascript" charSet="UTF-8" data-domain-script="9be650fa-1b77-4848-b2d7-a3118f92e672-test"></script>
-	<script type="text/javascript">function OptanonWrapper() { }</script>
+	<script type="text/javascript">
+		function OptanonWrapper() { }
+	</script>
 
 	<script async type="text/plain" src="https://www.googletagmanager.com/gtag/js?id=UA-83886670-8"></script>
-	<script type="text/plain" class="optanon-category-C0002" src="../../js/gtm.js"></script>
+	<script defer type="text/plain" class="optanon-category-C0002" src="../../js/gtm.js"></script>
 	<title>Checkout.com API Reference</title>
 
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -28,7 +28,10 @@
 </head>
 
 <body class="light">
-	<script src="js/gtm-body.js"></script>
+	<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MG7959V" height="0" width="0"
+		style="display:none;visibility:hidden">
+	</iframe>
+
 	<div class="toggle-track">
 		<div class="toggle-moon">🌛</div>
 		<div class="toggle-sun">☀️</div>
@@ -36,9 +39,54 @@
 	</div>
 	<script src="js/theme.js"></script>
 
-	<redoc spec-url="./swagger.yaml"></redoc>
+	<div id="redocly_container"></div>
 
-	<script src="https://cdn.jsdelivr.net/npm/redoc@2.0.0-rc.40/bundles/redoc.standalone.js"></script>
+	<script src="https://cdn.redoc.ly/reference-docs/v1.6.0/redocly-reference-docs.min.js"></script>
+	<script>
+		RedoclyReferenceDocs.init(
+			'./swagger.yaml',
+			{
+				licenseKey:
+					'eyJ0IjpmYWxzZSwiaSI6MTYzNjY0MjE0NiwiZSI6MTY2NDM2Njc2NywiaCI6WyJyZWRvYy5seSIsImNoZWNrb3V0LmNvbSIsImNoZWNrb3V0LWFwaS1yZWZlcmVuY2UtKi1ja28tZnJvbnRlbmQudmVyY2VsLmFwcCJdLCJzIjoicG9ydGFsIn0=.Qe5TLZezUYF3abwI3n29mqRe8uIP9LcSvzIi36ZMGDpiDHmjTL3AXm6mBzISgUfNGzBsuvw4zN+V8tp0lmAQ2w==',
+				pagination: 'none',
+				sidebarLinks: {
+					beforeInfo: [
+						{
+							label: 'Changelog',
+							link: 'https://docs.checkout.com',
+							target: '_blank',
+						},
+					],
+
+					end: [
+						{
+							label: 'test',
+							link: 'https://docs.checkout.com',
+							target: '_blank',
+						},
+					],
+				},
+				generateCodeSamples: {
+					languages: [
+						{ lang: 'curl' },
+						{ lang: 'Node.js' },
+						{ lang: 'JavaScript', label: 'JS' },
+						{ lang: 'Java' },
+						{ lang: 'C#' },
+						{ lang: 'Python' },
+					],
+				},
+				skipOptionalParameters: true,
+				ctrlFHijack: true,
+				hideLoading: true,
+				menuToggle: true,
+				nativeScrollbars: true,
+				sendXUserAgentInTryIt: true
+			},
+			document.querySelector('#redocly_container')
+		);
+	</script>
+
 	<script src="js/show-footer.js"></script>
 
 	<div class="footerParent">

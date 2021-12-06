@@ -1,5 +1,3 @@
-@import 'font.css';
-
 :root {
 	--S00: #ffffff;
 	--S05: #e6e7ec;
@@ -69,11 +67,20 @@
 	--cko-http-put-color: #b77ba1;
 	--cko-http-patch-color: #fab82b;
 	--cko-http-del-color: #fd755f;
+
+	--token-string: var(--P600);
+	--token-number: var(--R800);
+	--token-property: var(--S1000);
+	--token-keyword: var(--S700);
+	--token-class: var(--G700);
+	--token-operator: var(--S90);
+	--token-comment: var(--S700);
 }
 
 .dark {
 	--background: var(--cko-dark-blue);
 	--sidebar-background: var(--cko-dark-blue);
+	--secondary-background: var(--S300);
 	--table-background: var(--cko-dark-blue);
 	--toggle-bg: var(--S500);
 	--primary-text: var(--cko-white);
@@ -85,6 +92,7 @@
 	--link-hover: var(--cko-light-blue);
 	--active: var(--cko-light-blue);
 	--background-contrast: var(--cko-dark-contrast-blue);
+	--background-contrast-focus: var(--S500);
 	--subtitle: var(--cko-yellow);
 	--required: var(--cko-red);
 	--border: var(--S700);
@@ -108,11 +116,19 @@
 	--icon-color: var(--cko-light-grey);
 	--sidebar-option-hover: var(--cko-dark-contrast-blue);
 	--url-area: var(--cko-dark-contrast-blue);
+	--token-string: var(--R500);
+	--token-number: var(--T500);
+	--token-property: var(--S10);
+	--token-keyword: var(--S05);
+	--token-class: var(--Y500);
+	--token-operator: var(--S90);
+	--token-comment: white;
 }
 
 .light {
 	--background: var(--cko-white);
 	--sidebar-background: var(--cko-grey-tint-blue);
+	--secondary-background: white;
 	--table-background: var(--cko-white);
 	--toggle-bg: var(--S1000);
 	--primary-text: var(--primary-dark-blue);
@@ -124,6 +140,7 @@
 	--link-hover: var(--cko-dark-blue);
 	--active: var(--cko-dark-blue);
 	--background-contrast: var(--cko-white);
+	--background-contrast-focus: var(--S10);
 	--subtitle: var(--cko-dark-blue);
 	--required: var(--cko-red);
 	--border: var(--S05);
@@ -134,7 +151,7 @@
 	--code-background: var(--sidebar-background);
 	--code-bracket: var(--cko-code-gray);
 	--code-param: var(--cko-code-light-blue);
-	--code-string: #6964b3;
+	--code-string: var(--primary-dark-blue);
 	--code-value-link: var(--cko-green);
 	--code-value-bool: var(--cko-green);
 	--code-value-number: var(--cko-red);
@@ -303,13 +320,13 @@ img.sc-kafWEX.hZCbNs {
 
 /* Overwrite swagger logo with own logo file */
 
-.jrEndp {
+.kyCarw {
 	content: var(--logo) !important;
 }
 
 .showFooter {
-	display: block !important;
-	height: 0;
+	display: flex !important;
+	height: 0px;
 }
 
 .footerParent {
@@ -324,13 +341,13 @@ img.sc-kafWEX.hZCbNs {
 .footer-wrapper {
 	display: flex;
 	justify-content: space-between;
-	padding: 32px 24px 8px;
+	padding: 24px 40px;
 	width: calc(100% - 291px - 48px);
 
 	position: relative;
 	bottom: 64px;
-	left: 291px;
-	z-index: 99999;
+	left: 0;
+	z-index: 109;
 }
 
 .footer-link {
@@ -369,6 +386,292 @@ a {
 	color: var(--primary-text) !important;
 	font-weight: 600;
 }
+
+/* Redocly upgrade */
+
+.CodeMirror-focused div.CodeMirror-cursors {
+	visibility: visible;
+}
+
+div[data-cy='console'] {
+	background-color: var(--sidebar-background) !important;
+	border-left: 1px solid var(--border) !important;
+	z-index: 110 !important;
+}
+
+.react-codemirror2 {
+	flex: initial !important;
+}
+
+.CodeMirror pre.CodeMirror-line,
+.CodeMirror pre.CodeMirror-line-like {
+	background: var(--code-background) !important;
+	color: var(--primary-text) !important;
+}
+
+.cm-s-material div.CodeMirror-selected {
+	background: rgba(78, 205, 255, 0.4) !important;
+}
+
+.cm-s-material.CodeMirror-focused div.CodeMirror-selected {
+	background: rgba(78, 205, 255, 0.4) !important;
+}
+
+.cm-s-material .CodeMirror-line::selection,
+.cm-s-material .CodeMirror-line > span::selection,
+.cm-s-material .CodeMirror-line > span > span::selection {
+	background: rgba(78, 205, 255, 0.4) !important;
+}
+
+.cm-s-material .CodeMirror-line::-moz-selection,
+.cm-s-material .CodeMirror-line > span::-moz-selection,
+.cm-s-material .CodeMirror-line > span > span::-moz-selection {
+	background: rgba(78, 205, 255, 0.4) !important;
+}
+
+.CodeMirror-lines > div > div:not(.CodeMirror-measure) {
+	z-index: 10 !important;
+}
+
+.cm-s-material .CodeMirror-cursor {
+	border-color: var(--primary-text) !important;
+}
+
+small {
+	font-size: 14px !important;
+}
+
+/* API key secret input for redocly try in browser */
+.gsyRVd,
+.sc-liAPKD,
+.cgQuQk {
+	color: var(--primary-text) !important;
+}
+
+.hvgDcX > .react-tabs__tab-panel--selected,
+.dJUjkw > .react-tabs__tab-panel,
+.gKYSwG {
+	border-radius: 4px;
+}
+
+.iBYONX {
+	background-color: transparent !important;
+}
+
+.gDidrK.gDidrK .dropdown-selector-value {
+	font-weight: 500;
+	font-size: 16px;
+}
+
+.gDidrK.gDidrK .dropdown-selector-value {
+	font-size: 14px;
+}
+
+.CodeMirror-scroll {
+	background-color: var(--sidebar-background) !important;
+}
+
+.CodeMirror-line::selection {
+	background-color: red;
+}
+
+.react-codemirror2 {
+	height: 100%;
+	justify-content: flex-start !important;
+}
+
+.jeWenh {
+	border-radius: 4px 0 0 4px;
+}
+
+.bNCpbN {
+	border-radius: 0 4px 4px 0;
+}
+
+.jaBfxR {
+	background: var(--background-contrast) !important;
+}
+
+.jaBfxR .sc-ikXwFM:hover,
+.jaBfxR .sc-ikXwFM.active {
+	background: var(--background-contrast-focus) !important;
+}
+
+.kxZWSs {
+	border-bottom: none !important;
+}
+
+.gDidrK.gDidrK .dropdown-arrow {
+	border-top-color: var(--primary-text) !important;
+}
+
+.dXFovK,
+.kxZWSs,
+.eFiUoA {
+	font-weight: 600;
+}
+
+.fiwzSi span {
+	font-weight: 600;
+	color: var(--primary-text) !important;
+}
+
+.bWwHur.dropdown {
+	background: var(--background) !important;
+}
+
+.bWwHur.dropdown .dropdown-selector {
+	border-bottom-color: var(--border) !important;
+	font-weight: 500;
+}
+
+.cm-s-material.CodeMirror {
+	background-color: transparent !important;
+}
+
+.cm-s-material .cm-string {
+	color: var(--token-string) !important;
+}
+
+.yWXGs {
+	position: absolute;
+	bottom: 40px;
+}
+
+.bcvdhv,
+.cm-s-material .cm-property,
+div.CodeMirror span.CodeMirror-matchingbracket,
+.cm-s-material .CodeMirror-matchingbracket {
+	color: var(--primary-text) !important;
+}
+
+.cm-s-material .cm-atom {
+	color: var(--code-value-bool) !important;
+}
+
+.gsyRVd {
+	background: var(--background) !important;
+	border-radius: 4px;
+	padding-left: 8px;
+}
+
+.cm-s-material .cm-number {
+	color: var(--token-number) !important;
+}
+
+.ldKBrj,
+.kQxPNF,
+.ejBsIH {
+	background-color: var(--sidebar-background) !important;
+	border-left: 1px solid var(--border) !important;
+	z-index: 110 !important;
+}
+
+.bNCpbN {
+	background-color: var(--S800) !important;
+	color: var(--S10) !important;
+}
+
+.jeWenh {
+	background-color: var(--S10) !important;
+	color: var(--S800) !important;
+}
+
+.bWwHur {
+	background: inherit !important;
+}
+
+.hTuscY {
+	padding-top: 24px;
+}
+
+.ylWvJ {
+	background-color: transparent !important;
+}
+
+.iBYONX,
+.kxZWSs,
+.fElMzr {
+	color: var(--primary-text) !important;
+}
+.ejBsIH .hYVplw {
+	top: -4px !important;
+	color: var(--secondary-text) !important;
+}
+
+.hYVplw {
+	top: 0px !important;
+}
+
+.CodeMirror-line {
+	border: none !important;
+}
+
+.gKYSwG,
+.fTwFWY {
+	background-color: var(--cko-dark-blue) !important;
+}
+
+.jlBRpC,
+.gVuaOf,
+.bqjPeJ {
+	background-color: var(--background) !important;
+}
+
+.kQxPNF {
+	border-left: 1px solid var(--border);
+}
+
+.bqjPeJ {
+	border-left: 1px solid var(--border);
+}
+
+.dzBcKB {
+	background-color: var(--primary-dark-blue) !important;
+}
+
+.ksvBCj span {
+	color: var(--primary-text) !important;
+}
+
+.gAApEQ {
+	color: white !important;
+}
+
+/* .gDidrK.gDidrK,
+.iBYONX,
+.jARayQ {
+	background-color: var(--secondary-background) !important;
+	border-radius: 4px;
+} */
+
+.fPNCvC {
+	padding: 16px 24px;
+	font-size: 16px;
+	margin: 8px 0 0 0;
+	background: var(--code-background) !important;
+}
+
+.fYVjas,
+.eNIZVD,
+.kBMEku {
+	color: var(--title-color) !important;
+}
+
+pre .CodeMirror-line {
+	background: var(--code-label-background) !important;
+	border: none !important;
+}
+
+.CodeMirror-matchingbracket {
+	outline: none !important;
+}
+
+.CodeMirror-lines {
+	padding: 0 !important;
+}
+
+/* redocly upgrade */
 
 .ldExJi,
 .iwWBsD,
@@ -504,7 +807,7 @@ td.sc-kgoBCf.kGwPhO {
 }
 
 .dropdown-selector-value {
-	color: var(--S1000) !important;
+	color: var(--primary-text) !important;
 }
 
 .react-tabs__tab-panel .sc-fzpmMD.gBfPiy.dropdown-selector-value {
@@ -924,6 +1227,27 @@ span.token.punctuation {
 	color: var(--R800) !important;
 }
 
+.token.keyword {
+	color: var(--R800) !important;
+}
+
+.iBYONX {
+	line-height: 3em !important;
+}
+
+.jARayQ {
+	background-color: var(--background) !important;
+	border-radius: 4px;
+}
+
+.hYVplw {
+	color: var(--primary-text) !important;
+}
+
+.clDpas {
+	background-color: var(--background) !important;
+}
+
 .heGpRL {
 	top: 0px !important;
 	color: var(--S05) !important;
@@ -1097,8 +1421,8 @@ caption {
 .toggle-track {
 	position: absolute;
 	z-index: 100;
-	top: 20px;
-	right: 20px;
+	top: 12px;
+	right: 36px;
 	background-color: var(--toggle-bg);
 	border-radius: 30px;
 	cursor: pointer;
