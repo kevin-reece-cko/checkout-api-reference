@@ -97,16 +97,16 @@ properties:
     type: string
     format: uri
     description: For redirect payment methods, this overrides the default success redirect URL configured on your account
-    maxLength: 255
+    maxLength: 1024
     example: 'http://example.com/payments/success'
   failure_url:
     type: string
     format: uri
     description: For redirect payment methods, this overrides the default failure redirect URL configured on your account
-    maxLength: 255
+    maxLength: 1024
     example: 'http://example.com/payments/fail'
   payment_ip:
-    description: The IP address used to make the payment. Required for some risk checks
+    description:  The IP address used to make the payment. Used by our risk engine to check the customer's IP address – only accepts IPv4 addresses.
     allOf:
       - $ref: '#/components/schemas/IPAddress'
   sender:

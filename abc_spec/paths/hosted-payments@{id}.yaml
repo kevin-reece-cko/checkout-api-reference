@@ -1,0 +1,28 @@
+get:
+  security:
+    - ApiSecretKey: []
+  tags:
+    - Hosted Payments Page
+  summary: Get Hosted Payments Page details
+  operationId: getHostedPaymentsPageDetails
+  description: |
+    Retrieve details about a specific Hosted Payments Page using the ID returned when it was created. In the response, you will see the status of the Hosted Payments Page.<br><br>
+    For more information, see the <a target="_blank" href="https://docs.checkout.com/integrate/hosted-payments-page">Hosted Payments Page documentation</a>.
+  parameters:
+    - in: path
+      name: id
+      required: true
+      schema:
+        allOf:
+          - $ref: '#/components/schemas/HostedPaymentId'
+  responses:
+    '200':
+      description: Hosted Payments Page details retrieved successfully
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/GetHostedPaymentsResponse'
+    '401':
+      description: Unauthorized
+    '404':
+      description: Hosted Payments Page not found

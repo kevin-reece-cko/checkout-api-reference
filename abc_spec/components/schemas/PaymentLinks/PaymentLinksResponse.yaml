@@ -1,11 +1,12 @@
 type: object
 required:
+  - id
   - _links
 properties:
   id:
-    type: string
-    description: The request ID.
-    example: 'pl_ELqQJXdXzabU'
+    example: pl_ELqQJXdXzabU
+    allOf:
+      - $ref: '#/components/schemas/PaymentLinkId'
   expires_on:
     type: string
     description: The date and time when the Payment Link expires.
@@ -21,6 +22,12 @@ properties:
     readOnly: true
     minItems: 1
     properties:
+      self:
+        type: object
+        allOf:
+          - $ref: '#/components/schemas/Link'
+        example:
+          href: 'https://api.sandbox.checkout.com/payment-links/pl_ELqQJXdXzabU'
       redirect:
         type: object
         allOf:

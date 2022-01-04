@@ -1,5 +1,6 @@
 type: object
-description: The source of the payment.<br><i>Use to request a payment</i>.
+description: >
+  The source of the payment.<br><i>Use to request a payment</i>.
 discriminator:
   propertyName: type
   mapping:
@@ -34,5 +35,6 @@ required:
 properties:
   type:
     type: string
-    description: The payment source type <br> *Note:* *To make a payment with full card details, you must be <a href="https://docs.checkout.com/risk-management/pci-compliance" target="blank">SAQ D PCI compliant</a>*
+    description: >
+      The payment source type <br> *Note:* *To make a payment with full card details, you must be <a href="https://www.checkout.com/docs/risk-management/pci-compliance" target="blank">SAQ D PCI compliant</a>*<br> BenefitPay is **DEPRECATED**
     example: 'card'

@@ -1,0 +1,9 @@
+type: object
+description: An expired Hosted Payments Page.
+allOf:
+  - $ref: '#/components/schemas/GetHostedPaymentsResponse'
+  - type: object
+    properties:
+      _links:
+        allOf:
+          - $ref: '#/components/schemas/GetHostedPaymentsResponseLinks'

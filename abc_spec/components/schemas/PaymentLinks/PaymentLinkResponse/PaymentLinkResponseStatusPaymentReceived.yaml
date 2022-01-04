@@ -14,3 +14,12 @@ allOf:
           - payment_actions
         allOf:
           - $ref: '#/components/schemas/PaymentLinkResponseLinks'
+        example:
+          self:
+            href: 'https://api.sandbox.checkout.com/payment-links/pl_ELqQJXdXzabU'
+          redirect:
+            href: 'https://pay.sandbox.checkout.com/link/pl_ELqQJXdXzabU'
+          payment:
+            href: https://api.sandbox.checkout.com/payments/pay_mbabizu24mvu3mela5njyhpit4
+          payment_actions:
+            href: https://api.sandbox.checkout.com/payments/pay_mbabizu24mvu3mela5njyhpit4/actions
