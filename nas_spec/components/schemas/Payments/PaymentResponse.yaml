@@ -40,9 +40,7 @@ properties:
       - Authorized
       - Pending
       - Card Verified
-      - Captured
       - Declined
-      - Paid
     example: Authorized
   auth_code:
     type: string

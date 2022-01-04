@@ -33,7 +33,7 @@ properties:
     type: string
     description: |
       The payment source type. For any payment request sources that result in a card token (token, source ID, etc.),
-      this will be `card`; otherwise it will be the name of the alternative payment method
+      this will be `card`; otherwise it will be the name of the alternative payment method<br> BenefitPay is **DEPRECATED**
     example: 'card'
   id:
     type: string
