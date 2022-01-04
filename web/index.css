@@ -1365,6 +1365,7 @@ ul > li.tab-error {
 /* Code samples */
 
 pre {
+	background-color: var(--S05) !important;
 	border-radius: 8px;
 	border: 1px solid var(--border) !important;
 }
