@@ -130,6 +130,8 @@ namespace OpenApiGenerator
 
     static void AddPaths()
     {
+      LoadCodeSamples();
+
       var yamlPathFiles = GetSpecFiles("paths", "*.yaml");
       var text = "paths:\n";
 
@@ -150,14 +152,62 @@ namespace OpenApiGenerator
           {
             if (httpVerbs.Contains($"{s.TrimEnd(':')}"))
             {
+              if (!string.IsNullOrEmpty(currentVerb))
+              {
+                text += GetCodeSampleText(path, currentVerb);
+              }
               currentVerb = s.Trim(':');
             }
             text += $"    {s}\n";
           }
+          text += GetCodeSampleText(path, currentVerb);
         }
       }
 
       File.AppendAllText(_yamlOutputFile, text, Encoding.UTF8);
+    }
+
+    static string GetCodeSampleText(string path, string verb)
+    {
+      var text = "";
+      var codeSamples = GetCodeSample(path, verb);
+
+      if (!codeSamples.Any()) return text;
+
+      text += $"      x-code-samples:\n";
+      foreach (var sample in codeSamples)
+      {
+        text += $"        - lang: {sample.Language}\n";
+        text += $"          source: {sample.SampleString}\n";
+      }
+
+      return text;
+    }
+
+    static IEnumerable<CodeSample> GetCodeSample(string path, string verb)
+    {
+      return _codeSamples.Where(x => string.Equals(x.Path, path, StringComparison.InvariantCultureIgnoreCase) && string.Equals(x.HttpVerb, verb, StringComparison.InvariantCultureIgnoreCase));
+    }
+
+    static void LoadCodeSamples()
+    {
+      var codeSampleFiles = GetSpecFiles("code_samples", "*.*");
+
+      foreach (var file in codeSampleFiles)
+      {
+        var fileInfo = new FileInfo(file);
+        var filename = fileInfo.Name.Substring(0, fileInfo.Name.IndexOf("."));
+        if (filename.ToLowerInvariant() == "readme")
+          continue;
+
+        _codeSamples.Add(new CodeSample
+        {
+          Language = new DirectoryInfo(fileInfo.FullName).Parent.Parent.Name,
+          SampleString = $"\"{string.Join("\\n", File.ReadAllLines(fileInfo.FullName).Select(x => x.Replace("\"", "\\\"")))}\"",
+          Path = new DirectoryInfo(fileInfo.FullName).Parent.Name.Replace("@", "/"),
+          HttpVerb = filename
+        });
+      }
     }
 
     private static IEnumerable<string> GetSpecFiles(string relativePath, string searchPattern)
