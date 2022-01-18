@@ -32,7 +32,7 @@ means you just have to edit the spec on your own GitHub organisation instead of 
 If you fork this repo to edit your spec, you will need to:
 
 1. Install the dependencies using `npm i`
-2. Run `npm run start` to view your changes on [http://localhost:3000](http://localhost:3000).
+2. Run `npm run start` to view your changes on [http://localhost:3001](http://localhost:3001).
 
 When you raise a PR, it will automatically tag
 the [Docs Admin](https://github.com/orgs/checkout/teams/docs-admin/members) team for review.
