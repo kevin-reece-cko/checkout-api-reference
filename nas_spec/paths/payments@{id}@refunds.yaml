@@ -19,6 +19,8 @@ post:
         pattern: "^(pay)_(\\w{26})$"
       required: true
       description: The payment identifier
+  parameters:
+    - $ref: '#/components/parameters/ckoIdempotencyKey'
   requestBody:
     content:
       application/json:
