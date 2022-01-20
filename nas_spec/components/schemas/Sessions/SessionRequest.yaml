@@ -31,7 +31,7 @@ properties:
     description: |
       The processing channel to be used for the session. Required if this was not set in the request for the OAuth token.
   marketplace:
-    $ref: '#/components/schemas/MarketplaceData'
+    $ref: '#/components/schemas/SessionMarketplaceData'
   authentication_type:
     $ref: '#/components/schemas/AuthenticationType'
   authentication_category:
