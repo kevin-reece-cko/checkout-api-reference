@@ -12,6 +12,7 @@ post:
 
     For card payments, refund requests are processed asynchronously. You can use [workflows](#tag/Workflows) to be notified if the refund is successful.
   parameters:
+    - $ref: '#/components/parameters/ckoIdempotencyKey'
     - in: path
       name: id
       schema:
@@ -19,8 +20,6 @@ post:
         pattern: "^(pay)_(\\w{26})$"
       required: true
       description: The payment identifier
-  parameters:
-    - $ref: '#/components/parameters/ckoIdempotencyKey'
   requestBody:
     content:
       application/json:
