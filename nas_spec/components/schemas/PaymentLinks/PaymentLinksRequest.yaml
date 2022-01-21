@@ -123,7 +123,6 @@ properties:
           type: integer
           description: Minor units. Includes tax, excludes discounts.
           minimum: 0
-          maximum: 100000000
           example: 200
   metadata:
     type: object
