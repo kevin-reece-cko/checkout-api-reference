@@ -12,6 +12,7 @@ post:
 
     For card payments, capture requests are processed asynchronously. You can use [workflows](#tag/Workflows) to be notified if the capture is successful.
   parameters:
+    - $ref: '#/components/parameters/ckoIdempotencyKey'
     - in: path
       name: id
       schema:
