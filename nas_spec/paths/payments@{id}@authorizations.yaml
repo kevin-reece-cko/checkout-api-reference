@@ -11,6 +11,7 @@ post:
     Request an incremental authorization to increase the authorization amount or extend the authorization's validity period.
 
   parameters:
+    - $ref: '#/components/parameters/ckoIdempotencyKey'
     - in: path
       name: id
       schema:
