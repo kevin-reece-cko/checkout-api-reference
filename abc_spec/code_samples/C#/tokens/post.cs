@@ -1,30 +1,53 @@
-var api = CheckoutApi.Create("your secret key", useSandbox: true, "your public key");
-var tokenData = new Dictionary<string, object>
+// For more information please refer to https://github.com/checkout/checkout-sdk-net
+using Checkout.Common;
+using Checkout.Tokens;
+
+ICheckoutApi api = CheckoutSdk.DefaultSdk().StaticKeys()
+    .PublicKey("public_key")
+    .SecretKey("secret_key")
+    .Environment(Environment.Sandbox)
+    .HttpClientFactory(new DefaultHttpClientFactory())
+    .Build();
+
+CardTokenRequest request = new CardTokenRequest
 {
-  { "version", "EC_v1" },
-  { "data", "t7GeajLB9skXB6QSWfEpPA4WPhD..." },
-  { "signature", "MIAGCSqGSIb3DQEHAqCAMI..." },
-  { "header", new Dictionary<string, string>
+    Number = "4543474002249996",
+    ExpiryMonth = 10,
+    ExpiryYear = 2027,
+    Name = "FirstName LastName",
+    Cvv = "123",
+    BillingAddress = new Address()
     {
-      { "ephemeralPublicKey", "MFkwEwYHK..." },
-      { "publicKeyHash", "tqYV+tmG9aMh+l..." },
-      { "transactionId", "3cee89679130a4..." }
+        AddressLine1 = "Checkout.com",
+        AddressLine2 = "90 Tottenham Court Road",
+        City = "London",
+        State = "London",
+        Zip = "W1T 4TJ",
+        Country = CountryCode.GB
+    },
+    Phone = new Phone()
+    {
+        Number = "4155552671",
+        CountryCode = "1"
     }
-  }
 };
-var request = new WalletTokenRequest(WalletType.ApplePay, tokenData);
 
 try
 {
-  var response = await api.Tokens.RequestAsync(request);
-  var token = response.Token;
+    CardTokenResponse response = api.TokensClient().Request(request).Result;
 }
-catch (CheckoutValidationException validationEx)
+catch (CheckoutApiException e)
 {
-  return ValidationError(validationEx.Error);
+    // API error
+    string requestId = e.RequestId;
+    var statusCode = e.HttpStatusCode;
+    IDictionary<string, object> errorDetails = e.ErrorDetails;
 }
-catch (CheckoutApiException apiEx)
+catch (CheckoutArgumentException e)
 {
-  Log.Error("Token request failed with status code {HttpStatusCode}", apiEx.HttpStatusCode);
-  throw;
+    // Bad arguments
+}
+catch (CheckoutAuthorizationException e)
+{
+    // Invalid authorization
 }
