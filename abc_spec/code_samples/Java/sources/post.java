@@ -1,29 +1,57 @@
-CheckoutApi api = CheckoutApiImpl.create(sk_XXXX, true, pk_XXXX);
+// For more information please refer to https://github.com/checkout/checkout-sdk-java
+import com.checkout.CheckoutApi;
+import com.checkout.CheckoutApiException;
+import com.checkout.CheckoutArgumentException;
+import com.checkout.CheckoutAuthorizationException;
+import com.checkout.CheckoutSdk;
+import com.checkout.Environment;
+import com.checkout.common.Address;
+import com.checkout.common.CountryCode;
+import com.checkout.common.Phone;
+import com.checkout.sources.SourceData;
+import com.checkout.sources.SourceProcessed;
+import com.checkout.sources.SourceRequest;
+import com.checkout.sources.SourceResponse;
 
-Address billingAddress = new Address();
-billingAddress.setAddressLine1("Checkout.com");
-billingAddress.setAddressLine2("90 Tottenham Court Road");
-billingAddress.setCity("London");
-billingAddress.setState("London");
-billingAddress.setZip("W1T 4TJ");
-billingAddress.setCountry("GB");
+CheckoutApi api = CheckoutSdk.defaultSdk()
+    .staticKeys()
+    .publicKey("public_key")
+    .secretKey("secret_key")
+    .environment(Environment.SANDBOX) // or Environment.PRODUCTION
+    .build();
 
-Phone phone = new Phone();
-phone.setCountryCode("+1");
-phone.setNumber("415 555 2671");
+Address billingAddress = Address.builder()
+    .addressLine1("Checkout")
+    .addressLine2("90 Tottenham Court Road")
+    .city("London")
+    .state("London")
+    .zip("W1T 4TJ")
+    .country(CountryCode.GB)
+    .build();
 
 SourceData sourceData = new SourceData();
-sourceData.put("first_name", "Marcus");
-sourceData.put("last_name", "Barrilius Maximus");
-sourceData.put("account_iban", "DE68100100101234567895");
-sourceData.put("bic", "PBNKDEFFXXX");
-sourceData.put("billing_descriptor", "Java SDK test");
+sourceData.put("first_name", "firstName");
+sourceData.put("last_name", "lastName");
+sourceData.put("account_iban", "iban");
+sourceData.put("bic", "bic");
+sourceData.put("billing_descriptor", "billingDescriptor");
 sourceData.put("mandate_type", "single");
 
-SourceRequest sourceRequest = new SourceRequest("sepa", billingAddress);
-sourceRequest.setPhone(phone);
-sourceRequest.setReference("Java SDK test");
-sourceRequest.setSourceData(sourceData);
-SourceResponse sourceResponse = api.sourcesClient().requestAsync(sourceRequest).get();
+SourceRequest request = new SourceRequest("sepa", billingAddress);
+request.setPhone(Phone.builder().countryCode("1").number("4155552671").build());
+request.setReference("reference");
+request.setSourceData(sourceData);
 
-SourceProcessed source = sourceResponse.getSource();
+try {
+    SourceResponse response = api.sourcesClient().requestAsync(request).get();
+    SourceProcessed source = response.getSource();
+} catch (CheckoutApiException e) {
+    // API error
+    String requestId = e.getRequestId();
+    int statusCode = e.getHttpStatusCode();
+    Map<String, Object> errorDetails = e.getErrorDetails();
+} catch (CheckoutArgumentException e) {
+    // Bad arguments
+} catch (CheckoutAuthorizationException e) {
+    // Invalid authorization
+}
