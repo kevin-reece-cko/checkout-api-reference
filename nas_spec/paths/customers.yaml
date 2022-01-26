@@ -5,9 +5,12 @@ post:
     - OAuth:
         - vault
         - vault:customers
-    - ApiSecretKey: [ ]
+    - ApiSecretKey: []
   summary: Create a customer
-  description: Create a customer which can be linked to one or more payment instruments, and can be passed as a source when making a payment, using the customer’s default instrument.
+  description: >
+    <a href="https://www.checkout.com/docs/four/payments/store-payment-details/customers" target="_blank">Store a customer's details in a customer object to reuse in future payments</a>. When creating a customer, you can link payment instruments – the customer `id` returned can be passed as a source when making a payment.
+    <br/><br>
+    **NOTE:** Specify a `default` instrument, otherwise the `instruments` array will not be saved on creation.
   requestBody:
     required: true
     content:

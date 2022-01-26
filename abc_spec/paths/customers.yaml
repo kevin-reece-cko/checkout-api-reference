@@ -1,11 +1,12 @@
 post:
   security:
-    - ApiSecretKey: [ ]
+    - ApiSecretKey: []
   tags:
     - Customers
   summary: Create a customer
   operationId: createCustomer
-  description: Create a customer which can be linked to one or more payment instruments, and can be passed as a source when making a payment, using the customer’s default instrument.
+  description: >
+    <a href="https://www.checkout.com/docs/payments/store-payment-details/customers" target="_blank">Store a customer's details in a customer object to reuse in future payments</a>. Link a payment instrument using the Update customer details endpoint, so the customer `id` returned can be passed as a source when making a payment.
   requestBody:
     required: true
     content:
