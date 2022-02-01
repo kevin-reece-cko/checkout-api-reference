@@ -1,0 +1,31 @@
+type: object
+properties:
+  event_types:
+    type: array
+    items:
+      type: string
+    description: Event types for which the workflow will execute
+example:
+  {
+    'event_types':
+      [
+        'payment_approved',
+        'payment_declined',
+        'card_verification_declined',
+        'card_verified',
+        'payment_authorization_incremented',
+        'payment_authorization_increment_declined',
+        'payment_capture_declined',
+        'payment_captured',
+        'payment_refund_declined',
+        'payment_refunded',
+        'payment_void_declined',
+        'payment_voided',
+        'dispute_canceled',
+        'dispute_evidence_required',
+        'dispute_expired',
+        'dispute_lost',
+        'dispute_resolved',
+        'dispute_won',
+      ],
+  }

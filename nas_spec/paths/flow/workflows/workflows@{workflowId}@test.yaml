@@ -1,0 +1,62 @@
+post:
+  servers:
+    - url: https://api.sandbox.checkout.com
+      description: Sandbox
+  security:
+    - OAuth:
+        - flow
+        - flow:workflows
+  tags:
+    - Workflows
+  summary: Test a workflow
+  description: >
+    Validate a workflow in our Sandbox environment.
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: '#/components/schemas/test-workflow-request'
+  parameters:
+    - in: path
+      name: workflowId
+      schema:
+        type: string
+        pattern: ^wf_[a-z2-7]{26}$
+      required: true
+      description: The workflow identifier
+      example: wf_c7svxlvo2bbuva4f6s3xu4f7wm
+  responses:
+    '204':
+      description: Workflow test initiated
+      headers:
+        Cko-Request-Id:
+          schema:
+            $ref: '#/components/headers/Cko-Request-Id'
+        Cko-Version:
+          schema:
+            $ref: '#/components/headers/Cko-Version'
+    '401':
+      description: Unauthorized
+    '404':
+      description: Workflow not found
+    '422':
+      description: Invalid data was sent
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              request_id:
+                type: string
+                example: 0HLHPN8802NUF:00000003
+              error_type:
+                type: string
+                example: request_invalid
+              error_codes:
+                type: array
+                items:
+                  type: string
+                  example: event_types_invalid
+    '500':
+      description: Internal Error
