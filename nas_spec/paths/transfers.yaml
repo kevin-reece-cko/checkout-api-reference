@@ -20,10 +20,10 @@ post:
           schema:
             $ref: '#/components/schemas/CreateTransferResponse'
       headers:
-        Cko-Version:
-          $ref: '#/components/headers/Cko-Version'
         Cko-Request-Id:
           $ref: '#/components/headers/Cko-Request-Id'
+        Cko-Version:
+          $ref: '#/components/headers/Cko-Version'
     '400':
       description: Bad Request
     '401':
@@ -62,10 +62,10 @@ get:
           schema:
             $ref: '#/components/schemas/ListTransfersResponse'
       headers:
-        Cko-Version:
-          $ref: '#/components/Cko-Version'
         Cko-Request-Id:
           $ref: '#/components/headers/Cko-Request-Id'
+        Cko-Version:
+          $ref: '#/components/headers/Cko-Version'
     '400':
       description: Bad Request
     '401':

@@ -15,10 +15,10 @@ get:
           schema:
             $ref: '#/components/schemas/BalancesResponse'
       headers:
-        Cko-Version:
-          $ref: '#/components/headers/Cko-Version'
         Cko-Request-Id:
           $ref: '#/components/headers/Cko-Request-Id'
+        Cko-Version:
+          $ref: '#/components/headers/Cko-Version'
     '400':
       description: Query format not supported
     '401':
