@@ -47,16 +47,18 @@ get:
   description: Retrieve a selection of transfers based on a query.
   summary: Retrieve transfers
   parameters:
-    - in: path
+    - in: query
       name: query
+      example: entity_id:ent_azsiyswl7bwe2ynjzujy7lcjca
+      style: form
       schema:
         type: string
       required: true
+      allowEmptyValue: false
       description: A selection of criteria used to select transfers
-      example: entity_id:ent_azsiyswl7bwe2ynjzujy7lcjca
   responses:
     '200':
-      description: Transfers found.
+      description: Transfers found
       content:
         application/json:
           schema:
