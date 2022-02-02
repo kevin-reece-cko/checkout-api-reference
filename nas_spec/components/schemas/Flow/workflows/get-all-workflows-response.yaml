@@ -14,5 +14,9 @@ properties:
           type: string
           description: The name of your workflow
           example: Webhooks workflow
+        active:
+          type: boolean
+          description: Indicates whether the workflow is currently active
+          example: true
         _links:
           $ref: '#/components/schemas/workflow-links'

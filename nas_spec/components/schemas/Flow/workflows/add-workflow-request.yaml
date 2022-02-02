@@ -4,6 +4,10 @@ properties:
     type: string
     description: A name you can use to describe your workflow
     example: Webhooks workflow
+  active:
+    type: boolean
+    description: Indicates whether the workflow is currently active
+    example: true
   conditions:
     type: array
     description: Only one condition of the same type is permitted
@@ -19,6 +23,7 @@ properties:
 example:
   {
     'name': 'Webhooks workflow',
+    'active': true,
     'conditions':
       [
         {
