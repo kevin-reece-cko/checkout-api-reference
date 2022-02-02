@@ -44,8 +44,8 @@ post:
   tags:
     - Transfers
 get:
-  description: Retrieve transfers
-  summary: Retrieve a selection of transfers based on a query
+  description: Retrieve a selection of transfers based on a query.
+  summary: Retrieve transfers
   parameters:
     - in: path
       name: query
