@@ -1,0 +1,18 @@
+type: object
+title: Currency Account Balance
+description: The currency account details and balance.
+properties:
+  currency_account_id:
+    type: string
+    description: The currency account ID.
+    example: ca_123v
+  descriptor:
+    type: string
+    description: A descriptor for the currency account.
+    example: Revenue Account 1
+  holding_currency:
+    type: string
+    description: The holding currency of the currency account (the three character ISO 4217 code).
+    example: EUR
+  balances:
+    $ref: '#/components/schemas/Balance'

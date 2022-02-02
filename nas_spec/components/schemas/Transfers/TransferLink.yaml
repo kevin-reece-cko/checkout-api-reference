@@ -1,0 +1,6 @@
+type: object
+title: Transfer link
+properties:
+  href:
+    description: The link URL.
+    type: string

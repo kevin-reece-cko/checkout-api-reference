@@ -1,0 +1,10 @@
+type: object
+title: Balances response
+description: A list of balances for each currency account returned from the request.
+properties:
+  data:
+    type: array
+    title: Balances
+    description: The list of requested balances.
+    items:
+      $ref: '#/components/schemas/CurrencyAccountBalance'

@@ -1,0 +1,20 @@
+type: object
+title: Balance values
+description: The respective balance values.
+properties:
+  pending:
+    type: number
+    description: The pending balance.
+    example: 10
+  available:
+    type: number
+    description: The available balance.
+    example: 50
+  payable:
+    type: number
+    description: The payable balance.
+    example: 0
+  collateral:
+    type: number
+    description: The collateral balance.
+    example: 0
