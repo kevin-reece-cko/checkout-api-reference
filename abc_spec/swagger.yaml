@@ -51,6 +51,7 @@ info:
 
       | Date       | Description of change                                                |
       | ---------- | -------------------------------------------------------------------- |
+      | 2022/01/26 | Update code samples for Java.                                        |
       | 2022/01/25 | Update code samples for C#.                                          |
       | 2022/01/13 | Update code samples for Node JS.                                     |
       | 2021/12/17 | Added `payment_type`, `payment_ip` and `billing_descriptor` to Hosted Payments and Payment Links Get endpoints. |
