@@ -1,14 +1,49 @@
-var api = CheckoutApi.Create("your secret key");
-var paymentId = "pay_y3oqhf46pyzuxjbcn2giaqnb44";
+// For more information please refer to https://github.com/checkout/checkout-sdk-net
+using Checkout.Payments.Four;
 
-// Full refund
-await api.Payments.RefundAsync(paymentId);
+//API keys
+Four.ICheckoutApi api = CheckoutSdk.FourSdk().StaticKeys()
+    .PublicKey("public_key")
+    .SecretKey("secret_key")
+    .Environment(Environment.Sandbox)
+    .HttpClientFactory(new DefaultHttpClientFactory())
+    .Build();
 
-// Or partial refund
-var refundRequest = new RefundRequest
+//OAuth
+Four.ICheckoutApi api = CheckoutSdk.FourSdk().OAuth()
+    .ClientCredentials("client_id", "client_secret")
+    .Scopes(FourOAuthScope.GatewayPayment)
+    .Environment(Environment.Sandbox)
+    .FilesEnvironment(Environment.Sandbox)
+    .Build();
+
+RefundRequest request = new RefundRequest()
 {
-    Reference = "your reference",
-    Amount = 100
+    Amount = 10,
+    Reference = "reference",
+    Metadata = new Dictionary<string, object>()
+    {
+        {"coupon_code", "NY2018"},
+        {"partner_id", "123989"}
+    }
 };
 
-await api.Payments.RefundAsync(paymentId, refundRequest);
+try
+{
+    RefundResponse response = api.PaymentsClient().RefundPayment("payment_id", request).Result;
+}
+catch (CheckoutApiException e)
+{
+    // API error
+    string requestId = e.RequestId;
+    var statusCode = e.HttpStatusCode;
+    IDictionary<string, object> errorDetails = e.ErrorDetails;
+}
+catch (CheckoutArgumentException e)
+{
+    // Bad arguments
+}
+catch (CheckoutAuthorizationException e)
+{
+    // Invalid authorization
+}
