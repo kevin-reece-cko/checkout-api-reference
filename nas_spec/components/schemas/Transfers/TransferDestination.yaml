@@ -5,4 +5,4 @@ properties:
   id:
     type: string
     description: The identifier representing the destination of the funds. Currently this should be a entity ID.
-    example: ca_bqik7gxoavwhmy3ot6kvmbx6py
+    example: ent_w4jelhppmfiufdnatam37wrfc4
