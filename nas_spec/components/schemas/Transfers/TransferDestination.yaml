@@ -4,5 +4,5 @@ description: The object representing the destination of the funds involved in th
 properties:
   id:
     type: string
-    description: The identifier representing the destination of the funds. Currently this should be a currency account ID.
+    description: The identifier representing the destination of the funds. Currently this should be a entity ID.
     example: ca_bqik7gxoavwhmy3ot6kvmbx6py
