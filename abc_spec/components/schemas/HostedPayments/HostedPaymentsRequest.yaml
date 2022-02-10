@@ -120,6 +120,24 @@ properties:
       aft:
         type: boolean
         description: Indicates whether the payment is an [Account Funding Transaction](https://docs.checkout.com/payment-actions/account-funding-transactions).
+  allow_payment_methods:
+    type: array
+    description: Used to specify which <a href="https://www.checkout.com/docs/payments/payment-methods" target="_blank">alternative payment methods</a> that should render.
+    enum:
+      - sofort
+      - klarna
+      - paypal
+      - ideal
+      - sepa
+      - knet
+      - giropay
+      - bancontact
+      - eps
+      - p24
+      - multibanco
+    example:
+      - klarna
+      - knet
   products:
     type: array
     description: Details about the products in the order

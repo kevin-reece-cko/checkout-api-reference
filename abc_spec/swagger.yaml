@@ -51,6 +51,7 @@ info:
 
       | Date       | Description of change                                                |
       | ---------- | -------------------------------------------------------------------- |
+      | 2022/02/16 | Added `allow_payment_methods` to Payment Links and Hosted Payments Page.                                        |
       | 2022/01/26 | Update code samples for Java.                                        |
       | 2022/01/25 | Update code samples for C#.                                          |
       | 2022/01/13 | Update code samples for Node JS.                                     |
