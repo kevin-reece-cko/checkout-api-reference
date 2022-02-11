@@ -10,4 +10,5 @@ properties:
     type: boolean
     description: Indicates whether the workflow is currently active
     example: true
+    default: true
 example: { 'name': 'Webhooks workflow', 'active': true }
