@@ -130,19 +130,19 @@ properties:
   allow_payment_methods:
     type: array
     description: >
-      Use to specify which <a href="https://www.checkout.com/docs/four/payments/payment-methods" target="_blank">payment methods</a> should render on the page.<br>
-      We can only accept: 
-        - `sofort`
-        - `klarna`
-        - `paypal`
-        - `ideal`
-        - `sepa`
-        - `knet`
-        - `giropay`
-        - `bancontact`
-        - `eps`
-        - `p24`
-        - `multibanco`
+      Use to specify which <a href="https://www.checkout.com/docs/four/payments/payment-methods" target="_blank">payment methods</a> should render on the page.
+    enum:
+      - sofort
+      - klarna
+      - paypal
+      - ideal
+      - sepa
+      - knet
+      - giropay
+      - bancontact
+      - eps
+      - p24
+      - multibanco
     example:
       - klarna
       - knet
