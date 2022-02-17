@@ -30,6 +30,7 @@ properties:
         example:
           href: 'https://pay.sandbox.checkout.com/page/hpp_xGQBg0AXl3cM'
 example:
+  id: 'hpp_xGQBg0AXl3cM'
   reference: 'ORD-123A'
   _links:
     self:
