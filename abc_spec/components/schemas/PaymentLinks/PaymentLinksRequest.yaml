@@ -127,19 +127,20 @@ properties:
         description: Indicates whether the payment is an [Account Funding Transaction](https://docs.checkout.com/payment-actions/account-funding-transactions)
   allow_payment_methods:
     type: array
-    description: Used to specify which <a href="https://www.checkout.com/docs/payments/payment-methods" target="_blank">alternative payment methods</a> that should render.
-    enum:
-      - sofort
-      - klarna
-      - paypal
-      - ideal
-      - sepa
-      - knet
-      - giropay
-      - bancontact
-      - eps
-      - p24
-      - multibanco
+    description: >
+      Use to specify which <a href="https://www.checkout.com/docs/payments/payment-methods" target="_blank">payment methods</a> should render on the page.<br>
+      We can only accept: 
+        - `sofort`
+        - `klarna`
+        - `paypal`
+        - `ideal`
+        - `sepa`
+        - `knet`
+        - `giropay`
+        - `bancontact`
+        - `eps`
+        - `p24`
+        - `multibanco`
     example:
       - klarna
       - knet
