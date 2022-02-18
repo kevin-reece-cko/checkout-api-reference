@@ -39,6 +39,7 @@ info:
 
       | Date       | Description of change                                                         |
       | ---------- | ----------------------------------------------------------------------------- |
+      | 2022/02/18 | Added `Increment Payment Authorization` code samples for Java & C#            |
       | 2022/02/02 | Adds `active` property for workflows                                          |
       | 2022/01/26 | Update code samples for Java.                                                 |
       | 2022/01/25 | Update code samples for C#.                                                   |

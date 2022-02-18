@@ -14,7 +14,9 @@ CheckoutApi api = CheckoutSdk.defaultSdk()
     .build();
 
 try {
-    String file = api.reconciliationClient().retrieveCSVStatementsReport("/path/to/statement_report.csv").get();
+    // The second parameter is optional. Specifies the path where a file with the content returned is saved. If the file
+    // does not exist, the client will attempt to create a new one, otherwise the existing file will be rewritten.
+    String content = api.reconciliationClient().retrieveCSVSingleStatementReport("id", "/path/to/file.csv").get();
 } catch (CheckoutApiException e) {
     // API error
     String requestId = e.getRequestId();
