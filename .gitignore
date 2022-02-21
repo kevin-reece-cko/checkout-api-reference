@@ -42,4 +42,5 @@ src/OpenApiGenerator/obj/*
 .DS_Store
 
 .idea
+*.iml
 .vscode/settings.json

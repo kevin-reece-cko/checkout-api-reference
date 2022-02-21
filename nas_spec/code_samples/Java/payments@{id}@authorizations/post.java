@@ -1,28 +1,37 @@
 // For more information please refer to https://github.com/checkout/checkout-sdk-java
-import com.checkout.CheckoutApi;
 import com.checkout.CheckoutApiException;
 import com.checkout.CheckoutArgumentException;
 import com.checkout.CheckoutAuthorizationException;
 import com.checkout.CheckoutSdk;
 import com.checkout.Environment;
-import com.checkout.common.QueryFilterDateRange;
+import com.checkout.four.CheckoutApi;
+import com.checkout.payments.four.request.AuthorizationRequest;
+import com.checkout.payments.four.response.AuthorizationResponse;
 
-CheckoutApi api = CheckoutSdk.defaultSdk()
+// API Keys
+CheckoutApi api = CheckoutSdk.fourSdk()
     .staticKeys()
     .publicKey("public_key")
     .secretKey("secret_key")
     .environment(Environment.SANDBOX) // or Environment.PRODUCTION
     .build();
 
-QueryFilterDateRange queryFilterDateRange = QueryFilterDateRange.builder()
-    .from(LocalDateTime.now().minus(1, ChronoUnit.MONTHS).toInstant(ZoneOffset.UTC))
-    .to(Instant.now())
+// OAuth
+CheckoutApi api = CheckoutSdk.fourSdk()
+    .oAuth()
+    .clientCredentials("client_id", "client_secret")
+    .environment(Environment.SANDBOX) // or Environment.PRODUCTION
+    .scopes(FourOAuthScope.GATEWAY) // more scopes available
+    .build();
+
+AuthorizationRequest authorizationRequest = AuthorizationRequest.builder()
+    .amount(100L)
+    .reference("reference")
     .build();
 
 try {
-    // The second parameter is optional. Specifies the path where a file with the content returned is saved. If the file
-    // does not exist, the client will attempt to create a new one, otherwise the existing file will be rewritten.
-    String content = api.reconciliationClient().retrieveCSVStatementsReport(queryFilterDateRange, "/path/to/file.csv").get();
+    // Optional: idempotencyKey as a third parameter for idempotent requests
+    AuthorizationResponse response = api.paymentsClient().incrementPaymentAuthorization("payment_id", authorizationRequest).get();
 } catch (CheckoutApiException e) {
     // API error
     String requestId = e.getRequestId();
