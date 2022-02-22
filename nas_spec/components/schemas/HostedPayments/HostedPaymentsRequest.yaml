@@ -8,12 +8,12 @@ required:
 properties:
   amount:
     type: integer
-    description: The payment amount. The exact format <a href="https://www.checkout.com/docs/resources/calculating-the-value" target="_blank">depends on the currency</a>
+    description: The payment amount. The exact format <a href="https://www.checkout.com/docs/four/resources/calculating-the-value" target="_blank">depends on the currency</a>
     minimum: 1
     example: 1000
   currency:
     type: string
-    description: The three-letter <a href="https://docs.checkout.com/resources/codes/currency-codes" target="blank">ISO currency code</a> of the payment
+    description: The three-letter <a href="https://www.checkout.com/docs/four/resources/codes/currency-codes" target="blank">ISO currency code</a> of the payment
     example: GBP
     minLength: 3
     maxLength: 3
@@ -91,7 +91,7 @@ properties:
     properties:
       aft:
         type: boolean
-        description: Indicates whether the payment is an [Account Funding Transaction](https://docs.checkout.com/payment-actions/account-funding-transactions).
+        description: Indicates whether the payment is an [Account Funding Transaction](https://www.checkout.com/docs/four/payments/manage-payments/account-funding-transactions).
   products:
     type: array
     description: Details about the products in the order
@@ -116,7 +116,7 @@ properties:
           example: 1
         price:
           type: integer
-          description: 'Minor units. Includes tax, excludes discounts. The exact format <a href="https://www.checkout.com/docs/resources/calculating-the-value" target="_blank">depends on the currency</a>'
+          description: 'Minor units. Includes tax, excludes discounts. The exact format <a href="https://www.checkout.com/docs/four/resources/calculating-the-value" target="_blank">depends on the currency</a>'
           minimum: 0
           example: 1000
   risk:
