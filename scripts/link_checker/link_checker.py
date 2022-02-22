@@ -1,13 +1,12 @@
 import re
 import os
 import requests
-import sys
 from requests.exceptions import ConnectionError, MissingSchema, InvalidSchema
 from bs4 import BeautifulSoup
 
 BASE_DIR = os.path.join(os.path.dirname(__file__), '..')
-
-ignored_urls = []
+IGNORED_URLS = []
+IGNORED_PATTERNS = ["mailto", "#"]
 
 
 def check_broken_links(swagger_file: str):
@@ -19,28 +18,19 @@ def check_broken_links(swagger_file: str):
     broken_link_array = []
     contents = open(swagger_file, 'r')
     soup = BeautifulSoup(contents, features="html.parser")
-    links = [a['href'] for a in soup.findAll("a")]
-    ignore_patterns = ["mailto", "#"]
+    raw_links = [a['href'] for a in soup.findAll("a")]
 
-    combined_regex = "".join([f"(?=^((?!^{combination}).)*$)" for combination in ignore_patterns])
-    filter_regex = [filtered_links for filtered_links in links if
-                    filtered_links not in ignored_urls and re.compile(combined_regex).match(filtered_links)]
+    combined_regex = "".join([f"(?=^((?!^{combination}).)*$)" for combination in IGNORED_PATTERNS])
+    all_links = [filtered_links for filtered_links in raw_links if filtered_links not in IGNORED_URLS
+                 and re.compile(combined_regex).match(filtered_links)]
 
-    for links in filter_regex:
+    for i in all_links:
         try:
-            response = requests.get(links)
+            response = requests.get(i)
         except (ConnectionError, MissingSchema, InvalidSchema):
-            # return links
-            broken_link_array.append(links)
+            broken_link_array.append(i)
         else:
             if response.status_code >= 400 and response.status_code != 999 and response.status_code != 429:
-                broken_link_array.append(links)
-                # return links
-                # print(("Broken link found: ").upper() + check_broken_link)
+                broken_link_array.append(i)
 
-    # if broken_links_exist and not platform == "darwin":
-    # print("Broken link(s) found. Please run this script locally to fix broken links!".upper())
-    # sys.exit(1)
-
-    # print("-----------------", sep="\n")
     return broken_link_array
