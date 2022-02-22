@@ -8,7 +8,7 @@ required:
 properties:
   amount:
     type: integer
-    description: The payment amount. The exact format <a href="https://docs.checkout.com/docs/calculating-the-value" target="_blank">depends on the currency</a>
+    description: The payment amount. The exact format <a href="https://www.checkout.com/docs/resources/calculating-the-value" target="_blank">depends on the currency</a>
     minimum: 1
     example: 1000
   currency:
@@ -144,7 +144,7 @@ properties:
           example: 1
         price:
           type: integer
-          description: 'Minor units. Includes tax, excludes discounts. The exact format <a href="https://docs.checkout.com/docs/calculating-the-value" target="_blank">depends on the currency</a>'
+          description: 'Minor units. Includes tax, excludes discounts. The exact format <a href="https://www.checkout.com/docs/resources/calculating-the-value" target="_blank">depends on the currency</a>'
           minimum: 0
           example: 1000
   risk:
