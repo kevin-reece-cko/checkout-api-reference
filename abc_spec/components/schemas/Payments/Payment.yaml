@@ -10,7 +10,7 @@ required:
   - _links
 properties:
   id:
-    description: Payment unique identifier
+    description: Payment unique identifier  
     allOf:
       - $ref: '#/components/schemas/PaymentId'
   requested_on:
