@@ -43,6 +43,10 @@ properties:
         minLength: 1
         maxLength: 13
         description: The city from which the charge originated
+      reference:
+        type: string
+        maxLength: 50
+        description: The reference shown on the statement. Required for payouts to bank accounts.
   reference:
     type: string
     description: A reference you can later use to identify this payment, such as an order number.<br><i>Required for PayPal payments<i>.
@@ -131,19 +135,14 @@ properties:
       Use to specify which <a href="https://www.checkout.com/docs/four/payments/payment-methods" target="_blank">payment methods</a> should render on the page. <a href="https://checkout.com/docs/four/integrate/payment-links/manage-payment-links#Alternative_payment_methods" target="_blank">Check the requirements for each payment method</a>
     enum:
       - sofort
-      - klarna
-      - paypal
       - ideal
-      - sepa
       - knet
-      - giropay
       - bancontact
-      - eps
       - p24
       - multibanco
     example:
-      - klarna
-      - knet
+      - ideal
+      - sofort
   products:
     type: array
     description: Details about the products in the order.
