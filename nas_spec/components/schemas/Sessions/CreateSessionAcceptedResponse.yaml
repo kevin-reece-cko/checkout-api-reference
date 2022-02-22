@@ -10,6 +10,7 @@ required:
   - status
   - protocol_version
   - _links
+  - exemption
 properties:
   session_secret:
     $ref: '#/components/schemas/SessionSecret'
@@ -52,3 +53,72 @@ properties:
     $ref: '#/components/schemas/CardInfo'
   _links:
     $ref: '#/components/schemas/CreateSessionLinks'
+  exemption:
+    type: object
+    description: Details related to exemption present in 3DS flow
+    properties:
+      requested:
+        type: string
+        description: Indicates merchant requested exemption
+        enum:
+          - none
+      applied:
+        type: string
+        description: Indicates Issuer accepted or applied exemption
+        enum:
+          - none
+          - low_value
+          - recurring_operation
+          - transaction_risk_assessment
+          - secure_corporate_payment
+          - trusted_listing
+          - 3ds_outage
+          - sca_delegation
+          - out_of_sca_scope
+          - other
+          - low_risk_program
+  flow_type:
+    type: string
+    description: Indicates whether the 3D Secure 2 authentication was challenged or frictionless
+    enum:
+      - challenged
+      - frictionless
+      - frictionless_delegated
+  challenge_indicator:
+    type: string
+    default: no_preference
+    description: Indicates the preference for whether or not a 3DS challenge should be performed. The customer’s bank has the final say on whether or not the customer receives the challenge
+    enum:
+      - no_preference
+      - no_challenge_requested
+      - challenge_requested
+      - challenge_requested_mandate
+  acs:
+    type: object
+    properties:
+      challenge_cancel_reason_code:
+        type: string
+        description: Indicator in the 3D Secure 2 RReq when the challenge is cancelled
+        minimum: 0
+        maximum: 99
+  scheme_info:
+    type: object
+    description: Indicates scheme-specific information
+    properties:
+      name:
+        type: string
+        description: Indicates which scheme was used to perform authentication
+        enum:
+          - cartes_bancaires
+          - visa
+          - mastercard
+      score:
+        type: string
+        description: Risk score calculated by Directory Server (DS). Cartes Bancaires 3D Secure 2 only
+      avalgo:
+        type: string
+        description: Identification of the algorithm used by the ACS to calculate the Authentication Value indicated
+      authentication_date:
+        type: string
+        format: ISO-8601
+        description: Authentication date and time
