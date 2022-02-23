@@ -15,6 +15,38 @@ properties:
     example: GBP
     minLength: 3
     maxLength: 3
+  payment_type:
+    type: string
+    description: This must be specified for card payments where the cardholder is not present (i.e., recurring or mail order / telephone order)
+    enum:
+      - Regular
+      - Recurring
+    default: Regular
+  payment_ip:
+    type: string
+    format: ipv4
+    maxLength: 45
+    description: The IP address used to make the payment. Used by our risk engine to check the customer's IP address – only accepts IPv4 addresses
+  billing_descriptor:
+    type: object
+    description: An optional description that is displayed on the customer's statement identifying a purchase
+    required:
+      - name
+      - city
+    properties:
+      name:
+        type: string
+        maxLength: 25
+        description: A dynamic description of the change
+      city:
+        type: string
+        minLength: 1
+        maxLength: 13
+        description: The city from which the charge originated
+      reference:
+        type: string
+        maxLength: 50
+        description: The reference shown on the statement. Required for payouts to bank accounts.
   reference:
     type: string
     description: A reference you can later use to identify this payment, such as an order number.<br><i>Required for PayPal payments<i>.
@@ -96,7 +128,21 @@ properties:
     properties:
       aft:
         type: boolean
-        description: Indicates whether the payment is an [Account Funding Transaction](https://docs.checkout.com/payment-actions/account-funding-transactions)
+        description: Indicates whether the payment is an [Account Funding Transaction](https://www.checkout.com/docs/four/payments/manage-payments/account-funding-transactions).
+  allow_payment_methods:
+    type: array
+    description: >
+      Use to specify which <a href="https://www.checkout.com/docs/four/payments/payment-methods" target="_blank">payment methods</a> should render on the page. <a href="https://checkout.com/docs/four/integrate/payment-links/manage-payment-links#Alternative_payment_methods" target="_blank">Check the requirements for each payment method</a>
+    enum:
+      - sofort
+      - ideal
+      - knet
+      - bancontact
+      - p24
+      - multibanco
+    example:
+      - ideal
+      - sofort
   products:
     type: array
     description: Details about the products in the order.
@@ -180,10 +226,3 @@ properties:
       Providing this field will automatically set `capture` to true.
     allOf:
       - $ref: '#/components/schemas/Timestamp'
-  processing_channel_id:
-    type: string
-    pattern: "^(pc)_(\\w{26})$"
-    description: The processing channel to be used for the payment
-    example: 'pc_q4dbxom5jbgudnjzjpz7j2z6uq'
-  marketplace:
-    $ref: '#/components/schemas/MarketplaceData'

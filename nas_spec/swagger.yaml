@@ -39,6 +39,7 @@ info:
 
       | Date       | Description of change                                                         |
       | ---------- | ----------------------------------------------------------------------------- |
+      | 2022/02/23 | Adds Hosted Payments Page and Payment Links                                   |
       | 2022/02/18 | Added `Increment Payment Authorization` code samples for Java & C#            |
       | 2022/02/02 | Adds `active` property for workflows                                          |
       | 2022/01/26 | Update code samples for Java.                                                 |
@@ -59,10 +60,10 @@ tags:
     description: Create an access token to begin using our APIs.
   - name: Payments
     description: Process and manage payments from a variety of sources and to various destinations all within one integration.
-  #  - name: Payment Links
-  #    description: Create a Payment Link to accept and process payment details.
-  #  - name: Hosted Payments Page
-  #    description: Create a Hosted Payments Page to accept and process payment details.
+  - name: Payment Links
+    description: Create a Payment Link to accept and process payment details.
+  - name: Hosted Payments Page
+    description: Create a Hosted Payments Page to accept and process payment details.
   # - name: Sources
   #   description: Create a payment source for a customer that you can use for one or more payments.
   - name: Tokens
@@ -94,8 +95,8 @@ x-tagGroups:
   - name: Handle payments and payouts
     tags:
       - Payments
-      #      - Payment Links
-      #      - Hosted Payments Page
+      - Payment Links
+      - Hosted Payments Page
       - Forex
       - Apple Pay
   - name: Stored payment details
