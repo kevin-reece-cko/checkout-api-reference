@@ -128,7 +128,7 @@ properties:
     properties:
       aft:
         type: boolean
-        description: Indicates whether the payment is an [Account Funding Transaction](https://docs.checkout.com/payment-actions/account-funding-transactions)
+        description: Indicates whether the payment is an [Account Funding Transaction](https://www.checkout.com/docs/four/payments/manage-payments/account-funding-transactions).
   allow_payment_methods:
     type: array
     description: >
