@@ -39,6 +39,7 @@ info:
 
       | Date       | Description of change                                                         |
       | ---------- | ----------------------------------------------------------------------------- |
+      | 2022/03/02 | Adds Transfers and Balances                                                   |
       | 2022/02/23 | Adds Hosted Payments Page and Payment Links                                   |
       | 2022/02/18 | Added `Increment Payment Authorization` code samples for Java & C#            |
       | 2022/02/02 | Adds `active` property for workflows                                          |
