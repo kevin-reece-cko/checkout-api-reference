@@ -19,6 +19,7 @@ properties:
   fingerprint:
     type: string
     description: A token that can uniquely identify this instrument across all customers
+    example: vnsdrvikkvre3dtrjjvlm5du4q
   expiry_month:
     type: integer
     description: The expiry month

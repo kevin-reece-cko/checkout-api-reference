@@ -6,4 +6,8 @@ properties:
     type: string
     description: A name to describe the workflow
     example: Webhooks workflow
-example: { 'name': 'Webhooks workflow' }
+  active:
+    type: boolean
+    description: Indicates whether the workflow is currently active
+    example: true
+example: { 'name': 'Webhooks workflow', 'active': true }

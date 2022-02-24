@@ -1,13 +1,47 @@
-CheckoutApi api = CheckoutApiImpl.create("your secret key", false, "your public key");
-String paymentId = "pay_y3oqhf46pyzuxjbcn2giaqnb44";
+// For more information please refer to https://github.com/checkout/checkout-sdk-java
+import com.checkout.CheckoutApiException;
+import com.checkout.CheckoutArgumentException;
+import com.checkout.CheckoutAuthorizationException;
+import com.checkout.CheckoutSdk;
+import com.checkout.Environment;
+import com.checkout.four.CheckoutApi;
+import com.checkout.payments.four.CaptureRequest;
+import com.checkout.payments.four.CaptureResponse;
 
-// Full capture
-api.paymentsClient().captureAsync(paymentId).get();
-
-// Or partial capture
-CaptureRequest captureRequest = CaptureRequest.builder()
-    .reference("your reference")
-    .amount(100)
+// API Keys
+CheckoutApi api = CheckoutSdk.fourSdk()
+    .staticKeys()
+    .publicKey("public_key")
+    .secretKey("secret_key")
+    .environment(Environment.SANDBOX) // or Environment.PRODUCTION
     .build();
 
-api.paymentsClient().captureAsync(paymentId, captureRequest).get();
+// OAuth
+CheckoutApi api = CheckoutSdk.fourSdk()
+    .oAuth()
+    .clientCredentials("client_id", "client_secret")
+    .environment(Environment.SANDBOX) // or Environment.PRODUCTION
+    .scopes(FourOAuthScope.GATEWAY) // more scopes available
+    .build();
+
+CaptureRequest captureRequest = CaptureRequest.builder()
+    .amount(10L)
+    .reference("partial capture")
+    .metadata(new HashMap<>())
+    .build();
+
+try {
+    // or, capturePayment("payment_id") for a full capture
+    CaptureResponse response = api.paymentsClient().capturePayment("payment_id", captureRequest).get();
+} catch (CheckoutApiException e) {
+    // API error
+    String requestId = e.getRequestId();
+    int statusCode = e.getHttpStatusCode();
+    Map<String, Object> errorDetails = e.getErrorDetails();
+} catch (CheckoutArgumentException e) {
+    // Bad arguments
+} catch (CheckoutAuthorizationException e) {
+    // Invalid authorization
+}
+
+

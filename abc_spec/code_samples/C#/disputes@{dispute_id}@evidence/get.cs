@@ -1,3 +1,30 @@
-var api = CheckoutApi.Create("your secret key");
+// For more information please refer to https://github.com/checkout/checkout-sdk-net
 
-var getDisputeEvidenceResponse = await api.Disputes.GetDisputeEvidenceAsync(id: "dsp_bc94ebda8d275i461229");
+using Checkout.Disputes;
+
+ICheckoutApi api = CheckoutSdk.DefaultSdk().StaticKeys()
+    .PublicKey("public_key")
+    .SecretKey("secret_key")
+    .Environment(Environment.Sandbox)
+    .HttpClientFactory(new DefaultHttpClientFactory())
+    .Build();
+
+try
+{
+    DisputeEvidenceResponse response = api.DisputesClient().GetEvidence("disputes_id").Result;
+}
+catch (CheckoutApiException e)
+{
+    // API error
+    string requestId = e.RequestId;
+    var statusCode = e.HttpStatusCode;
+    IDictionary<string, object> errorDetails = e.ErrorDetails;
+}
+catch (CheckoutArgumentException e)
+{
+    // Bad arguments
+}
+catch (CheckoutAuthorizationException e)
+{
+    // Invalid authorization
+}

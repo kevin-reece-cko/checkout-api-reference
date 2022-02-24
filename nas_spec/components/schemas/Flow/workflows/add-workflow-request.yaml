@@ -4,6 +4,11 @@ properties:
     type: string
     description: A name you can use to describe your workflow
     example: Webhooks workflow
+  active:
+    type: boolean
+    description: Indicates whether the workflow is currently active
+    default: true
+    example: true
   conditions:
     type: array
     description: Only one condition of the same type is permitted
@@ -19,6 +24,7 @@ properties:
 example:
   {
     'name': 'Webhooks workflow',
+    'active': true,
     'conditions':
       [
         {
@@ -27,32 +33,32 @@ example:
             {
               'gateway':
                 [
-                  'payment_approved',
-                  'payment_declined',
-                  'card_verification_declined',
-                  'card_verified',
-                  'payment_authorization_incremented',
-                  'payment_authorization_increment_declined',
-                  'payment_capture_declined',
-                  'payment_captured',
-                  'payment_refund_declined',
-                  'payment_refunded',
-                  'payment_void_declined',
-                  'payment_voided',
+                    'payment_approved',
+                    'payment_declined',
+                    'card_verification_declined',
+                    'card_verified',
+                    'payment_authorization_incremented',
+                    'payment_authorization_increment_declined',
+                    'payment_capture_declined',
+                    'payment_captured',
+                    'payment_refund_declined',
+                    'payment_refunded',
+                    'payment_void_declined',
+                    'payment_voided',
                 ],
               'dispute':
                 [
-                  'dispute_canceled',
-                  'dispute_evidence_required',
-                  'dispute_expired',
-                  'dispute_lost',
-                  'dispute_resolved',
-                  'dispute_won',
+                    'dispute_canceled',
+                    'dispute_evidence_required',
+                    'dispute_expired',
+                    'dispute_lost',
+                    'dispute_resolved',
+                    'dispute_won',
                 ],
             },
         },
-        { 'type': 'entity', 'entities': ['ent_xyfdshfudosfdshfdiosfds', 'ent_fidjosfjdisofdjsifdosfu'] },
-        { 'type': 'processing_channel', 'processing_channels': ['pc_axclravnqf5u5ejkweijnp5zc4'] },
+        { 'type': 'entity', 'entities': [ 'ent_xyfdshfudosfdshfdiosfds', 'ent_fidjosfjdisofdjsifdosfu' ] },
+        { 'type': 'processing_channel', 'processing_channels': [ 'pc_axclravnqf5u5ejkweijnp5zc4' ] },
       ],
     'actions':
       [

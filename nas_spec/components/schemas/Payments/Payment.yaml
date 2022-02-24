@@ -33,7 +33,7 @@ properties:
     example: 6540
   currency:
     type: string
-    description: The three-letter <a href="https://docs.checkout.com/docs/currency-codes" target="blank">ISO currency code</a> of the payment
+    description: The three-letter <a href="https://www.checkout.com/docs/four/resources/codes/currency-codes" target="blank">ISO currency code</a> of the payment
     example: USD
     maxLength: 3
     minLength: 3
@@ -131,7 +131,7 @@ properties:
         allOf:
           - $ref: '#/components/schemas/PhoneNumber'
   payment_ip:
-    description:  The IP address used to make the payment. Used by our risk engine to check the customer's IP address – only accepts IPv4 addresses.
+    description: The IP address used to make the payment. Used by our risk engine to check the customer's IP address – only accepts IPv4 addresses.
     allOf:
       - $ref: '#/components/schemas/IPAddress'
   marketplace:

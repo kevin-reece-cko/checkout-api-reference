@@ -1,20 +1,56 @@
-var api = CheckoutApi.Create("your secret key");
+// For more information please refer to https://github.com/checkout/checkout-sdk-net
+using Checkout.Webhooks;
 
-var updatedWebhook = new Webhook()
+ICheckoutApi api = CheckoutSdk.DefaultSdk().StaticKeys()
+    .PublicKey("public_key")
+    .SecretKey("secret_key")
+    .Environment(Environment.Sandbox)
+    .HttpClientFactory(new DefaultHttpClientFactory())
+    .Build();
+
+WebhookRequest request = new WebhookRequest()
 {
-  Url = "https://example.com/webhooks/updated",
-  EventTypes = new List<string>
+    Url = "https://example.com/webhooks",
+    Active = true,
+    Headers = new Dictionary<string, string>()
     {
-        "payment_pending",
-        "payment_captured"
+        {"authorization", "1234"}
     },
-  Headers = new Dictionary<string, string>
+    ContentType = WebhookContentType.Json,
+    EventTypes = new List<string>()
     {
-        { "Authorization", "1234" }
+        "payment_approved",
+        "payment_pending",
+        "payment_declined",
+        "payment_expired",
+        "payment_canceled",
+        "payment_voided",
+        "payment_void_declined",
+        "payment_captured",
+        "payment_capture_declined",
+        "payment_capture_pending",
+        "payment_refunded",
+        "payment_refund_declined",
+        "payment_refund_pending"
     }
 };
 
-var webhookUpdateResponse = await api.Webhooks.UpdateWebhookAsync(
-                                    "wh_ahun3lg7bf4e3lohbhni65335u",
-                                    new UpdateWebhookRequest(updatedWebhook)
-                                  );
+try
+{
+    WebhookResponse response = api.WebhooksClient().UpdateWebhook("webhook_id", request).Result;
+}
+catch (CheckoutApiException e)
+{
+    // API error
+    string requestId = e.RequestId;
+    var statusCode = e.HttpStatusCode;
+    IDictionary<string, object> errorDetails = e.ErrorDetails;
+}
+catch (CheckoutArgumentException e)
+{
+    // Bad arguments
+}
+catch (CheckoutAuthorizationException e)
+{
+    // Invalid authorization
+}

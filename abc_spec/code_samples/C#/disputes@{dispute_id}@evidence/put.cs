@@ -1,12 +1,41 @@
-var api = CheckoutApi.Create("your secret key");
+// For more information please refer to https://github.com/checkout/checkout-sdk-net
+using Checkout.Disputes;
 
-var disputeEvidence = new DisputeEvidence()
+ICheckoutApi api = CheckoutSdk.DefaultSdk().StaticKeys()
+	.PublicKey("public_key")
+	.SecretKey("secret_key")
+	.Environment(Environment.Sandbox)
+	.HttpClientFactory(new DefaultHttpClientFactory())
+	.Build();
+
+DisputeEvidenceRequest request = new DisputeEvidenceRequest()
 {
-    {"additional_evidence_file", "file_jmbfgkjromvcrn9t4qu4" },
-    {"additional_evidence_text", "provide dispute evidence test" }
+	ProofOfDeliveryOrServiceFile = "file_xxxxxx",
+	ProofOfDeliveryOrServiceText = "proof of delivery or service text",
+	InvoiceOrReceiptFile = "file_xxxxxx",
+	InvoiceOrReceiptText = "Copy of the invoice",
+	CustomerCommunicationFile = "file_xxxxxx",
+	CustomerCommunicationText = "Copy of an email exchange with the cardholder",
+	AdditionalEvidenceFile = "file_xxxxxx",
+	AdditionalEvidenceText = "Scanned document"
 };
 
-await api.Disputes.ProvideDisputeEvidenceAsync(
-                    id: "dsp_bc94ebda8d275i461229",
-                    disputeEvidence: disputeEvidence
-                );
+try
+{
+	await api.DisputesClient().PutEvidence("disputes_id", request);
+}
+catch (CheckoutApiException e)
+{
+	// API error
+	string requestId = e.RequestId;
+	var statusCode = e.HttpStatusCode;
+	IDictionary<string, object> errorDetails = e.ErrorDetails;
+}
+catch (CheckoutArgumentException e)
+{
+	// Bad arguments
+}
+catch (CheckoutAuthorizationException e)
+{
+	// Invalid authorization
+}

@@ -1,3 +1,28 @@
-CheckoutApi api = CheckoutApiImpl.create(sk_XXXX, true, pk_XXXX);
+// For more information please refer to https://github.com/checkout/checkout-sdk-java
+import com.checkout.CheckoutApi;
+import com.checkout.CheckoutApiException;
+import com.checkout.CheckoutArgumentException;
+import com.checkout.CheckoutAuthorizationException;
+import com.checkout.CheckoutSdk;
+import com.checkout.Environment;
+import com.checkout.events.EventResponse;
 
-EventResponse event = api.eventsClient().retrieveEvent("evt_c2qelfixai2u3es3ksovngkx3e").get();
+CheckoutApi api = CheckoutSdk.defaultSdk()
+    .staticKeys()
+    .publicKey("public_key")
+    .secretKey("secret_key")
+    .environment(Environment.SANDBOX) // or Environment.PRODUCTION
+    .build();
+
+try {
+    EventResponse response = api.eventsClient().retrieveEvent("event_id").get();
+} catch (CheckoutApiException e) {
+    // API error
+    String requestId = e.getRequestId();
+    int statusCode = e.getHttpStatusCode();
+    Map<String, Object> errorDetails = e.getErrorDetails();
+} catch (CheckoutArgumentException e) {
+// Bad arguments
+} catch (CheckoutAuthorizationException e) {
+// Invalid authorization
+}
