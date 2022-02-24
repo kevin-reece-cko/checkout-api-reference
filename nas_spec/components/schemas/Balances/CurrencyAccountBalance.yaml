@@ -2,10 +2,6 @@ type: object
 title: Currency Account Balance
 description: The currency account details and balance.
 properties:
-  currency_account_id:
-    type: string
-    description: The currency account ID.
-    example: ca_123v
   descriptor:
     type: string
     description: A descriptor for the currency account.
