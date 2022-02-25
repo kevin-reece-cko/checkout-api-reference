@@ -39,6 +39,7 @@ info:
 
       | Date       | Description of change                                                         |
       | ---------- | ----------------------------------------------------------------------------- |
+      | 2022/03/02 | Adds Transfers and Balances                                                   |
       | 2022/02/23 | Adds Hosted Payments Page and Payment Links                                   |
       | 2022/02/18 | Added `Increment Payment Authorization` code samples for Java & C#            |
       | 2022/02/02 | Adds `active` property for workflows                                          |
@@ -84,6 +85,11 @@ tags:
     description: Evaluate the risk of a transaction at the pre-authentication and pre-capture stages of the payment process.
   - name: Apple Pay
     description: Manage your Apple Pay certificates in order to process payments via Apple Pay.
+  - name: Transfers
+    description: Transfer funds while managing the entities to transfer money to recoup funds from a seller, return money from a refund or to make up the difference when running a promotion.
+  - name: Balances
+    description: View balances for currency accounts belonging to an entity.
+
   # - name: Files
   #   description: |
   #     Upload files to be used as input to other APIs
@@ -99,6 +105,8 @@ x-tagGroups:
       - Hosted Payments Page
       - Forex
       - Apple Pay
+      - Transfers
+      - Balances
   - name: Stored payment details
     tags:
       - Tokens

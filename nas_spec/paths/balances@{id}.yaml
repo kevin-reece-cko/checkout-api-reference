@@ -1,0 +1,42 @@
+parameters:
+  - $ref: '#/components/parameters/EntityId'
+  - $ref: '#/components/parameters/Query'
+get:
+  summary: Retrieve entity balances
+  description: Use this endpoint to retrieve balances for each currency account belonging to an entity.
+  security:
+    - OAuth:
+        - marketplace
+  responses:
+    '200':
+      description: Balances retrieved successfully.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/BalancesResponse'
+      headers:
+        Cko-Request-Id:
+          $ref: '#/components/headers/Cko-Request-Id'
+        Cko-Version:
+          $ref: '#/components/headers/Cko-Version'
+    '400':
+      description: Query format not supported
+    '401':
+      description: Unauthorized
+    '404':
+      description: Entity not found
+    '422':
+      description: Invalid data was sent
+      content:
+        application/json:
+          schema:
+            allOf:
+              - $ref: '#/components/schemas/ValidationError'
+              - type: object
+                properties:
+                  error_codes:
+                    example:
+                      - error_code1
+                      - error_code2
+  tags:
+    - Balances
