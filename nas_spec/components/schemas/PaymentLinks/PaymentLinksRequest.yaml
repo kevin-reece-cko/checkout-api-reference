@@ -134,6 +134,7 @@ properties:
     description: >
       Use to specify which <a href="https://www.checkout.com/docs/four/payments/payment-methods" target="_blank">payment methods</a> should render on the page. <a href="https://checkout.com/docs/four/integrate/payment-links/manage-payment-links#Alternative_payment_methods" target="_blank">Check the requirements for each payment method</a>
     enum:
+      - card
       - sofort
       - ideal
       - knet
@@ -141,8 +142,7 @@ properties:
       - p24
       - multibanco
     example:
-      - ideal
-      - sofort
+      - card
   products:
     type: array
     description: Details about the products in the order.
