@@ -70,3 +70,8 @@ properties:
       - multi_select
       - oob
       - html_other
+  challenge_cancel_reason_code:
+    type: string
+    description: Indicator in the 3D Secure 2 RReq when the challenge is cancelled
+    minimum: 0
+    maximum: 99
