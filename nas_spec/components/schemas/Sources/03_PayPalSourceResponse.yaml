@@ -1,0 +1,30 @@
+type: object
+description: The PayPal payment details
+allOf:
+  - $ref: '#/components/schemas/AddSourceResponse'
+  - type: object
+    properties:
+      processing:
+        type: object
+        description: PayPal payment details
+        properties:
+          ordaer_id:
+            type: string
+            description: The PayPal Order Id
+            example: '3PU37640TR4476714'
+      _links:
+        type: object
+        description: The links related to the PayPal payment source
+        readOnly: true
+        minItems: 1
+        properties:
+          self:
+            type: object
+            allOf:
+              - $ref: '#/components/schemas/Link'
+            description: The URI of the payment source
+          redirect:
+            type: object
+            allOf:
+              - $ref: '#/components/schemas/Link'
+            description: A link to approve the PayPal order

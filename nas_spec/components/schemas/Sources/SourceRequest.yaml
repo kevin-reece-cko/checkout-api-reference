@@ -6,6 +6,7 @@ discriminator:
   mapping:
     sepa: '#/components/schemas/01_SepaSource'
     ach: '#/components/schemas/02_AchSource'
+    paypal: '#/components/schemas/03_PayPalSource'
 properties:
   type:
     type: string

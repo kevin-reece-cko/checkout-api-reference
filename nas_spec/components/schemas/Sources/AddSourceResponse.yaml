@@ -4,6 +4,7 @@ discriminator:
   mapping:
     sepa: '#/components/schemas/01_SepaSourceResponse'
     ach: '#/components/schemas/AddSourceResponse'
+    paypal: '#/components/schemas/03_PayPalSourceResponse'
 required:
   - type
   - response_code
