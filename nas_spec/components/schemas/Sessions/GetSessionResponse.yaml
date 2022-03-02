@@ -115,6 +115,9 @@ properties:
           - out_of_sca_scope
           - other
           - low_risk_program
+      code:
+        type: string
+        description: Indicates Cartes Bancaire specific exemption value
   flow_type:
     type: string
     description: Indicates whether the 3D Secure 2 authentication was challenged or frictionless
