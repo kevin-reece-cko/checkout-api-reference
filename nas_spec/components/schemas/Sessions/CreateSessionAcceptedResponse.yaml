@@ -57,3 +57,12 @@ properties:
     type: string
     format: ISO-8601
     description: Authentication date and time
+  challenge_indicator:
+    type: string
+    default: no_preference
+    description: Indicates the preference for whether or not a 3DS challenge should be performed. The customer’s bank has the final say on whether or not the customer receives the challenge
+    enum:
+      - no_preference
+      - no_challenge_requested
+      - challenge_requested
+      - challenge_requested_mandate
