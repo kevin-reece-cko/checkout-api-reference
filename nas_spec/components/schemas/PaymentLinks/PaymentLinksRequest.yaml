@@ -8,7 +8,7 @@ properties:
     type: integer
     description: The payment amount. The exact format <a href="https://www.checkout.com/docs/four/resources/calculating-the-amount" target="_blank">depends on the currency</a>.
     minimum: 1
-    example: 200
+    example: 1000
   currency:
     type: string
     description: The three-letter <a href="https://docs.checkout.com/resources/codes/currency-codes" target="blank">ISO currency code</a> of the payment.<br><i>The `currency` and `billing.address.country` fields determine which payment methods are shown on the payment page</i>.
@@ -57,6 +57,14 @@ properties:
     description: A description of the payment.
     example: Payment for Gold Necklace
     maxLength: 100
+  processing_channel_id:
+    type: string
+    pattern: "^(pc)_(\\w{26})$"
+    description: The processing channel to be used for the payment
+    example: 'pc_q4dbxom5jbgudnjzjpz7j2z6uq'
+  marketplace:
+    allOf:
+      - $ref: '#/components/schemas/MarketplaceData'
   expires_in:
     type: integer
     description: The time for which the link remains valid, in seconds.
