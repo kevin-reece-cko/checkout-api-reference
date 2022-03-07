@@ -8,7 +8,7 @@ properties:
     type: integer
     description: The payment amount. The exact format <a href="https://www.checkout.com/docs/four/resources/calculating-the-amount" target="_blank">depends on the currency</a>.
     minimum: 1
-    example: 200
+    example: 1000
   currency:
     type: string
     description: The three-letter <a href="https://docs.checkout.com/resources/codes/currency-codes" target="blank">ISO currency code</a> of the payment.<br><i>The `currency` and `billing.address.country` fields determine which payment methods are shown on the payment page</i>.
