@@ -6,6 +6,7 @@ properties:
   type:
     type: string
     description: The instrument type
+    example: token
   token:
     type: string
     description: The Checkout.com token
