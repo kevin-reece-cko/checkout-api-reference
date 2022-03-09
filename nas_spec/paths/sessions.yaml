@@ -54,8 +54,6 @@ post:
         application/json:
           schema:
             $ref: '#/components/schemas/ErrorResponse'
-    '501':
-      description: Not Implemented
     '503':
       description: Service not available. A temporary server error.
       content:
