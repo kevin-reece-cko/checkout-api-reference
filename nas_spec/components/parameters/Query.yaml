@@ -1,0 +1,9 @@
+name: query
+in: query
+description: The query to apply to limit the currency accounts.
+required: false
+allowEmptyValue: false
+example: currency:EUR
+style: form
+schema:
+  type: string

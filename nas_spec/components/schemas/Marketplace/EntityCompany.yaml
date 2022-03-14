@@ -28,6 +28,8 @@ properties:
     description: 'The registered address of the company.'
     allOf:
       - $ref: '#/components/schemas/EntityAddress'
+  document:
+    - $ref: '#/components/schemas/EntityDocument'
   representatives:
     type: array
     title: Representatives

@@ -1,0 +1,20 @@
+type: object
+title: Balance values
+description: The respective balance values.
+properties:
+  pending:
+    type: number
+    description: Funds on the way to the sub-entity's account. These funds will be added to Available once settled.
+    example: 10
+  available:
+    type: number
+    description: The funds available to be used for transactions such as transfers or payouts.
+    example: 50
+  payable:
+    type: number
+    description: Funds being paid out of the sub-entity's account, but not yet settled.
+    example: 0
+  collateral:
+    type: number
+    description: The collateral balance.
+    example: 0

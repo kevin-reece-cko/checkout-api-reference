@@ -1,0 +1,5 @@
+type: string
+title: Transfer status
+description: The current state of the initiated transfer.
+enum:
+  - pending

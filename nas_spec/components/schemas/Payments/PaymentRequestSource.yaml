@@ -7,10 +7,11 @@ discriminator:
     id: '#/components/schemas/02_PaymentRequestIdSource'
     card: '#/components/schemas/03_PaymentRequestCardSource'
     network_token: '#/components/schemas/04_PaymentRequestNetworkTokenSource'
+    provider_token: '#/components/schemas/07_PaymentRequestProviderTokenSource'
 required:
   - type
 properties:
   type:
     type: string
-    description: The payment source type <br> *Note:* *To make a payment with full card details, you must be <a href="https://docs.checkout.com/four/risk-management/pci-compliance" target="_blank">SAQ D PCI compliant</a>*
+    description: The payment source type <br> *Note:* *To make a payment with full card details, you must be <a href="https://www.checkout.com/docs/four/payments/regulation-support/pci-compliance" target="_blank">SAQ D PCI compliant</a>*
     example: 'card'

@@ -1,0 +1,12 @@
+type: object
+title: Transfer source
+description: The object representing the source of the funds involved in the transfer.
+properties:
+  id:
+    type: string
+    description: The identifier representing the source of the funds. Currently this should be an entity ID.
+    example: ent_azsiyswl7bwe2ynjzujy7lcjca
+  amount:
+    description: The amount to be transferred, in the minor unit of the currency represented by the `id`.
+    type: integer
+    example: 100

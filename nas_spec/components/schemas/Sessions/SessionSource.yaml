@@ -1,5 +1,5 @@
 ﻿type: object
-description: The source of the authentication. Using a `network_token` will return `501 Not Implemented`.
+description: The source of the authentication.
 discriminator:
   propertyName: type
   mapping:

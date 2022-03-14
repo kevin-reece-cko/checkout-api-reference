@@ -16,6 +16,9 @@ properties:
     type: string
     description: A reference you can later use to identify this payment, such as an order number.
     example: ORD-123A
+  warnings:
+    type: array
+    description: Related to the `allow_payment_methods` object in the request. Included in the response if an alternative payment method is passed through, but no card schemes are configured against the account.
   _links:
     type: object
     description: The links related to the Payment Link session.
