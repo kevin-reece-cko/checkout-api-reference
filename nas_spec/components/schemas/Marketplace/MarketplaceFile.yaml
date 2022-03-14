@@ -9,6 +9,7 @@ properties:
     enum:
       - bank_verification
       - identification
+      - company_verification
     example: 'identification'
   path:
     type: string
