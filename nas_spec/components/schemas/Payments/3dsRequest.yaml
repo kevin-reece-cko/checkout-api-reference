@@ -88,3 +88,9 @@ properties:
   score:
     type: string
     description: Risk score calculated by Directory Server (DS). Cartes Bancaires 3D Secure 2 only.
+  cryptogram_algorithm:
+    type: string
+    example: "1"
+    maxLength: 1
+    minLength: 1
+    description: The algorithm used by the Issuer ACS to calculate the Authentication cryptogram. This is the AVALGO data returned in Cartes bancaires Authentication.
