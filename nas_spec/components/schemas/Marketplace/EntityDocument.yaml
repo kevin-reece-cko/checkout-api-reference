@@ -9,4 +9,6 @@ properties:
   type:
     type: 'string'
     description: 'The type of the file.'
+    enum:
+      - 'incorporation_document'
     example: 'incorporation_document'
