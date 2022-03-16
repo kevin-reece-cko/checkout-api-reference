@@ -1,0 +1,11 @@
+﻿type: object
+description: Information related to marketplace payments
+properties:
+  preferred_scheme:
+    type: Enum
+    enum:
+      - "mastercard"
+      - "visa"
+      - "cartes_bancaires"
+    description: Specifies the preferred scheme for a CoBrand payment.
+    example: 'cartes_bancaires'
