@@ -43,6 +43,10 @@ allOf:
         type: string
         description: The card scheme
         example: 'VISA'
+      scheme_local:
+        type: string
+        description: The local card scheme for a CoBrand card
+        example: 'Cartes_Bancaires'
       last4:
         type: string
         description: The last four digits of the card number
