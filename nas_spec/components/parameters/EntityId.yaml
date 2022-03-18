@@ -1,0 +1,9 @@
+name: id
+in: path
+description: The ID of the entity.
+required: true
+allowEmptyValue: false
+example: ent_w4jelhppmfiufdnatam37wrfc4
+style: simple
+schema:
+  type: string

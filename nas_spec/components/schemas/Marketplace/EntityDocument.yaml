@@ -1,0 +1,14 @@
+type: object
+title: Document
+description: 'A document that can be used for a know your business (KYB) check on a company.'
+properties:
+  file_id:
+    type: 'string'
+    description: 'The ID of the file. This is returned when uploading a document using the files API.'
+    example: 'file_wmlfc3zyhqzehihu7giusaaawu'
+  type:
+    type: 'string'
+    description: 'The type of the file.'
+    enum:
+      - 'incorporation_document'
+    example: 'incorporation_document'

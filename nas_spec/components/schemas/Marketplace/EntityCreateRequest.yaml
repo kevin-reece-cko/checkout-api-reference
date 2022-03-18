@@ -75,6 +75,8 @@ properties:
           - city
           - zip
           - country
+      document:
+        $ref: '#/components/schemas/EntityDocument'
       representatives:
         type: array
         title: Representatives
