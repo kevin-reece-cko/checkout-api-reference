@@ -7,5 +7,5 @@ properties:
       - "mastercard"
       - "visa"
       - "cartes_bancaires"
-    description: Specifies the preferred scheme for a CoBrand payment.
+    description: The preferred scheme for co-badged card payment processing. If using 3rd party Authentication before requesting the payment, set the value to the scheme that authenticated the transaction.
     example: 'cartes_bancaires'
