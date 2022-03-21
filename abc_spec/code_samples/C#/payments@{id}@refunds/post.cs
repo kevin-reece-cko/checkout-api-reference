@@ -21,7 +21,7 @@ RefundRequest request = new RefundRequest()
 
 try
 {
-    RefundResponse response = api.PaymentsClient().RefundPayment("payment_id", request).Result;
+    RefundResponse response = await api.PaymentsClient().RefundPayment("payment_id", request);
 }
 catch (CheckoutApiException e)
 {

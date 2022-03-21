@@ -10,7 +10,7 @@ Four.ICheckoutApi api = CheckoutSdk.FourSdk().OAuth()
 
 try
 {
-    OnboardEntityDetailsResponse response = api.MarketplaceClient().GetEntity("entity_id").Result;
+    OnboardEntityDetailsResponse response = await api.MarketplaceClient().GetEntity("entity_id");
 }
 catch (CheckoutApiException e)
 {

@@ -35,7 +35,7 @@ BrowserSession request = new BrowserSession()
 
 try
 {
-    GetSessionResponse response = api.SessionsClient().UpdateSession("session_id", request).Result;
+    GetSessionResponse response = await api.SessionsClient().UpdateSession("session_id", request);
 }
 catch (CheckoutApiException e)
 {

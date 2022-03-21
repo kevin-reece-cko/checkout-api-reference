@@ -29,7 +29,7 @@ AuthorizationRequest authorizationRequest = new AuthorizationRequest
 try
 {
     // Optional: idempotencyKey as a third parameter for idempotent requests
-    AuthorizationResponse response = api.PaymentsClient().IncrementPaymentAuthorization("payment_id", authorizationRequest).Result;
+    AuthorizationResponse response = await api.PaymentsClient().IncrementPaymentAuthorization("payment_id", authorizationRequest);
 }
 catch (CheckoutApiException e)
 {

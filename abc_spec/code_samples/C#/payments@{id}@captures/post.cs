@@ -21,7 +21,7 @@ CaptureRequest request = new CaptureRequest
 
 try
 {
-    CaptureResponse response = api.PaymentsClient().CapturePayment("payment_id", request).Result;
+    CaptureResponse response = await api.PaymentsClient().CapturePayment("payment_id", request);
 }
 catch (CheckoutApiException e)
 {

@@ -104,7 +104,7 @@ HostedPaymentRequest request = new HostedPaymentRequest()
 
 try
 {
-    HostedPaymentResponse response = api.HostedPaymentsClient().Create(request).Result;
+    HostedPaymentResponse response = await api.HostedPaymentsClient().Create(request);
 }
 catch (CheckoutApiException e)
 {

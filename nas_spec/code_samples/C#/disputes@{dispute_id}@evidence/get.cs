@@ -19,7 +19,7 @@ Four.ICheckoutApi api = CheckoutSdk.FourSdk().OAuth()
 
 try
 {
-    DisputeEvidenceResponse response = api.DisputesClient().GetEvidence("disputes_id").Result;
+    DisputeEvidenceResponse response = await api.DisputesClient().GetEvidence("disputes_id");
 }
 catch (CheckoutApiException e)
 {

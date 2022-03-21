@@ -19,7 +19,7 @@ Four.ICheckoutApi api = CheckoutSdk.FourSdk().OAuth()
 
 try
 {
-    CustomerDetailsResponse response = api.CustomersClient().Get("customer_id").Result;
+    CustomerDetailsResponse response = await api.CustomersClient().Get("customer_id");
 }
 catch (CheckoutApiException e)
 {

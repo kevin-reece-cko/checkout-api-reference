@@ -19,7 +19,7 @@ QuoteRequest request = new QuoteRequest()
 
 try
 {
-    QuoteResponse response = api.ForexClient().RequestQuote(request).Result;
+    QuoteResponse response = await api.ForexClient().RequestQuote(request);
 }
 catch (CheckoutApiException e)
 {

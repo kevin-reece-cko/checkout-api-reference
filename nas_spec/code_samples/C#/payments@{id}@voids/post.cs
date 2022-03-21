@@ -29,7 +29,7 @@ VoidRequest request = new VoidRequest()
 
 try
 {
-    VoidResponse response = api.PaymentsClient().VoidPayment("payment_id", request).Result;
+    VoidResponse response = await api.PaymentsClient().VoidPayment("payment_id", request);
 }
 catch (CheckoutApiException e)
 {

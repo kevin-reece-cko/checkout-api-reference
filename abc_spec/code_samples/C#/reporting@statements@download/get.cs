@@ -15,7 +15,7 @@ QueryFilterDateRange queryFilterDateRange = new QueryFilterDateRange
 
 try
 {
-    string content = api.ReconciliationClient().RetrieveCsvStatementsReport(queryFilterDateRange).Result;
+    string content = await api.ReconciliationClient().RetrieveCsvStatementsReport(queryFilterDateRange);
 }
 catch (CheckoutApiException e)
 {

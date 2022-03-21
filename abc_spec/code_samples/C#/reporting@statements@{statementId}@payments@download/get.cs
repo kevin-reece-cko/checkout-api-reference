@@ -10,7 +10,7 @@ ICheckoutApi api = CheckoutSdk.DefaultSdk().StaticKeys()
 
 try
 {
-    string content = api.ReconciliationClient().RetrieveCsvSingleStatementReport("id").Result;
+    string content = await api.ReconciliationClient().RetrieveCsvSingleStatementReport("id");
 }
 catch (CheckoutApiException e)
 {

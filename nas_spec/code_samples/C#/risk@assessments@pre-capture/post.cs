@@ -81,7 +81,7 @@ PreCaptureAssessmentRequest request = new PreCaptureAssessmentRequest()
 
 try
 {
-    PreCaptureAssessmentResponse response = api.RiskClient().RequestPreCaptureRiskScan(request).Result;
+    PreCaptureAssessmentResponse response = await api.RiskClient().RequestPreCaptureRiskScan(request);
 }
 catch (CheckoutApiException e)
 {

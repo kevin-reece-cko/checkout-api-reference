@@ -11,7 +11,7 @@ ICheckoutApi api = CheckoutSdk.DefaultSdk().StaticKeys()
 
 try
 {
-    DisputeEvidenceResponse response = api.DisputesClient().GetEvidence("disputes_id").Result;
+    DisputeEvidenceResponse response = await api.DisputesClient().GetEvidence("disputes_id");
 }
 catch (CheckoutApiException e)
 {

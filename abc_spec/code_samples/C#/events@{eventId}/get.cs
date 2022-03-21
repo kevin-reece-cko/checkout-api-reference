@@ -10,7 +10,7 @@ ICheckoutApi api = CheckoutSdk.DefaultSdk().StaticKeys()
 
 try
 {
-    EventResponse response = api.EventsClient().RetrieveEvent("event_id").Result;
+    EventResponse response = await api.EventsClient().RetrieveEvent("event_id");
 }
 catch (CheckoutApiException e)
 {

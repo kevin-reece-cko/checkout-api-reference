@@ -95,7 +95,7 @@ CreateWorkflowRequest request = new CreateWorkflowRequest
 
 try
 {
-    CreateWorkflowResponse response = api.WorkflowsClient().CreateWorkflow(request).Result;
+    CreateWorkflowResponse response = await api.WorkflowsClient().CreateWorkflow(request);
 }
 catch (CheckoutApiException e)
 {

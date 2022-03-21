@@ -19,7 +19,7 @@ Four.ICheckoutApi api = CheckoutSdk.FourSdk().OAuth()
 
 try
 {
-    IList<PaymentAction> response = api.PaymentsClient().GetPaymentActions("payment_id").Result;
+    IList<PaymentAction> response = await api.PaymentsClient().GetPaymentActions("payment_id");
 }
 catch (CheckoutApiException e)
 {

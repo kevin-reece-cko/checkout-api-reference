@@ -5,6 +5,7 @@
 | 2022/03/18 | Added Cartes Bancaires changes to Sessions request and response.                                                      |
 | 2022/03/16 | Adds `document` object to the `company` object in the Marketplace API                                                 |
 | 2022/03/09 | Added the `provider_token` payment request source type.                                                               |
+| 2022/03/08 | Change C# samples to suggest the usage of `await` instead of `.Result`                                                |
 | 2022/03/02 | Adds Transfers and Balances                                                                                           |
 | 2022/02/23 | Adds Hosted Payments Page and Payment Links                                                                           |
 | 2022/02/18 | Added `Increment Payment Authorization` code samples for Java & C#                                                    |

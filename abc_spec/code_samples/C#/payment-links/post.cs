@@ -103,7 +103,7 @@ using Checkout.Payments.Links;
 
 try
 {
-    PaymentLinkResponse response = api.PaymentLinksClient().Create(request).Result;
+    PaymentLinkResponse response = await api.PaymentLinksClient().Create(request);
 }
 catch (CheckoutApiException e)
 {

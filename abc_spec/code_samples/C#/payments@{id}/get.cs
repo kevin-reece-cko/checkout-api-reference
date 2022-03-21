@@ -10,7 +10,7 @@ ICheckoutApi api = CheckoutSdk.DefaultSdk().StaticKeys()
 
 try
 {
-    GetPaymentResponse response = api.PaymentsClient().GetPaymentDetails("payment_id").Result;
+    GetPaymentResponse response = await api.PaymentsClient().GetPaymentDetails("payment_id");
 }
 catch (CheckoutApiException e)
 {

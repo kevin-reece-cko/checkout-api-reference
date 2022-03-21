@@ -19,7 +19,7 @@ Four.ICheckoutApi api = CheckoutSdk.FourSdk().OAuth()
 
 try
 {
-    GetInstrumentResponse response = api.InstrumentsClient().Get("instrument_id").Result;
+    GetInstrumentResponse response = await api.InstrumentsClient().Get("instrument_id");
 }
 catch (CheckoutApiException e)
 {

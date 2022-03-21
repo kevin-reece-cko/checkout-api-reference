@@ -18,7 +18,7 @@ Four.ICheckoutApi api = CheckoutSdk.FourSdk().OAuth()
 
 try
 {
-    IList<EventTypesResponse> response = api.WorkflowsClient().GetEventTypes().Result;
+    IList<EventTypesResponse> response = await api.WorkflowsClient().GetEventTypes();
 }
 catch (CheckoutApiException e)
 {

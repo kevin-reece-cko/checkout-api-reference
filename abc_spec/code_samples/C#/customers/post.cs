@@ -27,7 +27,7 @@ CustomerRequest request = new CustomerRequest
 
 try
 {
-    IdResponse response = api.CustomersClient().Create(request).Result;
+    IdResponse response = await api.CustomersClient().Create(request);
 }
 catch (CheckoutApiException e)
 {

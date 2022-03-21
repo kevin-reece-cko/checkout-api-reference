@@ -25,7 +25,7 @@ ThreeDsMethodCompletionRequest request = new ThreeDsMethodCompletionRequest()
 
 try
 {
-    GetSessionResponseAfterChannelDataSupplied response = api.SessionsClient().Update3dsMethodCompletionIndicator("session_secret", "session_id", request).Result;
+    GetSessionResponseAfterChannelDataSupplied response = await api.SessionsClient().Update3dsMethodCompletionIndicator("session_secret", "session_id", request);
 }
 catch (CheckoutApiException e)
 {

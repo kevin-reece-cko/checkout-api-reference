@@ -19,7 +19,7 @@ Four.ICheckoutApi api = CheckoutSdk.FourSdk().OAuth()
 
 try
 {
-    GetSessionResponse response = api.SessionsClient().GetSessionDetails("session_id").Result;
+    GetSessionResponse response = await api.SessionsClient().GetSessionDetails("session_id");
 }
 catch (CheckoutApiException e)
 {

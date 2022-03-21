@@ -37,7 +37,7 @@ WebhookRequest request = new WebhookRequest()
 
 try
 {
-    WebhookResponse response = api.WebhooksClient().UpdateWebhook("webhook_id", request).Result;
+    WebhookResponse response = await api.WebhooksClient().UpdateWebhook("webhook_id", request);
 }
 catch (CheckoutApiException e)
 {

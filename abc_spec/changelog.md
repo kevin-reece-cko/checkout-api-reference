@@ -2,6 +2,7 @@
 
 | Date       | Description of change                                                                                           |
 | ---------- | --------------------------------------------------------------------------------------------------------------- |
+| 2022/03/08 | Change C# samples to suggest the usage of `await` instead of `.Result`                                          |
 | 2022/02/23 | Added `allow_payment_methods` to Payment Links and Hosted Payments Page.                                        |
 | 2022/02/18 | Improved and added missing reporting code samples for Java & C#                                                 |
 | 2022/01/26 | Update code samples for Java.                                                                                   |

@@ -16,7 +16,7 @@ QueryFilterDateRange request = new QueryFilterDateRange()
 
 try
 {
-    StatementReportResponse response = api.ReconciliationClient().QueryStatementsReport(request).Result;
+    StatementReportResponse response = await api.ReconciliationClient().QueryStatementsReport(request);
 }
 catch (CheckoutApiException e)
 {

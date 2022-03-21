@@ -12,7 +12,7 @@ ReconciliationQueryPaymentsFilter request = new ReconciliationQueryPaymentsFilte
 
 try
 {
-    ReconciliationPaymentReportResponse response = api.ReconciliationClient().QueryPaymentsReport(request).Result;
+    ReconciliationPaymentReportResponse response = await api.ReconciliationClient().QueryPaymentsReport(request);
 }
 catch (CheckoutApiException e)
 {

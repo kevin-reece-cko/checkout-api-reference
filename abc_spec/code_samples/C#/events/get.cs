@@ -15,7 +15,7 @@ RetrieveEventsRequest request = new RetrieveEventsRequest()
 
 try
 {
-	EventsPageResponse response = api.EventsClient().RetrieveEvents(request).Result;
+	EventsPageResponse response = await api.EventsClient().RetrieveEvents(request);
 }
 catch (CheckoutApiException e)
 {

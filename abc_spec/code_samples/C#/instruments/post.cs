@@ -44,7 +44,7 @@ CreateInstrumentRequest request = new CreateInstrumentRequest
 
 try
 {
-    CreateInstrumentResponse response = api.InstrumentsClient().Create(request).Result;
+    CreateInstrumentResponse response = await api.InstrumentsClient().Create(request);
 }
 catch (CheckoutApiException e)
 {
