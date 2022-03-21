@@ -87,3 +87,67 @@ properties:
     $ref: '#/components/schemas/CardInfo'
   _links:
     $ref: '#/components/schemas/GetSessionLinks'
+  authentication_date:
+    type: string
+    format: ISO-8601
+    description: Authentication date and time
+  exemption:
+    type: object
+    description: Details related to exemption present in 3DS flow
+    properties:
+      requested:
+        type: string
+        description: Indicates merchant requested exemption
+        enum:
+          - none
+      applied:
+        type: string
+        description: Indicates Issuer accepted or applied exemption
+        enum:
+          - none
+          - low_value
+          - recurring_operation
+          - transaction_risk_assessment
+          - secure_corporate_payment
+          - trusted_listing
+          - 3ds_outage
+          - sca_delegation
+          - out_of_sca_scope
+          - other
+          - low_risk_program
+      code:
+        type: string
+        description: Indicates Cartes Bancaire specific exemption value
+  flow_type:
+    type: string
+    description: Indicates whether the 3D Secure 2 authentication was challenged or frictionless
+    enum:
+      - challenged
+      - frictionless
+      - frictionless_delegated
+  challenge_indicator:
+    type: string
+    default: no_preference
+    description: Indicates the preference for whether or not a 3DS challenge should be performed. The customer’s bank has the final say on whether or not the customer receives the challenge
+    enum:
+      - no_preference
+      - no_challenge_requested
+      - challenge_requested
+      - challenge_requested_mandate
+  scheme_info:
+    type: object
+    description: Indicates scheme-specific information
+    properties:
+      name:
+        type: string
+        description: Indicates which scheme was used to perform authentication
+        enum:
+          - cartes_bancaires
+          - visa
+          - mastercard
+      score:
+        type: string
+        description: Risk score calculated by Directory Server (DS). Cartes Bancaires 3D Secure 2 only
+      avalgo:
+        type: string
+        description: Identification of the algorithm used by the ACS to calculate the Authentication Value indicated
