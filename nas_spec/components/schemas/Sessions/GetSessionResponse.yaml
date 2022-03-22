@@ -89,7 +89,7 @@ properties:
     $ref: '#/components/schemas/GetSessionLinks'
   authentication_date:
     type: string
-    format: ISO-8601
+    format: date-time
     description: Authentication date and time
   exemption:
     type: object

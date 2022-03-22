@@ -55,7 +55,7 @@ properties:
     $ref: '#/components/schemas/CreateSessionLinks'
   authentication_date:
     type: string
-    format: ISO-8601
+    format: date-time
     description: Authentication date and time
   challenge_indicator:
     type: string
