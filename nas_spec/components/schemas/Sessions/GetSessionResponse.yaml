@@ -29,6 +29,7 @@ properties:
       - jcb
       - amex
       - diners
+      - cartes_bancaires
   amount:
     $ref: '#/components/schemas/Amount'
   currency:
