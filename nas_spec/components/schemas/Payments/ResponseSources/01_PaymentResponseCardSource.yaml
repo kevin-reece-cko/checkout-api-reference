@@ -45,7 +45,7 @@ allOf:
         example: 'VISA'
       scheme_local:
         type: string
-        description: The local card scheme for a CoBrand card
+        description: The local co-branded card scheme.
         example: 'Cartes_Bancaires'
       last4:
         type: string
