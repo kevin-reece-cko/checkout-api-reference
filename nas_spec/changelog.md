@@ -2,7 +2,8 @@
 
 | Date       | Description of change                                                                                                 |
 | ---------- | --------------------------------------------------------------------------------------------------------------------- |
-| 2022/03/22 | Fixed invalid format for `authentication_date` |
+| 2022/03/22 | Added new scheme `cartes_bancaires` to enum `scheme` in Get and Create Sessions Responses                                                                           |
+| 2022/03/22 | Fixed invalid format for `authentication_date`                                                                        |
 | 2022/03/18 | Added Cartes Bancaires changes to Sessions request and response.                                                      |
 | 2022/03/16 | Adds `document` object to the `company` object in the Marketplace API                                                 |
 | 2022/03/09 | Added the `provider_token` payment request source type.                                                               |
