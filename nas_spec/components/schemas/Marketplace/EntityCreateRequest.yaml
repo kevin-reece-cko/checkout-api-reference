@@ -5,7 +5,7 @@ properties:
     type: string
     description: A unique reference you can later use to identify this sub-entity.
     minLength: 1
-    maxLength: 15
+    maxLength: 50
     example: superhero1234
   contact_details:
     title: Contact details
