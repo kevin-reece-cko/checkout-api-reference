@@ -36,7 +36,7 @@ properties:
       this will be `card`; otherwise it will be the name of the alternative payment method<br> BenefitPay is **DEPRECATED**
     example: 'card'
   id:
-    type: string 
+    type: string
     description: |
       The payment source identifier that can be used for subsequent payments.
       For new sources, this will only be returned if the payment was approved
@@ -48,9 +48,9 @@ properties:
   phone:
     description: The payment source owner's phone number
     allOf:
-      - $ref: '#/components/schemas/PhoneNumber' 
+      - $ref: '#/components/schemas/PhoneNumber'
   expiry_month:
-    type: integer 
+    type: integer
     description: The expiry month
     minLength: 1
     maxLength: 2
@@ -68,6 +68,12 @@ properties:
     type: string
     description: The card scheme
     example: 'Visa'
+  scheme_local:
+    type: string
+    description: The local co-branded card scheme
+    enum:
+      - cartes_bancaires
+    example: 'cartes_bancaires'
   last4:
     type: string
     description: The last four digits of the card number
