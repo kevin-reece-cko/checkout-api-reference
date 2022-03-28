@@ -193,11 +193,25 @@ properties:
     additionalProperties: true
   locale:
     type: string
-    description: Creates a translated version of the page in the specified language
+    description: Creates a translated version of the page in the specified language. For Klarna payments, <a href="https://www.checkout.com/docs/integrate/hosted-payments-page/manage-your-hosted-payments-page#Alternative_payment_methods" target="_blank">read our documentation about expected parameters for certain locales</a>.
     enum:
+      - de-CH
       - de-DE
+      - en-AT
+      - en-CH
+      - en-DK
+      - en-DE
+      - en-ES
+      - en-FI
+      - en-FR
       - en-GB
+      - en-NL
+      - en-NO
+      - en-SE
+      - fr-BE
+      - fr-CH
       - fr-FR
+      - it-CH
       - it-IT
       - nl-NL
       - es-ES
