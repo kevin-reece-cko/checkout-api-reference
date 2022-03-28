@@ -1,14 +1,33 @@
+// For more information please refer to https://github.com/checkout/checkout-sdk-php
 <?php
 
-$checkout = new CheckoutApi('your secret key');
-$paymentID = 'pay_y3oqhf46pyzuxjbcn2giaqnb44';
+use Checkout\\CheckoutApiException;
+use Checkout\\CheckoutArgumentException;
+use Checkout\\CheckoutAuthorizationException;
+use Checkout\\CheckoutDefaultSdk;
+use Checkout\\Environment;
+use Checkout\\Payments\\RefundRequest;
 
-// Full refund
-$refund = new Refund($paymentID);
+$builder = CheckoutDefaultSdk::staticKeys();
+$builder->setPublicKey("public_key");
+$builder->setSecretKey("secret_key");
+$builder->setEnvironment(Environment::sandbox()); // or Environment::production()
+$api = $builder->build();
 
-// Or partial refund
-$refund = new Refund($paymentID);
-$refund->reference = 'your reference';
-$refund->amount = 100;
+$request = new RefundRequest();
+$request->reference = "reference";
+$request->amount = $amount;
 
-return $checkout->payments()->refund($refund);
+try {
+    // or, refundPayment("payment_id") for a full refund
+    $response = $api->getPaymentsClient()->refundPayment("payment_id", $request);
+} catch (CheckoutApiException $e) {
+    // API error
+    $request_id = $e->request_id;
+    $http_status_code = $e->http_status_code;
+    $error_details = $e->error_details;
+} catch (CheckoutArgumentException $e) {
+    // Bad arguments
+} catch (CheckoutAuthorizationException $e) {
+    // Bad Invalid authorization
+}
