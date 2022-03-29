@@ -1,0 +1,44 @@
+type: object
+properties:
+  workflow_id:
+    type: string
+    pattern: ^wf_[a-z0-9]{26}$
+    description: The workflow identifier
+    example: wf_c7svxlvo2bbuva4f6s3xu4f7wm
+  event_id:
+    type: string
+    description: The unique event identifier.
+    example: evt_az5sblvku4ge3dwpztvyizgcau
+  workflow_action_id:
+    type: string
+    description: The worklow action identifier.
+    example: wfa_uzkxpffkvpiu5fe3h5ira7sqpa
+  action_type:
+    type: string
+    description: The workflow action type.
+    example: webhook
+  status:
+    type: string
+    description: The status of the invocation.
+  action_invocations:
+    example:
+      [
+        {
+          'invocation_id': 'ivc_az5sblvku4ge3dwpztvyizgcau',
+          'timestamp': '2019-05-23T08:26:59Z',
+          'is_retry': true,
+          'successful': false,
+          'is_final': false,
+          'result_details': { 'http_status': '500', 'summary': 'Internal Error' },
+        },
+        {
+          'invocation_id': 'ivc_az5sblvku4ge3dwpztvyizgcau',
+          'timestamp': '2019-05-23T08:27:01Z',
+          'is_retry': false,
+          'successful': true,
+          'is_final': true,
+          'result_details': { 'status_code': '200', 'summary': 'OK' },
+        },
+      ]
+    allOf:
+      - $ref: '#/components/schemas/action-invocations'

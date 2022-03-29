@@ -33,7 +33,7 @@ get:
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/get-event-response'
+            $ref: '#/components/schemas/get-invocations-response'
       headers:
         Cko-Request-Id:
           schema:
