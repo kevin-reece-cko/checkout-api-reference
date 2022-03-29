@@ -19,7 +19,12 @@ properties:
     example: webhook
   status:
     type: string
-    description: The status of the invocation.
+    description: The status of the workflow action. It aggregates the past invocations outcome.
+    enum:
+      - pending
+      - successful
+      - failed
+    example: successful
   action_invocations:
     example:
       [
@@ -29,7 +34,7 @@ properties:
           'is_retry': true,
           'successful': false,
           'is_final': false,
-          'result_details': { 'http_status': '500', 'summary': 'Internal Error' },
+          'result_details': { 'status_code': '500', 'summary': 'Internal Error' },
         },
         {
           'invocation_id': 'ivc_az5sblvku4ge3dwpztvyizgcau',
@@ -40,5 +45,32 @@ properties:
           'result_details': { 'status_code': '200', 'summary': 'OK' },
         },
       ]
-    allOf:
-      - $ref: '#/components/schemas/action-invocations'
+    type: array
+    description: The list of the actions that trigger this event.
+    items:
+      type: object
+      properties:
+        invocation_id:
+          type: string
+          description: The invocation identifier.
+          example: 'ivc_az5sb1vku4ge3dwpztvy'
+        timestamp:
+          type: string
+          format: date-time
+          description: The date/time the action was invoked for the event.
+          example: '2019-05-23T08:26:59Z'
+        retry:
+          type: boolean
+          description: Whether the invocation has been retried.
+          example: true
+        succeeded:
+          type: boolean
+          description: Whether the invocation completed successfully.
+          example: false
+        final:
+          type: boolean
+          description: Indicates whether this is the final attempt.
+          example: false
+        result_details:
+          type: object
+          description: The result details returned from the action.

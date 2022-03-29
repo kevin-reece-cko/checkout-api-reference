@@ -20,13 +20,13 @@ get:
       description: The event identifier
       example: evt_x5zm2po6kimubhlfitgt2mfwgi
     - in: path
-      name: workflowId
+      name: workflowActionsId
       schema:
         type: string
-        pattern: ^wf_[a-z0-9]{26}$
+        pattern: ^wfa_[a-z0-9]{26}$
       required: true
-      description: The workflow identifier
-      example: wf_c7svxlvo2bbuva4f6s3xu4f7wm
+      description: The workflow action identifier
+      example: wfa_uzkxpffkvpiu5fe3h5ira7sqpa
   responses:
     '200':
       description: Workflow action retrieved successfully
