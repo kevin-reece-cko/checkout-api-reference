@@ -23,6 +23,10 @@ properties:
     example: 1.0.0
   data:
     $ref: '#/components/schemas/event-data'
+  action_invocations:
+    allOf:
+      - $ref: '#/components/schemas/action-invocations'
+
   # workflows:
   #   type: array
   #   description: The workflows that were invoked for this particular event

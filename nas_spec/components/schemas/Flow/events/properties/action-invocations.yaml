@@ -1,0 +1,38 @@
+type: array
+description: The list of the actions that trigger this event.
+items:
+  type: object
+  properties:
+    invocation_id:
+      type: string
+      description: The invocation identifier.
+      example: 'ivc_az5sb1vku4ge3dwpztvy'
+    timestamp:
+      type: string
+      format: date-time
+      description: The date/time the action was invoked for the event.
+      example: '2019-05-23T08:26:59Z'
+    is_retry:
+      type: boolean
+      description: Whether the invocation has been retried.
+      example: true
+    successful:
+      type: boolean
+      description: Whether the invocation completed successfully.
+      example: false
+    is_final:
+      type: boolean
+      description: Indicates whether this is the final attempt.
+      example: false
+    result_details:
+      type: object
+      description: The result details returned from the action.
+      properties:
+        http_status:
+          type: string
+          description: The HTTP response code.
+          example: 500
+        summary:
+          type: string
+          description: Describing what the HTTP response code means.
+          example: Internal Error
