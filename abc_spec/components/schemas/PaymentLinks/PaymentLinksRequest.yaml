@@ -204,32 +204,30 @@ properties:
       - de-DE
       - en-AT
       - en-CH
-      - en-DK
       - en-DE
-      - en-ES
-      - en-FI
-      - en-FR
+      - en-DK
       - en-GB
+      - en-FI
       - en-NL
       - en-NO
       - en-SE
-      - fr-BE
+      - es-ES
+      - fil-PH
       - fr-CH
       - fr-FR
+      - hi-IN
+      - id-ID
       - it-CH
       - it-IT
-      - nl-NL
-      - es-ES
-      - zh-HK
-      - zh-TW
-      - zh-CN
       - ja-JP
-      - fil-PH
-      - id-ID
+      - ms-MY
+      - nl-NL
       - ms-MY
       - th-TH
       - vi-VN
-      - hi-IN
+      - zh-CN
+      - zh-HK
+      - zh-TW
     default: en-GB
   capture:
     type: boolean
