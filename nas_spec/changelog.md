@@ -2,7 +2,7 @@
 
 | Date       | Description of change                                                                                                 |
 | ---------- | --------------------------------------------------------------------------------------------------------------------- |
-| 2022/03/29 | Adds get action invocations                                                                                           |
+| 2022/03/30 | Adds get action invocations                                                                                           |
 | 2022/03/28 | Update PHP code samples                                                                                               |
 | 2022/03/22 | Added new scheme `cartes_bancaires` to enum `scheme` in Get and Create Sessions Responses                             |
 | 2022/03/22 | Fixed invalid format for `authentication_date`                                                                        |
