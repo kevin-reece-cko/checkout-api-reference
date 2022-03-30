@@ -38,20 +38,20 @@ properties:
           example: false
     example:
       - timestamp: '2019-05-23T08:26:59Z'
-        success: false
+        success: true
         result:
           status_code: '200'
           url: 'https://example.com/webhooks'
           headers:
             Authorization: 'au***'
           response_recieved_timestamp: '2019-05-23T08:26:59Z'
-        final: false
+        final: true
       - timestamp: '2019-05-23T08:27:01Z'
-        success: true
+        success: false
         result:
           status_code: '500'
           url: 'https://example.com/webhooks'
           headers:
             Authorization: 'au***'
           response_recieved_timestamp: '2019-05-23T08:26:59Z'
-        final: true
+        final: false
