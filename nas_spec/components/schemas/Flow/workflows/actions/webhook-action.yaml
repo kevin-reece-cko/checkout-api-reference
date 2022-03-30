@@ -20,7 +20,7 @@ allOf:
           type: string
           description: The HTTP header value
         example:
-          Authorization: '70ed20ff-ba31-4ea3-b3ef-772f2be1cbdf'
+          Authorization: '<AUTHORIZATION_UUID>'
       signature:
         type: object
         description:
