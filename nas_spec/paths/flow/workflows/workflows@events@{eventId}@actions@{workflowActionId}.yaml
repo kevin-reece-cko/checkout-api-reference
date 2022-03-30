@@ -20,7 +20,7 @@ get:
       description: The event identifier
       example: evt_x5zm2po6kimubhlfitgt2mfwgi
     - in: path
-      name: workflowActionsId
+      name: workflowActionId
       schema:
         type: string
         pattern: ^wfa_[a-z0-9]{26}$

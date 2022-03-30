@@ -31,17 +31,17 @@ properties:
         {
           'invocation_id': 'ivc_az5sblvku4ge3dwpztvyizgcau',
           'timestamp': '2019-05-23T08:26:59Z',
-          'is_retry': true,
-          'successful': false,
-          'is_final': false,
+          'retry': true,
+          'succeeded': false,
+          'final': false,
           'result_details': { 'status_code': '500', 'summary': 'Internal Error' },
         },
         {
           'invocation_id': 'ivc_az5sblvku4ge3dwpztvyizgcau',
           'timestamp': '2019-05-23T08:27:01Z',
-          'is_retry': false,
-          'successful': true,
-          'is_final': true,
+          'retry': false,
+          'succeeded': true,
+          'final': true,
           'result_details': { 'status_code': '200', 'summary': 'OK' },
         },
       ]

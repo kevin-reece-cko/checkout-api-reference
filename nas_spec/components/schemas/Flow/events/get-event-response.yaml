@@ -40,11 +40,25 @@ properties:
           example: wfa_uzkxpffkvpiu5fe3h5ira7sqpa
         status:
           type: string
-          description: The status of the workflow.
+          description: The status of the workflow action.
           enum:
             - pending
             - successful
             - failed
         _links:
-          allOf:
-            - $ref: '#/components/schemas/event-links'
+            type: object
+            description: Links related to the workflow action
+            minItems: 1
+            required:
+              - self
+            properties:
+              self:
+                type: object
+                allOf:
+                - $ref: '#/components/schemas/Link'
+                description: Workflow action results for this event
+            example:
+              self:
+                href: "https://api.checkout.com/events/evt_az5sblvku4ge3dwpztvyizgcau/actions/wfa_uzkxpffkvpiu5fe3h5ira7sqpa"
+  _links:
+   - $ref: '#/components/schemas/event-links'

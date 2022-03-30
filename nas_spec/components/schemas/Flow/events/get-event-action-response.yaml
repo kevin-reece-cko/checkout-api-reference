@@ -32,7 +32,7 @@ properties:
         result:
           type: object
           description: The results returned from the action
-        is_final:
+        final:
           type: boolean
           description: Whether this is the final attempt
           example: false
@@ -42,10 +42,10 @@ properties:
         result:
           status_code: '500'
           summary: Server Error
-        is_final: false
+        final: false
       - timestamp: '2019-05-23T08:27:01Z'
         success: true
         result:
           status_code: '200'
           summary: OK
-        is_final: true
+        final: true
