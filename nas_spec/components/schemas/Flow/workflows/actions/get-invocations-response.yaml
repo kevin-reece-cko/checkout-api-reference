@@ -1,0 +1,103 @@
+type: object
+properties:
+  workflow_id:
+    type: string
+    pattern: ^wf_[a-z0-9]{26}$
+    description: The workflow identifier
+    example: wf_c7svxlvo2bbuva4f6s3xu4f7wm
+  event_id:
+    type: string
+    description: The unique event identifier.
+    example: evt_az5sblvku4ge3dwpztvyizgcau
+  workflow_action_id:
+    type: string
+    description: The worklow action identifier.
+    example: wfa_uzkxpffkvpiu5fe3h5ira7sqpa
+  action_type:
+    type: string
+    description: The workflow action type.
+    example: webhook
+  status:
+    type: string
+    description: The status of the workflow action. It aggregates the past invocations outcome.
+    enum:
+      - pending
+      - successful
+      - failed
+    example: successful
+  action_invocations:
+    example:
+      [
+        {
+          'invocation_id': 'ivc_az5sblvku4ge3dwpztvyizgcau',
+          'timestamp': '2019-05-23T08:26:59Z',
+          'retry': false,
+          'succeeded': true,
+          'final': true,
+          'result_details':
+            {
+              'status_code': 200,
+              'url': 'https://example.com/webhooks',
+              'headers': { 'Authorization': '<AUTHORIZATION_UUID>' },
+              'response_received_timestamp': '2019-05-23T08:27:01Z',
+            },
+        },
+        {
+          'invocation_id': 'ivc_az5sblvku4ge3dwpztvyizgcau',
+          'timestamp': '2019-05-23T08:27:01Z',
+          'retry': true,
+          'succeeded': false,
+          'final': false,
+          'result_details':
+            {
+              'status_code': 500,
+              'url': 'https://example.com/webhooks',
+              'headers': { 'Authorization': '<AUTHORIZATION_UUID>' },
+              'response_received_timestamp': '2019-05-23T08:27:01Z',
+            },
+        },
+      ]
+    type: array
+    description: The list of the actions that trigger this event.
+    items:
+      type: object
+      properties:
+        invocation_id:
+          type: string
+          description: The invocation identifier.
+          example: 'ivc_az5sb1vku4ge3dwpztvy'
+        timestamp:
+          type: string
+          format: date-time
+          description: The date/time the action was invoked for the event.
+          example: '2019-05-23T08:26:59Z'
+        retry:
+          type: boolean
+          description: Whether the invocation has been retried.
+          example: true
+        succeeded:
+          type: boolean
+          description: Whether the invocation completed successfully.
+          example: false
+        final:
+          type: boolean
+          description: Indicates whether this is the final attempt.
+          example: false
+        result_details:
+          type: object
+          description: The result details returned from the action.
+  _links:
+    type: object
+    description: Links related to the workflow action
+    minItems: 1
+    required:
+      - self
+    properties:
+      self:
+        type: object
+        allOf:
+        - $ref: '#/components/schemas/Link'
+        description: Workflow action results for this event
+    example:
+      self:
+        href: "https://api.checkout.com/events/evt_az5sblvku4ge3dwpztvyizgcau/actions/wfa_uzkxpffkvpiu5fe3h5ira7sqpa"
