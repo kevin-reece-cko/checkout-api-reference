@@ -86,3 +86,12 @@ properties:
         result_details:
           type: object
           description: The result details returned from the action.
+  properties:
+    self:
+      type: object
+      allOf:
+      - $ref: '#/components/schemas/Link'
+      description: Workflow action results for this event
+  example:
+    self:
+      href: "https://api.checkout.com/events/evt_az5sblvku4ge3dwpztvyizgcau/actions/wfa_uzkxpffkvpiu5fe3h5ira7sqpa"
