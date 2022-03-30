@@ -44,7 +44,7 @@ properties:
           url: 'https://example.com/webhooks'
           headers:
             Authorization: 'au***'
-        response_recieved_timestamp: '2019-05-23T08:26:59Z'
+          response_recieved_timestamp: '2019-05-23T08:26:59Z'
         final: false
       - timestamp: '2019-05-23T08:27:01Z'
         success: true
@@ -53,5 +53,5 @@ properties:
           url: 'https://example.com/webhooks'
           headers:
             Authorization: 'au***'
-        response_recieved_timestamp: '2019-05-23T08:26:59Z'
+          response_recieved_timestamp: '2019-05-23T08:26:59Z'
         final: true
