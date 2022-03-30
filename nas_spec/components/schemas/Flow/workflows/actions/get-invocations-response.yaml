@@ -34,7 +34,13 @@ properties:
           'retry': false,
           'succeeded': true,
           'final': true,
-          'result_details': { 'status_code': 200, 'url': 'https://example.com/webhooks', 'headers': {'Authorization': 'aut****'},'response_recieved_timestamp': '2019-05-23T08:27:01Z' },
+          'result_details':
+            {
+              'status_code': 200,
+              'url': 'https://example.com/webhooks',
+              'headers': { 'Authorization': 'aut****' },
+              'response_received_timestamp': '2019-05-23T08:27:01Z',
+            },
         },
         {
           'invocation_id': 'ivc_az5sblvku4ge3dwpztvyizgcau',
@@ -42,7 +48,13 @@ properties:
           'retry': true,
           'succeeded': false,
           'final': false,
-          'result_details': { 'status_code': 500, 'url': 'https://example.com/webhooks', 'headers': {'Authorization': 'aut****'},'response_recieved_timestamp': '2019-05-23T08:27:01Z' },
+          'result_details':
+            {
+              'status_code': 500,
+              'url': 'https://example.com/webhooks',
+              'headers': { 'Authorization': 'aut****' },
+              'response_received_timestamp': '2019-05-23T08:27:01Z',
+            },
         },
       ]
     type: array
