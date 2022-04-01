@@ -84,17 +84,17 @@ properties:
       example: 'proof_of_delivery_or_service'
   evidence_required_by:
     type: string
-    format: datetime
+    format: date-time
     description: The deadline by which to respond to the dispute. This corresponds to `received_on` + `n`, where `n` is a number of calendar days set by the scheme/acquirer
     example: '2018-08-21T00:00:00Z'
   received_on:
     type: string
-    format: datetime
+    format: date-time
     description: The date and time at which the dispute was issued
     example: '2018-08-01T04:00:10Z'
   last_update:
     type: string
-    format: datetime
+    format: date-time
     description: The date and time at which the dispute was last updated
     example: '2018-08-04T10:53:13Z'
   payment:

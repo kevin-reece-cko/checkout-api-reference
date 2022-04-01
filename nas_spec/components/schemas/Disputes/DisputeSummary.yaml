@@ -85,17 +85,17 @@ properties:
     example: VISA
   evidence_required_by:
     type: string
-    format: datetime
+    format: date-time
     description: The deadline by which to respond to the dispute. This corresponds to `received_on` + `n`, where `n` is a number of calendar days set by the scheme/acquirer
     example: '2018-08-22T00:00:00Z'
   received_on:
     type: string
-    format: datetime
+    format: date-time
     description: The date and time at which the dispute was issued
     example: '2018-08-01T01:15:56Z'
   last_update:
     type: string
-    format: datetime
+    format: date-time
     description: The date and time at which the dispute was last updated
     example: '2018-08-12T04:15:56Z'
   _links:
