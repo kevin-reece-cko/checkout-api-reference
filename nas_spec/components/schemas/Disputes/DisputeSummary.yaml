@@ -18,15 +18,15 @@ properties:
     description: The reason for the dispute. [Find out more](https://docs.checkout.com/four/risk-management/disputes#Disputes-Disputereasonsandrecommendedevidence)
     enum:
       [
-        fraudulent,
-        unrecognized,
-        canceled_recurring,
-        product_service_not_received,
-        not_as_described,
-        credit_not_issued,
-        duplicate,
-        incorrect_amount,
-        general,
+          fraudulent,
+          unrecognized,
+          canceled_recurring,
+          product_service_not_received,
+          not_as_described,
+          credit_not_issued,
+          duplicate,
+          incorrect_amount,
+          general,
       ]
     example: 'fraudulent'
   status:
@@ -34,17 +34,17 @@ properties:
     description: The current status of the dispute
     enum:
       [
-        evidence_required,
-        evidence_under_review,
-        resolved,
-        won,
-        lost,
-        canceled,
-        expired,
-        accepted,
-        arbitration_under_review,
-        arbitration_won,
-        arbitration_lost,
+          evidence_required,
+          evidence_under_review,
+          resolved,
+          won,
+          lost,
+          canceled,
+          expired,
+          accepted,
+          arbitration_under_review,
+          arbitration_won,
+          arbitration_lost,
       ]
     example: 'evidence_required'
   amount:
@@ -85,17 +85,17 @@ properties:
     example: VISA
   evidence_required_by:
     type: string
-    format: ISO-8601
+    format: datetime
     description: The deadline by which to respond to the dispute. This corresponds to `received_on` + `n`, where `n` is a number of calendar days set by the scheme/acquirer
     example: '2018-08-22T00:00:00Z'
   received_on:
     type: string
-    format: ISO-8601
+    format: datetime
     description: The date and time at which the dispute was issued
     example: '2018-08-01T01:15:56Z'
   last_update:
     type: string
-    format: ISO-8601
+    format: datetime
     description: The date and time at which the dispute was last updated
     example: '2018-08-12T04:15:56Z'
   _links:

@@ -17,7 +17,7 @@ properties:
     example: 1024
   uploaded_on:
     type: string
-    format: ISO-8601
+    format: datetime
     description: The date and time file was uploaded (in UTC)
     example: '2019-05-17T16:48:52Z'
   _links:

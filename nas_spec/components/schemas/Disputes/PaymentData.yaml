@@ -60,6 +60,6 @@ properties:
     description: Indicates if there is any refund against the payment
   processed_on:
     type: string
-    format: ISO-8601
+    format: datetime
     description: The date and time at which the payment was requested
     example: '2018-08-01T08:18:10Z'

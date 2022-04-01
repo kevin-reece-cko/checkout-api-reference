@@ -10,12 +10,12 @@ properties:
     example: 10
   from:
     type: string
-    format: ISO-8601
+    format: datetime
     description: The date and time from which to filter disputes, based on the dispute's `last_update` field
     example: '2018-08-12T01:15:56Z'
   to:
     type: string
-    format: ISO-8601
+    format: datetime
     description: The date and time until which to filter disputes, based on the dispute's `last_update` field
     example: '2018-08-13T11:09:01Z'
   statuses:
