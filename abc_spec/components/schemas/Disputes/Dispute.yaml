@@ -10,15 +10,15 @@ properties:
     description: The reason for the dispute. [Find out more](https://docs.checkout.com/risk-management/disputes#Disputes-Disputereasonsandrecommendedevidence)
     enum:
       [
-        fraudulent,
-        unrecognized,
-        canceled_recurring,
-        product_service_not_received,
-        not_as_described,
-        credit_not_issued,
-        duplicate,
-        incorrect_amount,
-        general,
+          fraudulent,
+          unrecognized,
+          canceled_recurring,
+          product_service_not_received,
+          not_as_described,
+          credit_not_issued,
+          duplicate,
+          incorrect_amount,
+          general,
       ]
     example: 'fraudulent'
   amount:
@@ -38,23 +38,23 @@ properties:
     description: The current status of the dispute
     enum:
       [
-        evidence_required,
-        evidence_under_review,
-        resolved,
-        won,
-        lost,
-        canceled,
-        expired,
-        accepted,
-        arbitration_under_review,
-        arbitration_won,
-        arbitration_lost,
+          evidence_required,
+          evidence_under_review,
+          resolved,
+          won,
+          lost,
+          canceled,
+          expired,
+          accepted,
+          arbitration_under_review,
+          arbitration_won,
+          arbitration_lost,
       ]
     example: 'evidence_required'
   resolved_reason:
     type: string
     description: If the dispute is automatically resolved, `resolved_reason` will contain the reason why it was resolved
-    enum: [rapid_dispute_resolution, negative_amount, already_refunded]
+    enum: [ rapid_dispute_resolution, negative_amount, already_refunded ]
     example: 'already_refunded'
   relevant_evidence:
     type: array
@@ -63,28 +63,28 @@ properties:
       type: string
       enum:
         [
-          proof_of_delivery_or_service,
-          invoice_or_receipt,
-          invoice_showing_distinct_transactions,
-          customer_communication,
-          refund_or_cancellation_policy,
-          recurring_transaction_agreement,
-          additional_evidence,
+            proof_of_delivery_or_service,
+            invoice_or_receipt,
+            invoice_showing_distinct_transactions,
+            customer_communication,
+            refund_or_cancellation_policy,
+            recurring_transaction_agreement,
+            additional_evidence,
         ]
       example: 'proof_of_delivery_or_service'
   evidence_required_by:
     type: string
-    format: ISO-8601
+    format: date-time
     description: The deadline by which to respond to the dispute. This corresponds to `received_on` + `n`, where `n` is a number of calendar days set by the scheme/acquirer
     example: '2018-08-21T00:00:00Z'
   received_on:
     type: string
-    format: ISO-8601
+    format: date-time
     description: The date and time at which the dispute was issued
     example: '2018-08-01T04:00:10Z'
   last_update:
     type: string
-    format: ISO-8601
+    format: date-time
     description: The date and time at which the dispute was last updated
     example: '2018-08-04T10:53:13Z'
   payment:
@@ -112,7 +112,7 @@ properties:
         example: 'AA246873253573571073808'
       processed_on:
         type: string
-        format: ISO-8601
+        format: date-time
         description: The date and time at which the payment was requested
         example: '2018-08-01T08:18:10Z'
   _links:
