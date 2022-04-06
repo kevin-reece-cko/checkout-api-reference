@@ -1687,6 +1687,22 @@ button.fduHqu {
 	color: var(--primary-dark-blue) !important;
 }
 
+.redoc-json > code {
+	font-size: 13px !important;
+	font-style: normal !important;
+	font-weight: 400 !important;
+}
+
+.redoc-markdown > pre > code {
+	font-size: 13px !important;
+	font-style: normal !important;
+	font-weight: 400 !important;
+	line-height: 24px !important;
+}
+
+.fcTdse .collapser {
+	color: var(--primary-dark-blue) !important;
+}
 /* try it now box */
 
 .ilZMLn {
