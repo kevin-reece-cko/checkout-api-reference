@@ -1,0 +1,5 @@
+type: object
+properties:
+  frequency:
+    type: string
+    description: Used to indicate how often funds should be paid out to a sub-entity.

@@ -2,8 +2,10 @@
 
 | Date       | Description of change                                                                                                 |
 | ---------- | --------------------------------------------------------------------------------------------------------------------- |
+| 2022/04/06 | Added `/payout-schedules` endpoint with `GET` and `PUT` methods to the Marketplace API                                |
 | 2022/03/30 | Adds "Get action invocations" endpoint                                                                                           |
 | 2022/03/28 | Update PHP code samples                                                                                               |
+| 2022/03/25 | Increased max length for `reference` in "Onboard a sub-entity" to 50 characters |
 | 2022/03/22 | Added new scheme `cartes_bancaires` to enum `scheme` in Get and Create Sessions Responses                             |
 | 2022/03/22 | Fixed invalid format for `authentication_date`                                                                        |
 | 2022/03/18 | Added Cartes Bancaires changes to Sessions request and response.                                                      |
@@ -22,4 +24,3 @@
 | 2021/11/11 | Added `3ds.challenge_indicator` to card payment requests.                                                             |
 | 2021/11/03 | Adds `identification` object under parent `sender` object in payment request.                                         |
 | 2021/10/18 | Added the `marketplaces.sub-entities` object to support split payments.                                               |
-| 2022/03/25 | Increased max length for `reference` in "Onboard a sub-entity" to 50 characters |
