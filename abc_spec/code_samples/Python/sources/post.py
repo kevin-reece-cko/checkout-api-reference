@@ -1,10 +1,10 @@
 # For more information please refer to https://github.com/checkout/checkout-sdk-python
 import checkout_sdk
-from checkout_sdk.common.common import Phone, Address
-from checkout_sdk.common.enums import Currency, Country
+from checkout_sdk.common.common import Address, Phone
+from checkout_sdk.common.enums import Country
 from checkout_sdk.environment import Environment
 from checkout_sdk.exception import CheckoutApiException, CheckoutArgumentException, CheckoutAuthorizationException
-from checkout_sdk.payments.payments import PaymentRequest, RequestCardSource
+from checkout_sdk.sources.sources import SourceData, SepaSourceRequest, MandateType
 
 api = checkout_sdk.DefaultSdk() \\
     .secret_key('secret_key') \\
@@ -25,25 +25,22 @@ phone = Phone()
 phone.country_code = '44'
 phone.number = '4155552671'
 
-request_card_source = RequestCardSource()
-request_card_source.number = 'number'
-request_card_source.expiry_month = 10
-request_card_source.expiry_year = 2027
-request_card_source.cvv = 123
-request_card_source.name = 'Name'
-request_card_source.billing_address = address
-request_card_source.phone = phone
+source_data = SourceData()
+source_data.first_name = 'First'
+source_data.last_name = 'Last'
+source_data.account_iban = 'iban'
+source_data.bic = 'PBNKDEFFXXX'
+source_data.billing_descriptor = 'descriptor'
+source_data.mandate_type = MandateType.SINGLE
 
-payment_request = PaymentRequest()
-payment_request.source = request_card_source
-
-payment_request.reference = 'reference'
-payment_request.amount = 10
-payment_request.currency = Currency.GBP
-payment_request.capture = False
+sepa_source_request = SepaSourceRequest()
+sepa_source_request.billing_address = address
+sepa_source_request.reference = 'reference'
+sepa_source_request.phone = phone
+sepa_source_request.source_data = source_data
 
 try:
-    response = api.payments.request_payment(payment_request) # or 'request_payout'
+    response = api.sources.create_sepa_source(sepa_source_request)
 except CheckoutApiException as err:
     # API error
     request_id = err.request_id

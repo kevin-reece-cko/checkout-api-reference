@@ -2,22 +2,25 @@
 import checkout_sdk
 from checkout_sdk.environment import Environment
 from checkout_sdk.exception import CheckoutApiException, CheckoutArgumentException, CheckoutAuthorizationException
-from checkout_sdk.payments.payments import CaptureRequest
+from checkout_sdk.four.oauth_scopes import OAuthScopes
 
-api = checkout_sdk.DefaultSdk() \\
+# API Keys
+api = checkout_sdk.FourSdk() \\
     .secret_key('secret_key') \\
     .public_key('public_key') \\
     .environment(Environment.sandbox()) \\
     .build()
 # or Environment.production()
 
-capture_request = CaptureRequest()
-capture_request.reference = 'reference'
-capture_request.amount = 10
+# OAuth
+api = checkout_sdk.OAuthSdk() \\
+    .client_credentials('client_id', 'client_secret') \\
+    .environment(Environment.sandbox()) \\
+    .scopes([OAuthScopes.FLOW, OAuthScopes.FLOW_WORKFLOWS, OAuthScopes.FLOW_EVENTS]) \\
+    .build()
 
 try:
-    # or, capture_payment('payment_id') for a full capture
-    response = api.payments.capture_payment('payment_id', capture_request)
+    response = api.workflows.reflow_by_event_and_workflow('event_id', 'workflow_id')
 except CheckoutApiException as err:
     # API error
     request_id = err.request_id

@@ -2,7 +2,7 @@
 import checkout_sdk
 from checkout_sdk.environment import Environment
 from checkout_sdk.exception import CheckoutApiException, CheckoutArgumentException, CheckoutAuthorizationException
-from checkout_sdk.payments.payments import CaptureRequest
+from checkout_sdk.disputes.disputes import DisputeEvidenceRequest
 
 api = checkout_sdk.DefaultSdk() \\
     .secret_key('secret_key') \\
@@ -11,13 +11,18 @@ api = checkout_sdk.DefaultSdk() \\
     .build()
 # or Environment.production()
 
-capture_request = CaptureRequest()
-capture_request.reference = 'reference'
-capture_request.amount = 10
+evidence_request = DisputeEvidenceRequest()
+evidence_request.proof_of_delivery_or_service_file = 'proof_of_delivery_or_service_file'
+evidence_request.proof_of_delivery_or_service_text = 'proof of delivery or service text'
+evidence_request.invoice_or_receipt_file = 'invoice_or_receipt_file'
+evidence_request.invoice_or_receipt_text = 'invoice_or_receipt_text'
+evidence_request.customer_communication_file = 'customer_communication_file'
+evidence_request.customer_communication_text = 'customer_communication_text'
+evidence_request.additional_evidence_file = 'additional_evidence_file'
+evidence_request.additional_evidence_text = 'additional_evidence_text'
 
 try:
-    # or, capture_payment('payment_id') for a full capture
-    response = api.payments.capture_payment('payment_id', capture_request)
+    response = api.disputes.put_evidence('dispute_id', evidence_request)
 except CheckoutApiException as err:
     # API error
     request_id = err.request_id
