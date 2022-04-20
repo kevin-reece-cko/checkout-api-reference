@@ -3,4 +3,4 @@ name: Cko-Idempotency-Key
 schema:
   type: string
 required: true
-description: An idempotency key for safely retrying payment requests
+description: An idempotency key for safely retrying transfer requests
