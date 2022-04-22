@@ -155,20 +155,24 @@ properties:
     type: string
     description: Creates a translated version of the page in the specified language
     enum:
+      - da-DK
       - de-DE
       - en-GB
-      - fr-FR
-      - it-IT
-      - nl-NL
       - es-ES
-      - zh-HK
-      - zh-TW
-      - zh-CN
-      - ja-JP
+      - fi-FI
       - fil-PH
+      - fr-FR
+      - hi-IN
       - id-ID
+      - it-IT
+      - ja-JP
       - ms-MY
+      - nb-NO
+      - nl-NL
+      - sv-SE
       - th-TH
       - vi-VN
-      - hi-IN
+      - zh-CN
+      - zh-HK
+      - zh-TW
     default: en-GB
