@@ -2,6 +2,7 @@
 
 | Date       | Description of change                                                                                                 |
 | ---------- | --------------------------------------------------------------------------------------------------------------------- |
+| 2022/04/27 | Added the `challenged` field to the GET payments response schema.                                                     |
 | 2022/04/20 | Added required idempotency key to Transfers API                                                                       |
 | 2022/04/19 | Update `3ds.exemption` available enums                                                                                |
 | 2022/04/06 | Added `/payout-schedules` endpoint with `GET` and `PUT` methods to the Marketplace API                                |
