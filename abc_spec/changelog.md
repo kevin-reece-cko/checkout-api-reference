@@ -2,6 +2,7 @@
 
 | Date       | Description of change                                                                                           |
 | ---------- | --------------------------------------------------------------------------------------------------------------- |
+| 2022/04/27 | Added Scandinavian locale options to Hosted Payments Page and Payment Links.                                    |
 | 2022/03/30 | Adds new locale options to Hosted Payments Page and Payment Links.                                              |
 | 2022/03/28 | Update PHP code samples                                                                                         |
 | 2022/03/08 | Change C# samples to suggest the usage of `await` instead of `.Result`                                          |

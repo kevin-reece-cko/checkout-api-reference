@@ -200,6 +200,7 @@ properties:
     type: string
     description: Creates a translated version of the page in the specified language. For Klarna payments, <a href="https://www.checkout.com/docs/integrate/payment-links/manage-payment-links#Alternative_payment_methods" target="_blank">read our documentation about expected parameters for certain locales</a>.
     enum:
+      - da-DK
       - de-CH
       - de-DE
       - en-AT
@@ -212,6 +213,7 @@ properties:
       - en-NO
       - en-SE
       - es-ES
+      - fi-FI
       - fil-PH
       - fr-CH
       - fr-FR
@@ -221,8 +223,9 @@ properties:
       - it-IT
       - ja-JP
       - ms-MY
+      - nb-NO
       - nl-NL
-      - ms-MY
+      - sv-SE
       - th-TH
       - vi-VN
       - zh-CN
