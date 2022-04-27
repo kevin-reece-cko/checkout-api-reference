@@ -2,7 +2,7 @@
 
 | Date       | Description of change                                                                                                 |
 | ---------- | --------------------------------------------------------------------------------------------------------------------- |
-| 2022/03/31 | Added the `challenged` field to the GET payments response schema.                                                     |
+| 2022/04/27 | Added the `challenged` field to the GET payments response schema.                                                     |
 | 2022/03/30 | Adds "Get action invocations" endpoint                                                                                           |
 | 2022/03/28 | Update PHP code samples                                                                                               |
 | 2022/03/22 | Added new scheme `cartes_bancaires` to enum `scheme` in Get and Create Sessions Responses                             |
