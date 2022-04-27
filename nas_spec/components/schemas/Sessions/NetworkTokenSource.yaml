@@ -35,3 +35,8 @@ allOf:
         minLength: 2
         maxLength: 45
         example: 'Bruce Wayne'
+      email:
+        type: string
+        description: The email of the cardholder
+        maxLength: 254
+        example: 'bruce.wayne@email.com'
