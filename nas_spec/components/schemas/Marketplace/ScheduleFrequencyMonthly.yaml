@@ -1,0 +1,11 @@
+type: object
+properties:
+  frequency:
+    type: string
+    description: Used to indicate how often funds should be paid out to a sub-entity.
+  by_month_day:
+    type: integer
+    description: The day of the month the payout should take place.
+    example: 1
+required:
+  - by_month_day

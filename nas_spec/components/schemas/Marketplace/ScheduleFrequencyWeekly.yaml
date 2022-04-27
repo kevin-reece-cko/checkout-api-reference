@@ -1,0 +1,19 @@
+type: object
+properties:
+  frequency:
+    type: string
+    description: Used to indicate how often funds should be paid out to a sub-entity.
+  by_day:
+    type: string
+    enum:
+      - monday
+      - tuesday
+      - wednesday
+      - thursday
+      - friday
+      - saturday
+      - sunday
+    description: The day of the week the payout should take place.
+    example: monday
+required:
+  - by_day
