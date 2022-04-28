@@ -18,7 +18,7 @@ BankAccountFieldQuery request = new BankAccountFieldQuery
 
 try
 {
-    BankAccountFieldResponse response = api.InstrumentsClient().GetBankAccountFieldFormatting(CountryCode.GB, Currency.GBP, request).Result;
+    BankAccountFieldResponse response = await api.InstrumentsClient().GetBankAccountFieldFormatting(CountryCode.GB, Currency.GBP, request);
 }
 catch (CheckoutApiException e)
 {

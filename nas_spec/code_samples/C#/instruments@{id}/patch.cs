@@ -52,7 +52,7 @@ UpdateInstrumentRequest request = new UpdateCardInstrumentRequest
 
 try
 {
-    UpdateInstrumentResponse response = api.InstrumentsClient().Update("instrument_id", request).Result;
+    UpdateInstrumentResponse response = await api.InstrumentsClient().Update("instrument_id", request);
 }
 catch (CheckoutApiException e)
 {

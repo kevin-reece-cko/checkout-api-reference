@@ -76,7 +76,7 @@ example:
           'id': 'wfa_itja4x7zgzye3andzqq62u4hvq',
           'type': 'webhook',
           'url': 'https://example.com/webhooks',
-          'headers': { 'Authorization': '70ed20ff-ba31-4ea3-b3ef-772f2be1cbdf' },
+          'headers': { 'Authorization': '<AUTHORIZATION_UUID>' },
           'signature': { 'method': 'HMACSHA256', 'key': '8V8x0dLK%AyD*DNS8JJr' },
           '_links':
             {

@@ -1,47 +1,61 @@
+// For more information please refer to https://github.com/checkout/checkout-sdk-php
 <?php
 
-$checkout = new CheckoutApi('your secret key');
+use Checkout\\CheckoutApiException;
+use Checkout\\CheckoutArgumentException;
+use Checkout\\CheckoutAuthorizationException;
+use Checkout\\CheckoutDefaultSdk;
+use Checkout\\Common\\Address;
+use Checkout\\Common\\Country;
+use Checkout\\Common\\Currency;
+use Checkout\\Common\\Phone;
+use Checkout\\Environment;
+use Checkout\\Payments\\PaymentRequest;
+use Checkout\\Payments\\Source\\RequestCardSource;
 
-$method = new TokenSource('tok_ubfj2q76miwundwlk72vxt2i7q');
-$payment = new Payment($method, 'USD');
+$builder = CheckoutDefaultSdk::staticKeys();
+$builder->setPublicKey("public_key");
+$builder->setSecretKey("secret_key");
+$builder->setEnvironment(Environment::sandbox()); // or Environment::production()
+$api = $builder->build();
 
-$customer = new Customer();
-$customer->email = 'john.smith@email.com';
-$customer->name = 'John Smith';
-
-$address = new Address();
-$address->address_line1 = '14-17 Wells Mews';
-$address->address_line2 = 'Fitzrovia';
-$address->city = 'London';
-$address->state = 'London';
-$address->zip = 'W1T 3HF';
-$address->country = 'UK';
+$billingAddress = new Address();
+$billingAddress->address_line1 = "CheckoutSdk.com";
+$billingAddress->address_line2 = "90 Tottenham Court Road";
+$billingAddress->city = "London";
+$billingAddress->state = "London";
+$billingAddress->zip = "W1T 4TJ";
+$billingAddress->country = Country::$GB;
 
 $phone = new Phone();
-$phone->country_code = '0044';
-$phone->number = '02073233888';
+$phone->country_code = "+1";
+$phone->number = "415 555 2671";
 
-$payment->customer = $customer;
-$payment->shipping = new Shipping($address, $phone);
-$payment->billing_descriptor = new BillingDescriptor('Dynamic desc charge', 'City charge');
-$payment->amount = 5600;
-$payment->capture = false;
-$payment->reference = 'ORD-090857';
-$payment->threeDs = new ThreeDs(true);
-$payment->risk = new Risk(true);
-$payment->setIdempotencyKey(createMyUniqueKeyForThis());
+$requestCardSource = new RequestCardSource();
+$requestCardSource->name = "Name";
+$requestCardSource->number = "Number";
+$requestCardSource->expiry_year = 2026;
+$requestCardSource->expiry_month = 10;
+$requestCardSource->cvv = "123";
+$requestCardSource->billing_address = $billingAddress;
+$requestCardSource->phone = $phone;
+
+$request = new PaymentRequest();
+$request->source = $requestCardSource;
+$request->capture = true;
+$request->reference = "reference";
+$request->amount = 10;
+$request->currency = Currency::$GBP;
 
 try {
-    $details = $checkout->payments()->request($payment);
-
-    $redirection = $details->getRedirection();
-    if ($redirection) {
-        return $redirection;
-    }
-
-    return $details;
-} catch (CheckoutModelException $ex) {
-    return $ex->getErrors();
-} catch (CheckoutHttpException $ex) {
-    return $ex->getErrors();
+    $response = $api->getPaymentsClient()->requestPayment($request); // or "requestPayout"
+} catch (CheckoutApiException $e) {
+    // API error
+    $request_id = $e->request_id;
+    $http_status_code = $e->http_status_code;
+    $error_details = $e->error_details;
+} catch (CheckoutArgumentException $e) {
+    // Bad arguments
+} catch (CheckoutAuthorizationException $e) {
+    // Bad Invalid authorization
 }

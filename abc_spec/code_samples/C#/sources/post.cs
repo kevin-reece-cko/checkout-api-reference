@@ -45,7 +45,7 @@ SepaSourceRequest request = new SepaSourceRequest()
 
 try
 {
-    SepaSourceResponse response = api.SourcesClient().CreateSepaSource(request).Result;
+    SepaSourceResponse response = await api.SourcesClient().CreateSepaSource(request);
 }
 catch (CheckoutApiException e)
 {

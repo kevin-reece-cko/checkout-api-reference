@@ -70,7 +70,7 @@ SessionRequest request = new SessionRequest
 
 try
 {
-    SessionResponse response = api.SessionsClient().RequestSession(request).Result;
+    SessionResponse response = await api.SessionsClient().RequestSession(request);
 }
 catch (CheckoutApiException e)
 {

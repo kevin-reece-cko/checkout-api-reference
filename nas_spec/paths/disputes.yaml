@@ -34,7 +34,7 @@ get:
       name: from
       schema:
         type: string
-        format: ISO-8601
+        format: date-time
       required: false
       description: The date and time from which to filter disputes, based on the dispute's
         `last_update` field
@@ -42,7 +42,7 @@ get:
       name: to
       schema:
         type: string
-        format: ISO-8601
+        format: date-time
       required: false
       description: The date and time until which to filter disputes, based on the dispute's
         `last_update` field

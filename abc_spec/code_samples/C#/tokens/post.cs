@@ -34,7 +34,7 @@ CardTokenRequest request = new CardTokenRequest
 
 try
 {
-    CardTokenResponse response = api.TokensClient().Request(request).Result;
+    CardTokenResponse response = await api.TokensClient().Request(request);
 }
 catch (CheckoutApiException e)
 {

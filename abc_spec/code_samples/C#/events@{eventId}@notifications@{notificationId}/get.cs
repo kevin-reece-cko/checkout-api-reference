@@ -11,7 +11,7 @@ ICheckoutApi api = CheckoutSdk.DefaultSdk().StaticKeys()
 try
 {
     EventNotificationResponse response =
-        api.EventsClient().RetrieveEventNotification("event_id", "notification_id").Result;
+        await api.EventsClient().RetrieveEventNotification("event_id", "notification_id");
 }
 catch (CheckoutApiException e)
 {

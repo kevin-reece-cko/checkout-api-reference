@@ -68,7 +68,7 @@ PreAuthenticationAssessmentRequest request = new PreAuthenticationAssessmentRequ
 try
 {
     PreAuthenticationAssessmentResponse response =
-        api.RiskClient().RequestPreAuthenticationRiskScan(request).Result;
+        await api.RiskClient().RequestPreAuthenticationRiskScan(request);
 }
 catch (CheckoutApiException e)
 {

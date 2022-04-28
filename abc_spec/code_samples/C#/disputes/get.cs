@@ -16,7 +16,7 @@ DisputesQueryFilter request = new DisputesQueryFilter
 
 try
 {
-    DisputesQueryResponse response = api.DisputesClient().Query(request).Result;
+    DisputesQueryResponse response = await api.DisputesClient().Query(request);
 }
 catch (CheckoutApiException e)
 {

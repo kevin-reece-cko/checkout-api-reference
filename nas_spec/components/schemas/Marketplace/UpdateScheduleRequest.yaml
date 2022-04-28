@@ -1,0 +1,34 @@
+type: object
+properties:
+  currency:
+    description: The three-letter ISO currency code of the account's currency.
+    type: object
+    format: ISO 4217
+    minLength: 3
+    maxLength: 3
+    properties:
+      enabled:
+        type: boolean
+        default: false
+        description: Indicates the status of the payout schedule.
+        example: true
+      threshold:
+        type: number
+        description: Minimum available balance on the account to do a payout. If the balance is less than the threshold, then the payout instruction will not send.
+        example: 100
+      recurrence:
+        type: object
+        description: Information about how often the schedule takes place.
+        discriminator:
+          propertyName: frequency
+          mapping:
+            weekly: '#/components/schemas/ScheduleFrequencyWeekly'
+            daily: '#/components/schemas/ScheduleFrequencyDaily'
+            monthly: '#/components/schemas/ScheduleFrequencyMonthly'
+        properties:
+          frequency:
+            type: string
+            example: 'weekly'
+        example:
+          frequency: weekly
+          by_day: monday

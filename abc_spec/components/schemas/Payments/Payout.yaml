@@ -14,6 +14,18 @@ properties:
       Omit the amount or provide a value of `0` to perform a card verification.
     minimum: 0
     example: 6540
+  fund_transfer_type:
+    type: string
+    enum:
+      - AA
+      - PP
+      - FT
+      - FD
+      - PD
+      - LO
+      - OG
+    description: An identifier used by issuer banks to recognize the use case. Specific funds transfer types enabled for each merchant. <a href="https://www.checkout.com/docs/card-payouts" target="_blank">Read our documentation for more information</a>
+    example: FD
   currency:
     type: string
     description: |
@@ -111,7 +123,7 @@ properties:
     maxLength: 255
     example: 'http://example.com/payments/fail'
   payment_ip:
-    description:  The IP address used to make the payment. Used by our risk engine to check the customer's IP address – only accepts IPv4 addresses.
+    description: The IP address used to make the payment. Used by our risk engine to check the customer's IP address – only accepts IPv4 addresses.
     allOf:
       - $ref: '#/components/schemas/IPAddress'
   recipient:

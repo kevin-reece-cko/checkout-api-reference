@@ -34,7 +34,7 @@ ReflowRequest request = new ReflowByEventsRequest()
 
 try
 {
-    ReflowResponse response = api.WorkflowsClient().Reflow(request).Result;
+    ReflowResponse response = await api.WorkflowsClient().Reflow(request);
 }
 catch (CheckoutApiException e)
 {

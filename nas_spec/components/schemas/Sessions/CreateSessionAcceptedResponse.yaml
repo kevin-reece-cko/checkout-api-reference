@@ -10,6 +10,7 @@ required:
   - status
   - protocol_version
   - _links
+  - exemption
 properties:
   session_secret:
     $ref: '#/components/schemas/SessionSecret'
@@ -30,6 +31,7 @@ properties:
       - jcb
       - amex
       - diners
+      - cartes_bancaires
   amount:
     $ref: '#/components/schemas/Amount'
   currency:
@@ -52,3 +54,16 @@ properties:
     $ref: '#/components/schemas/CardInfo'
   _links:
     $ref: '#/components/schemas/CreateSessionLinks'
+  authentication_date:
+    type: string
+    format: date-time
+    description: Authentication date and time
+  challenge_indicator:
+    type: string
+    default: no_preference
+    description: Indicates the preference for whether or not a 3DS challenge should be performed. The customer’s bank has the final say on whether or not the customer receives the challenge
+    enum:
+      - no_preference
+      - no_challenge_requested
+      - challenge_requested
+      - challenge_requested_mandate

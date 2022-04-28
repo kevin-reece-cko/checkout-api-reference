@@ -10,7 +10,7 @@ ICheckoutApi api = CheckoutSdk.DefaultSdk().StaticKeys()
 
 try
 {
-    IdResponse response = api.DisputesClient().SubmitFile("file_path", "dispute_evidence").Result;
+    IdResponse response = await api.DisputesClient().SubmitFile("file_path", "dispute_evidence");
 }
 catch (CheckoutApiException e)
 {

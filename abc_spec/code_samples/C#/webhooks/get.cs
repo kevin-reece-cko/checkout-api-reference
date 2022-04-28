@@ -10,7 +10,7 @@ ICheckoutApi api = CheckoutSdk.DefaultSdk().StaticKeys()
 
 try
 {
-    IList<WebhookResponse> response = api.WebhooksClient().RetrieveWebhooks().Result;
+    IList<WebhookResponse> response = await api.WebhooksClient().RetrieveWebhooks();
 }
 catch (CheckoutApiException e)
 {

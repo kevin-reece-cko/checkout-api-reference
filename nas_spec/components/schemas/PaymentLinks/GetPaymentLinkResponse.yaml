@@ -151,24 +151,3 @@ properties:
     description: If provided, the success page will include a button that redirects your customer to the provided URL.
     example: https://example.com/success
     maxLength: 255
-  locale:
-    type: string
-    description: Creates a translated version of the page in the specified language
-    enum:
-      - de-DE
-      - en-GB
-      - fr-FR
-      - it-IT
-      - nl-NL
-      - es-ES
-      - zh-HK
-      - zh-TW
-      - zh-CN
-      - ja-JP
-      - fil-PH
-      - id-ID
-      - ms-MY
-      - th-TH
-      - vi-VN
-      - hi-IN
-    default: en-GB

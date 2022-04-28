@@ -1,0 +1,38 @@
+// For more information please refer to https://github.com/checkout/checkout-sdk-php
+<?php
+
+use Checkout\\CheckoutApiException;
+use Checkout\\CheckoutArgumentException;
+use Checkout\\CheckoutAuthorizationException;
+use Checkout\\CheckoutDefaultSdk;
+use Checkout\\Common\\Phone;
+use Checkout\\Customers\\CustomerRequest;
+use Checkout\\Environment;
+
+$builder = CheckoutDefaultSdk::staticKeys();
+$builder->setPublicKey("public_key");
+$builder->setSecretKey("secret_key");
+$builder->setEnvironment(Environment::sandbox()); // or Environment::production()
+$api = $builder->build();
+
+$phone = new Phone();
+$phone->country_code = "1";
+$phone->number = "4155552671";
+
+$customerRequest = new CustomerRequest();
+$customerRequest->email = "email@docs.checkout.com";
+$customerRequest->name = "name";
+$customerRequest->phone = $phone;
+
+try {
+    $api->getCustomersClient()->update("customer_id", $customerRequest);
+} catch (CheckoutApiException $e) {
+    // API error
+    $request_id = $e->request_id;
+    $http_status_code = $e->http_status_code;
+    $error_details = $e->error_details;
+} catch (CheckoutArgumentException $e) {
+    // Bad arguments
+} catch (CheckoutAuthorizationException $e) {
+    // Bad Invalid authorization
+}

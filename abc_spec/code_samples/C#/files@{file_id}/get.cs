@@ -10,7 +10,7 @@ ICheckoutApi api = CheckoutSdk.DefaultSdk().StaticKeys()
 
 try
 {
-    FileDetailsResponse response = api.DisputesClient().GetFileDetails("file_id").Result;
+    FileDetailsResponse response = await api.DisputesClient().GetFileDetails("file_id");
 }
 catch (CheckoutApiException e)
 {

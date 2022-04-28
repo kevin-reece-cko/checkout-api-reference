@@ -88,7 +88,7 @@ PaymentRequest request = new PaymentRequest
 
 try
 {
-    PaymentResponse response = api.PaymentsClient().RequestPayment(request).Result;
+    PaymentResponse response = await api.PaymentsClient().RequestPayment(request);
 }
 catch (CheckoutApiException e)
 {

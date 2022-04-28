@@ -10,7 +10,7 @@ ICheckoutApi api = CheckoutSdk.DefaultSdk().StaticKeys()
 
 try
 {
-    ReconciliationPaymentReportResponse response = api.ReconciliationClient().SinglePaymentReport("payment_id").Result;
+    ReconciliationPaymentReportResponse response = await api.ReconciliationClient().SinglePaymentReport("payment_id");
 }
 catch (CheckoutApiException e)
 {

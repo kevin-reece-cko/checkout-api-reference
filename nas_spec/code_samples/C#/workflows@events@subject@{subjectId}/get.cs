@@ -19,7 +19,7 @@ Four.ICheckoutApi api = CheckoutSdk.FourSdk().OAuth()
 
 try
 {
-    ReflowResponse response = api.WorkflowsClient().ReflowBySubject("subject_id").Result;
+    ReflowResponse response = await api.WorkflowsClient().ReflowBySubject("subject_id");
 }
 catch (CheckoutApiException e)
 {

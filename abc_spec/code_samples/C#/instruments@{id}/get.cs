@@ -10,7 +10,7 @@ ICheckoutApi api = CheckoutSdk.DefaultSdk().StaticKeys()
 
 try
 {
-    RetrieveInstrumentResponse response = api.InstrumentsClient().Get("instrument_id").Result;
+    RetrieveInstrumentResponse response = await api.InstrumentsClient().Get("instrument_id");
 }
 catch (CheckoutApiException e)
 {

@@ -61,7 +61,7 @@ OnboardEntityRequest request = new OnboardEntityRequest
 
 try
 {
-    OnboardEntityResponse response = api.MarketplaceClient().CreateEntity(request).Result;
+    OnboardEntityResponse response = await api.MarketplaceClient().CreateEntity(request);
 }
 catch (CheckoutApiException e)
 {

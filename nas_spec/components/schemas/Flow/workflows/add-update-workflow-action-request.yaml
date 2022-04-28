@@ -17,5 +17,5 @@ example:
   {
     'type': 'webhook',
     'url': 'https://example.com/webhooks',
-    'headers': { 'Authorization': '70ed20ff-ba31-4ea3-b3ef-772f2be1cbdf' },
+    'headers': { 'Authorization': '<AUTHORIZATION_UUID>' },
   }

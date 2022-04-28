@@ -1,0 +1,49 @@
+type: object
+properties:
+  currency:
+    description: The three-letter ISO currency code of the account's currency.
+    type: object
+    format: ISO 4217
+    minLength: 3
+    maxLength: 3
+    properties:
+      recurrence:
+        type: object
+        description: Information about how often the schedule takes place.
+        properties:
+          enabled:
+            type: boolean
+            default: false
+            description: Indicates the status of the payout schedule.
+            example: true
+          threshold:
+            type: number
+            description: Minimum available balance on the account to do a payout. If the balance is less than the threshold, then the payout instruction will not send.
+            example: 100
+          schedule:
+            type: object
+            discriminator:
+              propertyName: frequency
+              mapping:
+                weekly: '#/components/schemas/ScheduleFrequencyWeekly'
+                daily: '#/components/schemas/ScheduleFrequencyDaily'
+                monthly: '#/components/schemas/ScheduleFrequencyMonthly'
+            description: Details about the payout schedule. Required if `enabled` is set to `true`.
+            properties:
+              frequency:
+                type: string
+                enum:
+                  - weekly
+                  - daily
+                  - monthly
+                description: Used to indicate how often funds should be paid out to a sub-entity.
+                example: 'weekly'
+            example:
+              frequency: 'weekly'
+              by_day: 'monday'
+      _links:
+        additionalProperties:
+          $ref: '#/components/schemas/Link'
+        example:
+          self:
+            href: 'https://api.checkout.com/marketplace/entities/ent_wxglze3wwywujg4nna5fb7ldli'

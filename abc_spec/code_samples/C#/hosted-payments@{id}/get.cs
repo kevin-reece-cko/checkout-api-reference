@@ -9,7 +9,7 @@ ICheckoutApi api = CheckoutSdk.DefaultSdk().StaticKeys()
 
 try
 {
-    HostedPaymentDetailsResponse response = api.HostedPaymentsClient().Get("hosted_payment_id").Result;
+    HostedPaymentDetailsResponse response = await api.HostedPaymentsClient().Get("hosted_payment_id");
 }
 catch (CheckoutApiException e)
 {

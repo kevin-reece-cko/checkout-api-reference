@@ -21,7 +21,7 @@ UpdateWorkflowRequest request = new UpdateWorkflowRequest {Name = "workflow_name
 
 try
 {
-    UpdateWorkflowResponse response = api.WorkflowsClient().UpdateWorkflow("workflow_id", request).Result;
+    UpdateWorkflowResponse response = await api.WorkflowsClient().UpdateWorkflow("workflow_id", request);
 }
 catch (CheckoutApiException e)
 {

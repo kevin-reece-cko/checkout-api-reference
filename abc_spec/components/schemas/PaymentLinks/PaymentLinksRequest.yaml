@@ -198,24 +198,39 @@ properties:
     maxLength: 255
   locale:
     type: string
-    description: Creates a translated version of the page in the specified language
+    description: Creates a translated version of the page in the specified language. For Klarna payments, <a href="https://www.checkout.com/docs/integrate/payment-links/manage-payment-links#Alternative_payment_methods" target="_blank">read our documentation about expected parameters for certain locales</a>.
     enum:
+      - da-DK
+      - de-CH
       - de-DE
+      - en-AT
+      - en-CH
+      - en-DE
+      - en-DK
       - en-GB
-      - fr-FR
-      - it-IT
-      - nl-NL
+      - en-FI
+      - en-NL
+      - en-NO
+      - en-SE
       - es-ES
-      - zh-HK
-      - zh-TW
-      - zh-CN
-      - ja-JP
+      - fi-FI
       - fil-PH
+      - fr-CH
+      - fr-FR
+      - hi-IN
       - id-ID
+      - it-CH
+      - it-IT
+      - ja-JP
       - ms-MY
+      - nb-NO
+      - nl-NL
+      - sv-SE
       - th-TH
       - vi-VN
-      - hi-IN
+      - zh-CN
+      - zh-HK
+      - zh-TW
     default: en-GB
   capture:
     type: boolean

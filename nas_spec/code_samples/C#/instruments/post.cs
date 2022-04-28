@@ -57,7 +57,7 @@ CreateTokenInstrumentRequest request = new CreateTokenInstrumentRequest
 try
 {
     CreateTokenInstrumentResponse response =
-        api.InstrumentsClient().Create<CreateTokenInstrumentResponse>(request).Result;
+        await api.InstrumentsClient().Create<CreateTokenInstrumentResponse>(request);
 }
 catch (CheckoutApiException e)
 {

@@ -16,7 +16,7 @@ try
      null  => all versions
      */
                 
-    IList<EventTypesResponse> response = api.EventsClient().RetrieveAllEventTypes().Result;
+    IList<EventTypesResponse> response = await api.EventsClient().RetrieveAllEventTypes();
 }
 catch (CheckoutApiException e)
 {
