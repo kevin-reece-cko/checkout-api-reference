@@ -105,14 +105,6 @@ allOf:
         type: string
         description: The card verification value (CVV) check result
         example: Y
-      payouts:
-        type: boolean
-        description: Whether the card supports payouts
-        example: true
-      fast_funds:
-        type: string
-        description: The fast funds eligibility of the card
-        example: d
       payment_account_reference:
         type: string
         description: A unique reference to the underlying card for network tokens (e.g., Apple Pay, Google Pay)
