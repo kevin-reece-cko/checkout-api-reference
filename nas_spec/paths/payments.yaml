@@ -18,7 +18,7 @@ post:
         schema:
           oneOf:
             - $ref: '#/components/schemas/PaymentRequest'
-            - $ref: '#/components/schemas/PayoutRequest'
+            - $ref: '#/components/schemas/BankPayoutRequest'
         examples:
           Payment:
             value:
