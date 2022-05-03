@@ -144,6 +144,8 @@ properties:
     $ref: '#/components/schemas/MarketplaceData'
   recipient:
     $ref: '#/components/schemas/PaymentRecipient'
+  processing:
+    $ref: '#/components/schemas/ProcessingData'
   metadata:
     type: object
     description: A set of key-value pairs that you can attach to a payment. It can be useful for storing additional information in a structured format

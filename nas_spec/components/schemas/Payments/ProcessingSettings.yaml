@@ -12,6 +12,13 @@ properties:
   aft:
     type: boolean
     description: Indicates whether the payment is an [Account Funding Transaction](https://docs.checkout.com/four/payments/manage-payments/account-funding-transactions)
+  preferred_scheme:
+    type: Enum
+    enum:
+      - "mastercard"
+      - "visa"
+      - "cartes_bancaires"
+    description: The preferred scheme for co-badged card payment processing. If using 3rd party Authentication before requesting the payment, set the value to the scheme that authenticated the transaction.
   # dlocal:
   #   type: object
   #   description: Processing information required for dLocal payments.

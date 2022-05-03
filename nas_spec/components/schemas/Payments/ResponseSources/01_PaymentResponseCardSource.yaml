@@ -45,10 +45,8 @@ allOf:
         example: 'VISA'
       scheme_local:
         type: string
-        description: The local co-branded card scheme
-        enum:
-          - cartes_bancaires
-        example: 'cartes_bancaires'
+        description: The local co-branded card scheme.
+        example: 'Cartes_Bancaires'
       last4:
         type: string
         description: The last four digits of the card number

@@ -47,6 +47,30 @@ properties:
       - low_risk_program
     description: Specifies an exemption reason so that the payment is not processed using 3D Secure authentication. Learn more about exemptions in our <a href="https://docs.checkout.com/four/payments/regulation-support/sca-compliance-guide#SCAcomplianceguide-PossibleSCAexemptionsexemptions" target="_blank">SCA compliance guide</a>
     example: 'low_value'
+  status:
+    type: string
+    example: "Y"
+    maxLength: 1
+    minLength: 1
+    description: The transaction status returned from the card Issuer’s Access Control Server (ACS) or Scheme Directory Server (DS). For 3DS Secure 1, this is the PaRes Status. for 3D Secure 2, this is the transaction status of ARes(frictionless flow) or RReq (Challenge flow)
+  authentication_date:
+    type: datetime
+    example: "2020-09-03T10:11:12Z"
+    description: "Authentication date and time. Format ISO-8601"
+    nullable: true
+  authentication_amount:
+    type: long
+    example: 200
+    minimum: 0
+    description: "Authentication amount"
+    nullable: true
+  flow_type:
+    type: string
+    enum:
+      - challenged
+      - frictionless
+      - frictionless_delegated
+    description: Indicates whether the 3D Secure 2 authentication was challenged or frictionless.
   challenge_indicator:
     type: string
     description: Indicates the preference for whether or not a 3DS challenge should be performed. The customer’s bank has the final say on whether or not the customer receives the challenge.
@@ -56,3 +80,22 @@ properties:
       - challenge_requested
       - challenge_requested_mandate
     default: no_preference
+  status_reason_code:
+    type: string
+    example: "01"
+    maxLength: 2
+    minLength: 2
+    description: "A code indicating the reason for the transaction status"
+  challenge_cancel_reason:
+    type: string
+    example: "01"
+    description: 'Indicates a cancel reason for a challenge in the case of authentication. Can be any number from 00 to 99, with 00 being specific ONLY to Cartes Bancaires.'
+  score:
+    type: string
+    description: Risk score calculated by Directory Server (DS). Cartes Bancaires 3D Secure 2 only.
+  cryptogram_algorithm:
+    type: string
+    example: "1"
+    maxLength: 1
+    minLength: 1
+    description: The algorithm used by the Issuer ACS to calculate the Authentication cryptogram. This is the AVALGO data returned in Cartes bancaires Authentication.
