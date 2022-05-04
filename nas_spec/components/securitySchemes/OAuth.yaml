@@ -66,8 +66,7 @@ flows:
       files: Access to all Files resources
       'files:retrieve': Retrieve files
       'files:upload': Upload files
-      'issuing:client': Access to all client-related resources
-      'issuing:partner': Access to all partner-related resources
+      'files:download': Download files
       risk: Access to all Risk resources
       'risk:assessments': Manage risk assessment
       'risk:settings': Manage risk settings
