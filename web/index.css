@@ -769,6 +769,10 @@ td.sc-kgoBCf.kGwPhO {
 	border: 1px solid var(--border) !important;
 }
 
+table.security-details li p {
+	display: contents;
+}
+
 /* Request body schema background */
 
 .sc-kpOJdX.icucAR {
