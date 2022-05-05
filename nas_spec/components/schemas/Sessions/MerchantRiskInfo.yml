@@ -1,6 +1,6 @@
 type: object
 description: >
-  Additional information about the Cardholder's account.
+  Additional information about the cardholder's purchase.
 properties:
   delivery_email:
     type: string
