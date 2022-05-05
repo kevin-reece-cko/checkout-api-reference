@@ -1,0 +1,41 @@
+type: object
+description: >
+  Additional information about the Cardholder's account.
+properties:
+  delivery_email:
+    type: string
+    description: >
+      For Electronic delivery, the email address to which the merchandise was delivered.
+    maxLength: 254
+    example: brucewayne@email.com
+  delivery_timeframe:
+    type: string
+    description: >
+      Indicates the merchandise delivery timeframe.
+    enum:
+      - electronic_delivery
+      - same_day
+      - overnight
+      - two_day_or_more
+  is_preorder:
+    type: boolean
+    description: >
+      Indicates whether the cardholder is placing an order for merchandise with a future availability or release date.
+    example: true
+  is_reorder:
+    type: boolean
+    description: >
+      Indicates whether the cardholder is reordering previously purchased merchandise.
+    example: false
+  shipping_indicator:
+    type: string
+    description: >
+      Indicates the shipping method chosen for the transaction. Please choose an option that accurately describes the cardholder's specific transaction.
+    enum:
+      - billing_address
+      - another_address_on_file
+      - not_on_file
+      - store_pick_up
+      - digital_goods
+      - travel_and_event_no_shipping
+      - other

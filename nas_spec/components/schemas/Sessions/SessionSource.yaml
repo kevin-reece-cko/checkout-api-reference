@@ -31,10 +31,8 @@ properties:
     description: The cardholder's work phone number
     allOf:
       - $ref: '#/components/schemas/SessionPhone'
-  scheme:
+  email:
     type: string
-    description: Indicates the cardholder scheme choice
-    enum:
-      - cartes_bancaires
-      - visa
-      - mastercard
+    description: The email of the cardholder
+    maxLength: 254
+    example: 'bruce.wayne@email.com'

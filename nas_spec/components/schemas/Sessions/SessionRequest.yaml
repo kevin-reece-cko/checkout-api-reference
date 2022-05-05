@@ -36,16 +36,31 @@ properties:
     $ref: '#/components/schemas/AuthenticationType'
   authentication_category:
     $ref: '#/components/schemas/Category'
+  account_info:
+    $ref: '#/components/schemas/CardholderAccountInfo'
   challenge_indicator:
     $ref: '#/components/schemas/ChallengeIndicator'
   billing_descriptor:
     $ref: '#/components/schemas/SessionsBillingDescriptor'
   reference:
     $ref: '#/components/schemas/Reference'
+  merchant_risk_info:
+    $ref: '#/components/schemas/MerchantRiskInfo'
+  prior_transaction_reference:
+    type: string
+    description: >
+      Additional information for the ACS to determine the best approach for handling a request. This is an ACS transaction ID for a prior authenticated transaction.
+    maxLength: 36
+    example: ce30d2f6-7140-4385-b543-cddb5dacfe11
   transaction_type:
     $ref: '#/components/schemas/TransactionType'
   shipping_address:
     $ref: '#/components/schemas/SessionAddress'
+  shipping_address_matches_billing:
+    type: boolean
+    description: >
+      Indicates whether the cardholder shipping address and billing address are the same.
+    example: false
   completion:
     $ref: '#/components/schemas/CompletionInfo'
   channel_data:
