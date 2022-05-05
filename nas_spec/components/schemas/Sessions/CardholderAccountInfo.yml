@@ -63,4 +63,3 @@ properties:
       - issuer_credentials
       - third_party_authentication
       - fido
-    
