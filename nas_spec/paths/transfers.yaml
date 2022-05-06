@@ -1,8 +1,8 @@
 post:
   servers:
-    - url: https://transfers.checkout.com
+    - url: https://transfers.checkout.com/transfers
       description: Production server
-    - url: https://transfers.sandbox.checkout.com
+    - url: https://transfers.sandbox.checkout.com/transfers
       description: Sandbox server
   security:
     - OAuth:
