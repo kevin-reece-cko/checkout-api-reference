@@ -7,8 +7,6 @@ allOf:
       - token
       - expiry_month
       - expiry_year
-      - token_type
-      - cryptogram
     properties:
       token:
         type: string
@@ -35,8 +33,8 @@ allOf:
         minLength: 2
         maxLength: 45
         example: 'Bruce Wayne'
-      email:
-        type: string
-        description: The email of the cardholder
-        maxLength: 254
-        example: 'bruce.wayne@email.com'
+      stored:
+        type: boolean
+        description: This must be set to `true` for authentications that use <a href="https://docs.checkout.com/quickstart/use-an-existing-card/stored-card-details" target="blank">stored card details</a>
+        default: false
+        example: true

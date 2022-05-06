@@ -33,8 +33,15 @@ allOf:
         minLength: 2
         maxLength: 45
         example: 'Bruce Wayne'
-      email:
+      scheme:
         type: string
-        description: The email of the cardholder
-        maxLength: 254
-        example: 'bruce.wayne@email.com'
+        description: Indicates the cardholder scheme choice
+        enum:
+          - cartes_bancaires
+          - visa
+          - mastercard
+      stored:
+        type: boolean
+        description: This must be set to `true` for authentications that use <a href="https://docs.checkout.com/quickstart/use-an-existing-card/stored-card-details" target="blank">stored card details</a>
+        default: false
+        example: true
