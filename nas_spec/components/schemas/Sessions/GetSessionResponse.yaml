@@ -86,6 +86,8 @@ properties:
     example: Card declined. Please contact your issuing bank.
   card:
     $ref: '#/components/schemas/CardInfo'
+  recurring:
+    $ref: '#/components/schemas/Recurring'
   _links:
     $ref: '#/components/schemas/GetSessionLinks'
   authentication_date:

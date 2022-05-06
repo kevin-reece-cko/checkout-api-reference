@@ -50,3 +50,5 @@ properties:
     $ref: '#/components/schemas/CompletionInfo'
   channel_data:
     $ref: '#/components/schemas/ChannelData'
+  recurring:
+    $ref: '#/components/schemas/Recurring'

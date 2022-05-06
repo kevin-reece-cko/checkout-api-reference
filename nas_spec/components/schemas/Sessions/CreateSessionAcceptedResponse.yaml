@@ -11,6 +11,7 @@ required:
   - protocol_version
   - _links
   - exemption
+  - recurring
 properties:
   session_secret:
     $ref: '#/components/schemas/SessionSecret'
@@ -52,6 +53,8 @@ properties:
     $ref: '#/components/schemas/Reference'
   card:
     $ref: '#/components/schemas/CardInfo'
+  recurring:
+    $ref: '#/components/schemas/Recurring'
   _links:
     $ref: '#/components/schemas/CreateSessionLinks'
   authentication_date:
