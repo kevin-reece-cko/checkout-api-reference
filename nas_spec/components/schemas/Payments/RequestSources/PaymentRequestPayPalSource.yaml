@@ -1,0 +1,36 @@
+type: object
+required:
+  - type
+allOf:
+  - $ref: '#/components/schemas/PaymentRequestSource'
+  - type: object
+    properties:
+      instrument_id: 
+        type: string
+        pattern: "^(src)_(\\w{26})$"
+        description: The instrument to be used for the recurring payments
+      plan:
+        required:
+          - type
+        properties:
+          type:
+            enum:
+              - MERCHANT_INITIATED_BILLING,
+              - MERCHANT_INITIATED_BILLING_SINGLE_AGREEMENT,
+              - CHANNEL_INITIATED_BILLING,
+              - CHANNEL_INITIATED_BILLING_SINGLE_AGREEMENT,
+              - RECURRING_PAYMENTS,
+              - PRE_APPROVED_PAYMENTS
+            type: string
+            description: The billing plan type.
+            default: MERCHANT_INITIATED_BILLING
+            example: MERCHANT_INITIATED_BILLING
+          skip_shipping_address:
+            type: boolean
+            description: Indicates whether to skip the collection of the shipping address from the customer.
+            example: true
+          immutable_shipping_address:
+            type: boolean
+            description: Indicates whether to show the shipping address but prevent the customer from editing it. 
+            example: false
+        description: The plan details for the recurring payments agreement.

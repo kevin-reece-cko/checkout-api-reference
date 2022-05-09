@@ -149,6 +149,7 @@ properties:
       - bancontact
       - p24
       - multibanco
+      - paypal
     example:
       - card
   products:
