@@ -188,6 +188,15 @@ properties:
         type: boolean
         description: Determines whether to attempt a 3D Secure payment as non-3D Secure should the card issuer not be enrolled.
         default: false
+      challenge_indicator:
+        type: string
+        description: Indicates the preference for whether or not a 3DS challenge should be performed. The customer’s bank has the final say on whether or not the customer receives the challenge.
+        enum:
+            - no_preference
+            - no_challenge_requested
+            - challenge_requested
+            - challenge_requested_mandate
+        default: no_preference
   risk:
     $ref: '#/components/schemas/RiskRequest'
   return_url:
