@@ -2,6 +2,7 @@
 
 | Date       | Description of change                                                                                                 |
 | ---------- | --------------------------------------------------------------------------------------------------------------------- |
+| 2022/05/11 | Added `3ds.challenge_indicator` to Hosted Payments Page and Payment Links.                                            |
 | 2022/04/28 | Add recurring authentication type in Sessions.                                                                        |
 | 2022/04/27 | Added Scandinavian locale options to Hosted Payments Page and Payment Links.                                          |
 | 2022/04/27 | Added the `challenged` field to the GET payments response schema.                                                     |
