@@ -2,7 +2,9 @@
 import checkout_sdk
 from checkout_sdk.environment import Environment
 from checkout_sdk.exception import CheckoutApiException, CheckoutArgumentException, CheckoutAuthorizationException
-from checkout_sdk.payments.payments import CaptureRequest
+from checkout_sdk.disputes.disputes import DisputesQueryFilter, DisputeEvidenceRequest
+from datetime import datetime, timezone
+from dateutil.relativedelta import relativedelta
 
 api = checkout_sdk.DefaultSdk() \\
     .secret_key('secret_key') \\
@@ -11,13 +13,17 @@ api = checkout_sdk.DefaultSdk() \\
     .build()
 # or Environment.production()
 
-capture_request = CaptureRequest()
-capture_request.reference = 'reference'
-capture_request.amount = 10
+query = DisputesQueryFilter()
+now = datetime.now(timezone.utc)
+query.from_ = now - relativedelta(months=6)
+query.to = now
+query.payment_arn = 'payment_arn'
+query.payment_reference = 'payment_reference'
+query.limit = 10
+query.skip = 5
 
 try:
-    # or, capture_payment('payment_id') for a full capture
-    response = api.payments.capture_payment('payment_id', capture_request)
+    response = api.disputes.query(query)
 except CheckoutApiException as err:
     # API error
     request_id = err.request_id

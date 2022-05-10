@@ -1,23 +1,26 @@
 # For more information please refer to https://github.com/checkout/checkout-sdk-python
 import checkout_sdk
+from checkout_sdk.common.enums import Currency
 from checkout_sdk.environment import Environment
 from checkout_sdk.exception import CheckoutApiException, CheckoutArgumentException, CheckoutAuthorizationException
-from checkout_sdk.payments.payments import CaptureRequest
+from checkout_sdk.forex.forex import QuoteRequest
+from checkout_sdk.four.oauth_scopes import OAuthScopes
 
-api = checkout_sdk.DefaultSdk() \\
-    .secret_key('secret_key') \\
-    .public_key('public_key') \\
+# OAuth
+api = checkout_sdk.OAuthSdk() \\
+    .client_credentials('client_id', 'client_secret') \\
     .environment(Environment.sandbox()) \\
+    .scopes([OAuthScopes.FX]) \\
     .build()
-# or Environment.production()
 
-capture_request = CaptureRequest()
-capture_request.reference = 'reference'
-capture_request.amount = 10
+quote_request = QuoteRequest()
+quote_request.source_currency = Currency.GBP
+quote_request.source_amount = 10
+quote_request.destination_currency = Currency.USD
+quote_request.process_channel_id = 'pc_abcdefghijklmnopqrstuvwxyz'
 
 try:
-    # or, capture_payment('payment_id') for a full capture
-    response = api.payments.capture_payment('payment_id', capture_request)
+    response = api.forex.request_quote(quote_request)
 except CheckoutApiException as err:
     # API error
     request_id = err.request_id
@@ -25,7 +28,7 @@ except CheckoutApiException as err:
     error_details = err.error_details
     http_response = err.http_response
 except CheckoutArgumentException as err:
-    # Bad arguments
+# Bad arguments
 
 except CheckoutAuthorizationException as err:
-    # Invalid authorization
+# Invalid authorization

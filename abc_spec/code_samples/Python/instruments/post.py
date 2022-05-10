@@ -2,7 +2,9 @@
 import checkout_sdk
 from checkout_sdk.environment import Environment
 from checkout_sdk.exception import CheckoutApiException, CheckoutArgumentException, CheckoutAuthorizationException
-from checkout_sdk.payments.payments import CaptureRequest
+from checkout_sdk.instruments.instruments import CreateInstrumentRequest, InstrumentCustomerRequest, \\
+    UpdateInstrumentRequest
+from checkout_sdk.common.common import Address, Phone
 
 api = checkout_sdk.DefaultSdk() \\
     .secret_key('secret_key') \\
@@ -11,13 +13,22 @@ api = checkout_sdk.DefaultSdk() \\
     .build()
 # or Environment.production()
 
-capture_request = CaptureRequest()
-capture_request.reference = 'reference'
-capture_request.amount = 10
+phone = Phone()
+phone.country_code = '44'
+phone.number = '4155552671'
+
+customer = InstrumentCustomerRequest()
+customer.email = 'email@docs.checkout.com'
+customer.name = 'Name'
+customer.default = True
+customer.phone = phone
+
+create_instrument_request = CreateInstrumentRequest()
+create_instrument_request.token = 'token'
+create_instrument_request.customer = customer
 
 try:
-    # or, capture_payment('payment_id') for a full capture
-    response = api.payments.capture_payment('payment_id', capture_request)
+    response = api.instruments.create(create_instrument_request)
 except CheckoutApiException as err:
     # API error
     request_id = err.request_id
