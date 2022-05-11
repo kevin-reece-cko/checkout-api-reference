@@ -5,10 +5,6 @@ allOf:
   - $ref: '#/components/schemas/PaymentRequestSource'
   - type: object
     properties:
-      instrument_id: 
-        type: string
-        pattern: "^(src)_(\\w{26})$"
-        description: The instrument to be used for the recurring payments
       plan:
         required:
           - type
