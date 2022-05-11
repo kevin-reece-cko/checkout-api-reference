@@ -216,6 +216,7 @@ properties:
     type: string
     description: Creates a translated version of the page in the specified language
     enum:
+      - ar
       - da-DK
       - de-DE
       - en-GB
