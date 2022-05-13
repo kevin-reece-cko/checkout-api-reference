@@ -14,6 +14,8 @@ properties:
     description: The current state of the transfer
     enum:
       - pending
+      - completed
+      - rejected
   transfer_type:
     $ref: '#/components/schemas/TransferType'
   requested_on:
