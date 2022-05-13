@@ -1,0 +1,59 @@
+type: object
+title: List transfers response
+properties:
+  id:
+    type: string
+    description: The transfer identifier
+    example: tra_y3oqhf46pyzuxjbcn2giaqnb4
+  reference:
+    type: string
+    description: A unique reference used to identify this transfer
+    example: superhero1234
+  status:
+    type: string
+    description: The current state of the transfer
+    enum:
+      - pending
+  transfer_type:
+    $ref: '#/components/schemas/TransferType'
+  requested_on:
+    type: string
+    description: The date the transfer was requested on
+    example: '2021-12-15T09:15:02.3845763Z'
+  reason_codes:
+    type: string
+    description: An optional set of reason codes describing why the transfer is in its current state 
+    example:
+      - destination_transfers_capability_disabled
+      - source_and_destination_currency_accounts_must_be_different
+  source:
+    type: object
+    description: The object representing the source of the funds involved in the transfer.
+    properties:
+      entity_id:
+        type: string
+        description: The ID of the entity that sent the transfer
+        example: ent_azsiyswl7bwe2ynjzujy7lcjca
+      amount:
+        description: The amount transferred, in the minor unit of the currency represented by the `currency` property
+        type: integer
+        example: 100
+      currency:
+        description: The ISO currency of the funds being transferred
+        type: string
+        example: GBP
+  destination:
+    type: object
+    description: The destination of the funds involved in the transfer
+    properties:
+      entity_id:
+        type: string
+        description: The ID of the entity that received the transfer
+        example: ent_bqik7gxoavwhmy3ot6kvmbx6py
+  _links:
+    type: object
+    properties:
+      self:
+        $ref: '#/components/schemas/TransferLink'
+    example:
+      self: 'http://test:1234/transfers/tra_y3oqhf46pyzuxjbcn2giaqnb4'
