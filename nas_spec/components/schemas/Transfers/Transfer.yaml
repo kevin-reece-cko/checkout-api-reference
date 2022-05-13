@@ -1,5 +1,5 @@
 type: object
-title: List transfers response
+title: The transfer information
 properties:
   id:
     type: string
