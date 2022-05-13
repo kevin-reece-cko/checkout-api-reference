@@ -30,6 +30,8 @@ get:
       description: Bad Request
     '401':
       description: Unauthorized
+    '404':
+      description: Transfer not found
     '422':
       description: Invalid data was sent
       content:
