@@ -10,12 +10,7 @@ properties:
     description: A unique reference used to identify this transfer
     example: superhero1234
   status:
-    type: string
-    description: The current state of the transfer
-    enum:
-      - pending
-      - completed
-      - rejected
+    $ref: '#/components/schemas/TransferStatus'
   transfer_type:
     $ref: '#/components/schemas/TransferType'
   requested_on:
@@ -23,14 +18,14 @@ properties:
     description: The date the transfer was requested on
     example: '2021-12-15T09:15:02.3845763Z'
   reason_codes:
-    type: string
+    type: array
     description: An optional set of reason codes describing why the transfer is in its current state 
-    example:
-      - destination_transfers_capability_disabled
-      - source_and_destination_currency_accounts_must_be_different
+    items:
+      type: string
+    example: ["destination_transfers_capability_disabled", "source_and_destination_currency_accounts_must_be_different"]
   source:
     type: object
-    description: The object representing the source of the funds involved in the transfer.
+    description: The source of the funds involved in the transfer
     properties:
       entity_id:
         type: string
@@ -41,7 +36,7 @@ properties:
         type: integer
         example: 100
       currency:
-        description: The ISO currency of the funds being transferred
+        description: The ISO currency code of the funds being transferred
         type: string
         example: GBP
   destination:
