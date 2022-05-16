@@ -47,6 +47,6 @@ allOf:
         example: true
       store_for_future_use:
         type: boolean
-        description: This must be set to `true` for authentications that intend to reuse the credentials in the subsequent requests.
+        description: This must be set to `true` for authentications that intend to reuse the credentials in subsequent requests.
         default: true
         example: false
