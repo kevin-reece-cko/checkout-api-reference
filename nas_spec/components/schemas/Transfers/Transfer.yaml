@@ -53,4 +53,21 @@ properties:
       self:
         $ref: '#/components/schemas/TransferLink'
     example:
-      self: 'http://test:1234/transfers/tra_y3oqhf46pyzuxjbcn2giaqnb4'
+      self: "https://transfers.checkout.com/transfers/tra_y3oqhf46pyzuxjbcn2giaqnb4"
+example:
+  id: tra_y3oqhf46pyzuxjbcn2giaqnb4
+  reference: superhero1234
+  status: rejected
+  transfer_type: commission
+  requested_on: '2021-12-15T09:15:02.3845763Z'
+  reason_codes:
+  - destination_transfers_capability_disabled
+  - source_and_destination_currency_accounts_must_be_different
+  source:
+    entity_id: ent_azsiyswl7bwe2ynjzujy7lcjca
+    amount: 100
+    currency: GBP
+  destination:
+    entity_id: ent_bqik7gxoavwhmy3ot6kvmbx6py
+  _links:
+    self: "https://transfers.checkout.com/transfers/tra_y3oqhf46pyzuxjbcn2giaqnb4"
