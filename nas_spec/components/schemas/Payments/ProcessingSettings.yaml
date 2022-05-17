@@ -53,7 +53,7 @@ properties:
   #           example: "3"
   PayPal:
     type: object
-    description: Processing information required for dLocal payments.
+    description: Processing information required for PayPal payments.
     properties:
       invoice_id:
         type: string
