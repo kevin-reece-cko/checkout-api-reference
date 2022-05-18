@@ -1,4 +1,4 @@
-import { Checkout } from 'checkout-node-sdk';
+import { Checkout } from 'checkout-sdk-node';
 
 let cko = new Checkout('your_client_secret_here', {
 	client: 'ack_XXXXXXXXXXXX',

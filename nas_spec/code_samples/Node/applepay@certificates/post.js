@@ -1,4 +1,4 @@
-import { Checkout } from 'checkout-node-sdk';
+import { Checkout } from 'checkout-sdk-node';
 
 let cko = new Checkout('sk_sbox_XXXXX', {
 	pk: 'pk_sbox_XXXXX',

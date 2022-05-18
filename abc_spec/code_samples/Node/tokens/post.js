@@ -1,4 +1,4 @@
-import { Checkout } from 'checkout-node-sdk';
+import { Checkout } from 'checkout-sdk-node';
 
 const cko = new Checkout('sk_XXXX', { pk: 'pk_YYYY' });
 
