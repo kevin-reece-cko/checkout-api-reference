@@ -8,7 +8,6 @@ discriminator:
     card: '#/components/schemas/03_PaymentRequestCardSource'
     network_token: '#/components/schemas/04_PaymentRequestNetworkTokenSource'
     provider_token: '#/components/schemas/07_PaymentRequestProviderTokenSource'
-    paypal: '#/components/schemas/PaymentRequestPayPalSource'
 required:
   - type
 properties:
