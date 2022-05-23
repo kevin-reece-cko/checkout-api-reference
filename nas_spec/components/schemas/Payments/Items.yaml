@@ -1,0 +1,26 @@
+type: array
+description: The order line items
+items:
+  type: object
+  description: The order line item or product that is being purchased
+  properties:
+    name:
+      type: string
+      description: The descriptive name of the line item
+      example: Kevlar batterang
+      maxLength: 255
+    quantity:
+      type: integer
+      description: The number of line items
+      minimum: 1
+      example: 2
+    unit_price:
+      type: integer
+      description: The unit price of the item the <a href="https://docs.checkout.com/four/resources/calculating-the-amount" target="blank">minor currency unit</a>
+      minimum: 0
+      example: 50
+    reference:
+      type: string
+      description: The item reference or product SKU (stock-keeping unit).
+      example: 858818ac
+      maxLength: 255

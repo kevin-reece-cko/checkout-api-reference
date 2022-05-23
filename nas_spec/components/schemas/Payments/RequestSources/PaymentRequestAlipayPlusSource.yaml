@@ -1,0 +1,23 @@
+type: object
+required:
+  - type
+allOf:
+  - $ref: '#/components/schemas/PaymentRequestSource'
+  - type: object
+    properties:
+      terminal_type:
+        enum:
+          - APP
+          - WAP
+          - WEB
+        type: string
+        description: The client-side terminal type, if it is a website that is opened via a PC browser or a mobile browser or mobile application.
+        default: WEB
+        example: WAP
+      os_type:
+        enum:
+          - ANDROID
+          - IOS
+        type: string
+        description: This field is required when terminalType is not WEB.
+        example: ANDROID

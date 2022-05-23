@@ -5,6 +5,9 @@ discriminator:
   propertyName: type
   mapping:
     card: '#/components/schemas/01_PaymentResponseCardSource'
+    alipay_hk: '#/components/schemas/PaymentResponseAlipayPlusSource'
+    alipay_cn: '#/components/schemas/PaymentResponseAlipayPlusSource'
+    gcash: '#/components/schemas/PaymentResponseAlipayPlusSource'
 required:
   - type
 

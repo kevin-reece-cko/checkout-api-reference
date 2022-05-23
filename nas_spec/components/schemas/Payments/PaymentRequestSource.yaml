@@ -8,6 +8,9 @@ discriminator:
     card: '#/components/schemas/03_PaymentRequestCardSource'
     network_token: '#/components/schemas/04_PaymentRequestNetworkTokenSource'
     provider_token: '#/components/schemas/07_PaymentRequestProviderTokenSource'
+    alipay_hk: '#/components/schemas/PaymentRequestAlipayPlusSource'
+    alipay_cn: '#/components/schemas/PaymentRequestAlipayPlusSource'
+    gcash: '#/components/schemas/PaymentRequestAlipayPlusSource'
 required:
   - type
 properties:

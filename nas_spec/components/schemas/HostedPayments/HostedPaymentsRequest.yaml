@@ -144,6 +144,9 @@ properties:
       - bancontact
       - p24
       - multibanco
+      - alipay_hk
+      - alipay_cn
+      - gcash
     example:
       - card
   products:
