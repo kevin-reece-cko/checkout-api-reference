@@ -1,8 +1,9 @@
 # Changelog
 
 | Date       | Description of change                                                                                                 |
-|------------|-----------------------------------------------------------------------------------------------------------------------|
+| ---------- | --------------------------------------------------------------------------------------------------------------------- |
 | 2022/05/23 | Added Alipay Plus NAS structure                                                                                       |
+| 2022/05/19 | Added WeChat Pay NAS structure                                                                                        |
 | 2022/05/18 | Added "Get transfer details"                                                                                          |
 | 2022/05/11 | Added Arabic locale option to Hosted Payments Page and Payment Links.                                                 |
 | 2022/05/10 | Added `3ds.challenge_indicator` to Hosted Payments Page and Payment Links.                                            |
