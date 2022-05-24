@@ -14,7 +14,7 @@ get:
   summary: Get sub-entity details
   security:
     - OAuth:
-        - marketplace
+        - accounts
   responses:
     '200':
       description: Sub-entity retrieved successfully
@@ -81,7 +81,7 @@ get:
                     label: Peter's Personal Account
                 _links:
                   self:
-                    href: https://api.checkout.com/marketplace/entities/ent_wxglze3wwywujg4nna5fb7ldli
+                    href: https://api.checkout.com/accounts/entities/ent_wxglze3wwywujg4nna5fb7ldli
             Individual:
               value:
                 id: ent_wxglze3wwywujg4nna5fb7ldli
@@ -126,7 +126,7 @@ get:
                     label: Peter's Personal Account
                 _links:
                   self:
-                    href: https://api.checkout.com/marketplace/entities/ent_wxglze3wwywujg4nna5fb7ldli
+                    href: https://api.checkout.com/accounts/entities/ent_wxglze3wwywujg4nna5fb7ldli
       headers:
         Cko-Version:
           $ref: '#/components/headers/Cko-Version'
@@ -150,7 +150,7 @@ get:
                       - error_code1
                       - error_code2
   tags:
-    - Marketplace
+    - Platforms
 put:
   description: |
     You can update all fields under the Contact details, Profile, and Company objects. You can also add <strong>identification</strong> information to complete due diligence requirements.<br><br>
@@ -232,7 +232,7 @@ put:
                   national_id_number: 'AB123456C'
   security:
     - OAuth:
-        - marketplace
+        - accounts
   responses:
     '200':
       description: Sub-entity updated successfully
@@ -263,4 +263,4 @@ put:
                       - error_code1
                       - error_code2
   tags:
-    - Marketplace
+    - Platforms

@@ -86,9 +86,9 @@ properties:
         description: The ID of the file representing the uploaded document.
         example: file_wxglze3wwywujg4nna5fb7ldli
   account_holder:
-    $ref: '#/components/schemas/MarketplaceAccountHolder'
+    $ref: '#/components/schemas/PlatformsAccountHolder'
   bank:
-    $ref: '#/components/schemas/MarketplaceBank'
+    $ref: '#/components/schemas/PlatformsBank'
 required:
   - label
   - type

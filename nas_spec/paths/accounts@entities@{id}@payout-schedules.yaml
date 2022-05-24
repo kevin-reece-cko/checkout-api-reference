@@ -1,6 +1,6 @@
 get:
   tags:
-    - Marketplace
+    - Platforms
   parameters:
     - in: path
       name: id
@@ -13,10 +13,10 @@ get:
         type: string
   security:
     - OAuth:
-        - marketplace
+        - accounts
   summary: Retrieve a sub-entity's payout schedule
   description: >-
-    You can schedule when your sub-entities receive their funds using our <a href="https://checkout.com/docs/four/marketplaces" target="_blank">Marketplace</a> solution. Use this endpoint to retrieve information about a sub-entity's schedule.
+    You can schedule when your sub-entities receive their funds using our <a href="https://checkout.com/docs/four/platforms" target="_blank">solution for platforms</a>. Use this endpoint to retrieve information about a sub-entity's schedule.
   responses:
     '200':
       description: Schedule retrieved successfully
@@ -40,13 +40,13 @@ get:
 
 put:
   tags:
-    - Marketplace
+    - Platforms
   security:
     - OAuth:
-        - marketplace
+        - accounts
   summary: Update a sub-entity's payout schedule
   description: >-
-    You can schedule when your sub-entities receive their funds using our <a href="https://checkout.com/docs/four/marketplaces" target="_blank">Marketplace</a> solution. Use this endpoint to update a sub-entity's schedule.
+    You can schedule when your sub-entities receive their funds using our <a href="https://checkout.com/docs/four/platforms" target="_blank">solution for platforms</a>. Use this endpoint to update a sub-entity's schedule.
   requestBody:
     required: true
     content:

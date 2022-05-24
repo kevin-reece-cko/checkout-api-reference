@@ -59,7 +59,7 @@ flows:
       'disputes:view': View disputes
       'disputes:provide-evidence': Provide dispute evidence
       'disputes:accept': Accept disputes
-      marketplace: Manage sub-entities
+      accounts: Manage sub-entities
       flow: Access to all Flow resources
       'flow:workflows': Manage workflows
       'flow:events': Retrieve events

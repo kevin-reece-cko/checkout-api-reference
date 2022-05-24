@@ -11,7 +11,7 @@ get:
   description: Use this endpoint to retrieve balances for each currency account belonging to an entity.
   security:
     - OAuth:
-        - marketplace
+        - accounts
   responses:
     '200':
       description: Balances retrieved successfully.
