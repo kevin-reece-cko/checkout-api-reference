@@ -36,6 +36,9 @@ post:
                 id: 'cus_udst2tfldj6upmye2reztkmm4i'
                 email: 'brucewayne@gmail.com'
                 name: 'Bruce Wayne'
+                phone:
+                  country_code: '+1'
+                  number: '415 555 2671'
               billing_descriptor:
                 name: SUPERHEROES.COM
                 city: GOTHAM
