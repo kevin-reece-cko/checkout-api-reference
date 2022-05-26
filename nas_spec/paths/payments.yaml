@@ -135,6 +135,9 @@ post:
               id: 'cus_udst2tfldj6upmye2reztkmm4i'
               email: 'brucewayne@gmail.com'
               name: 'Bruce Wayne'
+              phone:
+                country_code: '+1'
+                number: '415 555 2671'
             processed_on: '2019-09-10T10:11:12Z'
             reference: 'ORD-5023-4E89'
             processing:
