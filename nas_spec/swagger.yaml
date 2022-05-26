@@ -39,7 +39,6 @@ info:
 
       | Date       | Description of change                                                         |
       | ---------- | ----------------------------------------------------------------------------- |
-      | 2022/03/16 | Added the `phone_number` to customer object for payments.                     |
       | 2022/03/16 | Added the `scheme_local` to source for CoBrand payments.                      |
       | 2022/02/07 | Added the `preferred_scheme` to Processing to support CoBrand payments.       |
       | 2022/02/02 | Adds `active` property for workflows                                          |

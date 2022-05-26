@@ -1,7 +1,8 @@
 # Changelog
 
 | Date       | Description of change                                                                                                 |
-| ---------- | --------------------------------------------------------------------------------------------------------------------- |
+|------------|-----------------------------------------------------------------------------------------------------------------------|
+| 2022/05/26 | Added the `phone_number` to customer object for payments.                                                             |
 | 2022/05/23 | Added Alipay Plus NAS structure                                                                                       |
 | 2022/05/19 | Added WeChat Pay NAS structure                                                                                        |
 | 2022/05/18 | Added "Get transfer details"                                                                                          |
