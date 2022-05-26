@@ -16,3 +16,8 @@ properties:
     type: string
     description: The customer's name
     example: 'Bruce Wayne'
+  phone:
+    type: object
+    description: The customer's phone number
+    allOf:
+      - $ref: '#/components/schemas/PhoneNumber'
