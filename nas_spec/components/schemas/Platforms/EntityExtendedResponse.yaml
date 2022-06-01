@@ -16,5 +16,5 @@ allOf:
         type: array
         description: A collection of payment instruments added for this sub-entity.
         items:
-          $ref: '#/components/schemas/MarketplaceInstrumentReference'
+          $ref: '#/components/schemas/PlatformsInstrumentReference'
   - $ref: '#/components/schemas/EntityLinks'

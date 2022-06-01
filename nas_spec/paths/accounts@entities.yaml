@@ -81,7 +81,7 @@ post:
                   national_id_number: 'AB123456C'
   security:
     - OAuth:
-        - marketplace
+        - accounts
   responses:
     '201':
       description: Sub-entity onboarded successfully
@@ -118,4 +118,4 @@ post:
                       - error_code1
                       - error_code2
   tags:
-    - Marketplace
+    - Platforms
