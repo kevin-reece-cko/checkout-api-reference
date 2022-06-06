@@ -5,9 +5,9 @@ post:
     - OAuth:
         - files
   servers:
-    - url: https://files.checkout.com
+    - url: https://files.checkout.com/files
       description: Production server
-    - url: https://files.sandbox.checkout.com
+    - url: https://files.sandbox.checkout.com/files
       description: Sandbox server
   summary: Upload a file
   description: >-
