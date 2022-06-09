@@ -1,10 +1,25 @@
 type: string
 enum:
-  - no_preference
+  - no_preference,
   - no_challenge_requested
   - challenge_requested
   - challenge_requested_mandate
-description: Indicates whether a challenge is requested for this session
+  - low_value
+  - secure_corporate_payment
+  - trusted_listing
+  - trusted_listing_prompt
+  - transaction_risk_assessment
+description: > 
+  Indicates whether a challenge is requested for this session.
+  
+  The following are requests for exemption:
+  • low_value
+  • secure_corporate_payment
+  • trusted_listing
+  • trusted_listing_prompt
+  • transaction_risk_assessment
+  
+  If an exemption is not supported by the ACS then Checkout will replace the value with no_challenge_requested.
 maxLength: 50
 example: no_preference
 default: no_preference
