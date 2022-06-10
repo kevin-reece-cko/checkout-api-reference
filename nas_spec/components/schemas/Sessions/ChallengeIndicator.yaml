@@ -1,6 +1,6 @@
 type: string
 enum:
-  - no_preference,
+  - no_preference
   - no_challenge_requested
   - challenge_requested
   - challenge_requested_mandate
