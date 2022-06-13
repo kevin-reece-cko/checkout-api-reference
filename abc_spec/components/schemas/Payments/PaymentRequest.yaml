@@ -131,7 +131,7 @@ properties:
           - 'Resubmission'
           - 'No_show'
           - 'Reauthorization'
-      description: Indicates the reason for a merchant initiated payment request.
+        description: Indicates the reason for a merchant initiated payment request.
       dlocal:
         type: object
         description: Processing information required for <a href="https://www.checkout.com/docs/payments/payment-methods/cards/dlocal" target="_blank">dLocal payments</a>.
