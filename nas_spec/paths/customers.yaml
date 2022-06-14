@@ -8,7 +8,7 @@ post:
     - ApiSecretKey: []
   summary: Create a customer
   description: >
-    <a href="https://www.checkout.com/docs/four/payments/store-payment-details/customers" target="_blank">Store a customer's details in a customer object to reuse in future payments</a>. When creating a customer, you can link payment instruments – the customer `id` returned can be passed as a source when making a payment.
+    <a href="https://www.checkout.com/docs/payments/store-payment-details/customers" target="_blank">Store a customer's details in a customer object to reuse in future payments</a>. When creating a customer, you can link payment instruments – the customer `id` returned can be passed as a source when making a payment.
     <br/><br>
     **NOTE:** Specify a `default` instrument, otherwise the `instruments` array will not be saved on creation.
   requestBody:

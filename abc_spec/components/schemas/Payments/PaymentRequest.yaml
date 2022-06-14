@@ -126,7 +126,7 @@ properties:
         description: Indicates whether the payment is an [Account Funding Transaction](https://docs.checkout.com/payment-actions/account-funding-transactions)
       dlocal:
         type: object
-        description: Processing information required for <a href="https://www.checkout.com/docs/payments/payment-methods/cards/dlocal" target="_blank">dLocal payments</a>.
+        description: Processing information required for <a href="https://www.checkout.com/docs/previous/payments/payment-methods/cards/dlocal" target="_blank">dLocal payments</a>.
         properties:
           country:
             type: string
