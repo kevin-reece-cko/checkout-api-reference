@@ -24,11 +24,6 @@ items:
       description: The item reference or product SKU (stock-keeping unit).
       example: 858818ac
       maxLength: 255
-    goods_id:
-      type: string
-      description: It consists of a combination of uppercase and lowercase letters, numbers, hyphens and underscores.
-      maxLength: 32
-      example: axb_goods_id
     wxpay_goods_id:
       type: string
       description: Unified product No. defined by WeChat Pay
