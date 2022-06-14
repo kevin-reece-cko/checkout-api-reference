@@ -17,7 +17,7 @@ post:
     content:
       application/json:
         schema:
-          $ref: '#/components/schemas/MarketplaceInstrumentCreateRequest'
+          $ref: '#/components/schemas/PlatformsInstrumentCreateRequest'
         examples:
           BankAccount:
             value:
@@ -41,7 +41,7 @@ post:
                 file_id: file_wxglze3wwywujg4nna5fb7ldli
   security:
     - OAuth:
-        - marketplace
+        - accounts
   responses:
     '202':
       description: Instrument creation request accepted
@@ -68,4 +68,4 @@ post:
                       - error_code1
                       - error_code2
   tags:
-    - Marketplace
+    - Platforms

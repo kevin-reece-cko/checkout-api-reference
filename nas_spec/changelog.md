@@ -1,7 +1,11 @@
 # Changelog
 
 | Date       | Description of change                                                                                                 |
-| ---------- | --------------------------------------------------------------------------------------------------------------------- |
+|------------|-----------------------------------------------------------------------------------------------------------------------|
+| 2022/06/01 | Marketplace API renamed to Accounts API                                                                               |
+| 2022/05/23 | Added Alipay Plus NAS structure                                                                                       |
+| 2022/05/19 | Added WeChat Pay NAS structure                                                                                        |
+| 2022/05/18 | Added "Get transfer details"                                                                                          |
 | 2022/05/11 | Added Arabic locale option to Hosted Payments Page and Payment Links.                                                 |
 | 2022/05/10 | Added `3ds.challenge_indicator` to Hosted Payments Page and Payment Links.                                            |
 | 2022/04/28 | Add recurring authentication type in Sessions.                                                                        |
@@ -10,9 +14,9 @@
 | 2022/04/20 | Added required idempotency key to Transfers API                                                                       |
 | 2022/04/19 | Update `3ds.exemption` available enums                                                                                |
 | 2022/04/06 | Added `/payout-schedules` endpoint with `GET` and `PUT` methods to the Marketplace API                                |
-| 2022/03/30 | Adds "Get action invocations" endpoint                                                                                           |
+| 2022/03/30 | Adds "Get action invocations" endpoint                                                                                |
 | 2022/03/28 | Update PHP code samples                                                                                               |
-| 2022/03/25 | Increased max length for `reference` in "Onboard a sub-entity" to 50 characters |
+| 2022/03/25 | Increased max length for `reference` in "Onboard a sub-entity" to 50 characters                                       |
 | 2022/03/22 | Added new scheme `cartes_bancaires` to enum `scheme` in Get and Create Sessions Responses                             |
 | 2022/03/22 | Fixed invalid format for `authentication_date`                                                                        |
 | 2022/03/18 | Added Cartes Bancaires changes to Sessions request and response.                                                      |

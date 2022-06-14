@@ -1,0 +1,52 @@
+get:
+  tags:
+    - Transfers
+  servers:
+    - url: https://transfers.checkout.com
+      description: Production server
+    - url: https://transfers.sandbox.checkout.com
+      description: Sandbox server
+  security:
+    - OAuth:
+        - transfers:view
+  summary: Retrieve a transfer
+  description: Retrieve transfer details using the transfer identifier.
+  parameters:
+    - in: path
+      name: id
+      description: The transfer identifier
+      required: true
+      schema:
+        type: string
+      example: tra_y3oqhf46pyzuxjbcn2giaqnb4
+  responses:
+    '200':
+      description: Transfer found
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Transfer'
+      headers:
+        Cko-Request-Id:
+          $ref: '#/components/headers/Cko-Request-Id'
+        Cko-Version:
+          $ref: '#/components/headers/Cko-Version'
+    '400':
+      description: Bad Request
+    '401':
+      description: Unauthorized
+    '404':
+      description: Transfer not found
+    '422':
+      description: Invalid data was sent
+      content:
+        application/json:
+          schema:
+            allOf:
+              - $ref: '#/components/schemas/ValidationError'
+              - type: object
+                properties:
+                  error_codes:
+                    example:
+                      - error_code1
+                      - error_code2

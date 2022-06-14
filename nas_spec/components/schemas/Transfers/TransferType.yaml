@@ -1,6 +1,6 @@
 type: string
 title: Transfer type
-description: The type of transfer being requested.
+description: The type of transfer
 enum:
   - commission
   - promotion

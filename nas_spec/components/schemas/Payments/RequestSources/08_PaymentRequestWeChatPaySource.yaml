@@ -1,0 +1,34 @@
+type: object
+required:
+  - type
+allOf:
+  - $ref: '#/components/schemas/PaymentRequestSource'
+  - type: object
+    properties:
+      billing_address:
+        type: object
+        properties:
+          address_line1:
+            type: string
+            description: The first line of the address
+            example: 150 Kennedy Road
+          address_line2:
+            type: string
+            description: The second line of the address
+            example: Acacia Building
+          city:
+            type: string
+            description: The address city
+            example: Wan Chai
+          state:
+            type: string
+            description: The address state
+            example: Hong Kong
+          zip:
+            type: number
+            description: The address zip/postal code
+            example: 42345
+          country:
+            type: string
+            description: The two-letter ISO country code of the address
+            example: HK

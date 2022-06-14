@@ -8,6 +8,11 @@ discriminator:
     card: '#/components/schemas/03_PaymentRequestCardSource'
     network_token: '#/components/schemas/04_PaymentRequestNetworkTokenSource'
     provider_token: '#/components/schemas/07_PaymentRequestProviderTokenSource'
+    wechatpay: '#/components/schemas/08_PaymentRequestWeChatPaySource'
+    paypal: '#/components/schemas/PaymentRequestPayPalSource'
+    alipay_hk: '#/components/schemas/PaymentRequestAlipayPlusSource'
+    alipay_cn: '#/components/schemas/PaymentRequestAlipayPlusSource'
+    gcash: '#/components/schemas/PaymentRequestAlipayPlusSource'
 required:
   - type
 properties:
