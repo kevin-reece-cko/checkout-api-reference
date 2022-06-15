@@ -58,7 +58,7 @@ properties:
     allOf:
       - $ref: '#/components/schemas/EntityPhone'
   identification:
-    $ref: '#/components/schemas/MarketplaceAccountHolderIdentification'
+    $ref: '#/components/schemas/PlatformsAccountHolderIdentification'
   email:
     title: Email
     description: The account holder's email address.

@@ -40,11 +40,5 @@ post:
       description: Unauthorized
     '404':
       description: Events for reflow not found
-    '422':
-      description: Invalid data was sent
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/event-id-validation-error'
     '500':
       description: Internal Error
