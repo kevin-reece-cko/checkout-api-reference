@@ -19,6 +19,14 @@ properties:
       - 'visa'
       - 'cartes_bancaires'
     description: The preferred scheme for co-badged card payment processing. If using 3rd party Authentication before requesting the payment, set the value to the scheme that authenticated the transaction.
+  merchant_initiated_reason:
+    type: string
+    enum:
+      - 'Delayed_charge'
+      - 'Resubmission'
+      - 'No_show'
+      - 'Reauthorization'
+    description: Indicates the reason for a merchant initiated payment request.
   # dlocal:
   #   type: object
   #   description: Processing information required for dLocal payments.
