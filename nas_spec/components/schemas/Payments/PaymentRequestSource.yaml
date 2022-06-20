@@ -13,6 +13,10 @@ discriminator:
     alipay_hk: '#/components/schemas/PaymentRequestAlipayPlusSource'
     alipay_cn: '#/components/schemas/PaymentRequestAlipayPlusSource'
     gcash: '#/components/schemas/PaymentRequestAlipayPlusSource'
+    dana: '#/components/schemas/PaymentRequestAlipayPlusSource'
+    kakao_pay: '#/components/schemas/PaymentRequestAlipayPlusSource'
+    true_money: '#/components/schemas/PaymentRequestAlipayPlusSource'
+    tng: '#/components/schemas/PaymentRequestAlipayPlusSource'
 required:
   - type
 properties:
