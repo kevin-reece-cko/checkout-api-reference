@@ -124,6 +124,14 @@ properties:
       aft:
         type: boolean
         description: Indicates whether the payment is an [Account Funding Transaction](https://docs.checkout.com/payment-actions/account-funding-transactions)
+      merchant_initiated_reason:
+        type: string
+        enum:
+          - 'Delayed_charge'
+          - 'Resubmission'
+          - 'No_show'
+          - 'Reauthorization'
+        description: Indicates the reason for a merchant initiated payment request.
       dlocal:
         type: object
         description: Processing information required for <a href="https://www.checkout.com/docs/payments/payment-methods/cards/dlocal" target="_blank">dLocal payments</a>.
