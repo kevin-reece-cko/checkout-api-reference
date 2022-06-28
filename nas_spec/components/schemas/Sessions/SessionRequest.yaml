@@ -11,7 +11,9 @@ properties:
     description: |
       The payment amount in the major currency.
 
-      This value is required for `3DS1` authentications, and for `recurring` or `instalment` payment types.
+      This value is required for 3DS1 authentications. 
+      
+      For `recurring` and `instalment` payment types, this value is required and must be greater than zero.
 
       Omitting this value will set `authentication_category` to `non_payment` and renders the authentication as 3DS2 only.
     minimum: 0
