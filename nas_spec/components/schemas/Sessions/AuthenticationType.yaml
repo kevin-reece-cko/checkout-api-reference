@@ -2,6 +2,9 @@
 enum:
   - regular
   - recurring
-description: Indicates the type of payment this session is for
+  - instalment
+  - maintain_card
+  - add_card
+description: Indicates the type of payment this session is for. Please note the spelling of `instalment` consists of one `l` only.
 example: regular
 default: regular

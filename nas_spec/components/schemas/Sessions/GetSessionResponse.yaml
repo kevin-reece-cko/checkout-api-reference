@@ -88,6 +88,8 @@ properties:
     $ref: '#/components/schemas/CardInfo'
   recurring:
     $ref: '#/components/schemas/Recurring'
+  instalment:
+    $ref: '#/components/schemas/Instalment'
   _links:
     $ref: '#/components/schemas/GetSessionLinks'
   authentication_date:

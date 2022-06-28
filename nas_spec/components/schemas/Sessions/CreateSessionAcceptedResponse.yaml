@@ -12,6 +12,7 @@ required:
   - _links
   - exemption
   - recurring
+  - instalment
 properties:
   session_secret:
     $ref: '#/components/schemas/SessionSecret'
@@ -55,6 +56,8 @@ properties:
     $ref: '#/components/schemas/CardInfo'
   recurring:
     $ref: '#/components/schemas/Recurring'
+  instalment:
+    $ref: '#/components/schemas/Instalment'
   _links:
     $ref: '#/components/schemas/CreateSessionLinks'
   authentication_date:

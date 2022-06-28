@@ -67,3 +67,6 @@ properties:
     $ref: '#/components/schemas/ChannelData'
   recurring:
     $ref: '#/components/schemas/Recurring'
+  instalment:
+    $ref: '#/components/schemas/Instalment'
+
