@@ -1,6 +1,6 @@
 type: oauth2
 description: |
-  Your client credentials consist of an access key ID and an access key secret (corresponding to OAuth 2.0 client ID and client secret). You can exchange these for an access token by calling the [request an access token](#tag/Access/paths/~1connect~1token/post) endpoint. 
+  Your OAuth credentials consist of an access key ID and an access key secret (corresponding to OAuth 2.0 client ID and client secret). You can exchange these for an access token by calling the [request an access token](#tag/Access/paths/~1connect~1token/post) endpoint.
   You will need to authenticate using basic authentication, using your access key ID and access key secret as your username and password:
 
   ```
@@ -50,7 +50,6 @@ flows:
       'gateway:payment-voids': Void payments
       'gateway:payment-captures': Capture payments
       'gateway:payment-refunds': Refund payments
-      'gateway:moto': Create MOTO payments. This scope is only available in tokens issued through the `delegation` grant type and requires the presence of a user-specific access token.
       'fx': Foreign exchange services
       'payouts:bank-details': Get bank details
       'sessions:app': App-based authentication
@@ -67,17 +66,11 @@ flows:
       'files:retrieve': Retrieve files
       'files:upload': Upload files
       'files:download': Download files
-      risk: Access to all Risk resources
-      'risk:assessments': Manage risk assessment
-      'risk:settings': Manage risk settings
       balances: Access to all Balances resources
       'balances:view': View balances
       transfers: Access to all Transfers resources
       'transfers:view': View transfers
       'transfers:create': Create transfers
       middleware: Access to all Middleware resources
-      'middleware:gateway': Allows the payment request through middleware
-      'middleware:payment-context': Allows the creation of contexts
       'middleware:merchants-secret': Allows merchant identity and Middleware token exchange from a secure execution environment
       'middleware:merchants-public': Allows merchant identity and Middleware token exchange from an insecure execution environment
-
