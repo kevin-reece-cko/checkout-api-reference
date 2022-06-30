@@ -10,6 +10,7 @@ post:
   description: |
     Initiate a transfer of funds from source entity to destination entity.
   summary: Initiate a transfer of funds
+  operationId: createTransfer
   parameters:
     - $ref: '#/components/parameters/ckoIdempotencyKeyRequired'
   requestBody:

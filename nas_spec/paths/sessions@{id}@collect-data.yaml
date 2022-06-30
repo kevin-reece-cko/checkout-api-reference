@@ -5,6 +5,7 @@ put:
         - sessions:browser
     - SessionSecret: [ ]
   summary: Update a session
+  operationId: updateSession
   description: Update a session by providing information about the environment.
   tags:
     - Sessions

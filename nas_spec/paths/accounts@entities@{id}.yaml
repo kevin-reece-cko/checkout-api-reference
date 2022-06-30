@@ -12,6 +12,7 @@ parameters:
 get:
   description: Use this endpoint to retrieve a sub-entity and its full details.
   summary: Get sub-entity details
+  operationId: getSubEntityDetails
   security:
     - OAuth:
         - accounts
