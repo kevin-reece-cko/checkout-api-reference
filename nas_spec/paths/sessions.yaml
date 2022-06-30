@@ -6,6 +6,7 @@ post:
         - sessions:app
         - sessions:browser
   summary: Request a session
+  operationId: createSession
   description: |
     Create a payment session to authenticate a cardholder before requesting a payment.
     Payment sessions can be linked to one or more payments (in the case of recurring and other merchant-initiated payments).

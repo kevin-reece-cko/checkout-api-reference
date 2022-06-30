@@ -7,6 +7,7 @@ put:
         - disputes:provide-evidence
     - ApiSecretKey: [ ]
   summary: Provide dispute evidence
+  operationId: provideDisputeEvidence
   description: >
     Adds supporting evidence to a dispute. Before using this endpoint, you first
     need to [upload your files](#tag/Disputes/paths/~1files/post) using the file

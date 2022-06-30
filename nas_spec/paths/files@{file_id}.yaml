@@ -7,6 +7,7 @@ get:
         - disputes:view
     - ApiSecretKey: [ ]
   summary: Get file information
+  operationId: getFileInformation
   description: Retrieve information about a file that was previously uploaded.
   parameters:
     - in: path

@@ -10,6 +10,7 @@ get:
     - OAuth:
         - transfers:view
   summary: Retrieve a transfer
+  operationId: getTransferDetails
   description: Retrieve transfer details using the transfer identifier.
   parameters:
     - in: path

@@ -3,6 +3,7 @@ post:
     Onboard a sub-entity so they can start receiving payments. Once created, Checkout.com will run due diligence checks.
     If the checks are successful, we'll enable payment capabilities for that sub-entity and they will start receiving payments.
   summary: Onboard a sub-entity
+  operationId: onboardSubEntity
   requestBody:
     required: true
     description: The sub-entity to be onboarded.

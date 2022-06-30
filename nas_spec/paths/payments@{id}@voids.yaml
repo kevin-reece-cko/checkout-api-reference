@@ -7,6 +7,7 @@ post:
         - gateway:payment-voids
     - ApiSecretKey: [ ]
   summary: Void a payment
+  operationId: voidAPayment
   description: |
     Voids a payment if supported by the payment method.
 

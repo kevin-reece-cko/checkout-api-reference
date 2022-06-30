@@ -11,6 +11,7 @@ parameters:
 post:
   description: Create a bank account payment instrument for your sub-entity that you can later use as the destination for their payouts.
   summary: Add a payment instrument
+  operationId: addAPaymentInstrument
   requestBody:
     required: true
     description: A JSON payload containing the payment instrument details.
