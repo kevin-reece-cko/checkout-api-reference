@@ -90,9 +90,10 @@ var getFunctionToBuildPaymentRequest = function (paymentSourceName) {
 };
 
 var addDescriptionToKlarnaPassthroughObjects = function (requestData, paymentSourceName) {
-	Object.keys(requestData.properties).forEach((propertyName) => {
-		var property = requestData.properties[propertyName];
-		if (property['x-cko-passthrough'] === true && property['x-klarna-docs']) {
+	if (requestData && requestData.properties) {
+		Object.keys(requestData.properties).forEach((propertyName) => {
+			var property = requestData.properties[propertyName];
+			if (property['x-cko-passthrough'] === true && property['x-klarna-docs']) {
 			var apmPropertyName = property['x-klarna-name'] || propertyName;
 			var apmPropertyDocs = property['x-klarna-docs'];
 			property.description +=
@@ -105,9 +106,12 @@ var addDescriptionToKlarnaPassthroughObjects = function (requestData, paymentSou
 				paymentSourceName +
 				' documentation](' +
 				apmPropertyDocs +
-				').';
-		}
-	});
+					').';
+			}
+		});
+	} else {
+		console.info(`request_data is empty for ${paymentSourceName}`)
+	}
 };
 
 var getFunctionToBuildPaymentResponse = function (paymentSourceName) {
