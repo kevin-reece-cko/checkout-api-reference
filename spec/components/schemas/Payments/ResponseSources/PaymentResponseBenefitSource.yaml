@@ -1,0 +1,17 @@
+###
+# Warning: this file was auto generated from OpenAPI specs. Do not manually edit. 
+###
+type: object
+description: 'Benefit Source'
+allOf:
+  -
+    $ref: '#/components/schemas/PaymentResponseSource'
+  -
+    type: object
+    properties:
+      error_code:
+        type: string
+        description: 'The Benefit error code for transaction processing.'
+      error_text:
+        type: string
+        description: 'The Benefit text detail for the error.'
