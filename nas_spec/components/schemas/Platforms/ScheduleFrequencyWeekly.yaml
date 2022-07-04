@@ -4,8 +4,11 @@ properties:
     type: string
     description: Used to indicate how often funds should be paid out to a sub-entity.
   by_day:
-    type: string
-    enum:
+    description: The day or days of the week the payout should take place.
+    type: array
+    items:
+      type: string
+      enum:
       - monday
       - tuesday
       - wednesday
@@ -13,7 +16,5 @@ properties:
       - friday
       - saturday
       - sunday
-    description: The day of the week the payout should take place.
-    example: monday
 required:
   - by_day
