@@ -2,6 +2,7 @@
 
 | Date       | Description of change                                                                                                |
 |------------|----------------------------------------------------------------------------------------------------------------------|
+| 2022/07/04 | Change `by_day` and `by_month_day` within Platform payout schedule to support multiple values. 
 | 2022/05/28 | Add `instalment`, `add_card`, `maintain_card` authentication type in Sessions.                                       |
 | 2022/05/23 | Update Alipay Plus NAS structure                                                                                     |
 | 2022/06/01 | Marketplace API renamed to Accounts API                                                                              |
