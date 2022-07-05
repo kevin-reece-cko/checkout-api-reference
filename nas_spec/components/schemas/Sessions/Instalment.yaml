@@ -1,5 +1,5 @@
 type: object
-description: Details of an instalment authentication. This property is needed only for an instalment authentication type. Value will be ignored in any other cases.
+description: Details of an installment authentication. This property is needed only for an installment authentication type. Value will be ignored in any other cases.
 required: 
   - number_of_payments
 properties:
@@ -7,15 +7,15 @@ properties:
     type: integer
     minimum: 2
     maxLength: 3
-    description: Indicates the agreed total number of payment instalments to be made in the duration of the instalment agreement. Required when the authentication type is `instalment`.
+    description: Indicates the agreed total number of payment installments to be made in the duration of the installment agreement. Required when the authentication type is `instalment`.
     example: 2
   days_between_payments:
     type: integer
-    description: Indicates the minimum number of days between authorisations. If no value is specified for an instalment authentication type the default value will be used.
+    description: Indicates the minimum number of days between authorisations. If no value is specified for an installment authentication type the default value will be used.
     example: 28
     default: 1
   expiry:
     type: string
-    description: Date after which no further authorisations are performed in the format yyyyMMdd. If no value is specified for an instalment authentication type the default value will be used.
+    description: Date after which no further authorisations are performed in the format yyyyMMdd. If no value is specified for an installment authentication type the default value will be used.
     example: 20220901
     default: 99991231
