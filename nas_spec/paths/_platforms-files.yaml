@@ -1,14 +1,14 @@
+servers:
+  - url: https://files.checkout.com/files
+    description: Production server
+  - url: https://files.sandbox.checkout.com/files
+    description: Sandbox server
 post:
   tags:
     - Platforms
   security:
     - OAuth:
         - files
-  servers:
-    - url: https://files.checkout.com/files
-      description: Production server
-    - url: https://files.sandbox.checkout.com/files
-      description: Sandbox server
   summary: Upload a file
   operationId: uploadAFile
   description: >-
