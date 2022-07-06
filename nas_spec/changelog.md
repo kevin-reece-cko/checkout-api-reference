@@ -4,6 +4,7 @@
 |------------|-----------------------------------------------------------------------------------------------------------------------|
 | 2022/07/04 | Rename instances of `instalment` to `installment` in Sessions.                                                        |
 | 2022/05/28 | Add `instalment`, `add_card`, `maintain_card` authentication type in Sessions.                                        |
+| 2022/06/27 | Added iDEAL NAS Request and Response Source                                                                           |
 | 2022/05/23 | Update Alipay Plus NAS structure                                                                                      |
 | 2022/06/01 | Marketplace API renamed to Accounts API                                                                               |
 | 2022/05/23 | Added Alipay Plus NAS structure                                                                                       |
