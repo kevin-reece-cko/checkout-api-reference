@@ -93,7 +93,12 @@ allOf:
         example: true
       fast_funds:
         type: string
-        description: The fast funds eligibility of the card. [Read more](https://docs.checkout.com/payment-actions/pay-out-to-a-card)
+        enum:
+          - d
+          - c
+          - dc
+          - u
+        description: The fast funds eligibility of the card, as defined during [card verification](https://www.checkout.com/docs/risk-management/card-verification#Verifying_a_card_for_payouts). For more information, see our [Card Payouts](https://docs.checkout.com/payment-actions/pay-out-to-a-card) documentation.
         example: d
       payment_account_reference:
         type: string
