@@ -13,6 +13,7 @@ discriminator:
     alipay_hk: '#/components/schemas/PaymentRequestAlipayPlusSource'
     alipay_cn: '#/components/schemas/PaymentRequestAlipayPlusSource'
     gcash: '#/components/schemas/PaymentRequestAlipayPlusSource'
+    ideal: '#/components/schemas/PaymentRequestIdealSource'
     sofort: '#/components/schemas/PaymentRequestSofortSource'
 required:
   - type
