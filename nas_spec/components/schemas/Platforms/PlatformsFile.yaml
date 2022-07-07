@@ -8,10 +8,11 @@ properties:
     description: The purpose of the file upload.
     enum:
       - bank_verification
-      - identification
+      - identity_verification
       - company_verification
-    example: 'identification'
+    example: 'identity_verification'
+  
   path:
     type: string
     description: The <strong>local</strong> path of the file to upload, and its type.
-    example: 'file=@/path/passport.png;type=image/png'
+    example: 
