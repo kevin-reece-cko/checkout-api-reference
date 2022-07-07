@@ -5,6 +5,7 @@ post:
         - sessions:browser
     - SessionSecret: [ ]
   summary: Complete a session
+  operationId: completeSession  
   description: |
     Completes a session by posting the the following request to the callback URL (only relevant for non hosted sessions):
     ```

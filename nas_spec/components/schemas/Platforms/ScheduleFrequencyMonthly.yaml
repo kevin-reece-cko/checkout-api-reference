@@ -4,8 +4,12 @@ properties:
     type: string
     description: Used to indicate how often funds should be paid out to a sub-entity.
   by_month_day:
-    type: integer
-    description: The day of the month the payout should take place.
-    example: 1
+    type: array
+    description: The day or days of the month the payout should take place.
+    items:
+      type: integer
+      minimum: 1
+      maximum: 28
+      example: 2
 required:
   - by_month_day

@@ -1,15 +1,16 @@
+servers:
+  - url: https://transfers.checkout.com
+    description: Production server
+  - url: https://transfers.sandbox.checkout.com
+    description: Sandbox server
 post:
-  servers:
-    - url: https://transfers.checkout.com
-      description: Production server
-    - url: https://transfers.sandbox.checkout.com
-      description: Sandbox server
   security:
     - OAuth:
         - transfers:create
   description: |
     Initiate a transfer of funds from source entity to destination entity.
   summary: Initiate a transfer of funds
+  operationId: createTransfer
   parameters:
     - $ref: '#/components/parameters/ckoIdempotencyKeyRequired'
   requestBody:

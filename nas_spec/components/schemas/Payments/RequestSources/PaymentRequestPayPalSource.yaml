@@ -5,7 +5,7 @@ allOf:
   - $ref: '#/components/schemas/PaymentRequestSource'
   - type: object
     properties:
-      plan(coming soon):
+      plan:
         required:
           - type
         properties:

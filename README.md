@@ -16,15 +16,6 @@ Append `/preview/crusoe` to all links (including preview ones) for the NAS API r
 
 ---
 
-## Owners
-
-The Tech Docs team own the API reference and work closely with product teams to produce guides on
-the [main documentation](https://www.checkout.com/docs) site and the API reference.
-
-If you need help, ask in the #ask-docs Slack channel. 
-
----
-
 ## Contributing
 
 Most teams write the spec before building out the functionality. The preferred way to contribute is using
@@ -37,18 +28,21 @@ If you fork this repo to edit your spec, you will need to:
 2. Run `npm run start` to view your changes on [http://localhost:3001](http://localhost:3001).
 
 When you raise a PR, it will automatically tag
-the [Docs Admin](https://github.com/orgs/checkout/teams/docs-admin/members) team for review.
+the [Docs Admin](https://github.com/orgs/checkout/teams/docs-admin/members) team, of which the Tech Writing team are members.
 
----
+A PR review from this team is required before any changes can be merged into `master`. However, you'll still need approval from a relevant product manager before the changes are accepted. 
+
+If you need help, ask in the #ask-docs Slack channel.
+
+<br>
 
 ### abc_spec or nas_spec?
 
-Use the appropriate directory (or directories) for your change to the ABC or NAS specification(s). If you need any help,
-please contact one of the [Owners](#owners).
+Use the appropriate directory (or directories) for your change to the ABC or NAS specification(s).
 
 ---
 
-### Running the project locally
+## Running the project locally
 
 To run this project locally, clone the repository and run these commands in sequence:
 
