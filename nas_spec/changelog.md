@@ -40,4 +40,4 @@
 | 2021/11/11 | Added `3ds.challenge_indicator` to card payment requests.                                                             |
 | 2021/11/03 | Adds `identification` object under parent `sender` object in payment request.                                         |
 | 2021/10/18 | Added the `marketplaces.sub-entities` object to support split payments.                                               |
-| 2022/07/07 | Replaced enum for Platform Files purpose                                             |
+| 2022/07/07 | Replaced `identification` enum with `identity_verification` for Platform Files purpose                                             |
