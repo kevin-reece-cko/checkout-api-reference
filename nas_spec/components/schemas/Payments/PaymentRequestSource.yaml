@@ -14,6 +14,10 @@ discriminator:
     alipay_cn: '#/components/schemas/PaymentRequestAlipayPlusSource'
     gcash: '#/components/schemas/PaymentRequestAlipayPlusSource'
     ideal: '#/components/schemas/PaymentRequestIdealSource'
+    dana: '#/components/schemas/PaymentRequestAlipayPlusSource'
+    kakaopay: '#/components/schemas/PaymentRequestAlipayPlusSource'
+    truemoney: '#/components/schemas/PaymentRequestAlipayPlusSource'
+    tng: '#/components/schemas/PaymentRequestAlipayPlusSource'
 required:
   - type
 properties:

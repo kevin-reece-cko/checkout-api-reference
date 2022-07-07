@@ -147,6 +147,10 @@ properties:
       - alipay_hk
       - alipay_cn
       - gcash
+      - dana
+      - kakao_pay
+      - true_money
+      - tng
     example:
       - card
   products:
