@@ -1,0 +1,69 @@
+﻿type: object
+required:
+  - type
+  - first_name
+  - last_name
+  - billing_address
+  - email
+  - date_of_birth
+  - reference
+allOf:
+  - $ref: '#/components/schemas/PaymentRequestSource'
+  - type: object
+    properties:
+      first_name:
+        type: string
+        description: The customer's first name
+      last_name:
+        type: string
+        description: The customer's last name
+      billing_address:
+        type: object
+        description: An address to be used by a newly-created payment
+        properties:
+          street:
+            type: string
+            description: Name of the street (e.g. Main street)
+          street_number:
+            type: string
+            description: Address house / street number (e.g. 10)
+          city:
+            type: string
+            description: City of the address (e.g. Berlin)
+          zip:
+            type: string
+            description: ZIP / Postal code of the address (e.g. 12087)
+          country:
+            type: string
+            description: ISO country code of the address (e.g. DE)
+            format: ISO 3166-1 alpha-2
+      email:
+        type: string
+        description: The customer's email address
+      date_of_birth:
+        type: string
+        description: The customer's date of birth
+      identification:
+        type: object
+        description: The customer's government document identification e.g SSN
+        properties:
+          type:
+            type: string
+            description: The document type
+            example: SSN
+          issuing_country:
+            type: string
+            description: Country where the document was issued
+          number:
+            type: string
+            description: The document number
+      phone:
+        type: object
+        description: The customer's phone object
+        properties:
+          country_code:
+            type: string
+            description: Country code of the phone number
+          number:
+            type: string
+            description: The phone number without country code
