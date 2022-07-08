@@ -148,8 +148,8 @@ properties:
       - alipay_cn
       - gcash
       - dana
-      - kakao_pay
-      - true_money
+      - kakaopay
+      - truemoney
       - tng
     example:
       - card
