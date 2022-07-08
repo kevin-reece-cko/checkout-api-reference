@@ -14,7 +14,7 @@ discriminator:
     alipay_cn: '#/components/schemas/PaymentRequestAlipayPlusSource'
     gcash: '#/components/schemas/PaymentRequestAlipayPlusSource'
     ideal: '#/components/schemas/PaymentRequestIdealSource'
-    whitelabel: '#/components/schemas/PaymentRequestWhiteLabelSource'
+    afterpay: '#/components/schemas/PaymentRequestAfterPaySource'
 required:
   - type
 properties:

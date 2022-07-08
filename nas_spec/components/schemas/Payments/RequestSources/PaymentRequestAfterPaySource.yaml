@@ -1,4 +1,5 @@
 ﻿type: object
+description: 'Afterpay payment request source'
 required:
   - type
   - first_name
