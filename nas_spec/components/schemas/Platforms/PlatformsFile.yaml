@@ -15,4 +15,4 @@ properties:
   path:
     type: string
     description: The <strong>local</strong> path of the file to upload, and its type.
-    example: 
+    example: 'file=@/path/passport.png;type=image/png'
