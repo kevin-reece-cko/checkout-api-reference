@@ -2,6 +2,7 @@
 
 | Date       | Description of change                                                                                                 |
 | ---------- | --------------------------------------------------------------------------------------------------------------------- |
+| 2022/07/11 | Replaced `identification` enum with `identity_verification` for Platform Files purpose                                |
 | 2022/07/06 | Change `by_day` and `by_month_day` within Platform payout schedule to support multiple values.                        |
 | 2022/07/04 | Rename instances of `instalment` to `installment` in Sessions.                                                        |
 | 2022/05/28 | Add `instalment`, `add_card`, `maintain_card` authentication type in Sessions.                                        |
@@ -40,4 +41,3 @@
 | 2021/11/11 | Added `3ds.challenge_indicator` to card payment requests.                                                             |
 | 2021/11/03 | Adds `identification` object under parent `sender` object in payment request.                                         |
 | 2021/10/18 | Added the `marketplaces.sub-entities` object to support split payments.                                               |
-| 2022/07/07 | Replaced `identification` enum with `identity_verification` for Platform Files purpose                                             |
