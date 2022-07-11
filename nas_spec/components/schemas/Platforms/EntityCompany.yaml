@@ -49,3 +49,7 @@ properties:
     maxItems: 5
     items:
       $ref: '#/components/schemas/EntityRepresentative'
+  financial_details:
+    description: 'Seller financial questions and supporting documents.'
+    allOf: 
+      - $ref : '#/components/schemas/EntityFinancialDetails'

@@ -99,6 +99,10 @@ properties:
                 address:
                   required:
                     - country
+      financial_details:
+        description: 'Seller financial questions and supporting documents.'
+        allOf: 
+          - $ref : "#/components/schemas/EntityFinancialDetails"
   individual:
     type: object
     title: Individual

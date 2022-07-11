@@ -1,0 +1,11 @@
+type: object
+title: FinancialDocuments
+properties:
+  bank_statement:
+    description: 'Bank statement document is mandatory for average_transaction_value greater than 250000 (minor units) or highest_transaction_value greater than 500000 (minor units). Document Type should be: bank_statement.'
+    allOf:
+      - $ref: '#/components/schemas/EntityDocument'
+  financial_statement:
+    description: 'Financial statement document is mandatory for annual_processing_volume greater than 1000000000 (minor units). Document Type should be: financial_statement.'
+    allOf:
+      - $ref: '#/components/schemas/EntityDocument'
