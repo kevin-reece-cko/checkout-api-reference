@@ -44,3 +44,5 @@ properties:
       - $ref: '#/components/schemas/EntityPhone'
   date_of_birth:
     $ref: '#/components/schemas/DateOfBirth'
+  place_of_birth:
+    $ref: '#/components/schemas/PlaceOfBirth'
