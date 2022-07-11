@@ -8,6 +8,17 @@ properties:
     minLength: 2
     maxLength: 20
     example: '452349600005'
+  business_type:
+    type: string
+    description: "The legal type of the company"
+    enum:
+      - general_partnership
+      - limited_partnership
+      - public_limited_company
+      - limited_company
+      - professional_association
+      - unincorporated_association
+      - auto_entrepreneur
   legal_name:
     type: string
     description: 'The legal name of the sub-entity.'
