@@ -1,6 +1,3 @@
-###
-# Warning: this file was auto generated from OpenAPI specs using 'npm run sync-generated-specs'. Do not manually edit.
-###
 type: object
 description: 'Afterpay payment response source'
 allOf:

@@ -7,7 +7,6 @@ required:
   - billing_address
   - email
   - date_of_birth
-  - reference
 allOf:
   - $ref: '#/components/schemas/PaymentRequestSource'
   - type: object
