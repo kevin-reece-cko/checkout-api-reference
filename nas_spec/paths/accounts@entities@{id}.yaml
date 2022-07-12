@@ -44,6 +44,7 @@ get:
                     - '5669'
                 company:
                   business_registration_number: '452349600005'
+                  business_type: "public_limited_company"
                   legal_name: Super Hero Masks Inc.
                   trading_name: Super Hero Masks
                   principal_address:
@@ -192,6 +193,7 @@ put:
                   - '5669'
               company:
                 business_registration_number: '452349600005'
+                business_type: "public_limited_company"
                 legal_name: 'Super Hero Masks Inc.'
                 trading_name: 'Super Hero Masks'
                 principal_address:
