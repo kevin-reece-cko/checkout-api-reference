@@ -77,6 +77,21 @@ get:
                         day: 05
                         month: 06
                         year: 1995
+                      place_of_birth:
+                        country: "ES"
+                      roles: 
+                        - "ubo"
+                  financial_details:
+                    annual_processing_volume: 120000
+                    average_transaction_value: 10000
+                    highest_transaction_value: 2500
+                    documents:
+                      bank_statement:
+                        file_id: file_aaz5pemp6326zbuvevp6qroqu4
+                        type: bank_statement
+                      financial_statement:
+                        file_id: file_b3i2pl2eo2dr2knb5dqkcmktwy
+                        type: financial_statement
                 instruments:
                   - id: src_hmnkhxlshf3uhljow7zt7sf2cq
                     label: Peter's Personal Account
@@ -205,6 +220,21 @@ put:
                       day: 05
                       month: 06
                       year: 1995
+                    place_of_birth:
+                      country: "ES"
+                    roles: 
+                      - "ubo"
+                financial_details:
+                  annual_processing_volume: 120000
+                  average_transaction_value: 10000
+                  highest_transaction_value: 2500
+                  documents:
+                    bank_statement:
+                      file_id: file_aaz5pemp6326zbuvevp6qroqu4
+                      type: bank_statement
+                    financial_statement:
+                      file_id: file_b3i2pl2eo2dr2knb5dqkcmktwy
+                      type: financial_statement
           Individual:
             value:
               contact_details:
@@ -229,6 +259,8 @@ put:
                   day: 05
                   month: 06
                   year: 1995
+                place_of_birth:
+                  country: "ES"
                 identification:
                   national_id_number: 'AB123456C'
   security:
