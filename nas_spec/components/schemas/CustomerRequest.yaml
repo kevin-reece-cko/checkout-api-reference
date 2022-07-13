@@ -17,3 +17,8 @@ properties:
     description: The customer's name
     maxLength: 255
     example: 'Bruce Wayne'
+  phone:
+    type: object
+    description: The customer's phone number
+    allOf:
+      - $ref: '#/components/schemas/PhoneNumber'
