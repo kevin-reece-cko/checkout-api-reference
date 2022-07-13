@@ -1,0 +1,31 @@
+type: object
+description: The account holder details
+required:
+  - type
+properties:
+  type:
+    description: The type of account holder
+    type: string
+    enum:
+      - individual
+      - corporate
+      - government
+    example: individual
+
+  first_name:
+    description: |
+      The first name of the account holder
+    type: string
+    example: 'John'
+
+  last_name:
+    description: |
+      The last name of the account holder
+    type: string
+    example: 'Smith'
+
+  company_name:
+    description: |
+      The legal name of a registered company that holds the account
+    type: string
+    example: Test company
