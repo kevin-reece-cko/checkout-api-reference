@@ -1,7 +1,7 @@
+servers:
+  - url: https://api.sandbox.checkout.com
+    description: Sandbox
 post:
-  servers:
-    - url: https://api.sandbox.checkout.com
-      description: Sandbox
   security:
     - OAuth:
         - flow
