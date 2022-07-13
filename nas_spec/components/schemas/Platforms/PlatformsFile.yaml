@@ -10,6 +10,7 @@ properties:
       - bank_verification
       - identity_verification
       - company_verification
+      - financial_verification
     example: 'identity_verification'
   
   path:

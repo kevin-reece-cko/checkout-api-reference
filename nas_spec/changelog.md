@@ -2,7 +2,8 @@
 
 | Date       | Description of change                                                                                                 |
 | ---------- | --------------------------------------------------------------------------------------------------------------------- |
-| 2022/07/13 | 2022/05/26 | Added the `phone` object to `customer` object for payments.                                                       |
+| 2022/07/13 | Adds fields required EU sellers using the Accounts API                                                                |
+| 2022/07/13 |Added the `phone` object to `customer` object for payments.                                                            |
 | 2022/07/11 | Replaced `identification` enum with `identity_verification` for Platform Files purpose                                |
 | 2022/07/06 | Change `by_day` and `by_month_day` within Platform payout schedule to support multiple values.                        |
 | 2022/07/04 | Rename instances of `instalment` to `installment` in Sessions.                                                        |
