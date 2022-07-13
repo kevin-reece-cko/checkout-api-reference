@@ -19,6 +19,28 @@ properties:
     description: A reference you can later use to identify this capture request
     maxLength: 50
     example: 'ORD-5023-4E89'
+  customer:
+    $ref: '#/components/schemas/CustomerRequest'
+  shipping:
+    type: object
+    description: The shipping details.
+    properties:
+      address:
+        description: The shipping address.
+        allOf:
+          - $ref: '#/components/schemas/Address'
+      phone:
+        description: The phone number associated with the shipping address.
+        allOf:
+          - $ref: '#/components/schemas/PhoneNumber'
+      from_address_zip:
+        type: string
+        description: The postal code or zip code of the location being shipped from.
+        example: '10014'
+  items:
+    $ref: '#/components/schemas/Items'
+  processing:
+    $ref: '#/components/schemas/ProcessingSettings'
   metadata:
     type: object
     description: A set of key-value pairs that you can attach to the capture request. This can be useful for storing additional information in a structured format. **Note** that this object only allows one level of depth, so cannot accept non-primitive data types such as objects or arrays.
