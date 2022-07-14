@@ -19,10 +19,10 @@ allOf:
         properties:
           first_name:
             type: string
-            description: The customer's first name
+            description: The account holder's first name
           last_name:
             type: string
-            description: The customer's last name
+            description: The account holder's last name
           billing_address:
             type: object
             description: An address to be used by a newly-created payment
@@ -48,20 +48,20 @@ allOf:
               zip:
                 type: string
                 maxLength: 50
-                description: The address ZIP or Postal (e.g. 12087)
+                description: The address ZIP or Postal code (e.g. 12087)
               country:
                 type: string
                 description: The two-letter ISO country code of the address (e.g. DE)
                 format: ISO 3166-1 alpha-2
           email:
             type: string
-            description: The customer's email address
+            description: The account holder's email address
           date_of_birth:
             type: string
-            description: The customer's date of birth
+            description: The account holder's date of birth
           identification:
             type: object
-            description: The customer's government document identification e.g SSN
+            description: The account holder's government document identification e.g SSN
             properties:
               type:
                 type: string
@@ -75,7 +75,7 @@ allOf:
                 description: The document number
           phone:
             type: object
-            description: The customer's phone details
+            description: The account holder's phone details
             properties:
               country_code:
                 type: string
