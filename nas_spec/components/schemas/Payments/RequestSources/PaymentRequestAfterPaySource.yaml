@@ -9,7 +9,7 @@ allOf:
     properties:
       account_holder:
         type: object
-        description: Details of the account holder
+        description: The account holder's details
         required:
           - first_name
           - last_name
@@ -25,7 +25,7 @@ allOf:
             description: The account holder's last name
           billing_address:
             type: object
-            description: An address to be used by a newly-created payment
+            description: The account holder's billing address
             required:
               - address_line1
               - address_line2
@@ -75,14 +75,18 @@ allOf:
                 description: The document number
           phone:
             type: object
-            description: The account holder's phone details
+            description: The account holder's phone number
             properties:
               country_code:
                 type: string
-                description: Country code of the phone number
+                minLength: 1
+                maxLength: 7
+                description: The phone number's international country calling code
               number:
                 type: string
-                description: The phone number without country code
+                minLength: 6
+                maxLength: 25
+                description: The phone number without the international country calling code
       campaign_number:
         type: string
         description: "Unique number of the campaign this payment will be running in. Only required for campaign invoices."
