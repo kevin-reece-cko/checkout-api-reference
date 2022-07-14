@@ -83,3 +83,6 @@ allOf:
               number:
                 type: string
                 description: The phone number without country code
+      campaign_id:
+        type: string
+        description: "Unique identification of the campaign this payment will be running in. Only required for campaign invoices."
