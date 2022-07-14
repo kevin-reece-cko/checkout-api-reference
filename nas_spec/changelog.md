@@ -2,6 +2,7 @@
 
 | Date       | Description of change                                                                                                 |
 | ---------- | --------------------------------------------------------------------------------------------------------------------- |
+| 2022/07/14 | Added `customer`, `description`, `billing descriptor`, `shipping`, and `items` objects to Capture requests            |
 | 2022/07/13 | Added fields for Level 2 and Level 3 data.                                                                            |
 | 2022/07/13 | Added the `phone` object to `customer` object for payments.                                                           |
 | 2022/07/13 | Adds fields required EU sellers using the Accounts API                                                                |
