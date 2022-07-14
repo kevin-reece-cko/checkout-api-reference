@@ -197,14 +197,15 @@ properties:
     enum:
       - ar
       - da-DK
+      - de-AT
       - de-CH
       - de-DE
       - en-AT
       - en-CH
       - en-DE
       - en-DK
-      - en-GB
       - en-FI
+      - en-GB
       - en-NL
       - en-NO
       - en-SE
@@ -246,10 +247,10 @@ properties:
         type: string
         description: Indicates the preference for whether or not a 3DS challenge should be performed. The customer’s bank has the final say on whether or not the customer receives the challenge.
         enum:
-            - no_preference
-            - no_challenge_requested
-            - challenge_requested
-            - challenge_requested_mandate
+          - no_preference
+          - no_challenge_requested
+          - challenge_requested
+          - challenge_requested_mandate
         default: no_preference
   capture:
     type: boolean
