@@ -1,0 +1,10 @@
+type: object
+title: Place of birth
+description: The place of birth of the person.
+properties:
+  country: 
+    type: string     
+    description: The two-letter ISO country code of the country where the person was born at. (ISO 3166-1)
+    example: 'ES'
+required:
+  - country

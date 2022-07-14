@@ -1,15 +1,16 @@
+servers:
+  - url: https://files.checkout.com/files
+    description: Production server
+  - url: https://files.sandbox.checkout.com/files
+    description: Sandbox server
 post:
   tags:
     - Platforms
   security:
     - OAuth:
         - files
-  servers:
-    - url: https://files.checkout.com/files
-      description: Production server
-    - url: https://files.sandbox.checkout.com/files
-      description: Sandbox server
   summary: Upload a file
+  operationId: uploadAFile
   description: >-
     Our Platforms solution provides an easy way to upload identity documentation required for full due diligence. Please <strong>note</strong> that the sub-domain – https://files.checkout.com – is slightly different to Checkout.com's other endpoints. <br><br>Read the <a href="https://checkout.com/docs/four/platforms/onboarding/api/full/upload-a-file" target="_blank">documentation</a> for more information.
   requestBody:

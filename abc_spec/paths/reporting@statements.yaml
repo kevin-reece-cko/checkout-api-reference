@@ -1,7 +1,3 @@
-servers:
-  - url: https://api.checkout.com
-    description: Live API
-
 get:
   security:
     - ApiSecretKey: [ ]

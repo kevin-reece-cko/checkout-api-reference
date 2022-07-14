@@ -5,6 +5,7 @@ servers:
     description: Sandbox API
 post:
   summary: Request an access token
+  operationId: requestAnAccessToken
   tags:
     - Access
   responses:
