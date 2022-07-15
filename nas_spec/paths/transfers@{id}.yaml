@@ -1,11 +1,11 @@
+servers:
+  - url: https://transfers.checkout.com
+    description: Production server
+  - url: https://transfers.sandbox.checkout.com
+    description: Sandbox server
 get:
   tags:
     - Transfers
-  servers:
-    - url: https://transfers.checkout.com
-      description: Production server
-    - url: https://transfers.sandbox.checkout.com
-      description: Sandbox server
   security:
     - OAuth:
         - transfers:view

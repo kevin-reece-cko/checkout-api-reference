@@ -192,10 +192,10 @@ properties:
         type: string
         description: Indicates the preference for whether or not a 3DS challenge should be performed. The customer’s bank has the final say on whether or not the customer receives the challenge.
         enum:
-            - no_preference
-            - no_challenge_requested
-            - challenge_requested
-            - challenge_requested_mandate
+          - no_preference
+          - no_challenge_requested
+          - challenge_requested
+          - challenge_requested_mandate
         default: no_preference
   risk:
     $ref: '#/components/schemas/RiskRequest'
@@ -209,16 +209,17 @@ properties:
     type: string
     description: Creates a translated version of the page in the specified language. For Klarna payments, <a href="https://www.checkout.com/docs/integrate/payment-links/manage-payment-links#Alternative_payment_methods" target="_blank">read our documentation about expected parameters for certain locales</a>.
     enum:
-      - ar     
+      - ar
       - da-DK
+      - de-AT
       - de-CH
       - de-DE
       - en-AT
       - en-CH
       - en-DE
       - en-DK
-      - en-GB
       - en-FI
+      - en-GB
       - en-NL
       - en-NO
       - en-SE
