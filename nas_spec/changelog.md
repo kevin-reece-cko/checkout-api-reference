@@ -1,7 +1,8 @@
 # Changelog
 
 | Date       | Description of change                                                                                                 |
-| ---------- | --------------------------------------------------------------------------------------------------------------------- |
+|------------|-----------------------------------------------------------------------------------------------------------------------|
+| 2022/07/14 | Add Sofort NAS Request and Response source.                                                                           |
 | 2022/07/14 | Add `locale` property to Get Payment Link details response                                                            |
 | 2022/07/14 | Added `customer`, `description`, `billing descriptor`, `shipping`, and `items` objects to Capture requests            |
 | 2022/07/13 | Added fields for Level 2 and Level 3 data.                                                                            |
