@@ -2,6 +2,7 @@
 
 | Date       | Description of change                                                                                                 |
 |------------|-----------------------------------------------------------------------------------------------------------------------|
+| 2022/07/19 | Update WeChat Pay NAS structure                                                                                       |
 | 2022/07/14 | Add Sofort NAS Request and Response source.                                                                           |
 | 2022/07/14 | Add `locale` property to Get Payment Link details response                                                            |
 | 2022/07/14 | Added `customer`, `description`, `billing descriptor`, `shipping`, and `items` objects to Capture requests            |
