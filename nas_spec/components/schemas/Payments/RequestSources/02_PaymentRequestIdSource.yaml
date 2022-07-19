@@ -17,3 +17,7 @@ allOf:
         example: '956'
         minLength: 3
         maxLength: 4
+      payment_method:
+        type: string
+        description:  The payment method
+        example: 'ach'

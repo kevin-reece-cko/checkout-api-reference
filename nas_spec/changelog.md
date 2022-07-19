@@ -2,9 +2,21 @@
 
 | Date       | Description of change                                                                                                 |
 |------------|-----------------------------------------------------------------------------------------------------------------------|
-| 2022/06/14 | Update WeChat Pay NAS structure                                                                                       |
-| 2022/06/01 | Marketplace API renamed to Accounts API                                                                               |
+| 2022/07/19 | Update WeChat Pay NAS structure                                                                                       |
+| 2022/07/14 | Add Sofort NAS Request and Response source.                                                                           |
+| 2022/07/14 | Add `locale` property to Get Payment Link details response                                                            |
+| 2022/07/14 | Added `customer`, `description`, `billing descriptor`, `shipping`, and `items` objects to Capture requests            |
+| 2022/07/13 | Added fields for Level 2 and Level 3 data.                                                                            |
+| 2022/07/13 | Added the `phone` object to `customer` object for payments.                                                           |
+| 2022/07/13 | Adds fields required EU sellers using the Accounts API                                                                |
+| 2022/07/13 | Added the `phone` object to `customer` object for payments.                                                           |
+| 2022/07/11 | Replaced `identification` enum with `identity_verification` for Platform Files purpose                                |
+| 2022/07/06 | Change `by_day` and `by_month_day` within Platform payout schedule to support multiple values.                        |
+| 2022/07/04 | Rename instances of `instalment` to `installment` in Sessions.                                                        |
+| 2022/05/28 | Add `instalment`, `add_card`, `maintain_card` authentication type in Sessions.                                        |
+| 2022/06/27 | Added iDEAL NAS Request and Response Source                                                                           |
 | 2022/05/23 | Update Alipay Plus NAS structure                                                                                      |
+| 2022/06/01 | Marketplace API renamed to Accounts API                                                                               |
 | 2022/05/23 | Added Alipay Plus NAS structure                                                                                       |
 | 2022/05/19 | Added WeChat Pay NAS structure                                                                                        |
 | 2022/05/18 | Added "Get transfer details"                                                                                          |

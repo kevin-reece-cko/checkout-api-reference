@@ -1,13 +1,14 @@
+servers:
+  - url: https://balances.checkout.com
+    description: Production server
+  - url: https://balances.sandbox.checkout.com
+    description: Sandbox server
 parameters:
   - $ref: '#/components/parameters/EntityId'
   - $ref: '#/components/parameters/Query'
 get:
-  servers:
-    - url: https://balances.checkout.com
-      description: Production server
-    - url: https://balances.sandbox.checkout.com
-      description: Sandbox server
   summary: Retrieve entity balances
+  operationId: getEntityBalances
   description: Use this endpoint to retrieve balances for each currency account belonging to an entity.
   security:
     - OAuth:

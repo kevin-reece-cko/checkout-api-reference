@@ -43,5 +43,7 @@ properties:
       - $ref: '#/components/schemas/EntityAddress'
   date_of_birth:
     $ref: '#/components/schemas/DateOfBirth'
+  place_of_birth:
+    $ref: '#/components/schemas/PlaceOfBirth'
   identification:
     $ref: '#/components/schemas/EntityIdentification'

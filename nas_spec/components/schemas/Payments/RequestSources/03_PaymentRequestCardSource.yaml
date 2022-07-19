@@ -41,6 +41,11 @@ allOf:
         description: This must be set to `true` for payments that use <a href="https://www.checkout.com/docs/four/payments/store-payment-details" target="blank">stored card details</a>
         default: false
         example: true
+      store_for_future_use:
+        type: boolean
+        description: This must be set to true if you intend to reuse the payment credentials in subsequent payments. Setting the field as false will mean that a <a href="https://www.checkout.com/docs/payments/store-payment-details/payment-instruments" target="blank">payment instrument</a> will not be included in the payment response.
+        default: true
+        example: false
       billing_address:
         description: The billing address of the cardholder
         allOf:

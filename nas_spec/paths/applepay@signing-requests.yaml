@@ -4,6 +4,7 @@ post:
   security:
     - ApiPublicKey: [ ]
   summary: Generate a certificate signing request
+  operationId: generateApplePaySigningRequest
   description: |
     Generate a certificate signing request. You'll need to upload this to your Apple Developer account to download a payment processing certificate.
   responses:

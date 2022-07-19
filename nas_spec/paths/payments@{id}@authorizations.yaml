@@ -7,6 +7,7 @@ post:
         - gateway:payment-authorizations
     - ApiSecretKey: [ ]
   summary: Increment authorization
+  operationId: incrementPaymentAuthorization
   description: |
     Request an incremental authorization to increase the authorization amount or extend the authorization's validity period.
 

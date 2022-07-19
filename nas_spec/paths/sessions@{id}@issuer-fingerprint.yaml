@@ -4,6 +4,7 @@ put:
         - sessions:browser
     - SessionSecret: [ ]
   summary: Update session 3DS Method completion indicator
+  operationId: updateSessionThreeDsMethodCompletion
   description: Update the session's 3DS Method completion indicator based on the result of accessing the 3DS Method URL.
   tags:
     - Sessions
