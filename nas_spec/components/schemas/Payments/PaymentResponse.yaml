@@ -118,12 +118,9 @@ properties:
         type: string
         description: 'A <a href="https://docs.checkout.com/four/resources/codes/recommendation-codes" target="blank">code</a> that represents the next recommended action for the payment'
         example: "02"
-      afterpay:
-        description: "Afterpay payment response processing details"
-        properties:
-          partner_order_id:
-              type: string
-              description: Unique order identification of this payment
+      partner_order_id:
+        type: string
+        description: Unique order identification of an Afterpay payment
   eci:
     type: string
     description: The final Electronic Commerce Indicator (ECI) security level used to authorize the payment.
