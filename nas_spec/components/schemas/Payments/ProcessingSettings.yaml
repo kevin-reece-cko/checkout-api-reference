@@ -57,6 +57,14 @@ properties:
       - 'No_show'
       - 'Reauthorization'
     description: Indicates the reason for a merchant initiated payment request.
+  afterpay:
+    description: "Afterpay payment request processing details"
+    required:
+      - partner_order_id
+    properties:
+      campaign_number:
+          type: string
+          description: "Unique number of the campaign this payment will be running in. Only required for campaign invoices."
   # dlocal:
   #   type: object
   #   description: Processing information required for dLocal payments.
