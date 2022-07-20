@@ -2,8 +2,8 @@
 
 | Date       | Description of change                                                                                                 |
 | ---------- | --------------------------------------------------------------------------------------------------------------------- |
+| 2022/07/20 | Adding required fields for Platforms payment instruments and separate `corporate` and `individual` examples           |
 | 2022/07/20 | Added `knet`, `giropay`, `bancontact`, `eps`, `p24`, and `multibanco` to Hosted Payments and Payment Links.           |
-|------------|-----------------------------------------------------------------------------------------------------------------------|
 | 2022/07/19 | Updated example for Platforms payout schedules from `currency` to `GBP` and `ISO`                                     |
 | 2022/07/19 | Update WeChat Pay NAS structure                                                                                       |
 | 2022/07/14 | Add Sofort NAS Request and Response source.                                                                           |
