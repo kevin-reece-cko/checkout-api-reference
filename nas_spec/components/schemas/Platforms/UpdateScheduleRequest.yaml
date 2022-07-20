@@ -1,6 +1,6 @@
 type: object
 properties:
-  currency:
+  ISO:
     description: The three-letter ISO currency code of the account's currency.
     type: object
     format: ISO 4217
