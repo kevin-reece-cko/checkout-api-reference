@@ -7,6 +7,7 @@ post:
         - gateway:payment-captures
     - ApiSecretKey: [ ]
   summary: Capture a payment
+  operationId: captureAPayment
   description: |
     Captures a payment if supported by the payment method.
 

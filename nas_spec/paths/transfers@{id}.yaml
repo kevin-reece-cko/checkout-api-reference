@@ -1,15 +1,16 @@
+servers:
+  - url: https://transfers.checkout.com
+    description: Production server
+  - url: https://transfers.sandbox.checkout.com
+    description: Sandbox server
 get:
   tags:
     - Transfers
-  servers:
-    - url: https://transfers.checkout.com
-      description: Production server
-    - url: https://transfers.sandbox.checkout.com
-      description: Sandbox server
   security:
     - OAuth:
         - transfers:view
   summary: Retrieve a transfer
+  operationId: getTransferDetails
   description: Retrieve transfer details using the transfer identifier.
   parameters:
     - in: path

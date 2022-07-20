@@ -211,14 +211,15 @@ properties:
     enum:
       - ar
       - da-DK
+      - de-AT
       - de-CH
       - de-DE
       - en-AT
       - en-CH
       - en-DE
       - en-DK
-      - en-GB
       - en-FI
+      - en-GB
       - en-NL
       - en-NO
       - en-SE

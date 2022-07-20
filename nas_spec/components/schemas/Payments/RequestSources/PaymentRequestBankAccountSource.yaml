@@ -1,0 +1,46 @@
+type: object
+description: A bank account payment source
+required:
+  - payment_method
+  - account_type
+  - account_holder
+  - account_number
+  - bank_code
+  - country
+allOf:
+  - $ref: '#/components/schemas/PaymentRequestSource'
+  - type: object
+    properties:
+      payment_method:
+        type: string
+        description: The payment method
+        example: ach
+      account_type:
+        type: string
+        description: The type of Direct Debit account
+        example: savings
+        enum:
+          - Checking
+          - Savings
+          - Corporate
+          - CorpSavings
+      country:
+        type: string
+        description: The source country
+        minLength: 2
+        maxLength: 2
+        example: US 
+      account_number:
+        type: string
+        description: The account number of the Direct Debit account
+        minLength: 4
+        maxLength: 17
+        example: '136549956'  
+      bank_code:
+        type: string
+        description: The bank code of the Direct Debit account
+        minLength: 8
+        maxLength: 9
+        example: '021000021'
+      account_holder:
+        $ref: '#/components/schemas/AccountHolderAch'

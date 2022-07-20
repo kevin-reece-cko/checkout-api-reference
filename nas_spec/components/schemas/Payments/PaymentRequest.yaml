@@ -77,6 +77,10 @@ properties:
         description: The phone number associated with the shipping address
         allOf:
           - $ref: '#/components/schemas/PhoneNumber'
+      from_address_zip:
+        type: string
+        description: The postal code or zip code of the location being shipped from.
+        example: '10014'
   3ds:
     $ref: '#/components/schemas/3dsRequest'
   processing_channel_id:

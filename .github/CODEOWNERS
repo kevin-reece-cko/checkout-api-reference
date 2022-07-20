@@ -1,1 +1,4 @@
 * @checkout/docs-admin
+
+/abc_spec/components/schemas/Payments/ @checkout/gateway-product-cko
+/nas_spec/components/schemas/Payments/ @checkout/gateway-product-cko
