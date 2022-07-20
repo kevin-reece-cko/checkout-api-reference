@@ -1,6 +1,8 @@
 # Changelog
 
 | Date       | Description of change                                                                                                 |
+| ---------- | --------------------------------------------------------------------------------------------------------------------- |
+| 2022/07/20 | Added `knet`, `giropay`, `bancontact`, `eps`, `p24`, and `multibanco` to Hosted Payments and Payment Links.           |
 |------------|-----------------------------------------------------------------------------------------------------------------------|
 | 2022/07/19 | Updated example for Platforms payout schedules from `currency` to `GBP` and `ISO`                                     |
 | 2022/07/19 | Update WeChat Pay NAS structure                                                                                       |
