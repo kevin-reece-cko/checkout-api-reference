@@ -58,7 +58,7 @@ properties:
       - 'Reauthorization'
     description: Indicates the reason for a merchant initiated payment request.
   campaign_id:
-    type: string
+    type: integer
     description: "Unique number of the campaign this payment will be running in. Only required for Afterpay campaign invoices."
   # dlocal:
   #   type: object
