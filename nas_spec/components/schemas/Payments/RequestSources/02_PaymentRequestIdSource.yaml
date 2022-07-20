@@ -2,6 +2,7 @@ type: object
 description: An existing payment source
 required:
   - id
+  - payment_method
 allOf:
   - $ref: '#/components/schemas/PaymentRequestSource'
   - type: object
