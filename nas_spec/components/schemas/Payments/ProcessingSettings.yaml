@@ -57,7 +57,7 @@ properties:
       - 'No_show'
       - 'Reauthorization'
     description: Indicates the reason for a merchant initiated payment request.
-  campaign_number:
+  campaign_id:
     type: string
     description: "Unique number of the campaign this payment will be running in. Only required for Afterpay campaign invoices."
   # dlocal:

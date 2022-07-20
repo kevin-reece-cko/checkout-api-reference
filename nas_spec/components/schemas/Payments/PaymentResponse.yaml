@@ -120,7 +120,7 @@ properties:
         example: "02"
       partner_order_id:
         type: string
-        description: Unique order identification of an Afterpay payment
+        description: "Unique order identification of an Afterpay payment"
   eci:
     type: string
     description: The final Electronic Commerce Indicator (ECI) security level used to authorize the payment.
