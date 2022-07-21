@@ -1,0 +1,10 @@
+type: array
+title: Roles
+description: The representative's roles within the company
+items:
+  type: string
+  description: The representative's role within the company
+  example: ubo
+  enum:
+    - ubo
+    - legal_representative

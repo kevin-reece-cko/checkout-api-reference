@@ -7,6 +7,7 @@ get:
         - disputes:view
     - ApiSecretKey: [ ]
   summary: Get disputes
+  operationId: getDisputes
   description: >-
     Returns a list of all disputes against your business. The results will be
     returned in reverse chronological order, showing the last modified dispute

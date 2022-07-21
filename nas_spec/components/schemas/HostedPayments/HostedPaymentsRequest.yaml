@@ -135,18 +135,24 @@ properties:
   allow_payment_methods:
     type: array
     description: >
-      Use to specify which <a href="https://www.checkout.com/docs/four/payments/payment-methods" target="_blank">payment methods</a> should render on the page. <a href="https://checkout.com/docs/four/integrate/hosted-payments-page/manage-your-hosted-payments-page#Alternative_payment_methods" target="_blank">Check the requirements for each payment method</a>
+      Use to specify which <a href="https://www.checkout.com/docs/four/payments/payment-methods" target="_blank">payment methods</a> should render on the page. <a href="https://checkout.com/docs/four/integrate/hosted-payments-page/manage-your-hosted-payments-page#Payment_methods" target="_blank">Check the requirements for each payment method</a>
     enum:
       - card
       - sofort
       - ideal
       - knet
+      - giropay
       - bancontact
       - p24
+      - eps
       - multibanco
       - alipay_hk
       - alipay_cn
       - gcash
+      - dana
+      - kakaopay
+      - truemoney
+      - tng
     example:
       - card
   products:
@@ -245,10 +251,10 @@ properties:
         type: string
         description: Indicates the preference for whether or not a 3DS challenge should be performed. The customer’s bank has the final say on whether or not the customer receives the challenge.
         enum:
-            - no_preference
-            - no_challenge_requested
-            - challenge_requested
-            - challenge_requested_mandate
+          - no_preference
+          - no_challenge_requested
+          - challenge_requested
+          - challenge_requested_mandate
         default: no_preference
   capture:
     type: boolean

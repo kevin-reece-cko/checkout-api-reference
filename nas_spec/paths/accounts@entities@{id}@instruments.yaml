@@ -11,15 +11,18 @@ parameters:
 post:
   description: Create a bank account payment instrument for your sub-entity that you can later use as the destination for their payouts.
   summary: Add a payment instrument
+  operationId: addAPaymentInstrument
   requestBody:
     required: true
     description: A JSON payload containing the payment instrument details.
     content:
       application/json:
         schema:
-          $ref: '#/components/schemas/PlatformsInstrumentCreateRequest'
+          oneOf:
+            - $ref: '#/components/schemas/PlatformsIndividualInstrumentCreateRequest'
+            - $ref: '#/components/schemas/PlatformsCorporateInstrumentCreateRequest'
         examples:
-          BankAccount:
+          IndividualBankAccount:
             value:
               label: Peter's Personal Account
               type: bank_account
@@ -30,6 +33,25 @@ post:
               account_holder:
                 first_name: Peter
                 last_name: Parker
+                billing_address:
+                  address_line1: 90 Tottenham Court Road
+                  city: London
+                  state: London
+                  zip: W1T 4TJ
+                  country: GB
+              document:
+                type: bank_statement
+                file_id: file_wxglze3wwywujg4nna5fb7ldli
+          CorporateBankAccount:
+            value:
+              label: Peter's Corporate Account
+              type: bank_account
+              account_number: '12345678'
+              bank_code: '050389'
+              currency: GBP
+              country: GB
+              account_holder:
+                company_name: Super Hero Masks
                 billing_address:
                   address_line1: 90 Tottenham Court Road
                   city: London

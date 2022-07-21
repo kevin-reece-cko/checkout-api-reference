@@ -22,7 +22,7 @@ properties:
       Indicates whether or not the cardholder was authenticated
         * `Y` - Customer authenticated
         * `N` - Customer not authenticated
-        * `A` - An authentication attempt occurred but could not be completed
+        * `A` - Authentication was processed by a stand-in service, and is classed as successful
         * `U` - Unable to perform authentication
     example: Y
   cryptogram:
