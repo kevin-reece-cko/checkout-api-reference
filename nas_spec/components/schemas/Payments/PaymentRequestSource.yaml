@@ -17,6 +17,10 @@ discriminator:
     fawry: '#/components/schemas/PaymentRequestFawrySource'
     ideal: '#/components/schemas/PaymentRequestIdealSource'
     sofort: '#/components/schemas/PaymentRequestSofortSource'
+    dana: '#/components/schemas/PaymentRequestAlipayPlusSource'
+    kakaopay: '#/components/schemas/PaymentRequestAlipayPlusSource'
+    truemoney: '#/components/schemas/PaymentRequestAlipayPlusSource'
+    tng: '#/components/schemas/PaymentRequestAlipayPlusSource'
     afterpay: '#/components/schemas/PaymentRequestAfterPaySource'
 required:
   - type
