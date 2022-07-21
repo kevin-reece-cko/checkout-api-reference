@@ -20,5 +20,5 @@ properties:
       • 01 = 3DS Server <br/>
       • 02 = DS <br/>
       • 03 = ACS <br/>
-      • 80-99 = DS specific values <br/>
+      • 80-99 = DS-specific values <br/>
     example: '01'
