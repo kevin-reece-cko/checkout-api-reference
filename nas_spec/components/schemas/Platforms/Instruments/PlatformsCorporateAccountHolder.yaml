@@ -1,0 +1,98 @@
+type: object
+title: Account holder
+properties:
+  type:
+    title: Type
+    description: The type of account holder.
+    type: string
+    enum:
+      - corporate
+  company_name:
+    title: Company name
+    description: "The legal name of a registered company that holds the account."
+    type: string
+    example: Super Hero Masks Inc.
+  tax_id:
+    title: Tax ID
+    description: The account holder's tax number/reference.
+    type: string
+    example: "123456"
+  date_of_birth:
+    title: Date of birth
+    description: The account holder's date of birth.
+    allOf:
+      - $ref: "#/components/schemas/DateOfBirth"
+  country_of_birth:
+    title: Country of birth
+    description: The two-letter ISO country code of the account holder's country of birth.
+    type: string
+    format: ISO 3166-1
+    example: "GB"
+  residential_status:
+    title: Residental status
+    description: The account holder's residential status.
+    type: string
+    enum:
+      - resident
+      - non_resident
+  billing_address:
+    title: Billing address
+    description: The billing address of the account holder.
+    properties:
+     address_line1:
+       type: string
+       description: "The first line of the address. Note that the length of line 1 and line 2 combined must be at least 5 characters long."
+       minLength: 1
+       maxLength: 300
+       example: "90 Tottenham Court Road"
+     address_line2:
+       type: string
+       description: "The second line of the address."
+       minLength: 0
+       maxLength: 300
+       example: null
+     city:
+       type: string
+       description: "The address city."
+       minLength: 2
+       maxLength: 300
+       example: "London"
+     state:
+       type: string
+       description: "The address state. (In the US, this is required and needs to be an ISO 3166-1 state code.)"
+       minLength: 0
+       maxLength: 300
+       example: null
+     zip:
+       type: string
+       pattern: ^\d{5}(?:[-\s]\d{4})?$
+       description: "The address zip/postal code."
+       minLength: 1
+       maxLength: 16
+       example: "W1T4TJ"
+     country:
+       type: string
+       description: The two-letter <a href="https://www.checkout.com/docs/four/resources/codes/country-codes" target="blank">ISO country code</a> of the address.
+       minLength: 2
+       maxLength: 2
+       pattern: "[a-zA-Z]{2}"
+       format: ISO 3166-1
+       example: "GB"
+    required:
+     - country
+  phone:
+    title: Phone
+    description: The phone number of the account holder.
+    allOf:
+      - $ref: "#/components/schemas/EntityPhone"
+  identification:
+    $ref: "#/components/schemas/PlatformsAccountHolderIdentification"
+  email:
+    title: Email
+    description: The account holder's email address.
+    type: string
+    format: email
+    example: peter.parker@superhero.masks
+required:
+- billing_address
+- company_name

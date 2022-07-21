@@ -1,5 +1,5 @@
 type: object
-title: InstrumentCreateRequest
+title: CorporateInstrumentCreateRequest
 properties:
   label:
     title: Label
@@ -86,7 +86,7 @@ properties:
         description: The ID of the file representing the uploaded document.
         example: file_wxglze3wwywujg4nna5fb7ldli
   account_holder:
-    $ref: '#/components/schemas/PlatformsAccountHolder'
+    $ref: '#/components/schemas/PlatformsCorporateAccountHolder'
   bank:
     $ref: '#/components/schemas/PlatformsBank'
 required:
@@ -95,3 +95,4 @@ required:
   - currency
   - country
   - document
+  - account_holder
