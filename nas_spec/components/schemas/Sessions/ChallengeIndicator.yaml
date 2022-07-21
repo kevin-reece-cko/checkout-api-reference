@@ -16,7 +16,7 @@ description: >
   • trusted_listing_prompt <br/>
   • transaction_risk_assessment <br/><br/>
   
-  If an exemption cannot be applied, then the value no_challenge_requested will be used instead.
+  If an exemption cannot be applied, then the value `no_challenge_requested` will be used instead.
 maxLength: 50
 example: no_preference
 default: no_preference
