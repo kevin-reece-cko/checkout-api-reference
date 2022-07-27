@@ -6,7 +6,7 @@ required:
 properties:
   amount:
     type: integer
-    description: The payment amount. The exact format <a href="https://www.checkout.com/docs/four/resources/calculating-the-amount" target="_blank">depends on the currency</a>.
+    description: The payment amount. The exact format <a href="https://www.checkout.com/docs/resources/calculating-the-amount" target="_blank">depends on the currency</a>.
     minimum: 1
     example: 1000
   currency:
@@ -136,11 +136,11 @@ properties:
     properties:
       aft:
         type: boolean
-        description: Indicates whether the payment is an [Account Funding Transaction](https://www.checkout.com/docs/four/payments/manage-payments/account-funding-transactions).
+        description: Indicates whether the payment is an [Account Funding Transaction](https://www.checkout.com/docs/payments/manage-payments/account-funding-transactions).
   allow_payment_methods:
     type: array
     description: >
-      Use to specify which <a href="https://www.checkout.com/docs/four/payments/payment-methods" target="_blank">payment methods</a> should render on the page. <a href="https://checkout.com/docs/four/integrate/payment-links/manage-payment-links#Payment_methods" target="_blank">Check the requirements for each payment method</a>
+      Use to specify which <a href="https://www.checkout.com/docs/payments/payment-methods" target="_blank">payment methods</a> should render on the page. <a href="https://checkout.com/docs/integrate/payment-links/manage-payment-links#Payment_methods" target="_blank">Check the requirements for each payment method</a>
     enum:
       - card
       - sofort

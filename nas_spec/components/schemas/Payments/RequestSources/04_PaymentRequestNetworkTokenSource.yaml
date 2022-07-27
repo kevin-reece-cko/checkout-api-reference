@@ -50,7 +50,7 @@ allOf:
         example: '05'
       stored:
         type: boolean
-        description: This must be set to `true` for payments that use <a href="https://www.checkout.com/docs/four/payments/store-payment-details" target="blank">stored card details</a>
+        description: This must be set to `true` for payments that use <a href="https://www.checkout.com/docs/payments/store-payment-details" target="blank">stored card details</a>
         default: false
         example: true
       name:
