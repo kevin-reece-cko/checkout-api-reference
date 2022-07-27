@@ -123,6 +123,8 @@ properties:
       code:
         type: string
         description: Indicates Cartes Bancaire specific exemption value
+      trusted_beneficiary:
+        $ref: '#/components/schemas/TrustedBeneficiary'
   flow_type:
     type: string
     description: Indicates whether the 3D Secure 2 authentication was challenged or frictionless
