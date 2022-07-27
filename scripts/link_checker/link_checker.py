@@ -11,9 +11,9 @@ IGNORED_PATTERNS = ["mailto", "#"]
 
 def check_broken_links(swagger_file: str):
     if swagger_file == "abc":
-        swagger_file = f"{BASE_DIR}/../web_deploy/swagger.yaml"
+        swagger_file = f"{BASE_DIR}/../web_deploy/previous/swagger.yaml"
     elif swagger_file == "nas":
-        swagger_file = f"{BASE_DIR}/../web_deploy/preview/crusoe/swagger.yaml"
+        swagger_file = f"{BASE_DIR}/../web_deploy/swagger.yaml"
 
     broken_link_array = []
     contents = open(swagger_file, 'r')

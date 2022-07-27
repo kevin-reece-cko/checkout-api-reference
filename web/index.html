@@ -3,6 +3,11 @@
 	<head>
 		<script
 			defer
+			type="text/javascript"
+			src="https://cdn-ukwest.onetrust.com/consent/9be650fa-1b77-4848-b2d7-a3118f92e672-test/OtAutoBlock.js"
+		></script>
+		<script
+			defer
 			src="https://cdn-ukwest.onetrust.com/scripttemplates/otSDKStub.js"
 			data-language="en"
 			type="text/javascript"
@@ -28,9 +33,8 @@
 		<script type="text/javascript">
 			function OptanonWrapper() {}
 		</script>
-
 		<script async type="text/plain" src="https://www.googletagmanager.com/gtag/js?id=UA-83886670-8"></script>
-		<script defer type="text/plain" class="optanon-category-C0002" src="../../js/gtm.js"></script>
+		<script type="text/plain" class="optanon-category-C0002" src="./js/gtm.js"></script>
 		<title>Checkout.com API Reference</title>
 
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -42,10 +46,10 @@
 		<link rel="shortcut icon" href="./favicons/favicon.ico" />
 		<meta name="msapplication-TileColor" content="#00122C" />
 		<meta name="msapplication-config" content="./favicons/browserconfig.xml" />
-		<script type="text/plain" class="optanon-category-C0002" src="js/heapio.js"></script>
-		<script type="text/javascript" src="js/datadog.js"></script>
-		<script type="text/javascript" src="js/ddRum.js"></script>
-		<script type="text/plain" class="optanon-category-C0002" src="js/gcdc.js"></script>
+		<script type="text/plain" class="optanon-category-C0002" src="./js/heapio.js"></script>
+		<script type="text/javascript" src="./js/datadog.js"></script>
+		<script type="text/javascript" src="./js/ddRum.js"></script>
+		<script type="text/plain" class="optanon-category-C0002" src="./js/gcdc.js"></script>
 	</head>
 
 	<body class="light">
@@ -57,7 +61,16 @@
 		>
 		</iframe>
 
-		<script src="js/theme.js"></script>
+		<script src="./js/theme.js"></script>
+		<script src="./js/show-footer.js"></script>
+
+		<div class="banner">
+			<div class="banner-text">
+				You're viewing our latest API reference with OAuth 2.0. We've emailed you if you need our
+				<a class="banner-link" href="https://www.api-reference.checkout.com/previous">previous reference.</a> To find out which
+				you need, <a class="banner-link" href="mailto:support@checkout.com?subject=API reference version support">contact Support.</a>
+			</div>
+		</div>
 
 		<div id="redocly_container"></div>
 
@@ -73,7 +86,7 @@
 						beforeInfo: [
 							{
 								label: 'Changelog',
-								link: 'https://github.com/checkout/checkout-api-reference/blob/master/abc_spec/changelog.md',
+								link: 'https://github.com/checkout/checkout-api-reference/blob/master/nas_spec/changelog.md',
 								target: '_blank',
 							},
 						],
