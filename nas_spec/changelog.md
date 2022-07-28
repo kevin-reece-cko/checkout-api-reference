@@ -2,7 +2,8 @@
 
 | Date       | Description of change                                                                                                 |
 | ---------- | --------------------------------------------------------------------------------------------------------------------- |
-| 2022/07/20 | Added Alipay Plus's e-wallets supports                                                                               |
+| 2022/07/28 | Adding `marketplace` object to capture and other minor fixes to IP space                                              |
+| 2022/07/20 | Added Alipay Plus's e-wallets supports                                                                                |
 | 2022/07/20 | Adding required fields for Platforms payment instruments and separate `corporate` and `individual` examples           |
 | 2022/07/20 | Added `knet`, `giropay`, `bancontact`, `eps`, `p24`, and `multibanco` to Hosted Payments and Payment Links.           |
 | 2022/07/19 | Updated example for Platforms payout schedules from `currency` to `GBP` and `ISO`                                     |
