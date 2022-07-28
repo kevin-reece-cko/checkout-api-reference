@@ -135,7 +135,7 @@ properties:
     allOf:
       - $ref: '#/components/schemas/IPAddress'
   marketplace:
-    $ref: '#/components/schemas/MarketplaceData'
+    $ref: '#/components/schemas/MarketplaceAuth'
   recipient:
     $ref: '#/components/schemas/PaymentRecipient'
   metadata:

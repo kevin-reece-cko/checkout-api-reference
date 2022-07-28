@@ -118,7 +118,7 @@ properties:
   recipient:
     $ref: '#/components/schemas/PaymentRecipient'
   marketplace:
-    $ref: '#/components/schemas/MarketplaceData'
+    $ref: '#/components/schemas/MarketplaceAuth'
   processing:
     $ref: '#/components/schemas/ProcessingSettings'
   items:

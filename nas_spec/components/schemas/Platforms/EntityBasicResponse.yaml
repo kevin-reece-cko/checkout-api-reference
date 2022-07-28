@@ -10,10 +10,8 @@ properties:
     type: string
     description: A unique reference you can later use to identify this sub-entity.
     minLength: 1
-    maxLength: 15
+    maxLength: 50
     example: superhero1234
-  capabilities:
-    $ref: '#/components/schemas/EntityCapabilities'
   status:
     type: string
     title: Status
@@ -26,6 +24,8 @@ properties:
       - requirements_due
       - inactive
       - rejected
+  capabilities:
+    $ref: '#/components/schemas/EntityCapabilities'
   requirements_due:
     type: array
     title: Requirements Due

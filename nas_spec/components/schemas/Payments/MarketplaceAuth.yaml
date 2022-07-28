@@ -1,0 +1,7 @@
+type: object
+description: Information related to marketplace payments
+properties:
+  sub_entity_id:
+    $ref: '#/components/schemas/MarketplaceNonSplit'
+  sub_entities:
+    $ref: '#/components/schemas/MarketplaceSplit'
