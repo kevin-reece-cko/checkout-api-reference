@@ -64,7 +64,7 @@ properties:
     example: 'pc_q4dbxom5jbgudnjzjpz7j2z6uq'
   marketplace:
     allOf:
-      - $ref: '#/components/schemas/MarketplaceData'
+      - $ref: '#/components/schemas/MarketplaceAuth'
   expires_in:
     type: integer
     description: The time for which the link remains valid, in seconds.

@@ -44,7 +44,7 @@ SessionRequest request = new SessionRequest
     Amount = 10,
     Currency = Currency.USD,
     ProcessingChannelId = "pc_5jp2az55l3cuths25t5p3xhwru",
-    Marketplace = new MarketplaceData {SubEntityId = "ent_ocw5i74vowfg2edpy66izhts2u"},
+    Marketplace = new MarketplaceAuth {SubEntityId = "ent_ocw5i74vowfg2edpy66izhts2u"},
     AuthenticationCategory = Category.Payment,
     ChallengeIndicator = ChallengeIndicatorType.ChallengeRequested,
     BillingDescriptor = new SessionsBillingDescriptor {Name = "SUPERHEROES.COM"},

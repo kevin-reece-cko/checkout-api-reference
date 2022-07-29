@@ -45,6 +45,8 @@ properties:
         example: '10014'
   items:
     $ref: '#/components/schemas/Items'
+  marketplace:
+    $ref: '#/components/schemas/MarketplaceCapture'
   processing:
     $ref: '#/components/schemas/ProcessingSettings'
   metadata:
