@@ -2,22 +2,21 @@
 using Checkout.Disputes;
 
 //API keys
-Four.ICheckoutApi api = CheckoutSdk.FourSdk().StaticKeys()
-    .PublicKey("public_key")
+ICheckoutApi api = CheckoutSdk.Builder().StaticKeys()
     .SecretKey("secret_key")
     .Environment(Environment.Sandbox)
     .HttpClientFactory(new DefaultHttpClientFactory())
     .Build();
 
 //OAuth
-Four.ICheckoutApi api = CheckoutSdk.FourSdk().OAuth()
+ICheckoutApi api = CheckoutSdk.Builder().OAuth()
     .ClientCredentials("client_id", "client_secret")
-    .Scopes(FourOAuthScope.Disputes)
+    .Scopes(OAuthScope.Disputes)
     .Environment(Environment.Sandbox)
-    .FilesEnvironment(Environment.Sandbox)
+    .HttpClientFactory(new DefaultHttpClientFactory())
     .Build();
 
-DisputeEvidenceRequest request = new DisputeEvidenceRequest()
+DisputeEvidenceRequest request = new DisputeEvidenceRequest
 {
     ProofOfDeliveryOrServiceFile = "file_xxxxxx",
     ProofOfDeliveryOrServiceText = "proof of delivery or service text",
@@ -26,12 +25,20 @@ DisputeEvidenceRequest request = new DisputeEvidenceRequest()
     CustomerCommunicationFile = "file_xxxxxx",
     CustomerCommunicationText = "Copy of an email exchange with the cardholder",
     AdditionalEvidenceFile = "file_xxxxxx",
-    AdditionalEvidenceText = "Scanned document"
+    AdditionalEvidenceText = "Scanned document",
+    InvoiceShowingDistinctTransactionsFile = "file_xxxxxx",
+    InvoiceShowingDistinctTransactionsText = "Copy of invoice #1244 showing two transactions",
+    RefundOrCancellationPolicyFile = "file_xxxxxx",
+    RefundOrCancellationPolicyText = "Copy of the refund policy",
+    RecurringTransactionAgreementFile = "file_xxxxxx",
+    RecurringTransactionAgreementText = "Copy of the recurring transaction agreement",
+    ProofOfDeliveryOrServiceDateFile = "file_xxxxxx",
+    ProofOfDeliveryOrServiceDateText = "Copy of the customer receipt showing the merchandise was delivered"
 };
 
 try
 {
-    await api.DisputesClient().PutEvidence("disputes_id", request);
+    EmptyResponse response = await api.DisputesClient().PutEvidence("disputes_id", request);
 }
 catch (CheckoutApiException e)
 {

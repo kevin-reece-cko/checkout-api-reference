@@ -1,21 +1,23 @@
 // For more information please refer to https://github.com/checkout/checkout-sdk-java
+import com.checkout.CheckoutApi;
 import com.checkout.CheckoutApiException;
 import com.checkout.CheckoutArgumentException;
 import com.checkout.CheckoutAuthorizationException;
 import com.checkout.CheckoutSdk;
+import com.checkout.EmptyResponse;
 import com.checkout.Environment;
-import com.checkout.four.CheckoutApi;
+import com.checkout.OAuthScope;
 
 // OAuth
-CheckoutApi api = CheckoutSdk.fourSdk()
+CheckoutApi api = CheckoutSdk.builder()
     .oAuth()
     .clientCredentials("client_id", "client_secret")
+    .scopes(OAuthScope.DISPUTES) // more scopes available
     .environment(Environment.SANDBOX) // or Environment.PRODUCTION
-    .scopes(FourOAuthScope.DISPUTES) // more scopes available
     .build();
 
 try {
-    api.disputesClient().submitEvidence("dispute_id").get();
+    EmptyResponse response = api.disputesClient().submitEvidence("dispute_id").get();
 } catch (CheckoutApiException e) {
     // API error
     String requestId = e.getRequestId();

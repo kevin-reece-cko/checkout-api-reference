@@ -4,8 +4,9 @@ using Checkout.Risk;
 using Checkout.Risk.PreCapture;
 using Checkout.Risk.source;
 
-ICheckoutApi api = CheckoutSdk.DefaultSdk().StaticKeys()
-    .PublicKey("public_key")
+Previous.ICheckoutApi api = CheckoutSdk.Builder()
+    .Previous()
+    .StaticKeys()
     .SecretKey("secret_key")
     .Environment(Environment.Sandbox)
     .HttpClientFactory(new DefaultHttpClientFactory())
@@ -22,7 +23,7 @@ PreCaptureAssessmentRequest request = new PreCaptureAssessmentRequest()
         Email = "email@docs.checkout.com",
     },
     Amount = 10,
-    Currency = Common.Currency.GBP,
+    Currency = Currency.GBP,
     Payment = new RiskPayment()
     {
         Psp = "Checkout.com",

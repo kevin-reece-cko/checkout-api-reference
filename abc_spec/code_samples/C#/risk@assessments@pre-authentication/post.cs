@@ -4,8 +4,9 @@ using Checkout.Risk;
 using Checkout.Risk.PreAuthentication;
 using Checkout.Risk.source;
 
-ICheckoutApi api = CheckoutSdk.DefaultSdk().StaticKeys()
-    .PublicKey("public_key")
+Previous.ICheckoutApi api = CheckoutSdk.Builder()
+    .Previous()
+    .StaticKeys()
     .SecretKey("secret_key")
     .Environment(Environment.Sandbox)
     .HttpClientFactory(new DefaultHttpClientFactory())
@@ -15,16 +16,8 @@ PreAuthenticationAssessmentRequest request = new PreAuthenticationAssessmentRequ
 {
     Date = DateTime.Now,
     Source = new CardSourcePrism(),
-    Customer = new CustomerRequest()
-    {
-        Name = "FirstName LastName",
-        Email = "email@docs.checkout.com",
-    },
-    Payment = new RiskPayment()
-    {
-        Psp = "Checkout.com",
-        Id = "78453878"
-    },
+    Customer = new CustomerRequest() {Name = "FirstName LastName", Email = "email@docs.checkout.com",},
+    Payment = new RiskPayment() {Psp = "Checkout.com", Id = "78453878"},
     Shipping = new RiskShippingDetails()
     {
         Address = new Address()
@@ -44,11 +37,7 @@ PreAuthenticationAssessmentRequest request = new PreAuthenticationAssessmentRequ
     Device = new Device()
     {
         Ip = "90.197.169.245",
-        Location = new Location()
-        {
-            Latitude = "51.5107",
-            Longitude = "0.01313"
-        },
+        Location = new Location() {Latitude = "51.5107", Longitude = "0.01313"},
         Os = "ISO",
         Type = "Phone",
         Model = "IPHone X",
@@ -59,9 +48,7 @@ PreAuthenticationAssessmentRequest request = new PreAuthenticationAssessmentRequ
     },
     Metadata = new Dictionary<string, object>()
     {
-        {"VoucherCode", "loyalty_10"},
-        {"discountApplied", "10"},
-        {"customer_id", "2190EF321"}
+        {"VoucherCode", "loyalty_10"}, {"discountApplied", "10"}, {"customer_id", "2190EF321"}
     }
 };
 

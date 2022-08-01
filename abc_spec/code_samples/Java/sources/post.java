@@ -1,5 +1,4 @@
 // For more information please refer to https://github.com/checkout/checkout-sdk-java
-import com.checkout.CheckoutApi;
 import com.checkout.CheckoutApiException;
 import com.checkout.CheckoutArgumentException;
 import com.checkout.CheckoutAuthorizationException;
@@ -8,14 +7,15 @@ import com.checkout.Environment;
 import com.checkout.common.Address;
 import com.checkout.common.CountryCode;
 import com.checkout.common.Phone;
-import com.checkout.sources.SourceData;
-import com.checkout.sources.SourceProcessed;
-import com.checkout.sources.SourceRequest;
-import com.checkout.sources.SourceResponse;
+import com.checkout.previous.CheckoutApi;
+import com.checkout.sources.previous.SepaSourceRequest;
+import com.checkout.sources.previous.SourceData;
+import com.checkout.sources.previous.SourceResponse;
 
-CheckoutApi api = CheckoutSdk.defaultSdk()
+CheckoutApi api = CheckoutSdk
+    .builder()
+    .previous()
     .staticKeys()
-    .publicKey("public_key")
     .secretKey("secret_key")
     .environment(Environment.SANDBOX) // or Environment.PRODUCTION
     .build();
@@ -30,21 +30,22 @@ Address billingAddress = Address.builder()
     .build();
 
 SourceData sourceData = new SourceData();
-sourceData.put("first_name", "firstName");
-sourceData.put("last_name", "lastName");
-sourceData.put("account_iban", "iban");
-sourceData.put("bic", "bic");
-sourceData.put("billing_descriptor", "billingDescriptor");
-sourceData.put("mandate_type", "single");
+    sourceData.put("first_name", "firstName");
+    sourceData.put("last_name", "lastName");
+    sourceData.put("account_iban", "iban");
+    sourceData.put("bic", "bic");
+    sourceData.put("billing_descriptor", "billingDescriptor");
+    sourceData.put("mandate_type", "single");
 
-SourceRequest request = new SourceRequest("sepa", billingAddress);
-request.setPhone(Phone.builder().countryCode("1").number("4155552671").build());
-request.setReference("reference");
-request.setSourceData(sourceData);
+SepaSourceRequest request = SepaSourceRequest.builder()
+    .billingAddress(billingAddress)
+    .phone(Phone.builder().countryCode("1").number("4155552671").build())
+    .reference("reference")
+    .sourceData(sourceData)
+    .build();
 
 try {
-    SourceResponse response = api.sourcesClient().requestAsync(request).get();
-    SourceProcessed source = response.getSource();
+    SourceResponse response = api.sourcesClient().createSepaSource(request).get();
 } catch (CheckoutApiException e) {
     // API error
     String requestId = e.getRequestId();

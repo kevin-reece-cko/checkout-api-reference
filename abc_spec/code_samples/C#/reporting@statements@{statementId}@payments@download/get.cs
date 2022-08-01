@@ -1,8 +1,8 @@
 // For more information please refer to https://github.com/checkout/checkout-sdk-net
-using Checkout.Reconciliation;
 
-ICheckoutApi api = CheckoutSdk.DefaultSdk().StaticKeys()
-    .PublicKey("public_key")
+Previous.ICheckoutApi api = CheckoutSdk.Builder()
+    .Previous()
+    .StaticKeys()
     .SecretKey("secret_key")
     .Environment(Environment.Sandbox)
     .HttpClientFactory(new DefaultHttpClientFactory())
@@ -10,7 +10,7 @@ ICheckoutApi api = CheckoutSdk.DefaultSdk().StaticKeys()
 
 try
 {
-    string content = await api.ReconciliationClient().RetrieveCsvSingleStatementReport("id");
+    ContentsResponse response = await api.ReconciliationClient().RetrieveCsvSingleStatementReport("id");
 }
 catch (CheckoutApiException e)
 {

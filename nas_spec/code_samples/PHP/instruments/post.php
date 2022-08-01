@@ -1,33 +1,30 @@
-// Please refer to https://github.com/checkout/checkout-sdk-php
 <?php
+//For more information please refer to https://github.com/checkout/checkout-sdk-php
 
 use Checkout\\CheckoutApiException;
-use Checkout\\CheckoutArgumentException;
 use Checkout\\CheckoutAuthorizationException;
-use Checkout\\CheckoutFourSdk;
+use Checkout\\CheckoutSdk;
+use Checkout\\Common\\AccountHolder;
 use Checkout\\Common\\Address;
 use Checkout\\Common\\Country;
-use Checkout\\Common\\Four\\AccountHolder;
 use Checkout\\Common\\Phone;
 use Checkout\\Environment;
-use Checkout\\Four\\FourOAuthScope;
-use Checkout\\Instruments\\Four\\Create\\CreateCustomerInstrumentRequest;
-use Checkout\\Instruments\\Four\\Create\\CreateTokenInstrumentRequest;
+use Checkout\\Instruments\\Create\\CreateCustomerInstrumentRequest;
+use Checkout\\Instruments\\Create\\CreateTokenInstrumentRequest;
+use Checkout\\OAuthScope;
 
-// API Keys
-$builder = CheckoutFourSdk::staticKeys();
-$builder->setPublicKey("public_key");
-$builder->setSecretKey("secret_key");
-$builder->setEnvironment(Environment::sandbox()); // or Environment::production()
-$api = $builder->build();
+//API Keys
+$api = CheckoutSdk::builder()->staticKeys()
+    ->environment(Environment::sandbox())
+    ->secretKey("secret_key")
+    ->build();
 
-// OAuth
-$builder = CheckoutFourSdk::oAuth();
-$builder->clientCredentials("client_id", "client_secret");
-$builder->scopes([FourOAuthScope::$Gateway]); // more scopes available
-$builder->setEnvironment(Environment::sandbox()); // or Environment::production()
-$builder->setFilesEnvironment(Environment::sandbox()); // or Environment::production()
-$api = $builder->build();
+//OAuth
+$api = CheckoutSdk::builder()->oAuth()
+    ->clientCredentials("client_id", "client_secret")
+    ->scopes([OAuthScope::$Vault])
+    ->environment(Environment::sandbox())
+    ->build();
 
 $phone = new Phone();
 $phone->country_code = "+1";
@@ -59,11 +56,8 @@ try {
     $response = $api->getInstrumentsClient()->create($request);
 } catch (CheckoutApiException $e) {
     // API error
-    $request_id = $e->request_id;
-    $http_status_code = $e->http_status_code;
     $error_details = $e->error_details;
-} catch (CheckoutArgumentException $e) {
-    // Bad arguments
+    $http_status_code = isset($e->http_metadata) ? $e->http_metadata->getStatusCode() : null;
 } catch (CheckoutAuthorizationException $e) {
     // Bad Invalid authorization
 }
