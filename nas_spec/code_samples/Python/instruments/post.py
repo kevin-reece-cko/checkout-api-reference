@@ -1,40 +1,30 @@
 # For more information please refer to https://github.com/checkout/checkout-sdk-python
 import checkout_sdk
-from checkout_sdk.common.common import Address, Phone
-from checkout_sdk.common.common_four import AccountHolder
-from checkout_sdk.common.enums import Country
+from checkout_sdk.checkout_sdk import CheckoutSdk
+from checkout_sdk.common.common import Phone, AccountHolder
 from checkout_sdk.environment import Environment
+from checkout_sdk.instruments.instruments import CreateTokenInstrumentRequest, CreateCustomerInstrumentRequest
 from checkout_sdk.exception import CheckoutApiException, CheckoutArgumentException, CheckoutAuthorizationException
-from checkout_sdk.four.oauth_scopes import OAuthScopes
+from checkout_sdk.oauth_scopes import OAuthScopes
 
 # API Keys
-from checkout_sdk.instruments.instruments_four import CreateTokenInstrumentRequest, CreateCustomerInstrumentRequest
-
-api = checkout_sdk.FourSdk() \\
+api = CheckoutSdk.builder() \\
     .secret_key('secret_key') \\
-    .public_key('public_key') \\
     .environment(Environment.sandbox()) \\
     .build()
-# or Environment.production()
+    # or Environment.production()
 
 # OAuth
-api = checkout_sdk.OAuthSdk() \\
+api = CheckoutSdk.builder() \\
+    .oauth() \\
     .client_credentials('client_id', 'client_secret') \\
     .environment(Environment.sandbox()) \\
-    .scopes([OAuthScopes.GATEWAY]) \\
+    .scopes([OAuthScopes.VAULT_INSTRUMENTS]) \\
     .build()
 
 phone = Phone()
 phone.country_code = '44'
 phone.number = '4155552671'
-
-address = Address()
-address.address_line1 = 'CheckoutSdk.com'
-address.address_line2 = '90 Tottenham Court Road'
-address.city = 'London'
-address.state = 'London'
-address.zip = 'W1T 4TJ'
-address.country = Country.GB
 
 customer = CreateCustomerInstrumentRequest()
 customer.email = 'email@docs.checkout.com'

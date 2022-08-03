@@ -1,30 +1,28 @@
 // For more information please refer to https://github.com/checkout/checkout-sdk-java
+import com.checkout.CheckoutApi;
 import com.checkout.CheckoutApiException;
 import com.checkout.CheckoutArgumentException;
 import com.checkout.CheckoutAuthorizationException;
 import com.checkout.CheckoutSdk;
 import com.checkout.Environment;
+import com.checkout.OAuthScope;
 import com.checkout.common.FilePurpose;
 import com.checkout.common.FileRequest;
 import com.checkout.common.IdResponse;
-import com.checkout.four.CheckoutApi;
-import org.apache.http.entity.ContentType;
-import java.io.File;
 
 // API Keys
-CheckoutApi api = CheckoutSdk.fourSdk()
+CheckoutApi api = CheckoutSdk.builder()
     .staticKeys()
-    .publicKey("public_key")
     .secretKey("secret_key")
     .environment(Environment.SANDBOX) // or Environment.PRODUCTION
     .build();
 
 // OAuth
-CheckoutApi api = CheckoutSdk.fourSdk()
+CheckoutApi api = CheckoutSdk.builder()
     .oAuth()
     .clientCredentials("client_id", "client_secret")
+    .scopes(OAuthScope.FILES) // more scopes available
     .environment(Environment.SANDBOX) // or Environment.PRODUCTION
-    .scopes(FourOAuthScope.FILES) // more scopes available
     .build();
 
 File file = new File("evidence.pdf");

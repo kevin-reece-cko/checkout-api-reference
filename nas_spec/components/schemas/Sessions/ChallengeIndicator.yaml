@@ -4,7 +4,19 @@ enum:
   - no_challenge_requested
   - challenge_requested
   - challenge_requested_mandate
-description: Indicates whether a challenge is requested for this session
+  - low_value
+  - trusted_listing
+  - trusted_listing_prompt
+  - transaction_risk_assessment
+description: > 
+  Indicates whether a challenge is requested for this session.<br/> <br/>
+  The following are requests for exemption: <br/>
+  • `low_value` <br/>
+  • `trusted_listing` <br/>
+  • `trusted_listing_prompt` <br/>
+  • `transaction_risk_assessment` <br/><br/>
+  
+  If an exemption cannot be applied, then the value `no_challenge_requested` will be used instead.
 maxLength: 50
 example: no_preference
 default: no_preference

@@ -1,22 +1,24 @@
 // For more information please refer to https://github.com/checkout/checkout-sdk-javaç
+import com.checkout.CheckoutApi;
 import com.checkout.CheckoutApiException;
 import com.checkout.CheckoutArgumentException;
 import com.checkout.CheckoutAuthorizationException;
 import com.checkout.CheckoutSdk;
 import com.checkout.Environment;
+import com.checkout.OAuthScope;
+import com.checkout.common.AccountHolderType;
 import com.checkout.common.CountryCode;
 import com.checkout.common.Currency;
-import com.checkout.common.four.AccountHolderType;
-import com.checkout.four.CheckoutApi;
-import com.checkout.instruments.four.get.BankAccountFieldQuery;
-import com.checkout.instruments.four.get.BankAccountFieldResponse;
-import com.checkout.instruments.four.get.PaymentNetwork;
+import com.checkout.instruments.get.BankAccountFieldQuery;
+import com.checkout.instruments.get.BankAccountFieldResponse;
+import com.checkout.instruments.get.PaymentNetwork;
 
-CheckoutApi api = CheckoutSdk.fourSdk()
+// OAuth
+CheckoutApi api = CheckoutSdk.builder()
     .oAuth()
     .clientCredentials("client_id", "client_secret")
+    .scopes(OAuthScope.PAYOUTS_BANK_DETAILS) // more scopes available
     .environment(Environment.SANDBOX) // or Environment.PRODUCTION
-    .scopes(FourOAuthScope.PAYOUTS_BANK_DETAILS) // more scopes available
     .build();
 
 BankAccountFieldQuery query = BankAccountFieldQuery.builder()

@@ -1,31 +1,26 @@
 // For more information please refer to https://github.com/checkout/checkout-sdk-net
-using Checkout.Payments.Four;
+using Checkout.Payments;
 
 //API keys
-Four.ICheckoutApi api = CheckoutSdk.FourSdk().StaticKeys()
-    .PublicKey("public_key")
+ICheckoutApi api = CheckoutSdk.Builder().StaticKeys()
     .SecretKey("secret_key")
     .Environment(Environment.Sandbox)
     .HttpClientFactory(new DefaultHttpClientFactory())
     .Build();
 
 //OAuth
-Four.ICheckoutApi api = CheckoutSdk.FourSdk().OAuth()
+ICheckoutApi api = CheckoutSdk.Builder().OAuth()
     .ClientCredentials("client_id", "client_secret")
-    .Scopes(FourOAuthScope.GatewayPayment)
+    .Scopes(OAuthScope.Gateway)
     .Environment(Environment.Sandbox)
-    .FilesEnvironment(Environment.Sandbox)
+    .HttpClientFactory(new DefaultHttpClientFactory())
     .Build();
 
 CaptureRequest request = new CaptureRequest
 {
     Amount = 10,
     Reference = "reference",
-    Metadata = new Dictionary<string, object>()
-    {
-        {"coupon_code", "NY2018"},
-        {"partner_id", "123989"}
-    }
+    Metadata = new Dictionary<string, object>() {{"coupon_code", "NY2018"}, {"partner_id", "123989"}}
 };
 
 try

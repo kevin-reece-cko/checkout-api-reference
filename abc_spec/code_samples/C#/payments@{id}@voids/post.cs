@@ -1,8 +1,9 @@
 // For more information please refer to https://github.com/checkout/checkout-sdk-net
 using Checkout.Payments;
 
-ICheckoutApi api = CheckoutSdk.DefaultSdk().StaticKeys()
-    .PublicKey("public_key")
+Previous.ICheckoutApi api = CheckoutSdk.Builder()
+    .Previous()
+    .StaticKeys()
     .SecretKey("secret_key")
     .Environment(Environment.Sandbox)
     .HttpClientFactory(new DefaultHttpClientFactory())
@@ -11,11 +12,7 @@ ICheckoutApi api = CheckoutSdk.DefaultSdk().StaticKeys()
 VoidRequest request = new VoidRequest()
 {
     Reference = "reference",
-    Metadata = new Dictionary<string, object>()
-    {
-        {"coupon_code", "NY2018"},
-        {"partner_id", "123989"}
-    }
+    Metadata = new Dictionary<string, object>() {{"coupon_code", "NY2018"}, {"partner_id", "123989"}}
 };
 
 try

@@ -5,7 +5,7 @@ var Path = require('path');
 require('shelljs/global');
 set('-e');
 
-mkdir('-p', 'web_deploy/preview/crusoe');
+mkdir('-p', 'web_deploy/previous');
 
 cp('-R', 'web/*', 'web_deploy/');
 
@@ -13,9 +13,9 @@ exec('dotnet build src/OpenApiGenerator/OpenApiGenerator.csproj');
 exec(`ASPNETCORE_ENVIRONMENT=${process.env.ACCOUNT} dotnet run -p src/OpenApiGenerator/OpenApiGenerator.csproj`);
 
 if (process.env.ACCOUNT === 'nas') {
-	cp('-R', 'output/*', 'web_deploy/preview/crusoe');
-} else {
 	cp('-R', 'output/*', 'web_deploy/');
+} else {
+	cp('-R', 'output/*', 'web_deploy/previous');
 }
 rm('-rf', 'output');
 
@@ -27,9 +27,9 @@ if (process.env.ACCOUNT === 'nas') {
 	sed(
 		'-i',
 		'http://petstore.swagger.io/v2/swagger.json',
-		'../preview/crusoe/swagger.json',
-		'web_deploy/preview/crusoe/index.html'
+		'../swagger.json',
+		'web_deploy/index.html'
 	);
 } else {
-	sed('-i', 'http://petstore.swagger.io/v2/swagger.json', '../swagger.json', 'web_deploy/index.html');
+	sed('-i', 'http://petstore.swagger.io/v2/swagger.json', '../previous/swagger.json', 'web_deploy/previous/index.html');
 }

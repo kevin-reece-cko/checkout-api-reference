@@ -1,24 +1,24 @@
 // For more information please refer to https://github.com/checkout/checkout-sdk-net
 using Checkout.Common;
-using Checkout.Common.Four;
-using Checkout.Instruments.Four.Get;
+using Checkout.Instruments.Get;
 
-Four.ICheckoutApi api = CheckoutSdk.FourSdk().OAuth()
+
+ICheckoutApi api = CheckoutSdk.Builder().OAuth()
     .ClientCredentials("client_id", "client_secret")
-    .Scopes(FourOAuthScope.PayoutsBankDetails)
+    .Scopes(OAuthScope.PayoutsBankDetails)
     .Environment(Environment.Sandbox)
-    .FilesEnvironment(Environment.Sandbox)
+    .HttpClientFactory(new DefaultHttpClientFactory())
     .Build();
 
 BankAccountFieldQuery request = new BankAccountFieldQuery
 {
-    AccountHolderType = AccountHolderType.Individual, 
-    PaymentNetwork = PaymentNetwork.Local
+    AccountHolderType = AccountHolderType.Individual, PaymentNetwork = PaymentNetwork.Local
 };
 
 try
 {
-    BankAccountFieldResponse response = await api.InstrumentsClient().GetBankAccountFieldFormatting(CountryCode.GB, Currency.GBP, request);
+    BankAccountFieldResponse response = await api.InstrumentsClient()
+        .GetBankAccountFieldFormatting(CountryCode.GB, Currency.GBP, request);
 }
 catch (CheckoutApiException e)
 {

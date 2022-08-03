@@ -1,0 +1,126 @@
+openapi: '3.0.1'
+info:
+  version: '1.0.0'
+  title: Checkout.com API Reference
+  x-logo:
+    url: 'https://assets.checkout.com/docs/logos/logo-checkout-api-dark.svg'
+    backgroundColor: '#E6E7EC'
+    altText: 'Checkout.com API logo'
+  contact:
+    name: Checkout.com Support
+    url: 'https://checkout.com'
+    email: support@checkout.com
+  license:
+    name: Checkout.com
+    url: 'https://checkout.com/api/license/'
+  termsOfService: 'https://checkout.com/terms/'
+  description: >
+    ##  Get started
+
+    Checkout.com provides a collection of APIs that enable you to process and manage payments. Our APIs accept and return JSON in the HTTP body, and return standard <a href="https://www.checkout.com/docs/resources/codes/http-response-codes">HTTP response codes</a>.
+
+    You can consume the APIs directly using your favorite HTTP/REST library.
+
+    We have a testing environment called sandbox, which you can <a href="https://www.checkout.com/get-test-account">sign up for</a> to test API calls without affecting live data.
+
+    # Authentication
+
+    When you sign up for an account, you can authenticate with either Access keys (OAuth 2.0), or Secret API keys.
+
+    Unless explicitly stated, all endpoints require authentication using either your Access or Secret API Keys. Public keys should only be used in JavaScript or native applications.
+
+    - <b>Client-side authentication</b>. Use your [public key](#section/Authentication/ApiPublicKey) for client-side authentication. It only has access to a limited set of our APIs – mostly those called as part of your payment environment.
+
+    - <b>Server-to-server authentication</b>. Use your [secret key](#section/Authentication/ApiSecretKey) or [OAuth](#section/Authentication/OAuth) for server-to-server communication. Support for API keys depends on the endpoint.
+
+    Never share your OAuth credentials, API keys, or access tokens. Keep them guarded and secure.
+
+    # Changelog
+
+      | Date       | Description of change                                                         |
+      | ---------- | ----------------------------------------------------------------------------- |
+      | 2022/06/29 | Updated Authentication content.                                               |
+      | 2022/03/16 | Added the `scheme_local` to source for CoBrand payments.                      |
+      | 2022/02/07 | Added the `preferred_scheme` to Processing to support CoBrand payments.       |
+      | 2022/02/02 | Adds `active` property for workflows                                          |
+      | 2022/01/26 | Update code samples for Java.                                                 |
+      | 2022/01/25 | Update code samples for C#.                                                   |
+      | 2022/01/19 | Added test a workflow endpoint.                                               |
+      | 2022/01/13 | Update code samples for Node JS.                                              |
+      | 2021/11/29 | Increase max length of the NAS `success_url` and `failure_url` fields of the payment request (both from 255 to 1024).|
+      | 2021/11/11 | Added `3ds.challenge_indicator` to card payment requests.                     |
+      | 2021/11/03 | Adds `identification` object under parent `sender` object in payment request. |
+      | 2021/10/18 | Added the `marketplaces.sub-entities` object to support split payments.       |
+
+servers:
+  - url: https://api.sandbox.checkout.com
+    description: Sandbox API
+  - url: https://api.checkout.com
+    description: Live API
+tags:
+  - name: Access
+    description: Create an access token to begin using our APIs.
+  - name: Payments
+    description: Process and manage payments from a variety of sources and to various destinations all within one integration.
+  - name: Payment Links
+    description: Create a Payment Link to accept and process payment details.
+  - name: Hosted Payments Page
+    description: Create a Hosted Payments Page to accept and process payment details.
+  # - name: Sources
+  #   description: Create a payment source for a customer that you can use for one or more payments.
+  - name: Tokens
+    description: Create a token that represents a card's details that you can later use to request a payment, without you having to process or store any sensitive information.
+  - name: Instruments
+    description: Create and manage your card and bank account payment instruments.
+  - name: Forex
+    description: Checkout.com Foreign Exchange services
+  - name: Disputes
+    description: Keep track of and act on your open disputes (also known as chargebacks) to submit the best possible response.
+  - name: Platforms
+    description: Manage all your sub-entities (also known as sub-merchants) through one integration, globally.
+  - name: Sessions
+    description: Use Sessions to authenticate transactions with 3D Secure (3DS) and comply with Strong Customer Authentication (SCA) requirements.
+  - name: Workflows
+    description: Use Workflows to start receiving webhook notifications for your payments, disputes, and sub-entities.
+  - name: Risk
+    description: Evaluate the risk of a transaction at the pre-authentication and pre-capture stages of the payment process.
+  - name: Apple Pay
+    description: Manage your Apple Pay certificates in order to process payments via Apple Pay.
+  - name: Transfers
+    description: Transfer funds while managing the entities to transfer money to recoup funds from a seller, return money from a refund or to make up the difference when running a promotion.
+  - name: Balances
+    description: View balances for currency accounts belonging to an entity.
+
+  # - name: Files
+  #   description: |
+  #     Upload files to be used as input to other APIs
+
+x-tagGroups:
+  - name: Set up
+    tags:
+      - Access
+  - name: Handle payments and payouts
+    tags:
+      - Payments
+      - Payment Links
+      - Hosted Payments Page
+      - Forex
+      - Apple Pay
+      - Transfers
+      - Balances
+  - name: Stored payment details
+    tags:
+      - Tokens
+      - Instruments
+      - Customers
+  - name: Risk management
+    tags:
+      - Sessions
+      - Disputes
+      - Risk
+  - name: Notifications
+    tags:
+      - Workflows
+  - name: Platforms
+    tags:
+      - Platforms

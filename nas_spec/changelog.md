@@ -2,8 +2,15 @@
 
 | Date       | Description of change                                                                                                 |
 | ---------- | --------------------------------------------------------------------------------------------------------------------- |
+<<<<<<< HEAD
 | 2022/07/21 | Add AfterPay NAS Request and Response source.                                                                         |
 | 2022/07/20 | Added Alipay Plus's e-wallets supports                                                                               |
+=======
+| 2022/08/03 | Added Reports API                                                                                                     |
+| 2022/07/29 | Adding `marketplace` object to capture and other minor fixes to IP space                                              |
+| 2022/07/29 | Update Java, C#, PHP & Python code samples to match new SDK Version.                                                  |
+| 2022/07/20 | Added Alipay Plus's e-wallets supports                                                                                |
+>>>>>>> f854bb10057c8a5a7fcf9c6e17b7eff097039d70
 | 2022/07/20 | Adding required fields for Platforms payment instruments and separate `corporate` and `individual` examples           |
 | 2022/07/20 | Added `knet`, `giropay`, `bancontact`, `eps`, `p24`, and `multibanco` to Hosted Payments and Payment Links.           |
 | 2022/07/19 | Updated example for Platforms payout schedules from `currency` to `GBP` and `ISO`                                     |

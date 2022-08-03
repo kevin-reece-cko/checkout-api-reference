@@ -1,12 +1,14 @@
 // For more information please refer to https://github.com/checkout/checkout-sdk-net
-using Checkout.Events;
+using Checkout.Events.Previous;
 
-ICheckoutApi api = CheckoutSdk.DefaultSdk().StaticKeys()
-    .PublicKey("public_key")
+Previous.ICheckoutApi api = CheckoutSdk.Builder()
+    .Previous()
+    .StaticKeys()
     .SecretKey("secret_key")
     .Environment(Environment.Sandbox)
     .HttpClientFactory(new DefaultHttpClientFactory())
-    .Build(); 
+    .Build();
+
 try
 {
     /*
@@ -16,7 +18,7 @@ try
      null  => all versions
      */
                 
-    IList<EventTypesResponse> response = await api.EventsClient().RetrieveAllEventTypes();
+    ItemsResponse<EventTypesResponse> response = await api.EventsClient().RetrieveAllEventTypes();
 }
 catch (CheckoutApiException e)
 {

@@ -7,18 +7,18 @@ properties:
     example: 'dsp_rbhwd2qrg13uhrp2newf'
   category:
     type: string
-    description: The reason for the dispute. [Find out more](https://docs.checkout.com/docs/disputes#section-dispute-reasons-and-recommended-evidence)
+    description: The reason for the dispute. [Find out more](https://www.checkout.com/docs/previous/disputes)
     enum:
       [
-          fraudulent,
-          unrecognized,
-          canceled_recurring,
-          product_service_not_received,
-          not_as_described,
-          credit_not_issued,
-          duplicate,
-          incorrect_amount,
-          general,
+        fraudulent,
+        unrecognized,
+        canceled_recurring,
+        product_service_not_received,
+        not_as_described,
+        credit_not_issued,
+        duplicate,
+        incorrect_amount,
+        general,
       ]
     example: 'fraudulent'
   status:
@@ -26,17 +26,17 @@ properties:
     description: The current status of the dispute
     enum:
       [
-          evidence_required,
-          evidence_under_review,
-          resolved,
-          won,
-          lost,
-          canceled,
-          expired,
-          accepted,
-          arbitration_under_review,
-          arbitration_won,
-          arbitration_lost,
+        evidence_required,
+        evidence_under_review,
+        resolved,
+        won,
+        lost,
+        canceled,
+        expired,
+        accepted,
+        arbitration_under_review,
+        arbitration_won,
+        arbitration_lost,
       ]
     example: 'evidence_required'
   amount:

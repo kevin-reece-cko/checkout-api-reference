@@ -1,8 +1,9 @@
 // For more information please refer to https://github.com/checkout/checkout-sdk-net
-using Checkout.Payments.Response;
+using Checkout.Payments.Previous.Response;
 
-ICheckoutApi api = CheckoutSdk.DefaultSdk().StaticKeys()
-    .PublicKey("public_key")
+Previous.ICheckoutApi api = CheckoutSdk.Builder()
+    .Previous()
+    .StaticKeys()
     .SecretKey("secret_key")
     .Environment(Environment.Sandbox)
     .HttpClientFactory(new DefaultHttpClientFactory())

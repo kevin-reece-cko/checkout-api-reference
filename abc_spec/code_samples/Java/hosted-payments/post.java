@@ -1,5 +1,4 @@
 // For more information please refer to https://github.com/checkout/checkout-sdk-java
-import com.checkout.CheckoutApi;
 import com.checkout.CheckoutApiException;
 import com.checkout.CheckoutArgumentException;
 import com.checkout.CheckoutAuthorizationException;
@@ -22,10 +21,12 @@ import com.checkout.payments.ShippingDetails;
 import com.checkout.payments.ThreeDSRequest;
 import com.checkout.payments.hosted.HostedPaymentRequest;
 import com.checkout.payments.hosted.HostedPaymentResponse;
+import com.checkout.previous.CheckoutApi;
 
-CheckoutApi api = CheckoutSdk.defaultSdk()
+CheckoutApi api = CheckoutSdk
+    .builder()
+    .previous()
     .staticKeys()
-    .publicKey("public_key")
     .secretKey("secret_key")
     .environment(Environment.SANDBOX) // or Environment.PRODUCTION
     .build();
@@ -35,7 +36,7 @@ HostedPaymentRequest request = HostedPaymentRequest.builder()
     .reference("reference")
     .currency(Currency.GBP)
     .description("Payment")
-    .customer(new CustomerRequest(null, "email@docs.checkout.com", "Name"))
+    .customer(new CustomerRequest(null, "email@docs.checkout.com", "Name", null))
     .shippingDetails(ShippingDetails.builder()
         .address(Address.builder()
             .addressLine1("Checkout")
@@ -49,20 +50,18 @@ HostedPaymentRequest request = HostedPaymentRequest.builder()
         .build())
     .billing(BillingInformation.builder()
         .address(Address.builder()
-                .addressLine1("Checkout")
-                .addressLine2("90 Tottenham Court Road")
-                .city("London")
-                .state("London")
-                .zip("W1T 4TJ")
-                .country(CountryCode.GB)
-                .build())
+            .addressLine1("Checkout")
+            .addressLine2("90 Tottenham Court Road")
+            .city("London")
+            .state("London")
+            .zip("W1T 4TJ")
+            .country(CountryCode.GB)
+            .build())
         .phone(Phone.builder().countryCode("1").number("415 555 2671").build())
         .build())
     .recipient(PaymentRecipient.builder()
         .accountNumber("999999999")
-        .country(CountryCode.GB)
         .dateOfBirth("1985-05-15")
-        .firstName("FirstName")
         .lastName("LastName")
         .zip("12345")
         .build())
@@ -94,7 +93,7 @@ HostedPaymentRequest request = HostedPaymentRequest.builder()
     .build();
 
 try {
-    HostedPaymentResponse response = api.hostedPaymentsClient().createAsync(request).get();
+    HostedPaymentResponse response = api.hostedPaymentsClient().createHostedPaymentsPageSession(request).get();
 } catch (CheckoutApiException e) {
     // API error
     String requestId = e.getRequestId();
