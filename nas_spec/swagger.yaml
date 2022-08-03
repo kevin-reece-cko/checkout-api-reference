@@ -81,7 +81,7 @@ tags:
   - name: Platforms
     description: Manage all your sub-entities (also known as sub-merchants) through one integration, globally.
   - name: Reports
-    description: Reports API is a single go-to API for the merchants to get their reports through REST API calls.
+    description: Retrieve your reconciliation reports programmatically with the <a href="https://www.checkout.com/docs/reporting/reports-api">Reports API</a>.
   - name: Sessions
     description: Use Sessions to authenticate transactions with 3D Secure (3DS) and comply with Strong Customer Authentication (SCA) requirements.
   - name: Workflows
