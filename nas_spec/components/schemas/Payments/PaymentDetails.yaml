@@ -141,7 +141,7 @@ properties:
     allOf:
       - $ref: '#/components/schemas/PaymentDetailsResponseSender'
   marketplace:
-    $ref: '#/components/schemas/MarketplaceData'
+    $ref: '#/components/schemas/MarketplaceAuth'
   recipient:
     $ref: '#/components/schemas/PaymentRecipient'
   processing:

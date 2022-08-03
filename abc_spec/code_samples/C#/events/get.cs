@@ -1,17 +1,16 @@
 // For more information please refer to https://github.com/checkout/checkout-sdk-net
-using Checkout.Events;
+using Checkout.Events.Previous;
 
-ICheckoutApi api = CheckoutSdk.DefaultSdk().StaticKeys()
+Previous.ICheckoutApi api = CheckoutSdk.Builder()
+	.Previous()
+	.StaticKeys()
 	.PublicKey("public_key")
 	.SecretKey("secret_key")
 	.Environment(Environment.Sandbox)
 	.HttpClientFactory(new DefaultHttpClientFactory())
 	.Build();
 
-RetrieveEventsRequest request = new RetrieveEventsRequest()
-{
-	PaymentId = "payment_id"
-};
+RetrieveEventsRequest request = new RetrieveEventsRequest() {PaymentId = "payment_id"};
 
 try
 {

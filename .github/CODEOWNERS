@@ -2,3 +2,6 @@
 
 /abc_spec/components/schemas/Payments/ @checkout/gateway-product-cko
 /nas_spec/components/schemas/Payments/ @checkout/gateway-product-cko
+
+/nas_spec/components/schemas/PaymentLinks/ @checkout/payment-interfaces-cko
+/nas_spec/components/schemas/HostedPayments/ @checkout/payment-interfaces-cko

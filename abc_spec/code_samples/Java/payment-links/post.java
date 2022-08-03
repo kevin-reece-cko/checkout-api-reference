@@ -1,5 +1,4 @@
 // For more information please refer to https://github.com/checkout/checkout-sdk-java
-import com.checkout.CheckoutApi;
 import com.checkout.CheckoutApiException;
 import com.checkout.CheckoutArgumentException;
 import com.checkout.CheckoutAuthorizationException;
@@ -22,13 +21,15 @@ import com.checkout.payments.ShippingDetails;
 import com.checkout.payments.ThreeDSRequest;
 import com.checkout.payments.links.PaymentLinkRequest;
 import com.checkout.payments.links.PaymentLinkResponse;
+import com.checkout.previous.CheckoutApi;
 
-CheckoutApi api = CheckoutSdk.defaultSdk()
-        .staticKeys()
-        .publicKey("public_key")
-        .secretKey("secret_key")
-        .environment(Environment.SANDBOX) // or Environment.PRODUCTION
-        .build();
+CheckoutApi api = CheckoutSdk
+    .builder()
+    .previous()
+    .staticKeys()
+    .secretKey("secret_key")
+    .environment(Environment.SANDBOX) // or Environment.PRODUCTION
+    .build();
 
 PaymentLinkRequest paymentLinksRequest = PaymentLinkRequest.builder()
     .amount(10L)
@@ -36,7 +37,7 @@ PaymentLinkRequest paymentLinksRequest = PaymentLinkRequest.builder()
     .reference("reference")
     .description("description")
     .expiresIn(604800)
-    .customer(new CustomerRequest(null, "email@docs.checkout.com", "Name"))
+    .customer(new CustomerRequest(null, "email@docs.checkout.com", "Name", null))
     .shipping(ShippingDetails.builder()
         .address(Address.builder()
             .addressLine1("Checkout")
@@ -61,9 +62,7 @@ PaymentLinkRequest paymentLinksRequest = PaymentLinkRequest.builder()
         .build())
     .recipient(PaymentRecipient.builder()
         .accountNumber("999999999")
-        .country(CountryCode.GB)
         .dateOfBirth("1985-05-15")
-        .firstName("FirstName")
         .lastName("LastName")
         .zip("12345")
         .build())
@@ -93,7 +92,7 @@ PaymentLinkRequest paymentLinksRequest = PaymentLinkRequest.builder()
     .build();
 
 try {
-    PaymentLinkResponse response = api.paymentLinksClient().createAsync(paymentLinksRequest).get();
+    PaymentLinkResponse response = api.paymentLinksClient().createPaymentLink(paymentLinksRequest).get();
 } catch (CheckoutApiException e) {
     // API error
     String requestId = e.getRequestId();

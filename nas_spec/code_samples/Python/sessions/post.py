@@ -1,19 +1,20 @@
-# For more information please refer to https://github.com/checkout/checkout-sdk-python
 import checkout_sdk
+from checkout_sdk.checkout_sdk import CheckoutSdk
 from checkout_sdk.common.common import Phone
-from checkout_sdk.common.enums import Currency, ChallengeIndicator, Country
+from checkout_sdk.common.enums import Country, Currency
 from checkout_sdk.environment import Environment
 from checkout_sdk.exception import CheckoutApiException, CheckoutArgumentException, CheckoutAuthorizationException
-from checkout_sdk.four.oauth_scopes import OAuthScopes
-from checkout_sdk.sessions.sessions import ThreeDsMethodCompletion, SessionRequest, Category, TransactionType, \\
-    SessionAddress, SessionMarketplaceData, SessionsBillingDescriptor, NonHostedCompletionInfo, BrowserSession, \\
-    SessionCardSource
+from checkout_sdk.oauth_scopes import OAuthScopes
+from checkout_sdk.sessions.sessions import SessionAddress, SessionCardSource, SessionMarketplaceData, SessionsBillingDescriptor, \\
+                                        NonHostedCompletionInfo, BrowserSession, ThreeDsMethodCompletion, SessionRequest, \\
+                                        Category, ChallengeIndicator, TransactionType
 
 # OAuth
-api = checkout_sdk.OAuthSdk() \\
+api = CheckoutSdk.builder() \\
+    .oauth() \\
     .client_credentials('client_id', 'client_secret') \\
     .environment(Environment.sandbox()) \\
-    .scopes([OAuthScopes.GATEWAY]) \\
+    .scopes([OAuthScopes.SESSIONS_APP, OAuthScopes.SESSIONS_BROWSER]) \\
     .build()
 
 phone = Phone()
@@ -64,7 +65,7 @@ browser_session.color_depth = '16'
 browser_session.screen_width = '1920'
 browser_session.screen_height = '1080'
 browser_session.timezone = '60'
-browser_session.user_agent = 'Mozilla/5.0 (Windows NT 10.0 Win64 x64) AppleWebKit/537.36 (KHTML, like Gecko) ' \\
+browser_session.user_agent = 'Mozilla/5.0 (Windows NT 10.0 Win64 x64) AppleWebKit/537.36 (KHTML, like Gecko) ' \\\\
                              'Chrome/69.0.3497.100 Safari/537.36 '
 browser_session.three_ds_method_completion = ThreeDsMethodCompletion.Y
 browser_session.ip_address = '1.12.123.255'
@@ -93,7 +94,7 @@ except CheckoutApiException as err:
     error_details = err.error_details
     http_response = err.http_response
 except CheckoutArgumentException as err:
-# Bad arguments
+    # Bad arguments
 
 except CheckoutAuthorizationException as err:
-# Invalid authorization
+    # Invalid authorization

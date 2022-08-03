@@ -1,18 +1,20 @@
 // For more information please refer to https://github.com/checkout/checkout-sdk-java
-import com.checkout.CheckoutApi;
 import com.checkout.CheckoutApiException;
 import com.checkout.CheckoutArgumentException;
 import com.checkout.CheckoutAuthorizationException;
 import com.checkout.CheckoutSdk;
+import com.checkout.EmptyResponse;
 import com.checkout.Environment;
 import com.checkout.disputes.DisputeEvidenceRequest;
+import com.checkout.previous.CheckoutApi;
 
-CheckoutApi api = CheckoutSdk.defaultSdk()
-    .staticKeys()
-    .publicKey("public_key")
-    .secretKey("secret_key")
-    .environment(Environment.SANDBOX) // or Environment.PRODUCTION
-    .build();
+CheckoutApi api = CheckoutSdk
+        .builder()
+        .previous()
+        .staticKeys()
+        .secretKey("secret_key")
+        .environment(Environment.SANDBOX) // or Environment.PRODUCTION
+        .build();
 
 DisputeEvidenceRequest evidenceRequest = DisputeEvidenceRequest.builder()
     .proofOfDeliveryOrServiceFile("file_id")
@@ -34,7 +36,7 @@ DisputeEvidenceRequest evidenceRequest = DisputeEvidenceRequest.builder()
     .build();
 
 try {
-    api.disputesClient().putEvidence("dispute_id", evidenceRequest).get();
+    EmptyResponse response = api.disputesClient().putEvidence("dispute_id", evidenceRequest).get();
 } catch (CheckoutApiException e) {
     // API error
     String requestId = e.getRequestId();

@@ -1,16 +1,15 @@
-// Please refer to https://github.com/checkout/checkout-sdk-php
 <?php
+//For more information please refer to https://github.com/checkout/checkout-sdk-php
 
 use Checkout\\CheckoutApiException;
-use Checkout\\CheckoutArgumentException;
 use Checkout\\CheckoutAuthorizationException;
-use Checkout\\CheckoutFourSdk;
+use Checkout\\CheckoutSdk;
 use Checkout\\Common\\ChallengeIndicatorType;
 use Checkout\\Common\\Country;
 use Checkout\\Common\\Currency;
 use Checkout\\Common\\Phone;
 use Checkout\\Environment;
-use Checkout\\Four\\FourOAuthScope;
+use Checkout\\OAuthScope;
 use Checkout\\Sessions\\Category;
 use Checkout\\Sessions\\Channel\\AppSession;
 use Checkout\\Sessions\\Channel\\SdkEphemeralPublicKey;
@@ -24,12 +23,11 @@ use Checkout\\Sessions\\Source\\SessionCardSource;
 use Checkout\\Sessions\\TransactionType;
 use Checkout\\Sessions\\UIElements;
 
-$builder = CheckoutFourSdk::oAuth();
-$builder->clientCredentials("client_id", "client_secret");
-$builder->scopes([FourOAuthScope::$SessionsApp, FourOAuthScope::$SessionsBrowser]); // more scopes available
-$builder->setEnvironment(Environment::sandbox()); // or Environment::production()
-$builder->setFilesEnvironment(Environment::sandbox()); // or Environment::production()
-$api = $builder->build();
+$api = CheckoutSdk::builder()->oAuth()
+    ->clientCredentials("client_id", "client_secret")
+    ->scopes([OAuthScope::$SessionsApp, OAuthScope::$SessionsBrowser])
+    ->environment(Environment::sandbox())
+    ->build();
 
 $phone = new Phone();
 $phone->country_code = "+1";
@@ -105,11 +103,8 @@ try {
     $response = $api->getSessionsClient()->requestSession($request);
 } catch (CheckoutApiException $e) {
     // API error
-    $request_id = $e->request_id;
-    $http_status_code = $e->http_status_code;
     $error_details = $e->error_details;
-} catch (CheckoutArgumentException $e) {
-    // Bad arguments
+    $http_status_code = isset($e->http_metadata) ? $e->http_metadata->getStatusCode() : null;
 } catch (CheckoutAuthorizationException $e) {
     // Bad Invalid authorization
 }

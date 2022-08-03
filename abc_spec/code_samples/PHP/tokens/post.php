@@ -1,20 +1,21 @@
-// For more information please refer to https://github.com/checkout/checkout-sdk-php
 <?php
+//For more information please refer to https://github.com/checkout/checkout-sdk-php
 
 use Checkout\\CheckoutApiException;
-use Checkout\\CheckoutDefaultSdk;
+use Checkout\\CheckoutAuthorizationException;
+use Checkout\\CheckoutSdk;
 use Checkout\\Common\\Address;
 use Checkout\\Common\\Country;
 use Checkout\\Common\\Phone;
 use Checkout\\Environment;
-use Checkout\\Sources\\SepaSourceRequest;
-use Checkout\\Sources\\SourceData;
+use Checkout\\Tokens\\CardTokenRequest;
 
-$builder = CheckoutDefaultSdk::staticKeys();
-$builder->setPublicKey("public_key");
-$builder->setSecretKey("secret_key");
-$builder->setEnvironment(Environment::sandbox()); // or Environment::production()
-$api = $builder->build();
+$api = CheckoutSdk::builder()
+    ->previous()
+    ->staticKeys()
+    ->environment(Environment::sandbox())
+    ->publicKey("public_ey")
+    ->build();
 
 $phone = new Phone();
 $phone->country_code = "+1";
@@ -41,11 +42,8 @@ try {
     $response = $api->getTokensClient()->requestCardToken($request);
 } catch (CheckoutApiException $e) {
     // API error
-    $request_id = $e->request_id;
-    $http_status_code = $e->http_status_code;
     $error_details = $e->error_details;
-} catch (CheckoutArgumentException $e) {
-    // Bad arguments
+    $http_status_code = isset($e->http_metadata) ? $e->http_metadata->getStatusCode() : null;
 } catch (CheckoutAuthorizationException $e) {
     // Bad Invalid authorization
 }

@@ -69,7 +69,7 @@ properties:
     description: The processing channel to be used for the payment
     example: 'pc_q4dbxom5jbgudnjzjpz7j2z6uq'
   marketplace:
-    $ref: '#/components/schemas/MarketplaceData'
+    $ref: '#/components/schemas/MarketplaceAuth'
   customer:
     type: object
     description: The customer's details.

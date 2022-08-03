@@ -1,9 +1,10 @@
 // For more information please refer to https://github.com/checkout/checkout-sdk-net
 using Checkout.Common;
-using Checkout.Sources;
+using Checkout.Sources.Previous;
 
-ICheckoutApi api = CheckoutSdk.DefaultSdk().StaticKeys()
-    .PublicKey("public_key")
+Previous.ICheckoutApi api = CheckoutSdk.Builder()
+    .Previous()
+    .StaticKeys()
     .SecretKey("secret_key")
     .Environment(Environment.Sandbox)
     .HttpClientFactory(new DefaultHttpClientFactory())
@@ -12,26 +13,24 @@ ICheckoutApi api = CheckoutSdk.DefaultSdk().StaticKeys()
 SepaSourceRequest request = new SepaSourceRequest()
 {
     Reference = "reference",
-    Phone = new Phone()
-    {
-        Number = "4155552671",
-        CountryCode = "1"
-    },
-    Customer = new CustomerRequest()
-    {
-        Id = "cus_y3oqhf46pyzuxjbcn2giaqnb44",
-        Email = "email@docs.checkout.com",
-        Name = "FirstName LastName"
-    },
-    BillingAddress = new Address()
-    {
-        AddressLine1 = "Checkout.com",
-        AddressLine2 = "90 Tottenham Court Road",
-        City = "London",
-        State = "London",
-        Zip = "W1T 4TJ",
-        Country = CountryCode.GB
-    },
+    Phone = new Phone() {Number = "4155552671", CountryCode = "1"},
+    Customer =
+        new CustomerRequest()
+        {
+            Id = "cus_y3oqhf46pyzuxjbcn2giaqnb44",
+            Email = "email@docs.checkout.com",
+            Name = "FirstName LastName"
+        },
+    BillingAddress =
+        new Address()
+        {
+            AddressLine1 = "Checkout.com",
+            AddressLine2 = "90 Tottenham Court Road",
+            City = "London",
+            State = "London",
+            Zip = "W1T 4TJ",
+            Country = CountryCode.GB
+        },
     SourceData = new SourceData()
     {
         FirstName = "FirstName",

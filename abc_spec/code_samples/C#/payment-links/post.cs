@@ -3,33 +3,27 @@ using Checkout.Common;
 using Checkout.Payments;
 using Checkout.Payments.Links;
 
-    ICheckoutApi api = CheckoutSdk.DefaultSdk().StaticKeys()
-        .PublicKey("public_key")
-        .SecretKey("secret_key")
-        .Environment(Environment.Sandbox)
-        .HttpClientFactory(new DefaultHttpClientFactory())
-        .Build();
+Previous.ICheckoutApi api = CheckoutSdk.Builder()
+    .Previous()
+    .StaticKeys()
+    .SecretKey("secret_key")
+    .Environment(Environment.Sandbox)
+    .HttpClientFactory(new DefaultHttpClientFactory())
+    .Build();
 
-    PaymentLinkRequest request = new PaymentLinkRequest
-    {
-        Amount = 10,
-        Currency = Currency.GBP,
-        PaymentType = PaymentType.Regular,
-        PaymentIp = "192.168.0.1",
-        BillingDescriptor = new BillingDescriptor()
-        {
-            Name = "string",
-            City = "string"
-        },
-        Reference = "reference",
-        Description = "Payment for Gold Necklace",
-        ExpiresIn = 604800,
-        Customer = new CustomerRequest()
-        {
-            Email = "email@docs.checkout.com",
-            Name = "FirstName LastName"
-        },
-        Shipping = new ShippingDetails()
+PaymentLinkRequest request = new PaymentLinkRequest
+{
+    Amount = 10,
+    Currency = Currency.GBP,
+    PaymentType = PaymentType.Regular,
+    PaymentIp = "192.168.0.1",
+    BillingDescriptor = new BillingDescriptor() {Name = "string", City = "string"},
+    Reference = "reference",
+    Description = "Payment for Gold Necklace",
+    ExpiresIn = 604800,
+    Customer = new CustomerRequest() {Email = "email@docs.checkout.com", Name = "FirstName LastName"},
+    Shipping =
+        new ShippingDetails()
         {
             Address = new Address()
             {
@@ -40,13 +34,10 @@ using Checkout.Payments.Links;
                 Zip = "W1T 4TJ",
                 Country = CountryCode.GB
             },
-            Phone = new Phone()
-            {
-                Number = "4155552671",
-                CountryCode = "1"
-            }
+            Phone = new Phone() {Number = "4155552671", CountryCode = "1"}
         },
-        Billing = new BillingInformation()
+    Billing =
+        new BillingInformation()
         {
             Address = new Address()
             {
@@ -57,49 +48,26 @@ using Checkout.Payments.Links;
                 Zip = "W1T 4TJ",
                 Country = CountryCode.GB
             },
-            Phone = new Phone()
-            {
-                Number = "4155552671",
-                CountryCode = "1"
-            }
+            Phone = new Phone() {Number = "4155552671", CountryCode = "1"}
         },
-        Recipient = new PaymentRecipient()
+    Recipient =
+        new PaymentRecipient()
         {
             DateOfBirth = "1985-05-15",
             AccountNumber = "5555554444",
             Zip = "WIT",
-            FirstName = "FirstName",
             LastName = "LastName",
-            Country = CountryCode.GB
         },
-        Processing = new ProcessingSettings()
-        {
-            Aft = true
-        },
-        Products = new List<Product>()
-        {
-            new Product()
-            {
-                Name = "Gold Necklace",
-                Quantity = 1,
-                Price = 1000
-            }
-        },
-        Metadata = new Dictionary<string, object>(),
-        ThreeDs = new ThreeDsRequest()
-        {
-            Enabled = false,
-            AttemptN3D = false
-        },
-        Risk = new RiskRequest()
-        {
-            Enabled = false
-        },
-        ReturnUrl = "https://example.com/payments/success",
-        Locale = "en-GB",
-        Capture = true,
-        CaptureOn = new DateTime()
-    };
+    Processing = new ProcessingSettings() {Aft = true},
+    Products = new List<Product>() {new Product() {Name = "Gold Necklace", Quantity = 1, Price = 1000}},
+    Metadata = new Dictionary<string, object>(),
+    ThreeDs = new ThreeDsRequest() {Enabled = false, AttemptN3D = false},
+    Risk = new RiskRequest() {Enabled = false},
+    ReturnUrl = "https://example.com/payments/success",
+    Locale = "en-GB",
+    Capture = true,
+    CaptureOn = new DateTime()
+};
 
 try
 {

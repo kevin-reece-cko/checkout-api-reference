@@ -1,22 +1,23 @@
 # For more information please refer to https://github.com/checkout/checkout-sdk-python
 import checkout_sdk
+from checkout_sdk.checkout_sdk import CheckoutSdk
 from checkout_sdk.environment import Environment
 from checkout_sdk.exception import CheckoutApiException, CheckoutArgumentException, CheckoutAuthorizationException
-from checkout_sdk.four.oauth_scopes import OAuthScopes
+from checkout_sdk.oauth_scopes import OAuthScopes
 
 # API Keys
-api = checkout_sdk.FourSdk() \\
+api = CheckoutSdk.builder() \\
     .secret_key('secret_key') \\
-    .public_key('public_key') \\
     .environment(Environment.sandbox()) \\
     .build()
-# or Environment.production()
+    # or Environment.production()
 
 # OAuth
-api = checkout_sdk.OAuthSdk() \\
+api = CheckoutSdk.builder() \\
+    .oauth() \\
     .client_credentials('client_id', 'client_secret') \\
     .environment(Environment.sandbox()) \\
-    .scopes([OAuthScopes.DISPUTES]) \\
+    .scopes([OAuthScopes.DISPUTES, OAuthScopes.DISPUTES_VIEW]) \\
     .build()
 
 try:

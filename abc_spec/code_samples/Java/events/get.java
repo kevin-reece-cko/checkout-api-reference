@@ -1,22 +1,23 @@
 // For more information please refer to https://github.com/checkout/checkout-sdk-java
-import com.checkout.CheckoutApi;
 import com.checkout.CheckoutApiException;
 import com.checkout.CheckoutArgumentException;
 import com.checkout.CheckoutAuthorizationException;
 import com.checkout.CheckoutSdk;
 import com.checkout.Environment;
-import com.checkout.events.EventsPageResponse;
-import com.checkout.events.RetrieveEventsRequest;
+import com.checkout.events.previous.EventsPageResponse;
+import com.checkout.events.previous.RetrieveEventsRequest;
+import com.checkout.previous.CheckoutApi;
 
-CheckoutApi api = CheckoutSdk.defaultSdk()
+CheckoutApi api = CheckoutSdk
+    .builder()
+    .previous()
     .staticKeys()
-    .publicKey("public_key")
     .secretKey("secret_key")
     .environment(Environment.SANDBOX) // or Environment.PRODUCTION
     .build();
 
 RetrieveEventsRequest retrieveEventsRequest = RetrieveEventsRequest.builder()
-    .from(LocalDateTime.now().minusYears(2).toInstant(ZoneOffset.UTC))
+    .from(LocalDateTime.now().minusMonths(2).toInstant(ZoneOffset.UTC))
     .to(LocalDateTime.now().toInstant(ZoneOffset.UTC))
     .limit(15)
     .skip(0)

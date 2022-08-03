@@ -1,20 +1,11 @@
 // For more information please refer to https://github.com/checkout/checkout-sdk-net
 using Checkout.Sessions;
 
-//API keys
-Four.ICheckoutApi api = CheckoutSdk.FourSdk().StaticKeys()
-    .PublicKey("public_key")
-    .SecretKey("secret_key")
+ICheckoutApi api = CheckoutSdk.Builder().OAuth()
+    .ClientCredentials("client_id", "client_secret")
+    .Scopes(OAuthScope.SessionsApp, OAuthScope.SessionsBrowser)
     .Environment(Environment.Sandbox)
     .HttpClientFactory(new DefaultHttpClientFactory())
-    .Build();
-
-//OAuth
-Four.ICheckoutApi api = CheckoutSdk.FourSdk().OAuth()
-    .ClientCredentials("client_id", "client_secret")
-    .Scopes(FourOAuthScope.Sessions)
-    .Environment(Environment.Sandbox)
-    .FilesEnvironment(Environment.Sandbox)
     .Build();
 
 try
