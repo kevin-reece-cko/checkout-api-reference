@@ -1,0 +1,42 @@
+type: object
+properties:
+  count:
+    type: integer
+    description: The total number of reports on the current page.
+    format: int32
+    example: 1
+  limit:
+    type: integer
+    description: The maximum number of results included per page.
+    format: int32
+    example: 5
+    minimum: 1
+    maximum: 100
+    default: 100    
+  data:
+    type: array
+    items:
+      $ref: '#/components/schemas/ReportResponse'
+    description: The list of reports from the current page.
+  _links:
+    type: object
+    description: The links object.
+    properties:
+      self:
+        type: object
+        description: The self object.
+        allOf:
+          - $ref: '#/components/schemas/ReportSelfLink'
+        example:
+          href: https://1lvgfr2cr1.execute-api.eu-west-1.amazonaws.com/live-reports-api/reports?entity_id=ent_znj4ih5kn4fuxiaquoudv5mvwy&created_after=2022-02-17T00:00:00.000Z&limit=5
+        additionalProperties: false
+      next:
+        type: object
+        description: The next object.
+        allOf:
+          - $ref: '#/components/schemas/ReportNextLink'
+        example:
+          href: 'https://1lvgfr2cr1.execute-api.eu-west-1.amazonaws.com/live-reports-api/reports?pagination_token=NaZMwq3KbreYcXg0dg752Dg8ps4orkwVK9pj9WFzkXk8rPoR32Wf74QWX0EkZ&entity_id=ent_znj4ih5kn4fuxiaquoudv5mvwy&created_after=2022-02-17T00:00:00.000Z&limit=5'
+        additionalProperties: false
+additionalProperties: false
+description: The list of reports in the response.

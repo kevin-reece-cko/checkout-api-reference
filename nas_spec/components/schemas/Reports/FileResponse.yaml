@@ -1,0 +1,29 @@
+type: object
+properties:
+  id:
+    type: string
+    description: The file ID.
+    example: file_7ysmgfkj4ipunduud22uf73iey
+    pattern: "^(file)_(\\w{26})$"
+  filename:
+    type: string
+    description: The file name.
+    example: financial-actions_ent_znj4ih5kn4fuxiaquoudv5mvwy_20220218_000000001drl_1.csv
+  format:
+    type: string
+    description: The file format.
+    example: CSV
+  _links:
+    type: object
+    description: The link to retrieve the file from.
+    properties:
+      self:
+        type: object
+        description: The self object.
+        allOf:
+          - $ref: '#/components/schemas/ReportSelfLink'
+        example:
+          href: https://1lvgfr2cr1.execute-api.eu-west-1.amazonaws.com/live-reports-api/reports/rpt_lmmldzousk7etoqijqundqexa4/files/file_lmmldzousk7etoqijqundqexa4
+        additionalProperties: false
+additionalProperties: false
+description: Details of a file from the response.

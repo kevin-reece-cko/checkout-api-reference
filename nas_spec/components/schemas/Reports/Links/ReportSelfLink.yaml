@@ -1,0 +1,5 @@
+allOf:
+  - $ref: '#/components/schemas/ReportLink'
+properties:
+  href:
+    description: This is a direct link to the response associated with the submitted request.

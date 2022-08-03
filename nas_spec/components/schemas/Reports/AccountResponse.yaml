@@ -1,0 +1,14 @@
+type: object
+properties:
+  client_id:
+    type: string
+    description: The client ID.
+    example: 'cli_bvaelhppmfiufdnatam37wrfc4'
+    pattern: "^(cli)_(\\w{26})$"
+  entity_id:
+    type: string
+    description: The entity ID.
+    example: 'ent_znj4ih5kn4fuxiaquoudv5mvwy'
+    pattern: "^(ent)_(\\w{26})$"
+additionalProperties: false
+description: The client and entity details.
