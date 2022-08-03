@@ -146,13 +146,6 @@ properties:
       - p24
       - eps
       - multibanco
-      - alipay_hk
-      - alipay_cn
-      - gcash
-      - dana
-      - kakaopay
-      - truemoney
-      - tng
     example:
       - card
   products:
