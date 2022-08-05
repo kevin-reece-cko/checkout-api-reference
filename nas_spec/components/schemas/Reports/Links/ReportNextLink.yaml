@@ -1,5 +1,0 @@
-allOf:
-  - $ref: '#/components/schemas/ReportLink'
-properties:
-  href:
-    description: This link allows you to move to the next page of results (if there's any) in the response.
