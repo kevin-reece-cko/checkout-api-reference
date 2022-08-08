@@ -1,5 +1,5 @@
 type: object
-title: Document
+title: CompanyDocument
 description: 'A document that can be used for a know your business (KYB) check on a company.'
 properties:
   file_id:

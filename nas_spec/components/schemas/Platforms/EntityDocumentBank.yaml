@@ -1,5 +1,5 @@
 type: object
-title: Document
+title: BankDocument
 description: 'A bank statement that can be used for verification'
 properties:
   file_id:

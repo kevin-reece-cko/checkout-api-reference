@@ -1,5 +1,5 @@
 type: object
-title: Document
+title: IdentityDocument
 description: "A legal document used to verify identity."
 properties:
   type:

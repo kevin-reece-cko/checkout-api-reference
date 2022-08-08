@@ -1,5 +1,5 @@
 type: object
-title: Document
+title: FinancialDocument
 description: 'A financial statement that can be used for verification'
 properties:
   file_id:
