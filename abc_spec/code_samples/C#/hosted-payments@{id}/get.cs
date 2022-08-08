@@ -1,7 +1,9 @@
 // For more information please refer to https://github.com/checkout/checkout-sdk-net
+using Checkout.Payments.Hosted;
 
-ICheckoutApi api = CheckoutSdk.DefaultSdk().StaticKeys()
-    .PublicKey("public_key")
+Previous.ICheckoutApi api = CheckoutSdk.Builder()
+    .Previous()
+    .StaticKeys()
     .SecretKey("secret_key")
     .Environment(Environment.Sandbox)
     .HttpClientFactory(new DefaultHttpClientFactory())
@@ -9,7 +11,7 @@ ICheckoutApi api = CheckoutSdk.DefaultSdk().StaticKeys()
 
 try
 {
-    HostedPaymentDetailsResponse response = await api.HostedPaymentsClient().Get("hosted_payment_id");
+    HostedPaymentDetailsResponse response = await api.HostedPaymentsClient().GetHostedPaymentsPageDetails("hosted_payment_id");
 }
 catch (CheckoutApiException e)
 {

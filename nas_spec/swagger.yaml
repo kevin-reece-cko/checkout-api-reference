@@ -17,7 +17,7 @@ info:
   description: >
     ##  Get started
 
-    Checkout.com provides a collection of APIs that enable you to process and manage payments. Our APIs accept and return JSON in the HTTP body, and return standard <a href="https://www.checkout.com/docs/four/resources/codes/http-response-codes">HTTP response codes</a>.
+    Checkout.com provides a collection of APIs that enable you to process and manage payments. Our APIs accept and return JSON in the HTTP body, and return standard <a href="https://www.checkout.com/docs/resources/codes/http-response-codes">HTTP response codes</a>.
 
     You can consume the APIs directly using your favorite HTTP/REST library.
 
@@ -39,6 +39,7 @@ info:
 
       | Date       | Description of change                                                         |
       | ---------- | ----------------------------------------------------------------------------- |
+      | 2022/07/22 | Update Java code samples to match new SDK Version.                            |
       | 2022/06/29 | Updated Authentication content.                                               |
       | 2022/03/16 | Added the `scheme_local` to source for CoBrand payments.                      |
       | 2022/02/07 | Added the `preferred_scheme` to Processing to support CoBrand payments.       |

@@ -1,7 +1,8 @@
 // For more information please refer to https://github.com/checkout/checkout-sdk-net
 
-ICheckoutApi api = CheckoutSdk.DefaultSdk().StaticKeys()
-    .PublicKey("public_key")
+Previous.ICheckoutApi api = CheckoutSdk.Builder()
+    .Previous()
+    .StaticKeys()
     .SecretKey("secret_key")
     .Environment(Environment.Sandbox)
     .HttpClientFactory(new DefaultHttpClientFactory())
@@ -9,7 +10,7 @@ ICheckoutApi api = CheckoutSdk.DefaultSdk().StaticKeys()
 
 try
 {
-    await api.EventsClient().RetryWebhook("event_id", "webhook_id");
+    EmptyResponse response = await api.EventsClient().RetryWebhook("event_id", "webhook_id");
 }
 catch (CheckoutApiException e)
 {

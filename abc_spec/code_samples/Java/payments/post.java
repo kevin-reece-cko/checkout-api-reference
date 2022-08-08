@@ -1,5 +1,4 @@
 // For more information please refer to https://github.com/checkout/checkout-sdk-java
-import com.checkout.CheckoutApi;
 import com.checkout.CheckoutApiException;
 import com.checkout.CheckoutArgumentException;
 import com.checkout.CheckoutAuthorizationException;
@@ -9,13 +8,15 @@ import com.checkout.common.Address;
 import com.checkout.common.CountryCode;
 import com.checkout.common.Currency;
 import com.checkout.common.Phone;
-import com.checkout.payments.request.PaymentRequest;
-import com.checkout.payments.request.source.RequestCardSource;
-import com.checkout.payments.response.PaymentResponse;
+import com.checkout.payments.previous.request.PaymentRequest;
+import com.checkout.payments.previous.request.source.RequestCardSource;
+import com.checkout.payments.previous.response.PaymentResponse;
+import com.checkout.previous.CheckoutApi;
 
-CheckoutApi api = CheckoutSdk.defaultSdk()
+CheckoutApi api = CheckoutSdk
+    .builder()
+    .previous()
     .staticKeys()
-    .publicKey("public_key")
     .secretKey("secret_key")
     .environment(Environment.SANDBOX) // or Environment.PRODUCTION
     .build();

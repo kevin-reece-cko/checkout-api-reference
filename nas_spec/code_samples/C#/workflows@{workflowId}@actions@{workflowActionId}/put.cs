@@ -1,35 +1,30 @@
 // For more information please refer to https://github.com/checkout/checkout-sdk-net
-using Checkout.Workflows.Four.Actions;
-using Checkout.Workflows.Four.Actions.Request;
+using Checkout.Workflows.Actions;
+using Checkout.Workflows.Actions.Request;
 
 //API keys
-Four.ICheckoutApi api = CheckoutSdk.FourSdk().StaticKeys()
-    .PublicKey("public_key")
+ICheckoutApi api = CheckoutSdk.Builder().StaticKeys()
     .SecretKey("secret_key")
     .Environment(Environment.Sandbox)
     .HttpClientFactory(new DefaultHttpClientFactory())
     .Build();
 
 //OAuth
-Four.ICheckoutApi api = CheckoutSdk.FourSdk().OAuth()
+ICheckoutApi api = CheckoutSdk.Builder().OAuth()
     .ClientCredentials("client_id", "client_secret")
-    .Scopes(FourOAuthScope.FlowWorkflows)
+    .Scopes(OAuthScope.Flow)
     .Environment(Environment.Sandbox)
-    .FilesEnvironment(Environment.Sandbox)
+    .HttpClientFactory(new DefaultHttpClientFactory())
     .Build();
 
-WorkflowActionRequest request = new WebhookWorkflowActionRequest()
+WorkflowActionRequest request = new WebhookWorkflowActionRequest
 {
     Url = "https://example.com/webhooks/checkout",
-    Headers = new Dictionary<string, string>()
+    Headers = new Dictionary<string, string>
     {
         {"Authorization", "70ed20ff-ba31-4ea3-b3ef-772f2be1cbdf"}
     },
-    Signature = new WebhookSignature()
-    {
-        Method = "HMACSHA256",
-        Key = "public-signing-key"
-    }
+    Signature = new WebhookSignature {Method = "HMACSHA256", Key = "public-signing-key"}
 };
 
 try

@@ -17,10 +17,16 @@ discriminator:
     benefit: '#/components/schemas/PaymentRequestBenefitSource'
     fawry: '#/components/schemas/PaymentRequestFawrySource'
     ideal: '#/components/schemas/PaymentRequestIdealSource'
+    sofort: '#/components/schemas/PaymentRequestSofortSource'
+    dana: '#/components/schemas/PaymentRequestAlipayPlusSource'
+    kakaopay: '#/components/schemas/PaymentRequestAlipayPlusSource'
+    truemoney: '#/components/schemas/PaymentRequestAlipayPlusSource'
+    tng: '#/components/schemas/PaymentRequestAlipayPlusSource'
+    
 required:
   - type
 properties:
   type:
     type: string
-    description: The payment source type <br> *Note:* *To make a payment with full card details, you must be <a href="https://www.checkout.com/docs/four/payments/regulation-support/pci-compliance" target="_blank">SAQ D PCI compliant</a>*
+    description: The payment source type <br> *Note:* *To make a payment with full card details, you must be <a href="https://www.checkout.com/docs/payments/regulation-support/pci-compliance" target="_blank">SAQ D PCI compliant</a>*
     example: 'card'

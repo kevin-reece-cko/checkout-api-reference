@@ -1,22 +1,20 @@
 // For more information please refer to https://github.com/checkout/checkout-sdk-net
 using Checkout.Common;
-using Checkout.Common.Four;
-using Checkout.Instruments.Four.Update;
+using Checkout.Instruments.Update;
 
 //API keys
-Four.ICheckoutApi api = CheckoutSdk.FourSdk().StaticKeys()
-    .PublicKey("public_key")
+ICheckoutApi api = CheckoutSdk.Builder().StaticKeys()
     .SecretKey("secret_key")
     .Environment(Environment.Sandbox)
     .HttpClientFactory(new DefaultHttpClientFactory())
     .Build();
 
 //OAuth
-Four.ICheckoutApi api = CheckoutSdk.FourSdk().OAuth()
+ICheckoutApi api = CheckoutSdk.Builder().OAuth()
     .ClientCredentials("client_id", "client_secret")
-    .Scopes(FourOAuthScope.VaultInstruments)
+    .Scopes(OAuthScope.Vault)
     .Environment(Environment.Sandbox)
-    .FilesEnvironment(Environment.Sandbox)
+    .HttpClientFactory(new DefaultHttpClientFactory())
     .Build();
 
 UpdateInstrumentRequest request = new UpdateCardInstrumentRequest
@@ -37,17 +35,9 @@ UpdateInstrumentRequest request = new UpdateCardInstrumentRequest
             Zip = "W1T 4TJ",
             Country = CountryCode.GB
         },
-        Phone = new Phone()
-        {
-            Number = "4155552671",
-            CountryCode = "1"
-        }
+        Phone = new Phone() {Number = "4155552671", CountryCode = "1"}
     },
-    Customer = new UpdateCustomerRequest()
-    {
-        Id = "cus_y3oqhf46pyzuxjbcn2giaqnb44",
-        Default = true
-    }
+    Customer = new UpdateCustomerRequest() {Id = "cus_y3oqhf46pyzuxjbcn2giaqnb44", Default = true}
 };
 
 try

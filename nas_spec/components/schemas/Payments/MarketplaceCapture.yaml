@@ -1,0 +1,5 @@
+type: object
+description: Information related to marketplace payments
+properties:
+  sub_entities:
+    $ref: '#/components/schemas/MarketplaceSplit'

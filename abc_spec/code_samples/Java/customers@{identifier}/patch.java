@@ -1,16 +1,18 @@
 // For more information please refer to https://github.com/checkout/checkout-sdk-java
-import com.checkout.CheckoutApi;
 import com.checkout.CheckoutApiException;
 import com.checkout.CheckoutArgumentException;
 import com.checkout.CheckoutAuthorizationException;
 import com.checkout.CheckoutSdk;
+import com.checkout.EmptyResponse;
 import com.checkout.Environment;
 import com.checkout.common.Phone;
-import com.checkout.customers.CustomerRequest;
+import com.checkout.customers.previous.CustomerRequest;
+import com.checkout.previous.CheckoutApi;
 
-CheckoutApi api = CheckoutSdk.defaultSdk()
+CheckoutApi api = CheckoutSdk
+    .builder()
+    .previous()
     .staticKeys()
-    .publicKey("public_key")
     .secretKey("secret_key")
     .environment(Environment.SANDBOX) // or Environment.PRODUCTION
     .build();
@@ -22,7 +24,7 @@ CustomerRequest request = CustomerRequest.builder()
     .build();
 
 try {
-    api.customersClient().update("customer_id", request).get();
+    EmptyResponse response = api.customersClient().update("customer_id", request).get();
 } catch (CheckoutApiException e) {
     // API error
     String requestId = e.getRequestId();

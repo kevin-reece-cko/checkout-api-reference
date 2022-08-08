@@ -24,7 +24,7 @@ properties:
       - PD
       - LO
       - OG
-    description: An identifier used by issuer banks to recognize the use case. The <a href="https://www.checkout.com/docs/card-payouts/sender-data-for-card-payouts#Fund_transfer_types" target="_blank">fund transfer type(s)</a> that you're eligible to use are determined by the schemes. The value(s) you can use for this field will be communicated to you during onboarding.
+    description: An identifier used by issuer banks to recognize the use case. The <a href="https://www.checkout.com/docs/previous/card-payouts/sender-data-for-card-payouts#Fund_transfer_types" target="_blank">fund transfer type(s)</a> that you're eligible to use are determined by the schemes. The value(s) you can use for this field will be communicated to you during onboarding.
     example: FD
   currency:
     type: string

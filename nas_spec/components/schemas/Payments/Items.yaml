@@ -46,11 +46,6 @@ items:
       type: number
       description: The discount applied to each invoice line item.
       example: 1000
-    goods_id:
-      type: string
-      description: It consists of a combination of uppercase and lowercase letters, numbers, hyphens and underscores.
-      maxLength: 32
-      example: axb_goods_id
     wxpay_goods_id:
       type: string
       description: Unified product No. defined by WeChat Pay

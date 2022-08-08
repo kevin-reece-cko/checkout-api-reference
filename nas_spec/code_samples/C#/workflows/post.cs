@@ -1,36 +1,37 @@
 // For more information please refer to https://github.com/checkout/checkout-sdk-net
-using Checkout.Workflows.Four;
-using Checkout.Workflows.Four.Actions;
-using Checkout.Workflows.Four.Actions.Request;
-using Checkout.Workflows.Four.Conditions.Request;
+using Checkout.Workflows;
+using Checkout.Workflows.Actions;
+using Checkout.Workflows.Actions.Request;
+using Checkout.Workflows.Conditions.Request;
+
 
 //API keys
-Four.ICheckoutApi api = CheckoutSdk.FourSdk().StaticKeys()
-    .PublicKey("public_key")
+ICheckoutApi api = CheckoutSdk.Builder().StaticKeys()
     .SecretKey("secret_key")
     .Environment(Environment.Sandbox)
     .HttpClientFactory(new DefaultHttpClientFactory())
     .Build();
 
 //OAuth
-Four.ICheckoutApi api = CheckoutSdk.FourSdk().OAuth()
+ICheckoutApi api = CheckoutSdk.Builder().OAuth()
     .ClientCredentials("client_id", "client_secret")
-    .Scopes(FourOAuthScope.FlowWorkflows)
+    .Scopes(OAuthScope.Flow)
     .Environment(Environment.Sandbox)
-    .FilesEnvironment(Environment.Sandbox)
+    .HttpClientFactory(new DefaultHttpClientFactory())
     .Build();
 
 CreateWorkflowRequest request = new CreateWorkflowRequest
 {
     Name = "Webhooks workflow",
-    Conditions = new List<WorkflowConditionRequest>()
+    Conditions = new List<WorkflowConditionRequest>
     {
-        new EventWorkflowConditionRequest()
+        new EventWorkflowConditionRequest
         {
-            Events = new Dictionary<string, ISet<string>>()
+            Events = new Dictionary<string, ISet<string>>
             {
                 {
-                    "gateway", new HashSet<string>()
+                    "gateway",
+                    new HashSet<string>
                     {
                         "payment_approved",
                         "payment_declined",
@@ -47,7 +48,8 @@ CreateWorkflowRequest request = new CreateWorkflowRequest
                     }
                 },
                 {
-                    "dispute", new HashSet<string>()
+                    "dispute",
+                    new HashSet<string>
                     {
                         "dispute_canceled",
                         "dispute_evidence_required",
@@ -59,35 +61,30 @@ CreateWorkflowRequest request = new CreateWorkflowRequest
                 }
             }
         },
-        new EntityWorkflowConditionRequest()
+        new EntityWorkflowConditionRequest
         {
-            Entities = new List<string>()
+            Entities = new List<string>
             {
-                "ent_xyfdshfudosfdshfdiosfds",
-                "ent_fidjosfjdisofdjsifdosfu"
+                "ent_xyfdshfudosfdshfdiosfds", "ent_fidjosfjdisofdjsifdosfu"
             }
         },
-        new ProcessingChannelWorkflowConditionRequest()
+        new ProcessingChannelWorkflowConditionRequest
         {
-            ProcessingChannels = new List<string>()
-            {
-                "pc_axclravnqf5u5ejkweijnp5zc4"
-            }
+            ProcessingChannels = new List<string> {"pc_axclravnqf5u5ejkweijnp5zc4"}
         }
     },
-    Actions = new List<WorkflowActionRequest>()
+    Actions = new List<WorkflowActionRequest>
     {
-        new WebhookWorkflowActionRequest()
+        new WebhookWorkflowActionRequest
         {
             Url = "https://example.com/webhooks",
-            Headers = new Dictionary<string, string>()
+            Headers = new Dictionary<string, string>
             {
                 {"Authorization", "70ed20ff-ba31-4ea3-b3ef-772f2be1cbdf"}
             },
-            Signature = new WebhookSignature()
+            Signature = new WebhookSignature
             {
-                Method = "HMACSHA256",
-                Key = "8V8x0dLK%AyD*DNS8JJr"
+                Method = "HMACSHA256", Key = "8V8x0dLK%AyD*DNS8JJr"
             }
         }
     }

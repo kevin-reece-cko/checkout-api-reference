@@ -2,7 +2,15 @@
 
 | Date       | Description of change                                                                                                 |
 | ---------- | --------------------------------------------------------------------------------------------------------------------- |
-| 2022/07/14 | Add Benefit PG Request and Response sources                                                                           |
+| 2022/08/08 | Add Benefit PG Request and Response sources                                                                           |
+| 2022/07/29 | Adding `marketplace` object to capture and other minor fixes to IP space                                              |
+| 2022/07/29 | Update Java, C#, PHP & Python code samples to match new SDK Version.                                                  |
+| 2022/07/20 | Added Alipay Plus's e-wallets supports                                                                                |
+| 2022/07/20 | Adding required fields for Platforms payment instruments and separate `corporate` and `individual` examples           |
+| 2022/07/20 | Added `knet`, `giropay`, `bancontact`, `eps`, `p24`, and `multibanco` to Hosted Payments and Payment Links.           |
+| 2022/07/19 | Updated example for Platforms payout schedules from `currency` to `GBP` and `ISO`                                     |
+| 2022/07/19 | Update WeChat Pay NAS structure                                                                                       |
+| 2022/07/14 | Add Sofort NAS Request and Response source.                                                                           |
 | 2022/07/14 | Add `locale` property to Get Payment Link details response                                                            |
 | 2022/07/14 | Added `customer`, `description`, `billing descriptor`, `shipping`, and `items` objects to Capture requests            |
 | 2022/07/13 | Added fields for Level 2 and Level 3 data.                                                                            |
@@ -45,6 +53,6 @@
 | 2022/01/19 | Added test a workflow endpoint.                                                                                       |
 | 2022/01/13 | Update code samples for Node JS.                                                                                      |
 | 2021/11/29 | Increase max length of the NAS `success_url` and `failure_url` fields of the payment request (both from 255 to 1024). |
-| 2021/11/11 | Added `3ds.challenge_indicator` to card payment requests.                                                             |
-| 2021/11/03 | Adds `identification` object under parent `sender` object in payment request.                                         |
-| 2021/10/18 | Added the `marketplaces.sub-entities` object to support split payments.                                               |
+| 2021/11/11 | Added `3ds.challenge_indicator` to card payment requests.                                                            |
+| 2021/11/03 | Adds `identification` object under parent `sender` object in payment request.                                        |
+| 2021/10/18 | Added the `marketplaces.sub-entities` object to support split payments.                                              |

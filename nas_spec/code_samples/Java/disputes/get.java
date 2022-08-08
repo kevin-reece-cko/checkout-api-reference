@@ -1,33 +1,33 @@
 // For more information please refer to https://github.com/checkout/checkout-sdk-java
+import com.checkout.CheckoutApi;
 import com.checkout.CheckoutApiException;
 import com.checkout.CheckoutArgumentException;
 import com.checkout.CheckoutAuthorizationException;
 import com.checkout.CheckoutSdk;
 import com.checkout.Environment;
+import com.checkout.OAuthScope;
 import com.checkout.disputes.DisputeStatus;
-import com.checkout.disputes.four.DisputesQueryFilter;
-import com.checkout.disputes.four.DisputesQueryResponse;
-import com.checkout.four.CheckoutApi;
+import com.checkout.disputes.DisputesQueryFilter;
+import com.checkout.disputes.DisputesQueryResponse;
 
 // API Keys
-CheckoutApi api = CheckoutSdk.fourSdk()
+CheckoutApi api = CheckoutSdk.builder()
     .staticKeys()
-    .publicKey("public_key")
     .secretKey("secret_key")
     .environment(Environment.SANDBOX) // or Environment.PRODUCTION
     .build();
 
 // OAuth
-CheckoutApi api = CheckoutSdk.fourSdk()
+CheckoutApi api = CheckoutSdk.builder()
     .oAuth()
     .clientCredentials("client_id", "client_secret")
+    .scopes(OAuthScope.DISPUTES) // more scopes available
     .environment(Environment.SANDBOX) // or Environment.PRODUCTION
-    .scopes(FourOAuthScope.DISPUTES) // more scopes available
     .build();
 
 DisputesQueryFilter query = DisputesQueryFilter.builder()
     .paymentId("payment_id")
-    .from(LocalDateTime.now().minusYears(2).toInstant(ZoneOffset.UTC))
+    .from(LocalDateTime.now().minusMonths(2).toInstant(ZoneOffset.UTC))
     .to(Instant.now())
     .paymentArn("payment_arn")
     .paymentReference("payment_reference")

@@ -1,15 +1,16 @@
 // For more information please refer to https://github.com/checkout/checkout-sdk-java
+import com.checkout.CheckoutApi;
 import com.checkout.CheckoutApiException;
 import com.checkout.CheckoutArgumentException;
 import com.checkout.CheckoutAuthorizationException;
 import com.checkout.CheckoutSdk;
 import com.checkout.Environment;
+import com.checkout.OAuthScope;
 import com.checkout.common.Address;
 import com.checkout.common.CountryCode;
 import com.checkout.common.Currency;
 import com.checkout.common.CustomerRequest;
 import com.checkout.common.Phone;
-import com.checkout.four.CheckoutApi;
 import com.checkout.risk.Device;
 import com.checkout.risk.Location;
 import com.checkout.risk.RiskPayment;
@@ -18,9 +19,9 @@ import com.checkout.risk.preauthentication.PreAuthenticationAssessmentRequest;
 import com.checkout.risk.preauthentication.PreAuthenticationAssessmentResponse;
 import com.checkout.risk.source.CardSourcePrism;
 
-CheckoutApi api = CheckoutSdk.fourSdk()
+// API Keys
+CheckoutApi api = CheckoutSdk.builder()
     .staticKeys()
-    .publicKey("public_key")
     .secretKey("secret_key")
     .environment(Environment.SANDBOX) // or Environment.PRODUCTION
     .build();
@@ -43,17 +44,17 @@ CardSourcePrism cardSourcePrism = CardSourcePrism.builder()
 PreAuthenticationAssessmentRequest request = PreAuthenticationAssessmentRequest.builder()
     .date(Instant.now())
     .source(cardSourcePrism)
-    .customer(new CustomerRequest(null, "email@docs.checkout.com", "Name"))
+    .customer(new CustomerRequest(null, "email@docs.checkout.com", "Name", null))
     .payment(RiskPayment.builder().psp("checkout").id("123456789").build())
     .shipping(RiskShippingDetails.builder().address(
         Address.builder()
-                .addressLine1("Checkout")
-                .addressLine2("90 Tottenham Court Road")
-                .city("London")
-                .state("London")
-                .zip("W1T 4TJ")
-                .country(CountryCode.GB)
-                .build()
+        .addressLine1("Checkout")
+        .addressLine2("90 Tottenham Court Road")
+        .city("London")
+        .state("London")
+        .zip("W1T 4TJ")
+        .country(CountryCode.GB)
+        .build()
     ).build())
     .reference("reference")
     .description("description")
@@ -70,9 +71,9 @@ PreAuthenticationAssessmentRequest request = PreAuthenticationAssessmentRequest.
         .fingerprint("34304a9e3fg09302")
         .build())
     .metadata(Stream.of(
-        new AbstractMap.SimpleImmutableEntry<>("VoucherCode", "loyalty_10"),
-        new AbstractMap.SimpleImmutableEntry<>("discountApplied", "10"),
-        new AbstractMap.SimpleImmutableEntry<>("customer_id", "2190EF321"))
+            new AbstractMap.SimpleImmutableEntry<>("VoucherCode", "loyalty_10"),
+            new AbstractMap.SimpleImmutableEntry<>("discountApplied", "10"),
+            new AbstractMap.SimpleImmutableEntry<>("customer_id", "2190EF321"))
         .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue)))
     .build();
 

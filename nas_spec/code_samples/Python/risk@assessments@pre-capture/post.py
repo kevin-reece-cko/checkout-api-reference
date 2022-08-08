@@ -1,21 +1,19 @@
 # For more information please refer to https://github.com/checkout/checkout-sdk-python
-from datetime import datetime, timezone
-
 import checkout_sdk
+from checkout_sdk.checkout_sdk import CheckoutSdk
 from checkout_sdk.common.common import Phone, Address, CustomerRequest
 from checkout_sdk.common.enums import Country, Currency
 from checkout_sdk.environment import Environment
 from checkout_sdk.exception import CheckoutApiException, CheckoutArgumentException, CheckoutAuthorizationException
 from checkout_sdk.risk.risk import RiskRequestTokenSource, RiskPayment, RiskShippingDetails, Location, Device, \\
-    AuthenticationResult, AuthorizationResult, PreCaptureAssessmentRequest
+                                AuthenticationResult, AuthorizationResult, PreCaptureAssessmentRequest
 
 # API Keys
-api = checkout_sdk.FourSdk() \\
+api = CheckoutSdk.builder() \\
     .secret_key('secret_key') \\
-    .public_key('public_key') \\
     .environment(Environment.sandbox()) \\
     .build()
-# or Environment.production()
+    # or Environment.production()
 
 phone = Phone()
 phone.country_code = '44'
@@ -55,7 +53,7 @@ device.type = 'Phone'
 device.os = 'ISO'
 device.model = 'iPhone X'
 device.date = datetime.now(timezone.utc)
-device.user_agent = 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, ' \\
+device.user_agent = 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, ' \\\\
                     'like Gecko) Version/11.0 Mobile/15A372 Safari/604.1 '
 device.fingerprint = '34304a9e3fg09302'
 
@@ -96,7 +94,7 @@ except CheckoutApiException as err:
     error_details = err.error_details
     http_response = err.http_response
 except CheckoutArgumentException as err:
-# Bad arguments
+    # Bad arguments
 
 except CheckoutAuthorizationException as err:
-# Invalid authorization
+    # Invalid authorization

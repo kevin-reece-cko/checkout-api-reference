@@ -8,12 +8,12 @@ required:
 properties:
   amount:
     type: integer
-    description: The payment amount. The exact format <a href="https://www.checkout.com/docs/four/resources/calculating-the-amount" target="_blank">depends on the currency</a>
+    description: The payment amount. The exact format <a href="https://www.checkout.com/docs/resources/calculating-the-amount" target="_blank">depends on the currency</a>
     minimum: 1
     example: 1000
   currency:
     type: string
-    description: The three-letter <a href="https://www.checkout.com/docs/four/resources/codes/currency-codes" target="blank">ISO currency code</a> of the payment
+    description: The three-letter <a href="https://www.checkout.com/docs/resources/codes/currency-codes" target="blank">ISO currency code</a> of the payment
     example: GBP
     minLength: 3
     maxLength: 3
@@ -66,7 +66,7 @@ properties:
     example: 'pc_q4dbxom5jbgudnjzjpz7j2z6uq'
   marketplace:
     allOf:
-      - $ref: '#/components/schemas/MarketplaceData'
+      - $ref: '#/components/schemas/MarketplaceAuth'
   customer:
     type: object
     description: The customer's details
@@ -131,22 +131,21 @@ properties:
     properties:
       aft:
         type: boolean
-        description: Indicates whether the payment is an [Account Funding Transaction](https://www.checkout.com/docs/four/payments/manage-payments/account-funding-transactions).
+        description: Indicates whether the payment is an [Account Funding Transaction](https://www.checkout.com/docs/payments/manage-payments/account-funding-transactions).
   allow_payment_methods:
     type: array
     description: >
-      Use to specify which <a href="https://www.checkout.com/docs/four/payments/payment-methods" target="_blank">payment methods</a> should render on the page. <a href="https://checkout.com/docs/four/integrate/hosted-payments-page/manage-your-hosted-payments-page#Alternative_payment_methods" target="_blank">Check the requirements for each payment method</a>
+      Use to specify which <a href="https://www.checkout.com/docs/payments/payment-methods" target="_blank">payment methods</a> should render on the page. <a href="https://checkout.com/docs/integrate/hosted-payments-page/manage-your-hosted-payments-page#Payment_methods" target="_blank">Check the requirements for each payment method</a>
     enum:
       - card
       - sofort
       - ideal
       - knet
+      - giropay
       - bancontact
       - p24
+      - eps
       - multibanco
-      - alipay_hk
-      - alipay_cn
-      - gcash
     example:
       - card
   products:
@@ -173,7 +172,7 @@ properties:
           example: 1
         price:
           type: integer
-          description: 'Minor units. Includes tax, excludes discounts. The exact format <a href="https://www.checkout.com/docs/four/resources/calculating-the-amount" target="_blank">depends on the currency</a>'
+          description: 'Minor units. Includes tax, excludes discounts. The exact format <a href="https://www.checkout.com/docs/resources/calculating-the-amount" target="_blank">depends on the currency</a>'
           minimum: 0
           example: 1000
   risk:
