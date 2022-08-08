@@ -2,6 +2,7 @@
 
 | Date       | Description of change                                                                                                 |
 | ---------- | --------------------------------------------------------------------------------------------------------------------- |
+| 2022/08/08 | Fixing document types for platforms                                                                                   |
 | 2022/08/05 | Add AfterPay NAS Request and Response source.                                                                         |
 | 2022/08/03 | Add missing `token_format` to Google Pay and Apple Pay token responses.                                               |
 | 2022/08/03 | Added Reports API                                                                                                     |

@@ -40,7 +40,7 @@ properties:
     allOf:
       - $ref: '#/components/schemas/EntityAddress'
   document:
-    - $ref: '#/components/schemas/EntityDocument'
+    - $ref: '#/components/schemas/EntityDocumentCompany'
   representatives:
     type: array
     title: Representatives

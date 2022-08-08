@@ -4,8 +4,8 @@ properties:
   bank_statement:
     description: 'Bank statement document becomes mandatory depending on the answer provided for `average_transaction_value` and `highest_transaction_value`. The status of your sub-entity will change to `requirements_due` stating when this is necessary.'
     allOf:
-      - $ref: '#/components/schemas/EntityDocument'
+      - $ref: '#/components/schemas/EntityDocumentBank'
   financial_statement:
     description: 'Financial statement document becomes mandatory depending on the answer provided for `annual_processing_volume`. The status of your sub-entity will change to `requirements_due` stating when this is necessary.'
     allOf:
-      - $ref: '#/components/schemas/EntityDocument'
+      - $ref: '#/components/schemas/EntityDocumentFinancial'
