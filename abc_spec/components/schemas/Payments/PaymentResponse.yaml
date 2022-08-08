@@ -112,6 +112,10 @@ properties:
         type: string
         description: 'A <a href="https://docs.checkout.com/resources/codes/recommendation-codes" target="blank">code</a> that represents the next recommended action for the payment'
         example: "02"
+      pun:
+        type: string
+        description: 'QPay Payment Unique Number'
+        example: '123456789'
   eci:
     type: string
     description: The final Electronic Commerce Indicator (ECI) security level used to authorize the payment.

@@ -17,7 +17,6 @@ discriminator:
     kakaopay: '#/components/schemas/PaymentResponseAlipayPlusSource'
     truemoney: '#/components/schemas/PaymentResponseAlipayPlusSource'
     tng: '#/components/schemas/PaymentResponseAlipayPlusSource'
-    qpay: '#/components/schemas/PaymentResponseQPaySource'
 required:
   - type
 
