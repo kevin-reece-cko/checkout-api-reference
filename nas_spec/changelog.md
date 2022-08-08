@@ -2,7 +2,7 @@
 
 | Date       | Description of change                                                                                                 |
 | ---------- | --------------------------------------------------------------------------------------------------------------------- |
-| 2022/08/05 | Fixing document types for platforms                                                                                   |
+| 2022/08/08 | Fixing document types for platforms                                                                                   |
 | 2022/08/05 | Add AfterPay NAS Request and Response source.                                                                         |
 | 2022/08/03 | Added Reports API                                                                                                     |
 | 2022/07/29 | Adding `marketplace` object to capture and other minor fixes to IP space                                              |

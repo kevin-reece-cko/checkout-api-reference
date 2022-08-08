@@ -1,6 +1,6 @@
 type: object
 title: FinancialDocument
-description: 'A financial statement that can be used for verification'
+description: 'A financial statement that can be used for verification.'
 properties:
   file_id:
     type: 'string'
