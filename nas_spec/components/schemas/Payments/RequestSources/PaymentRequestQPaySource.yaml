@@ -14,7 +14,7 @@ allOf:
       quantity:
         minimum: 1
         type: integer
-        description: 'A numeric value greater than zero represents the quantity of purchased Item. The value is used for display purposes only and does not affect the total amount of the payment. The minimum allowed value is 1.'
+        description: 'A numeric value greater than zero that represents the quantity of a purchased item. The value is used for display purposes only and does not affect the total amount of the payment. The minimum allowed value is 1.'
       description:
         type: string
         description: 'Alphanumeric string containing a description of the payment order. Note: The maximum allowed length of this property is 255 characters after UTF-8 URL encoding.'
