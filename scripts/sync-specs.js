@@ -3,6 +3,7 @@
 var request = require('request');
 var YAML = require('yamljs');
 var fs = require('fs');
+var path = require('path');
 require('shelljs/global');
 set('-e');
 set('-v');
@@ -90,24 +91,28 @@ var getFunctionToBuildPaymentRequest = function (paymentSourceName) {
 };
 
 var addDescriptionToKlarnaPassthroughObjects = function (requestData, paymentSourceName) {
-	Object.keys(requestData.properties).forEach((propertyName) => {
-		var property = requestData.properties[propertyName];
-		if (property['x-cko-passthrough'] === true && property['x-klarna-docs']) {
-			var apmPropertyName = property['x-klarna-name'] || propertyName;
-			var apmPropertyDocs = property['x-klarna-docs'];
-			property.description +=
-				'  \nThis object is passed directly to ' +
-				paymentSourceName +
-				' as `' +
-				apmPropertyName +
-				'`, ' +
-				'\nso for the object definition use the [' +
-				paymentSourceName +
-				' documentation](' +
-				apmPropertyDocs +
-				').';
-		}
-	});
+	if (requestData && requestData.properties) {
+		Object.keys(requestData.properties).forEach((propertyName) => {
+			var property = requestData.properties[propertyName];
+			if (property['x-cko-passthrough'] === true && property['x-klarna-docs']) {
+				var apmPropertyName = property['x-klarna-name'] || propertyName;
+				var apmPropertyDocs = property['x-klarna-docs'];
+				property.description +=
+					'  \nThis object is passed directly to ' +
+					paymentSourceName +
+					' as `' +
+					apmPropertyName +
+					'`, ' +
+					'\nso for the object definition use the [' +
+					paymentSourceName +
+					' documentation](' +
+					apmPropertyDocs +
+					').';
+			}
+		});
+	} else {
+		console.info(`request_data is empty for ${paymentSourceName}`)
+	}
 };
 
 var getFunctionToBuildPaymentResponse = function (paymentSourceName) {
@@ -146,6 +151,8 @@ var thenBuildOutputAndWrite = function (buildOutputFunction, outputFilePath) {
 		} else {
 			console.log('Response from url received.');
 			var builtOutput = buildOutputFunction(responseBody);
+			var dirPath = (fullPath) => path.resolve(path.parse(fullPath).dir);
+			fs.mkdirSync(dirPath(outputFilePath), { recursive: true });
 			fs.writeFile(outputFilePath, builtOutput, thenHandleFileWrite(outputFilePath));
 		}
 	};
