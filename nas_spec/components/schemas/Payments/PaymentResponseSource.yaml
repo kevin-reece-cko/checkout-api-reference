@@ -19,6 +19,7 @@ discriminator:
     truemoney: '#/components/schemas/PaymentResponseAlipayPlusSource'
     tng: '#/components/schemas/PaymentResponseAlipayPlusSource'
     afterpay: '#/components/schemas/PaymentResponseAfterPaySource'
+    mbway: '#/components/schemas/PaymentResponseMbwaySource'
 required:
   - type
 

@@ -24,6 +24,7 @@ discriminator:
     tng: '#/components/schemas/PaymentRequestAlipayPlusSource'
     qpay: '#/components/schemas/PaymentRequestQPaySource'
     afterpay: '#/components/schemas/PaymentRequestAfterPaySource'
+    mbway: '#/components/schemas/PaymentRequestMbwaySource'
 required:
   - type
 properties:

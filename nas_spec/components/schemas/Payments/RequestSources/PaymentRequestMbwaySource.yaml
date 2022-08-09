@@ -1,0 +1,7 @@
+type: object
+description: 'MBWay payment request source'
+required:
+  - type
+allOf:
+  - $ref: '#/components/schemas/PaymentRequestSource'
+  - type: object
