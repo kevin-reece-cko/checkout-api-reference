@@ -1,0 +1,9 @@
+###
+# Warning: this file was auto generated from OpenAPI specs. Do not manually edit. 
+###
+type: object
+description: 'Benefit Source'
+allOf:
+  -
+    $ref: '#/components/schemas/PaymentRequestSource'
+  - {}

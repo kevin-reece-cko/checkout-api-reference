@@ -10,6 +10,7 @@ discriminator:
     alipay_hk: '#/components/schemas/PaymentResponseAlipayPlusSource'
     alipay_cn: '#/components/schemas/PaymentResponseAlipayPlusSource'
     gcash: '#/components/schemas/PaymentResponseAlipayPlusSource'
+    benefit: '#/components/schemas/PaymentResponseBenefitSource'
     fawry: '#/components/schemas/PaymentResponseFawrySource'
     ideal: '#/components/schemas/PaymentResponseIdealSource'
     sofort: '#/components/schemas/PaymentResponseSofortSource'
