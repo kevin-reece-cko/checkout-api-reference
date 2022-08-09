@@ -87,7 +87,7 @@ properties:
           - zip
           - country
       document:
-        $ref: '#/components/schemas/EntityDocument'
+        $ref: '#/components/schemas/EntityDocumentCompany'
       representatives:
         type: array
         title: Representatives

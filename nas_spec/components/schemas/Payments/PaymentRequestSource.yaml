@@ -22,6 +22,7 @@ discriminator:
     truemoney: '#/components/schemas/PaymentRequestAlipayPlusSource'
     tng: '#/components/schemas/PaymentRequestAlipayPlusSource'
     qpay: '#/components/schemas/PaymentRequestQPaySource'
+    afterpay: '#/components/schemas/PaymentRequestAfterPaySource'
 required:
   - type
 properties:
