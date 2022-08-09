@@ -20,7 +20,7 @@ allOf:
         description: 'Alphanumeric string containing a description of the payment order. Note: The maximum allowed length of this property is 255 characters after UTF-8 URL encoding.'
       language:
         type: string
-        description: 'Alphabetic value representing the language of the interface displayed to customer at merchant site, and used as language for the payment description parameter.  PG will use this value to display the interface supporting selected language to the customer during the payment process.  Supported values are: En, Ar. The default value is En.'
+        description: 'Alphabetic value representing the language of the interface displayed to customer at merchant site, and used as language for the payment description parameter.  PG will use this value to display the interface supporting selected language to the customer during the payment process.  Supported values are: `En`, `Ar`. The default value is `En`.'
       national_id:
         maxLength: 32
         type: string
