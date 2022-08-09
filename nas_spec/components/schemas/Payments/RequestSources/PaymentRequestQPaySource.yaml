@@ -24,4 +24,4 @@ allOf:
       national_id:
         maxLength: 32
         type: string
-        description: 'Alphanumeric value representing the national id of the customer performing the transaction. The maximum allowed length of this property is 32.'
+        description: 'Alphanumeric value representing the national ID of the customer performing the transaction. The maximum allowed length of this property is 32.'
