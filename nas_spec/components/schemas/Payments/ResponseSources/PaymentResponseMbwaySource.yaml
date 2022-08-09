@@ -1,4 +1,4 @@
 type: object
-description: 'Alipay payment source'
+description: 'MBWay payment source'
 allOf:
   - $ref: '#/components/schemas/PaymentResponseSource'

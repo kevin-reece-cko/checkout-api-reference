@@ -1,4 +1,5 @@
 type: object
+description: 'MBWay payment request source'
 required:
   - type
 allOf:
