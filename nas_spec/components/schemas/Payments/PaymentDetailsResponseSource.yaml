@@ -6,6 +6,7 @@ discriminator:
   mapping:
     card: '#/components/schemas/01_PaymentResponseCardSource'
     currency_account: '#/components/schemas/02_PaymentResponseCurrencyAccountSource'
+    qpay: '#/components/schemas/PaymentGetResponseQPaySource'
 required:
   - type
 
