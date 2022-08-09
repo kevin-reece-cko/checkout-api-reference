@@ -2,6 +2,7 @@
 
 | Date       | Description of change                                                                                                 |
 | ---------- | --------------------------------------------------------------------------------------------------------------------- |
+| 2022/08/09 | Add QPay Payment Request &  Response source.                                                                         |
 | 2022/08/09 | Add Benefit PG Request and Response sources                                                                           |
 | 2022/08/08 | Fixing document types for platforms                                                                                   |
 | 2022/08/05 | Add AfterPay NAS Request and Response source.                                                                         |
