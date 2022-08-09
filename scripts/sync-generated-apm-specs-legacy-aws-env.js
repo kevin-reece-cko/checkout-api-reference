@@ -47,5 +47,3 @@ specs.syncPaymentResponse(
 	'RapiPago',
 	'http://sb-gateway-internal.cko.lon/dlocal-internal/rapipago/relations/gw/payment'
 );
-specs.syncPaymentRequest('Baloto', 'http://sb-gateway-internal.cko.lon/dlocal-internal/baloto/relations/gw/pay');
-specs.syncPaymentResponse('Baloto', 'http://sb-gateway-internal.cko.lon/dlocal-internal/baloto/relations/gw/payment');

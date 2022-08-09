@@ -2,23 +2,14 @@
 using Checkout.Sessions;
 using Checkout.Sessions.Channel;
 
-//API keys
-Four.ICheckoutApi api = CheckoutSdk.FourSdk().StaticKeys()
-    .PublicKey("public_key")
-    .SecretKey("secret_key")
+ICheckoutApi api = CheckoutSdk.Builder().OAuth()
+    .ClientCredentials("client_id", "client_secret")
+    .Scopes(OAuthScope.SessionsApp, OAuthScope.SessionsBrowser)
     .Environment(Environment.Sandbox)
     .HttpClientFactory(new DefaultHttpClientFactory())
     .Build();
 
-//OAuth
-Four.ICheckoutApi api = CheckoutSdk.FourSdk().OAuth()
-    .ClientCredentials("client_id", "client_secret")
-    .Scopes(FourOAuthScope.Sessions)
-    .Environment(Environment.Sandbox)
-    .FilesEnvironment(Environment.Sandbox)
-    .Build();
-
-BrowserSession request = new BrowserSession()
+BrowserSession request = new BrowserSession
 {
     AcceptHeader = "Accept:  *.*, q=0.1",
     JavaEnabled = true,

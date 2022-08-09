@@ -1,5 +1,4 @@
 // For more information please refer to https://github.com/checkout/checkout-sdk-java
-import com.checkout.CheckoutApi;
 import com.checkout.CheckoutApiException;
 import com.checkout.CheckoutArgumentException;
 import com.checkout.CheckoutAuthorizationException;
@@ -7,6 +6,7 @@ import com.checkout.CheckoutSdk;
 import com.checkout.Environment;
 import com.checkout.common.Currency;
 import com.checkout.common.CustomerRequest;
+import com.checkout.previous.CheckoutApi;
 import com.checkout.risk.Device;
 import com.checkout.risk.RiskPayment;
 import com.checkout.risk.RiskShippingDetails;
@@ -16,9 +16,10 @@ import com.checkout.risk.precapture.PreCaptureAssessmentRequest;
 import com.checkout.risk.precapture.PreCaptureAssessmentResponse;
 import com.checkout.risk.source.CustomerSourcePrism;
 
-CheckoutApi api = CheckoutSdk.defaultSdk()
+CheckoutApi api = CheckoutSdk
+    .builder()
+    .previous()
     .staticKeys()
-    .publicKey("public_key")
     .secretKey("secret_key")
     .environment(Environment.SANDBOX) // or Environment.PRODUCTION
     .build();
@@ -26,7 +27,7 @@ CheckoutApi api = CheckoutSdk.defaultSdk()
 PreCaptureAssessmentRequest request = PreCaptureAssessmentRequest.builder()
     .date(Instant.MAX)
     .source(CustomerSourcePrism.builder().build())
-    .customer(new CustomerRequest(null, "email@docs.checkout.com", "Name"))
+    .customer(new CustomerRequest(null, "email@docs.checkout.com", "Name", null))
     .payment(RiskPayment.builder().build())
     .shipping(RiskShippingDetails.builder().build())
     .amount(10L)

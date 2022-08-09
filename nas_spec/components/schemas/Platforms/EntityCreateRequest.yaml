@@ -43,6 +43,17 @@ properties:
         minLength: 2
         maxLength: 20
         example: '452349600005'
+      business_type:
+        type: string
+        description: "The legal type of the company"
+        enum:
+          - general_partnership
+          - limited_partnership
+          - public_limited_company
+          - limited_company
+          - professional_association
+          - unincorporated_association
+          - auto_entrepreneur  
       legal_name:
         type: string
         description: 'The legal name of the sub-entity.'
@@ -76,7 +87,7 @@ properties:
           - zip
           - country
       document:
-        $ref: '#/components/schemas/EntityDocument'
+        $ref: '#/components/schemas/EntityDocumentCompany'
       representatives:
         type: array
         title: Representatives
@@ -94,6 +105,10 @@ properties:
                 address:
                   required:
                     - country
+      financial_details:
+        description: 'Seller financial questions and supporting documents.'
+        allOf: 
+          - $ref : '#/components/schemas/EntityFinancialDetails'
   individual:
     type: object
     title: Individual
@@ -145,6 +160,8 @@ properties:
           - country
       date_of_birth:
         $ref: '#/components/schemas/DateOfBirth'
+      place_of_birth:
+        $ref: '#/components/schemas/PlaceOfBirth'
       identification:
         $ref: '#/components/schemas/EntityIdentification'
 required:

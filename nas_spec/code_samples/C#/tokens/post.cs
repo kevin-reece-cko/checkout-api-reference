@@ -2,9 +2,8 @@
 using Checkout.Common;
 using Checkout.Tokens;
 
-Four.ICheckoutApi api = CheckoutSdk.FourSdk().StaticKeys()
+ICheckoutApi api = CheckoutSdk.Builder().StaticKeys()
     .PublicKey("public_key")
-    .SecretKey("secret_key")
     .Environment(Environment.Sandbox)
     .HttpClientFactory(new DefaultHttpClientFactory())
     .Build();
@@ -25,11 +24,7 @@ CardTokenRequest request = new CardTokenRequest
         Zip = "W1T 4TJ",
         Country = CountryCode.GB
     },
-    Phone = new Phone()
-    {
-        Number = "4155552671",
-        CountryCode = "1"
-    }
+    Phone = new Phone() {Number = "4155552671", CountryCode = "1"}
 };
 
 try

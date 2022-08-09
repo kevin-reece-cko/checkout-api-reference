@@ -1,5 +1,4 @@
 // For more information please refer to https://github.com/checkout/checkout-sdk-java
-import com.checkout.CheckoutApi;
 import com.checkout.CheckoutApiException;
 import com.checkout.CheckoutArgumentException;
 import com.checkout.CheckoutAuthorizationException;
@@ -8,13 +7,15 @@ import com.checkout.Environment;
 import com.checkout.common.Address;
 import com.checkout.common.CountryCode;
 import com.checkout.common.Phone;
-import com.checkout.instruments.InstrumentAccountHolder;
-import com.checkout.instruments.UpdateInstrumentRequest;
-import com.checkout.instruments.UpdateInstrumentResponse;
+import com.checkout.instruments.previous.InstrumentAccountHolder;
+import com.checkout.instruments.previous.UpdateInstrumentRequest;
+import com.checkout.instruments.previous.UpdateInstrumentResponse;
+import com.checkout.previous.CheckoutApi;
 
-CheckoutApi api = CheckoutSdk.defaultSdk()
+CheckoutApi api = CheckoutSdk
+    .builder()
+    .previous()
     .staticKeys()
-    .publicKey("public_key")
     .secretKey("secret_key")
     .environment(Environment.SANDBOX) // or Environment.PRODUCTION
     .build();
@@ -41,7 +42,7 @@ UpdateInstrumentRequest updateRequest = UpdateInstrumentRequest.builder()
     .build();
 
 try {
-    UpdateInstrumentResponse response = api.instrumentsClient().updateInstrument("instrument_id", updateRequest).get();
+    UpdateInstrumentResponse response = api.instrumentsClient().update("instrument_id", updateRequest).get();
 } catch (CheckoutApiException e) {
     // API error
     String requestId = e.getRequestId();

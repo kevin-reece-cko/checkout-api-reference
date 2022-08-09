@@ -1,18 +1,19 @@
-// For more information please refer to https://github.com/checkout/checkout-sdk-php
 <?php
+//For more information please refer to https://github.com/checkout/checkout-sdk-php
 
 use Checkout\\CheckoutApiException;
 use Checkout\\CheckoutArgumentException;
 use Checkout\\CheckoutAuthorizationException;
-use Checkout\\CheckoutDefaultSdk;
+use Checkout\\CheckoutSdk;
 use Checkout\\Disputes\\DisputeEvidenceRequest;
 use Checkout\\Environment;
 
-$builder = CheckoutDefaultSdk::staticKeys();
-$builder->setPublicKey("public_key");
-$builder->setSecretKey("secret_key");
-$builder->setEnvironment(Environment::sandbox()); // or Environment::production()
-$api = $builder->build();
+$api = CheckoutSdk::builder()
+    ->previous()
+    ->staticKeys()
+    ->environment(Environment::sandbox())
+    ->secretKey("secret_key")
+    ->build();
 
 $request = new DisputeEvidenceRequest();
 $request->proof_of_delivery_or_service_file = "file_id";
@@ -25,14 +26,11 @@ $request->additional_evidence_file = "file_id";
 $request->additional_evidence_text = "Scanned document";
 
 try {
-    $api->getDisputesClient()->putEvidence("dispute_id", $request);
+    $response = $api->getDisputesClient()->putEvidence("dispute_id", $request);
 } catch (CheckoutApiException $e) {
     // API error
-    $request_id = $e->request_id;
-    $http_status_code = $e->http_status_code;
     $error_details = $e->error_details;
-} catch (CheckoutArgumentException $e) {
-    // Bad arguments
+    $http_status_code = isset($e->http_metadata) ? $e->http_metadata->getStatusCode() : null;
 } catch (CheckoutAuthorizationException $e) {
     // Bad Invalid authorization
 }

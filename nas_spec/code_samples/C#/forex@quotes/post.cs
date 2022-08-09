@@ -2,14 +2,22 @@
 using Checkout.Common;
 using Checkout.Forex;
 
-Four.ICheckoutApi api = CheckoutSdk.FourSdk().OAuth()
-    .ClientCredentials("client_id", "client_secret")
-    .Scopes(FourOAuthScope.Fx)
+//API keys
+ICheckoutApi api = CheckoutSdk.Builder().StaticKeys()
+    .SecretKey("secret_key")
     .Environment(Environment.Sandbox)
-    .FilesEnvironment(Environment.Sandbox)
+    .HttpClientFactory(new DefaultHttpClientFactory())
     .Build();
 
-QuoteRequest request = new QuoteRequest()
+//OAuth
+ICheckoutApi api = CheckoutSdk.Builder().OAuth()
+    .ClientCredentials("client_id", "client_secret")
+    .Scopes(OAuthScope.Fx)
+    .Environment(Environment.Sandbox)
+    .HttpClientFactory(new DefaultHttpClientFactory())
+    .Build();
+
+QuoteRequest request = new QuoteRequest
 {
     SourceCurrency = Currency.GBP,
     SourceAmount = 10,

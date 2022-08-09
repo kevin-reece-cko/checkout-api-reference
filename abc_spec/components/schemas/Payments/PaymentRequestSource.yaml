@@ -11,7 +11,6 @@ discriminator:
     network_token: '#/components/schemas/05_PaymentRequestNetworkTokenSource'
     alipay: '#/components/schemas/PaymentRequestAlipaySource'
     benefitpay: '#/components/schemas/PaymentRequestBenefitPaySource'
-    baloto: '#/components/schemas/PaymentRequestBalotoSource'
     boleto: '#/components/schemas/PaymentRequestBoletoSource'
     eps: '#/components/schemas/PaymentRequestEpsSource'
     giropay: '#/components/schemas/PaymentRequestGiropaySource'
@@ -36,5 +35,5 @@ properties:
   type:
     type: string
     description: >
-      The payment source type <br> *Note:* *To make a payment with full card details, you must be <a href="https://www.checkout.com/docs/risk-management/pci-compliance" target="blank">SAQ D PCI compliant</a>*<br> BenefitPay is **DEPRECATED**
+      The payment source type <br> *Note:* *To make a payment with full card details, you must be <a href="https://www.checkout.com/docs/previous/risk-management/pci-compliance" target="blank">SAQ D PCI compliant</a>*<br> BenefitPay is **DEPRECATED**
     example: 'card'

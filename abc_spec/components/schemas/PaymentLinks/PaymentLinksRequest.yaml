@@ -6,7 +6,7 @@ required:
 properties:
   amount:
     type: integer
-    description: The payment amount. The exact format <a href="https://www.checkout.com/docs/resources/calculating-the-value" target="_blank">depends on the currency</a>.
+    description: The payment amount. The exact format <a href="https://www.checkout.com/docs/previous/resources/calculating-the-value" target="_blank">depends on the currency</a>.
     minimum: 1
     example: 200
   currency:
@@ -128,7 +128,7 @@ properties:
   allow_payment_methods:
     type: array
     description: >
-      Use to specify which <a href="https://www.checkout.com/docs/payments/payment-methods" target="_blank">payment methods</a> should render on the page. <a href="https://checkout.com/docs/integrate/payment-links/manage-payment-links#Alternative_payment_methods" target="_blank">Check the requirements for each payment method</a>
+      Use to specify which <a href="https://www.checkout.com/docs/previous/payments/payment-methods" target="_blank">payment methods</a> should render on the page. <a href="https://checkout.com/docs/previous/integrate/payment-links/manage-payment-links#Payment_methods" target="_blank">Check the requirements for each payment method</a>
     enum:
       - card
       - sofort
@@ -192,10 +192,10 @@ properties:
         type: string
         description: Indicates the preference for whether or not a 3DS challenge should be performed. The customer’s bank has the final say on whether or not the customer receives the challenge.
         enum:
-            - no_preference
-            - no_challenge_requested
-            - challenge_requested
-            - challenge_requested_mandate
+          - no_preference
+          - no_challenge_requested
+          - challenge_requested
+          - challenge_requested_mandate
         default: no_preference
   risk:
     $ref: '#/components/schemas/RiskRequest'
@@ -207,18 +207,19 @@ properties:
     maxLength: 255
   locale:
     type: string
-    description: Creates a translated version of the page in the specified language. For Klarna payments, <a href="https://www.checkout.com/docs/integrate/payment-links/manage-payment-links#Alternative_payment_methods" target="_blank">read our documentation about expected parameters for certain locales</a>.
+    description: Creates a translated version of the page in the specified language. For Klarna payments, <a href="https://www.checkout.com/docs/previous/integrate/payment-links/manage-payment-links#Payment_methods" target="_blank">read our documentation about expected parameters for certain locales</a>.
     enum:
-      - ar     
+      - ar
       - da-DK
+      - de-AT
       - de-CH
       - de-DE
       - en-AT
       - en-CH
       - en-DE
       - en-DK
-      - en-GB
       - en-FI
+      - en-GB
       - en-NL
       - en-NO
       - en-SE

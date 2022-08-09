@@ -1,20 +1,20 @@
 # For more information please refer to https://github.com/checkout/checkout-sdk-python
 import checkout_sdk
-from checkout_sdk.common.common import Product, Address, Phone
-from checkout_sdk.common.enums import PaymentSourceType, Currency, Country
-from checkout_sdk.customers.customers import CustomerRequest
+from checkout_sdk.checkout_sdk import CheckoutSdk
+from checkout_sdk.common.common import Phone, Address, CustomerRequest, Product
+from checkout_sdk.common.enums import Country, Currency, PaymentSourceType
 from checkout_sdk.environment import Environment
 from checkout_sdk.exception import CheckoutApiException, CheckoutArgumentException, CheckoutAuthorizationException
 from checkout_sdk.payments.links.payments_links import PaymentLinkRequest
-from checkout_sdk.payments.payments import RiskRequest, ProcessingSettings, ThreeDsRequest, PaymentRecipient, \\
-    ShippingDetails, BillingInformation
+from checkout_sdk.payments.payments import ThreeDsRequest, ProcessingSettings, RiskRequest, ShippingDetails, PaymentRecipient
+from checkout_sdk.payments.payments_previous import BillingInformation
 
-api = checkout_sdk.DefaultSdk() \\
+api = CheckoutSdk.builder() \\
+    .previous() \\
     .secret_key('secret_key') \\
-    .public_key('public_key') \\
     .environment(Environment.sandbox()) \\
     .build()
-# or Environment.production()
+    # or Environment.production()
 
 phone = Phone()
 phone.country_code = '44'

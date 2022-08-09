@@ -1,25 +1,24 @@
 // For more information please refer to https://github.com/checkout/checkout-sdk-net
-using Checkout.Payments.Four;
+using Checkout.Payments;
 
 //API keys
-Four.ICheckoutApi api = CheckoutSdk.FourSdk().StaticKeys()
-    .PublicKey("public_key")
+ICheckoutApi api = CheckoutSdk.Builder().StaticKeys()
     .SecretKey("secret_key")
     .Environment(Environment.Sandbox)
     .HttpClientFactory(new DefaultHttpClientFactory())
     .Build();
 
 //OAuth
-Four.ICheckoutApi api = CheckoutSdk.FourSdk().OAuth()
+ICheckoutApi api = CheckoutSdk.Builder().OAuth()
     .ClientCredentials("client_id", "client_secret")
-    .Scopes(FourOAuthScope.GatewayPayment)
+    .Scopes(OAuthScope.Gateway)
     .Environment(Environment.Sandbox)
-    .FilesEnvironment(Environment.Sandbox)
+    .HttpClientFactory(new DefaultHttpClientFactory())
     .Build();
 
 try
 {
-    IList<PaymentAction> response = await api.PaymentsClient().GetPaymentActions("payment_id");
+    ItemsResponse<PaymentAction> response = await api.PaymentsClient().GetPaymentActions("payment_id");
 }
 catch (CheckoutApiException e)
 {

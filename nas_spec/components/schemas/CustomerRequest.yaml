@@ -17,3 +17,13 @@ properties:
     description: The customer's name
     maxLength: 255
     example: 'Bruce Wayne'
+  tax_number:
+    type: string
+    description: Contains the customer’s value-added tax (VAT) registration number.
+    maxLength: 13
+    example: '1350693505279'
+  phone:
+    type: object
+    description: The customer's phone number
+    allOf:
+      - $ref: '#/components/schemas/PhoneNumber'

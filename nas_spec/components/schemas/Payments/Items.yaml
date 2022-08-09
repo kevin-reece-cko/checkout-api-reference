@@ -24,11 +24,28 @@ items:
       description: The item reference or product SKU (stock-keeping unit).
       example: 858818ac
       maxLength: 255
-    goods_id:
+    commodity_code:
       type: string
-      description: It consists of a combination of uppercase and lowercase letters, numbers, hyphens and underscores.
-      maxLength: 32
-      example: axb_goods_id
+      description: A code identifying a Commodity for value-added tax (VAT) purposes.
+      maxLength: 12
+      example: 'DEF123'
+    unit_of_measure:
+      type: string
+      description: Unit of Measure code used for an item in transaction.
+      maxLength: 12
+      example: 'metres'
+    total_amount:
+      type: number
+      description: The total amount for the line item.
+      example: 29000
+    tax_amount:
+      type: number
+      description: Contains the total amount of sales tax or value-added tax (VAT) on the total purchase amount. Tax should be included in the total purchase.
+      example: 1000
+    discount_amount:
+      type: number
+      description: The discount applied to each invoice line item.
+      example: 1000
     wxpay_goods_id:
       type: string
       description: Unified product No. defined by WeChat Pay

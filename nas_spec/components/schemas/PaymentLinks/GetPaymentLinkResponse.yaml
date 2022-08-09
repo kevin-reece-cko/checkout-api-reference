@@ -69,7 +69,7 @@ properties:
     description: The processing channel to be used for the payment
     example: 'pc_q4dbxom5jbgudnjzjpz7j2z6uq'
   marketplace:
-    $ref: '#/components/schemas/MarketplaceData'
+    $ref: '#/components/schemas/MarketplaceAuth'
   customer:
     type: object
     description: The customer's details.
@@ -145,6 +145,31 @@ properties:
     title: The Metadata Schema
     description: Any additional information stored at the point of creation.
     additionalProperties: true
+  locale:
+    type: string
+    description: The language that the Payment Link page is displayed in.
+    enum:
+      - ar
+      - da-DK
+      - de-DE
+      - en-GB
+      - es-ES
+      - fi-FI
+      - fil-PH
+      - fr-FR
+      - hi-IN
+      - id-ID
+      - it-IT
+      - ja-JP
+      - ms-MY
+      - nb-NO
+      - nl-NL
+      - sv-SE
+      - th-TH
+      - vi-VN
+      - zh-CN
+      - zh-HK
+      - zh-TW
   return_url:
     type: string
     format: uri

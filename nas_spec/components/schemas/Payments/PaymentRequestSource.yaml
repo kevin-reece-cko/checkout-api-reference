@@ -8,6 +8,7 @@ discriminator:
     card: '#/components/schemas/03_PaymentRequestCardSource'
     network_token: '#/components/schemas/04_PaymentRequestNetworkTokenSource'
     provider_token: '#/components/schemas/07_PaymentRequestProviderTokenSource'
+    bank_account: '#/components/schemas/PaymentRequestBankAccountSource'
     wechatpay: '#/components/schemas/08_PaymentRequestWeChatPaySource'
     paypal: '#/components/schemas/PaymentRequestPayPalSource'
     alipay_hk: '#/components/schemas/PaymentRequestAlipayPlusSource'
@@ -15,10 +16,16 @@ discriminator:
     gcash: '#/components/schemas/PaymentRequestAlipayPlusSource'
     fawry: '#/components/schemas/PaymentRequestFawrySource'
     ideal: '#/components/schemas/PaymentRequestIdealSource'
+    sofort: '#/components/schemas/PaymentRequestSofortSource'
+    dana: '#/components/schemas/PaymentRequestAlipayPlusSource'
+    kakaopay: '#/components/schemas/PaymentRequestAlipayPlusSource'
+    truemoney: '#/components/schemas/PaymentRequestAlipayPlusSource'
+    tng: '#/components/schemas/PaymentRequestAlipayPlusSource'
+    afterpay: '#/components/schemas/PaymentRequestAfterPaySource'
 required:
   - type
 properties:
   type:
     type: string
-    description: The payment source type <br> *Note:* *To make a payment with full card details, you must be <a href="https://www.checkout.com/docs/four/payments/regulation-support/pci-compliance" target="_blank">SAQ D PCI compliant</a>*
+    description: The payment source type <br> *Note:* *To make a payment with full card details, you must be <a href="https://www.checkout.com/docs/payments/regulation-support/pci-compliance" target="_blank">SAQ D PCI compliant</a>*
     example: 'card'

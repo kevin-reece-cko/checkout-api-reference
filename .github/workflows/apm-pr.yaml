@@ -1,0 +1,90 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Creates a PR for APM changes in documentation around APM
+
+on:
+  push:
+    branches:      
+      - 'main'  
+
+env:
+  CI: true
+  PAT: ${{ secrets.PAT }}
+
+jobs:
+  upload-spec:
+    runs-on: ubuntu-latest
+    steps: 
+      - name: Extract branch name
+        shell: bash
+        run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
+        id: extract_branch
+        
+      - uses: actions/checkout@v2
+        with:
+          persist-credentials: true
+          repository: your_team/checkout-api-reference
+          ref: ${{ steps.extract_branch.outputs.branch }}                   
+              
+      - name: Delete non-Demo files
+        run: |
+          echo ********** Listing contents of spec/ ************
+          ls spec/*/**
+          echo ********** Created an empty folder ************
+          mkdir newspec
+          echo ********** Copying over what we need into the new folder ************
+          mkdir -p newspec/components/schemas
+          cp -r spec/components/**/Demo newspec/components/schemas
+          mkdir -p newspec/paths
+          cp spec/paths/demo*.* newspec/paths          
+          echo ********** Listing contents of newspec/ ************
+          ls spec/*/**   
+          echo ********** Creating copies of spec for ABC and NAS ************
+          cp -r newspec/ nas_spec/
+          cp -r newspec/ abc_spec/
+          echo ********** Ready to upload specs ************
+          
+      - uses: actions/upload-artifact@v2
+        with:
+          name: specification
+          path: newspec/
+        
+  publish-spec:
+    runs-on: ubuntu-latest
+    needs: upload-spec
+    steps:
+      - uses: actions/download-artifact@v2
+        with:
+          name: specification
+          path: src_spec
+
+      - name: Fetch Checkout Api Reference repository
+        uses: actions/checkout@v2
+        with:
+          repository: checkout/checkout-api-reference
+          ref: master
+          token: ${{ env.PAT }}
+          path: src
+          
+      - name: Commit Api specification
+        working-directory: src
+        run: |
+          git config user.email "$GITHUB_ACTOR@users.noreply.github.com" && git config user.name "$GITHUB_ACTOR"
+          git branch -m "{{team}}/Api-Spec"
+          rsync -a ../src_spec/ abc_spec/
+          rsync -a ../src_spec/ nas_spec/
+          git add .
+          git commit -m 'Publish new API Specification'
+          git push origin HEAD
+
+      - uses: actions/github-script@v4
+        with:
+          github-token: ${{ env.PAT }}
+          script: |
+            await github.pulls.create({
+              owner: 'checkout',
+              repo: 'checkout-api-reference',
+              head: "{{team}}/Api-Spec",
+              base: 'master',
+              title: "{team}: Update API Specification"
+            });

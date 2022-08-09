@@ -1,29 +1,30 @@
 // For more information please refer to https://github.com/checkout/checkout-sdk-java
+import com.checkout.CheckoutApi;
 import com.checkout.CheckoutApiException;
 import com.checkout.CheckoutArgumentException;
 import com.checkout.CheckoutAuthorizationException;
 import com.checkout.CheckoutSdk;
+import com.checkout.EmptyResponse;
 import com.checkout.Environment;
-import com.checkout.four.CheckoutApi;
+import com.checkout.OAuthScope;
 
 // API Keys
-CheckoutApi api = CheckoutSdk.fourSdk()
+CheckoutApi api = CheckoutSdk.builder()
     .staticKeys()
-    .publicKey("public_key")
     .secretKey("secret_key")
     .environment(Environment.SANDBOX) // or Environment.PRODUCTION
     .build();
 
 // OAuth
-CheckoutApi api = CheckoutSdk.fourSdk()
+    CheckoutApi api = CheckoutSdk.builder()
     .oAuth()
     .clientCredentials("client_id", "client_secret")
+    .scopes(OAuthScope.FLOW, OAuthScope.FLOW_WORKFLOWS) // more scopes available
     .environment(Environment.SANDBOX) // or Environment.PRODUCTION
-    .scopes(FourOAuthScope.FLOW, FourOAuthScope.FLOW_WORKFLOWS, FourOAuthScope.FLOW_EVENTS) // more scopes available
     .build();
 
 try {
-    api.workflowsClient().removeWorkflow("workflow_id").get();
+    EmptyResponse response = api.workflowsClient().removeWorkflow("workflow_id").get();
 } catch (CheckoutApiException e) {
     // API error
     String requestId = e.getRequestId();

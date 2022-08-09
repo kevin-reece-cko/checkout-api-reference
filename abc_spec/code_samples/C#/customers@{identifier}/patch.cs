@@ -1,7 +1,10 @@
 // For more information please refer to https://github.com/checkout/checkout-sdk-net
+using Checkout.Common;
+using CustomerRequest = Checkout.Customers.Previous.CustomerRequest;
 
-ICheckoutApi api = CheckoutSdk.DefaultSdk().StaticKeys()
-    .PublicKey("public_key")
+Previous.ICheckoutApi api = CheckoutSdk.Builder()
+    .Previous()
+    .StaticKeys()
     .SecretKey("secret_key")
     .Environment(Environment.Sandbox)
     .HttpClientFactory(new DefaultHttpClientFactory())
@@ -25,7 +28,7 @@ CustomerRequest request = new CustomerRequest
 
 try
 {
-    await api.CustomersClient().Update("customer_id", request);
+    EmptyResponse response = await api.CustomersClient().Update("customer_id", request);
 }
 catch (CheckoutApiException e)
 {
