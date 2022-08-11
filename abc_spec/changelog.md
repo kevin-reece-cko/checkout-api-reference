@@ -1,7 +1,8 @@
 # Changelog
 
 | Date       | Description of change                                                                                           |
-|------------|-----------------------------------------------------------------------------------------------------------------|
+| ---------- | --------------------------------------------------------------------------------------------------------------- |
+| 2022/08/11 | Update Klarna Payment Request &  Response source.                                                               |
 | 2022/08/03 | Add missing `token_format` to Google Pay and Apple Pay token responses.                                         |
 | 2022/08/01 | Deprecated `baloto` payment method                                                                              |
 | 2022/07/29 | Update Java, C#, PHP & Python code samples to match new SDK Version.                                            |
