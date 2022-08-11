@@ -7,7 +7,7 @@ get:
   operationId: getHostedPaymentsPageDetails
   description: |
     Retrieve details about a specific Hosted Payments Page using the ID returned when it was created. In the response, you will see the status of the Hosted Payments Page.<br><br>
-    For more information, see the <a target="_blank" href="https://docs.checkout.com/integrate/hosted-payments-page">Hosted Payments Page documentation</a>.
+    For more information, see the <a target="_blank" href="https://www.checkout.com/docs/integrate/hosted-payments-page">Hosted Payments Page documentation</a>.
   parameters:
     - in: path
       name: id

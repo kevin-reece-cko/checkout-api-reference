@@ -9,13 +9,13 @@ properties:
     description: |
       The payment amount. Omit the amount or provide a value of `0` to perform a card verification.       
 
-      The amount must be provided in the <a href="https://docs.checkout.com/four/resources/calculating-the-amount" target="blank">minor currency unit</a>.
+      The amount must be provided in the <a href="https://www.checkout.com/docs/resources/calculating-the-amount" target="blank">minor currency unit</a>.
     minimum: 0
     example: 6540
   currency:
     type: string
     description: |
-      The three-letter <a href="https://docs.checkout.com/four/resources/codes/currency-codes" target="blank">ISO currency code</a>
+      The three-letter <a href="https://www.checkout.com/docs/resources/codes/currency-codes" target="blank">ISO currency code</a>
     example: USD
     maxLength: 3
     minLength: 3
@@ -31,7 +31,7 @@ properties:
     example: Recurring
   merchant_initiated:
     type: boolean
-    description: Flags the payment as a merchant-initiated transaction (MIT). <a href="https://docs.checkout.com/four/payments/accept-payments/use-saved-details/about-stored-card-details" target="_blank">Must be set to `true` for all MITs</a>.
+    description: Flags the payment as a merchant-initiated transaction (MIT). <a href="https://www.checkout.com/docs/payments/accept-payments/use-saved-details/about-stored-card-details" target="_blank">Must be set to `true` for all MITs</a>.
   reference:
     type: string
     description: A reference you can later use to identify this payment, such as an order number

@@ -46,7 +46,7 @@ allOf:
         example: '37040044'
 
       country:
-        description: The two-letter <a href="https://docs.checkout.com/four/resources/codes/country-codes" target="_blank">ISO country code</a> of where the account is based
+        description: The two-letter <a href="https://www.checkout.com/docs/resources/codes/country-codes" target="_blank">ISO country code</a> of where the account is based
         type: string
         example: GB
 

@@ -7,7 +7,7 @@ properties:
     example: 'dsp_rbhwd2qrg13uhrp2newf'
   category:
     type: string
-    description: The reason for the dispute. [Find out more](https://docs.checkout.com/risk-management/disputes#Disputes-Disputereasonsandrecommendedevidence)
+    description: The reason for the dispute. [Find out more](https://www.checkout.com/docs/previous/risk-management/disputes/responding-to-disputes/dispute-reasons-and-recommended-evidence)
     enum:
       [
           fraudulent,

@@ -20,7 +20,7 @@ properties:
     example: 6540
   currency:
     type: string
-    description: The three-letter <a href="https://docs.checkout.com/four/resources/codes/currency-codes" target="_blank">ISO currency code</a> of the payment
+    description: The three-letter <a href="https://www.checkout.com/docs/resources/codes/currency-codes" target="_blank">ISO currency code</a> of the payment
     example: USD
     maxLength: 3
     minLength: 3
@@ -77,7 +77,7 @@ properties:
         example: '440644309099499894406'
       recommendation_code:
         type: string
-        description: 'A <a href="https://docs.checkout.com/four/resources/codes/recommendation-codes" target="blank">code</a> that represents the next recommended action for the payment'
+        description: 'A <a href="https://www.checkout.com/docs/resources/codes/recommendation-codes" target="blank">code</a> that represents the next recommended action for the payment'
         example: "02"
   eci:
     type: string
