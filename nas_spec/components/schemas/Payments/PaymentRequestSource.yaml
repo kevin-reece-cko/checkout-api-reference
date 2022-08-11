@@ -10,6 +10,8 @@ discriminator:
     provider_token: '#/components/schemas/07_PaymentRequestProviderTokenSource'
     bank_account: '#/components/schemas/PaymentRequestBankAccountSource'
     wechatpay: '#/components/schemas/08_PaymentRequestWeChatPaySource'
+    eps: '#/components/schemas/PaymentRequestEpsSource'
+    giropay: '#/components/schemas/PaymentRequestGiropaySource'    
     paypal: '#/components/schemas/PaymentRequestPayPalSource'
     alipay_hk: '#/components/schemas/PaymentRequestAlipayPlusSource'
     alipay_cn: '#/components/schemas/PaymentRequestAlipayPlusSource'

@@ -7,9 +7,10 @@ discriminator:
     card: '#/components/schemas/01_PaymentResponseCardSource'
     currency_account: '#/components/schemas/02_PaymentResponseCurrencyAccountSource'
     qpay: '#/components/schemas/PaymentGetResponseQPaySource'
+    giropay: '#/components/schemas/PaymentGetResponseGiropaySource'
+    eps: '#/components/schemas/PaymentGetResponseEPSSource'
 required:
   - type
-
 properties:
   type:
     type: string
