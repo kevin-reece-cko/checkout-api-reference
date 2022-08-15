@@ -41,7 +41,7 @@ properties:
     example: 100
   aft:
     type: boolean
-    description: Indicates whether the payment is an [Account Funding Transaction](https://docs.checkout.com/four/payments/manage-payments/account-funding-transactions)
+    description: Indicates whether the payment is an [Account Funding Transaction](https://www.checkout.com/docs/payments/manage-payments/account-funding-transactions)
   preferred_scheme:
     type: Enum
     enum:

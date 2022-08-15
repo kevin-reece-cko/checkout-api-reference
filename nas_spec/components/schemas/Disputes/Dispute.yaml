@@ -15,7 +15,7 @@ properties:
     example: 'ent_uzm3uxtssvmuxnyrfdffcyjxeu'
   category:
     type: string
-    description: The reason for the dispute. [Find out more](https://docs.checkout.com/four/risk-management/disputes#Disputes-Disputereasonsandrecommendedevidence)
+    description: The reason for the dispute. [Find out more](https://www.checkout.com/docs/risk-management/disputes/responding-to-disputes/dispute-reasons-and-recommended-evidence)
     enum:
       [
           fraudulent,

@@ -49,12 +49,12 @@ properties:
     example: '37040044'
 
   currency:
-    description: The three-letter <a href="https://docs.checkout.com/four/resources/codes/currency-codes" target="_blank">ISO currency code</a> of the account's currency
+    description: The three-letter <a href="https://www.checkout.com/docs/resources/codes/currency-codes" target="_blank">ISO currency code</a> of the account's currency
     type: string
     example: GBP
 
   country:
-    description: The two-letter <a href="https://docs.checkout.com/four/resources/codes/country-codes" target="_blank">ISO country code</a> of where the account is based
+    description: The two-letter <a href="https://www.checkout.com/docs/resources/codes/country-codes" target="_blank">ISO country code</a> of where the account is based
     type: string
     example: GB
 

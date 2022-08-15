@@ -10,7 +10,7 @@ required:
 properties:
   amount:
     type: integer
-    description: The amount you want to pay out from your currency account. The exact format <a href="https://docs.checkout.com/four/resources/calculating-the-amount" target="_blank">depends on the currency</a>. <br><i>You must specify <b>either</b> `source.amount` <b>or</b> `amount`.</i>
+    description: The amount you want to pay out from your currency account. The exact format <a href="https://www.checkout.com/docs/resources/calculating-the-amount" target="_blank">depends on the currency</a>. <br><i>You must specify <b>either</b> `source.amount` <b>or</b> `amount`.</i>
   type:
     type: string
     description: The payout source type
