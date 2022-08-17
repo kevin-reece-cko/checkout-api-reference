@@ -1,0 +1,62 @@
+servers:
+  - url: https://api.sandbox.checkout.com/reports
+    description: Sandbox
+  - url: https://api.checkout.com/reports
+    description: Production
+get:
+  tags:
+    - Reports
+  security:
+    - OAuth:
+        - reporting
+        - reporting:view
+    - ApiSecretKey: [ ]
+  summary: Get report file
+  operationId: getReportFile
+  description: |
+    Use this endpoint to retrieve a specific file from a given report using their respective IDs.
+  parameters:
+    - name: Id
+      in: path
+      description: The ID of the report that the file belongs to.
+      required: true
+      schema:
+        type: string
+        example: rpt_lmmldzousk7etoqijqundqexa4
+        pattern: "^(rpt)_(\\w{26})$"
+    - name: fileId
+      in: path
+      description: The ID of the file to retrieve.
+      required: true
+      schema:
+        type: string
+        example: file_7ysmgfkj4ipunduud22uf73iey
+        pattern: "^(file)_(\\w{26})$"
+  responses:
+    '302':
+      description: Redirect to the report file download location.
+      headers:
+        Cko-Version:
+          $ref: '#/components/headers/Cko-Version'
+        Cko-Request-Id:
+          $ref: '#/components/headers/Cko-Request-Id'
+        Location: 
+          description: Link to download the file.
+          schema:
+            type: string
+    '401':
+      description: Unauthorized. Likely causes include an invalid or unspecified access token.
+    '404':
+      description: No report with the specified ID was found.
+      content:
+        application/json:
+          schema:
+            allOf:
+              - $ref: '#/components/schemas/ReportErrorResponse'
+              - type: object
+                properties: 
+                  error_type:
+                    example: 'not_found'
+                  error_codes: 
+                    example: 
+                      - 'report_file_not_found'
