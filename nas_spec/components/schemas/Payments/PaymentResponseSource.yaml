@@ -23,6 +23,7 @@ discriminator:
     mbway: '#/components/schemas/PaymentResponseMbwaySource'
     p24: '#/components/schemas/PaymentResponseP24Source'
     knet: '#/components/schemas/PaymentResponseKnetSource'
+    postfinance: '#/components/schemas/PaymentResponsePostfinanceSource'
 required:
   - type
 

@@ -2,6 +2,7 @@
 
 | Date       | Description of change                                                                                                 |
 | ---------- | --------------------------------------------------------------------------------------------------------------------- |
+| 2022/08/29 | Add Postfinance NAS Request and Response sources                                                                      |
 | 2022/08/26 | ADD KNET NAS Request and Response source      
 | 2022/08/25 | Add P24 NAS Request and Response source.   
 | 2022/08/19 | Add Benefit PG specific requirements to `reference` description                                                       |
