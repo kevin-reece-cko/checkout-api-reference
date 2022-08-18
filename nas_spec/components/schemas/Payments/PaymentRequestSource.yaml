@@ -31,6 +31,7 @@ discriminator:
     p24: '#/components/schemas/PaymentRequestP24Source'
     knet: '#/components/schemas/PaymentRequestKnetSource'
     postfinance: '#/components/schemas/PaymentRequestPostfinanceSource'
+    bancontact: '#/components/schemas/PaymentRequestBancontactSource'
 required:
   - type
 properties:
