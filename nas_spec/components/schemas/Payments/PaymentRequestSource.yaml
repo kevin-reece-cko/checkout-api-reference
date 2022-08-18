@@ -27,6 +27,7 @@ discriminator:
     qpay: '#/components/schemas/PaymentRequestQPaySource'
     afterpay: '#/components/schemas/PaymentRequestAfterPaySource'
     mbway: '#/components/schemas/PaymentRequestMbwaySource'
+    knet: '#/components/schemas/PaymentRequestKnetSource'
 required:
   - type
 properties:
