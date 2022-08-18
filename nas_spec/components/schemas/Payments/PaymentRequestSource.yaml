@@ -11,7 +11,7 @@ discriminator:
     bank_account: '#/components/schemas/PaymentRequestBankAccountSource'
     wechatpay: '#/components/schemas/08_PaymentRequestWeChatPaySource'
     eps: '#/components/schemas/PaymentRequestEpsSource'
-    giropay: '#/components/schemas/PaymentRequestGiropaySource'    
+    giropay: '#/components/schemas/PaymentRequestGiropaySource'
     paypal: '#/components/schemas/PaymentRequestPayPalSource'
     alipay_hk: '#/components/schemas/PaymentRequestAlipayPlusSource'
     alipay_cn: '#/components/schemas/PaymentRequestAlipayPlusSource'
@@ -27,6 +27,7 @@ discriminator:
     qpay: '#/components/schemas/PaymentRequestQPaySource'
     afterpay: '#/components/schemas/PaymentRequestAfterPaySource'
     mbway: '#/components/schemas/PaymentRequestMbwaySource'
+    p24: '#/components/schemas/PaymentRequestP24Source'
 required:
   - type
 properties:
