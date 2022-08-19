@@ -22,7 +22,7 @@ allOf:
         description: >-
           User-defined field that can be used to pass and store any additional transaction data
           required to be archived with the transaction and available as a searching criteria.
-          Only alphanumeric characters and spaces are allowed
+          Only alphanumeric characters and spaces are allowed.
       user_defined_field2:
         maxLength: 255
         type: string
