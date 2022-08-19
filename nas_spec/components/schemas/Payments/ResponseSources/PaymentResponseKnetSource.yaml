@@ -79,7 +79,7 @@ allOf:
       inquiry_result:
         type: string
         description: >-
-          The state of the payment, retunrned by KNet Gateway in the response from the payment inquiry.
+          The state of the payment, returned by KNet Gateway in the response from the payment inquiry.
           This field is populated in rare cases when the redirection from the payment page did not occur
           properly.
       bank_reference:
