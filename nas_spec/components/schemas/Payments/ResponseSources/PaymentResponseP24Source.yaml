@@ -9,4 +9,4 @@ allOf:
     properties:
       p24_descriptor:
         type: string
-        description: "P24 generated payment descriptor, which will contain requested billing descriptor or merchant's default descriptor  (subject to truncation)."
+        description: "P24-generated payment descriptor, which contains the requested billing descriptor or the merchant's default descriptor (subject to truncation)."
