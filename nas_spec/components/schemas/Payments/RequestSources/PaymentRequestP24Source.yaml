@@ -26,7 +26,7 @@ allOf:
       account_holder_email:
         maxLength: 254
         type: string
-        description: 'RFC compliant email address of the account holder.'
+        description: 'RFC-compliant email address of the account holder.'
       billing_descriptor:
         maxLength: 65534
         type: string
