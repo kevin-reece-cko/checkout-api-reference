@@ -15,7 +15,7 @@ allOf:
         description: This field enables the issuer's site to select the consumer's preferred language
           (e.g. the language selected on the merchant's site), if the issuer's site supports this.
           Code list in accordance with ISO 639-1. (Arabic = 'ar', English = 'en').
-          Note that 'ar' corresponds to 'ARA' and 'en' to 'USA' values accepted by KNet Gateway
+          Note that 'ar' corresponds to 'ARA' and 'en' to 'USA' values accepted by KNet Gateway.
       user_defined_field1:
         maxLength: 255
         type: string
