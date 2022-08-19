@@ -67,7 +67,7 @@ allOf:
           This is an ID for merchant PTLF functionality tracking.
           Only alphanumeric characters are allowed.
           Note that user_defined_field5 must be omitted when the ptlf field is not empty. This restriction
-          exists because a PTLF value is passed to KNet Gateway as user defined field 5.
+          exists because a PTLF value is passed to KNet Gateway as `user_defined_field5`.
       knet_payment_id:
         type: string
         description: The payment identifier assigned by KNet Gateway.
