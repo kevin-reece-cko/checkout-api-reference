@@ -17,8 +17,8 @@ allOf:
       user_defined_field1:
         type: string
         description: >-
-          User defined field can be used to pass and store any additional transaction data
-          required to be archived with the transaction and available as a searching criteria.
+          User-defined field that can be used to pass and store any additional transaction data
+          required to be archived with the transaction and available as a searching criterion.
           Only alphanumeric characters and spaces are allowed.
       user_defined_field2:
         type: string
