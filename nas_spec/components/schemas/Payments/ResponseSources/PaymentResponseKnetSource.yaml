@@ -46,7 +46,7 @@ allOf:
           User-defined field can be used to pass and store any additional transaction data
           required to be archived with the transaction and available as a searching criterion.
           Only alphanumeric characters and spaces are allowed.
-          Note that this field must be omitted when the ptlf field is not empty. This restriction
+          Note that this field must be omitted when the `ptlf` field is not empty. This restriction
           exists because a PTLF value is passed to KNet Gateway as `user_defined_field5`.
       card_token:
         type: string
