@@ -2,7 +2,7 @@
 
 | Date       | Description of change                                                                                                 |
 | ---------- | --------------------------------------------------------------------------------------------------------------------- |
-| 2022/08/18 | Add p24 NAS Request and Response ource.                                                                               |
+| 2022/08/18 | Add P24 NAS Request and Response source.                                                                               |
 | 2022/08/17 | Added Reports API                                                                                                     |
 | 2022/08/10 | Add Giropay, EPS Request and Response source.                                                                         |
 | 2022/08/09 | Add Mbway NAS Request and Response source.                                                                            |
