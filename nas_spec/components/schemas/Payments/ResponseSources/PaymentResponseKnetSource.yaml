@@ -11,7 +11,7 @@ allOf:
         type: string
         description: >-
           This field enables the issuer's site to select the consumer's preferred language
-          (e.g. the language selected on the Merchant's site), if the Issuer's site supports this.
+          (e.g. the language selected on the merchant's site), if the issuer's site supports this.
           Code list in accordance with ISO 639-1. (Arabic = 'ar', English = 'en').
           NOTE: 'ar' corresponds to 'ARA' and 'en' - to 'USA' values accepted by KNet Gateway.
       user_defined_field1:
