@@ -28,7 +28,7 @@ allOf:
         type: string
         description: >-
           User-defined field that can be used to pass and store any additional transaction data
-          required to be archived with the transaction and available as a searching criteria.
+          required to be archived with the transaction and available as a searching criterion.
           Only alphanumeric characters and spaces are allowed.
       user_defined_field3:
         maxLength: 255
