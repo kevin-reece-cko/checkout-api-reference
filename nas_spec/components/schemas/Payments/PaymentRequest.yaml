@@ -27,6 +27,7 @@ properties:
       - Recurring
       - MOTO
       - Installment
+      - Unscheduled
     default: Regular
     example: Recurring
   merchant_initiated:
