@@ -1,7 +1,8 @@
 # Changelog
 
 | Date       | Description of change                                                                                                 |
-|------------|-----------------------------------------------------------------------------------------------------------------------|
+| ---------- | --------------------------------------------------------------------------------------------------------------------- |
+| 2022/08/19 | Add Benefit PG specific requirements to `reference` description                                                       |
 | 2022/08/19 | Added alipay_plus type                                                                                                |
 | 2022/08/17 | Added Reports API                                                                                                     |
 | 2022/08/10 | Add Giropay, EPS Request and Response source.                                                                         |

@@ -35,7 +35,9 @@ properties:
     description: Flags the payment as a merchant-initiated transaction (MIT). <a href="https://www.checkout.com/docs/payments/accept-payments/use-saved-details/about-stored-card-details" target="_blank">Must be set to `true` for all MITs</a>.
   reference:
     type: string
-    description: A reference you can later use to identify this payment, such as an order number
+    description: |
+      A reference you can later use to identify this payment, such as an order number.
+      Can only be alphanumeric and must be unique for Benefit.
     maxLength: 50
     example: 'ORD-5023-4E89'
   description:
