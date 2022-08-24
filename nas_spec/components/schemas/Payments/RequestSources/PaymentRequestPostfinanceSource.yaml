@@ -1,15 +1,16 @@
 ###
-# Warning: this file was auto generated from OpenAPI specs using 'npm run sync-generated-specs'. Do not manually edit.
+# Warning: this file was auto generated from OpenAPI specs. Do not manually edit. 
 ###
 type: object
 description: 'Postfinance Source'
 allOf:
-  - $ref: '#/components/schemas/PaymentRequestSource'
-  - type: object
+  -
+    $ref: '#/components/schemas/PaymentRequestSource'
+  -
+    type: object
     required:
       - payment_country
       - account_holder_name
-      - account_holder_email
     properties:
       payment_country:
         maxLength: 2
