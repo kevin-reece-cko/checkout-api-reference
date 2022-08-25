@@ -15,6 +15,7 @@ discriminator:
     paypal: '#/components/schemas/PaymentRequestPayPalSource'
     alipay_hk: '#/components/schemas/PaymentRequestAlipayPlusSource'
     alipay_cn: '#/components/schemas/PaymentRequestAlipayPlusSource'
+    alipay_plus: '#/components/schemas/PaymentRequestAlipayPlusSource'
     gcash: '#/components/schemas/PaymentRequestAlipayPlusSource'
     benefit: '#/components/schemas/PaymentRequestBenefitSource'
     fawry: '#/components/schemas/PaymentRequestFawrySource'
