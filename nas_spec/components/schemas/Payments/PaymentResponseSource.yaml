@@ -21,7 +21,6 @@ discriminator:
     tng: '#/components/schemas/PaymentResponseAlipayPlusSource'
     afterpay: '#/components/schemas/PaymentResponseAfterPaySource'
     mbway: '#/components/schemas/PaymentResponseMbwaySource'
-    knet: '#/components/schemas/PaymentResponseKnetSource'
 required:
   - type
 
