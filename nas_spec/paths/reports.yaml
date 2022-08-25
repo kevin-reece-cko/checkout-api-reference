@@ -1,7 +1,7 @@
 servers:
-  - url: https://api.sandbox.checkout.com/reports
+  - url: https://api.sandbox.checkout.com
     description: Sandbox
-  - url: https://api.checkout.com/reports
+  - url: https://api.checkout.com
     description: Production
 get:
   tags:
