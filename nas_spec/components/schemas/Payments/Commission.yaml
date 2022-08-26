@@ -1,0 +1,12 @@
+type: object
+description: Information related to commissions
+properties:
+    amount:
+        type: integer
+        minimum: 0
+        description: The fixed amount of commission funds to collect
+        example: 20
+    percentage:
+        type: number
+        description: Percentage amount of commission funds to collect.  Precision to 8 decimal places
+        example: 10

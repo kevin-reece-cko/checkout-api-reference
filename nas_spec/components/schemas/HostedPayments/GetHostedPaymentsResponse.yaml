@@ -129,3 +129,6 @@ properties:
     format: uri
     description: The provided URL your customer will be redirected to upon a failed payment.
     example: https://example.com/failure
+  amount_allocations:
+    allOf:
+    - $ref: '#/components/schemas/AmountAllocations'
