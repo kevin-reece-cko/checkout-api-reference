@@ -9,6 +9,7 @@ discriminator:
     qpay: '#/components/schemas/PaymentGetResponseQPaySource'
     giropay: '#/components/schemas/PaymentGetResponseGiropaySource'
     eps: '#/components/schemas/PaymentGetResponseEPSSource'
+    p24: '#/components/schemas/PaymentResponseP24Source'
     knet: '#/components/schemas/PaymentResponseKnetSource'
 required:
   - type
