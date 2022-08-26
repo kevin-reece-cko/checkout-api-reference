@@ -22,6 +22,7 @@ discriminator:
     afterpay: '#/components/schemas/PaymentResponseAfterPaySource'
     mbway: '#/components/schemas/PaymentResponseMbwaySource'
     p24: '#/components/schemas/PaymentResponseP24Source'
+    knet: '#/components/schemas/PaymentResponseKnetSource'
 required:
   - type
 
