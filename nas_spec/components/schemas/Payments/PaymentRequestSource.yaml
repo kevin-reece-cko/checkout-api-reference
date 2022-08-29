@@ -30,6 +30,7 @@ discriminator:
     mbway: '#/components/schemas/PaymentRequestMbwaySource'
     p24: '#/components/schemas/PaymentRequestP24Source'
     knet: '#/components/schemas/PaymentRequestKnetSource'
+    multibanco: '#/components/schemas/PaymentRequestMultibancoSource'
     postfinance: '#/components/schemas/PaymentRequestPostfinanceSource'
     bancontact: '#/components/schemas/PaymentRequestBancontactSource'
 required:
