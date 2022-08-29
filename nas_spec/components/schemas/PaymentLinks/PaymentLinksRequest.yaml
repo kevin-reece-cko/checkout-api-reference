@@ -62,6 +62,9 @@ properties:
     pattern: "^(pc)_(\\w{26})$"
     description: The processing channel to be used for the payment
     example: 'pc_q4dbxom5jbgudnjzjpz7j2z6uq'
+  marketplace:
+    allOf:
+      - $ref: '#/components/schemas/MarketplaceAuth'
   amount_allocations:
     allOf:
     - $ref: '#/components/schemas/AmountAllocations'
