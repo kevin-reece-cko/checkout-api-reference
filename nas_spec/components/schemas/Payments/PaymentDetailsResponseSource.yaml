@@ -11,6 +11,8 @@ discriminator:
     eps: '#/components/schemas/PaymentGetResponseEPSSource'
     p24: '#/components/schemas/PaymentResponseP24Source'
     knet: '#/components/schemas/PaymentResponseKnetSource'
+    postfinance: '#/components/schemas/PaymentResponsePostfinanceSource'
+    bancontact: '#/components/schemas/PaymentResponseBancontactSource'
 required:
   - type
 properties:
