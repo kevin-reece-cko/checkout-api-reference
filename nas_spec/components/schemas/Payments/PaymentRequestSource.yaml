@@ -28,6 +28,7 @@ discriminator:
     qpay: '#/components/schemas/PaymentRequestQPaySource'
     afterpay: '#/components/schemas/PaymentRequestAfterPaySource'
     mbway: '#/components/schemas/PaymentRequestMbwaySource'
+    stcpay: '#/components/schemas/PaymentRequestStcPaySource'
     p24: '#/components/schemas/PaymentRequestP24Source'
     knet: '#/components/schemas/PaymentRequestKnetSource'
     multibanco: '#/components/schemas/PaymentRequestMultibancoSource'
