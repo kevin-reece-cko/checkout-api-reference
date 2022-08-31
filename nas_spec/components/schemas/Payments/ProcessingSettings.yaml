@@ -39,7 +39,7 @@ properties:
     description: The total freight or shipping and handling charges for the transaction.
     minimum: 0
     example: 300
-  shipping_tax_ammount:
+  shipping_tax_amount:
     type: number
     description: The tax amount of the freight or shipping and handling charges for the transaction.
     minimum: 0
