@@ -11,4 +11,4 @@ properties:
     example: 'cartes_bancaires'
   partner_customer_id:
     type: string
-    description: User ID on payment Partner's side
+    description: The customer's ID on the partner platform.
