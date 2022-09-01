@@ -1,10 +1,10 @@
 # Changelog
 
 | Date       | Description of change                                                                                                 |
-| ---------- | --------------------------------------------------------------------------------------------------------------------- |
+|------------|-----------------------------------------------------------------------------------------------------------------------|
 | 2022/08/10 | Add Giropay, EPS Request and Response source.                                                                         |
 | 2022/08/09 | Add Mbway NAS Request and Response source.                                                                            |
-| 2022/08/09 | Add QPay Payment Request &  Response source.                                                                         |
+| 2022/08/09 | Add QPay Payment Request &  Response source.                                                                          |
 | 2022/08/09 | Add Benefit PG Request and Response sources                                                                           |
 | 2022/08/08 | Fixing document types for platforms                                                                                   |
 | 2022/08/05 | Add AfterPay NAS Request and Response source.                                                                         |
@@ -63,3 +63,4 @@
 | 2021/11/11 | Added `3ds.challenge_indicator` to card payment requests.                                                             |
 | 2021/11/03 | Adds `identification` object under parent `sender` object in payment request.                                         |
 | 2021/10/18 | Added the `marketplaces.sub-entities` object to support split payments.                                               |
+| 2022/09/01 | Added the `processing.partner_customer_id` field to ProcessingData.                                                   |
