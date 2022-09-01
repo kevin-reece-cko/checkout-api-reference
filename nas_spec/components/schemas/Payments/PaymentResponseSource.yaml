@@ -9,6 +9,7 @@ discriminator:
     paypal: '#/components/schemas/PaymentResponsePayPalSource'
     alipay_hk: '#/components/schemas/PaymentResponseAlipayPlusSource'
     alipay_cn: '#/components/schemas/PaymentResponseAlipayPlusSource'
+    alipay_plus: '#/components/schemas/PaymentResponseAlipayPlusSource'
     gcash: '#/components/schemas/PaymentResponseAlipayPlusSource'
     benefit: '#/components/schemas/PaymentResponseBenefitSource'
     fawry: '#/components/schemas/PaymentResponseFawrySource'
@@ -20,6 +21,12 @@ discriminator:
     tng: '#/components/schemas/PaymentResponseAlipayPlusSource'
     afterpay: '#/components/schemas/PaymentResponseAfterPaySource'
     mbway: '#/components/schemas/PaymentResponseMbwaySource'
+    stcpay: '#/components/schemas/PaymentResponseStcPaySource'
+    p24: '#/components/schemas/PaymentResponseP24Source'
+    knet: '#/components/schemas/PaymentResponseKnetSource'
+    multibanco: '#/components/schemas/PaymentResponseMultibancoSource'
+    postfinance: '#/components/schemas/PaymentResponsePostfinanceSource'
+    bancontact: '#/components/schemas/PaymentResponseBancontactSource'
 required:
   - type
 

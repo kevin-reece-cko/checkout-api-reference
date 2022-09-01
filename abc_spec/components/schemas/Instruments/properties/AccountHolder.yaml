@@ -40,7 +40,7 @@ properties:
     example: '1986-01-01'
 
   country_of_birth:
-    description: The two-letter <a href="https://docs.checkout.com/four/resources/codes/country-codes" target="_blank">ISO country code</a> of the account holder's country of birth
+    description: The two-letter <a href="https://www.checkout.com/docs/previous/resources/codes/country-codes" target="_blank">ISO country code</a> of the account holder's country of birth
     type: string
     example: GB
 

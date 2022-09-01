@@ -6,7 +6,7 @@ properties:
       - $ref: '#/components/schemas/QuoteId'
   source_currency:
     type: string
-    description: The source three-letter <a href="https://docs.checkout.com/four/resources/codes/currency-codes" target="_blank">ISO currency code</a>
+    description: The source three-letter <a href="https://www.checkout.com/docs/resources/codes/currency-codes" target="_blank">ISO currency code</a>
     example: GBP
   source_amount:
     type: integer
@@ -14,7 +14,7 @@ properties:
     example: 30000
   destination_currency:
     type: string
-    description: The destination three-letter <a href="https://docs.checkout.com/four/resources/codes/currency-codes" target="_blank">ISO currency code</a>
+    description: The destination three-letter <a href="https://www.checkout.com/docs/resources/codes/currency-codes" target="_blank">ISO currency code</a>
     example: USD
   destination_amount:
     type: integer

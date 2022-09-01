@@ -16,6 +16,6 @@ properties:
     type: string
     example: 09876
   issuing_country:
-    description: The two-letter <a href="https://docs.checkout.com/four/resources/codes/country-codes" target="_blank">ISO country code</a> of the country that issued the identification
+    description: The two-letter <a href="https://www.checkout.com/docs/resources/codes/country-codes" target="_blank">ISO country code</a> of the country that issued the identification
     type: string
     example: US

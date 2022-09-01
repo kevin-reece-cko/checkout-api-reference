@@ -17,7 +17,7 @@ get:
         maxLength: 2
       required: true
       description: |
-        The two-letter <a href="https://docs.checkout.com/four/resources/codes/country-codes" target="_blank">ISO country code</a>
+        The two-letter <a href="https://www.checkout.com/docs/resources/codes/country-codes" target="_blank">ISO country code</a>
     - in: path
       name: currency
       schema:
@@ -26,7 +26,7 @@ get:
         maxLength: 3
       required: true
       description: |
-        The three-letter <a href="https://docs.checkout.com/four/resources/codes/currency-codes" target="_blank">ISO currency code</a>
+        The three-letter <a href="https://www.checkout.com/docs/resources/codes/currency-codes" target="_blank">ISO currency code</a>
     - in: query
       name: account-holder-type
       schema:

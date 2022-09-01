@@ -1,0 +1,77 @@
+servers:
+  - url: https://api.sandbox.checkout.com
+    description: Sandbox
+  - url: https://api.checkout.com
+    description: Production
+get:
+  tags:
+    - Reports
+  security:
+    - OAuth:
+        - reporting
+        - reporting:view
+    - ApiSecretKey: [ ]
+  summary: Get all reports
+  operationId: getReports
+  description: |
+    Returns the list of reports and their details.
+  parameters:
+    - name: created_after
+      in: query
+      description: Filters reports to those that were created on or after the specified date.
+      schema:
+        type: string
+        format: date-time
+        example: '2022-02-17'
+    - name: created_before
+      in: query
+      description: Filters reports to those that were created before the specified date.
+      schema:
+        type: string
+        format: date-time
+        example: '2022-02-19'
+    - name: entity_id
+      in: query
+      description: Filters reports to those that match the specified client entity ID. Sub-entity IDs are not supported.
+      schema:
+        type: string
+        example: 'ent_znj4ih5kn4fuxiaquoudv5mvwy'
+        pattern: "^(ent)_(\\w{26})$"
+    - name: limit
+      in: query
+      description: The number of results you want to retrieve per page. </br> For example, if the total result count is 50 and you use limit=10, you will need to iterate over 5 pages containing 10 elements each to be able to retrieve all of the reports that match your query.
+      schema:
+        type: integer
+        format: int32
+        minimum: 1
+        maximum: 100
+        default: 100
+        example: 5
+    - name: pagination_token
+      in: query
+      description: A token used for pagination when a response contains results across multiple pages.
+      schema:
+        type: string
+  responses:
+    '200':
+      description: Reports retrieved succesfully
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ReportListResponse'
+      headers:
+        Cko-Version:
+          $ref: '#/components/headers/Cko-Version'
+        Cko-Request-Id:
+          $ref: '#/components/headers/Cko-Request-Id'
+    '401':
+      description: Unauthorized. Likely cause is that access token is not valid or was not specified.
+    '422':
+      description: Unprocessable entity
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ReportErrorResponse'
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ReportErrorResponse'

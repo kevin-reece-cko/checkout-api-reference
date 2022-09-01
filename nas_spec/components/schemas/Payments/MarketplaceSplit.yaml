@@ -18,7 +18,7 @@ items:
       description: |
         The split amount - this will be credited to your sub-entity's currency account. The sum of all split amounts must be equal to the payment amount.      
 
-        The amount must be provided in the <a href="https://docs.checkout.com/four/resources/calculating-the-amount" target="blank">minor currency unit</a>.
+        The amount must be provided in the <a href="https://www.checkout.com/docs/resources/calculating-the-amount" target="blank">minor currency unit</a>.
       minimum: 0
       example: 1000
     reference:
@@ -39,7 +39,7 @@ items:
           description: |
             Optional fixed amount of commission to collect.
 
-            The amount must be provided in the <a href="https://docs.checkout.com/four/resources/calculating-the-amount" target="blank">minor currency unit</a>.
+            The amount must be provided in the <a href="https://www.checkout.com/docs/resources/calculating-the-amount" target="blank">minor currency unit</a>.
           minimum: 0
           example: 1000
         percentage:

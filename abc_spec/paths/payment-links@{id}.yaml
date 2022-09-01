@@ -7,7 +7,7 @@ get:
   operationId: getPaymentLinkDetails
   description: |
     Retrieve details about a specific Payment Link using its ID returned when the link was created. In the response, you will see the status of the Payment Link.<br><br>
-    For more information, see the <a target="_blank" href="https://docs.checkout.com/integrate/payment-links">Payment Links documentation</a>.
+    For more information, see the <a target="_blank" href="https://www.checkout.com/docs/previous/integrate/payment-links">Payment Links documentation</a>.
   parameters:
     - in: path
       name: id

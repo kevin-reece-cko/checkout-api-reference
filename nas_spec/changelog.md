@@ -2,17 +2,26 @@
 
 | Date       | Description of change                                                                                                 |
 |------------|-----------------------------------------------------------------------------------------------------------------------|
+| 2022/09/01 | Added the `processing.partner_customer_id` field to ProcessingData.                                                   |
+| 2022/08/26 | ADD KNET NAS Request and Response source                                                                              |
+| 2022/08/25 | Add P24 NAS Request and Response source.                                                                              |
+| 2022/08/29 | Add Postfinance, Bancontact and Multibanco NAS Request and Response sources                                           |
+| 2022/08/26 | ADD KNET NAS Request and Response source                                                                              |
+| 2022/08/25 | Add P24 NAS Request and Response source.                                                                              |
+| 2022/08/23 | Add STC Pay                                                                                                           |
+| 2022/08/19 | Add Benefit PG specific requirements to `reference` description                                                       |
+| 2022/08/19 | Added alipay_plus type                                                                                                |
+| 2022/08/17 | Added Reports API                                                                                                     |
 | 2022/08/10 | Add Giropay, EPS Request and Response source.                                                                         |
 | 2022/08/09 | Add Mbway NAS Request and Response source.                                                                            |
-| 2022/08/09 | Add QPay Payment Request &  Response source.                                                                          |
+| 2022/08/09 | Add QPay Payment Request & Response source.                                                                           |
 | 2022/08/09 | Add Benefit PG Request and Response sources                                                                           |
 | 2022/08/08 | Fixing document types for platforms                                                                                   |
 | 2022/08/05 | Add AfterPay NAS Request and Response source.                                                                         |
 | 2022/08/03 | Add missing `token_format` to Google Pay and Apple Pay token responses.                                               |
-| 2022/08/03 | Added Reports API                                                                                                     |
 | 2022/07/29 | Adding `marketplace` object to capture and other minor fixes to IP space                                              |
 | 2022/07/29 | Update Java, C#, PHP & Python code samples to match new SDK Version.                                                  |
-| 2022/07/20 | Added Alipay Plus's e-wallets supports                                                                                |                                                                           |
+| 2022/07/20 | Added Alipay Plus's e-wallets supports                                                                                |
 | 2022/07/20 | Adding required fields for Platforms payment instruments and separate `corporate` and `individual` examples           |
 | 2022/07/20 | Added `knet`, `giropay`, `bancontact`, `eps`, `p24`, and `multibanco` to Hosted Payments and Payment Links.           |
 | 2022/07/19 | Updated example for Platforms payout schedules from `currency` to `GBP` and `ISO`                                     |
@@ -63,4 +72,3 @@
 | 2021/11/11 | Added `3ds.challenge_indicator` to card payment requests.                                                             |
 | 2021/11/03 | Adds `identification` object under parent `sender` object in payment request.                                         |
 | 2021/10/18 | Added the `marketplaces.sub-entities` object to support split payments.                                               |
-| 2022/09/01 | Added the `processing.partner_customer_id` field to ProcessingData.                                                   |

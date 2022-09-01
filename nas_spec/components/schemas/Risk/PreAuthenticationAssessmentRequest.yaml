@@ -28,13 +28,13 @@ properties:
     type: integer
     description: |
       The payment amount.
-      The exact format <a href="https://docs.checkout.com/resources/calculating-the-value" target="blank">depends on the currency</a>.
+      The exact format <a href="https://www.checkout.com/docs/resources/calculating-the-amount" target="blank">depends on the currency</a>.
     minimum: 0
     example: 6540
   currency:
     type: string
     description: |
-      The three-letter <a href="https://docs.checkout.com/resources/codes/currency-codes" target="blank">ISO currency code</a>
+      The three-letter <a href="https://www.checkout.com/docs/resources/codes/currency-codes" target="blank">ISO currency code</a>
     example: GBP
     maxLength: 3
     minLength: 3
