@@ -21,11 +21,10 @@ allOf:
             type: string
             description: The type of Direct Debit account
             enum:
-              - 'Checking'
-              - 'Savings'
-              - 'Corporate'
-              - 'CorpSavings'
-            example: 'Checking'
+              - 'savings'
+              - 'current'
+              - 'cash'
+            example: 'savings'
           account_number:
             type: integer
             description: The account number of the Direct Debit account
