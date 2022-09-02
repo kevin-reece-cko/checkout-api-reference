@@ -1,7 +1,7 @@
 # Changelog
 
 | Date       | Description of change                                                                                                 |
-|------------|-----------------------------------------------------------------------------------------------------------------------|
+| ---------- | --------------------------------------------------------------------------------------------------------------------- |
 | 2022/09/01 | Added the `processing.partner_customer_id` field to ProcessingData.                                                   |
 | 2022/08/26 | ADD KNET NAS Request and Response source                                                                              |
 | 2022/08/25 | Add P24 NAS Request and Response source.                                                                              |
