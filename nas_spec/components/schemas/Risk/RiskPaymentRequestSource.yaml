@@ -28,6 +28,7 @@ discriminator:
     # multibanco: '#/components/schemas/PaymentRequestMultibancoSource'
     # dLocal: '#/components/schemas/06_PaymentRequestdLocalSource'
     # sofort: '#/components/schemas/PaymentRequestSofortSource'
+    # alma: '#/components/schemas/PaymentRequestAlmaSource'
 required:
   - type
 properties:
