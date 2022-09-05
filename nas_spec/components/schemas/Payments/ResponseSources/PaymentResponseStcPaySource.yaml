@@ -1,0 +1,4 @@
+type: object
+description: 'STC Pay response source'
+allOf:
+  - $ref: '#/components/schemas/PaymentResponseSource'
