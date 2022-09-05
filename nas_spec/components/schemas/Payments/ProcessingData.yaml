@@ -9,3 +9,7 @@ properties:
       - "cartes_bancaires"
     description: The preferred scheme for co-badged card payment processing. If using 3rd party Authentication before requesting the payment, set the value to the scheme that authenticated the transaction.
     example: 'cartes_bancaires'
+  partner_payment_id:
+    type: string
+    description: 'The partner-originated unique payment identifier'
+    example: '440644309099499894406'
