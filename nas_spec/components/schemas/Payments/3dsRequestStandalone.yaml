@@ -1,0 +1,20 @@
+type: object
+title: Standalone authentication
+description: Required information to process a payment that has been 3DS authenticated using our <a href="https://www.checkout.com/docs/risk-management/3d-secure/sessions#Non-hosted" target="_blank">Standalone authentication</a>
+required:
+  - enabled
+  - authentication_id
+
+properties:
+  enabled:
+    type: boolean
+    description: Whether to process this payment as a 3D Secure payment
+    enum: [true]
+    example: true
+  authentication_id:
+    type: string
+    pattern: "^(sid)_(\\w{26})$"
+    minLength: 30
+    maxLength: 30
+    example: sid_y3oqhf46pyzuxjbcn2giaqnb441
+    description: The unique identifier for your 3D Secure session.

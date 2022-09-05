@@ -85,7 +85,12 @@ properties:
         description: The postal code or zip code of the location being shipped from.
         example: '10014'
   3ds:
-    $ref: '#/components/schemas/3dsRequest'
+    description: Information required for 3D Secure authentication payments
+    oneOf:
+      - $ref: '#/components/schemas/3dsRequest'
+      - $ref: '#/components/schemas/3dsRequestStandalone'
+      - $ref: '#/components/schemas/3dsRequestThirdParty'
+    type: object
   processing_channel_id:
     type: string
     pattern: "^(pc)_(\\w{26})$"
