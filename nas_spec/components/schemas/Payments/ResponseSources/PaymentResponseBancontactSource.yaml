@@ -1,0 +1,13 @@
+###
+# Warning: this file was auto generated from OpenAPI specs using 'npm run sync-generated-specs'. Do not manually edit.
+###
+type: object
+description: 'Bancontact Source'
+allOf:
+  - $ref: '#/components/schemas/PaymentResponseSource'
+  - type: object
+    properties:
+      iban:
+        maxLength: 34
+        type: string
+        description: "The IBAN of the Consumer Bank account used for payment (if applicable).\n"
