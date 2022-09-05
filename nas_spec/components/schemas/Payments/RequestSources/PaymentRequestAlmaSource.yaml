@@ -3,9 +3,6 @@ description: Alma payment source
 allOf:
   - $ref: '#/components/schemas/PaymentRequestSource'
   - type: object
-    required:
-      - type
-      - billing_address
     properties:
       billing_address:
         description: The billing address of the cardholder
