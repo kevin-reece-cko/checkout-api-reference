@@ -1,5 +1,5 @@
 type: object
-description: A currency account source
+description: 'A currency account source'
 allOf:
   - $ref: '#/components/schemas/PaymentResponseSource'
   - type: object
@@ -8,8 +8,8 @@ allOf:
     properties:
       id:
         type: string
-        description: The ID of the currency account
+        description: 'The ID of the currency account'
         pattern: ^(ca)_(\w{26})$
       amount:
         type: integer
-        description: If specified, indicates the amount in the source currency to be paid out. If omitted, the root amount in the destination currency will be used.<br>The amount must be provided in the minor currency unit.
+        description: "If specified, indicates the amount in the source currency to be paid out. If omitted, the root amount in the destination currency will be used.<br>The amount must be provided in the minor currency unit."
