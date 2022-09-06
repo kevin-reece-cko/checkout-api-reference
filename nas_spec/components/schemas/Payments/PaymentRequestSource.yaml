@@ -34,6 +34,7 @@ discriminator:
     multibanco: '#/components/schemas/PaymentRequestMultibancoSource'
     postfinance: '#/components/schemas/PaymentRequestPostfinanceSource'
     bancontact: '#/components/schemas/PaymentRequestBancontactSource'
+    alma: '#/components/schemas/PaymentRequestAlmaSource'
 required:
   - type
 properties:
