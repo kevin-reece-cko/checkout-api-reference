@@ -143,6 +143,8 @@ properties:
       - $ref: '#/components/schemas/PaymentDetailsResponseSender'
   marketplace:
     $ref: '#/components/schemas/MarketplaceAuth'
+  amount_allocations:
+    $ref: '#/components/schemas/AmountAllocations'
   recipient:
     $ref: '#/components/schemas/PaymentRecipient'
   processing:

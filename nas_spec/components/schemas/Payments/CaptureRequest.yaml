@@ -47,6 +47,8 @@ properties:
     $ref: '#/components/schemas/Items'
   marketplace:
     $ref: '#/components/schemas/MarketplaceCapture'
+  amount_allocations:
+    $ref: '#/components/schemas/AmountAllocations'
   processing:
     $ref: '#/components/schemas/ProcessingSettings'
   metadata:

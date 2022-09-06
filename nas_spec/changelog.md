@@ -4,6 +4,7 @@
 |------------|-----------------------------------------------------------------------------------------------------------------------|
 | 2022/09/06 | Added the `processing.partner_customer_id` field to ProcessingData.                                                   |
 | 2022/09/05 | ADD Alma NAS Request source.                                                                                          |   
+| 2022/09/02 | Adding `amount_allocations` object to Payment request, Capture and Payment Details    
 | 2022/08/26 | ADD KNET NAS Request and Response source                                                                              |
 | 2022/08/25 | Add P24 NAS Request and Response source.                                                                              |
 | 2022/08/29 | Add Postfinance, Bancontact and Multibanco NAS Request and Response sources                                           |

@@ -127,6 +127,8 @@ properties:
     $ref: '#/components/schemas/PaymentRecipient'
   marketplace:
     $ref: '#/components/schemas/MarketplaceAuth'
+  amount_allocations:
+    $ref: '#/components/schemas/AmountAllocations'
   processing:
     $ref: '#/components/schemas/ProcessingSettings'
   items:
