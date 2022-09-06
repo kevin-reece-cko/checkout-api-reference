@@ -27,6 +27,7 @@ discriminator:
     multibanco: '#/components/schemas/PaymentResponseMultibancoSource'
     postfinance: '#/components/schemas/PaymentResponsePostfinanceSource'
     bancontact: '#/components/schemas/PaymentResponseBancontactSource'
+    alma: '#/components/schemas/PaymentResponseAlmaSource'
 required:
   - type
 

@@ -12,3 +12,8 @@ properties:
   partner_customer_id:
     type: string
     description: The customer's ID on the partner platform.
+    example: '2102209000001106125F8'
+  partner_payment_id:
+    type: string
+    description: 'The partner-originated unique payment identifier'
+    example: '440644309099499894406'
