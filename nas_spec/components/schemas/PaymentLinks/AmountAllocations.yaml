@@ -1,20 +1,21 @@
 type: object
-description: Information related to amount allocations
+description: The sub-entities that the payment is being processed on behalf of
 required:
     - id
     - amount
 properties:
     id:
         type: string
-        description: The unique identifier for the sub-entity
+        description: The id of the sub-entity
         example: ent_xxxxxxxxxxxxxxxxxxxxxxxxxx
     amount:
         type: integer
+        description: The split amount - this will be credited to your sub-entity's currency account. The sum of all split amounts must be equal to the payment amount. The amount must be provided in the [minor currency unit](https://www.checkout.com/docs/resources/calculating-the-amount).
         minimum: 0
         example: 200
     reference:
         type: string
-        description: Merchant provided reference.
+        description: A reference you can later use to identify this split, such as an order number.
         example: ORD-1000
         maxLength: 50
     commission:
