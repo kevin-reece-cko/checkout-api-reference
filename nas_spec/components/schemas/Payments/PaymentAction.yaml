@@ -58,6 +58,10 @@ properties:
     type: string
     description: Your reference for the action
     example: 'ORD-5023-4E89'
+  marketplace:
+    $ref: '#/components/schemas/MarketplaceAuth'
+  amount_allocations:
+    $ref: '#/components/schemas/AmountAllocations'
   processing:
     type: object
     description: Returns information related to the processing of the payment

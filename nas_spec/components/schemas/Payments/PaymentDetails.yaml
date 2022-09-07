@@ -143,10 +143,14 @@ properties:
       - $ref: '#/components/schemas/PaymentDetailsResponseSender'
   marketplace:
     $ref: '#/components/schemas/MarketplaceAuth'
+  amount_allocations:
+    $ref: '#/components/schemas/AmountAllocations'
   recipient:
     $ref: '#/components/schemas/PaymentRecipient'
   processing:
     $ref: '#/components/schemas/ProcessingData'
+  items:
+    $ref: '#/components/schemas/Items'
   metadata:
     type: object
     description: A set of key-value pairs that you can attach to a payment. It can be useful for storing additional information in a structured format
@@ -156,7 +160,7 @@ properties:
   eci:
     type: string
     description: |
-      The final Electronic Commerce Indicator (ECI) security level used to authorize the payment. 
+      The final Electronic Commerce Indicator (ECI) security level used to authorize the payment.
       Applicable for 3D Secure and network token payments
     example: '06'
   scheme_id:
@@ -169,7 +173,7 @@ properties:
     items:
       $ref: '#/components/schemas/PaymentActionSummary'
     description: |
-      A summary of the payment's actions, 
+      A summary of the payment's actions,
       returned when a session ID is used to get the payment details
   _links:
     type: object

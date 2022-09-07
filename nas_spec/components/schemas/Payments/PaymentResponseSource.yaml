@@ -5,7 +5,7 @@ discriminator:
   propertyName: type
   mapping:
     card: '#/components/schemas/01_PaymentResponseCardSource'
-    wechatpay: '#/components/schemas/02_PaymentResponseWeChatPaySource'
+    wechatpay: '#/components/schemas/03_PaymentResponseWeChatPaySource'
     paypal: '#/components/schemas/PaymentResponsePayPalSource'
     alipay_hk: '#/components/schemas/PaymentResponseAlipayPlusSource'
     alipay_cn: '#/components/schemas/PaymentResponseAlipayPlusSource'
@@ -21,7 +21,17 @@ discriminator:
     tng: '#/components/schemas/PaymentResponseAlipayPlusSource'
     afterpay: '#/components/schemas/PaymentResponseAfterPaySource'
     mbway: '#/components/schemas/PaymentResponseMbwaySource'
+    stcpay: '#/components/schemas/PaymentResponseStcPaySource'
     p24: '#/components/schemas/PaymentResponseP24Source'
+    knet: '#/components/schemas/PaymentResponseKnetSource'
+    multibanco: '#/components/schemas/PaymentResponseMultibancoSource'
+    postfinance: '#/components/schemas/PaymentResponsePostfinanceSource'
+    bancontact: '#/components/schemas/PaymentResponseBancontactSource'
+    alma: '#/components/schemas/PaymentResponseAlmaSource'
+    currency_account: '#/components/schemas/02_PaymentResponseCurrencyAccountSource'
+    qpay: '#/components/schemas/PaymentGetResponseQPaySource'
+    giropay: '#/components/schemas/PaymentGetResponseGiropaySource'
+    eps: '#/components/schemas/PaymentGetResponseEPSSource'
 required:
   - type
 
