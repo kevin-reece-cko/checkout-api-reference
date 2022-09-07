@@ -1,0 +1,3 @@
+type: string
+description: The sub-entity that the payment is being processed on behalf of
+example: 'ent_rgyzti4x74xubmu72m6r3pvksa'
