@@ -131,4 +131,4 @@ properties:
     example: https://example.com/failure
   amount_allocations:
     allOf:
-    - $ref: '#/components/schemas/AmountAllocations'
+      - $ref: '#/components/schemas/AmountAllocations'

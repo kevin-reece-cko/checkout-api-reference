@@ -72,7 +72,7 @@ properties:
     $ref: '#/components/schemas/MarketplaceAuthPayInt'
   amount_allocations:
     allOf:
-    - $ref: '#/components/schemas/AmountAllocations'
+      - $ref: '#/components/schemas/AmountAllocations'
   customer:
     type: object
     description: The customer's details.

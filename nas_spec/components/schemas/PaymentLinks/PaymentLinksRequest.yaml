@@ -67,7 +67,7 @@ properties:
       - $ref: '#/components/schemas/MarketplaceAuthPayInt'
   amount_allocations:
     allOf:
-    - $ref: '#/components/schemas/AmountAllocations'
+      - $ref: '#/components/schemas/AmountAllocations'
   expires_in:
     type: integer
     description: The time for which the link remains valid, in seconds.
