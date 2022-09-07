@@ -1,11 +1,12 @@
 # Changelog
 
 | Date       | Description of change                                                                                                 |
-|------------|-----------------------------------------------------------------------------------------------------------------------|
+| ---------- | ----------------------------------------------------------------------------------------------------------------------|
 | 2022/09/06 | ADD missing challenge indicator field.                                                                                |
 | 2022/09/06 | Added the `processing.partner_customer_id` field to ProcessingData.                                                   |
 | 2022/09/05 | ADD Alma NAS Request source.                                                                                          |   
 | 2022/09/02 | Adding `amount_allocations` object to Payment request, Capture and Payment Details    
+| 2022/08/29 | Add One Klarna Nas structure
 | 2022/08/26 | ADD KNET NAS Request and Response source                                                                              |
 | 2022/08/25 | Add P24 NAS Request and Response source.                                                                              |
 | 2022/08/29 | Add Postfinance, Bancontact and Multibanco NAS Request and Response sources                                           |
@@ -17,7 +18,7 @@
 | 2022/08/17 | Added Reports API                                                                                                     |
 | 2022/08/10 | Add Giropay, EPS Request and Response source.                                                                         |
 | 2022/08/09 | Add Mbway NAS Request and Response source.                                                                            |
-| 2022/08/09 | Add QPay Payment Request & Response source.                                                                           |
+| 2022/08/09 | Add QPay Payment Request &  Response source.                                                                          |
 | 2022/08/09 | Add Benefit PG Request and Response sources                                                                           |
 | 2022/08/08 | Fixing document types for platforms                                                                                   |
 | 2022/08/05 | Add AfterPay NAS Request and Response source.                                                                         |

@@ -272,3 +272,28 @@ properties:
                 type: string
               fare_basis_code:
                 type: string
+  purchase_country:
+    type: string
+    description: ISO 3166 alpha-2 purchase country code.
+    example: GB
+  custom_payment_method_ids:
+    x-klarna-name: custom_payment_method_ids
+    x-cko-passthrough: true
+    x-klarna-docs: https://developers.klarna.com/api/#payments-api__create-a-new-credit-session__custom_payment_method_ids
+    description: An array defining which of the configured payment options within a payment category (for example, `pay_later` or `pay_over_time`) should be displayed for this purchase.
+    type: array
+    items:
+      type: string
+  merchant_callback_url:
+    type: string
+    description: A URL which you can use to notify the customer that the order has been created.
+  shipping_delay :
+    type: integer
+    description: 'The delay before the order will be shipped.'
+  shipping_info:
+    x-klarna-docs: https://developers.klarna.com/api/#order-management-api__create-capture__shipping_info
+    x-cko-passthrough: true
+    type: array
+    description: The shipping information for the payment capture. Maximum 500 items.
+    items:
+      $ref: '#/components/schemas/ShippingInfo'

@@ -10,3 +10,6 @@ specs.syncPaymentResponse('QPay', 'https://apm-qpay.cko-sbox.ckotech.co/relation
 
 specs.syncPaymentRequest('Benefit', 'https://apm-benefit.cko-qa.ckotech.co/relations/gw/pay');
 specs.syncPaymentResponse('Benefit', 'https://apm-benefit.cko-qa.ckotech.co/relations/gw/payment');
+
+specs.syncPaymentRequest('Klarna', 'https://apm-klarna-v2.cko-qa.ckotech.co/relations/gw/pay');
+specs.syncPaymentResponse('Klarna', 'https://apm-klarna-v2.cko-qa.ckotech.co/relations/gw/payment');

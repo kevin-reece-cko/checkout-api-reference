@@ -1,4 +1,4 @@
-﻿type: object
+type: object
 description: Returns information related to the processing of the payment
 properties:
   preferred_scheme:
@@ -17,3 +17,47 @@ properties:
     type: string
     description: 'The partner-originated unique payment identifier'
     example: '440644309099499894406'
+  tax_amount:
+    type: number
+    description: Total tax amount of the order.
+    example: 1000
+  purchase_country:
+    type: string
+    description: 'The purchase country of the customer, as an ISO 3166 alpha-2 country code.'
+  locale:
+    type: string
+    pattern: '^[a-z]{2}(?:-[A-Z][a-z]{3})?(?:-(?:[A-Z]{2}))?$'
+    description: The language, as an ISO 639-2 code.
+    example: en-US
+    maxLength: 10
+    minLength: 2
+  partner_order_id:
+    type: string
+    description: The Klarna order ID associated with the payment.
+  fraud_status:
+    type: string
+    description: The Klarna fraud status associated with the payment.
+  provider_authorized_payment_method:
+    x-klarna-name: initial_payment_method
+    type: object
+    description: The initial or authorized payment method.
+    required:
+      - type
+    properties:
+      type:
+        type: string
+        description: The payment option's type name.
+      description:
+        type: string
+        description: The payment option's description.
+      number_of_installments:
+        type: integer
+        description: The payment option's number of installments.
+      number_of_days:
+        type: integer
+        description: The payment option's frequency of the intervals of the payment.
+  custom_payment_method_ids:
+    type: array
+    description: An array defining which of the configured payment options within a payment category (for example, `pay_later` or `pay_over_time`) should be displayed for this purchase.
+    items:
+      type: string

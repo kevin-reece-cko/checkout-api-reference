@@ -121,6 +121,13 @@ properties:
       partner_order_id:
         type: string
         description: "Unique order identification of an Afterpay payment"
+      partner_session_id:
+        type: string
+        description: Klarna's credit session id.
+        example: feb0096d-8486-400d-89fa-2fa716b4521f
+      partner_client_token:
+        type: string
+        description: Token to be passed to Klarna JS client.
   eci:
     type: string
     description: The final Electronic Commerce Indicator (ECI) security level used to authorize the payment.

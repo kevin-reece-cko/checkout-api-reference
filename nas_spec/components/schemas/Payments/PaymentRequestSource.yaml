@@ -29,6 +29,7 @@ discriminator:
     afterpay: '#/components/schemas/PaymentRequestAfterPaySource'
     mbway: '#/components/schemas/PaymentRequestMbwaySource'
     stcpay: '#/components/schemas/PaymentRequestStcPaySource'
+    klarna: '#/components/schemas/PaymentRequestKlarnaSource'
     p24: '#/components/schemas/PaymentRequestP24Source'
     knet: '#/components/schemas/PaymentRequestKnetSource'
     multibanco: '#/components/schemas/PaymentRequestMultibancoSource'
