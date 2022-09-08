@@ -128,7 +128,7 @@ properties:
         description: Indicates whether the payment is an [Account Funding Transaction](https://www.checkout.com/docs/previous/payments/manage-payments/account-funding-transactions)
       senderInformation:
         type: object
-        description: Allows you to send additional data required for Visa Direct Original Credit Transaction (OCT) and Mastercard Moneysend payments. Only required when sending transactions on behalf of another person or business. <a href="https://www.checkout.com/docs/previous/card-payouts/sender-data-for-card-payouts" target="_blank">See our documentation for specific requirements</a>.
+        description: Details about the sender. <a href="https://www.checkout.com/docs/previous/payments/manage-payments/account-funding-transactions#Endpoints" target="_blank">See our documentation for specific requirements</a>.
         properties:
           reference:
             type: string
