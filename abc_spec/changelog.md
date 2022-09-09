@@ -2,6 +2,7 @@
 
 | Date       | Description of change                                                                                           |
 | ---------- | --------------------------------------------------------------------------------------------------------------- |
+| 2022/09/08 | Update PaymentRequest `processing` object to add `senderInformation` property                                   |
 | 2022/08/11 | Update Klarna Payment Request &  Response source.                                                               |
 | 2022/08/03 | Add missing `token_format` to Google Pay and Apple Pay token responses.                                         |
 | 2022/08/01 | Deprecated `baloto` payment method                                                                              |
