@@ -22,7 +22,7 @@ properties:
   dob:
     type: string
     format: date
-    description: The recipient's date of birth (yyyy-mm-dd)
+    description: The sender's date of birth (yyyy-mm-dd)
     maxLength: 10
     example: '1985-05-15'
   address:
