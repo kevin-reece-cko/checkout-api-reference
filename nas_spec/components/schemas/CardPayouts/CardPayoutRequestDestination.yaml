@@ -1,0 +1,13 @@
+type: object
+description: The destination of the payout
+discriminator:
+  propertyName: type
+  mapping:
+    token: '#/components/schemas/01_CardPayoutRequest_DestinationTypeToken'
+    id: '#/components/schemas/02_CardPayoutRequest_DestinationTypeId'
+    card: '#/components/schemas/03_CardPayoutRequest_DestinationTypeCard'
+properties:
+  type:
+    type: string
+    description: The payout destination type
+    example: 'card'

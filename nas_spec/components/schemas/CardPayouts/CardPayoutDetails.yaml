@@ -1,0 +1,269 @@
+type: object
+description: Payout accepted response
+required:
+  - id
+  - requested_on
+  - processed_on
+  - source
+  - destination
+  - amount
+  - currency
+  - status
+  - links 
+properties:
+  id:
+    type: string
+    description: Unique payment identifier
+    pattern: '^(pay)_(\w{26})$'
+    maxLength: 30
+    minLength: 30
+    example: pay_8n2n4o4dsasergngxiq3cx4xtu
+  requested_on:
+    type: string
+    format: date-time
+    description: The date/time the payment was requested
+    example: "2019-08-24T14:15:22Z"
+  processed_on:
+    type: string
+    format: date-time
+    nullable: true
+    description: The date/time the payment was either approved/declined. Present if payout has completed processing with scheme.
+    example: "2019-08-24T14:15:22Z"
+  source:
+    type: object
+    description: The source of the payout
+    required:
+      - type
+      - id
+      - amount
+      - currency
+    properties:
+      type:
+        type: string
+        description: The source to fund the payout
+        enum:
+          - currency_account
+        example: currency_account
+      id:
+        type: string
+        description: The currency account ID to fund the payout
+        pattern: '^(ca)_(\w{26})$'
+        maxLength: 29
+        minLength: 29
+        example: ca_y3oqhf46pyzuxjbcn2giaqnb44
+      amount:
+        type: integer
+        description: Amount to be paid out from currency account
+        example: 100
+      currency:
+        type: string
+        maxLength: 3
+        minLength: 3
+        description: The [three-letter currency code](https://checkout.com/docs/four/resources/codes/currency-codes) associated with the currency account
+        example: GBP
+  destination:
+    type: object
+    description: The destination of the payout
+    required:
+      - type
+      - expiry_year
+      - expiry_month
+      - account_holder
+      - last4
+      - fingerprint
+      - bin
+    properties:
+      type:
+        type: string
+        description: The payout destination type
+        enum:
+          - token
+          - id
+          - card
+        example: token
+      token:
+        type: string
+        maxLength: 30
+        minLength: 30
+        description: If `type` = `token`. The Checkout.com token  (eg a card, wallet or token)
+        pattern: '^(tok)_(\w{26})$'
+        example: tok_ihvkileifkzebkgnhkskbglyte
+      id:
+        type: string
+        description: The payment source identifier (eg a card source identifier)
+        example: ca_y3oqhf46pyzuxjbcn2giaqnb44
+      expiry_year:
+        type: integer
+        description: The expiry year of the card
+        maxLength: 4
+        minLength: 4
+        example: 2024
+      expiry_month:
+        type: integer
+        description: The expiry month of the card
+        maxLength: 2
+        minLength: 1
+        example: 12
+      account_holder:
+        type: object
+        description: The account holder details
+        required:
+          - type
+        properties:
+          type:
+            type: string
+            description: The account holder type
+            enum:
+              - individual
+              - corporate
+              - government
+            example: individual
+          first_name:
+            type: string
+            maxLength: 35
+            description: Present if `destination.account_holder.type` = `individual`
+            example: John
+          last_name:
+            type: string
+            maxLength: 35
+            description: Present if `destination.account_holder.type` = `individual`
+            example: Smith
+          company_name:
+            type: string
+            maxLength: 35
+            description: Present if `destination.account_holder.type` = `corporate` or `government`
+            example: ABC International
+      scheme:
+        type: string
+        description: The card scheme
+        example: visa
+      last4:
+        type: string
+        description: The last four digits of the card number
+        example: 4242
+      fingerprint:
+        type: string
+        description: Unique fingerprint of the card
+        example: 436d1eb12c4b92b9eeb1e798dea93a718c78f5362c7fb5d84b51c72a869b6101
+      card_type:
+        type: string
+        description: The card type
+        enum:
+          - unknown
+          - credit
+          - debit
+          - charge
+          - prepaid
+          - deferred_debit
+        example: credit
+      card_category:
+        type: string
+        description: The card category
+        enum:
+          - unknown
+          - commercial
+          - consumer
+        example: consumer
+      issuer:
+        type: string
+        description: The issuer name
+        example: ABC Bank
+      issuer_country:
+        type: string
+        description: The issuer country
+        example: GB
+      product_id:
+        type: string
+        description: The issuer/card scheme product identifier
+        example: A
+      product_type:
+        type: string
+        description: The issuer/card scheme product type
+        example: Visa Traditional
+  amount:
+    type: integer
+    description: Amount to be paid out to the recipient. This is the destination.amount
+    example: 100
+  currency:
+    type: string
+    description: The [three-letter currency code](https://checkout.com/docs/four/resources/codes/currency-codes). This is the destination.currency
+    example: GBP
+  reference:
+    type: string
+    description: An internal reference client can later use to identify this payout.
+    maxLength: 50
+    example: example payout
+  billing_descriptor:
+    type: object
+    description: Details about the billing descriptor.
+    properties:
+      reference:
+        type: string
+        maxLength: 14
+        description: The dynamic billing descriptor displayed on the recipient bank account statement. A-Z 0-9
+        example: Card Payout from Checkout.com
+  status:
+    type: string
+    description: The status of the payout
+    enum:
+      - pending
+      - approved
+      - declined
+    example: approved
+  sender:
+    type: object
+    description: Details about the sender of the payout's funds
+    properties:
+      type:
+        type: string
+        description: Only present for clients with certain funds transfer types
+        enum:
+          - individual
+          - corporate
+          - government
+        example: individual
+      first_name:
+        type: string
+        maxLength: 35
+        description: Present if `sender.type` = `individual`
+        example: Hayley
+      last_name:
+        type: string
+        maxLength: 35
+        description: Present if `sender.type` = `individual`
+        example: Jones
+      company_name:
+        type: string
+        maxLength: 35
+        description: Present if `sender.type` = `corporate` or `government`
+        example: "YXZ International"
+  scheme_id:
+    type: string
+    description: The scheme transaction identifier
+    example: 199254206471459
+  instruction:
+    type: object
+    description: 	Details about the instruction for the payout
+    properties:
+      funds_transfer_type:
+        type: string
+        description: Scheme categorisation of the client (FD, MT, AA etc.)
+        example: AA
+  metadata:
+    type: object
+    description: A set of key-value pairs that you can attach to a payment. It can be useful for storing additional information in a structured format
+    example: { 'payout_ref': 'MQIBN2' }
+  links:
+    type: object
+    description: The links related to the payment
+    properties:
+      self:
+        type: object
+        description: The URI of the payout
+        required:
+          - href
+        properties:
+          href:
+            type: string
+            description: The link URL
+            example: https://api.sandbox.checkout.com/payments/pay_8n2n4o4dsasergngxiq3cx4xtu

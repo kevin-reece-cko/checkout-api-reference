@@ -18,6 +18,8 @@ post:
         schema:
           oneOf:
             - $ref: '#/components/schemas/PaymentRequest'
+            # - $ref: '#/components/schemas/PayoutRequest'
+            - $ref: '#/components/schemas/CardPayoutRequest'
             - $ref: '#/components/schemas/BankPayoutRequest'
         examples:
           Payment:
@@ -95,7 +97,84 @@ post:
                 scheme: 'local'
                 quote_id: 'qte_mbabizu24mvu3mela5njyhpit4'
               processing_channel_id: 'pc_hpswyyx23geezflc2ocz3exn4y'
-
+          Card Payout - Money Transfer:
+            value:
+              source:
+                type: 'currency_account'
+                id: 'ca_y3oqhf46pyzuxjbcn2giaqnb44'
+              destination:
+                type: 'card'
+                number: '4242424242424242'
+                expiry_month: 12
+                expiry_year: 2024
+                account_holder:
+                  type: 'individual'
+                  first_name: 'John'
+                  last_name: 'Smith'
+              amount: 1000
+              currency: GBP
+              sender:
+                type: 'individual'
+                first_name: 'Hayley'
+                last_name: 'Jones'
+                address:
+                  address_line1: 'A House'
+                  address_line2: 'A Street'
+                  city: 'A City'
+                  zip: 'AA12 1AA'
+                  country: 'GB'
+                reference: '1234567ABCDEFG'
+                reference_type: 'other'             
+                date_of_birth: '1939-05-27'
+                source_of_funds: 'debit'
+              instruction:
+                funds_transfer_type: 'AA'
+              processing_channel_id: 'pc_hpswyyx23geezflc2ocz3exn4y'
+          Card Payout - Direct Funds Disbursement:
+            value:
+              source:
+                type: 'currency_account'
+                id: 'ca_y3oqhf46pyzuxjbcn2giaqnb44'
+              destination:
+                type: 'id'
+                id: 'src_y3oqhf46pyzuxjbcn2giaqnb44'
+                account_holder:
+                  type: 'corporate'
+                  company_name: 'Checkout.com'
+              amount: 1000
+              currency: GBP
+              instruction:
+                funds_transfer_type: 'OG'
+              processing_channel_id: 'pc_hpswyyx23geezflc2ocz3exn4y'
+          Card Payout - Third-Party Funds Disbursement:
+            value:
+              source:
+                type: 'currency_account'
+                id: 'ca_y3oqhf46pyzuxjbcn2giaqnb44'
+              destination:
+                type: 'token'
+                token: 'tok_y3oqhf46pyzuxjbcn2giaqnb44'
+                account_holder:
+                  type: 'corporate'
+                  company_name: 'Checkout.com'
+              amount: 1000
+              currency: GBP
+              sender:
+                type: 'corporate'
+                company_name: 'A Company'
+                address:
+                  address_line1: 'A House'
+                  address_line2: 'A Street'
+                  city: 'A City'
+                  zip: 'AA12 1AA'
+                  country: 'GB'
+                reference: '1234567ABCDEFG'
+                reference_type: 'other'             
+                source_of_funds: 'debit'
+              instruction:
+                funds_transfer_type: 'FD'
+              processing_channel_id: 'pc_hpswyyx23geezflc2ocz3exn4y'
+         
   responses:
     '201':
       description: Payment processed successfully
@@ -171,6 +250,7 @@ post:
             oneOf:
               - $ref: '#/components/schemas/PaymentAcceptedResponse'
               - $ref: '#/components/schemas/PayoutAcceptedResponse'
+              - $ref: '#/components/schemas/CardPayoutAcceptedResponse'
       headers:
         Cko-Request-Id:
           $ref: '#/components/headers/Cko-Request-Id'

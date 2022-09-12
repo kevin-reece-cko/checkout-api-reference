@@ -1,0 +1,19 @@
+type: object
+description: The account holder details
+required:
+  - type
+  - first_name
+  - last_name
+properties:
+  type:
+    type: string
+    description: The type of card holder
+    example: 'individual'
+  first_name:
+    type: string
+    description: The payout destination owner's first name (cannot be an initial)
+    maxLength: 35
+  last_name:
+    type: string
+    description: The payout destination owner's last name
+    maxLength: 35

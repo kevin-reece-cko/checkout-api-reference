@@ -1,0 +1,38 @@
+type: object
+description: The destination of the payout
+required:
+  - type
+  - number
+  - expiry_month
+  - expiry_year
+  - account_holder
+properties:
+  type:
+    type: string
+    description: The payout destination type
+  number:
+    type: string
+    description: The card number
+    maxLength: 19
+  expiry_month:
+    type: integer
+    description: The expiry month of the card
+    maxLength: 2
+    minLength: 1
+  expiry_year:
+    type: integer
+    description: The expiry year of the card
+    maxLength: 4
+    minLength: 4
+  account_holder:
+    type: object
+    discriminator:
+      propertyName: type
+      mapping:
+        individual: '#/components/schemas/01_CardPayoutRequest_DestinationTypeCardAccountHolderIndividual'
+        corporate: '#/components/schemas/02_CardPayoutRequest_DestinationTypeCardAccountHolderCorporate'
+        government: '#/components/schemas/03_CardPayoutRequest_DestinationTypeCardAccountHolderGovernment'
+    properties:
+      type:
+        type: string
+        example: 'individual'
