@@ -19,6 +19,7 @@ properties:
     type: string
     description: The address state
     example: London
+    maxLength: 2
   zip:
     type: string
     description: The address zip/postal code
