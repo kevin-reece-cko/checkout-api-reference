@@ -2,6 +2,7 @@
 
 | Date       | Description of change                                                                                                 |
 | ---------- | ----------------------------------------------------------------------------------------------------------------------|
+| 2022/09/12 | Amended address state field to have validation of <= 2 chars rather than <= 3 and fixed text description to match.    |
 | 2022/09/06 | ADD missing challenge indicator field.                                                                                |
 | 2022/09/06 | Added the `processing.partner_customer_id` field to ProcessingData.                                                   |
 | 2022/09/05 | ADD Alma NAS Request source.                                                                                          |   
