@@ -162,8 +162,9 @@ properties:
             maxLength: 25
           state:
             type: string
-            description: The state or province of the address country (<a href="https://en.wikipedia.org/wiki/ISO_3166-2" target="_blank">ISO 3166-2 code</a> of up to three alphanumeric characters).
-            maxLength: 3
+            description: The state or province of the address country (<a href="https://en.wikipedia.org/wiki/ISO_3166-2" target="_blank">ISO 3166-2 code</a> of up to two alphanumeric characters).
+            minLength: 2
+            maxLength: 2
           country:
             type: string
             description: The address country (two-letter <a href="https://www.checkout.com/docs/previous/resources/codes/country-codes" target="_blank">ISO country code</a>).
