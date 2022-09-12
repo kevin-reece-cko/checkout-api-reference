@@ -19,12 +19,6 @@ properties:
     type: string
     description: The sender's last name
     example: 'Jones'
-  dob:
-    type: string
-    format: date
-    description: The recipient's date of birth (yyyy-mm-dd)
-    maxLength: 10
-    example: '1985-05-15'
   address:
     description: The sender's address
     allOf:
