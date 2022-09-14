@@ -8,7 +8,7 @@ required:
   - country
 properties:
   type:
-    description: The type of instrument
+    description: The type of instrument. `bank_account` payment instruments only support payouts.
     type: string
 
   account_type:
