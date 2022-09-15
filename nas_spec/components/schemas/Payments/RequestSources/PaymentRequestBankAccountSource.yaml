@@ -20,10 +20,9 @@ allOf:
         description: The type of Direct Debit account
         example: savings
         enum:
-          - Checking
-          - Savings
-          - Corporate
-          - CorpSavings
+          - savings
+          - current
+          - cash
       country:
         type: string
         description: The source country
