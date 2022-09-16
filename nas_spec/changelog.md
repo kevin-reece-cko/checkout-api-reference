@@ -3,6 +3,7 @@
 | Date       | Description of change                                                                                                 |
 |------------|-----------------------------------------------------------------------------------------------------------------------|
 | 2022/09/16 | Corrected one of the Reports API paths.                                                                               |
+| 2022/09/15 | Add Alipay Plus `processing.app_id` field to ProcessingData.                                                          |
 | 2022/09/13 | Add scheme to session source.                                                                                         |
 | 2022/09/12 | Amended address state field to have validation of <= 2 chars rather than <= 3 and fixed text description to match.    |
 | 2022/09/06 | ADD missing challenge indicator field.                                                                                |
