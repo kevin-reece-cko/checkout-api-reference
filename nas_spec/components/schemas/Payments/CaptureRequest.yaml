@@ -2,7 +2,7 @@ type: object
 properties:
   amount:
     type: integer
-    description: The amount to capture. If not specified, the full payment amount will be captured.
+    description: The amount to capture. If not specified or amount `0` is sent, the full payment amount will be captured.
     minimum: 0
     example: 6540
   capture_type:
