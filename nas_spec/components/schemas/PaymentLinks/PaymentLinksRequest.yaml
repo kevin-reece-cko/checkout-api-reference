@@ -208,7 +208,6 @@ properties:
           - no_challenge_requested
           - challenge_requested
           - challenge_requested_mandate
-          - recurring_operation
         default: no_preference
   risk:
     $ref: '#/components/schemas/RiskRequest'
