@@ -52,3 +52,8 @@ properties:
       - challenge_requested_mandate
       - recurring_operation
     default: no_preference
+  allow_upgrade:
+    type: boolean
+    description: Whether to process this payment as 3D Secure if the authorization was soft declined due to 3DS authentication required
+    default: true
+    example: true

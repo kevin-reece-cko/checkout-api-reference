@@ -9,6 +9,10 @@ properties:
       - "cartes_bancaires"
     description: The preferred scheme for co-badged card payment processing. If using 3rd party Authentication before requesting the payment, set the value to the scheme that authenticated the transaction.
     example: 'cartes_bancaires'
+  app_id:
+    type: string
+    description: The customer's application identifier.
+    example: 'com.iap.linker_portal'
   partner_customer_id:
     type: string
     description: The customer's ID on the partner platform.
