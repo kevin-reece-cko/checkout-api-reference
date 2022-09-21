@@ -1,6 +1,9 @@
 type: object
 deprecated: true
-description: Information related to marketplace payments
+description: |
+  Replaced by `amount_allocations`
+  
+  Information related to marketplace payments
 properties:
   sub_entity_id:
     $ref: '#/components/schemas/MarketplaceNonSplitPayInt'
