@@ -111,7 +111,6 @@ properties:
         enum:
           - none
           - low_value
-          - recurring_operation
           - transaction_risk_assessment
           - secure_corporate_payment
           - trusted_listing
