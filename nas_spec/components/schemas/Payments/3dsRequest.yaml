@@ -83,6 +83,7 @@ properties:
       - no_challenge_requested
       - challenge_requested
       - challenge_requested_mandate
+      - recurring_operation
     default: no_preference
   status_reason_code:
     type: string
