@@ -2,6 +2,8 @@
 
 | Date       | Description of change                                                                                                 |
 |------------|-----------------------------------------------------------------------------------------------------------------------|
+| 2022/09/22 | Adding a `entity` to BankPayoutRequest source.   
+
 | 2022/09/16 | Corrected one of the Reports API paths.                                                                               |
 | 2022/09/15 | Add Alipay Plus `processing.app_id` field to ProcessingData.                                                          |
 | 2022/09/13 | Add scheme to session source.                                                                                         |
