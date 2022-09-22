@@ -1,0 +1,12 @@
+type: object
+description: A currency account source
+required:
+  - id
+allOf:
+  - $ref: '#/components/schemas/PayoutRequestSource'
+  - type: object
+    properties:
+      id:
+        type: string
+        description: The ID of the entity to be debited.
+        example: ca_y3oqhf46pyzuxjbcn2giaqnb44

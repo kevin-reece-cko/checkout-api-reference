@@ -4,7 +4,7 @@ discriminator:
   propertyName: type
   mapping:
     currency_account: '#/components/schemas/05_PaymentRequestCurrencyAccountSource'
-    entity: '#/components/schemas/05_PaymentRequestCurrencyAccountSource'
+    entity: '#/components/schemas/PaymentRequestEntitySource'
 required:
   - type
   - amount
