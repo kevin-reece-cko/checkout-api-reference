@@ -15,5 +15,4 @@ properties:
     type: string
     description: The payout source type
     example:
-    currency_account: 'currency_account'
     entity: "entity"
