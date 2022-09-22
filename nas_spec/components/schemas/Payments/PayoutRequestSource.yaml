@@ -4,6 +4,7 @@ discriminator:
   propertyName: type
   mapping:
     currency_account: '#/components/schemas/05_PaymentRequestCurrencyAccountSource'
+    entity: '#/components/schemas/05_PaymentRequestCurrencyAccountSource'
 required:
   - type
   - amount
@@ -12,10 +13,6 @@ properties:
     type: integer
     description: The amount you want to pay out from your currency account. The exact format <a href="https://www.checkout.com/docs/resources/calculating-the-amount" target="_blank">depends on the currency</a>. <br><i>You must specify <b>either</b> `source.amount` <b>or</b> `amount`.</i>
   type:
-    type: object
+    type: string
     description: The payout source type
-  discriminator:
-  propertyName: type
-  mapping:
-    token: '#/components/schemas/01_PaymentRequestTokenSource'
-    id: '#/components/schemas/02_PaymentRequestIdSource'
+    example: 'currency_account'
