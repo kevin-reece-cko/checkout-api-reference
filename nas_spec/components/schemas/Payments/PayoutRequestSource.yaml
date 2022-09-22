@@ -13,7 +13,7 @@ properties:
     description: The amount you want to pay out from your currency account. The exact format <a href="https://www.checkout.com/docs/resources/calculating-the-amount" target="_blank">depends on the currency</a>. <br><i>You must specify <b>either</b> `source.amount` <b>or</b> `amount`.</i>
   type:
     type: string
-    description: The payout source typeW
+    description: The payout source type
     example: 
       currency_account: 'currency_account'
       entity: 'entity'
