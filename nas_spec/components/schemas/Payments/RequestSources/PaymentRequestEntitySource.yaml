@@ -8,5 +8,5 @@ allOf:
     properties:
       id:
         type: string
-        description: The ID of the entity to be debited.
-        example: ca_y3oqhf46pyzuxjbcn2giaqnb44
+        description: The ID of the entity or sub-entity.
+        example: ent_w4jelhppmfiufdnatam37wrfc4
