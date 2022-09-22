@@ -14,4 +14,8 @@ properties:
   type:
     type: string
     description: The payout source type
-    example: 'test'
+    enum:
+      - currency_account
+      - entity
+    example: 'currency_account'
+
