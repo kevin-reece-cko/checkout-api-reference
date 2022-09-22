@@ -14,5 +14,4 @@ properties:
   type:
     type: string
     description: The payout source type
-    example:
-    entity: "entity"
+    example: 'test'
