@@ -1,7 +1,8 @@
 # Changelog
 
-| Date       | Description of change                                                                                                 |
-|------------|-----------------------------------------------------------------------------------------------------------------------|
+| Date       | Description of change
+| ---------- | ----------------------------------------------------------------------------------------------------------------------|
+| 2022/09/22 | Add Integrated Platforms email address field and descriptions for French seller data                                  |
 | 2022/09/16 | Corrected one of the Reports API paths.                                                                               |
 | 2022/09/15 | Add Alipay Plus `processing.app_id` field to ProcessingData.                                                          |
 | 2022/09/13 | Add scheme to session source.                                                                                         |

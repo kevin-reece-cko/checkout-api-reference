@@ -37,6 +37,8 @@ get:
                 contact_details:
                   phone:
                     number: '2345678910'
+                  email_addresses:
+                    primary: 'admin@superhero1234.com'
                 profile:
                   urls:
                     - https://www.superheroexample.com
@@ -111,6 +113,8 @@ get:
                 contact_details:
                   phone:
                     number: '2345678910'
+                  email_addresses:
+                    primary: 'admin@superhero1234.com'
                 profile:
                   urls:
                     - https://www.superheroexample.com
@@ -186,6 +190,8 @@ put:
               contact_details:
                 phone:
                   number: '2345678910'
+                email_addresses:
+                  primary: 'admin@superhero1234.com'
               profile:
                 urls:
                   - https://www.superheroexample.com
@@ -242,6 +248,8 @@ put:
               contact_details:
                 phone:
                   number: '2345678910'
+                email_addresses:
+                  primary: 'admin@superhero1234.com'
               profile:
                 urls:
                   - https://www.superheroexample.com

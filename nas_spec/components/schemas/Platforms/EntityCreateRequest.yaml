@@ -19,8 +19,15 @@ properties:
               - $ref: '#/components/schemas/EntityPhone'
             required:
               - number
+          email_addresses:
+            description: 'Email addresses for this sub-entity.'
+            allOf:
+              - $ref: '#/components/schemas/EntityEmailAddresses'
+            required:
+              - primary
         required:
           - phone
+          - email_addresses
   profile:
     title: Profile
     allOf:
