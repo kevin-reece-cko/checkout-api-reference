@@ -2,6 +2,7 @@
 
 | Date       | Description of change
 | ---------- | ----------------------------------------------------------------------------------------------------------------------|
+| 2022/09/26 | Add Trustly NAS Request and Response source                                                                           |
 | 2022/09/22 | Add Integrated Platforms email address field and descriptions for French seller data                                  |
 | 2022/09/16 | Corrected one of the Reports API paths.                                                                               |
 | 2022/09/15 | Add Alipay Plus `processing.app_id` field to ProcessingData.                                                          |

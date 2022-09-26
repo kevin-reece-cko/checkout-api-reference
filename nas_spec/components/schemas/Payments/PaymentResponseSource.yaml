@@ -33,6 +33,7 @@ discriminator:
     qpay: '#/components/schemas/PaymentGetResponseQPaySource'
     giropay: '#/components/schemas/PaymentGetResponseGiropaySource'
     eps: '#/components/schemas/PaymentGetResponseEPSSource'
+    trustly: '#/components/schemas/PaymentResponseTrustlySource'
 required:
   - type
 
