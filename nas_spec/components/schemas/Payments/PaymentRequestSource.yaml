@@ -36,6 +36,7 @@ discriminator:
     postfinance: '#/components/schemas/PaymentRequestPostfinanceSource'
     bancontact: '#/components/schemas/PaymentRequestBancontactSource'
     alma: '#/components/schemas/PaymentRequestAlmaSource'
+    illicado: '#/components/schemas/PaymentRequestIllicadoSource'
 required:
   - type
 properties:

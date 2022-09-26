@@ -1,0 +1,14 @@
+type: object
+description: Illicado payment source
+allOf:
+  - $ref: '#/components/schemas/PaymentRequestSource'
+  - type: object
+    properties:
+      billing_address:
+        description: The billing address of the cardholder
+        required:
+          - address_line1
+          - city
+          - country
+        allOf:
+          - $ref: '#/components/schemas/Address'
