@@ -237,6 +237,3 @@ properties:
   merchant_callback_url:
     type: string
     description: A URL which you can use to notify the customer that the order has been created.
-  shipping_delay :
-    type: integer
-    description: 'The delay before the order will be shipped.'
