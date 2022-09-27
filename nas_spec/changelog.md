@@ -2,6 +2,7 @@
 
 | Date       | Description of change
 | ---------- | ----------------------------------------------------------------------------------------------------------------------|
+| 2022/09/27 | Adding a `customer` to PaymentRequest as a source.   
 | 2022/09/27 | Split ProcessingSettings object into PaymentRequestProcessingSettings and CaptureRequestProcessingSettings            |
 | 2022/09/22 | Add Integrated Platforms email address field and descriptions for French seller data                                  |
 | 2022/09/16 | Corrected one of the Reports API paths.                                                                               |

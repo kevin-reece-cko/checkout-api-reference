@@ -6,6 +6,7 @@ discriminator:
     token: '#/components/schemas/01_PaymentRequestTokenSource'
     id: '#/components/schemas/02_PaymentRequestIdSource'
     card: '#/components/schemas/03_PaymentRequestCardSource'
+    customer: '#/components/schemas/PaymentRequestCustomerSource'
     network_token: '#/components/schemas/04_PaymentRequestNetworkTokenSource'
     provider_token: '#/components/schemas/07_PaymentRequestProviderTokenSource'
     bank_account: '#/components/schemas/PaymentRequestBankAccountSource'
