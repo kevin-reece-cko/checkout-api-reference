@@ -50,7 +50,7 @@ properties:
   amount_allocations:
     $ref: '#/components/schemas/AmountAllocations'
   processing:
-    $ref: '#/components/schemas/ProcessingSettings'
+    $ref: '#/components/schemas/CaptureRequestProcessingSettings'
   metadata:
     type: object
     description: A set of key-value pairs that you can attach to the capture request. This can be useful for storing additional information in a structured format. **Note** that this object only allows one level of depth, so cannot accept non-primitive data types such as objects or arrays.
