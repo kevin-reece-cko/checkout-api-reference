@@ -2,7 +2,9 @@
 
 | Date       | Description of change
 | ---------- | ----------------------------------------------------------------------------------------------------------------------|
-| 2022/09/26 | Add Illicado NAS Request and Response for source and processing.                                                      |
+| 2022/09/27 | Add CV Connect NAS Request and Response source.                                                                       |
+| 2022/09/27 | Add Trustly NAS Request and Response source.                                                                          |
+| 2022/09/27 | Add Illicado NAS Request and Response source.                                                                         |
 | 2022/09/22 | Add Integrated Platforms email address field and descriptions for French seller data                                  |
 | 2022/09/16 | Corrected one of the Reports API paths.                                                                               |
 | 2022/09/15 | Add Alipay Plus `processing.app_id` field to ProcessingData.                                                          |
