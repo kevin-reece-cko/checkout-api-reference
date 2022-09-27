@@ -5,7 +5,7 @@ allOf:
   - type: object
     properties:
       billing_address:
-        description: The billing address of the cardholder
+        description: The cardholder's billing address
         required:
           - address_line1
           - city
