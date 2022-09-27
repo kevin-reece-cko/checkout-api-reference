@@ -1,6 +1,11 @@
 ﻿type: object
 description: Use the processing object to influence or override the data sent during card processing
 properties:
+  order_id:
+    type: string
+    description: The number provided by the cardholder. Purchase order or invoice number may be used.
+    maxLength: 17
+    example: '123456789'
   otp_value:
     type: string
     description: One time password sent to customer by SMS.

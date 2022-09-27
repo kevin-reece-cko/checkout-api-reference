@@ -1,6 +1,11 @@
 ﻿type: object
 description: Use the processing object to influence or override the data sent during card processing
 properties:
+  order_id:
+    type: string
+    description: The number provided by the cardholder. Purchase order or invoice number may be used.
+    maxLength: 17
+    example: '123456789'
   tax_amount:
     type: number
     description: Contains the customer’s value-added tax registration number.
