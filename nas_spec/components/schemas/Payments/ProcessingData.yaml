@@ -67,10 +67,10 @@ properties:
       type: string
   error_codes:
     type: array
-    description: Payment provider list of error codes that led a payment to be declined or fail. Specific to Reverse API payment methods
+    description: The list of error codes that led the payment to fail or be declined, as given by the payment provider
     items:
       type: string
   reason:
     type: string
-    description: Payment provider reason why the payment was declined. Specific to Reverse API payment methods
+    description: The reason the payment was declined, as given by the payment provider
     example: '440644309099499894406'
