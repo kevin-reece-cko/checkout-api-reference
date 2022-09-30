@@ -10,7 +10,7 @@ mkdir('-p', 'web_deploy/previous');
 cp('-R', 'web/*', 'web_deploy/');
 
 exec('dotnet build src/OpenApiGenerator/OpenApiGenerator.csproj');
-exec(`ASPNETCORE_ENVIRONMENT=${process.env.ACCOUNT} dotnet run -p src/OpenApiGenerator/OpenApiGenerator.csproj`);
+exec(`cross-env ASPNETCORE_ENVIRONMENT=${process.env.ACCOUNT} dotnet run -p src/OpenApiGenerator/OpenApiGenerator.csproj`);
 
 if (process.env.ACCOUNT === 'nas') {
 	cp('-R', 'output/*', 'web_deploy/');

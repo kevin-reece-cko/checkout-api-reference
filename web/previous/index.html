@@ -1,119 +1,108 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<script
-			defer
-			src="https://cdn-ukwest.onetrust.com/scripttemplates/otSDKStub.js"
-			data-language="en"
-			type="text/javascript"
-			charset="UTF-8"
-			data-domain-script="9be650fa-1b77-4848-b2d7-a3118f92e672-test"
-		></script>
-		<!-- Hotjar Tracking Code for https://api-reference.checkout.com/ -->
-		<script>
-			(function (h, o, t, j, a, r) {
-				h.hj =
-					h.hj ||
-					function () {
-						(h.hj.q = h.hj.q || []).push(arguments);
-					};
-				h._hjSettings = { hjid: 2272523, hjsv: 6 };
-				a = o.getElementsByTagName('head')[0];
-				r = o.createElement('script');
-				r.async = 1;
-				r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
-				a.appendChild(r);
-			})(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
-		</script>
-		<script type="text/javascript">
-			function OptanonWrapper() {}
-		</script>
 
-		<script async type="text/plain" src="https://www.googletagmanager.com/gtag/js?id=UA-83886670-8"></script>
-		<script defer type="text/plain" class="optanon-category-C0002" src="../js/gtm.js"></script>
-		<title>Checkout.com API Reference</title>
+<head>
+	<script defer src="https://cdn-ukwest.onetrust.com/scripttemplates/otSDKStub.js" data-language="en"
+		type="text/javascript" charset="UTF-8" data-domain-script="9be650fa-1b77-4848-b2d7-a3118f92e672-test"></script>
+	<!-- Hotjar Tracking Code for https://api-reference.checkout.com/ -->
+	<script>
+		(function (h, o, t, j, a, r) {
+			h.hj =
+				h.hj ||
+				function () {
+					(h.hj.q = h.hj.q || []).push(arguments);
+				};
+			h._hjSettings = { hjid: 2272523, hjsv: 6 };
+			a = o.getElementsByTagName('head')[0];
+			r = o.createElement('script');
+			r.async = 1;
+			r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
+			a.appendChild(r);
+		})(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
+	</script>
+	<script type="text/javascript">
+		function OptanonWrapper() { }
+	</script>
 
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link rel="stylesheet" type="text/css" href="./index.css" />
-		<link rel="apple-touch-icon" sizes="180x180" href="../favicons/apple-touch-icon-180x180.png" />
-		<link rel="icon" type="image/png" sizes="32x32" href="../favicons/favicon-32x32.png" />
-		<link rel="icon" type="image/png" sizes="16x16" href="../favicons/favicon-16x16.png" />
-		<link rel="mask-icon" href="../favicons/favicon.32.safari.svg" color="#00122C" />
-		<link rel="shortcut icon" href="../favicons/favicon.ico" />
-		<meta name="msapplication-TileColor" content="#00122C" />
-		<meta name="msapplication-config" content="../favicons/browserconfig.xml" />
-		<script type="text/plain" class="optanon-category-C0002" src="js/heapio.js"></script>
-		<script type="text/javascript" src="js/datadog.js"></script>
-		<script type="text/javascript" src="js/ddRum.js"></script>
-		<script type="text/plain" class="optanon-category-C0002" src="js/gcdc.js"></script>
-	</head>
+	<script async type="text/plain" src="https://www.googletagmanager.com/gtag/js?id=UA-83886670-8"></script>
+	<script defer type="text/plain" class="optanon-category-C0002" src="../js/gtm.js"></script>
+	<title>Checkout.com API Reference</title>
 
-	<body class="light">
-		<iframe
-			src="https://www.googletagmanager.com/ns.html?id=GTM-MG7959V"
-			height="0"
-			width="0"
-			style="display: none; visibility: hidden"
-		>
-		</iframe>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" type="text/css" href="./index.css" />
+	<link rel="apple-touch-icon" sizes="180x180" href="../favicons/apple-touch-icon-180x180.png" />
+	<link rel="icon" type="image/png" sizes="32x32" href="../favicons/favicon-32x32.png" />
+	<link rel="icon" type="image/png" sizes="16x16" href="../favicons/favicon-16x16.png" />
+	<link rel="mask-icon" href="../favicons/favicon.32.safari.svg" color="#00122C" />
+	<link rel="shortcut icon" href="../favicons/favicon.ico" />
+	<meta name="msapplication-TileColor" content="#00122C" />
+	<meta name="msapplication-config" content="../favicons/browserconfig.xml" />
+	<script type="text/plain" class="optanon-category-C0002" src="js/heapio.js"></script>
+	<script type="text/javascript" src="js/datadog.js"></script>
+	<script type="text/javascript" src="js/ddRum.js"></script>
+	<script type="text/plain" class="optanon-category-C0002" src="js/gcdc.js"></script>
+</head>
 
-		<script src="js/theme.js"></script>
+<body class="light">
+	<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MG7959V" height="0" width="0"
+		style="display: none; visibility: hidden">
+	</iframe>
 
-		<div id="redocly_container"></div>
+	<script src="js/theme.js"></script>
 
-		<script src="https://cdn.redoc.ly/reference-docs/v2.12.2/redocly-reference-docs.min.js"></script>
-		<script>
-			RedoclyReferenceDocs.init(
-				'./swagger.yaml',
-				{
-					licenseKey:
-						'eyJ0IjpmYWxzZSwiaSI6MTYzNjY0MjE0NiwiZSI6MTY2NDM2Njc2NywiaCI6WyJyZWRvYy5seSIsImNoZWNrb3V0LmNvbSIsImNoZWNrb3V0LWFwaS1yZWZlcmVuY2UtKi1ja28tZnJvbnRlbmQudmVyY2VsLmFwcCJdLCJzIjoicG9ydGFsIn0=.Qe5TLZezUYF3abwI3n29mqRe8uIP9LcSvzIi36ZMGDpiDHmjTL3AXm6mBzISgUfNGzBsuvw4zN+V8tp0lmAQ2w==',
-					pagination: 'none',
-					sidebarLinks: {
-						beforeInfo: [
-							{
-								label: 'Changelog',
-								link: 'https://github.com/checkout/checkout-api-reference/blob/master/abc_spec/changelog.md',
-								target: '_blank',
-							},
-						],
-					},
-					generateCodeSamples: {
-						languages: [{ lang: 'curl' }, { lang: 'Java' }, { lang: 'C#' }, { lang: 'Python' }],
-					},
-					skipOptionalParameters: true,
-					ctrlFHijack: true,
-					hideLoading: true,
-					menuToggle: true,
-					nativeScrollbars: true,
-					sendXUserAgentInTryIt: true,
-					showChangeLayoutButton: false,
-					showConsole: false,
+	<div id="redocly_container"></div>
+
+	<script src="https://cdn.redoc.ly/reference-docs/v2.12.2/redocly-reference-docs.min.js"></script>
+	<script>
+		RedoclyReferenceDocs.init(
+			'./swagger.yaml',
+			{
+				licenseKey:
+					'eyJ0IjpmYWxzZSwiaSI6MTY2NDM1OTQwNiwiZSI6MTY5NTkwMjc2NywiaCI6WyJyZWRvYy5seSIsImNoZWNrb3V0LmNvbSIsImNoZWNrb3V0LWFwaS1yZWZlcmVuY2UtKi1ja28tZnJvbnRlbmQudmVyY2VsLmFwcCJdLCJzIjoicG9ydGFsIn0=.ChY2shSxIaSN7RwrE0lQ81OENWzlRlpviH+bigtt4g7pEYPCBe5IP4N7crk5c0FV3U4NRyYk9O07fYNTl7GNyg==',
+				pagination: 'none',
+				sidebarLinks: {
+					beforeInfo: [
+						{
+							label: 'Changelog',
+							link: 'https://github.com/checkout/checkout-api-reference/blob/master/abc_spec/changelog.md',
+							target: '_blank',
+						},
+					],
 				},
-				document.querySelector('#redocly_container')
-			);
-		</script>
+				generateCodeSamples: {
+					languages: [{ lang: 'curl' }, { lang: 'Java' }, { lang: 'C#' }, { lang: 'Python' }],
+				},
+				skipOptionalParameters: true,
+				ctrlFHijack: true,
+				hideLoading: true,
+				menuToggle: true,
+				nativeScrollbars: true,
+				sendXUserAgentInTryIt: true,
+				showChangeLayoutButton: false,
+				showConsole: false,
+			},
+			document.querySelector('#redocly_container')
+		);
+	</script>
 
-		<script src="../js/show-footer.js"></script>
+	<script src="../js/show-footer.js"></script>
 
-		<div class="footerParent footer-main">
-			<footer class="footer-wrapper">
-				<div class="footer-item-cko">© 2021 Checkout.com</div>
-				<div class="footer-link-list">
-					<a class="footer-link" href="https://www.checkout.com/legal/terms-and-policies" target="_blank"
-						>Terms & Policies</a
-					>
-					<button class="ot-sdk-show-settings onetrust-button footer-link" id="ot-sdk-btn">Cookie settings</button>
-					<a class="footer-link" href="https://www.checkout.com/legal/certificates" target="_blank">Certificates</a>
-					<a class="footer-link" href="https://www.checkout.com/legal/privacy-policy" target="_blank">Privacy policy</a>
-					<a class="footer-link" href="https://www.checkout.com/Modern_Slavery_Statement.pdf" target="_blank"
-						>Modern Slavery Statement</a
-					>
-					<a class="footer-link" href="https://www.checkout.com/2019_Supplier_Code_of_Conduct.pdf" target="_blank"
-						>Supplier Code of Conduct</a
-					>
-				</div>
-			</footer>
-		</div>
-	</body>
+	<div class="footerParent footer-main">
+		<footer class="footer-wrapper">
+			<div class="footer-item-cko">© 2021 Checkout.com</div>
+			<div class="footer-link-list">
+				<a class="footer-link" href="https://www.checkout.com/legal/terms-and-policies" target="_blank">Terms &
+					Policies</a>
+				<button class="ot-sdk-show-settings onetrust-button footer-link" id="ot-sdk-btn">Cookie settings</button>
+				<a class="footer-link" href="https://www.checkout.com/legal/certificates" target="_blank">Certificates</a>
+				<a class="footer-link" href="https://www.checkout.com/legal/privacy-policy" target="_blank">Privacy policy</a>
+				<a class="footer-link" href="https://www.checkout.com/Modern_Slavery_Statement.pdf" target="_blank">Modern
+					Slavery Statement</a>
+				<a class="footer-link" href="https://www.checkout.com/2019_Supplier_Code_of_Conduct.pdf"
+					target="_blank">Supplier Code of Conduct</a>
+			</div>
+		</footer>
+	</div>
+</body>
+
 </html>

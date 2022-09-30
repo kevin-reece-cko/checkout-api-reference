@@ -45,7 +45,6 @@ properties:
       - Recurring
       - MOTO
       - Installment
-      - Unscheduled
     default: Regular
     example: Recurring
   reference:

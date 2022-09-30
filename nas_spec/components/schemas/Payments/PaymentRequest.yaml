@@ -27,7 +27,6 @@ properties:
       - Recurring
       - MOTO
       - Installment
-      - Unscheduled
     default: Regular
     example: Recurring
   merchant_initiated:
@@ -130,7 +129,7 @@ properties:
   amount_allocations:
     $ref: '#/components/schemas/AmountAllocations'
   processing:
-    $ref: '#/components/schemas/ProcessingSettings'
+    $ref: '#/components/schemas/PaymentRequestProcessingSettings'
   items:
     $ref: '#/components/schemas/Items'
   metadata:

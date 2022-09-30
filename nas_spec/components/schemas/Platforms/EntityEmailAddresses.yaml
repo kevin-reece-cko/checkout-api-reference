@@ -1,0 +1,9 @@
+type: object
+title: EmailAddresses
+description: Email addresses for this sub-entity. 
+properties:
+  primary:
+    type: string
+    description: The main email address for this sub-entity.
+    format: email
+    example: admin@superhero1234.com
