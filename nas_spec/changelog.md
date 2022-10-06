@@ -2,8 +2,9 @@
 
 | Date       | Description of change
 | ---------- | ----------------------------------------------------------------------------------------------------------------------|
-| 2022/09/30 | Adding a `entity` to BankPayoutRequest source.| 
-| 2022/09/27 | Adding a `customer` to PaymentRequest as a source.   
+| 2022/10/06 | Adding a `entity` to BankPayoutRequest source.                                                                        |   
+| 2022/09/29 | Added new GET Payments endpoint                                                                                       |
+| 2022/09/27 | Adding a `customer` to PaymentRequest as a source.                                                                    |
 | 2022/09/27 | Split ProcessingSettings object into PaymentRequestProcessingSettings and CaptureRequestProcessingSettings            |
 | 2022/09/22 | Add Integrated Platforms email address field and descriptions for French seller data                                  |
 | 2022/09/16 | Corrected one of the Reports API paths.                                                                               |
@@ -13,14 +14,14 @@
 | 2022/09/06 | ADD missing challenge indicator field.                                                                                |
 | 2022/09/06 | Added the `processing.partner_customer_id` field to ProcessingData.                                                   |
 | 2022/09/05 | ADD Alma NAS Request source.                                                                                          |   
-| 2022/09/02 | Adding `amount_allocations` object to Payment request, Capture and Payment Details                                    
-| 2022/08/29 | Add One Klarna Nas structure                                                                                          
+| 2022/09/02 | Adding `amount_allocations` object to Payment request, Capture and Payment Details                                    |
+| 2022/08/29 | Add One Klarna Nas structure                                                                                          |
 | 2022/08/26 | ADD KNET NAS Request and Response source                                                                              |
 | 2022/08/25 | Add P24 NAS Request and Response source.                                                                              |
 | 2022/08/29 | Add Postfinance, Bancontact and Multibanco NAS Request and Response sources                                           |
 | 2022/08/26 | ADD KNET NAS Request and Response source                                                                              |
 | 2022/08/25 | Add P24 NAS Request and Response source.                                                                              |
-| 2022/08/23 | Add STC Pay                                                                                                           
+| 2022/08/23 | Add STC Pay                                                                                                           |
 | 2022/08/19 | Add Benefit PG specific requirements to `reference` description                                                       |
 | 2022/08/19 | Added alipay_plus type                                                                                                |
 | 2022/08/17 | Added Reports API                                                                                                     |
