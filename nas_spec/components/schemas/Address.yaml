@@ -2,7 +2,7 @@ type: object
 properties:
   address_line1:
     type: string
-    description: The first line of the address
+    description: The first line of the address. Required if `source.type` is `tamara`
     maxLength: 200
     example: Checkout.com
   address_line2:
@@ -12,7 +12,7 @@ properties:
     example: 90 Tottenham Court Road
   city:
     type: string
-    description: The address city
+    description: The address city. Required if `source.type` is `tamara`
     maxLength: 50
     example: London
   state:
@@ -26,7 +26,7 @@ properties:
     example: W1T 4TJ
   country:
     type: string
-    description: The two-letter <a href="https://www.checkout.com/docs/resources/codes/country-codes" target="_blank">ISO country code</a> of the address
+    description: The two-letter <a href="https://www.checkout.com/docs/resources/codes/country-codes" target="_blank">ISO country code</a> of the address. Required if `source.type` is `tamara`
     example: GB
     maxLength: 2
     minLength: 2
