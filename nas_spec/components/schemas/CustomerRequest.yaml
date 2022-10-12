@@ -1,5 +1,5 @@
 type: object
-description: The customer's details
+description: The customer's details. Required if `source.type` is `tamara`
 properties:
   id:
     type: string
@@ -9,12 +9,12 @@ properties:
   email:
     type: string
     format: email
-    description: The customer's email address
+    description: The customer's email address. Required if `source.type` is `tamara`
     maxLength: 255
     example: 'brucewayne@gmail.com'
   name:
     type: string
-    description: The customer's name
+    description: The customer's name. Required if `source.type` is `tamara`
     maxLength: 255
     example: 'Bruce Wayne'
   tax_number:
@@ -24,6 +24,6 @@ properties:
     example: '1350693505279'
   phone:
     type: object
-    description: The customer's phone number
+    description: The customer's phone number. Required if `source.type` is `tamara`
     allOf:
       - $ref: '#/components/schemas/PhoneNumber'
