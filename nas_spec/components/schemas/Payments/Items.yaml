@@ -54,8 +54,8 @@ items:
     url:
       type: string
       maxLength: 1024
-      description: Link to the line items product page
+      description: Link to the line item's product page
     image_url:
       type: string
       maxLength: 1024
-      description: Link to the picture of the line item
+      description: Link to the line item's prodcut page
