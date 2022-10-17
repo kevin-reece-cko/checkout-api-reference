@@ -21,7 +21,9 @@ properties:
     example: 'London'
   state:
     type: string
-    description: 'The address state. (In the US, this is required and needs to be an ISO 3166-1 state code. In France, this needs to be the name of the Department.)'
+    description: | 
+      The address state. 
+      This field is required for addresses based in the US and France. For US addresses, provide the state as an ISO 3166-1 code. For French addresses, provide the Department the address is located in.
     minLength: 0
     maxLength: 300
     example: null
