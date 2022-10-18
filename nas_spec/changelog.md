@@ -2,7 +2,8 @@
 
 | Date       | Description of change
 | ---------- | ----------------------------------------------------------------------------------------------------------------------|
-| 2022/10/17 | Add new challenge indicator for authentication: data_share                                                            | 
+| 2022/10/18 | Add new challenge indicator for authentication: data_share                                                            | 
+| 2022/10/17 | Fixed Card and Token sources in Session to not have store_for_future_use                                              |
 | 2022/10/11 | Add Tamara NAS Request and Response source.                                                                           | 
 | 2022/09/29 | Added new GET Payments endpoint                                                                                       |
 | 2022/09/27 | Adding a `customer` to PaymentRequest as a source.                                                                    |

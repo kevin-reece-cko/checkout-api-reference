@@ -10,8 +10,3 @@ allOf:
         description: The Checkout.com card token
         example: 'tok_4gzeau5o2uqubbk6fufs3m7p54'
         maxLength: 100
-      store_for_future_use:
-        type: boolean
-        description: This must be set to `true` for authentications that intend to reuse the credentials in subsequent requests.
-        default: true
-        example: false
