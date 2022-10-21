@@ -103,4 +103,9 @@ properties:
     example: "1"
     maxLength: 1
     minLength: 1
-    description: The algorithm used by the Issuer ACS to calculate the Authentication cryptogram. This is the AVALGO data returned in Cartes bancaires Authentication.
+    description: The algorithm used by the issuer ACS to calculate the authentication cryptogram. This is the AVALGO data returned in Cartes Bancaires authentication.
+  allow_upgrade:
+    type: boolean
+    description: Indicates whether to process this payment as 3D Secure if the authorization was soft declined due to 3DS authentication required. For processing channels created before October 12, 2022, the value will default to `false`.
+    default: true
+    example: true

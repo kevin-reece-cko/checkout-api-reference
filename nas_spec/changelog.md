@@ -2,6 +2,7 @@
 
 | Date       | Description of change
 | ---------- | ----------------------------------------------------------------------------------------------------------------------|
+| 2022/10/20 | Added the `3ds.allow_upgrade` to payment requests & `3ds.upgrade_reason` to the 202 accepted & GET endpoint responses |
 | 2022/10/18 | Add new challenge indicator for authentication: data_share                                                            | 
 | 2022/10/17 | Fixed Card and Token sources in Session to not have store_for_future_use                                              |
 | 2022/10/11 | Add Tamara NAS Request and Response source.                                                                           | 
