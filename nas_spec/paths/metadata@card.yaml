@@ -4,7 +4,7 @@ post:
   security:
     - OAuth:
         - vault:card-metadata
-  summary: Request card metadata
+  summary: Get card metadata
   operationId: requestCardMetadata
   description: |
     <span style="font-size: 14px; font-weight: 500; color: rgb(60, 4, 133); background-color: rgb(237, 222, 255); border-radius: 4px; padding: 2px 6px" >Beta</span><p></p>
