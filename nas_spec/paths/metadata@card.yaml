@@ -1,0 +1,93 @@
+post:
+  tags:
+    - Card metadata
+  security:
+    - OAuth:
+        - vault:card-metadata
+  summary: Request card metadata
+  operationId: requestCardMetadata
+  description: |
+    <span style="font-size: 14px; font-weight: 500; color: rgb(60, 4, 133); background-color: rgb(237, 222, 255); border-radius: 4px; padding: 2px 6px" >Beta</span><p></p>
+    This endpoint provides general information about Cards. Only one parameter must
+    be passed as an input parameter in the request. It can be either PAN, BIN, token, or
+    instrument. The endpoint returns one Card Metadata record.
+
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: '#/components/schemas/CardMetadataRequest'
+        examples:
+          card_example:
+            value:
+              number: '4539467987109256'
+          bin_example:
+            value:
+              bin: '424242'
+          tokem_example:
+            value:
+              token_id: 'tok_ubfj2q76miwundwlk72vxt2i7q'
+              format: basic
+          instrument_example:
+            value:
+              instrument_id: 'src_e7hqezhxdfeetnyfdv3ayu6yru'
+              format: card_payouts
+
+  responses:
+    '200':
+      description: Card metadata for the card number, bin, token or instrument_id provided
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/CardMetadataResponse'
+          examples:
+            basic_example:
+              value:
+                bin: '45434720'
+                scheme: visa
+                scheme_local: cartes_bancaires
+                card_type: credit
+                card_category: consumer
+                issuer: 'STATE BANK OF MAURITIUS'
+                issuer_country: MU
+                issuer_country_name: Mauritius
+                product_id: CLASSIC
+                product_type: F
+            card_payouts_example:
+              value:
+                bin: '45434720'
+                scheme: visa
+                scheme_local: cartes_bancaires
+                card_type: credit
+                card_category: consumer
+                issuer: 'STATE BANK OF MAURITIUS'
+                issuer_country: MU
+                issuer_country_name: Mauritius
+                product_id: CLASSIC
+                product_type: F
+                card_payouts:
+                  domestic_non_money_transfer: not_supported
+                  cross_border_non_money_transfer: standard
+                  domestic_gambling: fast_funds
+                  cross_border_gambling: unknown
+                  domestic_money_transfer: unknown
+                  cross_border_money_transfer: not_supported
+
+    '401':
+      description: Unauthorized
+    '404':
+      description: Card Metadata not found
+    '415':
+      description: Unsupported Media Type
+    '422':
+      description: Invalid data was sent
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ValidationError'
+    '500':
+      description: Internal Server Error
+    '502':
+      description: Bad Gateway
+    '504':
+      description: Gateway Timeout

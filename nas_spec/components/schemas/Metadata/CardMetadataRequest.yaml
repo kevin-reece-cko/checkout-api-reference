@@ -1,0 +1,35 @@
+type: object
+properties:
+  bin:
+    description: The issuer Bank Identification Number
+    type: string
+    minLength: 6
+    maxLength: 8
+    pattern: '^[0-9]+$'
+    example: '454347'
+  number:
+    description: The PAN (Primary Account Number)
+    type: string
+    minLength: 12
+    maxLength: 19
+    pattern: '^[0-9]+$'
+    example: '4543474002249996'
+  token_id:
+    description: Reference to CKO token that represents a card's details that can be later used to request a payment
+    type: string
+    pattern: '^(tok)_(\w{26})$'
+    example: 'tok_ubfj2q76miwundwlk72vxt2i7q'
+  instrument_id:
+    description: Reference to instrument
+    type: string
+    pattern: '^(src)_(\w{26})$'
+    example: 'src_e7hqezhxdfeetnyfdv3ayu6yru'
+  format:
+    description: |
+      The output json format. "basic" format means that the response will include only
+      standard metadata. "card_payouts" format means that the response will consist of
+      standard metadata and Card Payouts specific fields.
+    type: string
+    default: basic
+    enum: [basic, card_payouts]
+    example: basic
