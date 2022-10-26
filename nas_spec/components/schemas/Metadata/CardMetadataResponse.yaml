@@ -28,7 +28,7 @@ properties:
     enum: [consumer, commercial, all, other]
     example: consumer
   issuer:
-    description: The name of the card issuer
+    description: The card issuer
     type: string
     example: 'STATE BANK OF MAURITIUS'
   issuer_country:
