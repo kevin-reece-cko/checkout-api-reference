@@ -57,7 +57,7 @@ properties:
         enum: [not_supported,standard,fast_funds,unknown]
         example: 'not_supported'
       cross_border_non_money_transfer:
-        description: The attribute shows if the card is eligible for cross-border non-money transfer transactions.
+        description: Describes whether the card is eligible for cross-border non-money transfer transactions
         type: string
         enum: [not_supported,standard,fast_funds,unknown]
         example: 'standard'
