@@ -35,7 +35,7 @@ post:
 
   responses:
     '200':
-      description: Card metadata for the card number, bin, token or instrument_id provided
+      description: Metadata for the card number, BIN, token, or instrument ID provided
       content:
         application/json:
           schema:
