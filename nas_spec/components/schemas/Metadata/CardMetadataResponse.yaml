@@ -52,7 +52,7 @@ properties:
     type: object
     properties:
       domestic_non_money_transfer:
-        description: The attribute shows if the card is eligible for domestic non-money transfer transactions
+        description: Describes whether the card is eligible for domestic non-money transfer transactions
         type: string
         enum: [not_supported,standard,fast_funds,unknown]
         example: 'not_supported'
