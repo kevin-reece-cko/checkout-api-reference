@@ -27,7 +27,6 @@ properties:
   format:
     description: |
       The output json format. "basic" format means that the response will include only
-      standard metadata. "card_payouts" format means that the response will consist of
     type: string
     default: basic
     enum: [basic, card_payouts]
