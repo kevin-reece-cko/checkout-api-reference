@@ -1,7 +1,7 @@
 type: object
 properties:
   bin:
-    description: The issuer Bank Identification Number
+    description: The issuer's Bank Identification Number (BIN)
     type: string
     minLength: 6
     maxLength: 8
