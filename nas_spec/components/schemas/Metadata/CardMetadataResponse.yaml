@@ -32,7 +32,7 @@ properties:
     type: string
     example: 'STATE BANK OF MAURITIUS'
   issuer_country:
-    description: The card issuer country ISO-2 code
+    description: The card issuer's country, as an ISO-2 code
     type: string
     example: 'MU'
   issuer_country_name:
