@@ -9,7 +9,6 @@ post:
   description: |
     <span style="font-size: 14px; font-weight: 500; color: rgb(60, 4, 133); background-color: rgb(237, 222, 255); border-radius: 4px; padding: 2px 6px" >Beta</span><p></p>
     Returns a single metadata record for the card specified by the Primary Account Number (PAN), Bank Identification Number (BIN), token, or instrument ID supplied. 
-    be passed as an input parameter in the request. It can be either PAN, BIN, token, or
 
   requestBody:
     content:
