@@ -40,7 +40,7 @@ properties:
     type: string
     example: 'Mauritius'
   product_id:
-    description: The issuer/card scheme product identifier
+    description: The card issuer or scheme's product identifier
     type: string
     example: 'CLASSIC'
   product_type:
