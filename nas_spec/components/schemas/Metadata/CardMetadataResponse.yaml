@@ -44,7 +44,7 @@ properties:
     type: string
     example: 'CLASSIC'
   product_type:
-    description: The issuer/card scheme product type
+    description: The card issuer or scheme's product type
     type: string
     example: 'F'
   card_payouts:
