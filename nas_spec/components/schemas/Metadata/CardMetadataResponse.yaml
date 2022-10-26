@@ -36,7 +36,7 @@ properties:
     type: string
     example: 'MU'
   issuer_country_name:
-    description: The card issuer country name
+    description: The card issuer's country
     type: string
     example: 'Mauritius'
   product_id:
