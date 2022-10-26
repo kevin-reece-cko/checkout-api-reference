@@ -13,7 +13,7 @@ properties:
     type: string
     example: 'visa'
   scheme_local:
-    description: The local card scheme. Present only in case the card is co-branded.
+    description: The local card scheme, if the card is co-branded
     type: string
     enum: [cartes_bancaires, mada, omannet]
     example: 'cartes_bancaires'
