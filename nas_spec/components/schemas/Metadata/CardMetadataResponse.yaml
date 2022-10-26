@@ -67,7 +67,7 @@ properties:
         enum: [not_supported,standard,fast_funds,unknown]
         example: 'fast_funds'
       cross_border_gambling:
-        description: The attribute shows if the card is eligible for cross-border gambling transactions.
+        description: Describes whether the card is eligible for cross-border gambling transactions
         type: string
         enum: [not_supported,standard,fast_funds,unknown]
         example: 'unknown'
