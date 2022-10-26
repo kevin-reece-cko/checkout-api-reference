@@ -8,7 +8,7 @@ properties:
     pattern: '^[0-9]+$'
     example: '454347'
   number:
-    description: The PAN (Primary Account Number)
+    description: The Primary Account Number (PAN)
     type: string
     minLength: 12
     maxLength: 19
