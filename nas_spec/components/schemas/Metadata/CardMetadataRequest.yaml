@@ -20,7 +20,7 @@ properties:
     pattern: '^(tok)_(\w{26})$'
     example: 'tok_ubfj2q76miwundwlk72vxt2i7q'
   instrument_id:
-    description: Reference to instrument
+    description: The unique ID for the payment instrument that was created using the card's details
     type: string
     pattern: '^(src)_(\w{26})$'
     example: 'src_e7hqezhxdfeetnyfdv3ayu6yru'
