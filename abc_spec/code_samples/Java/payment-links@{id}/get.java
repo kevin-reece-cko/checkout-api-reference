@@ -1,21 +1,22 @@
 // For more information please refer to https://github.com/checkout/checkout-sdk-java
-import com.checkout.CheckoutApi;
 import com.checkout.CheckoutApiException;
 import com.checkout.CheckoutArgumentException;
 import com.checkout.CheckoutAuthorizationException;
 import com.checkout.CheckoutSdk;
 import com.checkout.Environment;
 import com.checkout.payments.links.PaymentLinkDetailsResponse;
+import com.checkout.previous.CheckoutApi;
 
-CheckoutApi api = CheckoutSdk.defaultSdk()
+CheckoutApi api = CheckoutSdk
+    .builder()
+    .previous()
     .staticKeys()
-    .publicKey("public_key")
     .secretKey("secret_key")
     .environment(Environment.SANDBOX) // or Environment.PRODUCTION
     .build();
 
 try {
-    PaymentLinkDetailsResponse response = api.paymentLinksClient().getAsync("payment_link_id").get();
+    PaymentLinkDetailsResponse response = api.paymentLinksClient().getPaymentLink("payment_link_id").get();
 } catch (CheckoutApiException e) {
     // API error
     String requestId = e.getRequestId();

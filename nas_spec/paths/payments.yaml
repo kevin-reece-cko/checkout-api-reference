@@ -18,6 +18,8 @@ post:
         schema:
           oneOf:
             - $ref: '#/components/schemas/PaymentRequest'
+            # - $ref: '#/components/schemas/PayoutRequest'
+            - $ref: '#/components/schemas/CardPayoutRequest'
             - $ref: '#/components/schemas/BankPayoutRequest'
         examples:
           Payment:
@@ -95,7 +97,84 @@ post:
                 scheme: 'local'
                 quote_id: 'qte_mbabizu24mvu3mela5njyhpit4'
               processing_channel_id: 'pc_hpswyyx23geezflc2ocz3exn4y'
-
+          Card Payout - Money Transfer:
+            value:
+              source:
+                type: 'currency_account'
+                id: 'ca_y3oqhf46pyzuxjbcn2giaqnb44'
+              destination:
+                type: 'card'
+                number: '4242424242424242'
+                expiry_month: 12
+                expiry_year: 2024
+                account_holder:
+                  type: 'individual'
+                  first_name: 'John'
+                  last_name: 'Smith'
+              amount: 1000
+              currency: GBP
+              sender:
+                type: 'individual'
+                first_name: 'Hayley'
+                last_name: 'Jones'
+                address:
+                  address_line1: 'A House'
+                  address_line2: 'A Street'
+                  city: 'A City'
+                  zip: 'AA12 1AA'
+                  country: 'GB'
+                reference: '1234567ABCDEFG'
+                reference_type: 'other'             
+                date_of_birth: '1939-05-27'
+                source_of_funds: 'debit'
+              instruction:
+                funds_transfer_type: 'AA'
+              processing_channel_id: 'pc_hpswyyx23geezflc2ocz3exn4y'
+          Card Payout - Direct Funds Disbursement:
+            value:
+              source:
+                type: 'currency_account'
+                id: 'ca_y3oqhf46pyzuxjbcn2giaqnb44'
+              destination:
+                type: 'id'
+                id: 'src_y3oqhf46pyzuxjbcn2giaqnb44'
+                account_holder:
+                  type: 'corporate'
+                  company_name: 'Checkout.com'
+              amount: 1000
+              currency: GBP
+              instruction:
+                funds_transfer_type: 'OG'
+              processing_channel_id: 'pc_hpswyyx23geezflc2ocz3exn4y'
+          Card Payout - Third-Party Funds Disbursement:
+            value:
+              source:
+                type: 'currency_account'
+                id: 'ca_y3oqhf46pyzuxjbcn2giaqnb44'
+              destination:
+                type: 'token'
+                token: 'tok_y3oqhf46pyzuxjbcn2giaqnb44'
+                account_holder:
+                  type: 'corporate'
+                  company_name: 'Checkout.com'
+              amount: 1000
+              currency: GBP
+              sender:
+                type: 'corporate'
+                company_name: 'A Company'
+                address:
+                  address_line1: 'A House'
+                  address_line2: 'A Street'
+                  city: 'A City'
+                  zip: 'AA12 1AA'
+                  country: 'GB'
+                reference: '1234567ABCDEFG'
+                reference_type: 'other'             
+                source_of_funds: 'debit'
+              instruction:
+                funds_transfer_type: 'FD'
+              processing_channel_id: 'pc_hpswyyx23geezflc2ocz3exn4y'
+         
   responses:
     '201':
       description: Payment processed successfully
@@ -155,9 +234,9 @@ post:
               action:
                 href: 'https://api.sandbox.checkout.com/payments/pay_mbabizu24mvu3mela5njyhpit4/actions'
               void:
-                href: 'https://api.sandbox.checkout.com/payments/pay_mbabizu24mvu3mela5njyhpit4/captures'
-              capture:
                 href: 'https://api.sandbox.checkout.com/payments/pay_mbabizu24mvu3mela5njyhpit4/voids'
+              capture:
+                href: 'https://api.sandbox.checkout.com/payments/pay_mbabizu24mvu3mela5njyhpit4/captures'
       headers:
         Cko-Request-Id:
           $ref: '#/components/headers/Cko-Request-Id'
@@ -171,6 +250,7 @@ post:
             oneOf:
               - $ref: '#/components/schemas/PaymentAcceptedResponse'
               - $ref: '#/components/schemas/PayoutAcceptedResponse'
+              - $ref: '#/components/schemas/CardPayoutAcceptedResponse'
       headers:
         Cko-Request-Id:
           $ref: '#/components/headers/Cko-Request-Id'
@@ -204,3 +284,55 @@ post:
             $ref: '#/components/schemas/ValidationError'
     '502':
       description: Bad gateway
+get:
+  tags:
+    - Payments
+  security:
+    - OAuth:
+        - gateway
+        - gateway:payment-details
+    - ApiSecretKey: [ ]
+  summary: Get payment lists
+  description: |
+    <span style="font-size: 14px; font-weight: 500; color: rgb(60, 4, 133); background-color: rgb(237, 222, 255); border-radius: 4px; padding: 2px 6px" >Beta</span><p></p>
+    Returns a list of your business' payments that match the specified reference. Results are returned in reverse chronological order, with the most recent payments shown first.
+    You can use the optional parameters below to skip or limit results.
+  parameters:
+    - in: query
+      name: limit
+      schema:
+        type: integer
+        minimum: 1
+        maximum: 100
+        default: 10
+      required: false
+      description: The numbers of results to retrieve
+    - in: query
+      name: skip
+      schema:
+        type: integer
+        minimum: 0
+        default: 0
+      required: false
+      description: The number of results to skip
+    - in: query
+      name: reference
+      schema:
+        type: string
+      required: true
+      description: A reference, such as an order ID, that can be used to identify the payment
+  responses:
+    '200':
+      description: Payments retrieved successfully
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/PaymentPaged'
+    '401':
+      description: Unauthorized
+    '422':
+      description: Unprocessable paging
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/PagingError'

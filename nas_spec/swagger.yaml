@@ -17,7 +17,7 @@ info:
   description: >
     ##  Get started
 
-    Checkout.com provides a collection of APIs that enable you to process and manage payments. Our APIs accept and return JSON in the HTTP body, and return standard <a href="https://www.checkout.com/docs/four/resources/codes/http-response-codes">HTTP response codes</a>.
+    Checkout.com provides a collection of APIs that enable you to process and manage payments. Our APIs accept and return JSON in the HTTP body, and return standard <a href="https://www.checkout.com/docs/resources/codes/http-response-codes">HTTP response codes</a>.
 
     You can consume the APIs directly using your favorite HTTP/REST library.
 
@@ -39,6 +39,9 @@ info:
 
       | Date       | Description of change                                                         |
       | ---------- | ----------------------------------------------------------------------------- |
+      | 2022/10/25 | Added Card Metadata API                                                       |
+      | 2022/08/17 | Added Reports API                                                             |
+      | 2022/07/22 | Update Java code samples to match new SDK Version.                            |
       | 2022/06/29 | Updated Authentication content.                                               |
       | 2022/03/16 | Added the `scheme_local` to source for CoBrand payments.                      |
       | 2022/02/07 | Added the `preferred_scheme` to Processing to support CoBrand payments.       |
@@ -78,6 +81,8 @@ tags:
     description: Keep track of and act on your open disputes (also known as chargebacks) to submit the best possible response.
   - name: Platforms
     description: Manage all your sub-entities (also known as sub-merchants) through one integration, globally.
+  - name: Reports
+    description: Retrieve your reconciliation reports programmatically with the <a href="https://www.checkout.com/docs/reporting/reports-api">Reports API</a>.
   - name: Sessions
     description: Use Sessions to authenticate transactions with 3D Secure (3DS) and comply with Strong Customer Authentication (SCA) requirements.
   - name: Workflows
@@ -90,6 +95,8 @@ tags:
     description: Transfer funds while managing the entities to transfer money to recoup funds from a seller, return money from a refund or to make up the difference when running a promotion.
   - name: Balances
     description: View balances for currency accounts belonging to an entity.
+  - name: Card Metadata
+    description: Retrieve card metadata
 
   # - name: Files
   #   description: |
@@ -124,3 +131,9 @@ x-tagGroups:
   - name: Platforms
     tags:
       - Platforms
+  - name: Reporting
+    tags:
+      - Reports
+  - name: Metadata
+    tags:
+      - Card metadata

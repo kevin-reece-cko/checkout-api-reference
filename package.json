@@ -5,6 +5,7 @@
   "dependencies": {
     "connect": "^3.7.0",
     "cors": "^2.8.5",
+    "cross-env": "^7.0.3",
     "dotnet-sdk-3.1": "^3.1.1007",
     "gulp": "^4.0.2",
     "gulp-connect": "^5.7.0",
@@ -20,11 +21,11 @@
     "yamljs": "0.3.0"
   },
   "scripts": {
-    "build:abc": "ACCOUNT=abc node ./scripts/build.js",
-    "build:all": "ACCOUNT=abc node ./scripts/build.js && ACCOUNT=nas node ./scripts/build.js",
-    "build:nas": "ACCOUNT=nas node ./scripts/build.js",
-    "test:abc": "swagger-cli validate --no-schema web_deploy/swagger.yaml",
-    "test:nas": "swagger-cli validate --no-schema web_deploy/preview/crusoe/swagger.yaml",
+    "build:abc": "cross-env ACCOUNT=abc node ./scripts/build.js",
+    "build:all": "cross-env ACCOUNT=abc node ./scripts/build.js && cross-env ACCOUNT=nas node ./scripts/build.js",
+    "build:nas": "cross-env ACCOUNT=nas node ./scripts/build.js",
+    "test:abc": "swagger-cli validate --no-schema web_deploy/previous/swagger.yaml",
+    "test:nas": "swagger-cli validate --no-schema web_deploy/swagger.yaml",
     "prettier": "npx prettier --write '**/*.{js,yaml}'",
     "start": "gulp serve",
     "swagger": "swagger-repo",

@@ -1,7 +1,9 @@
 // For more information please refer to https://github.com/checkout/checkout-sdk-net
 using Checkout.Disputes;
 
-ICheckoutApi api = CheckoutSdk.DefaultSdk().StaticKeys()
+Previous.ICheckoutApi api = CheckoutSdk.Builder()
+	.Previous()
+	.StaticKeys()
 	.PublicKey("public_key")
 	.SecretKey("secret_key")
 	.Environment(Environment.Sandbox)
@@ -22,7 +24,7 @@ DisputeEvidenceRequest request = new DisputeEvidenceRequest()
 
 try
 {
-	await api.DisputesClient().PutEvidence("disputes_id", request);
+	EmptyResponse response = await api.DisputesClient().PutEvidence("disputes_id", request);
 }
 catch (CheckoutApiException e)
 {

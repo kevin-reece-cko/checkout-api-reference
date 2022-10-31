@@ -1,0 +1,5 @@
+type: object
+description: 'Afterpay payment response source'
+allOf:
+  - $ref: '#/components/schemas/PaymentResponseSource'
+  - type: object

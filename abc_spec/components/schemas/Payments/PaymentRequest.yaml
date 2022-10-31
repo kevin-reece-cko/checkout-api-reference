@@ -8,14 +8,14 @@ properties:
     type: integer
     description: |
       The payment amount.
-      The exact format <a href="https://docs.checkout.com/resources/calculating-the-value" target="blank">depends on the currency</a>.
+      The exact format <a href="https://www.checkout.com/docs/previous/resources/calculating-the-value" target="blank">depends on the currency</a>.
       Omit the amount or provide a value of `0` to perform a card verification.
     minimum: 0
     example: 6540
   currency:
     type: string
     description: |
-      The three-letter <a href="https://docs.checkout.com/resources/codes/currency-codes" target="blank">ISO currency code</a>
+      The three-letter <a href="https://www.checkout.com/docs/previous/resources/codes/currency-codes" target="blank">ISO currency code</a>
     example: USD
     maxLength: 3
     minLength: 3
@@ -26,11 +26,12 @@ properties:
       - Regular
       - Recurring
       - MOTO
+      - Installment
     default: Regular
     example: Recurring
   merchant_initiated:
     type: boolean
-    description: Flags the payment as a merchant-initiated transaction (MIT). <a href="https://docs.checkout.com/quickstart/use-an-existing-card/stored-card-details" target="_blank">Must be set to `true` for all MITs</a>.
+    description: Flags the payment as a merchant-initiated transaction (MIT). <a href="https://www.checkout.com/docs/previous/payments/accept-payments/pay-with-stored-details" target="_blank">Must be set to `true` for all MITs</a>.
   reference:
     type: string
     description: A reference you can later use to identify this payment, such as an order number. Required when processing via dLocal or Bambora.
@@ -93,7 +94,7 @@ properties:
   previous_payment_id:
     type: string
     description: |
-      For payments that use <a href="https://docs.checkout.com/quickstart/use-an-existing-card/stored-card-details" target="blank">stored card details</a>, such as recurring payments –
+      For payments that use <a href="https://www.checkout.com/docs/previous/payments/accept-payments/pay-with-stored-details" target="blank">stored card details</a>, such as recurring payments –
       an existing payment identifier from the recurring series or the Scheme Transaction Id
     maxLength: 100
     example: 'pay_fun26akvvjjerahhctaq2uzhu4'
@@ -123,7 +124,82 @@ properties:
     properties:
       aft:
         type: boolean
-        description: Indicates whether the payment is an [Account Funding Transaction](https://docs.checkout.com/payment-actions/account-funding-transactions)
+        description: Indicates whether the payment is an [Account Funding Transaction](https://www.checkout.com/docs/previous/payments/manage-payments/account-funding-transactions)
+      senderInformation:
+        type: object
+        description: Details about the sender. <a href="https://www.checkout.com/docs/previous/payments/manage-payments/account-funding-transactions#Endpoints" target="_blank">See our documentation for specific requirements</a>.
+        properties:
+          reference:
+            type: string
+            description: Merchant's unique customer ID.<br> <i>Alphanumeric characters only</i>.
+            maxLength: 16
+          firstName:
+            type: string
+            description: The first name.
+            maxLength: 15
+          lastName:
+            type: string
+            description: The last name.
+            maxLength: 15
+          dob:
+            type: string
+            format: date
+            description: The sender's date of birth (yyyy-mm-dd)
+            maxLength: 10
+            example: '1985-05-15'
+          address:
+            type: string
+            description: The address.
+            maxLength: 35
+          city:
+            type: string
+            description: The address city.
+            maxLength: 25
+          state:
+            type: string
+            description: The state or province of the address country (<a href="https://en.wikipedia.org/wiki/ISO_3166-2" target="_blank">ISO 3166-2 code</a> of up to two alphanumeric characters).
+            maxLength: 2
+          country:
+            type: string
+            description: The address country (two-letter <a href="https://www.checkout.com/docs/previous/resources/codes/country-codes" target="_blank">ISO country code</a>).
+            maxLength: 2
+          postalCode:
+            type: string
+            description: The post/zip code.<br><i>Only required for Mastercard transactions</i>.
+            maxLength: 10
+          sourceOfFunds:
+            type: string
+            description: The source of the funds.
+            enum:
+              - Credit
+              - Debit
+              - Prepaid
+              - DepositAccount
+              - MobileMoneyAccount
+              - Cash
+          purpose:
+            type: string
+            description: Contains the purpose of the transaction. Required when the destination country is Argentina, Bangladesh, Egypt or India. Mandatory from 15th October 2021.
+            enum:
+              - donations
+              - education
+              - emergency_need
+              - expatriation
+              - family_support
+              - financial_services
+              - gifts
+              - income
+              - insurance
+              - investment
+              - it_services
+              - leisure
+              - loan_payment
+              - medical_treatment
+              - other
+              - pension
+              - royalties
+              - savings
+              - travel_and_tourism
       merchant_initiated_reason:
         type: string
         enum:
@@ -134,7 +210,7 @@ properties:
         description: Indicates the reason for a merchant initiated payment request.
       dlocal:
         type: object
-        description: Processing information required for <a href="https://www.checkout.com/docs/payments/payment-methods/cards/dlocal" target="_blank">dLocal payments</a>.
+        description: Processing information required for <a href="https://www.checkout.com/docs/previous/payments/payment-methods/cards/dlocal" target="_blank">dLocal payments</a>.
         properties:
           country:
             type: string

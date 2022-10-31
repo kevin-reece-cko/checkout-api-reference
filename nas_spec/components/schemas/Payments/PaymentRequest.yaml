@@ -9,13 +9,13 @@ properties:
     description: |
       The payment amount. Omit the amount or provide a value of `0` to perform a card verification.       
 
-      The amount must be provided in the <a href="https://docs.checkout.com/four/resources/calculating-the-amount" target="blank">minor currency unit</a>.
+      The amount must be provided in the <a href="https://www.checkout.com/docs/resources/calculating-the-amount" target="blank">minor currency unit</a>.
     minimum: 0
     example: 6540
   currency:
     type: string
     description: |
-      The three-letter <a href="https://docs.checkout.com/four/resources/codes/currency-codes" target="blank">ISO currency code</a>
+      The three-letter <a href="https://www.checkout.com/docs/resources/codes/currency-codes" target="blank">ISO currency code</a>
     example: USD
     maxLength: 3
     minLength: 3
@@ -31,10 +31,12 @@ properties:
     example: Recurring
   merchant_initiated:
     type: boolean
-    description: Flags the payment as a merchant-initiated transaction (MIT). <a href="https://docs.checkout.com/four/payments/accept-payments/use-saved-details/about-stored-card-details" target="_blank">Must be set to `true` for all MITs</a>.
+    description: Flags the payment as a merchant-initiated transaction (MIT). <a href="https://www.checkout.com/docs/payments/accept-payments/use-saved-details/about-stored-card-details" target="_blank">Must be set to `true` for all MITs</a>.
   reference:
     type: string
-    description: A reference you can later use to identify this payment, such as an order number
+    description: |
+      A reference you can later use to identify this payment, such as an order number.
+      Can only be alphanumeric and must be unique for Benefit.
     maxLength: 50
     example: 'ORD-5023-4E89'
   description:
@@ -82,7 +84,12 @@ properties:
         description: The postal code or zip code of the location being shipped from.
         example: '10014'
   3ds:
-    $ref: '#/components/schemas/3dsRequest'
+    description: Information required for 3D Secure authentication payments
+    oneOf:
+      - $ref: '#/components/schemas/3dsRequest'
+      - $ref: '#/components/schemas/3dsRequestStandalone'
+      - $ref: '#/components/schemas/3dsRequestThirdParty'
+    type: object
   processing_channel_id:
     type: string
     pattern: "^(pc)_(\\w{26})$"
@@ -91,7 +98,7 @@ properties:
   previous_payment_id:
     type: string
     description: |
-      For payments that use <a href="https://www.checkout.com/docs/four/payments/store-payment-details" target="blank">stored card details</a>, such as recurring payments –
+      For payments that use <a href="https://www.checkout.com/docs/payments/store-payment-details" target="blank">stored card details</a>, such as recurring payments –
       an existing payment identifier from the recurring series or the Scheme Transaction ID
     maxLength: 100
     example: 'pay_fun26akvvjjerahhctaq2uzhu4'
@@ -118,9 +125,11 @@ properties:
   recipient:
     $ref: '#/components/schemas/PaymentRecipient'
   marketplace:
-    $ref: '#/components/schemas/MarketplaceData'
+    $ref: '#/components/schemas/MarketplaceAuth'
+  amount_allocations:
+    $ref: '#/components/schemas/AmountAllocations'
   processing:
-    $ref: '#/components/schemas/ProcessingSettings'
+    $ref: '#/components/schemas/PaymentRequestProcessingSettings'
   items:
     $ref: '#/components/schemas/Items'
   metadata:

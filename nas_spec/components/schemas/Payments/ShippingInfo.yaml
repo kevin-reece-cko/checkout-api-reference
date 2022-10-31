@@ -1,0 +1,49 @@
+type: object
+properties:
+  return_shipping_company:
+    description: Name of the shipping company for the return shipment (as specific as possible).
+    maxLength: 100
+    type: string
+    example: DHL US
+  return_tracking_number:
+    description: Tracking number for the return shipment. 
+    maxLength: 100
+    type: string
+    example: GM275322484009027685
+  return_tracking_uri:
+    description: URL where the customer can track the return shipment.
+    maxLength: 1024
+    type: string
+    example: http://example.com/tracking/GM275322484009027685
+  shipping_company:
+    description: Name of the shipping company (as specific as possible)
+    maxLength: 100
+    type: string
+    example: DHL US
+  shipping_method:
+    description: Shipping method
+    type: string
+    enum:
+      - PickUpStore 
+      - Home 
+      - BoxReg 
+      - BoxUnreg 
+      - PickUpPoint 
+      - Own 
+      - Postal 
+      - DHLPackstation 
+      - Digital 
+      - Undefined 
+      - PickUpWarehouse 
+      - ClickCollect 
+      - PalletDelivery
+  tracking_number:
+    description: Tracking number for the shipment. 
+    maxLength: 100
+    type: string
+    example: GM275322484009027685
+  tracking_uri:
+    description: URI where the customer can track their shipment. 
+    maxLength: 1024
+    type: string
+    example: http://example.com/tracking/GM275322484009027685

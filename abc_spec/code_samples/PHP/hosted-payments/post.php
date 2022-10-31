@@ -1,10 +1,9 @@
-// For more information please refer to https://github.com/checkout/checkout-sdk-php
 <?php
+//For more information please refer to https://github.com/checkout/checkout-sdk-php
 
 use Checkout\\CheckoutApiException;
-use Checkout\\CheckoutArgumentException;
 use Checkout\\CheckoutAuthorizationException;
-use Checkout\\CheckoutDefaultSdk;
+use Checkout\\CheckoutSdk;
 use Checkout\\Common\\Address;
 use Checkout\\Common\\Country;
 use Checkout\\Common\\Currency;
@@ -23,11 +22,12 @@ use Checkout\\Payments\\RiskRequest;
 use Checkout\\Payments\\ShippingDetails;
 use Checkout\\Payments\\ThreeDsRequest;
 
-$builder = CheckoutDefaultSdk::staticKeys();
-$builder->setPublicKey("public_key");
-$builder->setSecretKey("secret_key");
-$builder->setEnvironment(Environment::sandbox()); // or Environment::production()
-$api = $builder->build();
+$api = CheckoutSdk::builder()
+    ->previous()
+    ->staticKeys()
+    ->environment(Environment::sandbox())
+    ->secretKey("secret_key")
+    ->build();
 
 $phone = new Phone();
 $phone->country_code = "+1";
@@ -42,7 +42,7 @@ $address->zip = "W1T 4TJ";
 $address->country = Country::$GB;
 
 $customerRequest = new CustomerRequest();
-$customerRequest->email = "email@docs.checkout.com"
+$customerRequest->email = "email@docs.checkout.com";
 $customerRequest->name = "Name";
 
 $billingInformation = new BillingInformation();
@@ -55,9 +55,7 @@ $shippingDetails->phone = $phone;
 
 $recipient = new PaymentRecipient();
 $recipient->account_number = "1234567";
-$recipient->country = Country::$ES;
 $recipient->dob = "1985-05-15";
-$recipient->first_name = "FirstName";
 $recipient->last_name = "LastName";
 $recipient->zip = "12345";
 
@@ -108,11 +106,8 @@ try {
     $response = $api->getHostedPaymentsClient()->createHostedPaymentsPageSession($request);
 } catch (CheckoutApiException $e) {
     // API error
-    $request_id = $e->request_id;
-    $http_status_code = $e->http_status_code;
     $error_details = $e->error_details;
-} catch (CheckoutArgumentException $e) {
-    // Bad arguments
+    $http_status_code = isset($e->http_metadata) ? $e->http_metadata->getStatusCode() : null;
 } catch (CheckoutAuthorizationException $e) {
     // Bad Invalid authorization
 }

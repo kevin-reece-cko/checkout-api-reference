@@ -19,8 +19,15 @@ properties:
               - $ref: '#/components/schemas/EntityPhone'
             required:
               - number
+          email_addresses:
+            description: 'Email addresses for this sub-entity.'
+            allOf:
+              - $ref: '#/components/schemas/EntityEmailAddresses'
+            required:
+              - primary
         required:
           - phone
+          - email_addresses
   profile:
     title: Profile
     allOf:
@@ -39,7 +46,10 @@ properties:
     properties:
       business_registration_number:
         type: string
-        description: 'The Business Registration Number of the sub-entity, such as Commercial Registration, Ministry of Commerce certificate number or equivalent registration number.'
+        description: |
+          The sub-entity's Business Registration Number. 
+          This can be a Commercial Registration or Ministry of Commerce certificate number, or any other equivalent registration number. 
+          For sub-entities based in France, this must be a SIRET number.
         minLength: 2
         maxLength: 20
         example: '452349600005'
@@ -87,7 +97,7 @@ properties:
           - zip
           - country
       document:
-        $ref: '#/components/schemas/EntityDocument'
+        $ref: '#/components/schemas/EntityDocumentCompany'
       representatives:
         type: array
         title: Representatives

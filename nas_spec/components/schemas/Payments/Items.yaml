@@ -16,7 +16,7 @@ items:
       example: 2
     unit_price:
       type: integer
-      description: The unit price of the item the <a href="https://docs.checkout.com/four/resources/calculating-the-amount" target="blank">minor currency unit</a>
+      description: The unit price of the item the <a href="https://www.checkout.com/docs/resources/calculating-the-amount" target="blank">minor currency unit</a>
       minimum: 0
       example: 50
     reference:
@@ -51,3 +51,11 @@ items:
       description: Unified product No. defined by WeChat Pay
       maxLength: 32
       example: 1001
+    url:
+      type: string
+      maxLength: 1024
+      description: Link to the line item's product page
+    image_url:
+      type: string
+      maxLength: 1024
+      description: Link to the line item's prodcut page

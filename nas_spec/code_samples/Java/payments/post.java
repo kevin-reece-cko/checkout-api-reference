@@ -1,36 +1,36 @@
 // For more information please refer to https://github.com/checkout/checkout-sdk-java
+import com.checkout.CheckoutApi;
 import com.checkout.CheckoutApiException;
 import com.checkout.CheckoutArgumentException;
 import com.checkout.CheckoutAuthorizationException;
 import com.checkout.CheckoutSdk;
 import com.checkout.Environment;
+import com.checkout.OAuthScope;
+import com.checkout.common.AccountHolderIdentification;
+import com.checkout.common.AccountHolderIdentificationType;
 import com.checkout.common.Address;
 import com.checkout.common.ChallengeIndicator;
 import com.checkout.common.CountryCode;
 import com.checkout.common.Currency;
-import com.checkout.four.CheckoutApi;
 import com.checkout.payments.ThreeDSRequest;
-import com.checkout.payments.four.request.PaymentRequest;
-import com.checkout.payments.four.request.source.RequestCardSource;
-import com.checkout.payments.four.response.PaymentResponse;
-import com.checkout.payments.four.sender.PaymentIndividualSender;
-import com.checkout.payments.four.sender.SenderIdentification;
-import com.checkout.payments.four.sender.SenderIdentificationType;
+import com.checkout.payments.request.PaymentRequest;
+import com.checkout.payments.request.source.RequestCardSource;
+import com.checkout.payments.response.PaymentResponse;
+import com.checkout.payments.sender.PaymentIndividualSender;
 
 // API Keys
-CheckoutApi api = CheckoutSdk.fourSdk()
+CheckoutApi api = CheckoutSdk.builder()
     .staticKeys()
-    .publicKey("public_key")
     .secretKey("secret_key")
     .environment(Environment.SANDBOX) // or Environment.PRODUCTION
     .build();
 
 // OAuth
-CheckoutApi api = CheckoutSdk.fourSdk()
+CheckoutApi api = CheckoutSdk.builder()
     .oAuth()
     .clientCredentials("client_id", "client_secret")
+    .scopes(OAuthScope.GATEWAY) // more scopes available
     .environment(Environment.SANDBOX) // or Environment.PRODUCTION
-    .scopes(FourOAuthScope.GATEWAY) // more scopes available
     .build();
 
 RequestCardSource source = RequestCardSource.builder()
@@ -52,8 +52,8 @@ PaymentIndividualSender sender = PaymentIndividualSender.builder()
         .zip("W1T 4TJ")
         .country(CountryCode.GB)
         .build())
-    .identification(SenderIdentification.builder()
-        .type(SenderIdentificationType.DRIVING_LICENCE)
+    .identification(AccountHolderIdentification.builder()
+        .type(AccountHolderIdentificationType.DRIVING_LICENCE)
         .number("1234")
         .issuingCountry(CountryCode.GB)
         .build())
@@ -64,7 +64,9 @@ ThreeDSRequest threeDSRequest = ThreeDSRequest.builder()
     .challengeIndicator(ChallengeIndicator.NO_CHALLENGE_REQUESTED)
     .build();
 
-PaymentRequest request = PaymentRequest.builder().source(source).sender(sender)
+PaymentRequest request = PaymentRequest.builder()
+    .source(source)
+    .sender(sender)
     .capture(false)
     .reference("reference")
     .amount(10L)

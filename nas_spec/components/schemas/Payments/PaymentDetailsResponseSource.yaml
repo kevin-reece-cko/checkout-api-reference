@@ -6,9 +6,19 @@ discriminator:
   mapping:
     card: '#/components/schemas/01_PaymentResponseCardSource'
     currency_account: '#/components/schemas/02_PaymentResponseCurrencyAccountSource'
+    qpay: '#/components/schemas/PaymentGetResponseQPaySource'
+    giropay: '#/components/schemas/PaymentGetResponseGiropaySource'
+    eps: '#/components/schemas/PaymentGetResponseEPSSource'
+    klarna: '#/components/schemas/PaymentGetResponseKlarnaSource'
+    p24: '#/components/schemas/PaymentResponseP24Source'
+    knet: '#/components/schemas/PaymentResponseKnetSource'
+    multibance: '#/components/schemas/PaymentResponseMultibancoSource'
+    postfinance: '#/components/schemas/PaymentResponsePostfinanceSource'
+    bancontact: '#/components/schemas/PaymentResponseBancontactSource'
+    alma: '#/components/schemas/PaymentResponseAlmaSource'
+    tamara: '#/components/schemas/PaymentResponseTamaraSource'
 required:
   - type
-
 properties:
   type:
     type: string

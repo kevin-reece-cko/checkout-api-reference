@@ -1,13 +1,11 @@
 // Please refer to https://github.com/checkout/checkout-sdk-net on how to setup the SDK with OAuth
 try
 {
-    Four.ICheckoutApi api = CheckoutSdk.FourSdk().OAuth()
+    ICheckoutApi api = CheckoutSdk.Builder().OAuth()
         .ClientCredentials("client_id", "client_secret")
-        .Scopes(FourOAuthScope.Files, FourOAuthScope.Flow, FourOAuthScope.Fx, FourOAuthScope.Gateway,
-            FourOAuthScope.Marketplace, FourOAuthScope.SessionsApp, FourOAuthScope.SessionsBrowser,
-            FourOAuthScope.Vault, FourOAuthScope.PayoutsBankDetails) // more scopes available
+        .Scopes(OAuthScope.Vault) // more scopes available
         .Environment(Environment.Sandbox)
-        .FilesEnvironment(Environment.Sandbox)
+        .HttpClientFactory(new DefaultHttpClientFactory())
         .Build();
 }
 catch (CheckoutApiException e)

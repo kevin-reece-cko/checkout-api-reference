@@ -8,7 +8,7 @@ post:
   description: |
     Create a Hosted Payments Page session and pass through all the payment information, like the amount, currency, country and reference.
 
-    To get started with our Hosted Payments Page, contact your Solutions Engineer or integration@checkout.com.
+    To get started with our Hosted Payments Page, contact your Solutions Engineer or support@checkout.com.
   requestBody:
     required: true
     content:

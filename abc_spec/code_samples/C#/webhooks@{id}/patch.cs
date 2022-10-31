@@ -1,8 +1,9 @@
 // For more information please refer to https://github.com/checkout/checkout-sdk-net
-using Checkout.Webhooks;
+using Checkout.Webhooks.Previous;
 
-ICheckoutApi api = CheckoutSdk.DefaultSdk().StaticKeys()
-    .PublicKey("public_key")
+Previous.ICheckoutApi api = CheckoutSdk.Builder()
+    .Previous()
+    .StaticKeys()
     .SecretKey("secret_key")
     .Environment(Environment.Sandbox)
     .HttpClientFactory(new DefaultHttpClientFactory())
@@ -12,10 +13,7 @@ WebhookRequest request = new WebhookRequest()
 {
     Url = "https://example.com/webhooks",
     Active = true,
-    Headers = new Dictionary<string, string>()
-    {
-        {"authorization", "1234"}
-    },
+    Headers = new Dictionary<string, string>() {{"authorization", "1234"}},
     ContentType = WebhookContentType.Json,
     EventTypes = new List<string>()
     {

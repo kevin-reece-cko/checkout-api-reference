@@ -1,14 +1,14 @@
 post:
   security:
-    - ApiSecretKey: [ ]
+    - ApiSecretKey: []
   tags:
     - Payments
   summary: Request a payment or payout
   operationId: requestAPaymentOrPayout
   description: |
-    To accept payments from <a href="https://www.checkout.com/docs/payments/payment-methods/cards" target="blank">cards</a>, <a href="https://www.checkout.com/docs/payments/payment-methods/wallets" target="blank">digital wallets</a> and many <a href="https://www.checkout.com/docs/payments/payment-methods" target="blank">alternative payment methods</a>, specify the `source.type` field, along with the source-specific data.
+    To accept payments from <a href="https://www.checkout.com/docs/previous/payments/payment-methods/cards" target="blank">cards</a>, <a href="https://www.checkout.com/docs/previous/payments/payment-methods/wallets" target="blank">digital wallets</a> and many <a href="https://www.checkout.com/docs/previous/payments/payment-methods" target="blank">alternative payment methods</a>, specify the `source.type` field, along with the source-specific data.
 
-    To <a href="https://docs.checkout.com/payment-actions/card-payouts" target="blank">pay out to a card</a>, specify the destination of your payout using the `destination.type` field, along with the destination-specific data.
+    To <a href="https://www.checkout.com/docs/previous/card-payouts" target="blank">pay out to a card</a>, specify the destination of your payout using the `destination.type` field, along with the destination-specific data.
 
     To verify the success of the payment, check the `approved` field in the response.
   parameters:
@@ -119,7 +119,7 @@ post:
             processing:
               retrieval_reference_number: '909913440644'
               acquirer_transaction_id: '440644309099499894406'
-              recommendation_code: "02"
+              recommendation_code: '02'
             eci: '06'
             scheme_id: '489341065491658'
             _links:
@@ -163,3 +163,53 @@ post:
             $ref: '#/components/schemas/ValidationError'
     '502':
       description: Bad gateway
+get:
+  security:
+    - ApiSecretKey: [ ]
+  tags:
+    - Payments
+  summary: Get payment lists
+  operationId: getPayments
+  description: |
+    <span style="font-size: 14px; font-weight: 500; color: rgb(60, 4, 133); background-color: rgb(237, 222, 255); border-radius: 4px; padding: 2px 6px" >Beta</span><p></p>
+    Returns a list of your business' payments that match the specified reference. Results are returned in reverse chronological order, with the most recent payments shown first.
+    You can use the optional parameters below to skip or limit results.
+  parameters:
+    - in: query
+      name: limit
+      schema:
+        type: integer
+        minimum: 1
+        maximum: 100
+        default: 10
+      required: false
+      description: The numbers of results to retrieve
+    - in: query
+      name: skip
+      schema:
+        type: integer
+        minimum: 0
+        default: 0
+      required: false
+      description: The number of results to skip
+    - in: query
+      name: reference
+      schema:
+        type: string
+      required: true
+      description: A reference, such as an order ID, that can be used to identify the payment
+  responses:
+    '200':
+      description: Payments retrieved successfully
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/PaymentPaged'
+    '401':
+      description: Unauthorized
+    '422':
+      description: Unprocessable paging
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/PagingError'

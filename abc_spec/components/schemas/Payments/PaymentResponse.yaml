@@ -25,7 +25,7 @@ properties:
     example: 6540
   currency:
     type: string
-    description: The three-letter <a href="https://docs.checkout.com/resources/codes/currency-codes" target="blank">ISO currency code</a> of the payment
+    description: The three-letter <a href="https://www.checkout.com/docs/previous/resources/codes/currency-codes" target="blank">ISO currency code</a> of the payment
     example: USD
     maxLength: 3
     minLength: 3
@@ -110,8 +110,12 @@ properties:
         example: '440644309099499894406'
       recommendation_code:
         type: string
-        description: 'A <a href="https://docs.checkout.com/resources/codes/recommendation-codes" target="blank">code</a> that represents the next recommended action for the payment'
+        description: 'A <a href="https://www.checkout.com/docs/previous/resources/codes/recommendation-codes" target="blank">code</a> that represents the next recommended action for the payment'
         example: "02"
+      pun:
+        type: string
+        description: 'QPay Payment Unique Number'
+        example: '123456789'
   eci:
     type: string
     description: The final Electronic Commerce Indicator (ECI) security level used to authorize the payment.

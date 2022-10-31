@@ -1,19 +1,25 @@
-// Please refer to https://github.com/checkout/checkout-sdk-php
 <?php
+//For more information please refer to https://github.com/checkout/checkout-sdk-php
 
 use Checkout\\CheckoutApiException;
-use Checkout\\CheckoutArgumentException;
 use Checkout\\CheckoutAuthorizationException;
-use Checkout\\CheckoutFourSdk;
+use Checkout\\CheckoutSdk;
+use Checkout\\Common\\Address;
+use Checkout\\Common\\Country;
 use Checkout\\Common\\Currency;
+use Checkout\\Common\\CustomerRequest;
 use Checkout\\Environment;
+use Checkout\\Risk\\Device;
+use Checkout\\Risk\\Location;
+use Checkout\\Risk\\PreAuthentication\\PreAuthenticationAssessmentRequest;
+use Checkout\\Risk\\RiskPayment;
+use Checkout\\Risk\\RiskShippingDetails;
+use Checkout\\Risk\\Source\\CardSourcePrism;
 
-// API Keys
-$builder = CheckoutFourSdk::staticKeys();
-$builder->setPublicKey("public_key");
-$builder->setSecretKey("secret_key");
-$builder->setEnvironment(Environment::sandbox()); // or Environment::production()
-$api = $builder->build();
+$api = CheckoutSdk::builder()->staticKeys()
+    ->environment(Environment::sandbox())
+    ->secretKey("secret_key")
+    ->build();
 
 $address = new Address();
 $address->address_line1 = "CheckoutSdk.com";
@@ -27,7 +33,7 @@ $cardSourcePrism = new CardSourcePrism();
 $cardSourcePrism->billing_address = $address;
 $cardSourcePrism->expiry_month = 10;
 $cardSourcePrism->expiry_year = 2027;
-$cardSourcePrism->number = "number"
+$cardSourcePrism->number = "number";
 
 $customerRequest = new CustomerRequest();
 $customerRequest->email = "email@docs.checkout.com";
@@ -70,11 +76,8 @@ try {
     $response = $api->getRiskClient()->requestPreAuthenticationRiskScan($request);
 } catch (CheckoutApiException $e) {
     // API error
-    $request_id = $e->request_id;
-    $http_status_code = $e->http_status_code;
     $error_details = $e->error_details;
-} catch (CheckoutArgumentException $e) {
-    // Bad arguments
+    $http_status_code = isset($e->http_metadata) ? $e->http_metadata->getStatusCode() : null;
 } catch (CheckoutAuthorizationException $e) {
     // Bad Invalid authorization
 }

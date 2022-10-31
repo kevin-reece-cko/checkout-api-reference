@@ -15,6 +15,15 @@ properties:
     default: 'card'
     description: The payment source type
     example: 'card'
+  scheme:
+    type: string
+    description: Indicates the cardholder scheme choice
+    enum:
+      - amex
+      - cartes_bancaires
+      - diners
+      - mastercard
+      - visa    
   billing_address:
     description: The customer's billing address. Any special characters will be replaced.
     allOf:

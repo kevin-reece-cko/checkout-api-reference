@@ -4,3 +4,5 @@ description: 'Contact details of this sub-entity.'
 properties:
   phone:
     $ref: '#/components/schemas/EntityPhone'
+  email_addresses:
+    $ref: '#/components/schemas/EntityEmailAddresses'

@@ -2,7 +2,7 @@ type: object
 properties:
   downgraded:
     type: boolean
-    description: Inidicates whether this was a 3D Secure payment downgraded to non-3D Secure (when `attempt_n3d` is specified)
+    description: Indicates whether this was a 3D Secure payment downgraded to non-3D Secure (when `attempt_n3d` is specified)
     example: false
   enrolled:
     type: string
@@ -49,9 +49,13 @@ properties:
       - out_of_sca_scope
       - other
       - low_risk_program
-    description: Specifies an exemption reason so that the payment is not processed using 3D Secure authentication. Learn more about exemptions in our <a href="https://docs.checkout.com/four/payments/regulation-support/sca-compliance-guide#SCAcomplianceguide-PossibleSCAexemptionsexemptions" target="_blank">SCA compliance guide</a>
+    description: Specifies an exemption reason so that the payment is not processed using 3D Secure authentication. Learn more about exemptions in our <a href="https://www.checkout.com/docs/payments/regulation-support/sca-compliance-guide#Possible_SCA_exemptions" target="_blank">SCA compliance guide</a>
     example: 'low_value'
   challenged:
     type: boolean
     description: Indicates whether this session involved a challenge. This will only be set after communication with the scheme is finished.
     example: true
+  upgrade_reason:
+    type: string
+    description: Indicates the reason why the payment was upgraded to 3D Secure.
+    example: sca_retry

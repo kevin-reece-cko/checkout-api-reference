@@ -43,7 +43,7 @@ properties:
     example: 100
   currency:
     type: string
-    description: The three-letter <a href="https://docs.checkout.com/resources/codes/currency-codes" target="blank">ISO currency code</a> of the payment.<br>
+    description: The three-letter <a href="https://www.checkout.com/docs/resources/codes/currency-codes" target="blank">ISO currency code</a> of the payment.<br>
     example: GBP
   reference:
     type: string
@@ -69,7 +69,10 @@ properties:
     description: The processing channel to be used for the payment
     example: 'pc_q4dbxom5jbgudnjzjpz7j2z6uq'
   marketplace:
-    $ref: '#/components/schemas/MarketplaceData'
+    $ref: '#/components/schemas/MarketplaceAuthPayInt'
+  amount_allocations:
+    allOf:
+      - $ref: '#/components/schemas/AmountAllocations'
   customer:
     type: object
     description: The customer's details.

@@ -1,24 +1,24 @@
 // For more information please refer to https://github.com/checkout/checkout-sdk-net
+using Checkout.Workflows.Events;
 
 //API keys
-Four.ICheckoutApi api = CheckoutSdk.FourSdk().StaticKeys()
-    .PublicKey("public_key")
+ICheckoutApi api = CheckoutSdk.Builder().StaticKeys()
     .SecretKey("secret_key")
     .Environment(Environment.Sandbox)
     .HttpClientFactory(new DefaultHttpClientFactory())
     .Build();
 
 //OAuth
-Four.ICheckoutApi api = CheckoutSdk.FourSdk().OAuth()
+ICheckoutApi api = CheckoutSdk.Builder().OAuth()
     .ClientCredentials("client_id", "client_secret")
-    .Scopes(FourOAuthScope.FlowWorkflows)
+    .Scopes(OAuthScope.Flow)
     .Environment(Environment.Sandbox)
-    .FilesEnvironment(Environment.Sandbox)
+    .HttpClientFactory(new DefaultHttpClientFactory())
     .Build();
 
 try
 {
-    IList<EventTypesResponse> response = await api.WorkflowsClient().GetEventTypes();
+    ItemsResponse<EventTypesResponse> response = await api.WorkflowsClient().GetEventTypes();
 }
 catch (CheckoutApiException e)
 {

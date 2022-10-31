@@ -1,0 +1,87 @@
+type: object
+description: The account holder details
+required:
+  - type
+  - company_name
+properties:
+  type:
+    type: string
+    description: The type of card holder
+    example: 'corporate'
+  company_name:
+    type: string
+    description: The payout destination owner's company name
+    maxLength: 35
+  billing_address:
+    type: object
+    description: The payout destination owner's billing address
+    properties:
+      address_line1:
+        type: string
+        description: The first line of the address
+        maxLength: 50
+      address_line2:
+        type: string
+        description: The second line of the address
+        maxLength: 50
+      city:
+        type: string
+        description: The address city
+        maxLength: 25
+      state:
+        type: string
+        description: The address state
+        maxLength: 3
+        minLength: 2
+      zip:
+        type: string
+        description: The address ZIP (postal) code
+        maxLength: 10
+      country:
+        type: string
+        description: The [two-letter ISO country code](https://checkout.com/docs/four/resources/codes/country-codes) of the address
+  phone:
+    type: object
+    description: The payout destination owner's phone number
+    properties:
+      country_code:
+        type: string
+        description: The [international country calling code](https://checkout.com/docs/four/resources/codes/country-codes) of the address
+        maxLength: 7
+        minLength: 1
+      number:
+        type: string
+        description: The phone number
+        maxLength: 25
+        minLength: 6
+  identification:
+    type: object
+    description: 	The destination identification
+    properties:
+      type:
+        type: string
+        description: The payout destination owner's ID type
+        enum:
+          - passport
+          - driving_license
+          - national_id
+          - company_registration
+          - tax_id
+      number:
+        type: string
+        description: The payout destination owner's ID number
+        maxLength: 25
+      issuing_country:
+        type: string
+        description: The [two-letter ISO country code](https://checkout.com/docs/four/resources/codes/country-codes) of the payout destination owner's ID country of issue
+        maxLength: 2
+        minLength: 2
+      date_of_expiry:
+        type: string
+        description: The payout destination owner's ID expiry date. Format 'yyyy-MM-dd'
+        maxLength: 10
+        minLength: 10
+  email:
+    type: string
+    description: The payout destination owner's email address
+    maxLength: 255

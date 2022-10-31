@@ -10,7 +10,6 @@ discriminator:
     # network_token: '#/components/schemas/05_PaymentRequestNetworkTokenSource'
     # alipay: '#/components/schemas/PaymentRequestAlipaySource'
     # benefitpay: '#/components/schemas/PaymentRequestBenefitPaySource'
-    # baloto: '#/components/schemas/PaymentRequestBalotoSource'
     # boleto: '#/components/schemas/PaymentRequestBoletoSource'
     # eps: '#/components/schemas/PaymentRequestEpsSource'
     # giropay: '#/components/schemas/PaymentRequestGiropaySource'
@@ -29,6 +28,7 @@ discriminator:
     # multibanco: '#/components/schemas/PaymentRequestMultibancoSource'
     # dLocal: '#/components/schemas/06_PaymentRequestdLocalSource'
     # sofort: '#/components/schemas/PaymentRequestSofortSource'
+    # alma: '#/components/schemas/PaymentRequestAlmaSource'
 required:
   - type
 properties:

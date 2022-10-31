@@ -1,14 +1,15 @@
 # For more information please refer to https://github.com/checkout/checkout-sdk-python
 import checkout_sdk
+from checkout_sdk.checkout_sdk import CheckoutSdk
 from checkout_sdk.environment import Environment
 from checkout_sdk.exception import CheckoutApiException, CheckoutArgumentException, CheckoutAuthorizationException
 
-api = checkout_sdk.DefaultSdk() \\
+api = CheckoutSdk.builder() \\
+    .previous() \\
     .secret_key('secret_key') \\
-    .public_key('public_key') \\
     .environment(Environment.sandbox()) \\
     .build()
-# or Environment.production()
+    # or Environment.production()
 
 try:
     response = api.payments.get_payment_details('payment_id')

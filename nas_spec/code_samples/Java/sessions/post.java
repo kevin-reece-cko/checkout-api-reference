@@ -1,13 +1,14 @@
 // For more information please refer to https://github.com/checkout/checkout-sdk-java
+import com.checkout.CheckoutApi;
 import com.checkout.CheckoutApiException;
 import com.checkout.CheckoutArgumentException;
 import com.checkout.CheckoutAuthorizationException;
 import com.checkout.CheckoutSdk;
 import com.checkout.Environment;
+import com.checkout.OAuthScope;
 import com.checkout.common.ChallengeIndicator;
 import com.checkout.common.CountryCode;
 import com.checkout.common.Currency;
-import com.checkout.four.CheckoutApi;
 import com.checkout.sessions.AuthenticationType;
 import com.checkout.sessions.Category;
 import com.checkout.sessions.SessionAddress;
@@ -17,11 +18,12 @@ import com.checkout.sessions.TransactionType;
 import com.checkout.sessions.completion.HostedCompletionInfo;
 import com.checkout.sessions.source.SessionCardSource;
 
-CheckoutApi api = CheckoutSdk.fourSdk()
+// OAuth
+CheckoutApi api = CheckoutSdk.builder()
     .oAuth()
     .clientCredentials("client_id", "client_secret")
+    .scopes(OAuthScope.SESSIONS_APP, OAuthScope.SESSIONS_BROWSER) // more scopes available
     .environment(Environment.SANDBOX) // or Environment.PRODUCTION
-    .scopes(FourOAuthScope.SESSIONS, FourOAuthScope.SESSIONS_APP, FourOAuthScope.SESSIONS_BROWSER) // more scopes available
     .build();
 
 SessionRequest sessionRequest = SessionRequest.builder()

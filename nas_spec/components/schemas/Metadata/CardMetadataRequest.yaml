@@ -1,0 +1,35 @@
+type: object
+properties:
+  bin:
+    description: The issuer's Bank Identification Number (BIN)
+    type: string
+    minLength: 6
+    maxLength: 8
+    pattern: '^[0-9]+$'
+    example: '454347'
+  number:
+    description: The Primary Account Number (PAN)
+    type: string
+    minLength: 12
+    maxLength: 19
+    pattern: '^[0-9]+$'
+    example: '4543474002249996'
+  token_id:
+    description: The unique token that was generated when the card's details were tokenized
+    type: string
+    pattern: '^(tok)_(\w{26})$'
+    example: 'tok_ubfj2q76miwundwlk72vxt2i7q'
+  instrument_id:
+    description: The unique ID for the payment instrument that was created using the card's details
+    type: string
+    pattern: '^(src)_(\w{26})$'
+    example: 'src_e7hqezhxdfeetnyfdv3ayu6yru'
+  format:
+    description: |
+      The format to provide the output in. 
+      
+      A `basic` response will only include standard metadata, while a `card_payouts` formatted response will also include fields specific to card payouts.
+    type: string
+    default: basic
+    enum: [basic, card_payouts]
+    example: basic

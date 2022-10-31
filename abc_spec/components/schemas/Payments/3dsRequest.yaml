@@ -35,7 +35,7 @@ properties:
     example: '2.0.1'
   exemption:
     type: string
-    description: Specifies an exemption reason so that the payment is not processed using 3D Secure authentication. Learn more about exemptions in our <a href="https://docs.checkout.com/risk-management/sca-compliance-guide#SCAcomplianceguide-PossibleSCAexemptionsexemptions">SCA compliance guide</a>.
+    description: Specifies an exemption reason so that the payment is not processed using 3D Secure authentication. Learn more about exemptions in our <a href="https://www.checkout.com/docs/previous/risk-management/sca-compliance-guide#Possible_SCA_exemptions">SCA compliance guide</a>.
     enum:
       - low_value
       - secure_corporate_payment
@@ -51,3 +51,8 @@ properties:
       - challenge_requested
       - challenge_requested_mandate
     default: no_preference
+  allow_upgrade:
+    type: boolean
+    description: Whether to process this payment as 3D Secure if the authorization was soft declined due to 3DS authentication required
+    default: true
+    example: true

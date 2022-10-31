@@ -19,11 +19,11 @@ allOf:
         description: 'Klarna authentication token, obtained by the merchant during client transaction authorization.'
       locale:
         type: string
-        description: "RFC 1766 customer's locale. Optional, default taken from business settings."
+        description: 'Used to define the language and region of the customer. RFC 1766 customer''s locale.'
         x-klarna-docs: 'https://developers.klarna.com/api/#payments-api__create-a-new-order__locale'
       purchase_country:
         type: string
-        description: 'ISO 3166 alpha-2 purchase country. Optional, default taken from business settings.'
+        description: 'The purchase country of the customer. ISO 3166 alpha-2 purchase country'
         x-klarna-docs: 'https://developers.klarna.com/api/#payments-api__create-a-new-order__purchase_country'
       auto_capture:
         type: boolean
@@ -46,8 +46,6 @@ allOf:
         x-klarna-docs: 'https://developers.klarna.com/api/#payments-api__create-a-new-order__order_tax_amount'
       products:
         type: array
-        items:
-          type: object
         description: "The applicable order lines.  \nThis object is passed directly to Klarna as `order_lines`, \nso for the object definition use the [Klarna documentation](https://developers.klarna.com/api/#payments-api__create-a-new-order__order_lines)."
         x-klarna-name: order_lines
         x-cko-passthrough: true
@@ -74,3 +72,9 @@ allOf:
         description: "Additional purchase information required for some industries.  \nThis object is passed directly to Klarna as `attachment`, \nso for the object definition use the [Klarna documentation](https://developers.klarna.com/api/#payments-api__create-a-new-order__attachment)."
         x-cko-passthrough: true
         x-klarna-docs: 'https://developers.klarna.com/api/#payments-api__create-a-new-order__attachment'
+      custom_payment_method_ids:
+        type: array
+        description: "This array can be used to define which of the configured payment options within a payment category (`pay_later`, `pay_over_time`, etc.) should be shown for this purchase.   \nThis object is passed directly to Klarna as `custom_payment_method_ids`, \nso for the object definition use the [Klarna documentation](https://developers.klarna.com/api/#payments-api__create-a-new-order__custom_payment_method_ids)."
+        x-klarna-name: custom_payment_method_ids
+        x-cko-passthrough: true
+        x-klarna-docs: 'https://developers.klarna.com/api/#payments-api__create-a-new-order__custom_payment_method_ids'

@@ -111,7 +111,6 @@ properties:
         enum:
           - none
           - low_value
-          - recurring_operation
           - transaction_risk_assessment
           - secure_corporate_payment
           - trusted_listing
@@ -123,6 +122,8 @@ properties:
       code:
         type: string
         description: Indicates Cartes Bancaire specific exemption value
+      trusted_beneficiary:
+        $ref: '#/components/schemas/TrustedBeneficiary'
   flow_type:
     type: string
     description: Indicates whether the 3D Secure 2 authentication was challenged or frictionless

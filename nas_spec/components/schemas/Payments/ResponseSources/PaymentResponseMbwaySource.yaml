@@ -1,0 +1,4 @@
+type: object
+description: 'MBWay payment response source'
+allOf:
+  - $ref: '#/components/schemas/PaymentResponseSource'

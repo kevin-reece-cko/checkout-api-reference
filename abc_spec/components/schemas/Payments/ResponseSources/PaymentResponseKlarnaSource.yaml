@@ -10,3 +10,28 @@ allOf:
       order_id:
         type: string
         description: 'Klarna order identifier'
+      billing_address:
+        type: object
+        description: 'Customer''s billing address.'
+      shipping_address:
+        type: object
+        description: 'Customer''s shipping address.'
+      products:
+        type: array
+        description: 'The applicable order lines.'
+        x-klarna-name: order_lines
+      customer:
+        type: object
+        description: 'Information about the liable customer of the order.'
+      custom_payment_method_ids:
+        type: array
+        description: 'This array can be used to define which of the configured payment options within a payment category (`pay_later`, `pay_over_time`, etc.) should be shown for this purchase.'
+      initial_payment_method:
+        type: object
+        properties:
+          type:
+            type: string
+            description: 'Payment option type name'
+          description:
+            type: string
+            description: 'Payment option description'

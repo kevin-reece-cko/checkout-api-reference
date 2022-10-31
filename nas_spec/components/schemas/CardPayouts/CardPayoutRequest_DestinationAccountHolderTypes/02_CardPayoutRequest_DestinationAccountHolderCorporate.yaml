@@ -1,0 +1,14 @@
+type: object
+description: The account holder details
+required:
+  - type
+  - company_name
+properties:
+  type:
+    type: string
+    description: The type of card holder
+    example: 'corporate'
+  company_name:
+    type: string
+    description: The payout destination owner's company name
+    maxLength: 35

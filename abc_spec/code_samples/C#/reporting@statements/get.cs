@@ -1,18 +1,16 @@
 // For more information please refer to https://github.com/checkout/checkout-sdk-net
 using Checkout.Common;
-using Checkout.Reconciliation;
+using Checkout.Reconciliation.Previous;
 
-ICheckoutApi api = CheckoutSdk.DefaultSdk().StaticKeys()
-    .PublicKey("public_key")
+Previous.ICheckoutApi api = CheckoutSdk.Builder()
+    .Previous()
+    .StaticKeys()
     .SecretKey("secret_key")
     .Environment(Environment.Sandbox)
     .HttpClientFactory(new DefaultHttpClientFactory())
     .Build();
 
-QueryFilterDateRange request = new QueryFilterDateRange()
-{
-    To = DateTime.Now
-};
+QueryFilterDateRange request = new QueryFilterDateRange() {To = DateTime.Now};
 
 try
 {
