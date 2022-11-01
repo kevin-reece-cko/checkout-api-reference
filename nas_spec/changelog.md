@@ -1,9 +1,8 @@
 # Changelog
 
-| Date       | Description of change                                                                                                 
-| ---------- |-----------------------------------------------------------------------------------------------------------------------|
-| 2022/10/31 | Updated `payment_method` to be mandatory                                                                              |
-| 2022/10/25 | Added Card Metadata API                                                                                               |
+| Date       | Description of change
+| ---------- | ----------------------------------------------------------------------------------------------------------------------|
+| 2022/10/25 | Added Card Metadata API                                                               |
 | 2022/10/20 | Removed wrong remark about app on Sessions channel data                                                               |
 | 2022/10/20 | Added the `3ds.allow_upgrade` to payment requests & `3ds.upgrade_reason` to the 202 accepted & GET endpoint responses |
 | 2022/10/18 | Add new challenge indicator for authentication: data_share                                                            |

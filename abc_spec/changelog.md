@@ -2,6 +2,7 @@
 
 | Date       | Description of change                                                                                                                   |
 |------------|-----------------------------------------------------------------------------------------------------------------------------------------|
+| 2022/10/31 | Updated `payment_method` to be mandatory                                                                                                |
 | 2022/09/29 | Added new GET Payments endpoint                                                                                                         |                                                             
 | 2022/09/21 | Added the `3ds.allow_upgrade` to payment requests & `3ds.upgrade_reason` to the 202 accepted & GET endpoint responses                   |
 | 2022/09/12 | Amended paymentrequest/payout sender state field to have validation of <= 2 chars rather than <= 3 and fixed text description to match. |

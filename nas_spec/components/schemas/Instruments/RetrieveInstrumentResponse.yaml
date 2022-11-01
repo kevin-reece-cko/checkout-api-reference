@@ -10,7 +10,7 @@ discriminator:
     card: '#/components/schemas/RetrieveCardInstrumentResponse'
 properties:
   type:
-    description: The underlying instrument type. Payment Method required for ACH payment in the field description
+    description: The underlying instrument type
     type: string
   id:
     description: The unique identifier of the payment source or destination that can be used later for payments
