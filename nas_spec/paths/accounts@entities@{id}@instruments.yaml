@@ -9,7 +9,11 @@ parameters:
     schema:
       type: string
 post:
-  description: Create a bank account payment instrument for your sub-entity that you can later use as the destination for their payouts.
+  deprecated: true
+  description: |
+    Use the payment instrument operations at `/payment-instruments` instead.
+    
+    Create a bank account payment instrument for your sub-entity that you can later use as the destination for their payouts.
   summary: Add a payment instrument
   operationId: addAPaymentInstrument
   requestBody:

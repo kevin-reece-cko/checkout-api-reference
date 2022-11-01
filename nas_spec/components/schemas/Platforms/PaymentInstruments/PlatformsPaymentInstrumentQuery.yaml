@@ -1,0 +1,11 @@
+type: object
+title: PaymentInstrumentQueryResponse
+properties:
+  data:
+    type: array
+    items:
+      $ref: '#/components/schemas/PlatformsPaymentInstrumentRead'
+  _links:
+    type: object
+    additionalProperties:
+      $ref: '#/components/schemas/Link'

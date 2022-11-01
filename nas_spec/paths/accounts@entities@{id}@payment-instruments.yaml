@@ -1,0 +1,138 @@
+parameters:
+  - in: path
+    name: id
+    description: The sub-entity's ID.
+    required: true
+    allowEmptyValue: false
+    example: ent_w4jelhppmfiufdnatam37wrfc4
+    style: simple
+    schema:
+      type: string
+post:
+  description: Create a bank account payment instrument for your sub-entity. You can use this payment instrument as a payout destination.
+  summary: Add a payment instrument
+  operationId: addPlatformsPaymentInstrument
+  requestBody:
+    required: true
+    description: A JSON payload containing the payment instrument details.
+    content:
+      application/json:
+        schema:
+          $ref: '#/components/schemas/PlatformsPaymentInstrumentCreate'
+        examples:
+          FasterPaymentsBankAccount:
+            value:
+              label: Bob's Bank Account
+              type: bank_account
+              currency: GBP
+              country: GB
+              instrument_details:
+                account_number: '12345678'
+                bank_code: '050389'
+              document:
+                type: bank_statement
+                file_id: file_wxglze3wwywujg4nna5fb7ldli
+          SepaBankAccount:
+            value:
+              label: Bruno's Bank Account
+              type: bank_account
+              instrument_details:
+                iban: FR1420041010050500013M02606,
+                swift_bic: LZSKFR2E98I
+              currency: EUR
+              country: FR
+              document:
+                type: bank_statement
+                file_id: file_wxglze3wwywujg4nna5fb7ldli
+  security:
+    - OAuth:
+        - accounts
+  responses:
+    '201':
+      description: Created
+      headers:
+        Cko-Version:
+          $ref: '#/components/headers/Cko-Version'
+        Cko-Request-Id:
+          $ref: '#/components/headers/Cko-Request-Id'
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              id:
+                type: string
+                example: ppi_qn4nis4k3ykpzzu7cvtuvhqqga
+    '400':
+      description: Bad Request
+    '401':
+      description: Unauthorized
+    '422':
+      description: Invalid data was sent
+      content:
+        application/json:
+          schema:
+            allOf:
+              - $ref: '#/components/schemas/ValidationError'
+              - type: object
+                properties:
+                  error_codes:
+                    example:
+                      - error_code1
+                      - error_code2
+  tags: [ Platforms ]
+
+get:
+  description: Fetch all of the payment instruments for a sub-entity. You can filter by `status` to identify `verified` instruments that are ready to be used for Payouts.
+  summary: Query payment instruments
+  operationId: queryPlatformsPaymentInstruments
+
+  parameters:
+    - in: query
+      name: status
+      schema:
+        $ref: '#/components/schemas/PlatformsPaymentInstrumentStatus'
+
+
+  security:
+    - OAuth:
+        - accounts
+  responses:
+    '200':
+      description: OK
+      headers:
+        Cko-Version:
+          $ref: '#/components/headers/Cko-Version'
+        Cko-Request-Id:
+          $ref: '#/components/headers/Cko-Request-Id'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/PlatformsPaymentInstrumentQuery'
+          examples:
+            BankAccounts:
+              value:
+                data: 
+                  - id: ppi_qn4nis4k3ykpzzu7cvtuvhqqga
+                    label: Bob's Bank Account
+                    type: bank_account
+                    currency: GBP
+                    country: GB
+                    status: 'verified'
+                    default: true
+                    instrument_id: 'src_pdasnoaxrtoevpyh3opgaxcrti'
+                  - id: ppi_yk7nmh5jypmqzw5kb6kshj2iiy
+                    label: Bruno's Bank Account
+                    type: bank_account
+                    currency: EUR
+                    country: FR
+                    status: 'pending'
+                    default: false
+                
+    '400':
+      description: Bad Request
+    '401':
+      description: Unauthorized
+  tags:
+    - Platforms
+
