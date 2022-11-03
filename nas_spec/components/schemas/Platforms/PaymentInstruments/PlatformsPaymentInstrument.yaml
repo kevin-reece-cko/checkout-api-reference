@@ -32,3 +32,19 @@ properties:
     title: Default
     type: boolean
     description: Specifies whether the payment instrument should be set as the default payout destination
+  document:
+    type: object
+    title: Document
+    description: A legal document used to verify the bank account
+    properties:
+      type:
+        type: string
+        description: The document type
+        enum:
+          - bank_statement
+        default: bank_statement
+        example: bank_statement
+      file_id:
+        type: string
+        description: The file ID of the uploaded document. The document must have been uploaded for the purpose of `"bank_verification"`.
+        example: file_wxglze3wwywujg4nna5fb7ldli

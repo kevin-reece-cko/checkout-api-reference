@@ -2,6 +2,7 @@
 
 | Date       | Description of change                                                                                                 
 | ---------- |-----------------------------------------------------------------------------------------------------------------------|
+| 2022/11/2 | Ensure 'document' property is exposed on all relevant Platforms payment instruments schemas
 | 2022/11/2 | Add `default` property to Platforms payment instrument create examples
 | 2022/11/2 | Fix indentation bug causing 'document' property to not be shown in `PlatformsPaymentInstrumentCreate.yaml`                                                           
 | 2022/10/31 | Updated `payment_method` to be mandatory                                                                              |
