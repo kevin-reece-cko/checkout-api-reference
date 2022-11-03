@@ -26,6 +26,7 @@ post:
               type: bank_account
               currency: GBP
               country: GB
+              default: true
               instrument_details:
                 account_number: '12345678'
                 bank_code: '050389'
@@ -36,11 +37,12 @@ post:
             value:
               label: Bruno's Bank Account
               type: bank_account
+              currency: EUR
+              country: FR
+              default: true
               instrument_details:
                 iban: FR1420041010050500013M02606,
                 swift_bic: LZSKFR2E98I
-              currency: EUR
-              country: FR
               document:
                 type: bank_statement
                 file_id: file_wxglze3wwywujg4nna5fb7ldli
