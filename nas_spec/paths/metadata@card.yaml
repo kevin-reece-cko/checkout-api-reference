@@ -22,7 +22,7 @@ post:
           bin_example:
             value:
               bin: '424242'
-          tokem_example:
+          token_example:
             value:
               token_id: 'tok_ubfj2q76miwundwlk72vxt2i7q'
               format: basic
