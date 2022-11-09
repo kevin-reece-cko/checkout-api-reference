@@ -87,8 +87,6 @@ tags:
     description: Use Sessions to authenticate transactions with 3D Secure (3DS) and comply with Strong Customer Authentication (SCA) requirements.
   - name: Workflows
     description: Use Workflows to start receiving webhook notifications for your payments, disputes, and sub-entities.
-  - name: Risk
-    description: Evaluate the risk of a transaction at the pre-authentication and pre-capture stages of the payment process.
   - name: Apple Pay
     description: Manage your Apple Pay certificates in order to process payments via Apple Pay.
   - name: Transfers
