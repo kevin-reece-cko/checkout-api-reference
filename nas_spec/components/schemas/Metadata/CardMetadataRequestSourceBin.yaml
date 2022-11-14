@@ -1,0 +1,15 @@
+type: object
+description: An existing payment source
+required:
+  - bin
+allOf:
+  - $ref: '#/components/schemas/CardMetadataRequestSource'
+  - type: object
+    properties:
+      bin:
+        description: The issuer's Bank Identification Number (BIN)
+        type: string
+        minLength: 6
+        maxLength: 8
+        pattern: '^[0-9]+$'
+        example: '454347'
