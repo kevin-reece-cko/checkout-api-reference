@@ -14,7 +14,6 @@ get:
   summary: Get report details
   operationId: getReportDetails
   description: |
-    <span style="font-size: 14px; font-weight: 500; color: rgb(60, 4, 133); background-color: rgb(237, 222, 255); border-radius: 4px; padding: 2px 6px" >Beta</span><p></p>
     Use this endpoint to retrieve a specific report using its ID.
   parameters:
     - name: id
