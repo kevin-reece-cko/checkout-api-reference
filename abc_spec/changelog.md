@@ -28,3 +28,4 @@
 | 2021/11/11 | Added `3ds.challenge_indicator` to card payment requests.                                                                               |
 | 2021/10/18 | Added `processing.purpose` to card payouts.                                                                                             |
 | 2021/10/18 | Added `recommendation_code` to payment response.                                                                                        |
+| 2022/11/09 | Removed the `risk` endpoints                                          |
