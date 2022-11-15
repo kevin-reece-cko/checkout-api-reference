@@ -9,8 +9,7 @@ discriminator:
 properties:
   channel:
     type: string
-    description: Indicates the type of channel interface being used to initiate the transaction.</br>
-      If the channel is `app` then `501 Not Implemented` is returned.
+    description: Indicates the type of channel interface being used to initiate the transaction.
     default: 'browser'
 example:
   channel: browser

@@ -1,5 +1,5 @@
 type: object
-description: An existing payment source
+description: An existing payment source. Payment Method required for ACH payment
 required:
   - id
 allOf:
@@ -19,5 +19,5 @@ allOf:
         maxLength: 4
       payment_method:
         type: string
-        description:  The payment method
+        description:  The payment method. Payment Method required for ACH payment
         example: 'ach'

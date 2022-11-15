@@ -1,0 +1,59 @@
+parameters:
+  - in: path
+    name: entityId
+    description: The sub-entity's ID.
+    required: true
+    allowEmptyValue: false
+    example: ent_w4jelhppmfiufdnatam37wrfc4
+    style: simple
+    schema:
+      type: string
+  - in: path
+    name: id
+    description: The payment instrument's ID.
+    required: true
+    allowEmptyValue: false
+    example: ppi_qn4nis4k3ykpzzu7cvtuvhqqga
+    style: simple
+    schema:
+      type: string
+get:
+  description: Retrieve the details of a specific payment instrument used for sub-entity payouts.
+  summary: Get payment instrument details
+  operationId: getPlatformsPaymentInstrument
+
+  security:
+    - OAuth:
+        - accounts
+  responses:
+    '200':
+      description: Payment instrument details
+      headers:
+        Cko-Version:
+          $ref: '#/components/headers/Cko-Version'
+        Cko-Request-Id:
+          $ref: '#/components/headers/Cko-Request-Id'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/PlatformsPaymentInstrumentRead'
+          examples:
+            BankAccount:
+              value:
+                id: ppi_qn4nis4k3ykpzzu7cvtuvhqqga
+                label: Bob's Bank Account
+                type: bank_account
+                currency: GBP
+                country: GB
+                document:
+                  type: bank_statement
+                  file_id: file_wxglze3wwywujg4nna5fb7ldli
+                status: 'verified'
+                default: true
+                instrument_id: 'src_pdasnoaxrtoevpyh3opgaxcrti'
+    '400':
+      description: Bad Request
+    '401':
+      description: Unauthorized
+  tags:
+    - Platforms
