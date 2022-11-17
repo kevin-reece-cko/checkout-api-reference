@@ -4,6 +4,8 @@
 | ---------- |-----------------------------------------------------------------------------------------------------------------------|
 | 2022/11/15 | Adding a `entity` to BankPayoutRequest source.                                                                        |
 | 2022/11/14 | Changing Card Metadata API request format                                                                             |
+| 2022/11/03 | Added `score` property to the `risk` object on the 201 created payment response and GET details response             |
+| 2022/11/02 | Fix indentation bug causing 'document' property to not be shown in `PlatformsPaymentInstrumentCreate.yaml`            |   
 | 2022/11/02 | Ensure 'document' property is exposed on all relevant Platforms payment instruments schemas                           |
 | 2022/11/02 | Add `default` property to Platforms payment instrument create examples                                                |
 | 2022/11/02 | Fix indentation bug causing 'document' property to not be shown in `PlatformsPaymentInstrumentCreate.yaml`            |
