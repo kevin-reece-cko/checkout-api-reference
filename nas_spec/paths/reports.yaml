@@ -14,7 +14,6 @@ get:
   summary: Get all reports
   operationId: getReports
   description: |
-    <span style="font-size: 14px; font-weight: 500; color: rgb(60, 4, 133); background-color: rgb(237, 222, 255); border-radius: 4px; padding: 2px 6px" >Beta</span><p></p>
     Returns the list of reports and their details.
   parameters:
     - name: created_after
