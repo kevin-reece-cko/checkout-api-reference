@@ -12,12 +12,22 @@ properties:
     description: The first six digits and the last four digits of the primary recipient's card, without spaces, or up to ten digits of the primary recipient's account number
     minLength: 10
     maxLength: 10
-    example: '5555554444'
+    example: '5555554444'  
+  address:
+    description: The recipient's address
+    allOf:
+      - $ref: '#/components/schemas/Address'
   zip:
     type: string
+    deprecated: true
     description: The first part of the UK postcode (e.g., W1T 4TJ would be W1T)
     maxLength: 10
     example: 'W1T'
+  first_name:
+    type: string
+    description: The recipient's first name
+    maxLength: 50
+    example: 'John'
   last_name:
     type: string
     description: The recipient's last name
