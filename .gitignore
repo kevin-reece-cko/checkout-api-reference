@@ -44,3 +44,5 @@ src/OpenApiGenerator/obj/*
 .idea
 *.iml
 .vscode/settings.json
+
+yarn.lock
