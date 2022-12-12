@@ -9,6 +9,8 @@ get:
   security:
     - OAuth:
         - transfers:view
+    - ApiSecretKey:
+        - transfers:view
   summary: Retrieve a transfer
   operationId: getTransferDetails
   description: Retrieve transfer details using the transfer identifier.

@@ -68,6 +68,8 @@ post:
   security:
     - OAuth:
         - accounts
+    - ApiSecretKey:
+        - accounts
   responses:
     '202':
       description: Instrument creation request accepted

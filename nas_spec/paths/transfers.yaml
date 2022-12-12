@@ -7,6 +7,8 @@ post:
   security:
     - OAuth:
         - transfers:create
+    - ApiSecretKey:
+        - transfers:create
   description: |
     Initiate a transfer of funds from source entity to destination entity.
   summary: Initiate a transfer of funds

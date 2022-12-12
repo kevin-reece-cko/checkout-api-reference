@@ -49,6 +49,8 @@ post:
   security:
     - OAuth:
         - accounts
+    - ApiSecretKey:
+        - accounts
   responses:
     '201':
       description: Created
@@ -98,6 +100,8 @@ get:
 
   security:
     - OAuth:
+        - accounts
+    - ApiSecretKey:
         - accounts
   responses:
     '200':

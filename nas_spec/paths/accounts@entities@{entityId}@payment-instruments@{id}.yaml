@@ -25,6 +25,8 @@ get:
   security:
     - OAuth:
         - accounts
+    - ApiSecretKey:
+        - accounts
   responses:
     '200':
       description: Payment instrument details
