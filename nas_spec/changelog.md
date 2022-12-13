@@ -1,7 +1,8 @@
 # Changelog
 
 | Date       | Description of change                                                                                                 
-| ---------- |-----------------------------------------------------------------------------------------------------------------------|
+|------------|-----------------------------------------------------------------------------------------------------------------------|
+| 2022/12/13 | Remove third-party fields from integrated auth                                                                          |
 | 2022/11/30 | Add API key security to IP endpoints.                                                                                 |
 | 2022/11/29 | Adding prism device_session_id to payment request.                                                                    |
 | 2022/11/15 | Adding a `entity` to BankPayoutRequest source.                                                                        |
