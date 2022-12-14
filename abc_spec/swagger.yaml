@@ -95,9 +95,6 @@ x-tagGroups:
   - name: Disputes
     tags:
       - Disputes
-  - name: Risk management
-    tags:
-      - Risk
   - name: Statements and reporting
     tags:
       - Reconciliation
