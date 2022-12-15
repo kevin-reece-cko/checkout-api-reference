@@ -17,6 +17,7 @@ discriminator:
     bancontact: '#/components/schemas/PaymentResponseBancontactSource'
     alma: '#/components/schemas/PaymentResponseAlmaSource'
     illicado: '#/components/schemas/PaymentResponseIllicadoSource'
+    tamara: '#/components/schemas/PaymentResponseTamaraSource'
 required:
   - type
 properties:

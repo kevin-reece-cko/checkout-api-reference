@@ -1,0 +1,16 @@
+type: object
+description: The source object
+discriminator:
+  propertyName: type
+  mapping:
+    card: '#/components/schemas/CardMetadataRequestSourceCard'
+    bin: '#/components/schemas/CardMetadataRequestSourceBin'
+    token: '#/components/schemas/CardMetadataRequestSourceToken'
+    id: '#/components/schemas/CardMetadataRequestSourceInstrument'
+required:
+  - type
+properties:
+  type:
+    type: string
+    description: The source type
+    example: 'card'

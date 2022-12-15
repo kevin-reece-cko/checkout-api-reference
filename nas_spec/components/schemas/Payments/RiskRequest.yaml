@@ -8,3 +8,8 @@ properties:
     description: Whether a risk assessment should be performed
     default: true
     example: false
+  device_session_id:
+    type: string
+    description: Device session ID collected from our standalone Risk.js package. If you integrate using our [Frames](https://www.checkout.com/docs/integrate/frames) solution, this ID is not required.
+    example: "dsid_ipsmclhxwq72phhr32iwfvrflm"
+    pattern: "^(dsid)_(\\w{26})$"

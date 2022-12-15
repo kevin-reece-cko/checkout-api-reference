@@ -105,6 +105,8 @@ post:
   security:
     - OAuth:
         - accounts
+    - ApiSecretKey:
+        - accounts
   responses:
     '201':
       description: Sub-entity onboarded successfully

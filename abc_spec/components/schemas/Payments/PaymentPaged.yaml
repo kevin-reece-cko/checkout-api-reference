@@ -1,0 +1,19 @@
+type: object
+properties:
+  limit:
+    type: integer
+    description: The number of results to retrieve
+    example: 10
+  skip:
+    type: integer
+    description: The number of results to skip
+    example: 10
+  total_count:
+    type: integer
+    description: The total number of results matching the payment reference. This number is unaffected by the values of the `skip` and `limit` parameters
+    example: 1
+  data:
+    type: array
+    description: The list of payments
+    items:
+      $ref: '#/components/schemas/Payment'

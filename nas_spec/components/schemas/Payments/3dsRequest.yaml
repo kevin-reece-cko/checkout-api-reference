@@ -17,26 +17,6 @@ properties:
       should the card issuer not be enrolled
     default: false
     example: true
-  eci:
-    type: string
-    description: The Electronic Commerce Indicator security level associated with the 3D Secure enrollment result. Required if using a third-party merchant plug-in (MPI)
-    maxLength: 2
-    example: '05'
-  cryptogram:
-    type: string
-    description: A Base64 encoded cryptographic identifier (CAVV) used by the card schemes to validate the cardholder authentication result (3D Secure). Required if using an external MPI
-    maxLength: 50
-    example: AgAAAAAAAIR8CQrXcIhbQAAAAAA=
-  xid:
-    type: string
-    description: The 3D Secure transaction identifier. Required if using an external MPI with 3D Secure 2.X.X and a Mastercard card, or with 3D Secure 1.X.X for any supported card scheme
-    maxLength: 100
-    example: MDAwMDAwMDAwMDAwMDAwMzIyNzY=
-  version:
-    type: string
-    description: Indicates the version of 3D Secure that was used for authentication. Defaults to 1.0.0 if not provided
-    maxLength: 10
-    example: '2.0.1'
   exemption:
     type: string
     enum:
@@ -52,30 +32,6 @@ properties:
       - recurring_operation
     description: Specifies an exemption reason so that the payment is not processed using 3D Secure authentication. Learn more about exemptions in our <a href="https://docs.checkout.com/four/payments/regulation-support/sca-compliance-guide#SCAcomplianceguide-PossibleSCAexemptionsexemptions" target="_blank">SCA compliance guide</a>
     example: 'low_value'
-  status:
-    type: string
-    example: "Y"
-    maxLength: 1
-    minLength: 1
-    description: The transaction status returned from the card Issuer’s Access Control Server (ACS) or Scheme Directory Server (DS). For 3DS Secure 1, this is the PaRes Status. for 3D Secure 2, this is the transaction status of ARes(frictionless flow) or RReq (Challenge flow)
-  authentication_date:
-    type: datetime
-    example: "2020-09-03T10:11:12Z"
-    description: "Authentication date and time. Format ISO-8601"
-    nullable: true
-  authentication_amount:
-    type: long
-    example: 200
-    minimum: 0
-    description: "Authentication amount"
-    nullable: true
-  flow_type:
-    type: string
-    enum:
-      - challenged
-      - frictionless
-      - frictionless_delegated
-    description: Indicates whether the 3D Secure 2 authentication was challenged or frictionless.
   challenge_indicator:
     type: string
     description: Indicates the preference for whether or not a 3DS challenge should be performed. The customer’s bank has the final say on whether or not the customer receives the challenge.
@@ -85,22 +41,8 @@ properties:
       - challenge_requested
       - challenge_requested_mandate
     default: no_preference
-  status_reason_code:
-    type: string
-    example: "01"
-    maxLength: 2
-    minLength: 2
-    description: "A code indicating the reason for the transaction status"
-  challenge_cancel_reason:
-    type: string
-    example: "01"
-    description: 'Indicates a cancel reason for a challenge in the case of authentication. Can be any number from 00 to 99, with 00 being specific ONLY to Cartes Bancaires.'
-  score:
-    type: string
-    description: Risk score calculated by Directory Server (DS). Cartes Bancaires 3D Secure 2 only.
-  cryptogram_algorithm:
-    type: string
-    example: "1"
-    maxLength: 1
-    minLength: 1
-    description: The algorithm used by the Issuer ACS to calculate the Authentication cryptogram. This is the AVALGO data returned in Cartes bancaires Authentication.
+  allow_upgrade:
+    type: boolean
+    description: Indicates whether to process this payment as 3D Secure if the authorization was soft declined due to 3DS authentication required. For processing channels created before October 12, 2022, the value will default to `false`.
+    default: true
+    example: true
