@@ -52,4 +52,7 @@ To run this project locally, clone the repository and run these commands in sequ
     2. OR `npm run build:nas`
 3. `npm run start`
 
-The project should then be available at port 3001 (navigate to `localhost:3001` in your browser).
+The project should then be available at port 3001 (navigate to `localhost:3001` in your browser), for example:
+
+- `localhost:3001/previous` (ABC)
+- `localhost:3001` (NAS)
