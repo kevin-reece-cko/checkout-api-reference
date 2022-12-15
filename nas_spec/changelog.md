@@ -2,6 +2,9 @@
 
 | Date       | Description of change                                                                                                 
 |------------|-----------------------------------------------------------------------------------------------------------------------|
+| 2022/12/15 | Add CV Connect NAS Request and Response source.                                                                       |
+| 2022/12/15 | Add Trustly NAS Request and Response source.                                                                          |
+| 2022/12/15 | Add Illicado NAS Request and Response source.                                                                         |
 | 2022/12/14 | Add missing `available` property to Accounts Individual and Company responses                                         |
 | 2022/12/13 | Remove third-party fields from integrated auth                                                                        |
 | 2022/11/30 | Add API key security to IP endpoints.                                                                                 |
