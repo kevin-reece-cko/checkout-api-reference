@@ -10,9 +10,9 @@ the download button on either version of the API reference.
 
 The API reference is hosted on Vercel.
 
-## NAS
+## ABC
 
-For both the NAS and ABC API references, append `/localhost:3001` to all links (including preview ones).
+Append `/previous` to all links (including preview ones) for the ABC API reference.
 
 ---
 
