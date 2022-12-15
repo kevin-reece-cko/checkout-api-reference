@@ -12,7 +12,7 @@ The API reference is hosted on Vercel.
 
 ## NAS
 
-Append `/preview/crusoe` to all links (including preview ones) for the NAS API reference.
+For both the NAS and ABC API references, append `/localhost:3001` to all links (including preview ones).
 
 ---
 
@@ -53,8 +53,3 @@ To run this project locally, clone the repository and run these commands in sequ
 3. `npm run start`
 
 The project should then be available at port 3001 (navigate to `localhost:3001` in your browser).
-
-For example:
-
-`localhost:3001` (ABC)
-`localhost:3001/preview/crusoe` (NAS)
