@@ -45,7 +45,6 @@ properties:
       - Recurring
       - MOTO
       - Installment
-      - Unscheduled
     default: Regular
     example: Recurring
   reference:
@@ -98,6 +97,12 @@ properties:
         description: Whether the payment was flagged by a risk check
         default: false
         example: true
+      score: 
+        type: integer
+        description: The risk score calculated by our Fraud Detection engine. Absent if not enough data provided.
+        example: 22
+        minimum: 0
+        maximum: 100
   customer:
     type: object
     description: The customer to which this payment is linked

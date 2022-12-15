@@ -1,0 +1,16 @@
+type: object
+title: InstrumentDetailsSepa
+properties:
+  iban:
+    title: IBAN
+    description: The account's International Bank Account Number (IBAN)
+    type: string
+    minLength: 5
+    maxLength: 34
+    example: 'HU93116000060000000012345676'
+  swift_bic:
+    title: SwiftBic
+    description: An 8 or 11 character code that identifies the bank or bank branch
+    type: string
+    format: ISO 9362:2009
+    example: '37040044'

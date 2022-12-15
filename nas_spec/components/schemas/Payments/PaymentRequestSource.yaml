@@ -6,6 +6,7 @@ discriminator:
     token: '#/components/schemas/01_PaymentRequestTokenSource'
     id: '#/components/schemas/02_PaymentRequestIdSource'
     card: '#/components/schemas/03_PaymentRequestCardSource'
+    customer: '#/components/schemas/PaymentRequestCustomerSource'
     network_token: '#/components/schemas/04_PaymentRequestNetworkTokenSource'
     provider_token: '#/components/schemas/07_PaymentRequestProviderTokenSource'
     bank_account: '#/components/schemas/PaymentRequestBankAccountSource'
@@ -36,11 +37,12 @@ discriminator:
     postfinance: '#/components/schemas/PaymentRequestPostfinanceSource'
     bancontact: '#/components/schemas/PaymentRequestBancontactSource'
     alma: '#/components/schemas/PaymentRequestAlmaSource'
-    trustly: '#/components/schemas/PaymentRequestTrustlySource'
+    tamara: '#/components/schemas/PaymentRequestTamaraSource'
 required:
   - type
 properties:
   type:
     type: string
-    description: The payment source type <br> *Note:* *To make a payment with full card details, you must be <a href="https://www.checkout.com/docs/payments/regulation-support/pci-compliance" target="_blank">SAQ D PCI compliant</a>*
+    description: The payment source type.<br> *Note:* *To make a payment with full card details, you must be <a href="https://www.checkout.com/docs/payments/regulation-support/pci-compliance" target="_blank">SAQ D PCI compliant</a>*
+    
     example: 'card'

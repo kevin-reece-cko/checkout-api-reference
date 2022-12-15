@@ -1,0 +1,13 @@
+type: object
+properties:
+  source:
+    $ref: '#/components/schemas/CardMetadataRequestSource'
+  format:
+    description: |
+      The format to provide the output in.
+
+      A `basic` response will only include standard metadata, while a `card_payouts` formatted response will also include fields specific to card payouts.
+    type: string
+    default: basic
+    enum: [basic, card_payouts]
+    example: basic

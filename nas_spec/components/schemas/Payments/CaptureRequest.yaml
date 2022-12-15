@@ -2,7 +2,7 @@ type: object
 properties:
   amount:
     type: integer
-    description: The amount to capture. If not specified or amount `0` is sent, the full payment amount will be captured.
+    description: The amount to capture. If not specified, the full payment amount will be captured.
     minimum: 0
     example: 6540
   capture_type:
@@ -50,7 +50,7 @@ properties:
   amount_allocations:
     $ref: '#/components/schemas/AmountAllocations'
   processing:
-    $ref: '#/components/schemas/ProcessingSettings'
+    $ref: '#/components/schemas/CaptureRequestProcessingSettings'
   metadata:
     type: object
     description: A set of key-value pairs that you can attach to the capture request. This can be useful for storing additional information in a structured format. **Note** that this object only allows one level of depth, so cannot accept non-primitive data types such as objects or arrays.

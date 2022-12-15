@@ -1,0 +1,86 @@
+type: object
+description: Card Metadata
+properties:
+  bin:
+    description: The issuer's Bank Identification Number (BIN)
+    type: string
+    minLength: 6
+    maxLength: 8
+    pattern: '^[0-9]+$'
+    example: '45434720'
+  scheme:
+    description: The global card scheme
+    type: string
+    example: 'visa'
+  scheme_local:
+    description: The local card scheme, if the card is co-branded
+    type: string
+    enum: [cartes_bancaires, mada, omannet]
+    example: 'cartes_bancaires'
+  card_type:
+    description: The card type
+    type: string
+    enum: [credit, debit, prepaid, charge, deferred_debit]
+    example: credit
+  card_category:
+    description: The card category
+    type: string
+    enum: [consumer, commercial, all, other]
+    example: consumer
+  issuer:
+    description: The card issuer
+    type: string
+    example: 'STATE BANK OF MAURITIUS'
+  issuer_country:
+    description: The card issuer's country, as an ISO-2 code
+    type: string
+    example: 'MU'
+  issuer_country_name:
+    description: The card issuer's country
+    type: string
+    example: 'Mauritius'
+  product_id:
+    description: The card issuer or scheme's product identifier
+    type: string
+    example: 'CLASSIC'
+  product_type:
+    description: The card issuer or scheme's product type
+    type: string
+    example: 'F'
+  card_payouts:
+    description: A card payouts block exists in the response if the format in the request is  "card_payouts".
+    type: object
+    properties:
+      domestic_non_money_transfer:
+        description: Describes whether the card is eligible for domestic non-money transfer transactions
+        type: string
+        enum: [not_supported,standard,fast_funds,unknown]
+        example: 'not_supported'
+      cross_border_non_money_transfer:
+        description: Describes whether the card is eligible for cross-border non-money transfer transactions
+        type: string
+        enum: [not_supported,standard,fast_funds,unknown]
+        example: 'standard'
+      domestic_gambling:
+        description: Describes whether the card is eligible for domestic gambling transactions
+        type: string
+        enum: [not_supported,standard,fast_funds,unknown]
+        example: 'fast_funds'
+      cross_border_gambling:
+        description: Describes whether the card is eligible for cross-border gambling transactions
+        type: string
+        enum: [not_supported,standard,fast_funds,unknown]
+        example: 'unknown'
+      domestic_money_transfer:
+        description: Describes whether the card is eligible for domestic money transfer transactions
+        type: string
+        enum: [not_supported,standard,fast_funds,unknown]
+        example: 'not_supported'
+      cross_border_money_transfer:
+        description: Describes whether the card is eligible for cross-border money transfer transactions
+        type: string
+        enum: [not_supported,standard,fast_funds,unknown]
+        example: 'not_supported'
+required:
+  - bin
+  - scheme
