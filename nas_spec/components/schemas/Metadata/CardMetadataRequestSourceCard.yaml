@@ -1,0 +1,15 @@
+type: object
+description: An existing payment source
+required:
+  - number
+allOf:
+  - $ref: '#/components/schemas/CardMetadataRequestSource'
+  - type: object
+    properties:
+      number:
+        description: The Primary Account Number (PAN)
+        type: string
+        minLength: 12
+        maxLength: 19
+        pattern: '^[0-9]+$'
+        example: '4543474002249996'

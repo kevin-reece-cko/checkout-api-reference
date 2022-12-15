@@ -9,6 +9,8 @@ post:
   security:
     - OAuth:
         - files
+    - ApiSecretKey:
+        - files
   summary: Upload a file
   operationId: uploadAFile
   description: >-

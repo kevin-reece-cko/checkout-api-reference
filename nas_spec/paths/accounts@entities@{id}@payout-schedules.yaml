@@ -14,6 +14,8 @@ get:
   security:
     - OAuth:
         - accounts
+    - ApiSecretKey:
+        - accounts
   summary: Retrieve a sub-entity's payout schedule
   operationId: getSubEntitysPayoutSchedule
   description: >-

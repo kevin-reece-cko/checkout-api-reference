@@ -51,3 +51,11 @@ items:
       description: Unified product No. defined by WeChat Pay
       maxLength: 32
       example: 1001
+    url:
+      type: string
+      maxLength: 1024
+      description: Link to the line item's product page
+    image_url:
+      type: string
+      maxLength: 1024
+      description: Link to the line item's prodcut page

@@ -1,0 +1,29 @@
+type: object
+properties:
+  id:
+    type: string
+    pattern: "^(dsp)_(\\w{22})$"
+    description: The dispute identifier
+    example: 'dsp_rbhwd2qrg13uhrp2newf'
+  files:
+    type: array
+    description: The scheme files of a dispute
+    items:
+      type: object
+      properties:
+          dispute_status:
+            type: string
+            description: The dispute status of the scheme file
+            example: 'dispute_lost'
+          file:
+            type: string
+            description: The scheme file identifier
+            example: file_6lbss42ezvoufcb2beo76rvwly
+  _links:
+    type: object
+    properties:
+      self:
+        description: The dispute scheme files retrieval endpoint
+        properties:
+          href:
+            example: 'https://api.checkout.com/disputes/dsp_rbhwd2qrg13uhrp2newf/schemefiles'

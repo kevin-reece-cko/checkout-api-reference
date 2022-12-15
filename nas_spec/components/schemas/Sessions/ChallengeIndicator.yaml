@@ -8,6 +8,7 @@ enum:
   - trusted_listing
   - trusted_listing_prompt
   - transaction_risk_assessment
+  - data_share
 description: > 
   Indicates whether a challenge is requested for this session.<br/> <br/>
   The following are requests for exemption: <br/>
