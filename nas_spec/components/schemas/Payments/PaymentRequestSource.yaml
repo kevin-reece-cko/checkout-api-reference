@@ -38,6 +38,7 @@ discriminator:
     bancontact: '#/components/schemas/PaymentRequestBancontactSource'
     alma: '#/components/schemas/PaymentRequestAlmaSource'
     illicado: '#/components/schemas/PaymentRequestIllicadoSource'
+    cvconnect: '#/components/schemas/PaymentRequestCvConnectSource'
     tamara: '#/components/schemas/PaymentRequestTamaraSource'
 required:
   - type

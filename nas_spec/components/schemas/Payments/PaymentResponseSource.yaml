@@ -34,6 +34,7 @@ discriminator:
     giropay: '#/components/schemas/PaymentGetResponseGiropaySource'
     eps: '#/components/schemas/PaymentGetResponseEPSSource'
     illicado: '#/components/schemas/PaymentResponseIllicadoSource'
+    cvconnect: '#/components/schemas/PaymentResponseCvConnectSource'
     tamara: '#/components/schemas/PaymentResponseTamaraSource'
 required:
   - type
