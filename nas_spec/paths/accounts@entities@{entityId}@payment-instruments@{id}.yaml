@@ -67,7 +67,7 @@ patch:
     content:
       application/json:
         schema:
-          $ref: '#/components/schemas/Platforms/PaymentInstruments/PlatformsPaymentInstrumentUpdate'
+          $ref: '#/components/schemas/PlatformsPaymentInstrumentUpdate'
   security:
     - OAuth:
         - accounts
