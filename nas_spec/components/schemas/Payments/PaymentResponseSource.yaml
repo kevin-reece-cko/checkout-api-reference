@@ -33,6 +33,7 @@ discriminator:
     qpay: '#/components/schemas/PaymentGetResponseQPaySource'
     giropay: '#/components/schemas/PaymentGetResponseGiropaySource'
     eps: '#/components/schemas/PaymentGetResponseEPSSource'
+    cvconnect: '#/components/schemas/PaymentResponseCvConnectSource'
     tamara: '#/components/schemas/PaymentResponseTamaraSource'
 required:
   - type

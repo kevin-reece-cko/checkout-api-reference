@@ -32,8 +32,10 @@ get:
                 reference: superhero1234
                 capabilities:
                   payments:
+                    available: true
                     enabled: false
                   payouts:
+                    available: true
                     enabled: false
                 status: pending
                 contact_details:
@@ -109,8 +111,10 @@ get:
                 reference: superhero1234
                 capabilities:
                   payments:
+                    available: true
                     enabled: false
                   payouts:
+                    available: true
                     enabled: false
                 contact_details:
                   phone:

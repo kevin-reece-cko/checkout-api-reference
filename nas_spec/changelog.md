@@ -2,7 +2,13 @@
 
 | Date       | Description of change                                                                                                 
 |------------|-----------------------------------------------------------------------------------------------------------------------|
-| 2022/12/12 | Added `first_name` and `address` to `recipient`, deprecated `recipient.zip`, made `sender.address` optional.          |
+| 2022/12/20 | Added `first_name` and `address` to `recipient`, deprecated `recipient.zip`, made `sender.address` optional.          |
+| 2022/12/15 | Change Platforms schedule `by_day` response samples to use arrays                                                     |
+| 2022/12/15 | Add CV Connect NAS Request and Response source.                                                                       |
+| 2022/12/15 | Add Trustly NAS Request and Response source.                                                                          |
+| 2022/12/15 | Add Illicado NAS Request and Response source.                                                                         |
+| 2022/12/14 | Add missing `available` property to Accounts Individual and Company responses                                         |
+| 2022/12/13 | Remove third-party fields from integrated auth                                                                        |
 | 2022/11/30 | Add API key security to IP endpoints.                                                                                 |
 | 2022/11/29 | Adding prism device_session_id to payment request.                                                                    |
 | 2022/11/15 | Adding a `entity` to BankPayoutRequest source.                                                                        |
