@@ -59,3 +59,39 @@ get:
       description: Unauthorized
   tags:
     - Platforms
+patch:
+  description: Set an existing payment instrument as default. This will make it the destination instrument when a scheduled payout is made. You can also update the label of a payment instrument.
+  summary: Update payment instrument details
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: '#/components/schemas/Platforms/PaymentInstruments/PlatformsPaymentInstrumentUpdate'
+  security:
+    - OAuth:
+        - accounts
+    - ApiSecretKey:
+        - accounts
+  responses:
+    '200':
+      description: Payment Instrument updated successfully
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/EntityLinks'
+      headers:
+        Cko-Request-Id:
+          $ref: '#/components/headers/Cko-Request-Id'
+        Cko-Version:
+          $ref: '#/components/headers/Cko-Version'
+    '401':
+      description: Unauthorized
+    '422':
+      description: Unprocessable entity
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ValidationError'
+  tags:
+   - Platforms
