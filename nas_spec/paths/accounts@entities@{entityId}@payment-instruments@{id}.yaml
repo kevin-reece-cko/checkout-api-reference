@@ -94,4 +94,4 @@ patch:
           schema:
             $ref: '#/components/schemas/ValidationError'
   tags:
-   - Platforms
+    - Platforms
