@@ -5,6 +5,7 @@ allOf:
 required:
   - type
   - company_name
+  - address 
 properties:
   type:
     type: string
