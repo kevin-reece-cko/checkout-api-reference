@@ -75,7 +75,7 @@ patch:
         - accounts
   responses:
     '200':
-      description: Payment Instrument updated successfully
+      description: Payment instrument updated successfully
       content:
         application/json:
           schema:
