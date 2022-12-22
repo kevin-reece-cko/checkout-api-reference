@@ -8,7 +8,6 @@ discriminator:
     instrument: '#/components/schemas/03_PaymentRequestInstrumentSender'
 required:
   - type
-  - reference
 properties:
   type:
     type: string

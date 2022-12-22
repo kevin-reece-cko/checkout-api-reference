@@ -2,7 +2,8 @@
 
 | Date       | Description of change                                                                                                 
 |------------|-----------------------------------------------------------------------------------------------------------------------|
-| 2022/12/15 | Change Platforms schedule `by_day` response samples to use arrays                                                       |
+| 2022/12/20 | Added `first_name` and `address` to `recipient`, deprecated `recipient.zip`, made `sender.address` optional.          |
+| 2022/12/15 | Change Platforms schedule `by_day` response samples to use arrays                                                     |
 | 2022/12/15 | Add CV Connect NAS Request and Response source.                                                                       |
 | 2022/12/15 | Add Trustly NAS Request and Response source.                                                                          |
 | 2022/12/15 | Add Illicado NAS Request and Response source.                                                                         |
@@ -12,6 +13,7 @@
 | 2022/11/29 | Adding prism device_session_id to payment request.                                                                    |
 | 2022/11/15 | Adding a `entity` to BankPayoutRequest source.                                                                        |
 | 2022/11/14 | Changing Card Metadata API request format                                                                             |
+| 2022/11/09 | Removed the `risk` endpoints                                                                                          |
 | 2022/11/03 | Added `score` property to the `risk` object on the 201 created payment response and GET details response              |
 | 2022/11/02 | Fix indentation bug causing 'document' property to not be shown in `PlatformsPaymentInstrumentCreate.yaml`            |   
 | 2022/11/02 | Ensure 'document' property is exposed on all relevant Platforms payment instruments schemas                           |
@@ -107,4 +109,3 @@
 | 2021/11/11 | Added `3ds.challenge_indicator` to card payment requests.                                                             |
 | 2021/11/03 | Adds `identification` object under parent `sender` object in payment request.                                         |
 | 2021/10/18 | Added the `marketplaces.sub-entities` object to support split payments.                                               |
-| 2022/11/09 | Removed the `risk` endpoints                                                                                          |
