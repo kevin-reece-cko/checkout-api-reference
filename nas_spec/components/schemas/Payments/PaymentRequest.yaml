@@ -35,9 +35,7 @@ properties:
   reference:
     type: string
     description: |
-      A reference you can later use to identify this payment, such as an order number.
-      Can only be alphanumeric and must be unique for Benefit.
-      For Amex, the string limit is 30 characters.
+      A reference you can later use to identify this payment, such as an order number.<br>Can only be alphanumeric and must be unique for Benefit.<br>For Amex, the string limit is 30 characters.
     maxLength: 50
     example: 'ORD-5023-4E89'
   description:
