@@ -35,6 +35,7 @@ discriminator:
     eps: '#/components/schemas/PaymentGetResponseEPSSource'
     cvconnect: '#/components/schemas/PaymentResponseCvConnectSource'
     tamara: '#/components/schemas/PaymentResponseTamaraSource'
+    trustly: '#/components/schemas/PaymentResponseTrustlySource'
 required:
   - type
 

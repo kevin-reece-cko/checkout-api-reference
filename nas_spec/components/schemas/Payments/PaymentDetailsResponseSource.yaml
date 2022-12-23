@@ -18,6 +18,7 @@ discriminator:
     alma: '#/components/schemas/PaymentResponseAlmaSource'
     cvconnect: '#/components/schemas/PaymentResponseCvConnectSource'
     tamara: '#/components/schemas/PaymentResponseTamaraSource'
+    trustly: '#/components/schemas/PaymentResponseTrustlySource'
 required:
   - type
 properties:
