@@ -24,7 +24,7 @@ post:
                 urls:
                   - https://www.superheroexample.com
                 mccs:
-                  - '5669'
+                  - '5311'
               company:
                 business_registration_number: '452349600005'
                 business_type: "public_limited_company"
@@ -83,7 +83,7 @@ post:
                 urls:
                   - https://www.superheroexample.com
                 mccs:
-                  - '5669'
+                  - '5311'
               individual:
                 first_name: 'John'
                 last_name: 'Doe'

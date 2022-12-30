@@ -17,7 +17,7 @@ OnboardEntityRequest request = new OnboardEntityRequest
         new Profile
         {
             Urls = new List<string> {"https://www.superheroexample.com"},
-            Mccs = new List<string> {"5669"}
+            Mccs = new List<string> {"5311"}
         },
     Individual = new Individual
     {

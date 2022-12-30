@@ -23,7 +23,7 @@ properties:
       description: "A 4-digit ISO 18245 merchant category code classifying the sub-entity's industry."
       minLength: 4
       maxLength: 4
-      example: '5669'
+      example: '5311'
   default_holding_currency:
     type: string
     description: |
