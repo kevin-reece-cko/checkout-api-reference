@@ -54,7 +54,7 @@ allOf:
         minLength: 1
         maxLength: 2
         description: >
-          Value representing the bit depth of the colour palette for displaying images, in bits per pixel. Obtained from the cardholder's browser from the `screen.colorDepth` property.
+          Value representing the bit depth of the color palette for displaying images, in bits per pixel. Obtained from the cardholder's browser from the `screen.colorDepth` property.
         example: '16'
       screen_height:
         type: string
