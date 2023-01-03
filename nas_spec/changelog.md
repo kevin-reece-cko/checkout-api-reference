@@ -2,7 +2,7 @@
 
 | Date       | Description of change                                                                                                 
 |------------|-----------------------------------------------------------------------------------------------------------------------|
-| 2022/12/23 | Add Platforms Update Payment Instrument Request spec.                                                                 |
+| 2023/01/03 | Add Platforms Update Payment Instrument Request spec.                                                                 |
 | 2022/12/20 | Added `first_name` and `address` to `recipient`, deprecated `recipient.zip`, made `sender.address` optional.          |
 | 2022/12/15 | Change Platforms schedule `by_day` response samples to use arrays                                                     |
 | 2022/12/15 | Add CV Connect NAS Request and Response source.                                                                       |
