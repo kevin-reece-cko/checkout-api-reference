@@ -1,6 +1,6 @@
 get:
   tags:
-    - Platforms
+    - Payout Schedules
   parameters:
     - in: path
       name: id
@@ -43,7 +43,7 @@ get:
 
 put:
   tags:
-    - Platforms
+    - Payout Schedules
   security:
     - OAuth:
         - accounts
