@@ -13,7 +13,7 @@ allOf:
         example: src_wmlfc3zyhqzehihu7giusaaawu
       cvv:
         type: string
-        description: The card verification value/code (for card sources). 3 digits, except for Amex (4 digits)
+        description: The card verification value/code (for card sources). 3 digits, except for American Express (4 digits)
         example: "956"
         minLength: 3
         maxLength: 4

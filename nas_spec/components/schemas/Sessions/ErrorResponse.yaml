@@ -59,7 +59,7 @@ properties:
       • invalid_token = The token used in the source object was invalid. <br/>
       • instrument_used_is_not_card = Using an `id` type source that is not a card (only card type instruments are supported in 3DS) . <br/>
       • no_processor_configured_for_card_scheme = Using a card that belongs to a scheme that is not configured in the Processing Channel being used. <br/>
-      • currency_not_supported = An Amex SE number is not associated with the currency in the request. <br/>
+      • currency_not_supported = An American Express SE number is not associated with the currency in the request. <br/>
       • scheme_outage = With error type `operation_not_allowed`. This is returned when there is a technical issue on the scheme's platform. <br/>
       • session_already_in_use = With error type `duplicate_requests_detected`. More than one action requests have been sent in parallel for the same session. <br/><br/>
 
