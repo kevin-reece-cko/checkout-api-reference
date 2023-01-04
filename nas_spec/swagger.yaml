@@ -64,7 +64,7 @@ tags:
   - name: Payment Instruments
     description: Manage bank account payment instruments for your sub-entities.
   - name: Payout Schedules
-    description: View and manage payout schedule for your sub-entities.
+    description: View and manage payout schedules for your sub-entities.
   - name: Reports
     description: Retrieve your reconciliation reports programmatically with the <a href="https://www.checkout.com/docs/reporting/reports-api">Reports API</a>.
   - name: Sessions
