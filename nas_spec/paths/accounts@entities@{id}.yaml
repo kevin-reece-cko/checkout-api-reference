@@ -282,6 +282,8 @@ put:
   security:
     - OAuth:
         - accounts
+    - ApiSecretKey:
+        - accounts
   responses:
     '200':
       description: Sub-entity updated successfully

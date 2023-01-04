@@ -47,6 +47,8 @@ put:
   security:
     - OAuth:
         - accounts
+    - ApiSecretKey:
+        - accounts
   summary: Update a sub-entity's payout schedule
   description: >-
     You can schedule when your sub-entities receive their funds using our <a href="https://checkout.com/docs/platforms" target="_blank">Platforms solution</a>. Use this endpoint to update a sub-entity's schedule.
