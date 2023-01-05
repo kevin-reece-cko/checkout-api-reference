@@ -61,6 +61,10 @@ tags:
     description: Keep track of and act on your open disputes (also known as chargebacks) to submit the best possible response.
   - name: Platforms
     description: Manage all your sub-entities (also known as sub-merchants) through one integration, globally.
+  - name: Payment instruments
+    description: Manage bank account payment instruments for your sub-entities.
+  - name: Payout schedules
+    description: View and manage payout schedules for your sub-entities.
   - name: Reports
     description: Retrieve your reconciliation reports programmatically with the <a href="https://www.checkout.com/docs/reporting/reports-api">Reports API</a>.
   - name: Sessions
@@ -109,6 +113,8 @@ x-tagGroups:
   - name: Platforms
     tags:
       - Platforms
+      - Payment instruments
+      - Payout schedules
   - name: Reporting
     tags:
       - Reports

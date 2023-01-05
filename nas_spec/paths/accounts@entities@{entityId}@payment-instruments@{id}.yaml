@@ -58,7 +58,7 @@ get:
     '401':
       description: Unauthorized
   tags:
-    - Platforms
+    - Payment instruments
 patch:
   description: Set an existing payment instrument as default. This will make it the destination instrument when a scheduled payout is made. You can also update the label of a payment instrument.
   summary: Update payment instrument details
@@ -79,7 +79,13 @@ patch:
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/EntityLinks'
+            allOf:
+              - $ref: '#/components/schemas/EntityLinks'
+              - type: object
+                properties:
+                  id:
+                    type: string
+                    example: ppi_qn4nis4k3ykpzzu7cvtuvhqqga
       headers:
         Cko-Request-Id:
           $ref: '#/components/headers/Cko-Request-Id'
@@ -94,4 +100,4 @@ patch:
           schema:
             $ref: '#/components/schemas/ValidationError'
   tags:
-    - Platforms
+    - Payment instruments
