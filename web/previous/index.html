@@ -52,7 +52,7 @@
 
 	<div id="redocly_container"></div>
 
-	<script src="https://cdn.redoc.ly/reference-docs/v2.12.2/redocly-reference-docs.min.js"></script>
+	<script src="https://cdn.redoc.ly/reference-docs/v2.38.2/redocly-reference-docs.min.js"></script>
 	<script>
 		RedoclyReferenceDocs.init(
 			'./swagger.yaml',
@@ -80,6 +80,132 @@
 				sendXUserAgentInTryIt: true,
 				showChangeLayoutButton: false,
 				showConsole: false,
+				showSecuritySchemeType: true,
+				hideTryItPanel: true,
+				theme: {
+					codeBlock: {
+						backgroundColor: 'var(--code-background)!important',
+						borderRadius: '8px',
+						tokens: {
+							comment: {
+								color: '#998066!important',
+							},
+							keyword: {
+								color: 'var(--code-value-link)!important',
+							},
+							punctuation: {
+								color: 'var(--primary-text)!important',
+							},
+							operator: {
+								color: '#f5b83d!important',
+							},
+							string: {
+								color: 'var(--code-string)!important',
+							},
+							variable: {
+								color: 'var(--cko-code-light-purple)!important',
+							},
+							boolean: {
+								color: 'var(--code-value-bool)!important',
+							},
+							number: {
+								color: 'var(--code-value-number)!important',
+							},
+							function: {
+								color: 'var(--R800)!important',
+							},
+							property: {
+								color: 'var(--primary-text)!important',
+							},
+							'class-name': {
+								color: 'var(--cko-code-light-blue)!important',
+							},
+						}
+					},
+					colors: {
+						accent: {
+							main: '#0c1142',
+							light: '#ffffce',
+							dark: '#0c1142',
+							contrastText: '#ffffce'
+						},
+						http: {
+							get: '#2db388',
+							post: '#00aeef',
+							put: '#b77ba1',
+							patch: '#fab82b',
+							delete: '#fd755f'
+						},
+						primary: {
+							main: '#0c1142',
+							dark: '#0c1142',
+							light: '#2ad4db',
+							contrastText: '#ffffce',
+						},
+						secondary: {
+							main: '#e6e7ec',
+							light: '#f5f7fa',
+							contrastText: '#0c1142',
+						},
+					},
+					components: {
+						buttons: {
+							borderRadius: '4px',
+						}, 
+						logo: {
+							gutter: '12px'
+						},
+					}, 
+					sidebar: {
+						activeBgColor: '#ffffff',
+						activeTextColor: 'var(--primary-dark-blue)',
+						backgroundColor: 'var(--sidebar-background)',
+						textColor: '#1f2933', 
+						spacing: {
+							paddingHorizontal: '20.0',
+							paddingVertical: '12.5',
+							offsetTop: '0',
+							offsetLeft: '0',
+							offsetNesting: '0',
+						}
+					},
+					typography: {
+						fontFamily: 'Graphik LCG Web, Arial, sans-serif',
+						fontSize: '14px',
+						lineHeight: '24px',
+						heading1: {
+							color: 'var(--primary-text)',
+							fontSize: '40px',
+							lineHeight: '44px',
+							fontWeight: '600',
+						},
+						heading2: {
+							color: 'var(--primary-text)',
+							fontSize: '24px',
+							lineHeight: '32px',
+							fontWeight: '600',
+						},
+						heading3: {
+							color: 'var(--primary-text)',
+							fontSize: '18px',
+							lineHeight: '24px',
+							fontWeight: '400',
+						},
+						links: {
+							hoverTextDecoration: 'underline',
+							hover: 'var(--primary-text)'
+						},
+						code: {
+							fontSize: '13px',
+							color: 'var(--primary-text)!important',
+						}
+					}, 
+					rightPanel: {
+						panelControlsBackgroundColor: '#e6e7ec',
+						panelBackgroundColor: '#f0f3f7',
+						textColor: 'var(--primary-dark-blue)!important',
+					}
+				}
 			},
 			document.querySelector('#redocly_container')
 		);

@@ -1,0 +1,80 @@
+/* banner styles */
+.banner {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	max-width: 100vw;
+	padding: 20px 64px;
+	background-color: var(--primary-dark-blue);
+	color: var(--cko-white);
+	z-index: 111;
+	text-align: center;
+	font-size: 14px;
+	line-height: 24px;
+}
+
+@media screen and (max-width: 600px) {
+	.banner {
+		font-size: 12px;
+		line-height: 20px;
+		padding: 12px 24px;
+	}
+}
+
+.banner-text {
+	display: inline-block;
+}
+
+.banner-link {
+	display: inline-block;
+	color: var(--cko-white) !important;
+	font-weight: 400 !important;
+}
+
+.banner-link:hover {
+	color: var(--cko-white) !important;
+}
+
+.menu-content {
+	top: 64px !important;
+	height: calc(100vh - 64px) !important;
+}
+
+.redoc-wrap {
+	top: 64px;
+}
+
+@media screen and (max-width: 1163px) {
+	.redoc-wrap {
+		top: 88px;
+	}
+
+	.menu-content {
+		top: 88px !important;
+		height: calc(100vh - 88px) !important;
+	}
+}
+
+@media screen and (max-width: 655px) {
+	.redoc-wrap {
+		top: 112px;
+	}
+
+	.menu-content {
+		top: 80px !important;
+		padding-top: 0 !important;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.redoc-wrap {
+		top: 84px;
+	}
+}
+
+@media screen and (max-width: 359px) {
+	.redoc-wrap {
+		top: 104px;
+	}
+}
