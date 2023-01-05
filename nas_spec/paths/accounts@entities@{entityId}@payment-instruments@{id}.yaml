@@ -58,7 +58,7 @@ get:
     '401':
       description: Unauthorized
   tags:
-    - Payment Instruments
+    - Payment instruments
 patch:
   description: Set an existing payment instrument as default. This will make it the destination instrument when a scheduled payout is made. You can also update the label of a payment instrument.
   summary: Update payment instrument details
@@ -100,4 +100,4 @@ patch:
           schema:
             $ref: '#/components/schemas/ValidationError'
   tags:
-    - Payment Instruments
+    - Payment instruments

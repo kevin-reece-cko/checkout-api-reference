@@ -84,7 +84,7 @@ post:
                     example:
                       - error_code1
                       - error_code2
-  tags: [ Payment Instruments ]
+  tags: [ Payment instruments ]
 
 get:
   description: Fetch all of the payment instruments for a sub-entity. You can filter by `status` to identify `verified` instruments that are ready to be used for Payouts.
@@ -140,5 +140,5 @@ get:
     '401':
       description: Unauthorized
   tags:
-    - Payment Instruments
+    - Payment instruments
 
