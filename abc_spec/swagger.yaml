@@ -1,6 +1,5 @@
 openapi: '3.0.1'
 info:
-  version: '1.0.0'
   title: Checkout.com API Reference
   x-logo:
     url: 'https://assets.checkout.com/docs/logos/logo-checkout-api-dark.svg'

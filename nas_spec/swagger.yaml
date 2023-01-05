@@ -1,6 +1,5 @@
 openapi: '3.0.1'
 info:
-  version: '1.0.0'
   title: Checkout.com API Reference
   x-logo:
     url: 'https://assets.checkout.com/docs/logos/logo-checkout-api-dark.svg'
@@ -34,6 +33,8 @@ info:
     - <b>Server-to-server authentication</b>. Use your [secret key](#section/Authentication/ApiSecretKey) or [OAuth](#section/Authentication/OAuth) for server-to-server communication. Support for API keys depends on the endpoint.
 
     Never share your OAuth credentials, API keys, or access tokens. Keep them guarded and secure.
+
+    <SecurityDefinitions />
 
 servers:
   - url: https://api.sandbox.checkout.com
