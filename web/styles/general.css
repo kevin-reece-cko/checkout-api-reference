@@ -13,3 +13,7 @@ body {
 	--logo-crusoe: url('./favicons/dark-logo.svg');
 	--header-link-crusoe: url('./favicons/link-blue.svg');
 }
+
+a {
+	font-weight: 600;
+}

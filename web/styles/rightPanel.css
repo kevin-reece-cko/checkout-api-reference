@@ -93,7 +93,7 @@ button[data-cy="send-button"] {
 	background-color: #727b83;
 }
 
-[data-cy="samples-block"] button:hover {
+[data-cy="samples-block"] button:hover, [data-cy="samples-block"] button:focus {
 	background-color: #3c4c5a;
 }
 
