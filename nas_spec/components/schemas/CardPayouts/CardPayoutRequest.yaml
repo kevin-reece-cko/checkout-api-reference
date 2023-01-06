@@ -43,7 +43,7 @@ properties:
     description: The [three-letter currency code](https://checkout.com/docs/four/resources/codes/currency-codes)
   reference:
     type: string
-    description: A reference you can later use to identify this payout, such as an order number
+    description: A reference you can later use to identify this payout, such as an order number.<br>For Amex, the string limit is 30 characters.
     maxLength: 50
   sender:
     $ref: '#/components/schemas/CardPayoutRequestSender'
