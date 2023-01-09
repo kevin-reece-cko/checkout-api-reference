@@ -87,6 +87,10 @@ button[data-cy="send-button"] {
 	color: var(--primary-dark-blue)!important;
 }
 
+.react-tabs [role="tablist"] .dropdown-wrapper label {
+	background-color: var(--Y80);
+}
+
 
 /* action buttons */
 [data-cy="samples-block"] button {
