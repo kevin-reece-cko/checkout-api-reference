@@ -30,10 +30,11 @@ allOf:
           - key
         properties:
           method:
-            type: string
-            description: The signing method. Defaults to HMAC SHA256.
+            type: enum
+              - HMACSHA256
+            description: The signing method, defaults to HMAC SHA256
             example: HMACSHA256
           key:
             type: string
-            description: The key used to sign the webhook
+            description: The key used the sign the webhook
             example: public-signing-key

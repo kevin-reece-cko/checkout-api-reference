@@ -54,3 +54,54 @@
             $ref: '#/components/schemas/ValidationError'
     '500':
       description: Internal Error
+
+delete:
+  security:
+    - OAuth:
+        - flow
+        - flow:workflows
+    - ApiSecretKey: [ ]
+  tags:
+    - Workflows
+  summary: Remove a workflow action
+  description: |
+    Removes a workflow action so it is no longer being executed.
+  parameters:
+    - in: path
+      name: workflowId
+      schema:
+        type: string
+        pattern: ^wf_[a-z2-7]{26}$
+      required: true
+      description: The workflow identifier
+      example: wf_c7svxlvo2bbuva4f6s3xu4f7wm
+    - in: path
+      name: workflowActionId
+      schema:
+        type: string
+        pattern: ^wfa_[a-z2-7]{26}$
+      required: true
+      description: The workflow action identifier
+      example: wfa_c7svxlvo2bbuva4f6s3xu4f7wm
+  responses:
+    '204':
+      description: Workflow action removed successfully
+      headers:
+        Cko-Request-Id:
+          schema:
+            $ref: "#/components/headers/Cko-Request-Id"
+        Cko-Version:
+          schema:
+            $ref: "#/components/headers/Cko-Version"
+    '401':
+      description: Unauthorized
+    '404':
+      description: Workflow or workflow action not found
+    '422':
+      description: Invalid data was sent
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ValidationError'
+    '500':
+      description: Internal Error

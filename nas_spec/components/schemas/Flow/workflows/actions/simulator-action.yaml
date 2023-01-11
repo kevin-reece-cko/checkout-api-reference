@@ -3,7 +3,7 @@ description: Action that invokes the Flow simulator
 required:
   - api_key
 allOf:
-  #- $ref: '#/components/schemas/workflow-action'
+  - $ref: '#/components/schemas/workflow-action'
   - type: object
     required:
       - api_key
