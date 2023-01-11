@@ -2,6 +2,7 @@
 
 | Date       | Description of change                                                                                                 
 |------------|-----------------------------------------------------------------------------------------------------------------------|
+| 2023/01/11 | Remove old description from the session request's payload.                                                       |
 | 2022/01/04 | Add new tags to Platforms section and add `id` property on a response for PATCH payment instrument request.           |
 | 2022/01/04 | Add API key security to remaining Integrated Platforms endpoints.                                                     |
 | 2023/01/03 | Add Platforms Update Payment Instrument Request spec.                                                                 |

@@ -13,8 +13,7 @@ properties:
       - hosted
       - non_hosted
     description: >
-      Whether the session should be hosted by Checkout.com.</br>
-      When this value is `hosted`, the response will be `501 Not Implemented`.
+      Whether the session should be hosted by Checkout.com.
     maxLength: 10
     example: non_hosted
 example:
