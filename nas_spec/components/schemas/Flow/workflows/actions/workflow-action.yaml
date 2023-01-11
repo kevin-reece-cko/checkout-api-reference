@@ -5,7 +5,7 @@ discriminator:
   mapping:
     webhook: '#/components/schemas/webhook-action'
     email: '#/components/schemas/email-action'
-    simulator: '#/components/schemas/simulator-action'
+    #simulator: '#/components/schemas/simulator-action'
 required:
   - type
 properties:

@@ -4,6 +4,7 @@ discriminator:
   propertyName: type
   mapping:
     webhook: '#/components/schemas/get-webhook-action'
+    email: '#/components/schemas/email-action'
     #slack: '#/components/schemas/get-slack-action'
     #simulator: '#/components/schemas/get-simulator-action'
 required:
