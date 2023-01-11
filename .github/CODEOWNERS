@@ -1,6 +1,4 @@
-* @checkout/docs-admin
-* @adam-young-cko
-* @weronika-castiglione-cko
+*  @adam-young-cko @weronika-castiglione-cko @checkout/docs-admin
 
 /abc_spec/components/schemas/Payments/ @checkout/gateway-product-cko
 /nas_spec/components/schemas/Payments/ @checkout/gateway-product-cko
