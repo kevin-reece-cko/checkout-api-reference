@@ -15,49 +15,49 @@ properties:
     properties:
       type:
         type: string
-        description: The source to fund the payout
+        description: The payout source type
         enum:
           - currency_account  
       id:
         type: string
-        description: The currency account ID to fund the payout
+        description: ID of the currency account to be debited
         pattern: '^(ca)_(\w{26})$'
         maxLength: 29
         minLength: 29
       amount:
         type: integer
-        description: |     
-          Amount to be paid out in minor units from the currency account. The exact format [depends on the currency](https://checkout.com/docs/four/resources/calculating-the-amount). 
-          
-          One of `source.amount` or `amount` must be provided
+        description: | 
+          The amount you want to pay out from your currency account. The exact format [depends on the currency](https://checkout.com/docs/four/resources/calculating-the-amount), which is determined by Checkout.com from the currency account defined in `source.id`
+
+          ***Conditional*** - you must specify either `source.amount` or `amount`
+        minimum: 0
   destination:
     $ref: '#/components/schemas/CardPayoutRequestDestination'
   amount:
     type: integer
     description: |
-      The payout destination amount in minor units. The exact format [depends on the currency](https://checkout.com/docs/four/resources/calculating-the-amount). 
+      The payout destination amount in minor units. The exact format [depends on the currency](https://checkout.com/docs/four/resources/calculating-the-amount) defined in `currency`
       
-      One of `source.amount` or `amount` must be provided
+      ***Conditional*** - you must specify either `source.amount` or `amount`
+    minimum: 0
   currency:
     type: string
-    description: The [three-letter currency code](https://checkout.com/docs/four/resources/codes/currency-codes)
-  reference:
-    type: string
-    description: A reference you can later use to identify this payout, such as an order number.<br>For Amex, the string limit is 30 characters.
-    maxLength: 50
-  sender:
-    $ref: '#/components/schemas/CardPayoutRequestSender'
+    description: The [three-letter currency code](https://checkout.com/docs/four/resources/codes/currency-codes) of the payout destination `amount`
   instruction:
     type: object
     required:
       - funds_transfer_type
     description: Details about the instruction for a payout
     properties:
-      skip_expiry:
-        type: boolean
+      funds_transfer_type:
+        type: string
+        description: The funds transfer type assigned to your specific use case by Checkout.com and the card networks      
       purpose:
         type: string
-        description: Mandatory when `destination.issuing_country` is Argentina, Bangladesh, Egypt, or India.
+        description: |
+          The purpose of the payout
+        
+          ***Conditional*** - required when required when the [card metadata](https://api-reference.checkout.com/#operation/requestCardMetadata!c=200&path=issuer_country&t=response) `issuer_country` = `AR` (Argentina), `BD` (Bangladesh), `EG` (Egypt) or `IN` (India)
         enum:
           - family_support
           - expatriation
@@ -78,49 +78,18 @@ properties:
           - royalties
           - other
           - income
-      funds_transfer_type:
-        type: string
-        description: The funds transfer type
-        enum:
-          - AA
-          #- BI
-          - PP
-          #- WT
-          #- BB
-          #- BP
-          #- CP
-          - FD
-          - FT
-          #- GD
-          #- GP
-          - LO
-          #- MD
-          - OG
-          #- PD
-          #- TU
-          - C04
-          - C07
-          - C52
-          #- C53
-          #- C54
-          - C55
-          #- C56
-          #- C57
-          #- C65
-      mvv:
-        type: integer
-        description: The Merchant Verification Value (MVV) is an assigned value used by Visa to identify participation in select merchant program. 
-        minLength: 10
-        maxLength: 10
-      # quote_id:
-      #   type: string
-      #   description: The quote ID of the transaction if obtained before making payout
   processing_channel_id:
     type: string
     description: The processing channel identifier
     pattern: '^(pc)_(\w{26})$'
     minLength: 29
     maxLength: 29
+  sender:
+    $ref: '#/components/schemas/CardPayoutRequestSender'
+  reference:
+    type: string
+    description: A reference you can later use to identify this payout, such as an order number
+    maxLength: 50
   metadata:
     type: object
     description: | 

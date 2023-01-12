@@ -6,19 +6,28 @@ required:
 properties:
   type:
     type: string
-    description: The type of card holder
+    description: The type of payout destination owner
     example: 'government'
   company_name:
     type: string
-    description: The payout destination owner's company name
+    description: |
+      The payout destination owner's company name
+      
+      *A valid and legal name must be populated in this field. The populated value cannot be only one character or all numeric*
     maxLength: 35
   billing_address:
     type: object
-    description: The payout destination owner's billing address
+    description: |
+      Information about the payout destination owner's billing address
+
+      ***Conditional*** - required for all Card Payouts requests by merchants incorporated in the US    
     properties:
       address_line1:
         type: string
-        description: The first line of the address
+        description: |
+          The first line of the address
+
+          ***Conditional*** - required for all Card Payouts requests by merchants incorporated in the US
         maxLength: 50
       address_line2:
         type: string
@@ -26,23 +35,40 @@ properties:
         maxLength: 50
       city:
         type: string
-        description: The address city
+        description: |
+          The address city
+
+          ***Conditional*** - required for all Card Payouts requests by merchants incorporated in the US 
         maxLength: 25
       state:
         type: string
-        description: The address state
+        description: |
+          The address state
+
+          ***Conditional*** - required for all Card Payouts requests by merchants incorporated in the US  
         maxLength: 3
         minLength: 2
       zip:
         type: string
-        description: The address ZIP (postal) code
+        description: |
+          The address ZIP (postal) code
+
+          ***Conditional*** - required for all Card Payouts requests by merchants incorporated in the US 
         maxLength: 10
       country:
         type: string
-        description: The [two-letter ISO country code](https://checkout.com/docs/four/resources/codes/country-codes) of the address
+        description: |
+          The [two-letter ISO country code](https://checkout.com/docs/four/resources/codes/country-codes) of the address
+
+          ***Conditional*** - required for all Card Payouts requests by merchants incorporated in the US
+        maxLength: 2
+        minLength: 2           
   phone:
     type: object
     description: The payout destination owner's phone number
+    required:
+      - country_code
+      - number
     properties:
       country_code:
         type: string
@@ -56,11 +82,14 @@ properties:
         minLength: 6
   identification:
     type: object
-    description: 	The destination identification
+    required:
+      - type
+      - number
+    description: The payout destination owner's identification
     properties:
       type:
         type: string
-        description: The payout destination owner's ID type
+        description: The payout destination owner's identification type
         enum:
           - passport
           - driving_license
@@ -69,16 +98,16 @@ properties:
           - tax_id
       number:
         type: string
-        description: The payout destination owner's ID number
+        description: The payout destination owner's identification number
         maxLength: 25
       issuing_country:
         type: string
-        description: The [two-letter ISO country code](https://checkout.com/docs/four/resources/codes/country-codes) of the payout destination owner's ID country of issue
+        description: If applicable, [two-letter ISO country code](https://checkout.com/docs/four/resources/codes/country-codes) of the issuing country of the payout destination owner's identification
         maxLength: 2
         minLength: 2
       date_of_expiry:
         type: string
-        description: The payout destination owner's ID expiry date. Format 'yyyy-MM-dd'
+        description: If applicable, the expiration date of the payout destination owner's identification. Format `yyyy-MM-dd`
         maxLength: 10
         minLength: 10
   email:

@@ -13,9 +13,10 @@ properties:
     pattern: ^(src)_(\w{26})$
     maxLength: 30
     minLength: 30
-    description: The payment source identifier (eg a card source identifier)
+    description: The payment source identifier (e.g., a card source identifier)
   account_holder:
     type: object
+    description: Information about the payout destination owner (the recipient cardholder)
     discriminator:
       propertyName: type
       mapping:
