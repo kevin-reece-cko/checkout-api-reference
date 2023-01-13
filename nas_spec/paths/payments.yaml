@@ -76,7 +76,7 @@ post:
               metadata:
                 coupon_code: 'NY2018'
                 partner_id: 123989
-          Payout:
+          Bank Payout:
             value:
               source:
                 type: 'currency_account'
@@ -113,6 +113,9 @@ post:
                   last_name: 'Smith'
               amount: 1000
               currency: GBP
+              instruction:
+                funds_transfer_type: 'AA'
+              processing_channel_id: 'pc_hpswyyx23geezflc2ocz3exn4y'              
               sender:
                 type: 'individual'
                 first_name: 'Hayley'
@@ -127,9 +130,6 @@ post:
                 reference_type: 'other'             
                 date_of_birth: '1939-05-27'
                 source_of_funds: 'debit'
-              instruction:
-                funds_transfer_type: 'AA'
-              processing_channel_id: 'pc_hpswyyx23geezflc2ocz3exn4y'
           Card Payout - Direct Funds Disbursement:
             value:
               source:
@@ -159,6 +159,9 @@ post:
                   company_name: 'Checkout.com'
               amount: 1000
               currency: GBP
+              instruction:
+                funds_transfer_type: 'FD'
+              processing_channel_id: 'pc_hpswyyx23geezflc2ocz3exn4y'
               sender:
                 type: 'corporate'
                 company_name: 'A Company'
@@ -171,9 +174,6 @@ post:
                 reference: '1234567ABCDEFG'
                 reference_type: 'other'             
                 source_of_funds: 'debit'
-              instruction:
-                funds_transfer_type: 'FD'
-              processing_channel_id: 'pc_hpswyyx23geezflc2ocz3exn4y'
          
   responses:
     '201':
