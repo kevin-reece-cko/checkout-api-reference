@@ -36,7 +36,7 @@ properties:
   amount:
     type: integer
     description: |
-      The payout destination amount in minor units. The exact format [depends on the currency](https://checkout.com/docs/four/resources/calculating-the-amount) defined in `currency`
+      The payout destination amount in minor units. The exact format [depends on the currency](https://checkout.com/docs/four/resources/calculating-the-amount) defined in `currency`.
       
       ***Conditional*** - you must specify either `source.amount` or `amount`
     minimum: 0
