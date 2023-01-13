@@ -73,7 +73,7 @@ properties:
   reference:
     type: string
     description: |
-      The unique identifying reference of the sender (e.g., customer number)
+      The unique identifying reference of the sender (for example, customer number)
       
       *Only alphanumeric characters are allowed*
     maxLength: 15
