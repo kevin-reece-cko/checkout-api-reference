@@ -117,7 +117,7 @@ properties:
         maxLength: 25
       issuing_country:
         type: string
-        description: If applicable, [two-letter ISO country code](https://checkout.com/docs/four/resources/codes/country-codes) of the issuing country of the payout destination owner's identification
+        description: If applicable, the [two-letter ISO country code](https://checkout.com/docs/four/resources/codes/country-codes) of the issuing country of the payout destination owner's identification
         maxLength: 2
         minLength: 2
       date_of_expiry:
