@@ -117,6 +117,6 @@ properties:
         maxLength: 2
       date_of_expiry:
         type: string
-        description: If applicable, the expiration date of the sender's identification. Format `yyyy-MM-dd`
+        description: If applicable, the expiration date of the sender's identification. Format `yyyy-mm-dd`
         maxLength: 10
         minLength: 10

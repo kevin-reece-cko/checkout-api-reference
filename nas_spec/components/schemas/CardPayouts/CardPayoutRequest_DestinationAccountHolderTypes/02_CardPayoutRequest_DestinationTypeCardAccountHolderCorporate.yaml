@@ -107,7 +107,7 @@ properties:
         minLength: 2
       date_of_expiry:
         type: string
-        description: If applicable, the expiration date of the payout destination owner's identification. Format `yyyy-MM-dd`
+        description: If applicable, the expiration date of the payout destination owner's identification. Format `yyyy-mm-dd`
         maxLength: 10
         minLength: 10
   email:

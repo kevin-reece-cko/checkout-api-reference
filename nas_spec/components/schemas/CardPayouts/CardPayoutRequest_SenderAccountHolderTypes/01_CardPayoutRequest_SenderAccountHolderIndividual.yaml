@@ -129,15 +129,13 @@ properties:
         maxLength: 2
       date_of_expiry:
         type: string
-        description: If applicable, the expiration date of the sender's identification. Format `yyyy-MM-dd`
+        description: If applicable, the expiration date of the sender's identification. Format `yyyy-mm-dd`
         maxLength: 10
         minLength: 10
   date_of_birth:
     type: string
     description: |
-      The sender's date of birth
-      
-      Format `yyyy-MM-dd`
+      The sender's date of birth. Format `yyyy-mm-dd`
     maxLength: 10
     minLength: 10        
   country_of_birth:
