@@ -13,7 +13,7 @@ properties:
     pattern: ^(tok)_(\w{26})$
     maxLength: 30
     minLength: 30
-    description: The Checkout.com token (e.g., a card token)
+    description: The Checkout.com token (for example, a card token)
   account_holder:
     type: object
     description: Information about the payout destination owner (the recipient cardholder)
