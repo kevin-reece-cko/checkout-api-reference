@@ -57,7 +57,7 @@ properties:
         description: |
           The purpose of the payout
         
-          ***Conditional*** - required when required when the [card metadata](https://api-reference.checkout.com/#operation/requestCardMetadata!c=200&path=issuer_country&t=response) `issuer_country` = `AR` (Argentina), `BD` (Bangladesh), `EG` (Egypt) or `IN` (India)
+          ***Conditional*** - required when the [card metadata](https://api-reference.checkout.com/#operation/requestCardMetadata!c=200&path=issuer_country&t=response) `issuer_country` = `AR` (Argentina), `BD` (Bangladesh), `EG` (Egypt) or `IN` (India)
         enum:
           - family_support
           - expatriation
