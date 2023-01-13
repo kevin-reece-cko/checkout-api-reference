@@ -112,7 +112,7 @@ properties:
         description: The sender's identification number
       issuing_country:
         type: string
-        description: If applicable, [two-letter ISO country code](https://checkout.com/docs/four/resources/codes/country-codes) of the issuing country of the sender's identification
+        description: If applicable, the [two-letter ISO country code](https://checkout.com/docs/four/resources/codes/country-codes) of the issuing country of the sender's identification
         minLength: 2
         maxLength: 2
       date_of_expiry:
