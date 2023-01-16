@@ -2,13 +2,13 @@
 
 | Date       | Description of change                                                                                                 
 |------------|-----------------------------------------------------------------------------------------------------------------------|
-| 2023/01/16 | Replaced the deprecated "reporting" scope with the new "reports" scope. Reports API |
-| 2023/01/12 | Accuracy and readability improvements to NAS card payouts                                                             |
+| 2023/01/16 | Replaced the deprecated "reporting" scope with the new "reports" scope in Reports API.                                |
+| 2023/01/12 | Accuracy and readability improvements to NAS card payouts.                                                            |
 | 2023/01/11 | Remove old description from the session request's payload.                                                            |
 | 2023/01/04 | Add new tags to Platforms section and add `id` property on a response for PATCH payment instrument request.           |
 | 2023/01/04 | Add API key security to remaining Integrated Platforms endpoints.                                                     |
 | 2023/01/03 | Add Platforms Update Payment Instrument Request spec.                                                                 |
-| 2022/12/30 | Replaced sample MCCs value `5669` with a valid MCCs, `5311`.  
+| 2022/12/30 | Replaced sample MCCs value `5669` with a valid MCCs, `5311`.                                                          |
 | 2022/12/20 | Added `first_name` and `address` to `recipient`, deprecated `recipient.zip`, made `sender.address` optional.          |
 | 2022/12/15 | Change Platforms schedule `by_day` response samples to use arrays.                                                    |
 | 2022/12/15 | Add CV Connect NAS Request and Response source.                                                                       |
