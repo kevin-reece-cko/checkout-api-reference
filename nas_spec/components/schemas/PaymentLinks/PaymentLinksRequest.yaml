@@ -49,7 +49,7 @@ properties:
         description: The reference shown on the statement. Required for payouts to bank accounts.
   reference:
     type: string
-    description: A reference you can later use to identify this payment, such as an order number.<br><i>Required for PayPal payments<i>.
+    description: A reference you can later use to identify this payment, such as an order number.<br>Required for PayPal payments.<br>For Amex, the string limit is 30 characters.
     example: ORD-123A
     maxLength: 50
   description:

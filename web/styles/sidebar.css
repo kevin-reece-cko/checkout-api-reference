@@ -1,0 +1,35 @@
+/* Checkout logo */
+.menu-content > div:first-child {
+	margin-top: 24px;
+}
+
+/* search button */
+button.button-field-search {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: var(--S00);
+	color: var(--S300);
+	margin: 20px;
+	padding: 10px 24px 10px 16px;
+	border-radius: 8px;
+	cursor: pointer;
+}
+
+button.button-field-search span {
+	background-color: var(--S00);
+}
+
+button.button-field-search .search-icon {
+	top: 0px;
+}
+
+button.button-field-search .search-icon path {
+	fill: var(--icon-color);
+}
+
+/* Side bar Operation tags e.g POST, GET */
+
+div.operation-type {
+	align-items: normal;
+}

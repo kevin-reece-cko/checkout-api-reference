@@ -1,0 +1,113 @@
+/* Right hand side panel */
+
+/* text colour */
+[data-cy="samples-block"] :not(button):not(span) {
+	color: var(--primary-dark-blue)!important;
+}
+
+/* Try it Request Panel */
+div[data-cy="console-request-body"] label {
+	color: #f5f7fa!important;
+}
+
+/* BRITTLE SELECTOR dropdown background colour */
+[data-cy="console-request-body"] .sc-gGLxEB {
+	background-color: var(--S100)!important;
+}
+
+div[data-cy="console-request-body"] [data-cy="console-target-server"] label {
+	color: var(--primary-dark-blue)!important;
+}
+
+/* Request Panel body and chevron colour */
+[data-cy="console-request-body"] [data-cy$="-trigger"] div span {
+	color: var(--primary-dark-blue)!important;
+}
+
+[data-cy="console-request-body"] [data-cy$="-trigger"] div path {
+	fill: var(--primary-dark-blue)!important;
+}
+
+/* Request Panel input placholder colour */
+[data-cy="console-request-body"] input::placeholder {
+	opacity: 1;
+	color: var(--cko-code-gray);
+}
+
+[data-cy="console-request-body"] input::-ms-input-placeholder {
+	opacity: 1;
+	color: var(--cko-code-gray);
+}
+
+[data-cy="console-request-body"] input::-webkit-input-placeholder {
+	opacity: 1;
+	color: var(--cko-code-gray);
+}
+
+[data-cy="console-request-body"] select.dropdown-select
+
+/* Try it panel footer */
+[data-cy="console"] > div:last-child {
+	background-color: var(--primary-dark-blue)!important;
+}
+
+/* Try it send button */
+button[data-cy="send-button"] {
+	color: #f5f7fa!important;
+}
+
+/* headers */
+/* endpoint header */
+[data-cy="samples-block"] > div:first-child > div:first-child {
+	background-color: var(--primary-dark-blue)!important;
+	color: var(--P10)!important;
+}
+
+/* request and response samples headers */ 
+[data-cy="request-samples"], [data-cy="response-samples"] {
+	background-color: var(--primary-dark-blue)!important;
+	color: var(--P10)!important;
+}
+
+/* Request samples tabs */
+.react-tabs [role="tablist"] {
+	gap: 4px;
+	border-bottom: none!important;
+}
+
+.react-tabs [role="tablist"] [role="tab"][class*="--selected"] {
+	border-radius: 4px;
+	background-color: var(--primary-dark-blue)!important;
+	color: var(--S00)!important;
+}
+
+.react-tabs [role="tablist"] [role="tab"]:not([class*="--selected"]), .react-tabs [role="tablist"] .dropdown-wrapper {
+	border-radius: 4px;
+	background-color: var(--Y80);
+	color: var(--primary-dark-blue)!important;
+}
+
+.react-tabs [role="tablist"] .dropdown-wrapper label {
+	background-color: var(--Y80);
+}
+
+
+/* action buttons */
+[data-cy="samples-block"] button {
+	background-color: #727b83;
+}
+
+[data-cy="samples-block"] button:hover, [data-cy="samples-block"] button:focus {
+	background-color: #3c4c5a;
+}
+
+/* collapser +/- button in RHS code sample */
+code button.collapser {
+	color: var(--primary-dark-blue) !important;
+}
+
+code button.collapser:focus, code button.collapser:hover {
+	outline: none!important;
+	background-color: transparent!important;
+}
+

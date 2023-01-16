@@ -26,6 +26,7 @@ properties:
     minLength: 4
   account_holder:
     type: object
+    description: Information about the payout destination owner (the recipient cardholder)
     discriminator:
       propertyName: type
       mapping:

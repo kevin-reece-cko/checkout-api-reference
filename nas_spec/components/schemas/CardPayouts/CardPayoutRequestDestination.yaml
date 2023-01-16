@@ -1,5 +1,7 @@
 type: object
 description: The destination of the payout
+required:
+  - type
 discriminator:
   propertyName: type
   mapping:
