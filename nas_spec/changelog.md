@@ -2,6 +2,7 @@
 
 | Date       | Description of change                                                                                                 
 |------------|-----------------------------------------------------------------------------------------------------------------------|
+| 2023/01/16 | Replaced the deprecated "reporting" scope with the new "reports" scope. Reports API |
 | 2023/01/12 | Accuracy and readability improvements to NAS card payouts                                                             |
 | 2023/01/11 | Remove old description from the session request's payload.                                                            |
 | 2022/01/04 | Add new tags to Platforms section and add `id` property on a response for PATCH payment instrument request.           |
