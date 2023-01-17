@@ -40,7 +40,7 @@ properties:
                 example: 'weekly'
             example:
               frequency: 'weekly'
-              by_day: 'monday'
+              by_day: ['monday']
       _links:
         additionalProperties:
           $ref: '#/components/schemas/Link'
