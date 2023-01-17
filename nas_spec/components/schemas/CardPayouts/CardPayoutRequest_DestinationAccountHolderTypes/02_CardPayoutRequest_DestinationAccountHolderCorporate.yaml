@@ -6,9 +6,12 @@ required:
 properties:
   type:
     type: string
-    description: The type of card holder
+    description: The type of payout destination owner
     example: 'corporate'
   company_name:
     type: string
-    description: The payout destination owner's company name
+    description: |
+      The payout destination owner's company name
+      
+      *A valid and legal name must be populated in this field. The populated value cannot be only one character or all numeric*
     maxLength: 35

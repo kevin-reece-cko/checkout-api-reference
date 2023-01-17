@@ -1,0 +1,19 @@
+body {
+	margin: 0;
+	background-color: var(--background);
+	height: 100vh;
+}
+
+.dark {
+	--logo-crusoe: url('./favicons/white-logo.svg');
+	--header-link-crusoe: url('./favicons/link-gray.svg');
+}
+
+.light {
+	--logo-crusoe: url('./favicons/dark-logo.svg');
+	--header-link-crusoe: url('./favicons/link-blue.svg');
+}
+
+a {
+	font-weight: 600;
+}

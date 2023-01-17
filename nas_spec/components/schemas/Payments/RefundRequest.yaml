@@ -8,7 +8,7 @@ properties:
     example: 6540
   reference:
     type: string
-    description: A reference you can later use to identify this refund request
+    description: A reference you can later use to identify this refund request.<br>For Amex, the string limit is 30 characters.
     maxLength: 50
     example: 'ORD-5023-4E89'
   metadata:

@@ -96,4 +96,4 @@ post:
                       - error_code1
                       - error_code2
   tags:
-    - Platforms
+    - Payment instruments

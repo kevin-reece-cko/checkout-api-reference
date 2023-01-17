@@ -15,7 +15,7 @@ properties:
     example: Final
   reference:
     type: string
-    description: A reference you can later use to identify this capture request.
+    description: A reference you can later use to identify this capture request.<br>For Amex, the string limit is 30 characters.
     maxLength: 50
     example: 'ORD-5023-4E89'
   customer:

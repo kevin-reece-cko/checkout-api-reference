@@ -1,6 +1,6 @@
 get:
   tags:
-    - Platforms
+    - Payout schedules
   parameters:
     - in: path
       name: id
@@ -43,9 +43,11 @@ get:
 
 put:
   tags:
-    - Platforms
+    - Payout schedules
   security:
     - OAuth:
+        - accounts
+    - ApiSecretKey:
         - accounts
   summary: Update a sub-entity's payout schedule
   description: >-
