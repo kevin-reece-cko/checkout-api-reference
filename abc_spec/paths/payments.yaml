@@ -66,6 +66,7 @@ post:
             dob: '1985-05-15'
             account_number: '5555554444'
             zip: W1T
+            first_name: John
             last_name: Jones
           metadata:
             udf1: 'value1'

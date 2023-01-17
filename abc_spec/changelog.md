@@ -2,6 +2,7 @@
 
 | Date       | Description of change                                                                                                                   |
 |------------|-----------------------------------------------------------------------------------------------------------------------------------------|
+| 2023/01/16 | Added `recipient.first_name` to ABC API Spec.                                                                                           |
 | 2022/09/29 | Added new GET Payments endpoint                                                                                                         |                                                             
 | 2022/09/21 | Added the `3ds.allow_upgrade` to payment requests & `3ds.upgrade_reason` to the 202 accepted & GET endpoint responses                   |
 | 2022/09/12 | Amended paymentrequest/payout sender state field to have validation of <= 2 chars rather than <= 3 and fixed text description to match. |
@@ -28,4 +29,4 @@
 | 2021/11/11 | Added `3ds.challenge_indicator` to card payment requests.                                                                               |
 | 2021/10/18 | Added `processing.purpose` to card payouts.                                                                                             |
 | 2021/10/18 | Added `recommendation_code` to payment response.                                                                                        |
-| 2022/11/09 | Removed the `risk` endpoints                                          |
+| 2022/11/09 | Removed the `risk` endpoints                                                                                                            |
