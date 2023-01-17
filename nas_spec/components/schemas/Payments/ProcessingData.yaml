@@ -65,3 +65,12 @@ properties:
     description: An array defining which of the configured payment options within a payment category (for example, `pay_later` or `pay_over_time`) should be displayed for this purchase.
     items:
       type: string
+  partner_error_codes:
+    type: array
+    description: The list of error codes that led the payment to fail or be declined, as given by the payment provider
+    items:
+      type: string
+  partner_reason:
+    type: string
+    description: The reason the payment was declined, as given by the payment provider
+    example: 'Payment declined due to insuficient funds'

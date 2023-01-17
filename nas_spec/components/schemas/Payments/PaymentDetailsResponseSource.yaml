@@ -16,6 +16,7 @@ discriminator:
     postfinance: '#/components/schemas/PaymentResponsePostfinanceSource'
     bancontact: '#/components/schemas/PaymentResponseBancontactSource'
     alma: '#/components/schemas/PaymentResponseAlmaSource'
+    illicado: '#/components/schemas/PaymentResponseIllicadoSource'
     cvconnect: '#/components/schemas/PaymentResponseCvConnectSource'
     tamara: '#/components/schemas/PaymentResponseTamaraSource'
     trustly: '#/components/schemas/PaymentResponseTrustlySource'
