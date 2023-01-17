@@ -73,4 +73,4 @@ properties:
   partner_reason:
     type: string
     description: The reason the payment was declined, as given by the payment provider
-    example: '440644309099499894406'
+    example: 'Payment declined due to insuficient funds'
