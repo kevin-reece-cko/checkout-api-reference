@@ -70,7 +70,7 @@ properties:
     description: The list of error codes that led the payment to fail or be declined, as given by the payment provider
     items:
       type: string
-  partner_reason:
+  partner_error_message:
     type: string
     description: The reason the payment was declined, as given by the payment provider
     example: 'Payment declined due to insuficient funds'
