@@ -35,9 +35,33 @@ properties:
     example: en-US
     maxLength: 10
     minLength: 2
+  retrieval_reference_number:
+    type: string
+    description: 'A unique identifier for the authorization provided by partner'
+    example: '909913440644'
   partner_order_id:
     type: string
     description: The Klarna order ID associated with the payment.
+  partner_status:
+    type: string
+    description: "Status of a payment provided by partner"
+  partner_transaction_id:
+    type: string
+    description: "Unique transaction identification provided by partner"
+  partner_error_codes:
+    type: array
+    description: The list of error codes that led the payment to fail or be declined, as given by the payment provider
+    items:
+      type: string
+  partner_error_message:
+    type: string
+    description: "Error description provided by partner"
+  partner_authorization_code:
+    type: string
+    description: "Authorization code provided by partner"
+  partner_authorization_response_code:
+    type: string
+    description: "Authorization response code provided by partner"    
   fraud_status:
     type: string
     description: The Klarna fraud status associated with the payment.
@@ -65,12 +89,3 @@ properties:
     description: An array defining which of the configured payment options within a payment category (for example, `pay_later` or `pay_over_time`) should be displayed for this purchase.
     items:
       type: string
-  partner_error_codes:
-    type: array
-    description: The list of error codes that led the payment to fail or be declined, as given by the payment provider
-    items:
-      type: string
-  partner_error_message:
-    type: string
-    description: The reason the payment was declined, as given by the payment provider
-    example: 'Payment declined due to insuficient funds'
