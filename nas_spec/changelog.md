@@ -2,6 +2,11 @@
 
 | Date       | Description of change                                                                                                 
 |------------|-----------------------------------------------------------------------------------------------------------------------|
+| 2023/01/24 | Update PaymentResponse `processing` object to add `partner_payment_id`, `partner_status`, `partner_transaction_id`,   |
+|            | `partner_error_codes`, `partner_error_message`, `partner_authorization_code`, `partner_authorization_response_code`   |
+|            | properties.                                                                                                           |
+| 2023/01/24 | Update ProcessingData to add `retrieval_reference_number`, `partner_status`, `partner_transaction_id`,                |  
+|            | `partner_authorization_code`, `partner_authorization_response_code` properties.                                       |
 | 2023/01/18 | Renamed partner_reason to partner_error_message for Reverse API payment methods                                       |
 | 2023/01/16 | Replaced the deprecated "reporting" scope with the new "reports" scope in Reports API.                                |
 | 2023/01/12 | Accuracy and readability improvements to NAS card payouts.                                                            |
