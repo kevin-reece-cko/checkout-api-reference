@@ -36,5 +36,5 @@ allOf:
             example: HMACSHA256
           key:
             type: string
-            description: The key used the sign the webhook
+            description: The key used to sign the webhook
             example: public-signing-key

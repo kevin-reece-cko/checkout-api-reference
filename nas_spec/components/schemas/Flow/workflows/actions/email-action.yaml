@@ -3,7 +3,7 @@ description: Action that sends an email
 required:
   - to
 allOf:
-  - $ref: '#/components/schemas/workflow-action'
+  #- $ref: '#/components/schemas/workflow-action'
   - type: object
     required:
       - to
