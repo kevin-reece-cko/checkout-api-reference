@@ -8,8 +8,8 @@ get:
     - Reports
   security:
     - OAuth:
-        - reporting
-        - reporting:view
+        - reports
+        - reports:view
     - ApiSecretKey: [ ]
   summary: Get report file
   operationId: getReportFile

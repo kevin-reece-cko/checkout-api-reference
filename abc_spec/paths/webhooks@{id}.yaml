@@ -56,7 +56,7 @@ put:
     content:
       application/json:
         schema:
-          $ref: '#/components/schemas/WebhookRequest'
+          $ref: '#/components/schemas/WebhookRequestPut'
   responses:
     '200':
       description: Updated webhook
@@ -99,7 +99,7 @@ patch:
     content:
       application/json:
         schema:
-          $ref: '#/components/schemas/WebhookRequest'
+          $ref: '#/components/schemas/WebhookRequestPatch'
   responses:
     '200':
       description: Updated webhook

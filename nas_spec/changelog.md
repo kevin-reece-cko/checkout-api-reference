@@ -1,10 +1,21 @@
 # Changelog
 
 | Date       | Description of change                                                                                                 
-| 2022/01/25 | Add new sections for adding/deleting workflow actions and workflow conditions.|
-| 2022/01/04 | Add new tags to Platforms section and add `id` property on a response for PATCH payment instrument request.           |
-| 2022/01/04 | Add API key security to remaining Integrated Platforms endpoints.                                                     |
+|------------|-----------------------------------------------------------------------------------------------------------------------|
+| 2022/01/25 | Add new sections for adding/deleting workflow actions and workflow conditions.                                        |
+| 2023/01/24 | Update PaymentResponse `processing` object to add `partner_payment_id`, `partner_status`, `partner_transaction_id`,   |
+|            | `partner_error_codes`, `partner_error_message`, `partner_authorization_code`, `partner_authorization_response_code`   |
+|            | properties.                                                                                                           |
+| 2023/01/24 | Update ProcessingData to add `retrieval_reference_number`, `partner_status`, `partner_transaction_id`,                |  
+|            | `partner_authorization_code`, `partner_authorization_response_code` properties.                                       |
+| 2023/01/18 | Renamed partner_reason to partner_error_message for Reverse API payment methods                                       |
+| 2023/01/16 | Replaced the deprecated "reporting" scope with the new "reports" scope in Reports API.                                |
+| 2023/01/12 | Accuracy and readability improvements to NAS card payouts.                                                            |
+| 2023/01/11 | Remove old description from the session request's payload.                                                            |
+| 2023/01/04 | Add new tags to Platforms section and add `id` property on a response for PATCH payment instrument request.           |
+| 2023/01/04 | Add API key security to remaining Integrated Platforms endpoints.                                                     |
 | 2023/01/03 | Add Platforms Update Payment Instrument Request spec.                                                                 |
+| 2022/12/30 | Replaced sample MCCs value `5669` with valid MCCs value `5311`.                                                       |
 | 2022/12/20 | Added `first_name` and `address` to `recipient`, deprecated `recipient.zip`, made `sender.address` optional.          |
 | 2022/12/15 | Change Platforms schedule `by_day` response samples to use arrays.                                                    |
 | 2022/12/15 | Add CV Connect NAS Request and Response source.                                                                       |

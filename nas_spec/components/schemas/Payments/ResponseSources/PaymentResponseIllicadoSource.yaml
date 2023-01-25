@@ -1,0 +1,5 @@
+type: object
+description: 'Illicado Source'
+allOf:
+  - $ref: '#/components/schemas/PaymentResponseSource'
+  - type: object
