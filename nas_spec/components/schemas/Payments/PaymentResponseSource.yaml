@@ -37,6 +37,7 @@ discriminator:
     cvconnect: '#/components/schemas/PaymentResponseCvConnectSource'
     tamara: '#/components/schemas/PaymentResponseTamaraSource'
     trustly: '#/components/schemas/PaymentResponseTrustlySource'
+    sepa: '#/components/schemas/PaymentResponseSEPAV4Source'
 required:
   - type
 
