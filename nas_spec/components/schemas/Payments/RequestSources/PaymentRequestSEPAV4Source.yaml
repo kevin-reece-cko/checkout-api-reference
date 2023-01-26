@@ -17,7 +17,7 @@ allOf:
     properties:
       country:
         type: string
-        description: 'The ISO 3166-1 alpha-2 account country code.'
+        description: 'The account''s country, as an ISO 3166-1 alpha-2 code.'
         example: FR
       account_number:
         type: string
@@ -25,7 +25,7 @@ allOf:
         example: FR7630006000011234567890189
       bank_code:
         type: string
-        description: 'The account holder''s bank BIC/Swift code.'
+        description: 'The account holder''s bank BIC orSwift code.'
         example: AGRIFRPP
       currency:
         type: string
@@ -37,7 +37,7 @@ allOf:
         example: '123456'
       date_of_signature:
         type: string
-        description: 'The date the mandate was signed. Format yyyy-MM-dd'
+        description: 'The date the mandate was signed, in the format yyyy-MM-dd'
         example: 2022-08-02
       account_holder:
         type: object
@@ -83,6 +83,6 @@ allOf:
                 example: '75000'
               country:
                 type: string
-                description: 'The account holder''s country.'
+                description: 'The account holder''s country, as an ISO 3166-1 alpha-2 code.'
                 example: FR
           
