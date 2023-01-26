@@ -17,19 +17,19 @@ allOf:
     properties:
       country:
         type: string
-        description: 'The ISO 3166-1 alpha-2 country code. For example DE, FR, IT.'
+        description: 'The ISO 3166-1 alpha-2 account country code.'
         example: FR
       account_number:
         type: string
-        description: 'The customer''s IBAN.'
+        description: 'The account holder''s IBAN.'
         example: FR7630006000011234567890189
       bank_code:
         type: string
-        description: 'The customer''s bank BIC/Swift code.'
+        description: 'The account holder''s bank BIC/Swift code.'
         example: AGRIFRPP
       currency:
         type: string
-        description: 'The customer''s account currency.'
+        description: 'The account holder''s account currency.'
         example: EUR
       mandate_id:
         type: string
@@ -41,7 +41,7 @@ allOf:
         example: 2022-08-02
       account_holder:
         type: object
-        description: 'The customer''s personal information.'
+        description: 'The account holder''s personal information.'
         required:
           - first_name
           - last_name
@@ -49,15 +49,15 @@ allOf:
         properties:
           first_name:
             type: string
-            description: 'The customer''s first name.'
+            description: 'The account holder''s first name.'
             example: John
           last_name:
             type: string
-            description: 'The customer''s last name.'
+            description: 'The account holder''s last name.'
             example: Wick
           billing_address:
             type: object
-            description: 'The customer''s billing address.'
+            description: 'The account holder''s billing address.'
             required:
               - address_line1
               - address_line2
@@ -67,22 +67,22 @@ allOf:
             properties:
               address_line1:
                 type: string
-                description: 'The customer''s street name.'
+                description: 'The account holder''s street name.'
                 example: Evergreen Terrace
               address_line2:
                 type: string
-                description: 'The customer''s street number.'
+                description: 'The account holder''s street number.'
                 example: '742'
               city:
                 type: string
-                description: 'The customer''s city.'
+                description: 'The account holder''s city.'
                 example: Paris
               zip:
                 type: string
-                description: 'The customer''s zip code.'
+                description: 'The account holder''s zip code.'
                 example: '75000'
               country:
                 type: string
-                description: 'The customer''s country.'
+                description: 'The account holder''s country.'
                 example: FR
           
