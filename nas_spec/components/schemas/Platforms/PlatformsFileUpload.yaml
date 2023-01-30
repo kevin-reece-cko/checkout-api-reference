@@ -1,6 +1,6 @@
 type: object
 required:
-  - path
+  - entity_id
   - purpose
 properties:
   purpose:
@@ -13,7 +13,7 @@ properties:
       - financial_verification
     example: 'identity_verification'
   
-  path:
+  entity_id:
     type: string
-    description: The <strong>local</strong> path of the file to upload, and its type.
-    example: 'file=@/path/passport.png;type=image/png'
+    description: The id of the entity this request relates to
+    example: ent_5plxo2y4dlqehanhm7i2swsuda

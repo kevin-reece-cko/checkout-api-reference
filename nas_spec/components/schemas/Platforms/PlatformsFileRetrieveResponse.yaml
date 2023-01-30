@@ -1,0 +1,50 @@
+type: object
+properties:
+  id:
+    type: string
+    description: The id of the file
+    example: file_6lbss42ezvoufcb2beo76rvwly
+  status:
+    type: string
+    description: The current status of the file
+    example: verified
+  status_reasons:
+    type: array
+    description: Reasons for Invalid status. Null, if status is other than Invalid
+    example: ["InvalidMimeType"]
+  file_name:
+    type: string
+    description: The name of the file
+    example: file.jpeg
+  size:
+    type: number
+    description: The size of the document in KB
+    example: 1024
+  mime_type:
+    type: string
+    description: The MIME type of the document
+    example: application/pdf
+  uploaded_on:
+    type: string
+    format: date-time
+    description: The ISO 8601 UTC datetime when the file was uploaded
+    example: "2020-12-01T15:01:01Z"
+  purpose:
+    type: string
+    description: The purpose of this document
+    example: identity_verification
+    enum:
+      - identity_verification
+      - dispute_evidence
+      - bank_verification
+      - company_verification
+      - financial_verification
+  _links:
+    additionalProperties:
+      $ref: '#/components/schemas/Link'
+    example:
+      self:
+        href: "https://api.checkout.com/marketplace/files/file_6lbss42ezvoufcb2beo76rvwly"
+      download:
+        href: "https://prod-api.s3.eu-west-1.amazonaws.com/cli_vf4anpbum6aunm2vl3fkzrqinq/file_55wcizg5q7juhjvipxp7ftft7e?X-Amz-Expires=3600&x-amz-security-token=some_token"
+
