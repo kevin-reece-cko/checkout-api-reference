@@ -15,5 +15,5 @@ properties:
   
   entity_id:
     type: string
-    description: The id of the entity this request relates to
+    description: The ID of the entity that the request relates to.
     example: ent_5plxo2y4dlqehanhm7i2swsuda

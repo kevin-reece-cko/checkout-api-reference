@@ -2,36 +2,36 @@ type: object
 properties:
   id:
     type: string
-    description: The id of the file
+    description: The ID of the file.
     example: file_6lbss42ezvoufcb2beo76rvwly
   status:
     type: string
-    description: The current status of the file
+    description: The current status of the file.
     example: verified
   status_reasons:
     type: array
-    description: Reasons for Invalid status. Null, if status is other than Invalid
+    description: If `status` is `Invalid`, returns the reasons why the file was invalid. If `status` is any other value, returns `Null`.
     example: ["InvalidMimeType"]
   file_name:
     type: string
-    description: The name of the file
+    description: The name of the file.
     example: file.jpeg
   size:
     type: number
-    description: The size of the document in KB
+    description: The size of the file in KB.
     example: 1024
   mime_type:
     type: string
-    description: The MIME type of the document
+    description: The MIME type of the file.
     example: application/pdf
   uploaded_on:
     type: string
     format: date-time
-    description: The ISO 8601 UTC datetime when the file was uploaded
+    description: The date and time the file was uploaded, in ISO 8601 UTC format.
     example: "2020-12-01T15:01:01Z"
   purpose:
     type: string
-    description: The purpose of this document
+    description: The purpose of the file.
     example: identity_verification
     enum:
       - identity_verification

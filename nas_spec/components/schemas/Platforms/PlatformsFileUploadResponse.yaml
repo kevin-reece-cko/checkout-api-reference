@@ -1,21 +1,21 @@
 type: object
-description: File uploaded successfully
+description: File uploaded successfully.
 properties:
   id:
     type: string
-    description: The file identifier
+    description: The file identifier.
     example: 'file_6lbss42ezvoufcb2beo76rvwly'
   status:
     type: string
-    description: The current status of the file
+    description: The current status of the file.
     example: created
   maximum_size_in_bytes:
     type: number
-    description: The maxiumum allowed file size in bytes
+    description: The maximum file size allowed, in bytes.
     example: 4194304
   document_types_for_purpose:
     type: array
-    description: The allowed file mime types for the document purpose provided on the initial file upload request
+    description: The MIME file types allowed for the document purpose, provided on the initial file upload request.
     example: ["image/jpeg", "image/png", "image/jpg"]
   _links:
     type: object

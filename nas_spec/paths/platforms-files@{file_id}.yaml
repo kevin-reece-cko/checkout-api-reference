@@ -17,7 +17,7 @@ get:
       schema:
         type: string
       required: true
-      description: The file identifier. It is always prefixed by `file_`.
+      description: The ID of the file. The value is always prefixed by `file_`.
   responses:
     '200':
       description: OK
