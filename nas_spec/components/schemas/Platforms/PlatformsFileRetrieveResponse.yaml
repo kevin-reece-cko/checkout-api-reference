@@ -31,7 +31,7 @@ properties:
     example: "2020-12-01T15:01:01Z"
   purpose:
     type: string
-    description: The purpose of the file.
+    description: The purpose of the file, as provided in the initial request.
     example: identity_verification
     enum:
       - identity_verification
