@@ -68,6 +68,8 @@ tags:
     description: View and manage payout schedules for your sub-entities.
   - name: Reports
     description: Retrieve your reconciliation reports programmatically with the <a href="https://www.checkout.com/docs/reporting/reports-api">Reports API</a>.
+  - name: Financial actions
+    description: Returns all the processed financial actions associated with your given filter. The results are ordered by processing date in descending order (latest first).
   - name: Sessions
     description: Use Sessions to authenticate transactions with 3D Secure (3DS) and comply with Strong Customer Authentication (SCA) requirements.
   - name: Workflows
@@ -119,6 +121,7 @@ x-tagGroups:
   - name: Reporting
     tags:
       - Reports
+      - Financial actions
   - name: Metadata
     tags:
       - Card metadata

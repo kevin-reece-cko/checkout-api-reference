@@ -74,3 +74,7 @@ flows:
       middleware: Access to all Middleware resources
       'middleware:merchants-secret': Allows merchant identity and Middleware token exchange from a secure execution environment
       'middleware:merchants-public': Allows merchant identity and Middleware token exchange from an insecure execution environment
+      reports: Access to all Reports resources
+      'reports:view': View reports
+      financial-actions: Access to all Financial actions resources
+      'financial-actions:view': View financial actions
