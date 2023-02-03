@@ -214,6 +214,7 @@ properties:
       - de-AT
       - de-CH
       - de-DE
+      - el
       - en-AT
       - en-CH
       - en-DE
@@ -236,6 +237,7 @@ properties:
       - ms-MY
       - nb-NO
       - nl-NL
+      - pt-PT
       - sv-SE
       - th-TH
       - vi-VN
