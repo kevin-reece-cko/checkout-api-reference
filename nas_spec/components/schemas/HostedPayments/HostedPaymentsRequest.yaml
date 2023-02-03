@@ -210,6 +210,7 @@ properties:
       - ar
       - da-DK
       - de-DE
+      - el
       - en-GB
       - es-ES
       - fi-FI
@@ -222,6 +223,7 @@ properties:
       - ms-MY
       - nb-NO
       - nl-NL
+      - pt-PT
       - sv-SE
       - th-TH
       - vi-VN
