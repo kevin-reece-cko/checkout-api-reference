@@ -30,5 +30,5 @@ allOf:
           type: string
         minItems: 0
         maxItems: 5
-        description: Bcc email addresses
+        description: The email addresses to BCC on the email
         example: ["test@test.com"]
