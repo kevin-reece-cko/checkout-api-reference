@@ -65,7 +65,7 @@ delete:
     - Workflows
   summary: Remove a workflow condition
   description: |
-    Removes a workflow condition so it is no longer being executed.
+    Removes a workflow condition. Conditions determine when the workflow will trigger.
   parameters:
     - in: path
       name: workflowId
