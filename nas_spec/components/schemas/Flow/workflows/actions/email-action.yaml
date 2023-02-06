@@ -14,7 +14,7 @@ allOf:
           type: string
         minItems: 1
         maxItems: 5
-        description: Recipient email addresses
+        description: The email addresses to send the email to
         example: ["test@test.com"]
       cc:
         type: array
