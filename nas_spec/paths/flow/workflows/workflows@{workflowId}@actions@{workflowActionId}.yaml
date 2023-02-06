@@ -65,7 +65,7 @@ delete:
     - Workflows
   summary: Remove a workflow action
   description: |
-    Removes a workflow action so it is no longer being executed.
+    Removes a workflow action. Actions determine what the workflow will do when it is triggered.
   parameters:
     - in: path
       name: workflowId
