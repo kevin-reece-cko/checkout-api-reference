@@ -22,7 +22,7 @@ allOf:
           type: string
         minItems: 0
         maxItems: 5
-        description: Cc email addresses
+        description: The email addresses to CC on the email
         example: ["test@test.com"]
       bcc:
         type: array
