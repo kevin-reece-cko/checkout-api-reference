@@ -3,7 +3,7 @@
 | Date       | Description of change                                                                                                 |
 |------------|-----------------------------------------------------------------------------------------------------------------------|
 | 2023/02/07 | Added Portuguese and Greek locale options to Hosted Payments Page and Payment Links                                   |
-| 2023/02/01 | Update file uploads/retrievals for Platforms.                                                                         |
+| 2023/02/01 | Update file uploads/retrievals for Platforms                                                                          |
 | 2023/02/01 | Added the API reference for the Financial Actions API.                                                                |
 | 2023/01/26 | Add SEPA DD NAS Request and Response sources                                                                          |
 | 2023/01/24 | Update PaymentResponse `processing` object to add `partner_payment_id`, `partner_status`, `partner_transaction_id`,   |
