@@ -8,7 +8,7 @@
     - Workflows
   summary: Add a workflow action
   description: |
-    Add a workflow action
+    Adds a workflow action. Actions determine what the workflow will do when it is triggered.
   parameters:
     - in: path
       name: workflowId
