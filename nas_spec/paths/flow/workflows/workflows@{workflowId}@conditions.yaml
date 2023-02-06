@@ -8,7 +8,7 @@
     - Workflows
   summary: Add a workflow condition
   description: |
-    Add a workflow condition
+    Adds a workflow condition. Conditions determine when the workflow will trigger.
   parameters:
     - in: path
       name: workflowId
