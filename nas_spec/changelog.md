@@ -2,7 +2,7 @@
 
 | Date       | Description of change                                                                                                 |
 |------------|-----------------------------------------------------------------------------------------------------------------------|
-| 2023/02/09 | Updated zip code format requirements for US merchants for Card Payouts                                                |
+| 2023/02/09 | Updated `zip` code format requirements for US merchants for Card Payouts                                                |
 | 2023/02/07 | Added Portuguese and Greek locale options to Hosted Payments Page and Payment Links                                   |
 | 2023/02/01 | Update file uploads/retrievals for Platforms                                                                          |
 | 2023/02/01 | Added the API reference for the Financial Actions API.                                                                |
