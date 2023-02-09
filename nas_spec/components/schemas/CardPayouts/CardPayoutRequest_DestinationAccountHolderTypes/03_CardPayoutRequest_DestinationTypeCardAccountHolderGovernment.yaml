@@ -53,7 +53,7 @@ properties:
         description: |
           The address ZIP (postal) code
 
-          ***Conditional*** - required for all Card Payouts requests by merchants incorporated in the US 
+          ***Conditional*** - required for all Card Payouts requests by merchants incorporated in the US; the format for US ZIPs must be nnnnn or nnnnn-nnnn
         maxLength: 10
       country:
         type: string
