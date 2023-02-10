@@ -63,7 +63,7 @@ properties:
         description: |
           The ZIP (postal) code of the sender's residential address
 
-          ***Conditional*** - required for all Card Payouts requests by merchants incorporated in the US; the format for US ZIPs must be nnnnn or nnnnn-nnnn
+          ***Conditional*** - required for all Card Payouts requests by merchants incorporated in the US; the format for US ZIPs must be `nnnnn` or `nnnnn-nnnn`
         maxLength: 10
       country:
         type: string
