@@ -7,15 +7,11 @@ properties:
   status:
     type: string
     description: The current status of the file.
-    example: verified
+    example: invalid
   status_reasons:
     type: array
     description: If `status` is `Invalid`, returns the reasons why the file was invalid. If `status` is any other value, returns `Null`.
     example: ["InvalidMimeType"]
-  file_name:
-    type: string
-    description: The name of the file.
-    example: file.jpeg
   size:
     type: number
     description: The size of the file in KB.
