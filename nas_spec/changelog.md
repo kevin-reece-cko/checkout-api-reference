@@ -2,6 +2,7 @@
 
 | Date       | Description of change                                                                                                 |
 |------------|-----------------------------------------------------------------------------------------------------------------------|
+| 2022/02/10 | Added `resolved_reason` to get all disputes response for NAS and MBC.                                                   |
 | 2023/02/10 | Updated `zip` format requirements to display as code style                                             |
 | 2023/02/09 | Updated `zip` code format requirements for US merchants for Card Payouts                                              |
 | 2023/02/07 | Added Portuguese and Greek locale options to Hosted Payments Page and Payment Links                                   |
