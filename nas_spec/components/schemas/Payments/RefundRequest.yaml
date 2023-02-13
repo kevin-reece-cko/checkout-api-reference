@@ -6,6 +6,8 @@ properties:
       The amount to refund. If not specified, the full payment amount will be refunded.
     minimum: 0
     example: 6540
+  amount_allocations:
+    $ref: '#/components/schemas/AmountAllocations'
   reference:
     type: string
     description: A reference you can later use to identify this refund request.<br>For Amex, the string limit is 30 characters.
