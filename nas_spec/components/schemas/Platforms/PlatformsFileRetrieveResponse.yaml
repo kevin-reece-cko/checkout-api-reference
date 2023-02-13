@@ -39,8 +39,8 @@ properties:
     additionalProperties:
       $ref: '#/components/schemas/Link'
     example:
-      self:
-        href: "https://api.checkout.com/marketplace/files/file_6lbss42ezvoufcb2beo76rvwly"
       download:
-        href: "https://prod-api.s3.eu-west-1.amazonaws.com/cli_vf4anpbum6aunm2vl3fkzrqinq/file_55wcizg5q7juhjvipxp7ftft7e?X-Amz-Expires=3600&x-amz-security-token=some_token"
+        href: "https://s3.eu-west-1.amazonaws.com/mp-files-api-clean-prod/ent_ociwguf5a5fe3ndmpnvpnwsi3e/file_6lbss42ezvoufcb2beo76rvwly?X-Amz-Expires=3600&x-amz-security-token=some_token"
+      self:
+        href: "https://files.checkout.com/files/file_6lbss42ezvoufcb2beo76rvwly"
 
