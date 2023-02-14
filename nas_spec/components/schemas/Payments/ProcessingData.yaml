@@ -94,7 +94,7 @@ properties:
     description: Indicates whether the payment is an [Account Funding Transaction](https://www.checkout.com/docs/previous/payments/manage-payments/account-funding-transactions)
   merchant_category_code:
     type: string
-    description: [Four-digit code for retail financial services](https://www.checkout.com/docs/resources/codes/merchant-category-codes) expressed in ISO 18245 format, classifying the types of goods or services you provide.
+    description: Four-digit code for retail financial services expressed in ISO 18245 format, classifying the types of goods or services you provide.
     example: 5311
   scheme_merchant_id:
     type: string
