@@ -98,4 +98,4 @@ properties:
     example: 5311
   scheme_merchant_id:
     type: string
-    description: The acceptor scheme merchant that was passed to the scheme
+    description: The merchant identifier that was configured with the scheme and used for the payment.
