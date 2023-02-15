@@ -17,7 +17,13 @@ properties:
     type: object
     properties:
       upload:
-        description: The URL to upload the file to, in a data-binary type request.
+        description: |
+          Send a data-binary type request to this URL with your file attached. For example:
+          
+          ```
+          curl --location --request PUT “https://files.sandbox.checkout.com/files/ent_e5fxiiuec7yasswclx27zbpbcc/file_bbmcujt2fxmyh5pmeuz2bvvxd?AWSAccessKeyId=XX&Expires=1673456742&Signature=fg9Eq3mQBXrlnbeWCTyrURlBxQ%3X”
+          --data-binary '@/C:/Users/Test/test.pdf'
+          ```
         properties:
           href: 'https://s3.eu-west-1.amazonaws.com/mp-files-api-staging-prod/ent_ociwguf5a5fe3ndmpnvpnwsi3e/file_6lbss42ezvoufcb2beo76rvwly?AWSAccessKeyId=ASIX4BFJOBCQFLAMPKU3&Expires=1661355993&x-amz-security-token=some_token'
       self:
