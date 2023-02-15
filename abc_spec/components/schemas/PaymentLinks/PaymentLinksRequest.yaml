@@ -197,6 +197,24 @@ properties:
           - challenge_requested
           - challenge_requested_mandate
         default: no_preference
+      allow_upgrade:
+        type: boolean
+        default: false
+        description: Whether to process this payment as 3D Secure if the authorization was soft declined due to 3DS authentication required.
+      exemption:
+        type: string
+        enum:
+            - low_value
+            - secure_corporate_payment
+            - trusted_listing
+            - transaction_risk_assessment
+            - 3ds_outage
+            - sca_delegation
+            - out_of_sca_scope
+            - other
+            - low_risk_program
+            - recurring_operation
+        description: Specifies an exemption reason so that the payment is not processed using 3D Secure authentication. Learn more about exemptions in our SCA compliance guide.
   risk:
     $ref: '#/components/schemas/RiskRequest'
   return_url:
