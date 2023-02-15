@@ -242,3 +242,9 @@ properties:
   merchant_callback_url:
     type: string
     description: A URL which you can use to notify the customer that the order has been created.
+  line_of_business:
+    type: string
+    description: |
+        <span style="font-size: 14px; font-weight: 500; color: rgb(60, 4, 133); background-color: rgb(237, 222, 255); border-radius: 4px; padding: 2px 6px">Beta</span><p></p>
+        The line of business that the payment is associated with.
+    example: Flights
