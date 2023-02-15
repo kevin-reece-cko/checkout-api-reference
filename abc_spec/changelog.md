@@ -2,7 +2,9 @@
 
 | Date       | Description of change                                                                                                                   |
 |------------|-----------------------------------------------------------------------------------------------------------------------------------------|
-| 2023/01/24 | Added `WebhookRequestPut` & `WebhookRequestPatch` to distinguish between the required parameters for each request
+| 2022/02/10 | Added `resolved_reason` to get all disputes response for NAS and MBC.                                                                     |
+| 2023/02/07 | Added Portuguese and Greek locale options to Hosted Payments Page and Payment Links                                                     |
+| 2023/01/24 | Added `WebhookRequestPut` & `WebhookRequestPatch` to distinguish between the required parameters for each request                       |
 | 2023/01/16 | Added `recipient.first_name` to ABC API Spec.                                                                                           |
 | 2022/09/29 | Added new GET Payments endpoint                                                                                                         |                                                             
 | 2022/09/21 | Added the `3ds.allow_upgrade` to payment requests & `3ds.upgrade_reason` to the 202 accepted & GET endpoint responses                   |

@@ -1,0 +1,79 @@
+type: object
+required:
+  - breakdown_type
+  - fx_rate_applied
+  - holding_currency
+  - holding_currency_amount
+  - processing_currency
+  - processing_currency_amount
+properties:
+  breakdown_type:
+    type: string
+    description: A description of the type of fee or amount. For example, authorization fee.
+    example: Scheme Fixed Fee
+  fx_rate_applied:
+    type: number
+    description: The foreign exchange rate applied to a processed financial action.
+    example: 1.24
+  holding_currency:
+    type: string
+    description: Three-digit ISO currency code of the currency a financial action is held and paid out in.
+    example: USD
+  holding_currency_amount:
+    type: number
+    description: The associated amount of the financial action in the holding currency.
+    example: 0.19526938
+  processing_currency:
+    type: string
+    description: Three-digit ISO currency code of a financial action when processed.
+    example: GBP
+  processing_currency_amount:
+    type: number
+    description: The associated amount of the financial action in the processing currency.
+    example: 0.15816820
+  transaction_currency:
+    type: string
+    description: The currency of the transaction.
+    example: EUR
+  transaction_currency_account:
+    type: number
+    description: The transaction amount, expressed in the transaction currency.
+    example: 0.18031175
+  processing_to_transaction_currency_fx_rate:
+    type: number
+    description: The foreign exchange rate between the processing currency and the transaction currency.
+    example: 1.14
+  transaction_to_holding_currency_fx_rate:
+    type: number
+    description: The foreign exchange rate between the transaction currency and the holding currency. This rate is inferred from both the FX Rate and Processing to Transaction Currency FX Rate columns to account for foreign exchange rates from multiple rate ticks.
+    example: 1.08
+  fee_detail:
+    type: string
+    description: The additional level of granularity for predicted scheme fees applied.
+    example: Visa Fixed Acquirer Network Fee
+  reserve_rate:
+    type: string
+    description: The percentage amount reserved from the payment.
+    example: 5%
+  reserve_release_date:
+    type: string
+    description: The date that the reserve is scheduled to be released for a Rolling Reserve Deducted, or the date that the reserve is released for a Rolling Reserve Released financial action.
+    format: date-time
+    example: '2023-06-21T09:15:34.782Z'
+  reserve_deducted_date:
+    type: string
+    description: The date the reserve was deducted from the payment.
+    format: date-time
+    example: '2022-02-18T13:00:12.357Z'
+  tax_fx_rate:
+    type: number
+    description: The foreign exchange rate between the holding currency and the tax currency at the point the financial action was processed.
+    example: 1.45
+  entity_country_tax_currency:
+    type: string
+    description: The currency of the country your entity resides in for tax purposes, if applicable.
+    example: AUD
+  tax_currency_amount:
+    type: number
+    description: The amount of tax applied, expressed in the tax currency.
+    example: AUD

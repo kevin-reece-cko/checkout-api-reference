@@ -1,0 +1,43 @@
+type: object
+properties:
+  count:
+    type: integer
+    description: The total number of financial actions on the current page.
+    format: int32
+    example: 1
+  limit:
+    type: integer
+    description: The maximum number of results included per page.
+    format: int32
+    example: 5
+    minimum: 1
+    maximum: 100
+    default: 100
+  data:
+    type: array
+    items:
+      type: object
+      $ref: '#/components/schemas/FinancialAction'
+    description: The list of financial actions from the current page.
+  _links:
+    type: object
+    description: The `links` object.
+    properties:
+      self:
+        type: object
+        description: The `self` object.
+        allOf:
+          - $ref: '#/components/schemas/FinancialActionsSelfLink'
+        example:
+          href: https://api.checkout.com/financial-actions?payment_id=pay_qqufsd3rfnqufngwklghlxrzpm&limit=5
+        additionalProperties: false
+      next:
+        type: object
+        description: The `next` object.
+        allOf:
+          - $ref: '#/components/schemas/FinancialActionsNextLink'
+        example:
+          href: 'https://api.checkout.com/financial-actions?payment_id=pay_qqufsd3rfnqufngwklghlxrzpm&limit=5&pagination_token=string'
+        additionalProperties: false
+additionalProperties: false
+description: The list of financial actions in the response.

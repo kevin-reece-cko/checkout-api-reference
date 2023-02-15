@@ -1,7 +1,16 @@
 # Changelog
 
-| Date       | Description of change                                                                                                 
+| Date       | Description of change                                                                                                 |
 |------------|-----------------------------------------------------------------------------------------------------------------------|
+| 2023/02/14 | Updated `PaymentRequestProcessingSettings` to add `line_of_business` field to the NAS payment request                 |
+| 2022/02/10 | Added `amount_allocations` object to Refund Request details                                                           |
+| 2022/02/10 | Added `resolved_reason` to get all disputes response for NAS and MBC.                                                 |
+| 2023/02/10 | Updated `zip` format requirements to display as code style                                                            |
+| 2023/02/09 | Updated `zip` code format requirements for US merchants for Card Payouts                                              |
+| 2023/02/07 | Added Portuguese and Greek locale options to Hosted Payments Page and Payment Links                                   |
+| 2023/02/01 | Update file uploads/retrievals for Platforms                                                                          |
+| 2023/02/01 | Added the API reference for the Financial Actions API.                                                                |
+| 2023/01/26 | Add SEPA DD NAS Request and Response sources                                                                          |
 | 2022/01/25 | Add new sections for adding/deleting workflow actions and workflow conditions.                                        |
 | 2023/01/24 | Update PaymentResponse `processing` object to add `partner_payment_id`, `partner_status`, `partner_transaction_id`,   |
 |            | `partner_error_codes`, `partner_error_message`, `partner_authorization_code`, `partner_authorization_response_code`   |

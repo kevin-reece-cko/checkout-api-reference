@@ -1,0 +1,36 @@
+get:
+  tags:
+    - Platforms
+  security:
+    - OAuth:
+        - files
+        - files:retrieve
+    - ApiSecretKey:
+        - files
+  summary: Retrieve a file
+  operationId: retrieveAFile        
+  description: >-
+    Retrieve information about a previously uploaded file. 
+  parameters:
+    - in: path
+      name: file_id
+      schema:
+        type: string
+      required: true
+      description: The ID of the file. The value is always prefixed by `file_`.
+  responses:
+    '200':
+      description: OK
+      headers:
+        Cko-Version:
+          $ref: '#/components/headers/Cko-Version'
+        Cko-Request-Id:
+          $ref: '#/components/headers/Cko-Request-Id'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/PlatformsFileRetrieveResponse'                
+    '404':
+      description: File not found
+    '401':
+      description: Unauthorized
