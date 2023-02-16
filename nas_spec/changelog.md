@@ -2,6 +2,7 @@
 
 | Date       | Description of change                                                                                                 |
 |------------|-----------------------------------------------------------------------------------------------------------------------|
+| 2023/02/16 | Updated `PaymentRequest`, `Address`. Removed unused properties in `PaymentRequestGiropaySource`.
 | 2023/02/14 | Updated `PaymentRequestProcessingSettings` to add `line_of_business` field to the NAS payment request                 |
 | 2022/02/10 | Added `amount_allocations` object to Refund Request details                                                           |
 | 2022/02/10 | Added `resolved_reason` to get all disputes response for NAS and MBC.                                                 |
