@@ -2,6 +2,7 @@
 
 | Date       | Description of change                                                                                                                   |
 |------------|-----------------------------------------------------------------------------------------------------------------------------------------|
+| 2023/02/16 | Added `3ds.exemption` enum with `low_value`, `secure_corporate_payment`, `trusted_listing`, `transaction_risk_assessment`, `3ds_outage`, `sca_delegation`, `out_of_sca_scope`, `other`, `low_risk_program` and `recurring_operation`, and `3ds.allow_upgrade`.
 | 2022/02/10 | Added `resolved_reason` to get all disputes response for NAS and MBC.                                                                     |
 | 2023/02/07 | Added Portuguese and Greek locale options to Hosted Payments Page and Payment Links                                                     |
 | 2023/01/24 | Added `WebhookRequestPut` & `WebhookRequestPatch` to distinguish between the required parameters for each request                       |
