@@ -16,4 +16,4 @@ properties:
     type: array
     description: The list of payments
     items:
-      $ref: '#/components/schemas/Payment'
+      $ref: '#/components/schemas/PaymentDetails'

@@ -5,10 +5,6 @@ properties:
     type: string
     description: The file identifier.
     example: 'file_6lbss42ezvoufcb2beo76rvwly'
-  status:
-    type: string
-    description: The current status of the file.
-    example: created
   maximum_size_in_bytes:
     type: number
     description: The maximum file size allowed, in bytes.
@@ -20,12 +16,18 @@ properties:
   _links:
     type: object
     properties:
+      upload:
+        description: |
+          Send a data-binary type request to this URL with your file attached. For example:
+          
+          ```
+          curl --location --request PUT 'https://s3.eu-west-1.amazonaws.com/mp-files-api-staging-prod/ent_ociwguf5a5fe3ndmpnvpnwsi3e/file_6lbss42ezvoufcb2beo76rvwly?AWSAccessKeyId=ASIX4BFJOBCQFLAMPKU3&Expires=1661355993&x-amz-security-token=some_token'
+          --data-binary '@/C:/Users/Test/test.pdf'
+          ```
+        properties:
+          href: 'https://s3.eu-west-1.amazonaws.com/mp-files-api-staging-prod/ent_ociwguf5a5fe3ndmpnvpnwsi3e/file_6lbss42ezvoufcb2beo76rvwly?AWSAccessKeyId=ASIX4BFJOBCQFLAMPKU3&Expires=1661355993&x-amz-security-token=some_token'
       self:
         description: The file information retrieval URL.
         properties:
           href:
             example: 'https://files.checkout.com/files/file_6lbss42ezvoufcb2beo76rvwly'
-      upload:
-        description: The URL to upload the file to, in a data-binary type request.
-        properties:
-          href: 'https://prod-api.s3.eu-west-1.amazonaws.com/files-staging/ent_ociwguf5a5fe3ndmpnvpnwsi3e/file_6lbss42ezvoufcb2beo76rvwly?AWSAccessKeyId=ASIA4MPJOBCQFLAMPKU3&Expires=1661355993&x-amz-security-token=FwoGZXIvYXdzECoaDKRpbZpXhLDZ%2BAnUNyL7Ab2Gl9mcspE8yyqirulks7zzQ33qm3a1id%2B4GppRhAELf%2FB6lPSkFmOqUC2a9El5wqukdSd%2B9ADzuELdk6tKPmVjiQ1WytkykxUYTrNB7fPHbIr%2B3EsuhFe4SBri43hDl7vMDIzGTqNZ7gNkodPyUL8as%2B6ZZ3miDQae8ZaSb98GNfrXws2X2gXM0powMcUW3Zyy%2BMOyAQNHw7k2WOXtIFf0E4n6h2aRjd4cnciUhlQVlD%2F053yneGKB%2BsGd9waBlKEwtOROkSafQeS%2FRUI%2FybGbYve%2BA%2FP%2Fr8G5UyaKcl5oCh08%2B8y7p0zP%2BRFezmDFV6XaIw9HU2ydkO%2FgKPSPlJgGMit7qX1hp8hjitxAj%2FWFffIMW8Af6pi2wup%2FV%2Fi3VFU0vP3O86nOG1X%2B9H50&Signature=jJWc545tklXpEsD%2BB0wwTOXzVq8%3D'
