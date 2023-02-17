@@ -256,7 +256,7 @@ properties:
         default: no_preference
       allow_upgrade:
         type: boolean
-        default: false
+        default: true
         description: Whether to process this payment as 3D Secure if the authorization was soft declined due to 3DS authentication required.
       exemption:
         type: string
