@@ -15,6 +15,7 @@
 | 2023/02/01 | Update file uploads/retrievals for Platforms                                                                          |
 | 2023/02/01 | Added the API reference for the Financial Actions API.                                                                |
 | 2023/01/26 | Add SEPA DD NAS Request and Response sources                                                                          |
+| 2022/01/25 | Add new sections for adding/deleting workflow actions and workflow conditions.                                        |
 | 2023/01/24 | Update PaymentResponse `processing` object to add `partner_payment_id`, `partner_status`, `partner_transaction_id`,   |
 |            | `partner_error_codes`, `partner_error_message`, `partner_authorization_code`, `partner_authorization_response_code`   |
 |            | properties.                                                                                                           |
