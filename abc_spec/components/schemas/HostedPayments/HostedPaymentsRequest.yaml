@@ -257,7 +257,7 @@ properties:
       allow_upgrade:
         type: boolean
         default: true
-        description: Whether to process this payment as 3D Secure if the authorization was soft declined due to 3DS authentication required.
+        description: Whether to process this payment as 3D Secure if the authorization was soft declined because 3DS authentication is required.
       exemption:
         type: string
         enum:
@@ -271,7 +271,7 @@ properties:
             - other
             - low_risk_program
             - recurring_operation
-        description: Specifies an exemption reason so that the payment is not processed using 3D Secure authentication. Learn more about exemptions in our SCA compliance guide.
+        description: Specifies an exemption reason so that the payment is not processed using 3D Secure authentication. Learn more about exemptions in our <a href="https://www.checkout.com/docs/previous/risk-management/sca-compliance-guide#Possible_SCA_exemptions" target="_blank">SCA compliance guide</a>.
   capture:
     type: boolean
     description: Whether to capture the payment (if applicable).
