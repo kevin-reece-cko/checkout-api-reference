@@ -2,7 +2,7 @@
 
 | Date       | Description of change                                                                                                 |
 |------------|-----------------------------------------------------------------------------------------------------------------------|
-| 2023/02/16 | Added `3ds.exemption` and `3ds.allow_upgrade` to Hosted Payments Page and Payment Links.
+| 2023/02/22 | Added `3ds.exemption` and `3ds.allow_upgrade` to Hosted Payments Page and Payment Links.
 | 2023/02/16 | Updated PlatformsFileRetrieveResponse and tidied up platforms-files paths                                             |
 | 2023/02/16 | Updated `PaymentRequest`, `Address`. Removed unused properties in `PaymentRequestGiropaySource`.                      |
 | 2023/02/15 | Added `exemption_applied` to 3DS details in GET response                                                              |
