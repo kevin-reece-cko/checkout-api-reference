@@ -7,7 +7,7 @@
 | 2023/02/16 | Updated `PaymentRequest`, `Address`. Removed unused properties in `PaymentRequestGiropaySource`.                      |
 | 2023/02/15 | Added `exemption_applied` to 3DS details in GET response                                                              |
 | 2023/02/14 | Updated `PaymentRequestProcessingSettings` to add `line_of_business` field to the NAS payment request                 |
-| 2023/02/13 | Update `ProcessingData` to add `aft`, `merchant_category_code`, `scheme_merchant_id` properties in get PaymentResponse  |
+| 2023/02/13 | Update `ProcessingData` to add `aft`, `merchant_category_code`, `scheme_merchant_id` properties in `GetPaymentResponse`  |
 | 2023/02/10 | Added `amount_allocations` object to Refund Request details                                                           |
 | 2023/02/10 | Added `resolved_reason` to get all disputes response for NAS and MBC.                                                 |
 | 2023/02/10 | Updated `zip` format requirements to display as code style                                                            |
