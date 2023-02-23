@@ -21,8 +21,6 @@ $request->charge_id = "payment_arn";
 $request->reference = "reference";
 $request->limit = 10;
 $request->skip = 5;
-$request->from = new DateTime();
-$request->to = new DateTime();
 
 try {
     $response = $api->getEventsClient()->retrieveEvents($request);

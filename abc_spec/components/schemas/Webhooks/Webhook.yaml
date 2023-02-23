@@ -18,7 +18,6 @@ properties:
     type: string
     enum:
       - json
-      - xml
     example: json
   event_types:
     $ref: '#/components/schemas/WebhookEvents'

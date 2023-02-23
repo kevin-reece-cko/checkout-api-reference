@@ -18,8 +18,6 @@ request.track_id = "TRK12345"
 request.reference = "ORD-5023-4E89"
 request.skip = "0"
 request.limit = "5"
-request.from_ = "2020-11-07T04:00:00Z"
-request.to = "2020-11-07T08:15:00Z"
 
 try:
     response = api.events.retrieve_events(request)

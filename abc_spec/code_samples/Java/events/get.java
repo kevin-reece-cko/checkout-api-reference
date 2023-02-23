@@ -17,8 +17,6 @@ CheckoutApi api = CheckoutSdk
     .build();
 
 RetrieveEventsRequest retrieveEventsRequest = RetrieveEventsRequest.builder()
-    .from(LocalDateTime.now().minusMonths(2).toInstant(ZoneOffset.UTC))
-    .to(LocalDateTime.now().toInstant(ZoneOffset.UTC))
     .limit(15)
     .skip(0)
     //.paymentId("payment_id")
