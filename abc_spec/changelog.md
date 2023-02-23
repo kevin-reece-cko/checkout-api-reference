@@ -2,7 +2,8 @@
 
 | Date       | Description of change                                                                                                                   |
 |------------|-----------------------------------------------------------------------------------------------------------------------------------------|
-| 2022/02/10 | Added `resolved_reason` to get all disputes response for NAS and MBC.                                                                     |
+| 2023/02/23 | Added `Go` code samples for both ABC and NAS                                                                                            |
+| 2022/02/10 | Added `resolved_reason` to get all disputes response for NAS and MBC.                                                                   |
 | 2023/02/07 | Added Portuguese and Greek locale options to Hosted Payments Page and Payment Links                                                     |
 | 2023/01/24 | Added `WebhookRequestPut` & `WebhookRequestPatch` to distinguish between the required parameters for each request                       |
 | 2023/01/16 | Added `recipient.first_name` to ABC API Spec.                                                                                           |

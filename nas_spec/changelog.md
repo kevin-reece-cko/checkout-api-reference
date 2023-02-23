@@ -2,8 +2,9 @@
 
 | Date       | Description of change                                                                                                 |
 |------------|-----------------------------------------------------------------------------------------------------------------------|
+| 2023/02/23 | Added `Go` code samples for both ABC and NAS                                                                            |
 | 2023/02/16 | Updated PlatformsFileRetrieveResponse and tidied up platforms-files paths                                             |
-| 2023/02/16 | Updated `PaymentRequest`, `Address`. Removed unused properties in `PaymentRequestGiropaySource`.
+| 2023/02/16 | Updated `PaymentRequest`, `Address`. Removed unused properties in `PaymentRequestGiropaySource`.                      
 | 2023/02/14 | Updated `PaymentRequestProcessingSettings` to add `line_of_business` field to the NAS payment request                 |
 | 2023/02/13 | Update ProcessingData to add `aft`, `merchant_category_code`, `scheme_merchant_id` properties in get PaymentResponse  |
 | 2023/02/10 | Added `amount_allocations` object to Refund Request details                                                           |
