@@ -1,30 +1,6 @@
-###
-# Warning: this file was auto generated from OpenAPI specs using 'npm run sync-generated-specs'. Do not manually edit.
-###
 type: object
-description: 'Giropay Source'
+required:
+  - type
 allOf:
   - $ref: '#/components/schemas/PaymentRequestSource'
   - type: object
-    required:
-      - purpose
-    properties:
-      purpose:
-        maxLength: 27
-        type: string
-        description: "Purpose of the payment as appearing on customer's bank statement."
-      info_fields:
-        maxItems: 5
-        type: array
-        items:
-          type: object
-          properties:
-            label:
-              maxLength: 30
-              type: string
-              description: 'Additional information field which is shown on the payment form (label)'
-            text:
-              maxLength: 80
-              type: string
-              description: 'Additional information field which is shown on the payment form (text)'
-          additionalProperties: false

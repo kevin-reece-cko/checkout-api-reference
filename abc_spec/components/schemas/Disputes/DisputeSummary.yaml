@@ -82,6 +82,11 @@ properties:
     format: date-time
     description: The date and time at which the dispute was last updated
     example: '2018-08-12T04:15:56Z'
+  resolved_reason:
+    type: string
+    description: If the dispute is automatically resolved, `resolved_reason` will contain the reason it was resolved
+    enum: [ rapid_dispute_resolution, negative_amount, already_refunded ]
+    example: 'already_refunded'
   _links:
     type: object
     properties:

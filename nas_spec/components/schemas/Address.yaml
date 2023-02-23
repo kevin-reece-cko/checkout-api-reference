@@ -12,7 +12,7 @@ properties:
     example: 90 Tottenham Court Road
   city:
     type: string
-    description: The address city. Required if `source.type` is `tamara`
+    description: The address city. Required if `source.type` is `tamara`, `giropay`
     maxLength: 50
     example: London
   state:
@@ -21,12 +21,12 @@ properties:
     maxLength: 2
   zip:
     type: string
-    description: The address zip/postal code
+    description: The address zip/postal code. Required if `source.type` is `giropay`
     maxLength: 50
     example: W1T 4TJ
   country:
     type: string
-    description: The two-letter <a href="https://www.checkout.com/docs/resources/codes/country-codes" target="_blank">ISO country code</a> of the address. Required if `source.type` is `tamara`
+    description: The two-letter <a href="https://www.checkout.com/docs/resources/codes/country-codes" target="_blank">ISO country code</a> of the address. Required if `source.type` is `tamara`, `giropay`
     example: GB
     maxLength: 2
     minLength: 2

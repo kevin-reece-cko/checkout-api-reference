@@ -1,0 +1,5 @@
+allOf:
+  - $ref: '#/components/schemas/FinancialActionsLink'
+properties:
+  href:
+    description: This link allows you to move to the next page of results (if there's any) in the response.

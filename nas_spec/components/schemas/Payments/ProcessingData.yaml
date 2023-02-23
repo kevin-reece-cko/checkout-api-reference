@@ -89,3 +89,13 @@ properties:
     description: An array defining which of the configured payment options within a payment category (for example, `pay_later` or `pay_over_time`) should be displayed for this purchase.
     items:
       type: string
+  aft:
+    type: boolean
+    description: Indicates whether the payment is an [Account Funding Transaction](https://www.checkout.com/docs/payments/manage-payments/account-funding-transactions)
+  merchant_category_code:
+    type: string
+    description: Four-digit code for retail financial services expressed in ISO 18245 format, classifying the types of goods or services you provide.
+    example: 5311
+  scheme_merchant_id:
+    type: string
+    description: The merchant identifier that was configured with the scheme and used for the payment.

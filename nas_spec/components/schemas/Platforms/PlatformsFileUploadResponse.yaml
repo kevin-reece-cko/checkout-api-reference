@@ -1,15 +1,33 @@
 type: object
-description: File uploaded successfully
+description: File uploaded successfully.
 properties:
   id:
     type: string
-    description: The file identifier
+    description: The file identifier.
     example: 'file_6lbss42ezvoufcb2beo76rvwly'
+  maximum_size_in_bytes:
+    type: number
+    description: The maximum file size allowed, in bytes.
+    example: 4194304
+  document_types_for_purpose:
+    type: array
+    description: The MIME file types allowed for the document purpose, provided on the initial file upload request.
+    example: ["image/jpeg", "image/png", "image/jpg"]
   _links:
     type: object
     properties:
+      upload:
+        description: |
+          Send a data-binary type request to this URL with your file attached. For example:
+          
+          ```
+          curl --location --request PUT 'https://s3.eu-west-1.amazonaws.com/mp-files-api-staging-prod/ent_ociwguf5a5fe3ndmpnvpnwsi3e/file_6lbss42ezvoufcb2beo76rvwly?AWSAccessKeyId=ASIX4BFJOBCQFLAMPKU3&Expires=1661355993&x-amz-security-token=some_token'
+          --data-binary '@/C:/Users/Test/test.pdf'
+          ```
+        properties:
+          href: 'https://s3.eu-west-1.amazonaws.com/mp-files-api-staging-prod/ent_ociwguf5a5fe3ndmpnvpnwsi3e/file_6lbss42ezvoufcb2beo76rvwly?AWSAccessKeyId=ASIX4BFJOBCQFLAMPKU3&Expires=1661355993&x-amz-security-token=some_token'
       self:
-        description: The file information retrieval URL
+        description: The file information retrieval URL.
         properties:
           href:
             example: 'https://files.checkout.com/files/file_6lbss42ezvoufcb2beo76rvwly'
