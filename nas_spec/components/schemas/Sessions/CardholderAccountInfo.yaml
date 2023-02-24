@@ -31,7 +31,7 @@ properties:
     description: >
       Indicates when the shipping address used for this transaction was first used.
     enum:
-      - this_transaction,
+      - this_transaction
       - less_than_thirty_days
       - thirty_to_sixty_days
       - more_than_sixty_days 
