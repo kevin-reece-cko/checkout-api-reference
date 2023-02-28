@@ -12,14 +12,6 @@ properties:
     type: integer
     description: The number of events skipped
     example: 0
-  from:
-    type: string
-    description: The date and time from which the events were retrieved
-    example: "2021-06-11T10:36:32Z"
-  to:
-    type: string
-    description: The date and time to which the events were retrieved
-    example: "2021-06-25T10:36:17Z"
   data:
     type: array
     items:

@@ -2,6 +2,8 @@
 
 | Date       | Description of change                                                                                                                   |
 |------------|-----------------------------------------------------------------------------------------------------------------------------------------|
+| 2023/02/24 | Removing `to` and `from` fields from Notifications > Events.
+| 2023/02/24 | Removing XML support for Notifications > Webhooks.
 | 2023/02/22 | Added `3ds.exemption` and `3ds.allow_upgrade` to Hosted Payments Page and Payment Links.
 | 2023/02/10 | Added `resolved_reason` to get all disputes response for NAS and MBC.                                                                   |
 | 2023/02/07 | Added Portuguese and Greek locale options to Hosted Payments Page and Payment Links                                                     |
