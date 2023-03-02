@@ -55,12 +55,19 @@ properties:
   product_type:
     type: string
     required: true
-    enum:
-      - QR Code
-      - In-App
-      - Official Account
-      - Mini Program
-    description: Product type of the payment. Required if `source.type` is `wechatpay`
+    description: |
+      Product type of the payment. Required if `source.type` is 
+        `wechatpay`
+          QR Code
+          In-App
+          Official Account
+          Mini Program
+        `tamara`
+          pay_in_full
+          pay_by_instalment_3
+          pay_by_instalment_4
+          pay_by_instalment_5
+          pay_by_instalment_6
     example: QR Code
   open_id:
     type: string
