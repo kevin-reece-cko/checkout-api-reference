@@ -55,19 +55,7 @@ properties:
   product_type:
     type: string
     required: true
-    description: |-
-      Product type of the payment. Required if `source.type` is 
-        `wechatpay`
-          QR Code
-          In-App
-          Official Account
-          Mini Program
-        `tamara`
-          pay_in_full
-          pay_by_instalment_3
-          pay_by_instalment_4
-          pay_by_instalment_5
-          pay_by_instalment_6
+    description: Product type of the payment. Required if `source.type` is\n`wechatpay`\n QR Code\n In-App\n Official Account\n Mini Program\n`tamara`\n pay_in_full\n pay_by_instalment_3\n pay_by_instalment_4\n pay_by_instalment_5\n pay_by_instalment_6
     example: QR Code
   open_id:
     type: string
