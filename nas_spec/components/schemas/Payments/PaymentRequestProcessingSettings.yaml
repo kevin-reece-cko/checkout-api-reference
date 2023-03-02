@@ -55,7 +55,7 @@ properties:
   product_type:
     type: string
     required: true
-    description: |
+    description: |-
       Product type of the payment. Required if `source.type` is 
         `wechatpay`
           QR Code
