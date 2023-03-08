@@ -4,6 +4,7 @@ allOf:
     required:
       - accept_header
       - java_enabled
+      - javascript_enabled
       - language
       - color_depth
       - screen_height
@@ -41,6 +42,13 @@ allOf:
         type: boolean
         description: >
           Boolean that represents the ability of the cardholder's browser to execute Java. Value is returned from the `navigator.javaEnabled` property.
+        example: true
+      javascript_enabled:
+        type: boolean
+        description: >
+          Boolean that represents the ability of the cardholder's browser to execute Javascript. Value is returned from the `navigator.javascriptEnabled` property.            
+          *only applicable/required for authentication performed using 3DS 2.2. If authentications results in processing on 2.1 or lower, this field will be disregarded. 
+        default: true
         example: true
       language:
         type: string

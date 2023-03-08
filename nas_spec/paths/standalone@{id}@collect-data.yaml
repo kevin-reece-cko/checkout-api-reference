@@ -8,7 +8,7 @@ put:
   operationId: updateSession
   description: Update a session by providing information about the environment.
   tags:
-    - Sessions
+    - Standalone
   parameters:
     - name: id
       in: path
