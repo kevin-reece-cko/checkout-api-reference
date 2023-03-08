@@ -1,0 +1,34 @@
+type: object
+description: Action that sends an email
+required:
+  - to
+allOf:
+  #- $ref: '#/components/schemas/workflow-action'
+  - type: object
+    required:
+      - to
+    properties:
+      to:
+        type: array
+        items:
+          type: string
+        minItems: 1
+        maxItems: 5
+        description: The email addresses to send the email to
+        example: ["test@test.com"]
+      cc:
+        type: array
+        items:
+          type: string
+        minItems: 0
+        maxItems: 5
+        description: The email addresses to CC on the email
+        example: ["test@test.com"]
+      bcc:
+        type: array
+        items:
+          type: string
+        minItems: 0
+        maxItems: 5
+        description: The email addresses to BCC on the email
+        example: ["test@test.com"]

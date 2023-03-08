@@ -13,4 +13,14 @@ properties:
     type: string
     description: The type of the workflow condition
     example: event
-example: { 'type': 'event', 'events': { 'gateway': ['payment_approved', 'payment_pending', 'payment_declined'] } }
+example:
+  {
+    "type": "event",
+    "events": {
+      "gateway": [
+        "payment_approved",
+        "payment_pending",
+        "payment_declined"
+      ]
+    }
+  }

@@ -54,3 +54,48 @@
             $ref: '#/components/schemas/ValidationError'
     '500':
       description: Internal Error
+      
+delete:
+  security:
+    - OAuth:
+        - flow
+        - flow:workflows
+    - ApiSecretKey: [ ]
+  tags:
+    - Workflows
+  summary: Remove a workflow condition
+  description: |
+    Removes a workflow condition. Conditions determine when the workflow will trigger.
+  parameters:
+    - in: path
+      name: workflowId
+      schema:
+        type: string
+        pattern: ^wf_[a-z2-7]{26}$
+      required: true
+      description: The workflow identifier
+      example: wf_c7svxlvo2bbuva4f6s3xu4f7wm
+    - in: path
+      name: workflowConditionId
+      schema:
+        type: string
+        pattern: ^wfc_[a-z2-7]{26}$
+      required: true
+      description: The workflow condition identifier
+      example: wfc_c7svxlvo2bbuva4f6s3xu4f7wm
+  responses:
+    '204':
+      description: Workflow condition removed successfully
+      headers:
+        Cko-Request-Id:
+          schema:
+            $ref: "#/components/headers/Cko-Request-Id"
+        Cko-Version:
+          schema:
+            $ref: "#/components/headers/Cko-Version"
+    '401':
+      description: Unauthorized
+    '404':
+      description: Workflow or workflow condition not found
+    '500':
+      description: Internal Error    
