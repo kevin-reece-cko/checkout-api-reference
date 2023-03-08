@@ -6,7 +6,7 @@ properties:
     description: >
       Enables the communication of trusted beneficiary status between the Access Control Server (ACS), the Directory Server (DS), and the 3D Secure (3DS) Requestor.<br/><br/>
       
-      • Y = 3DS Requestor is whitelisted by cardholder<br/>
+      • Y = 3DS Requestor is allowlisted by cardholder<br/>
       • N = 3DS Requestor is not whitelisted by cardholder<br/>
       • E = Not eligible as determined by issuer<br/>
       • P = Pending confirmation by cardholder<br/>
