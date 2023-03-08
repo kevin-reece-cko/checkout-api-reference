@@ -11,7 +11,7 @@ properties:
       • E = Not eligible as determined by issuer<br/>
       • P = Pending confirmation by cardholder<br/>
       • R = Cardholder rejected<br/>
-      • U = Whitelist status unknown, unavailable, or does not apply
+      • U = Allowlist status unknown, unavailable, or does not apply
     enum:
       - Y
       - N
