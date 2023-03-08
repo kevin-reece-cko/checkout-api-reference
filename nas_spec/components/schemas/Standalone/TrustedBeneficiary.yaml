@@ -4,7 +4,7 @@ properties:
   status:
     type: string
     description: >
-      Enables the communication of trusted beneficiary status between the ACS, the DS and the 3DS Requestor.<br/><br/>
+      Enables the communication of trusted beneficiary status between the Access Control Server (ACS), the Directory Server (DS), and the 3D Secure (3DS) Requestor.<br/><br/>
       
       • Y = 3DS Requestor is whitelisted by cardholder<br/>
       • N = 3DS Requestor is not whitelisted by cardholder<br/>
