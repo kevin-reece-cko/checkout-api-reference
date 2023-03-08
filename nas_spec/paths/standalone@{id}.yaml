@@ -1,6 +1,6 @@
 get:
   tags:
-    - Sessions
+    - Standalone
   security:
     - OAuth:
         - sessions:app

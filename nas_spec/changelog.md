@@ -3,6 +3,10 @@
 | Date       | Description of change                                                                                                 |
 |------------|-----------------------------------------------------------------------------------------------------------------------|
 | 2023/03/08 | Added `Go` code samples for both ABC and NAS                                                                          |
+| 2023/03/08 | Updated `trusted_beneficiary` in `Standalone` with a better description.
+| 2023/03/08 | Added `customer_ip` to `Standalone` response
+| 2023/03/08 | Added `javascript_enabled` to `Standalone` requests
+| 2023/03/08 | Renamed `Sessions` to `Standalone`, moving it under the new `Authentication` group.
 | 2023/02/22 | Added `3ds.exemption` and `3ds.allow_upgrade` to Hosted Payments Page and Payment Links.
 | 2023/02/16 | Updated `PlatformsFileRetrieveResponse` and tidied up platforms-files paths                                             |
 | 2023/02/16 | Updated `PaymentRequest`, `Address`. Removed unused properties in `PaymentRequestGiropaySource`.                      |

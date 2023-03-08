@@ -31,7 +31,7 @@ post:
     <br/>
     The fields of the above are the same as they would be in a GET session response
   tags:
-    - Sessions
+    - Standalone
   parameters:
     - name: id
       in: path

@@ -90,6 +90,12 @@ properties:
     $ref: '#/components/schemas/Recurring'
   installment:
     $ref: '#/components/schemas/Installment'
+  customer_ip:
+    type: string
+    description: >
+      Indicates the card holder's IP address.      
+      Only available when the scheme selected is Cartes Bancaires.
+    example: 192.168.1.1
   _links:
     $ref: '#/components/schemas/GetSessionLinks'
   authentication_date:
