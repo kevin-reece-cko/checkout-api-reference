@@ -6,7 +6,7 @@ let cko = new Checkout('your_client_secret_here', {
 	environment: 'sandbox', // or "production"
 });
 
-// Or if you use api keys:
+// Or if you use API keys:
 // const cko = new Checkout('sk_sbox_XXX', { pk: 'pk_sbox_XXX'}});
 
 try {
