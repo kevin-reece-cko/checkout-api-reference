@@ -15,6 +15,7 @@ example:
   channel: browser
   accept_header: 'Accept:  *.*, q=0.1'
   java_enabled: true
+  javascript_enabled: true
   language: 'FR-fr'
   color_depth: '16'
   screen_height: '1080'

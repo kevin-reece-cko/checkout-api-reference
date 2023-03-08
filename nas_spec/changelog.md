@@ -2,6 +2,7 @@
 
 | Date       | Description of change                                                                                                 |
 |------------|-----------------------------------------------------------------------------------------------------------------------|
+| 2023/03/08 | Added `javascript_enabled` to `Standalone` requests
 | 2023/03/08 | Renamed `Sessions` to `Standalone`, moving it under the new `Authentication` group.
 | 2023/02/22 | Added `3ds.exemption` and `3ds.allow_upgrade` to Hosted Payments Page and Payment Links.
 | 2023/02/16 | Updated `PlatformsFileRetrieveResponse` and tidied up platforms-files paths                                             |
