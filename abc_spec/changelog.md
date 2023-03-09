@@ -2,6 +2,7 @@
 
 | Date       | Description of change                                                                                                                   |
 |------------|-----------------------------------------------------------------------------------------------------------------------------------------|
+| 2023/03/08 | Added `Go` code samples for both ABC and NAS                                                                                            |
 | 2023/02/24 | Removing `to` and `from` fields from Notifications > Events.
 | 2023/02/24 | Removing XML support for Notifications > Webhooks.
 | 2023/02/22 | Added `3ds.exemption` and `3ds.allow_upgrade` to Hosted Payments Page and Payment Links.
