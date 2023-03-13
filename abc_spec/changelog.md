@@ -2,6 +2,7 @@
 
 | Date       | Description of change                                                                                                                   |
 |------------|-----------------------------------------------------------------------------------------------------------------------------------------|
+| 2023/03/07 | Updated `recipient.account_number` max length to 34 and amended description                                                             |
 | 2023/03/08 | Added `Go` code samples for both ABC and NAS                                                                                            |
 | 2023/02/24 | Removing `to` and `from` fields from Notifications > Events.
 | 2023/02/24 | Removing XML support for Notifications > Webhooks.
