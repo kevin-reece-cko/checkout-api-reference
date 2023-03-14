@@ -1,0 +1,30 @@
+name: CI
+
+on:
+  push:
+    branches: 
+      - 'master'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fetch Checkout Api Reference repository
+        uses: actions/checkout@v3
+      - name: Copy ABC and NAS changelogs to output/ using rsync
+        shell: bash
+        run: |
+          mkdir output 
+          rsync -av nas_spec/changelog.md output/nas_spec/ 
+          rsync -av abc_spec/changelog.md output/abc_spec/
+      - name: Pushes to another repository
+        id: push_directory
+        uses: ./.github/actions/push-to-another-repository
+        env:
+          SSH_DEPLOY_KEY: ${{ secrets.SSH_DEPLOY_KEY }}
+        with:
+          source-directory: output/
+          user-email: "checkout-api-reference-action@users.noreply.github.com" 
+          user-name: "checkout-api-reference-action" 
+          destination-repository-username: checkout
+          destination-repository-name: 'checkout-api-reference-changelog'
