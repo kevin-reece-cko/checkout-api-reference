@@ -57,7 +57,7 @@ properties:
     required: true
     description: |-
       Product type of the payment. Used when `source.type` is<br>
-        <ul><li>`wechatpay` - required
+        <ul><li>`wechatpay` - required. Enum:
           <ul>
             <li>`QR Code`</li>
             <li>`In-App`</li>
@@ -65,7 +65,7 @@ properties:
             <li>`Mini Program`</li>
           </ul>
         </li>
-        <li>`tamara` - optional. Can be omitted if you have opted for the default pay instalment option or want the payment provider to show all the available options to the customers during redirection.
+        <li>`tamara` - optional. It can be omitted if you have opted for the default pay instalment option or want the payment provider to show all the available tamara options to the customers during the redirection. Enum:
           <ul>
             <li>`pay_in_full`</li>
             <li>`pay_by_instalment_2`</li>
