@@ -65,7 +65,7 @@ properties:
             <li>`Mini Program`</li>
           </ul>
         </li>
-        <li>`tamara` - optional. It can be omitted if you have opted for the default pay instalment option or want the payment provider to show all the available tamara options to the customers during the redirection. Enum:
+        <li>`tamara` - optional. You can omit this if you've chosen the default pay installment option or want the payment provider to show all the available Tamara options to the customer during redirection. Enum:
           <ul>
             <li>`pay_in_full`</li>
             <li>`pay_by_instalment_2`</li>
