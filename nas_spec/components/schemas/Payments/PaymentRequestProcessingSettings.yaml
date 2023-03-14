@@ -65,12 +65,12 @@ properties:
             <li>`Mini Program`</li>
           </ul>
         </li>
-        <li>`tamara` - optional. Can be left empty when the *default* product type should be applied or when the payment provider should show all the avaiable options.
+        <li>`tamara` - optional. Can be omitted if you have opted for the default pay instalment option or want the payment provider to show all the available options to the customers during redirection.
           <ul>
             <li>`pay_in_full`</li>
+            <li>`pay_by_instalment_2`</li>
             <li>`pay_by_instalment_3`</li>
             <li>`pay_by_instalment_4`</li>
-            <li>`pay_by_instalment_5`</li>
             <li>`pay_by_instalment_6`</li>
           </ul>
         </li></ul>
