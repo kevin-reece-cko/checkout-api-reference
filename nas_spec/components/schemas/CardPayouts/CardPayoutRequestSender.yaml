@@ -1,5 +1,10 @@
 type: object
-description: The sender of the payout
+description: |
+  The sender of the payout
+
+  ***Conditional*** - required for Money Transfer and Third-Party Funds Disbursement Card Payout requests
+required:
+  - type  
 discriminator:
   propertyName: type
   mapping:

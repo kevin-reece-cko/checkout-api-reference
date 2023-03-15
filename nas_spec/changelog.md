@@ -1,8 +1,38 @@
 # Changelog
 
-| Date       | Description of change                                                                                                 
+| Date       | Description of change                                                                                                 |
 |------------|-----------------------------------------------------------------------------------------------------------------------|
 | 2023/03/15 | Modified the description for purchas_country in Request/Capture/GET payment                                           |
+| 2023/03/08 | Added `Go` code samples for both ABC and NAS                                                                          |
+| 2023/03/08 | Updated `trusted_beneficiary` in `Standalone` with a better description.
+| 2023/03/08 | Added `customer_ip` to `Standalone` response
+| 2023/03/08 | Added `javascript_enabled` to `Standalone` requests
+| 2023/03/08 | Renamed `Sessions` to `Standalone`, moving it under the new `Authentication` group.
+| 2023/02/22 | Added `3ds.exemption` and `3ds.allow_upgrade` to Hosted Payments Page and Payment Links.
+| 2023/02/16 | Updated `PlatformsFileRetrieveResponse` and tidied up platforms-files paths                                             |
+| 2023/02/16 | Updated `PaymentRequest`, `Address`. Removed unused properties in `PaymentRequestGiropaySource`.                      |
+| 2023/02/15 | Added `exemption_applied` to 3DS details in GET response                                                              |
+| 2023/02/14 | Updated `PaymentRequestProcessingSettings` to add `line_of_business` field to the NAS payment request                 |
+| 2023/02/13 | Update `ProcessingData` to add `aft`, `merchant_category_code`, `scheme_merchant_id` properties in `GetPaymentResponse`  |
+| 2023/02/10 | Added `amount_allocations` object to Refund Request details                                                           |
+| 2023/02/10 | Added `resolved_reason` to get all disputes response for NAS and MBC.                                                 |
+| 2023/02/10 | Updated `zip` format requirements to display as code style                                                            |
+| 2023/02/09 | Updated `zip` code format requirements for US merchants for Card Payouts                                              |
+| 2023/02/07 | Added Portuguese and Greek locale options to Hosted Payments Page and Payment Links                                   |
+| 2023/02/01 | Update file uploads/retrievals for Platforms                                                                          |
+| 2023/02/01 | Added the API reference for the Financial Actions API.                                                                |
+| 2023/01/26 | Add SEPA DD NAS Request and Response sources                                                                          |
+| 2022/01/25 | Add new sections for adding/deleting workflow actions and workflow conditions.                                        |
+| 2023/01/25 | Added `Unscheduled` payment_type to payment request
+| 2023/01/24 | Update PaymentResponse `processing` object to add `partner_payment_id`, `partner_status`, `partner_transaction_id`,   |
+|            | `partner_error_codes`, `partner_error_message`, `partner_authorization_code`, `partner_authorization_response_code`   |
+|            | properties.                                                                                                           |
+| 2023/01/24 | Update ProcessingData to add `retrieval_reference_number`, `partner_status`, `partner_transaction_id`,                |  
+|            | `partner_authorization_code`, `partner_authorization_response_code` properties.                                       |
+| 2023/01/18 | Renamed partner_reason to partner_error_message for Reverse API payment methods                                       |
+| 2023/01/16 | Replaced the deprecated "reporting" scope with the new "reports" scope in Reports API.                                |
+| 2023/01/12 | Accuracy and readability improvements to NAS card payouts.                                                            |
+| 2023/01/11 | Remove old description from the session request's payload.                                                            |
 | 2023/01/04 | Add new tags to Platforms section and add `id` property on a response for PATCH payment instrument request.           |
 | 2023/01/04 | Add API key security to remaining Integrated Platforms endpoints.                                                     |
 | 2023/01/03 | Add Platforms Update Payment Instrument Request spec.                                                                 |

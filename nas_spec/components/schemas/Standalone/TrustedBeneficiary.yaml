@@ -1,0 +1,32 @@
+type: object
+description: Details of the trusted listing status of the merchant.
+properties:
+  status:
+    type: string
+    description: >
+      Enables the communication of trusted beneficiary status between the Access Control Server (ACS), the Directory Server (DS), and the 3D Secure (3DS) Requestor.<br/><br/>
+      
+      • Y = 3DS Requestor is allowlisted by cardholder<br/>
+      • N = 3DS Requestor is not allowlisted by cardholder<br/>
+      • E = Not eligible as determined by issuer<br/>
+      • P = Pending confirmation by cardholder<br/>
+      • R = Cardholder rejected<br/>
+      • U = Allowlist status unknown, unavailable, or does not apply
+    enum:
+      - Y
+      - N
+      - E
+      - P
+      - R
+      - U
+    example: Y
+  source:
+    type: string
+    description: > 
+      The system setting trusted beneficiary status.<br/><br/>
+    
+      • 01 = 3DS Server <br/>
+      • 02 = DS <br/>
+      • 03 = ACS <br/>
+      • 80-99 = DS-specific values <br/>
+    example: '01'

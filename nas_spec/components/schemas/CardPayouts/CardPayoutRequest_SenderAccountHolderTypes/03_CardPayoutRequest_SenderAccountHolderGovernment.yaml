@@ -1,7 +1,11 @@
 type: object
 required:
+  - type
   - company_name
   - address
+  - reference
+  - reference_type
+  - source_of_funds
 properties:
   type:
     type: string
@@ -9,49 +13,61 @@ properties:
     example: 'government'
   company_name:
     type: string
-    description: The sender's company name
+    description: |
+      The sender's company name
+
+      *A valid and legal name must be populated in this field. The populated value cannot be only one character or all numeric*
+    maxLength: 35      
   address:
     type: object
-    description: Mandatory for and Third-Party use cases
+    description: The registered address of the sender
     required:
       - address_line1
-      - address_line2
       - city
-      - zip
       - country
     properties:
       address_line1:
         type: string
-        description: The first line of the sender address
+        description: The first line of the sender's registered address
         maxLength: 50
       address_line2:
         type: string
-        description: The second line of the sender address
+        description: The second line of the sender's registered address
         maxLength: 50
       city:
         type: string
-        description: The sender's address city
+        description: The city of the sender's registered address
         maxLength: 25
       state:
         type: string
-        description: The address state. Mandatory only when sender.address.country = US
+        description: |
+          The state of the sender's registered address
+
+          ***Conditional*** - required when `sender.address.country` = `US`     
         maxLength: 3
         minLength: 2
       zip:
         type: string
-        description: The sender's address ZIP (postal) code
+        description: |
+          The ZIP (postal) code of the sender's registered address
+
+          ***Conditional*** - required for all Card Payouts requests by merchants incorporated in the US; the format for US ZIPs must be `nnnnn` or `nnnnn-nnnn`
         maxLength: 10
       country:
         type: string
-        description: The [two-letter ISO country code](https://checkout.com/docs/four/resources/codes/country-codes) of the sender address
+        description: The [two-letter ISO country code](https://checkout.com/docs/four/resources/codes/country-codes) of the sender's registered address
         maxLength: 2
         minLength: 2
   reference:
     type: string
-    description: The reference of the sender. Only alphanumeric characters are allowed. Mandatory for Money Transfer and Third-Party use cases
-    maxLength: 16
+    description: |
+      The unique identifying reference of the sender (for example, customer number)
+      
+      *Only alphanumeric characters are allowed*
+    maxLength: 15
   reference_type:
     type: string
+    description: The type of `sender.reference`    
     enum:
       # - rtn_and_ban
       # - iban
@@ -71,12 +87,20 @@ properties:
       - deposit_account
       - mobile_money_account
       - cash
+    description: The source of funds used to fund the Card Payout      
   identification:
     type: object
+    description: |
+      The sender's identification
+      
+      ***Conditional*** - required when the [card metadata](https://api-reference.checkout.com/#operation/requestCardMetadata!c=200&path=issuer_country&t=response) `issuer_country` = `AR` (Argentina), `BR` (Brazil), `CO` (Columbia) or `PR` (Peru) 
+    required:
+      - type
+      - number      
     properties:
       type:
         type: string
-        description: Mandatory when sending cross-border transactions from AU for any `sender.type`
+        description: The sender's identification type
         enum:
           - passport
           - driving_license
@@ -85,14 +109,14 @@ properties:
           - tax_id
       number:
         type: string
-        description: The sender's ID number. Mandatory when sending cross-border transactions from AU
+        description: The sender's identification number
       issuing_country:
         type: string
-        description: The [two-letter ISO country code](https://checkout.com/docs/four/resources/codes/country-codes) of the sender's country of issue. Mandatory when sending cross-border transactions from AU
+        description: If applicable, the [two-letter ISO country code](https://checkout.com/docs/four/resources/codes/country-codes) of the issuing country of the sender's identification
         minLength: 2
         maxLength: 2
       date_of_expiry:
         type: string
-        description: The sender's ID expiry date. Format 'yyyy-MM-dd'
+        description: If applicable, the expiration date of the sender's identification. Format `yyyy-mm-dd`
         maxLength: 10
         minLength: 10

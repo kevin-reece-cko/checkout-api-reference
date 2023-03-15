@@ -27,6 +27,7 @@ properties:
       - Recurring
       - MOTO
       - Installment
+      - Unscheduled
     default: Regular
     example: Recurring
   merchant_initiated:
@@ -40,7 +41,7 @@ properties:
     example: 'ORD-5023-4E89'
   description:
     type: string
-    description: A description of the payment
+    description: A description of the payment.<br>For Giropay, it is a Purpose field. Required, limit is 27 characters.
     maxLength: 100
     example: 'Set of 3 masks'
   authorization_type:
@@ -133,6 +134,9 @@ properties:
     $ref: '#/components/schemas/Items'
   metadata:
     type: object
-    description: Allows you to store additional information about a transaction with custom fields and up to five user-defined fields (`udf1` to `udf5`), which can be used for reporting purposes. `udf1` is also used for some of our risk rules. **Note** that this object only allows one level of depth, so cannot accept non-primitive data types such as objects or arrays.
+    description: |
+      Allows you to store additional information about a transaction with custom fields and up to five user-defined fields (`udf1` to `udf5`), which can be used for reporting purposes. `udf1` is also used for some of our risk rules. 
+      
+      Only primitive data types can be supplied within the `metadata` object, arrays and objects are not supported. The value of each field must not exceed 255 characters in length.
     example:
       coupon_code: 'NY2018'

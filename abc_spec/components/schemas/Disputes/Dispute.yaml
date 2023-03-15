@@ -53,7 +53,7 @@ properties:
     example: 'evidence_required'
   resolved_reason:
     type: string
-    description: If the dispute is automatically resolved, `resolved_reason` will contain the reason why it was resolved
+    description: If the dispute is automatically resolved, `resolved_reason` will contain the reason it was resolved
     enum: [ rapid_dispute_resolution, negative_amount, already_refunded ]
     example: 'already_refunded'
   relevant_evidence:

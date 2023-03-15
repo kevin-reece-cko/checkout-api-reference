@@ -46,20 +46,6 @@ get:
         type: integer
         description: Limit how many events your request returns
         example: 5
-    - in: query
-      name: from
-      schema:
-        type: string
-        format: date-time
-        description: Set the date and time from which you want to retrieve events
-        example: "2020-11-07T04:00:00Z"
-    - in: query
-      name: to
-      schema:
-        type: string
-        format: date-time
-        description: Set the date and time to which you want to retrieve events
-        example: "2020-11-07T08:15:00Z"
   responses:
     '200':
       description: OK

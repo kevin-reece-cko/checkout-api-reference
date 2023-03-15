@@ -37,9 +37,11 @@ discriminator:
     postfinance: '#/components/schemas/PaymentRequestPostfinanceSource'
     bancontact: '#/components/schemas/PaymentRequestBancontactSource'
     alma: '#/components/schemas/PaymentRequestAlmaSource'
+    illicado: '#/components/schemas/PaymentRequestIllicadoSource'
     cvconnect: '#/components/schemas/PaymentRequestCvConnectSource'
     tamara: '#/components/schemas/PaymentRequestTamaraSource'
     trustly: '#/components/schemas/PaymentRequestTrustlySource'
+    sepa: '#/components/schemas/PaymentRequestSEPAV4Source'
 required:
   - type
 properties:

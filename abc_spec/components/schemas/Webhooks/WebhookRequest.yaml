@@ -22,7 +22,6 @@ properties:
     description: The content type to be sent to the webhook endpoint
     enum:
       - json
-      - xml
     default: json
     example: json
   event_types:

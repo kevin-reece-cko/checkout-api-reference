@@ -1,0 +1,110 @@
+type: object
+required:
+  - payment_id
+  - action_id
+  - action_type
+  - entity_id
+  - currency_account_id
+  - processed_on
+  - requested_on
+properties:
+  payment_id:
+    type: string
+    description: The unique ID of the payment to which a financial action is associated.
+    example: pay_qqufsd3rfnqufngwklghlxrzpm
+    pattern: "^(pay)_(\\w{26})$"
+  action_id:
+    type: string
+    description: The unique ID of a given financial action impacting your balances.
+    example: act_wsnyzbzmr2huxcekoj7qqhxwuy
+    pattern: "^(act)_(\\w{26})$"
+  action_type:
+    type: string
+    description: The type of action processed. For example, authorization, capture, refund, chargeback, pay to card.
+    example: Capture
+  entity_id:
+    type: string
+    description: The unique ID of the entity for which the payment was processed.
+    example: ent_xozz5q2yvxsetbslrvjxugbsyy
+    pattern: "^(ent)_(\\w{26})$"
+  sub_entity_id:
+    type: string
+    description: The unique ID of the sub-entity for which the payment was processed.
+    example: ent_6akzb5simnkejihbnw6udjpecq
+    pattern: "^(ent)_(\\w{26})$"
+  currency_account_id:
+    type: string
+    description: The unique ID of the currency account to which the financial action amount was charged.
+    example: ca_oo5z564in66ujcsxlbhjsar3p4
+    pattern: "^(ca)_(\\w{26})$"
+  payment_method:
+    type: string
+    description: The payment method associated with the financial action.
+    example: MASTERCARD
+  processing_channel_id:
+    type: string
+    description: The unique ID for processing channel configurations.
+    example: pc_y7hikmc5flhuvav47blunjsdui
+    pattern: "^(pc)_(\\w{26})$"
+  reference:
+    type: string
+    description: An optional ID used to track financial actions.
+    example: SAMPLE6V6OR
+  mid:
+    type: string
+    description: An optional merchant ID used to segment your payments traffic with card schemes.
+    example: mid-12345
+  response_code:
+    type: string
+    description: The payment request response code.
+    example: 10000
+  response_description:
+    type: string
+    description: A description of the payment request response code.
+    example: Approved
+  region:
+    type: string
+    description: The region where this payment occurred.
+    enum:
+      - Domestic
+      - EEA
+      - International
+    example: International
+  card_type:
+    type: string
+    description: The card type used to make the payment. For example, credit or debit card.
+    example: Debit
+  card_category:
+    type: string
+    description: The card category used to make the payment. For example, consumer or commercial.
+    example: Consumer
+  issuer_country:
+    type: string
+    description: Two-digit ISO country code of the country where the payment is processed.
+    example: US
+  merchant_category_code:
+    type: string
+    description: Four-digit code for retail financial services expressed in ISO 18245 format, classifying the types of goods or services you provide.
+    example: 5311
+  fx_trade_id:
+    type: string
+    description: The unique ID of the foreign exchange trade executed in fulfillment of a financial action.
+    example: trd_intsaxljgi6uzkxnv6lex3xayu
+  processed_on:
+    type: string
+    description: An ISO 8601 timestamp of when the action was processed and impacted your balances, in UTC.
+    format: date-time
+    example: '2022-02-18T13:00:12.357Z'
+  requested_on:
+    type: string
+    description: An ISO 8601 timestamp of when a gateway request was made for an action, in UTC.
+    format: date-time
+    example: '2022-02-18T13:00:11.724Z'
+  breakdown:
+    type: array
+    description: The breakdown of amounts within this financial action.
+    items:
+      type: object
+      $ref: '#/components/schemas/FinancialActionBreakdown'
+additionalProperties: false
+description: Financial actions response details.

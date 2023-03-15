@@ -33,9 +33,11 @@ discriminator:
     qpay: '#/components/schemas/PaymentGetResponseQPaySource'
     giropay: '#/components/schemas/PaymentGetResponseGiropaySource'
     eps: '#/components/schemas/PaymentGetResponseEPSSource'
+    illicado: '#/components/schemas/PaymentResponseIllicadoSource'
     cvconnect: '#/components/schemas/PaymentResponseCvConnectSource'
     tamara: '#/components/schemas/PaymentResponseTamaraSource'
     trustly: '#/components/schemas/PaymentResponseTrustlySource'
+    sepa: '#/components/schemas/PaymentResponseSEPAV4Source'
 required:
   - type
 

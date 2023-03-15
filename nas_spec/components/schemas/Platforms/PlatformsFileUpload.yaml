@@ -1,0 +1,19 @@
+type: object
+required:
+  - entity_id
+  - purpose
+properties:
+  purpose:
+    type: string
+    description: The purpose of the file upload.
+    enum:
+      - bank_verification
+      - identity_verification
+      - company_verification
+      - financial_verification
+    example: 'identity_verification'
+  
+  entity_id:
+    type: string
+    description: The ID of the entity that the request relates to.
+    example: ent_5plxo2y4dlqehanhm7i2swsuda

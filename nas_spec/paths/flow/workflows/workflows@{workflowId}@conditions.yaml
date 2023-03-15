@@ -1,0 +1,52 @@
+﻿post:
+  security:
+    - OAuth:
+        - flow
+        - flow:workflows
+    - ApiSecretKey: [ ]
+  tags:
+    - Workflows
+  summary: Add a workflow condition
+  description: |
+    Adds a workflow condition. Conditions determine when the workflow will trigger.
+  parameters:
+    - in: path
+      name: workflowId
+      schema:
+        type: string
+        pattern: ^wf_[a-z2-7]{26}$
+      required: true
+      description: The workflow identifier
+      example: wf_c7svxlvo2bbuva4f6s3xu4f7wm
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: '#/components/schemas/add-update-workflow-condition-request'
+  responses:
+    '201':
+      description: Workflow condition added successfully
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/add-workflow-condition-response'
+      headers:
+        Cko-Request-Id:
+          schema:
+            $ref: "#/components/headers/Cko-Request-Id"
+        Cko-Version:
+          schema:
+            $ref: "#/components/headers/Cko-Version"
+    '401':
+      description: Unauthorized
+    '404':
+      description: Workflow not found
+    '422':
+      description: Invalid data was sent
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ValidationError'
+    '500':
+      description: Internal Error

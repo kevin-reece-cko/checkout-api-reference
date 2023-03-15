@@ -1,0 +1,165 @@
+required:
+  - id
+  - transaction_id
+  - scheme
+  - amount
+  - currency
+  - authentication_type
+  - authentication_category
+  - status
+  - protocol_version
+  - _links
+properties:
+  id:
+    $ref: '#/components/schemas/SessionId'
+  session_secret:
+    $ref: '#/components/schemas/SessionSecret'
+  transaction_id:
+    description: The transaction identifier that needs to be provided when communicating directly with the Access Control Server (ACS)
+    type: string
+    minLength: 36
+    maxLength: 36
+    example: 9aea641d-0549-4222-9ca9-d90b43a4f38c
+  scheme:
+    type: string
+    description: Indicates the scheme this authentication is carried out against
+    enum:
+      - visa
+      - mastercard
+      - jcb
+      - amex
+      - diners
+      - cartes_bancaires
+  amount:
+    $ref: '#/components/schemas/Amount'
+  currency:
+    $ref: '#/components/schemas/Currency'
+  completed:
+    type: boolean
+    description: Indicates whether this session has been completed
+    example: false
+  challenged:
+    type: boolean
+    description: Indicates whether this session involved a challenge. This will only be set after communication with the scheme is finished.
+    example: true
+  authentication_type:
+    $ref: '#/components/schemas/AuthenticationType'
+  authentication_category:
+    $ref: '#/components/schemas/Category'
+  certificates:
+    $ref: '#/components/schemas/DsPublicKeys'
+  status:
+    $ref: '#/components/schemas/Status'
+  status_reason:
+    $ref: '#/components/schemas/StatusReason'
+  approved:
+    $ref: '#/components/schemas/Approved'
+  protocol_version:
+    $ref: '#/components/schemas/ProtocolVersion'
+  reference:
+    $ref: '#/components/schemas/Reference'
+  transaction_type:
+    $ref: '#/components/schemas/TransactionType'
+  next_actions:
+    $ref: '#/components/schemas/NextActions'
+  ds:
+    $ref: '#/components/schemas/Ds'
+  acs:
+    $ref: '#/components/schemas/Acs'
+  response_code:
+    $ref: '#/components/schemas/ResponseCode'
+  response_status_reason:
+    $ref: '#/components/schemas/ResponseStatusReason'
+  pareq:
+    $ref: '#/components/schemas/Pareq'
+  cryptogram:
+    $ref: '#/components/schemas/Cryptogram'
+  eci:
+    $ref: '#/components/schemas/Eci'
+  xid:
+    type: string
+    description: The xid value to use for authorization
+    example: XSUErNftqkiTdlkpSk8p32GWOFA
+  cardholder_info:
+    type: string
+    description: May provide cardholder information from the DS to be presented to the cardholder
+    example: Card declined. Please contact your issuing bank.
+  card:
+    $ref: '#/components/schemas/CardInfo'
+  recurring:
+    $ref: '#/components/schemas/Recurring'
+  installment:
+    $ref: '#/components/schemas/Installment'
+  customer_ip:
+    type: string
+    description: >
+      Indicates the card holder's IP address.      
+      Only available when the scheme selected is Cartes Bancaires.
+    example: 192.168.1.1
+  _links:
+    $ref: '#/components/schemas/GetSessionLinks'
+  authentication_date:
+    type: string
+    format: date-time
+    description: Authentication date and time
+  exemption:
+    type: object
+    description: Details related to exemption present in 3DS flow
+    properties:
+      requested:
+        type: string
+        description: Indicates merchant requested exemption
+        enum:
+          - none
+      applied:
+        type: string
+        description: Indicates Issuer accepted or applied exemption
+        enum:
+          - none
+          - low_value
+          - transaction_risk_assessment
+          - secure_corporate_payment
+          - trusted_listing
+          - 3ds_outage
+          - sca_delegation
+          - out_of_sca_scope
+          - other
+          - low_risk_program
+      code:
+        type: string
+        description: Indicates Cartes Bancaire specific exemption value
+      trusted_beneficiary:
+        $ref: '#/components/schemas/TrustedBeneficiary'
+  flow_type:
+    type: string
+    description: Indicates whether the 3D Secure 2 authentication was challenged or frictionless
+    enum:
+      - challenged
+      - frictionless
+      - frictionless_delegated
+  challenge_indicator:
+    type: string
+    default: no_preference
+    description: Indicates the preference for whether or not a 3DS challenge should be performed. The customer’s bank has the final say on whether or not the customer receives the challenge
+    enum:
+      - no_preference
+      - no_challenge_requested
+      - challenge_requested
+      - challenge_requested_mandate
+  scheme_info:
+    type: object
+    description: Indicates scheme-specific information
+    properties:
+      name:
+        type: string
+        description: Indicates which scheme was used to perform authentication
+        enum:
+          - cartes_bancaires
+          - visa
+          - mastercard
+      score:
+        type: string
+        description: Risk score calculated by Directory Server (DS). Cartes Bancaires 3D Secure 2 only
+      avalgo:
+        type: string
+        description: Identification of the algorithm used by the ACS to calculate the Authentication Value indicated

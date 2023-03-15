@@ -47,7 +47,7 @@ get:
                   urls:
                     - https://www.superheroexample.com
                   mccs:
-                    - '5669'
+                    - '5311'
                 company:
                   business_registration_number: '452349600005'
                   business_type: "public_limited_company"
@@ -125,7 +125,7 @@ get:
                   urls:
                     - https://www.superheroexample.com
                   mccs:
-                    - '5669'
+                    - '5311'
                 individual:
                   first_name: John
                   middle_name: Paul
@@ -183,6 +183,7 @@ put:
     You can update all fields under the Contact details, Profile, and Company objects. You can also add <strong>identification</strong> information to complete due diligence requirements.<br><br>
     <strong>Note:</strong> when you update a sub-entity we may conduct further due diligence checks when necessary. During these checks, your payment capabilities will remain the same.
   summary: Update sub-entity details
+  operationId: putSubEntityDetails
   requestBody:
     required: true
     description: The sub-entity to be updated.
@@ -202,7 +203,7 @@ put:
                 urls:
                   - https://www.superheroexample.com
                 mccs:
-                  - '5669'
+                  - '5311'
               company:
                 business_registration_number: '452349600005'
                 business_type: "public_limited_company"
@@ -260,7 +261,7 @@ put:
                 urls:
                   - https://www.superheroexample.com
                 mccs:
-                  - '5669'
+                  - '5311'
               individual:
                 first_name: 'John'
                 last_name: 'Doe'

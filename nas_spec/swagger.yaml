@@ -68,8 +68,10 @@ tags:
     description: View and manage payout schedules for your sub-entities.
   - name: Reports
     description: Retrieve your reconciliation reports programmatically with the <a href="https://www.checkout.com/docs/reporting/reports-api">Reports API</a>.
-  - name: Sessions
-    description: Use Sessions to authenticate transactions with 3D Secure (3DS) and comply with Strong Customer Authentication (SCA) requirements.
+  - name: Financial actions
+    description: Returns all the processed financial actions associated with your given filter. The results are ordered by processing date in descending order (latest first).
+  - name: Standalone
+    description: Use Standalone Sessions to authenticate transactions with 3D Secure (3DS) and comply with Strong Customer Authentication (SCA) requirements.
   - name: Workflows
     description: Use Workflows to start receiving webhook notifications for your payments, disputes, and sub-entities.
   - name: Apple Pay
@@ -103,9 +105,11 @@ x-tagGroups:
       - Tokens
       - Instruments
       - Customers
+  - name: Authentication
+    tags:
+      - Standalone
   - name: Risk management
     tags:
-      - Sessions
       - Disputes
       - Risk
   - name: Notifications
@@ -119,6 +123,7 @@ x-tagGroups:
   - name: Reporting
     tags:
       - Reports
+      - Financial actions
   - name: Metadata
     tags:
       - Card metadata
