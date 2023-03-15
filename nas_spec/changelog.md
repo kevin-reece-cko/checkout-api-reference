@@ -2,8 +2,9 @@
 
 | Date       | Description of change                                                                                                 
 |------------|-----------------------------------------------------------------------------------------------------------------------|
-| 2022/01/04 | Add new tags to Platforms section and add `id` property on a response for PATCH payment instrument request.           |
-| 2022/01/04 | Add API key security to remaining Integrated Platforms endpoints.                                                     |
+| 2023/03/15 | Modified the description for purchas_country in Request/Capture/GET payment                                           |
+| 2023/01/04 | Add new tags to Platforms section and add `id` property on a response for PATCH payment instrument request.           |
+| 2023/01/04 | Add API key security to remaining Integrated Platforms endpoints.                                                     |
 | 2023/01/03 | Add Platforms Update Payment Instrument Request spec.                                                                 |
 | 2022/12/20 | Added `first_name` and `address` to `recipient`, deprecated `recipient.zip`, made `sender.address` optional.          |
 | 2022/12/15 | Change Platforms schedule `by_day` response samples to use arrays.                                                    |
