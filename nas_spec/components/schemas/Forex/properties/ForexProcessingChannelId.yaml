@@ -1,0 +1,3 @@
+type: string
+pattern: "^(pc)_(\\w{26})$"
+description: The processing channel identifier

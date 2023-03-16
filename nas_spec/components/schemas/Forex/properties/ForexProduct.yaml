@@ -1,0 +1,5 @@
+type: string
+enum: 
+  - card_payouts
+description: The Checkout product to return rates for
+example: 'card_payouts'

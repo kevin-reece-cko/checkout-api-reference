@@ -1,0 +1,33 @@
+type: object
+properties:
+  product:
+    $ref: '#/components/schemas/ForexProduct'
+  source:
+    $ref: '#/components/schemas/ForexSource'
+  rates:
+    description: List of FX rates with Checkout margin applied
+    schema:
+      type: array
+      items:
+        $ref: '#/components/schames/ForexRatesRatesObject'
+  invalid_currency_pairs:
+    description: List of currency pairs that Checkout was unable to provide rates for
+    example: 
+      - XXX
+      - AAA 
+      - ZZZ
+    schema:
+      type: array
+      items:
+        type: string
+        description: Currency pair
+example:
+  product: card_payouts
+  source: visa
+  rates:
+    - exchange_rate: 1.14208777
+      currency_pair: GBPEUR
+    - exchange_rate: 0.83708142
+      currency_pair: USDGBP
+  invalid_currency_pairs:
+    - XXXAAA
