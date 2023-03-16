@@ -2,7 +2,7 @@
 
 | Date       | Description of change                                                                                                 |
 |------------|-----------------------------------------------------------------------------------------------------------------------|
-| 2023/03/15 | Modified the description for purchas_country in Request/Capture/GET payment                                           |
+| 2023/03/15 | Modified the description for `purchase_country` in Request/Capture/GET payment                                           |
 | 2023/03/08 | Added `Go` code samples for both ABC and NAS                                                                          |
 | 2023/03/08 | Updated `trusted_beneficiary` in `Standalone` with a better description.
 | 2023/03/08 | Added `customer_ip` to `Standalone` response
