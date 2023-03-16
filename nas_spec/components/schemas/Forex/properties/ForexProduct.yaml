@@ -1,5 +1,5 @@
 type: string
 enum: 
   - card_payouts
-description: The Checkout product to return rates for
+description: The Checkout.com Forex product to return rates for
 example: 'card_payouts'

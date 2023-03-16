@@ -7,7 +7,7 @@ get:
   summary: Get FX rates
   operationId: getFxRates
   description: |
-    Request FX rates for a specific Checkout product and rate source.
+    Request FX rates for a specific Checkout.com product and rate source.
   parameters:
     - name: product
       in: query
@@ -44,7 +44,7 @@ get:
     '401':
       description: Unauthorized
     '429':
-      description: Too many requests or duplicate request detected
+      description: Too many requests or duplicate requests detected
       content:
         application/json:
           schema:

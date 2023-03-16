@@ -5,12 +5,12 @@ properties:
   source:
     $ref: '#/components/schemas/ForexSource'
   rates:
-    description: List of FX rates with Checkout margin applied
+    description: List of FX rates with Checkout.com margin applied
     type: array
     items:
       $ref: '#/components/schemas/ForexRate'
   invalid_currency_pairs:
-    description: List of currency pairs that Checkout was unable to provide rates for
+    description: List of currency pairs that Checkout.com was unable to provide rates for
     type: array
     items:
       type: string
