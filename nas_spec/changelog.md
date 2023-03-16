@@ -2,6 +2,7 @@
 
 | Date       | Description of change                                                                                                 |
 |------------|-----------------------------------------------------------------------------------------------------------------------|
+| 2023/03/15 | Modified the description for `purchase_country` in Request/Capture/GET payment                                           |
 | 2023/03/08 | Added `Go` code samples for both ABC and NAS                                                                          |
 | 2023/03/08 | Updated `trusted_beneficiary` in `Standalone` with a better description.
 | 2023/03/08 | Added `customer_ip` to `Standalone` response
@@ -35,7 +36,6 @@
 | 2023/01/04 | Add new tags to Platforms section and add `id` property on a response for PATCH payment instrument request.           |
 | 2023/01/04 | Add API key security to remaining Integrated Platforms endpoints.                                                     |
 | 2023/01/03 | Add Platforms Update Payment Instrument Request spec.                                                                 |
-| 2022/12/30 | Replaced sample MCCs value `5669` with valid MCCs value `5311`.                                                       |
 | 2022/12/20 | Added `first_name` and `address` to `recipient`, deprecated `recipient.zip`, made `sender.address` optional.          |
 | 2022/12/15 | Change Platforms schedule `by_day` response samples to use arrays.                                                    |
 | 2022/12/15 | Add CV Connect NAS Request and Response source.                                                                       |
