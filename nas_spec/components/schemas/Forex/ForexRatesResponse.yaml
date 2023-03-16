@@ -8,7 +8,7 @@ properties:
     description: List of FX rates with Checkout margin applied
     type: array
     items:
-      $ref: '#/components/schemas/ForexRatesRatesObject'
+      $ref: '#/components/schemas/ForexRate'
   invalid_currency_pairs:
     description: List of currency pairs that Checkout was unable to provide rates for
     type: array
