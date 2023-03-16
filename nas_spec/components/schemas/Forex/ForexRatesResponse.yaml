@@ -6,21 +6,19 @@ properties:
     $ref: '#/components/schemas/ForexSource'
   rates:
     description: List of FX rates with Checkout margin applied
-    schema:
-      type: array
-      items:
-        $ref: '#/components/schemas/ForexRatesRatesObject'
+    type: array
+    items:
+      $ref: '#/components/schemas/ForexRatesRatesObject'
   invalid_currency_pairs:
     description: List of currency pairs that Checkout was unable to provide rates for
+    type: array
+      items:
+        type: string
+        description: Currency pair
     example: 
       - XXX
       - AAA 
       - ZZZ
-    schema:
-      type: array
-      items:
-        type: string
-        description: Currency pair
 example:
   product: card_payouts
   source: visa

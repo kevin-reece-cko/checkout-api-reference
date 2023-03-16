@@ -32,7 +32,7 @@ get:
       schema:
         $ref: '#/components/schemas/ForexProcessingChannelId'
   responses:
-    '201':
+    '200':
       description: Rates retreived successfully
       content:
         application/json:
