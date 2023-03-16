@@ -12,9 +12,9 @@ properties:
   invalid_currency_pairs:
     description: List of currency pairs that Checkout was unable to provide rates for
     type: array
-      items:
-        type: string
-        description: Currency pair
+    items:
+      type: string
+      description: Currency pair
     example: 
       - XXX
       - AAA 
