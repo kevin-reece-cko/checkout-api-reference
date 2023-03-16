@@ -9,7 +9,7 @@ properties:
     schema:
       type: array
       items:
-        $ref: '#/components/schames/ForexRatesRatesObject'
+        $ref: '#/components/schemas/ForexRatesRatesObject'
   invalid_currency_pairs:
     description: List of currency pairs that Checkout was unable to provide rates for
     example: 
