@@ -2,6 +2,7 @@
 
 | Date       | Description of change                                                                                                 |
 |------------|-----------------------------------------------------------------------------------------------------------------------|
+| 2023/03/16 | Added `/forex/rates` UPAPI endpoint to NAS spec                                                                       |
 | 2023/03/15 | Modified the description for `purchase_country` in Request/Capture/GET payment                                           |
 | 2023/03/08 | Added `Go` code samples for both ABC and NAS                                                                          |
 | 2023/03/08 | Updated `trusted_beneficiary` in `Standalone` with a better description.
