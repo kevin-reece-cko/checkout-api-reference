@@ -2,6 +2,7 @@
 
 | Date       | Description of change                                                                                                 |
 |------------|-----------------------------------------------------------------------------------------------------------------------|
+| 2023/03/21 | Modified `Standalone` API path to correctly point to `sessions` for retrocompatibility reasons                        |
 | 2023/03/15 | Modified the description for `purchase_country` in Request/Capture/GET payment                                           |
 | 2023/03/08 | Added `Go` code samples for both ABC and NAS                                                                          |
 | 2023/03/08 | Updated `trusted_beneficiary` in `Standalone` with a better description.
