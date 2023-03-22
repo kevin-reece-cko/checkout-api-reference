@@ -2,11 +2,11 @@ post:
   tags:
   - Cardholders
   summary: Create a cardholder
-  description: Create a new cardholder that you can <a href="https://www.checkout.com/docs/issuing/issue-a-card">issue a card</a> to at a later point.
+  description: Create a new cardholder that you can <a href="https://www.checkout.com/docs/card-issuing/issue-a-card">issue a card</a> to at a later point.
   servers:
-  - url: https://api.checkout.com/issuing
+  - url: https://api.checkout.com/
     description: Live API
-  - url: https://api.sandbox.checkout.com/issuing
+  - url: https://api.sandbox.checkout.com/
     description: Sandbox API
   requestBody:
     required: true

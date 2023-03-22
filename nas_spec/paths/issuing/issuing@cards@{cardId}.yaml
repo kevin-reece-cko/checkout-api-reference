@@ -7,9 +7,9 @@ get:
 
     The card's credentials are not returned in the response.
   servers:
-  - url: https://api.checkout.com/issuing
+  - url: https://api.checkout.com/
     description: Live API
-  - url: https://api.sandbox.checkout.com/issuing
+  - url: https://api.sandbox.checkout.com/
     description: Sandbox API
   parameters:
   - in: path

@@ -11,9 +11,9 @@ post:
     
     Two-factor authentication (2FA) is supported. For maximum security, we recommend using a combination of a one-time password (OTP) sent via SMS, along with a password or question and answer security pair.
   servers:
-  - url: https://api.checkout.com/issuing
+  - url: https://api.checkout.com/
     description: Live API
-  - url: https://api.sandbox.checkout.com/issuing
+  - url: https://api.sandbox.checkout.com/
     description: Sandbox API
   parameters:
   - in: path

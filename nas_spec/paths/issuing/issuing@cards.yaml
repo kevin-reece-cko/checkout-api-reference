@@ -4,9 +4,9 @@ post:
   summary: Create a card
   description: Creates a physical or virtual card and issues it to the specified cardholder.
   servers:
-  - url: https://api.checkout.com/issuing
+  - url: https://api.checkout.com/
     description: Live API
-  - url: https://api.sandbox.checkout.com/issuing
+  - url: https://api.sandbox.checkout.com/
     description: Sandbox API
   requestBody:
     required: true

@@ -127,7 +127,7 @@ x-tagGroups:
       - Platforms
       - Payment instruments
       - Payout schedules
-  - name: Card Issuing
+  - name: Card issuing
     tags:
       - Cardholders
       - Cards

@@ -4,9 +4,9 @@ get:
   summary: Get control details
   description: Retrieves the details of a card control you created previously.
   servers:
-  - url: https://api.checkout.com/issuing
+  - url: https://api.checkout.com/
     description: Live API
-  - url: https://api.sandbox.checkout.com/issuing
+  - url: https://api.sandbox.checkout.com/
     description: Sandbox API
   parameters:
     - in: query
