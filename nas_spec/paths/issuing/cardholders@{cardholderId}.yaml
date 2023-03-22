@@ -1,0 +1,29 @@
+get:
+  tags:
+  - Cardholders
+  summary: Get cardholder details
+  description: Retrieve the details for a cardholder you created previously.
+  servers:
+  - url: https://api.checkout.com/issuing
+    description: Live API
+  - url: https://api.sandbox.checkout.com/issuing
+    description: Sandbox API
+  parameters:
+  - in: path
+    name: cardholderId
+    required: true
+    schema:
+      $ref: '#/components/schemas/IssuingCardholderId'
+  responses:
+    '200':
+      description: Cardholder returned successfully
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/get-cardholder-response'
+    '401':
+      description: Unauthorized
+    '404':
+      description: Cardholder not found
+    '500':
+      description: Internal Server Error

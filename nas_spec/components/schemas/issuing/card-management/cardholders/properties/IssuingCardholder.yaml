@@ -1,0 +1,73 @@
+type: object
+required:
+  - id
+  - type
+  - first_name
+  - last_name
+  - billing_address
+properties:
+  id:
+    $ref: '#/components/schemas/IssuingCardholderId'
+  type:
+    type: string
+    description: The cardholder type. Currently `individual` is the only supported value.
+    example: individual
+  first_name:
+    type: string
+    description: The cardholder's first name.
+    example: John
+    pattern: ^[a-zA-Z'- ]{1,40}$
+    minLength: 1
+    maxLength: 40
+  middle_name:
+    type: string
+    description: The cardholder's middle name.
+    example: Fitzgerald
+    pattern: ^[a-zA-Z'- ]{1,40}$
+    minLength: 1
+    maxLength: 40
+  last_name:
+    type: string
+    description: The cardholder's last name.
+    example: Kennedy
+    pattern: ^[a-zA-Z'- ]{1,40}$
+    minLength: 1
+    maxLength: 40
+  email:
+    description: The cardholder's email.
+    $ref: '#/components/schemas/IssuingEmail'
+  phone_number:
+    description: The cardholder's phone number. This information will be used for authorizations requiring a <a href="https://www.checkout.com/docs/risk-management/3d-secure">3DS challenge</a>.
+    $ref: '#/components/schemas/IssuingPhoneNumber'
+  date_of_birth:
+    type: string
+    format: date
+    description: The cardholder's date of birth, in the format `YYYY-MM-DD`.
+    example: "1985-05-28"
+  billing_address:
+    description: The cardholder's billing address.
+    $ref: '#/components/schemas/IssuingAddress'
+  residency_address:
+    description: The cardholder's residency address. If this value is not provided, the cardholder's billing address will be used by default instead.
+    $ref: '#/components/schemas/IssuingAddress'
+  reference:
+    $ref: '#/components/schemas/IssuingReference'
+  account_entity_id:
+    description: The ID of the entity that holds the cardholder's currency account.
+    $ref: '#/components/schemas/IssuingEntityId'
+  parent_sub_entity_id:
+    description: The ID of the cardholder's parent sub-entity, if they have one.
+    $ref: '#/components/schemas/IssuingEntityId'
+  entity_id:
+    description: The ID of the cardholder's root client entity. 
+    $ref: '#/components/schemas/IssuingEntityId'
+  created_date:
+    type: string
+    format: datetime
+    example: "2019-09-10T10:11:12Z"
+  last_modified_date:
+    type: string
+    format: datetime
+    example: "2019-09-11T10:11:12Z"
+  _links:
+    $ref: '#/components/schemas/IssuingCardholderLinks'

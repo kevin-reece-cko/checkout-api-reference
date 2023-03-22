@@ -1,0 +1,42 @@
+post:
+  tags:
+  - Cards
+  summary: Revoke a card
+  description: |
+    Revokes an `inactive`, `active`, or `suspended` card to permanently decline all incoming authorizations.
+    
+    This is a permanent action. Revoked cards cannot be reactivated.
+  servers:
+  - url: https://api.checkout.com/issuing
+    description: Live API
+  - url: https://api.sandbox.checkout.com/issuing
+    description: Sandbox API
+  parameters:
+  - in: path
+    name: cardId
+    required: true
+    schema:
+      $ref: '#/components/schemas/IssuingCardId'
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: '#/components/schemas/revoke-card-request'
+  responses:
+    '200':
+      description: Card revoked successfully
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/revoke-card-response'
+    '401':
+      description: Unauthorized
+    '404':
+      description: Card not found
+    '422':
+      description: Invalid data was sent
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/IssuingValidationError'

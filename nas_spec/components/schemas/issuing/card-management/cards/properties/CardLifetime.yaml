@@ -1,0 +1,26 @@
+type: object
+description: |
+  The duration of time during which the card will accept incoming authorizations. 
+  
+  The `unit` and `value` combination you supply will determine the card's expiry date from the date of issue. For example, to set the card to expire in a year and a half, pass the following:
+  ```
+  {
+    "lifetime": {
+      "unit": "months",
+      "value": "18"
+    }
+  }
+  ```
+required:
+  - value
+properties:
+  unit:
+    type: string
+    enum: [Months, Years]
+    description: The unit of time to specify the card lifetime's in.
+    example: Months
+    default: Years
+  value:
+    type: integer
+    description: The length of time before the card will expire, in the `unit` of time specified.
+    example: 6

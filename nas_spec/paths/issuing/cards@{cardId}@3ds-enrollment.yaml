@@ -1,0 +1,120 @@
+post:
+  tags:
+  - Cards
+  summary: Enroll a card in 3DS
+  description: |
+    Enrolls a card in <a href="https://www.checkout.com/docs/risk-management/3d-secure">3D Secure</a> (3DS).
+    
+    3DS provides an additional layer of security for your cardholders' online payments, reducing the risk of fraud and subsequent chargeback requests.
+    
+    To enroll your issued cards, you must provide authentication data for the cards. This information is requested from the cardholder through a 3DS challenge when performing a transaction.
+    
+    Two-factor authentication (2FA) is supported. For maximum security, we recommend using a combination of a one-time password (OTP) sent via SMS, along with a password or question and answer security pair.
+  servers:
+  - url: https://api.checkout.com/issuing
+    description: Live API
+  - url: https://api.sandbox.checkout.com/issuing
+    description: Sandbox API
+  parameters:
+  - in: path
+    name: cardId
+    required: true
+    schema:
+      $ref: '#/components/schemas/IssuingCardId'
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          oneOf:
+          - $ref: '#/components/schemas/security_question'
+          - $ref: '#/components/schemas/Password'
+  responses:
+    '202':
+      description: 3DS card enrollment completed successfully
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/3ds-enrollment-post-response'
+    '401':
+      description: Unauthorized
+    '404':
+      description: Card not found
+    '422':
+      description: Invalid data was sent
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/IssuingValidationError'
+    '500':
+      description: Internal Server Error
+patch:
+  tags:
+  - Cards
+  summary: Update a card's 3DS details
+  description: Updates a card's 3DS enrollment details.
+  servers:
+  - url: https://api.checkout.com/issuing
+    description: Live API
+  - url: https://api.sandbox.checkout.com/issuing
+    description: Sandbox API
+  parameters:
+  - in: path
+    name: cardId
+    required: true
+    schema:
+      $ref: '#/components/schemas/IssuingCardId'
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: '#/components/schemas/3ds-enrollment-patch-request'
+  responses:
+    '202':
+      description: Card 3DS details updated successfully
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/3ds-enrollment-patch-response'
+    '401':
+      description: Unauthorized
+    '404':
+      description: Card not found
+    '422':
+      description: Invalid data was sent
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/IssuingValidationError'
+    '500':
+      description: Internal Server Error
+get:
+  tags:
+  - Cards
+  summary: Get a card's 3DS enrollment details
+  description: Retrieves a card's 3DS enrollment details.
+  servers:
+  - url: https://api.checkout.com/issuing
+    description: Live API
+  - url: https://api.sandbox.checkout.com/issuing
+    description: Sandbox API
+  parameters:
+  - in: path
+    name: cardId
+    required: true
+    schema:
+      $ref: '#/components/schemas/IssuingCardId'
+  responses:
+    '200':
+      description: Card 3DS enrollment details retrieved successfully
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/3ds-enrollment-get-response'
+    '401':
+      description: Unauthorized
+    '404':
+      description: Card not found
+    '500':
+      description: Internal Server Error

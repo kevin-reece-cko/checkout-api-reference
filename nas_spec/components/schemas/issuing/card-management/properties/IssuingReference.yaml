@@ -1,0 +1,4 @@
+type: string
+description: Your reference.
+example: X-123456-N11
+maxLength: 256

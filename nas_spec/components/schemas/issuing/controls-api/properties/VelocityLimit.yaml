@@ -1,0 +1,18 @@
+type: object
+description: The velocity limit, which determines how much a card can spend over a given period of time.
+required:
+  - velocity_window
+properties:
+  amount_limit:
+    type: int64
+    description: The amount the card can spend, in base units.
+    example: 5000
+    minimum: 0
+  velocity_window:
+    $ref: '#/components/schemas/VelocityWindow'
+  mcc_list:
+    type: array
+    description: The list of <a href= "https://www.checkout.com/docs/resources/codes/merchant-category-codes">merchant category codes (MCCs)</a> that the velocity limit applies to, as 4-digit ISO 18245 codes.
+    example: ["4121", "4582"]
+    items:
+      type: string

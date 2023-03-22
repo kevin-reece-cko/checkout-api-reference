@@ -1,0 +1,6 @@
+type: string
+pattern: "^pro_[a-z0-9]{26}$"
+description: The card product's unique identifier.
+maxLength: 30
+minLength: 30
+example: pro_7syjig3jq3mezlc3vjrdpfitl4

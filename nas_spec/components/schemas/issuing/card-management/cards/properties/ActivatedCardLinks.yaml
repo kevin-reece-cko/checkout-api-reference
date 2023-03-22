@@ -1,0 +1,27 @@
+type: object
+description: The links related to the card.
+minItems: 1
+required:
+  - self
+  - credentials
+  - revoke
+properties:
+  self:
+    type: object
+    $ref: '#/components/schemas/IssuingLink'
+    description: The URI to retrieve the card's details.
+  revoke:
+    type: object
+    $ref: '#/components/schemas/IssuingLink'
+    description: The URI to revoke the card.
+  suspend:
+    type: object
+    $ref: '#/components/schemas/IssuingLink'
+    description: The URI to suspend the card.
+example:
+  self:
+    href: "https://api.checkout.com/issuing/cards/crd_fa6psq42dcdd6fdn5gifcq1491"
+  revoke:
+    href: "https://api.checkout.com/issuing/cards/crd_fa6psq42dcdd6fdn5gifcq1491/revoke"
+  suspend:
+    href: "https://api.checkout.com/issuing/cards/crd_fa6psq42dcdd6fdn5gifcq1491/suspend"

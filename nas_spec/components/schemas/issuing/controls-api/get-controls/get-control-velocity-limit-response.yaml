@@ -1,0 +1,7 @@
+type: object
+allOf:
+  - $ref: '#/components/schemas/get-control-response'
+  - type: object
+    properties:
+      velocity_limit:
+        $ref: '#/components/schemas/VelocityLimit'

@@ -1,0 +1,19 @@
+type: object
+description: The links related to the current cardholder.
+minItems: 1
+required:
+  - self
+properties:
+  self:
+    type: object
+    description: The URI to retrieve the cardholder
+    $ref: '#/components/schemas/IssuingLink'
+  cards:
+    type: object
+    description: The URI to add or retrieve the cards issued to the cardholder
+    $ref: '#/components/schemas/IssuingLink'
+example:
+  self:
+    href: "https://api.checkout.com/issuing/cardholders/crh_d3ozhf43pcq2xbldn2g45qnb44"
+  cards:
+    href: "https://api.checkout.com/issuing/cards"

@@ -1,0 +1,6 @@
+type: string
+pattern: "^ctr_[a-z0-9]{26}$"
+description: The control's unique identifier.
+maxLength: 30
+minLength: 30
+example: ctr_gp7vkmxayztufjz6top5bjcdra

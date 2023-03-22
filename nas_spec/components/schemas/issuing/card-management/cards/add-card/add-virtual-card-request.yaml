@@ -1,0 +1,18 @@
+type: object
+allOf:
+  - $ref: '#/components/schemas/add-card-request'
+  - type: object
+    properties:
+      display_name:
+        $ref: '#/components/schemas/DisplayName'
+      is_single_use:
+        type: bool
+        description: Sets whether the virtual card should expire after a single use.
+        default: false
+      activate_card:
+        type: bool
+        default: true
+        description: |
+          Sets whether to activate the newly created card upon creation.
+        
+          If set to `false`, the cardholder will not be able to process transactions until you activate the card.

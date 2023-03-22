@@ -1,0 +1,5 @@
+type: object
+properties:
+  _links:
+    allOf:
+      - $ref: '#/components/schemas/ActivatedCardLinks'
