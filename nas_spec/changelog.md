@@ -2,7 +2,7 @@
 
 | Date       | Description of change                                                                                                   |
 | ---------- | ----------------------------------------------------------------------------------------------------------------------- |
-| 2023/03/23 | Remove `marketplace` from HostedPayments & PaymentLinks                                                                 |
+| 2023/03/23 | Remove `marketplace` from Hosted Payments and Payment Links                                                             |
 | 2023/03/22 | Adds API documentation for card issuing                                                                                 |
 | 2023/03/21 | Modified `Standalone` API path to correctly point to `sessions` for backward compatible reasons                         |
 | 2023/03/15 | Modified the description for `purchase_country` in Request/Capture/GET payment                                          |
