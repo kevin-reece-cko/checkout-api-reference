@@ -80,9 +80,16 @@ tags:
     description: Transfer funds while managing the entities to transfer money to recoup funds from a seller, return money from a refund or to make up the difference when running a promotion.
   - name: Balances
     description: View balances for currency accounts belonging to an entity.
+  - name: Cardholders
+    description: Create new cardholders to issue cards to, and manage your existing cardholders.
+  - name: Cards
+    description: Issue new cards to your cardholders, and manage cards you've already issued.
+  - name: Card controls
+    description: Set spending controls to limit how much a card can spend over a set period of time, and rules for what the card can be used to purchase.
+  - name: Card testing
+    description: Simulate transactions using a card on the sandbox environment.
   - name: Card Metadata
     description: Retrieve card metadata
-
   # - name: Files
   #   description: |
   #     Upload files to be used as input to other APIs
@@ -120,6 +127,12 @@ x-tagGroups:
       - Platforms
       - Payment instruments
       - Payout schedules
+  - name: Card issuing
+    tags:
+      - Cardholders
+      - Cards
+      - Card controls
+      - Card testing
   - name: Reporting
     tags:
       - Reports

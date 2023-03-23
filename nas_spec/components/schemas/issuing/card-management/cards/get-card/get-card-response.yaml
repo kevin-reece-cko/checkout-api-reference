@@ -1,0 +1,54 @@
+type: object
+discriminator:
+  propertyName: type
+  mapping:
+    physical: '#/components/schemas/get-physical-card-response'
+    virtual: '#/components/schemas/get-virtual-card-response'
+required:
+  - id
+  - cardholder_id
+  - client_id
+  - card_product_id
+  - last_four
+  - expiry_month
+  - expiry_year
+  - status
+  - active
+  - type
+  - display_name
+  - billing_currency
+  - issuing_country
+properties:
+  id:
+    $ref: '#/components/schemas/IssuingCardId'
+  cardholder_id:
+    $ref: '#/components/schemas/IssuingCardholderId'
+  card_product_id:
+    $ref: '#/components/schemas/IssuingCardProductId'
+  client_id:
+    $ref: '#/components/schemas/IssuingClientId'
+  last_four:
+    $ref: '#/components/schemas/LastFour'
+  expiry_month:
+    $ref: '#/components/schemas/ExpiryMonth'
+  expiry_year:
+    $ref: '#/components/schemas/ExpiryYear'
+  status:
+    $ref: '#/components/schemas/IssuingStatus'
+  display_name:
+    $ref: '#/components/schemas/DisplayName'
+  type:
+    $ref: '#/components/schemas/IssuingType'
+  billing_currency:
+    $ref: '#/components/schemas/IssuingCurrency'
+  issuing_country:
+    $ref: '#/components/schemas/IssuingCountry'
+  reference:
+    $ref: '#/components/schemas/IssuingReference'
+  created_date:
+    $ref: '#/components/schemas/Datetime'
+  last_modified_date:
+    $ref: '#/components/schemas/Datetime'
+  _links:
+    allOf:
+      - $ref: '#/components/schemas/CardLinks' 

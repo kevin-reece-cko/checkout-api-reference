@@ -1,0 +1,7 @@
+type: object
+description: The card control's details.
+required:
+  - id
+properties:
+  id:
+    $ref: '#/components/schemas/IssuingControlId'

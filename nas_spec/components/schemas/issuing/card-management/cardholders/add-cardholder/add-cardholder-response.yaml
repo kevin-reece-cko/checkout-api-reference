@@ -1,0 +1,36 @@
+type: object
+required:
+  - id
+  - type
+  - status
+  - _links
+properties:
+  id:
+    $ref: '#/components/schemas/IssuingCardholderId'
+  type:
+    type: string
+    description: The cardholder's type.
+    enum:
+      - individual
+  status:
+    type: string
+    description: The cardholder's status, after creation.
+    enum:
+      - active
+      - pending
+      - restricted
+      - requirements_due
+      - inactive
+      - rejected
+  reference:
+    $ref: '#/components/schemas/IssuingReference'
+  created_date:
+    type: string
+    format: datetime
+  last_modified_date:
+    type: string
+    format: datetime
+    example: "2019-09-10T10:11:12Z"
+  _links:
+    allOf:
+      - $ref: '#/components/schemas/IssuingCardholderLinks'

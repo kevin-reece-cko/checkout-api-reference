@@ -1,0 +1,7 @@
+type: object
+allOf:
+  - $ref: '#/components/schemas/get-control-response'
+  - type: object
+    properties:
+      mcc_limit:
+        $ref: '#/components/schemas/MccLimit'

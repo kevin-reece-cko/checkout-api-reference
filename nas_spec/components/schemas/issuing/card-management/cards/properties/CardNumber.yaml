@@ -1,0 +1,7 @@
+type: string
+format: pan
+description: The unencrypted card number.
+pattern: ^[0-9]{16}$
+minLength: 16
+maxLength: 16
+example: 4242424242424242

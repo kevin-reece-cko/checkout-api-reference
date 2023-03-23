@@ -1,8 +1,10 @@
 # Changelog
 
-| Date       | Description of change                                                                                                 |
+| Date       | Description of change                                                                                                 
 |------------|-----------------------------------------------------------------------------------------------------------------------|
-| 2023/03/16 | Added `/forex/rates` Unified Payments API (UPAPI) endpoint to NAS spec                                                                   |
+| 2023/03/22 | Adds API documentation for card issuing                        |
+| 2023/03/21 | Modified `Standalone` API path to correctly point to `sessions` for backward compatible reasons                        |
+| 2023/03/16 | Added `/forex/rates` Unified Payments API (UPAPI) endpoint to NAS spec   
 | 2023/03/15 | Modified the description for `purchase_country` in Request/Capture/GET payment                                           |
 | 2023/03/08 | Added `Go` code samples for both ABC and NAS                                                                          |
 | 2023/03/08 | Updated `trusted_beneficiary` in `Standalone` with a better description.
@@ -46,6 +48,7 @@
 | 2022/12/13 | Remove third-party fields from integrated auth                                                                        |
 | 2022/11/30 | Add API key security to IP endpoints.                                                                                 |
 | 2022/11/29 | Adding prism device_session_id to payment request.                                                                    |
+| 2022/11/28 | Updated Issuing API spec to fix descriptions and add new properties                                                   |
 | 2022/11/15 | Adding a `entity` to BankPayoutRequest source.                                                                        |
 | 2022/11/14 | Changing Card Metadata API request format                                                                             |
 | 2022/11/09 | Removed the `risk` endpoints                                                                                          |

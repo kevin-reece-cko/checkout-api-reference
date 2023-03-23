@@ -1,0 +1,18 @@
+type: object
+description: The cardholder to create.
+discriminator:
+  propertyName: type
+  mapping:
+    individual: '#/components/schemas/add-individual-cardholder-request'
+required:
+  - type
+properties:
+  type:
+    type: string
+    description: The type of cardholder to create.
+    example: individual
+  reference:
+    $ref: '#/components/schemas/IssuingReference'
+  entity_id:
+    description: The cardholder's parent entity. This field is required if the client has multiple entities configured.
+    $ref: '#/components/schemas/IssuingEntityId'

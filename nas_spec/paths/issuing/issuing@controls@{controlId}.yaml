@@ -1,0 +1,112 @@
+get:
+  tags:
+  - Card controls
+  summary: Get control details
+  description: Retrieves the details of a card control you created previously.
+  servers:
+  - url: https://api.checkout.com/
+    description: Live API
+  - url: https://api.sandbox.checkout.com/
+    description: Sandbox API
+  parameters:
+    - in: query
+      name: controlId
+      required: true
+      schema:
+        $ref: '#/components/schemas/IssuingControlId'
+  responses:
+    '200':
+      description: Control returned successfully
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/get-control-response'
+    '401':
+      description: Unauthorized
+    '404':
+      description: Control not found
+    '500':
+      description: Internal Server Error
+put:
+  tags:
+  - Card controls
+  summary: Update a control
+  description: Updates an existing card control.
+  servers:
+  - url: https://api.checkout.com/issuing
+    description: Live API
+  - url: https://api.sandbox.checkout.com/issuing
+    description: Sandbox API
+  parameters:
+  - in: path
+    name: controlId
+    required: true
+    schema:
+      $ref: '#/components/schemas/IssuingControlId'
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: '#/components/schemas/update-control-request'
+  responses:
+    '200':
+      description: Control updated successfully
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/update-control-response'
+    '401':
+      description: Unauthorized
+    '422':
+      description: Invalid data was sent
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/IssuingValidationError'
+    '404':
+      description: Control not found
+    '500':
+      description: Internal Server Error
+    '503':
+      description: Service Unavailable
+delete:
+  tags:
+  - Card controls
+  summary: Remove a control
+  description: |
+    Removes an existing card control from the card it was applied to.
+    
+    If you want to reapply an equivalent control to the card, you'll need to create a new control.
+  servers:
+  - url: https://api.checkout.com/issuing
+    description: Live API
+  - url: https://api.sandbox.checkout.com/issuing
+    description: Sandbox API
+  parameters:
+  - in: path
+    name: controlId
+    required: true
+    schema:
+      $ref: '#/components/schemas/IssuingControlId'
+  responses:
+    '200':
+      description: Control removed successfully
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/remove-control-response'
+    '401':
+      description: Unauthorized
+    '404':
+      description: Control not found
+    '422':
+      description: Invalid data was sent
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/IssuingValidationError'
+    '500':
+      description: Internal Server Error
+    '503':
+      description: Service Unavailable

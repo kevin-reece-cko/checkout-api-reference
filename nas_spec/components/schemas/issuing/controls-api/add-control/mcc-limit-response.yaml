@@ -1,0 +1,9 @@
+type: object
+allOf:
+  - $ref: '#/components/schemas/add-control-response'
+  - type: object
+    properties:
+      mcc_limit:
+        $ref: '#/components/schemas/MccLimit'
+required:
+  - mcc_limit

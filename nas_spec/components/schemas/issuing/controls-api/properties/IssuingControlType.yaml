@@ -1,0 +1,7 @@
+type: string
+enum: [velocity_limit, mcc_limit]
+description: |
+  The card control's type.
+  
+  A `velocity_limit` determines how much a card can spend over a given period of time. An `mcc_limit` determines the types of businesses a card can process transactions from.
+example: velocity_limit

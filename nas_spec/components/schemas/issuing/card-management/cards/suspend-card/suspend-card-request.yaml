@@ -1,0 +1,9 @@
+type: object
+properties:
+  reason:
+    description: The reason why the card is being suspended.
+    type: string
+    enum:
+      - suspected_lost
+      - suspected_stolen
+    example: suspected_lost

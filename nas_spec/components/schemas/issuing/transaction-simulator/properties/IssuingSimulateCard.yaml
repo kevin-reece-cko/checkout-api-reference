@@ -1,0 +1,13 @@
+type: object
+description: The card to simulate an authorization with.
+required:
+  - id
+  - expiry_month
+  - expiry_year
+properties:
+  id:
+    $ref: '#/components/schemas/IssuingCardId'
+  expiry_month:
+    $ref: '#/components/schemas/ExpiryMonth'
+  expiry_year:
+    $ref: '#/components/schemas/ExpiryYear'
