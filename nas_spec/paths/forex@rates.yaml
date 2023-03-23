@@ -7,7 +7,7 @@ get:
   summary: Get FX rates
   operationId: getFxRates
   description: |
-    Request FX rates for a specific Checkout.com product and rate source.
+    Use the Forex (FX) rates API to get the indicative foreign exchange rates that Checkout.com uses to process payments for card payouts. You can query the rates and the related source of rates (for example, Visa, Mastercard).
   parameters:
     - name: product
       in: query
