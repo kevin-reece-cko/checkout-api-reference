@@ -1,0 +1,4 @@
+type: string
+pattern: "^(pc)_(\\w{26})$"
+description: The processing channel identifier
+example: pc_vxt6yftthv4e5flqak6w2i7rim
