@@ -1,7 +1,7 @@
 type: object
 properties:
   exchange_rate:
-    description: The FX rate with Checkout.com margin applied. Up to 8 decimal places provided in response.
+    description: The FX rate with Checkout.com margin applied. Up to eight decimal places provided in response.
     type: number
     format: double
     example: '1.14208777'

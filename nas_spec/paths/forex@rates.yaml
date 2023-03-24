@@ -45,10 +45,6 @@ get:
       description: Unauthorized
     '429':
       description: Too many requests or duplicate requests detected
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ValidationError'
     '422':
       description: Invalid data was sent
       content:
