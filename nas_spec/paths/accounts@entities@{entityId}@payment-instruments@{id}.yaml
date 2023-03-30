@@ -53,6 +53,16 @@ get:
                 status: 'verified'
                 default: true
                 instrument_id: 'src_pdasnoaxrtoevpyh3opgaxcrti'
+            CardToken:
+              value:
+                id: ppi_cwfekfw2d7mmcto5ql4lpjgrxq,
+                instrument_id: 'src_jpu3ev6prk7utb5jonqgvvsshm',
+                label: Mark's AMEX
+                country: GB,
+                currency: GBP,
+                status: 'verified',
+                default: false,
+                type: card_token
     '400':
       description: Bad Request
     '401':

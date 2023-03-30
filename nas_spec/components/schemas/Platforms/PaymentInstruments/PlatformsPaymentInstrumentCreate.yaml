@@ -9,6 +9,7 @@ allOf:
         oneOf:
           - $ref: '#/components/schemas/PlatformsInstrumentDetailsFasterPayments'
           - $ref: '#/components/schemas/PlatformsInstrumentDetailsSepa'
+          - $ref: '#/components/schemas/PlatformsInstrumentDetailsCardToken'
         
 required:
   - label

@@ -1,0 +1,8 @@
+type: object
+title: InstrumentDetailsCardToken
+properties:
+  token:
+    title: Token
+    description: The token that identifies the card
+    type: string
+    example: 'tok_4gzeau5o2uqubbk6fufs3m7p54'
