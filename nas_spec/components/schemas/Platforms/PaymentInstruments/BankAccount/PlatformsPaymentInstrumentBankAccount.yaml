@@ -1,7 +1,7 @@
 type: object
 title: PaymentInstrumentBankAccount
 allOf:
-  - $ref: '#/components/schemas/PlatformsPaymentInstrumentBase'
+  - $ref: '#/components/schemas/PlatformsPaymentInstrument'
   - type: object
     required:
       - country

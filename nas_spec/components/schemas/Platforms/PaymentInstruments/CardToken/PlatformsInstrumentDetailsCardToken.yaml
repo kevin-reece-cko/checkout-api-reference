@@ -1,6 +1,6 @@
 description: Card Token Request
 allOf:
-  - $ref: '#/components/schemas/PlatformsPaymentInstrumentBase'
+  - $ref: '#/components/schemas/PlatformsPaymentInstrument'
   - type: object
     required:
       - token

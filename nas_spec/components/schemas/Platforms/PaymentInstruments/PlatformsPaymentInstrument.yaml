@@ -1,5 +1,5 @@
 type: object
-title: PaymentInstrumentBase
+title: PaymentInstrument
 required:
   - label
   - type
