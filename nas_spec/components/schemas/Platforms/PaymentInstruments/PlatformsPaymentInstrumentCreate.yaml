@@ -1,20 +1,30 @@
+#allOf:
+#  - $ref: '#/components/schemas/PlatformsPaymentInstrumentBase'
+#  - type: object
+#    properties:
+#      instrument_details:
+#        description: Details of the payment instrument being created.
+#        oneOf:
+#          - $ref: '#/components/schemas/PlatformsInstrumentDetailsFasterPayments'
+#          - $ref: '#/components/schemas/PlatformsInstrumentDetailsSepa'
+#          - $ref: '#/components/schemas/PlatformsInstrumentDetailsCardToken'
+
+
 type: object
 title: PaymentInstrumentCreateRequest
-allOf:
-  - $ref: '#/components/schemas/PlatformsPaymentInstrument'
-  - type: object
-    properties:
-      instrument_details:
-        description: Details of the payment instrument being created.
-        oneOf:
-          - $ref: '#/components/schemas/PlatformsInstrumentDetailsFasterPayments'
-          - $ref: '#/components/schemas/PlatformsInstrumentDetailsSepa'
-          - $ref: '#/components/schemas/PlatformsInstrumentDetailsCardToken'
-        
+description: The source of the payment
+discriminator:
+  propertyName: type
+  mapping:
+    card_token: '#/components/schemas/01_CardTokenRequest'
+    bank_account: '#/components/schemas/02_GooglePayTokenRequest'
 required:
   - label
   - type
-  - country
   - currency
   - instrument_details
-  - document
+properties:
+  type:
+    type: string
+    description: The type of card details to be tokenized
+    example: 'card'

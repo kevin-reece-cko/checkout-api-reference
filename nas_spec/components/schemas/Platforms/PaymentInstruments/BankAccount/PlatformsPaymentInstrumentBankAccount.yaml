@@ -1,27 +1,6 @@
 type: object
-title: PaymentInstrumentBase
+title: PaymentInstrumentBankAccount
 properties:
-  label:
-    title: Label
-    description: A reference that you can use to identify the payment instrument
-    type: string
-    minLength: 1
-    maxLength: 50
-    example: Peter's Personal Account
-  type:
-    title: Type
-    description: The instrument type
-    type: string
-    enum:
-      - bank_account
-  currency:
-    title: Currency
-    description: The account's currency, as a 3-letter ISO currency code
-    type: string
-    format: ISO 4217
-    minLength: 3
-    maxLength: 3
-    example: 'GBP'
   country:
     title: Country
     description: The account's country, as a 2-letter ISO country code
