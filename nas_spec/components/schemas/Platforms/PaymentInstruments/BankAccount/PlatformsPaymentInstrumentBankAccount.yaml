@@ -2,6 +2,7 @@ type: object
 title: PaymentInstrumentBankAccount
 allOf:
   - $ref: '#/components/schemas/PlatformsPaymentInstrumentBase'
+  - type: object
     properties:
       country:
         title: Country
