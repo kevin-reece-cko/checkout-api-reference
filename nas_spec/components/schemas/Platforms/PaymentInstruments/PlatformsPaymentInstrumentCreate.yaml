@@ -16,8 +16,8 @@ description: The source of the payment
 discriminator:
   propertyName: type
   mapping:
-    card_token: '#/components/schemas/01_CardTokenRequest'
-    bank_account: '#/components/schemas/02_GooglePayTokenRequest'
+    card_token: '#/components/schemas/PlatformsInstrumentDetailsCardToken'
+    bank_account: '#/components/schemas/PlatformsInstrumentDetailsSepa'
 required:
   - label
   - type
@@ -26,5 +26,5 @@ required:
 properties:
   type:
     type: string
-    description: The type of card details to be tokenized
-    example: 'card'
+    description: The type of instrument.
+    example: 'bank_account'
