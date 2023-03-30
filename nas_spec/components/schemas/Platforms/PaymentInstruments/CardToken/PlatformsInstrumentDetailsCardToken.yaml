@@ -1,8 +1,12 @@
-type: object
-title: InstrumentDetailsCardToken
-properties:
-  token:
-    title: Token
-    description: The token that identifies the card
-    type: string
-    example: 'tok_4gzeau5o2uqubbk6fufs3m7p54'
+description: Card Token Request
+allOf:
+  - $ref: '#/components/schemas/PlatformsPaymentInstrumentBase'
+  - type: object
+    required:
+      - token
+    properties:
+      token:
+        title: Token
+        description: The token that identifies the card
+        type: string
+        example: 'tok_4gzeau5o2uqubbk6fufs3m7p54'

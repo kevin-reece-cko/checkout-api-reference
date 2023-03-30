@@ -1,15 +1,3 @@
-#allOf:
-#  - $ref: '#/components/schemas/PlatformsPaymentInstrumentBase'
-#  - type: object
-#    properties:
-#      instrument_details:
-#        description: Details of the payment instrument being created.
-#        oneOf:
-#          - $ref: '#/components/schemas/PlatformsInstrumentDetailsFasterPayments'
-#          - $ref: '#/components/schemas/PlatformsInstrumentDetailsSepa'
-#          - $ref: '#/components/schemas/PlatformsInstrumentDetailsCardToken'
-
-
 type: object
 title: PaymentInstrumentCreateRequest
 description: The source of the payment
@@ -17,7 +5,7 @@ discriminator:
   propertyName: type
   mapping:
     card_token: '#/components/schemas/PlatformsInstrumentDetailsCardToken'
-    bank_account: '#/components/schemas/PlatformsInstrumentDetailsSepa'
+    bank_account: '#/components/schemas/PlatformsPaymentInstrumentBankAccount'
 required:
   - label
   - type
