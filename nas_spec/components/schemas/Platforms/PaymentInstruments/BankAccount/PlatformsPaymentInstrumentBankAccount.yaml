@@ -6,6 +6,7 @@ allOf:
     required:
       - country
       - document
+      - instrument_details
     properties:
       country:
         title: Country

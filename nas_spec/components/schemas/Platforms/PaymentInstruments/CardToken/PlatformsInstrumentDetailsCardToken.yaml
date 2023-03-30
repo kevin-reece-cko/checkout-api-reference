@@ -4,6 +4,7 @@ allOf:
   - type: object
     required:
       - token
+      - instrument_details
     properties:
       instrument_details:
         description: Details of the payment instrument being created.

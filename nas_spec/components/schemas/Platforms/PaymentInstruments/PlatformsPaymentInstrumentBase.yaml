@@ -1,5 +1,9 @@
 type: object
 title: PaymentInstrumentBase
+required:
+  - label
+  - type
+  - currency
 properties:
   label:
     title: Label
