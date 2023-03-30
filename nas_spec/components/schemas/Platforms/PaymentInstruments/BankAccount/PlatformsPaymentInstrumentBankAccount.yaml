@@ -3,6 +3,9 @@ title: PaymentInstrumentBankAccount
 allOf:
   - $ref: '#/components/schemas/PlatformsPaymentInstrumentBase'
   - type: object
+    required:
+      - country
+      - document
     properties:
       country:
         title: Country
