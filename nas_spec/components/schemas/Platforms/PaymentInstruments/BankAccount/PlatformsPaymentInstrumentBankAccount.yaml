@@ -10,7 +10,7 @@ allOf:
     properties:
       country:
         title: Country
-        description: The account's country, as a 2-letter ISO country code
+        description: The account's country, as a two-letter ISO country code
         type: string
         format: ISO 3166-1
         example: 'GB'
