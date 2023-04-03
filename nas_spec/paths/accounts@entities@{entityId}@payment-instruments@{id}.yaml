@@ -110,7 +110,7 @@ patch:
           schema:
             $ref: '#/components/schemas/ValidationError'
     '428': 
-      description: Precondition Required
+      description: Precondition required
       content:
         application/json:
           schema:
