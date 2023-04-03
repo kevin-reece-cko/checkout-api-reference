@@ -48,7 +48,7 @@ post:
                 file_id: file_wxglze3wwywujg4nna5fb7ldli
           CardToken:
             value:
-              label: Mark's AMEX
+              label: Carol's Card
               type: card_token
               currency: GBP
               instrument_details:

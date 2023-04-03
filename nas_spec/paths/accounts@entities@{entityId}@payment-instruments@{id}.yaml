@@ -57,7 +57,7 @@ get:
               value:
                 id: ppi_cwfekfw2d7mmcto5ql4lpjgrxq
                 instrument_id: 'src_jpu3ev6prk7utb5jonqgvvsshm'
-                label: Mark's AMEX
+                label: Carol's Card
                 country: GB
                 currency: GBP
                 status: 'verified'
