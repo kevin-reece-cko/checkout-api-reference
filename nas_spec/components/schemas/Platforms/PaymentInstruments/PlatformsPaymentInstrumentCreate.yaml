@@ -13,5 +13,5 @@ required:
 properties:
   type:
     type: string
-    description: The type of instrument.
+    description: The type of instrument
     example: 'bank_account'
