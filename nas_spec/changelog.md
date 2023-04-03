@@ -1,7 +1,8 @@
 # Changelog
 
 | Date       | Description of change                                                                                                   |
-| ---------- | ----------------------------------------------------------------------------------------------------------------------- |
+|------------| ----------------------------------------------------------------------------------------------------------------------- |
+| 2023/04/02 | Added `card_token` object to `PlatformsPaymentInstrument` for Integrated Platforms                                      |
 | 2023/03/30 | Updated Bank Payouts docs hyperlink                                                                                     |
 | 2023/03/23 | Remove `marketplace` from Hosted Payments and Payment Links                                                             |
 | 2023/03/22 | Adds API documentation for card issuing                                                                                 |

@@ -1,19 +1,17 @@
 type: object
 title: PaymentInstrumentCreateRequest
-allOf:
-  - $ref: '#/components/schemas/PlatformsPaymentInstrument'
-  - type: object
-    properties:
-      instrument_details:
-        description: Details of the payment instrument being created.
-        oneOf:
-          - $ref: '#/components/schemas/PlatformsInstrumentDetailsFasterPayments'
-          - $ref: '#/components/schemas/PlatformsInstrumentDetailsSepa'
-        
+discriminator:
+  propertyName: type
+  mapping:
+    card_token: '#/components/schemas/PlatformsInstrumentDetailsCardToken'
+    bank_account: '#/components/schemas/PlatformsPaymentInstrumentBankAccount'
 required:
   - label
   - type
-  - country
   - currency
   - instrument_details
-  - document
+properties:
+  type:
+    type: string
+    description: The type of instrument
+    example: 'bank_account'
