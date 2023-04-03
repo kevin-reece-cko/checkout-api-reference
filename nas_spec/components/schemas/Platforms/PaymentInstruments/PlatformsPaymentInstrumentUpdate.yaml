@@ -14,7 +14,7 @@ properties:
     description: Specifies whether the payment instrument should be set as the default payout destination.
   headers:
     type: object
-    properties:
+    additionalProperties:
       type: string
       title: If-Match
       required: true
