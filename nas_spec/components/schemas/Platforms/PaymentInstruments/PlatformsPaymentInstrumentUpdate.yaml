@@ -12,3 +12,11 @@ properties:
     title: Default
     type: boolean
     description: Specifies whether the payment instrument should be set as the default payout destination.
+  headers:
+    type: object
+    additionalProperties:
+      type: string
+      title: If-Match
+      description: The instrument ETag value
+    example:
+      If-Match: 'Y3Y9MCZydj0w'

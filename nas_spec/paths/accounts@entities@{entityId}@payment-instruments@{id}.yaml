@@ -109,5 +109,11 @@ patch:
         application/json:
           schema:
             $ref: '#/components/schemas/ValidationError'
+    '428': 
+      description: Precondition Required
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/PreconditionRequiredError'
   tags:
     - Payment instruments
