@@ -134,7 +134,7 @@ post:
                 properties:
                   id:
                     type: string
-                    description: "The unique identifier of the sub-entity."
+                    description: The unique identifier of the sub-entity
                     example: "ent_w4jelhppmfiufdnatam37wrfc4"
     '422':
       description: Invalid data was sent
