@@ -128,7 +128,14 @@ post:
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/EntityLinks'
+            allOf:
+              - $ref: '#/components/schemas/EntityLinks'
+              - type: object
+                properties:
+                  id:
+                    type: string
+                    description: "The id of the sub-entity."
+                    example: "ent_w4jelhppmfiufdnatam37wrfc4"
     '422':
       description: Invalid data was sent
       content:
