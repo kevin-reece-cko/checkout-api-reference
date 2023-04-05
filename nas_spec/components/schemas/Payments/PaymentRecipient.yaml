@@ -9,10 +9,9 @@ properties:
     example: '1985-05-15'
   account_number:
     type: string
-    description: The first six digits and the last four digits of the primary recipient's card, without spaces, or up to ten digits of the primary recipient's account number
-    minLength: 10
-    maxLength: 10
-    example: '5555554444'  
+    description: Any identifier like part of the PAN (first six digits and last four digits), an IBAN, an internal account number, or a phone number related to the primary recipient's account
+    maxLength: 34
+    example: '5555554444'
   address:
     description: The recipient's address
     allOf:

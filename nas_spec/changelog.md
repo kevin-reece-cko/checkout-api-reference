@@ -2,6 +2,7 @@
 
 | Date       | Description of change                                                                                                   |
 |------------|-------------------------------------------------------------------------------------------------------------------------|
+| 2023/03/28 | Increased NAS `recipient.account_number` max length from 10 to 34                                                       |
 | 2023/04/03 | Added `if-match` header to `PlatformsPaymentInstrumentUpdate` for Integrated Platforms                                  |
 | 2023/04/02 | Added `card_token` object to `PlatformsPaymentInstrument` for Integrated Platforms                                      |
 | 2023/03/30 | Updated Bank Payouts docs hyperlink                                                                                     |
