@@ -137,6 +137,6 @@ properties:
     description: |
       Allows you to store additional information about a transaction with custom fields and up to five user-defined fields (`udf1` to `udf5`), which can be used for reporting purposes. `udf1` is also used for some of our risk rules. 
       
-      Only primitive data types can be supplied within the `metadata` object, arrays and objects are not supported. The value of each field must not exceed 255 characters in length.
+      You can only supply primitive data types within the `metadata` object. Arrays and objects are not supported. You can provide up to 20 metadata fields per API call. The value of each field must not exceed 255 characters in length.
     example:
       coupon_code: 'NY2018'
