@@ -29,7 +29,7 @@ properties:
     example: 'Copy of invoice #1244 showing two transactions'
   customer_communication_file:
     type: string
-    description: A file containing customer cummunication
+    description: A file containing customer communication
     example: 'file_jmbfgkjromvcrn9t4qu4'
   customer_communication_text:
     type: string
