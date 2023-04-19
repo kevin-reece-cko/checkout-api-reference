@@ -2,6 +2,7 @@
 
 | Date       | Description of change                                                                                                   |
 | ---------- | ----------------------------------------------------------------------------------------------------------------------- |
+| 2023/04/13 | Add `authentication_status_reason` to `3ds` object in the GET payment details response                                 |
 | 2023/04/04 | Update conflict response for onboard sub entity operation to include ID                                                 |
 | 2023/04/03 | Updated `payment_ip` to support IPv6 addresses                                                                          |
 | 2023/03/28 | Increased NAS `recipient.account_number` max length from 10 to 34                                                       |
