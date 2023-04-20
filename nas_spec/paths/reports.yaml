@@ -18,14 +18,14 @@ get:
   parameters:
     - name: created_after
       in: query
-      description: Filters reports to those that were created on or after the specified date.
+      description: Filters reports to those that were created on or after the specified timestamp.
       schema:
         type: string
         format: date-time
         example: '2022-02-17T00:00:00'
     - name: created_before
       in: query
-      description: Filters reports to those that were created before the specified date.
+      description: Filters reports to those that were created before the specified timestamp.
       schema:
         type: string
         format: date-time
