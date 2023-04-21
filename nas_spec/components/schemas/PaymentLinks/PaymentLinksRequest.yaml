@@ -146,7 +146,6 @@ properties:
       - sofort
       - ideal
       - knet
-      - giropay
       - bancontact
       - p24
       - eps
