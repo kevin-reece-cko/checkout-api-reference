@@ -45,8 +45,17 @@ allOf:
         example: 'VISA'
       scheme_local:
         type: string
-        description: The local co-branded card scheme.
+        deprecated: true
+        description: |
+          Replaced by `local_schemes`
+          The local co-branded card scheme.
         example: 'Cartes_Bancaires'
+      local_schemes:
+        type: array
+        items:
+          type: string
+        description: The local co-branded card schemes.
+        example: ['cartes_bancaires', 'visa']
       last4:
         type: string
         description: The last four digits of the card number
