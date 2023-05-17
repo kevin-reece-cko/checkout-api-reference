@@ -28,7 +28,7 @@ If you fork this repo to edit your spec, you will need to:
 2. Run `npm run start` to view your changes on [http://localhost:3001](http://localhost:3001).
 
 When you raise a PR, it will automatically tag
-the [Docs Admin](https://github.com/orgs/cko-web/teams/api-ref-admins) team, of which the Tech Writing team are members.
+the [Docs Writers](https://github.com/orgs/cko-web/teams/docs-writers) team, of which the Tech Writing team are members.
 
 A PR review from this team is required before any changes can be merged into `master`. However, you'll still need approval from a relevant product manager before the changes are accepted. 
 
