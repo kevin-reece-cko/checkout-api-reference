@@ -1,8 +1,9 @@
 # Changelog
 
 | Date       | Description of change                                                                                                   |
-| ---------- |-------------------------------------------------------------------------------------------------------------------------|
-| 2023/05/09 | Add `local_schemes` to response source and deprecate `scheme_local`                                                              |
+|------------|-------------------------------------------------------------------------------------------------------------------------|
+| 2023/05/16 | Updated `sender.reference` minimum length for Card Payouts                                                              |
+| 2023/05/09 | Add `local_schemes` to response source and deprecate `scheme_local`                                                     |
 | 2023/04/21 | Remove `giropay` from Hosted Payments and Payment Links                                                                 |
 | 2023/04/13 | Add `authentication_status_reason` to `3ds` object in the GET payment details response                                  |
 | 2023/04/04 | Update conflict response for onboard sub entity operation to include ID                                                 |
