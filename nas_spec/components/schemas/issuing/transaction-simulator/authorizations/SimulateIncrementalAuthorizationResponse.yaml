@@ -1,0 +1,12 @@
+type: object
+description: Authorization Response.
+required:
+  - status
+properties:
+  status:
+    type: string
+    description: The transaction's status.
+    enum:
+      - Authorized
+      - Declined
+    example: Authorized

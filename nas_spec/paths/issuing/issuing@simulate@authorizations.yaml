@@ -13,7 +13,7 @@ post:
         schema:
           $ref: '#/components/schemas/SimulateAuthorizationRequest'
         examples:
-          Purchase:
+          Purchase - Authorization:
             value:
               card:
                 id: crd_fa6psq242dcd6fdn5gifcq1491
@@ -23,6 +23,21 @@ post:
                 type: purchase
                 amount: 6540
                 currency: GBP
+                merchant:
+                  category_code: '7399'
+          Purchase - Pre-authorization:
+            value:
+              card:
+                id: crd_fa6psq242dcd6fdn5gifcq1491
+                expiry_month: 5
+                expiry_year: 2025
+              transaction:
+                type: purchase
+                amount: 6540
+                currency: GBP
+                merchant:
+                  category_code: '7399'
+                authorization_type: pre_authorization
   responses:
     '201':
       description: Authorization processed successfully

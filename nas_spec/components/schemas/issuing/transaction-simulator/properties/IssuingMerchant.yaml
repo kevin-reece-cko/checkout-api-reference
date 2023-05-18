@@ -1,0 +1,10 @@
+type: object
+description: The merchant related data to use for the transaction.
+properties:
+  category_code:
+   type: string
+   description: >
+    The <a href="https://www.checkout.com/docs/resources/codes/merchant-category-codes" target="blank">merchant category code (MCC)</a>, which determines the types of businesses the card can process the transaction from.
+   example: 7399
+   maxLength: 4
+   minLength: 4

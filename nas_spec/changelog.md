@@ -2,6 +2,7 @@
 
 | Date       | Description of change                                                                                                   |
 |------------|-------------------------------------------------------------------------------------------------------------------------|
+| 2023/05/17 | Added new card testing endpoints to simulate pre/incremental authorizations and reversals for Issuing                   |
 | 2023/05/16 | Updated `sender.reference` minimum length for Card Payouts                                                              |
 | 2023/05/09 | Add `local_schemes` to response source and deprecate `scheme_local`                                                     |
 | 2023/04/21 | Remove `giropay` from Hosted Payments and Payment Links                                                                 |

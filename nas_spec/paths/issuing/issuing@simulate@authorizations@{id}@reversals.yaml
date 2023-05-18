@@ -1,0 +1,43 @@
+post:
+  tags:
+  - Card testing
+  summary: Simulate reversal
+  description: Simulate the reversal of an existing approved authorization.
+  servers:
+  - url: https://api.sandbox.checkout.com/
+    description: Sandbox API
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: '#/components/schemas/ReversalRequest'
+        examples:
+          Reversal:
+            value:
+              amount: 6540
+  parameters:
+  - in: path
+    name: id
+    required: true
+    schema:
+      $ref: '#/components/schemas/IssuingTransactionId'
+  responses:
+    '201':
+      description: Reversal processed successfully
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ReversalResponse'
+    '401':
+      description: Unauthorized
+    '404':
+      description: Authorization not found
+    '422':
+      description: Invalid data was sent
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/IssuingValidationError'
+    '500':
+      description: Internal Server Error

@@ -19,3 +19,7 @@ allOf:
         example: GBP
         maxLength: 3
         minLength: 3
+      merchant:
+        $ref: '#/components/schemas/IssuingMerchant'
+      authorization_type:
+        $ref: '#/components/schemas/IssuingAuthorizationTypes'

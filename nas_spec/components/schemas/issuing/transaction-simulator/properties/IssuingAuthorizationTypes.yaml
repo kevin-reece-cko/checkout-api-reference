@@ -1,0 +1,7 @@
+type: string
+enum: 
+  - authorization
+  - pre_authorization
+default: authorization
+description: Use `authorization` for a known final amount or `pre_authorization` for an estimated amount.
+example: authorization
