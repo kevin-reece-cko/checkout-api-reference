@@ -21,7 +21,7 @@ post:
                 expiry_year: 2025
               transaction:
                 type: purchase
-                amount: 6540
+                amount: 2500
                 currency: GBP
                 merchant:
                   category_code: '7399'
@@ -33,7 +33,7 @@ post:
                 expiry_year: 2025
               transaction:
                 type: purchase
-                amount: 6540
+                amount: 2500
                 currency: GBP
                 merchant:
                   category_code: '7399'

@@ -12,10 +12,6 @@ post:
       application/json:
         schema:
           $ref: '#/components/schemas/ReversalRequest'
-        examples:
-          Reversal:
-            value:
-              amount: 6540
   parameters:
   - in: path
     name: id

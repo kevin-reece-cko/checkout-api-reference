@@ -15,10 +15,6 @@ post:
       application/json:
         schema:
           $ref: '#/components/schemas/SimulateIncrementalAuthorizationRequest'
-        examples:
-          Purchase:
-            value:
-              amount: 6540
   parameters:
   - in: path
     name: id
