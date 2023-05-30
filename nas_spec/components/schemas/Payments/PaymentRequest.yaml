@@ -98,7 +98,10 @@ properties:
   previous_payment_id:
     type: string
     description: |
-      For merchant-initiated transactions (MITs) that use <a href="https://www.checkout.com/docs/payments/store-payment-details" target="blank">stored card details</a> — for example, an existing payment identifier from the recurring series, or the Scheme Transaction ID
+      An identifier that can link the payment to an existing series of payments. Only for use with merchant-initiated transactions (MITs) that use <a href="https://www.checkout.com/docs/payments/store-payment-details" target="blank">stored card details</a>.
+      To link the payment, pass one of the following as its value:
+      - a payment identifier from the recurring series, or
+      - the scheme transaction ID
     maxLength: 100
     example: 'pay_fun26akvvjjerahhctaq2uzhu4'
   risk:
