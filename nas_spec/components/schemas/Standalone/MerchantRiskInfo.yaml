@@ -39,3 +39,39 @@ properties:
       - digital_goods
       - travel_and_event_no_shipping
       - other
+  reorder_items_indicator:
+    type: string
+    description: >
+      Indicates whether the cardholder is reordering previously purchased merchandise.
+    enum:
+      - first_time_ordered
+      - reordered
+  pre_order_purchase_indicator:
+    type: string
+    description: >
+      Indicates whether Cardholder is placing an order for merchandise with a future availability or release date.
+    enum:
+      - merchandise_available
+      - future_availability
+  pre_order_date:
+    type: string
+    format: date-time
+    description: >
+      For a pre-ordered purchase, the expected date that the merchandise will be available.
+  gift_card_amount:
+    type: string
+    description: >
+      For prepaid or gift card purchase, the purchase amount total of prepaid or gift card(s) in major units (for example, USD 123.45 is 123).
+    maxLength: 15
+  gift_card_currency:
+    type: string
+    maxLength: 3
+    minLength: 3
+    description: >
+      For prepaid or gift card purchase, ISO 4217 three-digit currency code of the gift card.
+  gift_card_count:
+    type: string
+    maxLength: 2
+    minLength: 2
+    description: >
+      For prepaid or gift card purchase, total count of individual prepaid or gift cards/codes purchased.
