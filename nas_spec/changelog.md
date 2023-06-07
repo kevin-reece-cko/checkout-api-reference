@@ -2,6 +2,7 @@
 
 | Date       | Description of change                                                                                                   |
 |------------|-------------------------------------------------------------------------------------------------------------------------|
+| 2023/06/05 | Added LocalBillingDescriptor to NAS spec                                                                                |
 | 2023/05/31 | Removed Forex Quotes endpoint                                                                                           |
 | 2023/05/23 | Added new card testing endpoint to simulate clearing for Issuing                                                        |
 | 2023/05/17 | Added new card testing endpoints to simulate pre/incremental authorizations and reversals for Issuing                   |
