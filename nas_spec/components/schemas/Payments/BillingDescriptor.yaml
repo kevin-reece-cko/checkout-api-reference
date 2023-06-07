@@ -23,6 +23,11 @@ properties:
       The reference that should be shown on the statement. 
       Required for payouts to bank accounts.
     maxLength: 50
+  local_descriptors:
+    type: array
+    nullable: true
+    items:
+      $ref: '#/components/schemas/LocalBillingDescriptor'
 required:
   - name
   - city
