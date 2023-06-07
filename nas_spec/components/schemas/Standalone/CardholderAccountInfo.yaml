@@ -77,7 +77,7 @@ properties:
     type: string
     format: date-time
     description: >
-      Date that the cardholder’s account with the 3DS Requestor was last changed, including Billing or Shipping address, new payment account, or new user(s) added.
+      Date (ISO 8601 UTC) that the cardholder’s account with the 3DS Requestor was last changed, including Billing or Shipping address, new payment account, or new user(s) added.
   account_change_indicator:
     type: string
     description: >
@@ -91,12 +91,12 @@ properties:
     type: string
     format: date-time
     description: >
-      Date that the cardholder opened the account with the 3DS Requestor.
+      Date (ISO 8601 UTC) that the cardholder opened the account with the 3DS Requestor.
   account_password_change:
     type: string
     format: date-time
     description: >
-      Date that cardholder’s account with the 3DS Requestor had a password change or account reset.
+      Date (ISO 8601 UTC) that cardholder’s account with the 3DS Requestor had a password change or account reset.
   account_password_change_indicator:
     type: string
     description: >
@@ -117,12 +117,12 @@ properties:
     type: string
     format: date-time
     description: >
-      Date that the payment account was enrolled in the cardholder’s account with the 3DS Requestor.
+      Date (ISO 8601 UTC) that the payment account was enrolled in the cardholder’s account with the 3DS Requestor.
   shipping_address_usage:
     type: string
     format: date-time
     description: >
-      Date when the shipping address used for this transaction was first used with the 3DS Requestor.
+      Date (ISO 8601 UTC) when the shipping address used for this transaction was first used with the 3DS Requestor.
   account_type:
     type: string
     description: >
