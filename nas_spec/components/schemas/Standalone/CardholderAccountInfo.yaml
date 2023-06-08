@@ -66,7 +66,7 @@ properties:
   cardholder_account_age_indicator:
     type: string
     description: >
-      Length of time that the cardholder has had the account with the 3DS Requestor.
+      Length of time since cardholder account was created with the 3DS Requestor.".
     enum:
       - no_account,
       - this_transaction
