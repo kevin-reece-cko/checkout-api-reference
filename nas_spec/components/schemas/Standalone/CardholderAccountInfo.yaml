@@ -104,7 +104,7 @@ properties:
   account_password_change:
     type: string
     format: date-time
-    description: >
+    description: The UTC date and time the cardholder’s account with the 3DS Requestor was last reset or had a password change, in ISO 8601 format.
   account_password_change_indicator:
     type: string
     description: The amount of time since the cardholder’s account with the 3DS Requestor was last reset or had a password change.
