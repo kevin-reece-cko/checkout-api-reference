@@ -117,7 +117,6 @@ properties:
   transactions_per_year:
     type: integer
     description: The number of transactions associated with the cardholder's account with the 3DS Requestor in the previous year. This value includes both successful and abandoned transactions, across all payment accounts.
-      Number of transactions (successful and abandoned) for this cardholder account with the 3DS Requestor across all payment accounts in the previous year.
     example: 002
     maxLength: 3
   payment_account_age:
