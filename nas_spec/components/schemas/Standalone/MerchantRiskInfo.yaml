@@ -54,25 +54,21 @@ properties:
   pre_order_date:
     type: string
     format: date-time
-    description: >
-      Date (ISO 8601 UTC) for a pre-ordered purchase, the expected date that the merchandise will be available.
+    description: The UTC date the pre-ordered merchandise is expected to be available, in ISO 8601 format.
   gift_card_amount:
     type: string
-    description: >
-      For prepaid or gift card purchase, the purchase amount total of prepaid or gift card(s) in major units (for example, USD 123.45 is 123).
+    description: The total purchase amount, in major units. For example, the major unit amount for a gift card purchase of 135.20 USD is `135`. Only applicable for prepaid or gift card purchases.
     maxLength: 15
     example: 123
   gift_card_currency:
     type: string
     maxLength: 3
     minLength: 3
-    description: >
-      For prepaid or gift card purchase, ISO 4217 three-digit currency code of the gift card.
+    description: The currency code of the gift card,  as a three-digit ISO 4217 code. Only applicable for prepaid or gift card purchases.
     example: USD
   gift_card_count:
     type: string
     maxLength: 2
     minLength: 2
-    description: >
-      For prepaid or gift card purchase, total count of individual prepaid or gift cards/codes purchased.
+    description: The total number of individual prepaid cards, gift cards, or gift codes purchased. Only applicable for prepaid or gift card purchases.
     example: 02

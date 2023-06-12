@@ -1,11 +1,9 @@
 type: object
-description: >
-  Information about how the 3DS Requestor authenticated the cardholder before or during the transaction.
+description: Information about how the 3DS Requestor authenticated the cardholder before or during the transaction.
 properties:
   three_ds_req_auth_method:
     type: string
     description: The mechanism used by the cardholder to authenticate with the 3DS Requestor.
-      Mechanism used by the Cardholder to authenticate to the 3DS Requestor.
     enum:
       - no_threeds_requestor_authentication_occurred,
       - three3ds_requestor_own_credentials,
