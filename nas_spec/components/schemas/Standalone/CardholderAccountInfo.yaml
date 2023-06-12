@@ -108,7 +108,6 @@ properties:
   account_password_change_indicator:
     type: string
     description: The amount of time since the cardholder’s account with the 3DS Requestor was last reset or had a password change.
-      Indicates the length of time since the cardholder’s account with the 3DS Requestor had a password change or account reset.
     enum:
       - no_change
       - this_transaction
