@@ -41,7 +41,7 @@ properties:
       - other
   reorder_items_indicator:
     type: string
-    description: >
+    description: Specifies whether the cardholder is reordering merchandise they've previously purchased.
       Indicates whether the cardholder is reordering previously purchased merchandise.
     enum:
       - first_time_ordered
