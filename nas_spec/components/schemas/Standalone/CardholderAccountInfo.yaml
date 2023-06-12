@@ -81,7 +81,12 @@ properties:
   account_change_indicator:
     type: string
     description: >
-      Length of time since the cardholder’s account information with the 3DS Requestor was last changed, including Billing or Shipping address, new payment account, or new user(s) added.
+      The amount of time since the cardholder’s account information with the 3DS Requestor was last changed.
+      
+      Changes that affect this value include:
+      - updating the billing or shipping address
+      - adding a new payment account
+      - adding a new user
     enum:
       - this_transaction
       - less_than_thirty_days
