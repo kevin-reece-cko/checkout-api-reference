@@ -23,5 +23,4 @@ properties:
   three_ds_req_auth_data:
     type: string
     description: Data that documents and supports a specific authentication process.
-      Data that documents and supports a specific authentication process.
     maxLength: 20000
