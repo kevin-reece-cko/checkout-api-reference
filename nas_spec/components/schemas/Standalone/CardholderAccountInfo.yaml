@@ -77,7 +77,12 @@ properties:
     type: string
     format: date-time
     description: |
-      Date (ISO 8601 UTC) that the cardholder’s account with the 3DS Requestor was last changed, including Billing or Shipping address, new payment account, or new user(s) added.
+      The UTC date and time the cardholder’s account with the 3DS Requestor was last changed, in ISO 8601 format.
+      
+      Changes that affect this value include:
+      - updating the billing or shipping address
+      - adding a new payment account
+      - adding a new user
   account_change_indicator:
     type: string
     description: >
