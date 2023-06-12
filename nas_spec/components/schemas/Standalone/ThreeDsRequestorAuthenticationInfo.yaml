@@ -22,6 +22,6 @@ properties:
       Date and time (ISO 8601 UTC) of the cardholder authentication.
   three_ds_req_auth_data:
     type: string
-    description: >
+    description: Data that documents and supports a specific authentication process.
       Data that documents and supports a specific authentication process.
     maxLength: 20000
