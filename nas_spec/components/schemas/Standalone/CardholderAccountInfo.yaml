@@ -129,7 +129,7 @@ properties:
     description: The UTC date and time the shipping address used for the transaction was first used with the 3DS Requestor, in ISO 8601 format.
   account_type:
     type: string
-    description: >
+    description: The type of account, in the case of a card product with multiple accounts.
       Indicates the type of account. For example, for a multi-account card product.
     enum:
       - not_applicable
