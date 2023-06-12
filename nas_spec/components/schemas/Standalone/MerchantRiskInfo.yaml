@@ -47,7 +47,7 @@ properties:
       - reordered
   pre_order_purchase_indicator:
     type: string
-    description: >
+    description: Specifies whether the cardholder is placing an order for merchandise with an availability date or release date in the future.
       Indicates whether Cardholder is placing an order for merchandise with a future availability or release date.
     enum:
       - merchandise_available
