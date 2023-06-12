@@ -18,7 +18,7 @@ properties:
   three_ds_req_auth_timestamp:
     type: string
     format: date-time
-    description: >
+    description: The UTC date and time the cardholder authenticated with the 3DS Requestor, in ISO 8601 format.
       Date and time (ISO 8601 UTC) of the cardholder authentication.
   three_ds_req_auth_data:
     type: string
