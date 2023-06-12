@@ -65,7 +65,7 @@ properties:
       - fido
   cardholder_account_age_indicator:
     type: string
-    description: >
+    description: |
       Length of time since cardholder account was created with the 3DS Requestor.".
     enum:
       - no_account,
