@@ -100,7 +100,7 @@ properties:
   account_date:
     type: string
     format: date-time
-    description: >
+    description: The UTC date and time the cardholder opened the account with the 3DS Requestor, in ISO 8601 format.
   account_password_change:
     type: string
     format: date-time
