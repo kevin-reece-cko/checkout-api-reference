@@ -137,7 +137,6 @@ properties:
   account_id:
     type: string
     description: Additional information about the account optionally provided by the 3DS Requestor.
-      Additional information about the account optionally provided by the 3DS Requestor.
     maxLength: 64
   three_ds_requestor_authentication_info:
     $ref: '#/components/schemas/ThreeDsRequestorAuthenticationInfo'
