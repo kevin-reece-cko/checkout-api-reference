@@ -76,7 +76,7 @@ properties:
   account_change:
     type: string
     format: date-time
-    description: >
+    description: |
       Date (ISO 8601 UTC) that the cardholder’s account with the 3DS Requestor was last changed, including Billing or Shipping address, new payment account, or new user(s) added.
   account_change_indicator:
     type: string
