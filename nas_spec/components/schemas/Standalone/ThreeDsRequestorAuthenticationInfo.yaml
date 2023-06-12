@@ -4,7 +4,7 @@ description: >
 properties:
   three_ds_req_auth_method:
     type: string
-    description: >
+    description: The mechanism used by the cardholder to authenticate with the 3DS Requestor.
       Mechanism used by the Cardholder to authenticate to the 3DS Requestor.
     enum:
       - no_threeds_requestor_authentication_occurred,
