@@ -123,7 +123,6 @@ properties:
     type: string
     format: date-time
     description: The UTC date and time the payment account was enrolled in the cardholder’s account with the 3DS Requestor, in ISO 8601 format.
-      Date (ISO 8601 UTC) that the payment account was enrolled in the cardholder’s account with the 3DS Requestor.
   shipping_address_usage:
     type: string
     format: date-time
