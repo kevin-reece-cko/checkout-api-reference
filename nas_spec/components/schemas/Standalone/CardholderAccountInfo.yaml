@@ -85,7 +85,7 @@ properties:
       - adding a new user
   account_change_indicator:
     type: string
-    description: >
+    description: |
       The amount of time since the cardholder’s account information with the 3DS Requestor was last changed.
       
       Changes that affect this value include:
