@@ -127,7 +127,6 @@ properties:
     type: string
     format: date-time
     description: The UTC date and time the shipping address used for the transaction was first used with the 3DS Requestor, in ISO 8601 format.
-      Date (ISO 8601 UTC) when the shipping address used for this transaction was first used with the 3DS Requestor.
   account_type:
     type: string
     description: >
