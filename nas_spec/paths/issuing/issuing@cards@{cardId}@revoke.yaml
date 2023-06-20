@@ -2,10 +2,13 @@ post:
   tags:
   - Cards
   summary: Revoke a card
-  description: |
-    Revokes an `inactive`, `active`, or `suspended` card to permanently decline all incoming authorizations.
-    
+  description: 'Revokes an `inactive`, `active`, or `suspended` card to permanently
+    decline all incoming authorizations.
+
+
     This is a permanent action. Revoked cards cannot be reactivated.
+
+    '
   servers:
   - url: https://api.checkout.com/
     description: Live API

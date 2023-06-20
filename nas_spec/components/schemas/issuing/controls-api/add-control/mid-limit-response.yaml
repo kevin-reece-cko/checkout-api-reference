@@ -1,0 +1,11 @@
+type: object
+allOf:
+  - $ref: '#/components/schemas/add-control-response'
+  - type: object
+    properties:
+      mid_limit:
+        $ref: '#/components/schemas/MidLimit'
+      description:
+        example: Allow the card to be used only in AZ Pizza
+required:
+  - mid_limit

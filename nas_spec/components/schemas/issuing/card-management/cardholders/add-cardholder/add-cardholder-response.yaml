@@ -1,12 +1,18 @@
 type: object
 required:
   - id
+  - client_id
+  - entity_id
   - type
   - status
   - _links
 properties:
   id:
     $ref: '#/components/schemas/IssuingCardholderId'
+  client_id:
+    $ref: '#/components/schemas/IssuingClientId'
+  entity_id:
+    $ref: '#/components/schemas/IssuingEntityId'
   type:
     type: string
     description: The cardholder's type.

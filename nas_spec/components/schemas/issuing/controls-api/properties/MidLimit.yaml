@@ -1,0 +1,17 @@
+type: object
+description: The merchant identification number (MID) rule, which determines the merchants a card can process transactions from.
+required:
+  - mid_list
+  - type
+properties:
+  type:
+    type: string
+    enum: [allow, block]
+    description: Sets whether to allow or block the list of MIDs supplied.
+    example: allow
+  mid_list:
+    type: array
+    description: The list of merchant identification numbers (MID) to allow or block transactions from.
+    example: ["593278", "541114"]
+    items:
+      type: string

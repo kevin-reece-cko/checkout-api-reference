@@ -9,11 +9,11 @@ get:
   - url: https://api.sandbox.checkout.com/
     description: Sandbox API
   parameters:
-    - in: query
-      name: controlId
-      required: true
-      schema:
-        $ref: '#/components/schemas/IssuingControlId'
+  - in: query
+    name: controlId
+    required: true
+    schema:
+      $ref: '#/components/schemas/IssuingControlId'
   responses:
     '200':
       description: Control returned successfully
@@ -33,9 +33,9 @@ put:
   summary: Update a control
   description: Updates an existing card control.
   servers:
-  - url: https://api.checkout.com/issuing
+  - url: https://api.checkout.com
     description: Live API
-  - url: https://api.sandbox.checkout.com/issuing
+  - url: https://api.sandbox.checkout.com
     description: Sandbox API
   parameters:
   - in: path
@@ -74,14 +74,17 @@ delete:
   tags:
   - Card controls
   summary: Remove a control
-  description: |
-    Removes an existing card control from the card it was applied to.
-    
-    If you want to reapply an equivalent control to the card, you'll need to create a new control.
+  description: 'Removes an existing card control from the card it was applied to.
+
+
+    If you want to reapply an equivalent control to the card, you''ll need to create
+    a new control.
+
+    '
   servers:
-  - url: https://api.checkout.com/issuing
+  - url: https://api.checkout.com
     description: Live API
-  - url: https://api.sandbox.checkout.com/issuing
+  - url: https://api.sandbox.checkout.com
     description: Sandbox API
   parameters:
   - in: path
