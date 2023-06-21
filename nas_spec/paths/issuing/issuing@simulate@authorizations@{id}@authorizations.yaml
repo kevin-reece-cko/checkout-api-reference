@@ -2,10 +2,14 @@ post:
   tags:
   - Card testing
   summary: Simulate incrementing an authorization
-  description: |
-    Simulate an incremental authorization request for an existing approved transaction.
+  description: 'Simulate an incremental authorization request for an existing approved
+    transaction.
 
-    Incremental authorizations increase the total authorized amount of the transaction. For example, adding a restaurant bill to an existing hotel booking.
+
+    Incremental authorizations increase the total authorized amount of the transaction.
+    For example, adding a restaurant bill to an existing hotel booking.
+
+    '
   servers:
   - url: https://api.sandbox.checkout.com/
     description: Sandbox API

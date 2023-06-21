@@ -5,6 +5,7 @@ discriminator:
   mapping:
     velocity_limit: '#/components/schemas/get-control-velocity-limit-response'
     mcc_limit: '#/components/schemas/get-control-mcc-limit-response'
+    mid_limit: '#/components/schemas/get-control-mid-limit-response'
 required:
   - id
   - target_id

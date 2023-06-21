@@ -16,3 +16,41 @@ allOf:
           Sets whether to activate the newly created card upon creation.
         
           If set to `false`, the cardholder will not be able to process transactions until you activate the card.
+      return_credentials:
+        type: array
+        items:
+          type: string
+          enum:
+            - number
+            - cvc2
+        description: |
+            The credentials to retrieve on card creation.
+        example: ["number","cvc2"]
+      controls:
+        type: array
+        description: The controls that will be set on the card.
+        items:
+          $ref: '#/components/schemas/add-virtual-card-control-request'
+        example:
+          [
+            {
+                "description": "50 euros daily",
+                "control_type": "velocity_limit",
+                "velocity_limit": {
+                    "amount_limit": 5000,
+                    "velocity_window": {
+                        "type": "daily"
+                    }
+                }
+            },
+            {
+              "description": "Block gambling",
+              "control_type": "mcc_limit",
+              "mcc_limit": {
+                  "type": "block",
+                  "mcc_list": [
+                      "7995"
+                  ]
+              }
+            }
+          ]

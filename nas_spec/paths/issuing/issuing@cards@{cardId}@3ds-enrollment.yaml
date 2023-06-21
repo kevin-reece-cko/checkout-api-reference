@@ -2,14 +2,16 @@ post:
   tags:
   - Cards
   summary: Enroll a card in 3DS
-  description: |
-    Enrolls a card in <a href="https://www.checkout.com/docs/risk-management/3d-secure">3D Secure</a> (3DS).
-    
-    3DS provides an additional layer of security for your cardholders' online payments, reducing the risk of fraud and subsequent chargeback requests.
-    
-    To enroll your issued cards, you must provide authentication data for the cards. This information is requested from the cardholder through a 3DS challenge when performing a transaction.
-    
-    Two-factor authentication (2FA) is supported. For maximum security, we recommend using a combination of a one-time password (OTP) sent via SMS, along with a password or question and answer security pair.
+  description: 'Enrolls a card in <a href="https://www.checkout.com/docs/risk-management/3d-secure">3D
+    Secure</a> (3DS). Additional information is requested from the cardholder through
+    a 3DS challenge when performing a transaction.
+
+
+    Two-factor authentication (2FA) is supported. For maximum security, we recommend
+    using a combination of a one-time password (OTP) sent via SMS, along with a password
+    or question and answer security pair.
+
+    '
   servers:
   - url: https://api.checkout.com/
     description: Live API
@@ -54,9 +56,9 @@ patch:
   summary: Update a card's 3DS details
   description: Updates a card's 3DS enrollment details.
   servers:
-  - url: https://api.checkout.com/issuing
+  - url: https://api.checkout.com/
     description: Live API
-  - url: https://api.sandbox.checkout.com/issuing
+  - url: https://api.sandbox.checkout.com/
     description: Sandbox API
   parameters:
   - in: path
@@ -95,9 +97,9 @@ get:
   summary: Get a card's 3DS enrollment details
   description: Retrieves a card's 3DS enrollment details.
   servers:
-  - url: https://api.checkout.com/issuing
+  - url: https://api.checkout.com/
     description: Live API
-  - url: https://api.sandbox.checkout.com/issuing
+  - url: https://api.sandbox.checkout.com/
     description: Sandbox API
   parameters:
   - in: path

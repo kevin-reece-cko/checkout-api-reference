@@ -18,6 +18,11 @@ properties:
     $ref: '#/components/schemas/CardLifetime'
   reference:
     $ref: '#/components/schemas/IssuingReference'
+  metadata:
+    description: User's metadata
+    $ref: '#/components/schemas/IssuingCardMetadata'
+  revocation_date:
+    $ref: '#/components/schemas/IssuingRevocationDate'
   card_product_id:
     description: The card product's unique identifier. This field is required if there are multiple card products associated with the entity.
     allOf:

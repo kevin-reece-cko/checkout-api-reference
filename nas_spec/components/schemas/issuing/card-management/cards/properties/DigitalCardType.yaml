@@ -1,0 +1,10 @@
+description: |
+  The type of digital card
+type: string
+enum:
+  - secure_element
+  - host_card_emulation
+  - card_on_file
+  - e_commerce
+  - qr_code
+example: secure_element

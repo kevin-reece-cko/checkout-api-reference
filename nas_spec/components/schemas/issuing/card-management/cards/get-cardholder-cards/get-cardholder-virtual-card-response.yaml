@@ -1,9 +1,0 @@
-type: object
-allOf:
-  - $ref: '#/components/schemas/get-cardholder-card-response'
-  - type: object
-    properties:
-      is_single_use:
-        type: bool
-        description: Specifies whether the virtual card is set to expire after a single use.
-        default: false

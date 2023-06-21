@@ -6,8 +6,9 @@ discriminator:
     virtual: '#/components/schemas/get-virtual-card-response'
 required:
   - id
-  - cardholder_id
   - client_id
+  - entity_id
+  - cardholder_id
   - card_product_id
   - last_four
   - expiry_month
@@ -21,12 +22,14 @@ required:
 properties:
   id:
     $ref: '#/components/schemas/IssuingCardId'
+  client_id:
+    $ref: '#/components/schemas/IssuingClientId'
+  entity_id:
+    $ref: '#/components/schemas/IssuingEntityId'
   cardholder_id:
     $ref: '#/components/schemas/IssuingCardholderId'
   card_product_id:
     $ref: '#/components/schemas/IssuingCardProductId'
-  client_id:
-    $ref: '#/components/schemas/IssuingClientId'
   last_four:
     $ref: '#/components/schemas/LastFour'
   expiry_month:
@@ -45,6 +48,10 @@ properties:
     $ref: '#/components/schemas/IssuingCountry'
   reference:
     $ref: '#/components/schemas/IssuingReference'
+  metadata:
+    $ref: '#/components/schemas/IssuingCardMetadata'
+  revocation-date:
+    $ref: '#/components/schemas/IssuingRevocationDate'
   created_date:
     $ref: '#/components/schemas/Datetime'
   last_modified_date:

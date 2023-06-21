@@ -2,10 +2,13 @@ post:
   tags:
   - Cards
   summary: Suspend a card
-  description: |
-    Suspends an `active` or `inactive` card to temporarily decline all incoming authorizations.
+  description: 'Suspends an `active` or `inactive` card to temporarily decline all
+    incoming authorizations.
+
 
     A `suspended` card can be reactivated.
+
+    '
   servers:
   - url: https://api.checkout.com/
     description: Live API

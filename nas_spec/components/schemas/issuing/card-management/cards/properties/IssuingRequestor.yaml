@@ -1,0 +1,10 @@
+type: object
+properties:
+  id: 
+    type: string
+    description: The requestor ID.
+    example: "501103353211"
+  name:
+    type: string
+    description: The requestor name.
+    example: APPLE PAY

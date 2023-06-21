@@ -2,10 +2,12 @@ get:
   tags:
   - Cardholders
   summary: Get a cardholder's cards
-  description: | 
-    Retrieves the cards issued to the specified cardholder.
-    
+  description: 'Retrieves the cards issued to the specified cardholder.
+
+
     Card credentials are not returned in the response.
+
+    '
   servers:
   - url: https://api.checkout.com/
     description: Live API

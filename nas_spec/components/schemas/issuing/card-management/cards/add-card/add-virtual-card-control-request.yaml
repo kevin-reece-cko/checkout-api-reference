@@ -1,0 +1,17 @@
+type: object
+description: The control to create.
+discriminator:
+  propertyName: control_type
+  mapping:
+    velocity_limit: '#/components/schemas/add-virtual-card-control-velocity-limit-request'
+    mcc_limit: '#/components/schemas/add-virtual-card-control-mcc-limit-request'
+    mid_limit: '#/components/schemas/add-virtual-card-control-mid-limit-request'
+required:
+  - control_type
+properties:
+  description:
+    type: string
+    maxLength: 256
+    description: A description for the control.
+  control_type:
+    $ref: '#/components/schemas/IssuingControlType'
