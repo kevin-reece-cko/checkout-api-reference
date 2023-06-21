@@ -1,0 +1,90 @@
+type: object
+properties:
+  id: 
+    type: string
+    description: The device ID.
+    example: 04431C7B514E80018306224737548585F11415F67C4E2EB6
+  type:
+    type: string
+    description: The device type.
+    enum:
+      - host_card_emulation
+      - samsung_phone
+      - samsung_tablet
+      - samsung_watch
+      - samsung_tv
+      - iphone
+      - iwatch
+      - ipad
+      - mac_book
+      - android_phone
+      - android_tablet
+      - android_watch
+      - mobile_phone
+      - tablet
+      - watch
+      - mobile_phone_or_tablet
+      - bracelet
+      - unknown
+    example: iphone
+  manufacturer:
+    type: string
+    description: The device manufacturer.
+    example: ios
+  brand:
+    type: string
+    description: The device brand.
+  model:
+    type: string
+    description: The device model.
+  os_version:
+    type: string
+    description: The device operating system version.
+    example: "13"
+  firmware_version:
+    type: string
+    description: The device firmware version.
+  phone_number:
+    type: string
+    description: The device phone number.
+    example: "447505551234"
+  device_name:
+    type: string
+    description: The device name.
+    example: John's iPhone
+  device_parent_id:
+    type: string
+    description: The device parent ID.
+  language:
+    type: string
+    description: The device language.
+  serial_number:
+    type: string
+    description: The device serial number.
+  time_zone:
+    type: string
+    description: The device time zone.
+  time_zone_setting:
+    type: string
+    description: The device time zone setting.
+    enum:
+      - network_set
+      - consumer_set
+    example: network_set
+  sim_serial_number:
+    type: string
+    description: The device SIM serial number.
+  imei:
+    type: string
+    description: The device International Mobile Equipment Identity (IMEI) number.
+    example: "000000000000024"
+  network_operator:
+    type: string
+    description: The device network operator.
+  network_type:
+    type: string
+    description: The device network type.
+    enum:
+      - cellular
+      - wifi
+    example: wifi

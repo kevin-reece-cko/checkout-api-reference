@@ -2,7 +2,8 @@ post:
   tags:
   - Cards
   summary: Activate a card
-  description: Activates an `inactive` or `suspended` card so that incoming authorizations can be approved.
+  description: Activates an `inactive` or `suspended` card so that incoming authorizations
+    can be approved.
   servers:
   - url: https://api.checkout.com/
     description: Live API

@@ -13,3 +13,5 @@ properties:
     $ref: '#/components/schemas/VelocityLimit'
   mcc_limit:
     $ref: '#/components/schemas/MccLimit'
+  mid_limit:
+    $ref: '#/components/schemas/MidLimit'

@@ -1,0 +1,28 @@
+type: object
+required:
+  - id
+  - card_id
+  - client_id
+  - last_four
+  - status
+  - type
+properties:
+  id:
+    $ref: '#/components/schemas/IssuingDigitalCardId'
+  card_id:
+    $ref: '#/components/schemas/IssuingCardId'
+  client_id:
+    $ref: '#/components/schemas/IssuingClientId'
+  last_four:
+    $ref: '#/components/schemas/LastFour'
+  status:
+    $ref: '#/components/schemas/IssuingDigitalStatus'
+  type:
+    $ref: '#/components/schemas/DigitalCardType'
+  requestor:
+    $ref: '#/components/schemas/IssuingRequestor'
+  device:
+    $ref: '#/components/schemas/IssuingDevice'
+  _links:
+    allOf:
+      - $ref: '#/components/schemas/DigitalCardLinks' 

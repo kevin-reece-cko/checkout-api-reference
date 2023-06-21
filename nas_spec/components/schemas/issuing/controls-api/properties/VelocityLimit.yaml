@@ -16,3 +16,9 @@ properties:
     example: ["4121", "4582"]
     items:
       type: string
+  mid_list:
+    type: array
+    description: The list of merchant identification numbers (MID) to allow or block transactions from. Note that `mcc_list` and `mid_list` cannot be set together.
+    example:
+    items:
+      type: string

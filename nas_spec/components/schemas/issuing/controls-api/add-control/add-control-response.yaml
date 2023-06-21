@@ -5,6 +5,7 @@ discriminator:
   mapping:
     velocity_limit: '#/components/schemas/velocity-limit-response'
     mcc_limit: '#/components/schemas/mcc-limit-response'
+    mid_limit: '#/components/schemas/mid-limit-response'
 required:
   - id
   - control_type
@@ -18,7 +19,6 @@ properties:
     type: string
     maxLength: 256
     description: A description for the control.
-    example: Max spend of 500€ per week for restaurants
   control_type:
     $ref: '#/components/schemas/IssuingControlType'
   target_id:

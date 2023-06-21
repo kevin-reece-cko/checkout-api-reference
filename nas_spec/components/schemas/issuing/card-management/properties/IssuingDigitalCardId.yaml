@@ -1,0 +1,6 @@
+type: string
+pattern: "^dcr_[a-z0-9]{26}$"
+description: The digital card's unique identifier.
+maxLength: 30
+minLength: 30
+example: dcr_5ngxzsynm2me3oxf73esbhda6q

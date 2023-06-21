@@ -5,6 +5,7 @@ discriminator:
   mapping:
     velocity_limit: '#/components/schemas/velocity-limit-response'
     mcc_limit: '#/components/schemas/mcc-limit-response'
+    mid_limit: '#/components/schemas/mid-limit-response'
 required:
   - id
   - control_type

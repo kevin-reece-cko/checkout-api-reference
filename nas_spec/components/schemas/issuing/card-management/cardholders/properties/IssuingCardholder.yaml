@@ -1,6 +1,8 @@
 type: object
 required:
   - id
+  - client_id
+  - entity_id
   - type
   - first_name
   - last_name
@@ -52,15 +54,20 @@ properties:
     $ref: '#/components/schemas/IssuingAddress'
   reference:
     $ref: '#/components/schemas/IssuingReference'
+  client_id:
+    $ref: '#/components/schemas/IssuingClientId'
   account_entity_id:
-    description: The ID of the entity that holds the cardholder's currency account.
-    $ref: '#/components/schemas/IssuingEntityId'
+    description: The unique identifier of the entity that holds the cardholder's currency account.
+    allOf: # This is a workaround to support ref sibling, we should remove it once Microsoft.OpenApi support Open API 3.1.0 (https://github.com/microsoft/OpenAPI.NET/issues/795)
+      - $ref: '#/components/schemas/IssuingEntityId'
   parent_sub_entity_id:
-    description: The ID of the cardholder's parent sub-entity, if they have one.
-    $ref: '#/components/schemas/IssuingEntityId'
+    description: The unique identifier of the cardholder's parent sub-entity, if they have one.
+    allOf:
+      - $ref: '#/components/schemas/IssuingEntityId'
   entity_id:
-    description: The ID of the cardholder's root client entity. 
-    $ref: '#/components/schemas/IssuingEntityId'
+    description: The unique identifier of the cardholder's root client entity. 
+    allOf:
+      - $ref: '#/components/schemas/IssuingEntityId'
   created_date:
     type: string
     format: datetime

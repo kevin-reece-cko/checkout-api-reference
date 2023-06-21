@@ -1,4 +1,0 @@
-type: object
-allOf:
-  - $ref: '#/components/schemas/get-cardholder-card-response'
-  - type: object

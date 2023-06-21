@@ -5,5 +5,7 @@ allOf:
     properties:
       mcc_limit:
         $ref: '#/components/schemas/MccLimit'
+      description:
+        example: Allow the card to be used only in restaurants and supermarkets 
 required:
   - mcc_limit

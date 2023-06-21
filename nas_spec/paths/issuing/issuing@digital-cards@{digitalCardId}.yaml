@@ -1,11 +1,8 @@
 get:
   tags:
-  - Cards
-  summary: Get card details
-  description: 'Retrieves the details for a card you issued previously.
-
-
-    The card''s credentials are not returned in the response.
+  - Digital Cards
+  summary: Get digital card details
+  description: 'Retrieves the details for a digital card.
 
     '
   servers:
@@ -15,20 +12,20 @@ get:
     description: Sandbox API
   parameters:
   - in: path
-    name: cardId
+    name: digitalCardId
     required: true
     schema:
-      $ref: '#/components/schemas/IssuingCardId'
+      $ref: '#/components/schemas/IssuingDigitalCardId'
   responses:
     '200':
-      description: Card returned successfully
+      description: Digital card returned successfully
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/get-card-response'
+            $ref: '#/components/schemas/get-digital-card-response'
     '401':
       description: Unauthorized
     '404':
-      description: Card not found
+      description: Digital card not found
     '500':
       description: Internal Server Error

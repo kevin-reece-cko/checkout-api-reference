@@ -1,10 +1,10 @@
 description: |
   The card's current status, which determines whether it can approve incoming authorizations:
   
-  - `inactive`: the default state. Authorizations will be declined until the card is activated.
-  - `active`: authorization requests can be approved.
-  - `suspended`: incoming authorization requests will be declined. The card can be reactivated to accept new authorizations.
-  - `revoked`: incoming authorization requests will be declined, permanently. The card cannot be reactivated from this state.
+  - `inactive`: the default state - authorizations will be declined until the card is activated
+  - `active`: authorization requests can be approved
+  - `suspended`: incoming authorization requests will be declined - the card can be reactivated to accept new authorizations
+  - `revoked`: incoming authorization requests will be permanently declined - the card cannot be reactivated from this state
 type: string
 enum:
   - active
