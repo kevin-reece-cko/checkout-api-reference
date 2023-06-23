@@ -13,7 +13,7 @@ properties:
   attempt_n3d:
     type: boolean
     description: |
-      Determines whether to attempt a 3D Secure payment as non-3D Secure if the card issuer is not enrolled, or there is a technical issue during authentication
+      Specifies whether to attempt a 3D Secure payment as non-3D Secure if the card issuer is not enrolled, or there is a technical issue during authentication
     default: false
     example: true
   exemption:
