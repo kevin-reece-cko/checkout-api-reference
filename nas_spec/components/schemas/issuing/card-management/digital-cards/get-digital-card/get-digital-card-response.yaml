@@ -3,6 +3,7 @@ required:
   - id
   - card_id
   - client_id
+  - entity_id
   - last_four
   - status
   - type
@@ -13,6 +14,8 @@ properties:
     $ref: '#/components/schemas/IssuingCardId'
   client_id:
     $ref: '#/components/schemas/IssuingClientId'
+  entity_id:
+    $ref: '#/components/schemas/IssuingEntityId'
   last_four:
     $ref: '#/components/schemas/LastFour'
   status:
