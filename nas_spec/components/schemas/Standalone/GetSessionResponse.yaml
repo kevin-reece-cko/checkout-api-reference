@@ -150,6 +150,28 @@ properties:
       - no_challenge_requested
       - challenge_requested
       - challenge_requested_mandate
+  optimization:
+    type: object
+    description: >
+      The information about the optimization options selected
+    properties:
+      optimized:
+        type: boolean
+        description: >
+          Indicates if any optimization has been applied
+        example: true
+      framework:
+        type: string
+        description: > 
+          The optimization framework applied
+        enum:
+          - acceptance_rates
+      optimized_properties:
+        type: array
+        title: OptimizedProperty
+        description: The collection of fields optimized
+        items:
+          $ref: '#/components/schemas/OptimizedProperty'
   scheme_info:
     type: object
     description: Indicates scheme-specific information

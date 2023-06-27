@@ -2,6 +2,7 @@
 
 | Date       | Description of change                                                                                                   |
 |------------|-------------------------------------------------------------------------------------------------------------------------|
+| 2023/06/26 | Added `optimization` object to Authentication request and responses                                                                     |
 | 2023/06/21 | Added new card testing endpoint to simulate refunds for Issuing
 | 2023/06/14 | Added new props in `CardholderAccountInfo` and `MerchantRiskInfo`, and new object `ThreeDsRequestorAuthenticationInfo`  |
 | 2023/06/05 | Added LocalBillingDescriptor to NAS spec  

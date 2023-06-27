@@ -1,0 +1,10 @@
+type: object
+description: >
+  Optionally opt into request optimization
+properties:
+  framework:
+    type: string
+    description: >
+      The theme-based option for optimization
+    enum:
+      - acceptance_rates
