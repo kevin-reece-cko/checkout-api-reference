@@ -1,0 +1,14 @@
+type: object
+description: The account holder details
+required:
+  - first_name
+  - last_name
+properties:
+  first_name:
+    description: The first name of the account holder
+    type: string
+    example: 'John'
+  last_name:
+    description: The last name of the account holder
+    type: string
+    example: 'Smith'
