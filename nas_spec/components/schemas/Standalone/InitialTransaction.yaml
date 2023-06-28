@@ -1,4 +1,5 @@
 type: object
+description: Details of a previous transaction
 properties:
   acs_transaction_id:
     type: string

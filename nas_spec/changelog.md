@@ -2,6 +2,7 @@
 
 | Date       | Description of change                                                                                                   |
 |------------|-------------------------------------------------------------------------------------------------------------------------|
+| 2023/06/28 | Added `InitialTransaction` to `SessionRequest`                                                                           |
 | 2023/06/28 | Added new `MerchantInitiated` channel type and new object `InitialTransaction`                                          |
 | 2023/06/28 | Added `account_holder` object to Giropay payment create request and get payment response                                |
 | 2023/06/26 | Added `optimization` object to Authentication request and responses                                                     |
