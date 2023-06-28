@@ -94,6 +94,8 @@ properties:
     $ref: '#/components/schemas/Recurring'
   installment:
     $ref: '#/components/schemas/Installment'
+  initial_transaction:
+    $ref: '#/components/schemas/InitialTransaction'
   customer_ip:
     type: string
     description: >
