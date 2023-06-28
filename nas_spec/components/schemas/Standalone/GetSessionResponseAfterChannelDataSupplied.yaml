@@ -62,6 +62,8 @@ properties:
     $ref: '#/components/schemas/Reference'
   transaction_type:
     $ref: '#/components/schemas/TransactionType'
+  initial_transaction:
+    $ref: '#/components/schemas/InitialTransaction'
   next_actions:
     $ref: '#/components/schemas/NextActions'
   ds:

@@ -62,6 +62,9 @@ properties:
       • currency_not_supported = An American Express SE number is not associated with the currency in the request. <br/>
       • scheme_outage = With error type `operation_not_allowed`. This is returned when there is a technical issue on the scheme's platform. <br/>
       • session_already_in_use = With error type `duplicate_requests_detected`. More than one action requests have been sent in parallel for the same session. <br/><br/>
+      • merchant_initiated_request_not_supported_by_3ds_protocol = With error type `unprocessable_entity`. The merchant-initiated request is not supported by the selected 3DS protocol version. <br/>
+      • initial_session_not_found = With error type `unprocessable_entity`. A previous session could not be found with the provided initial session ID. <br/>
+      • initial_session_invalid = With error type `unprocessable_entity`. The previous session was not valid to be used as an initial transaction. <br/>
 
       Also, there is a number of generic error codes as described below: <br/>
       • some_field_required = Usually with an error type `unprocessable_entity`. The field `some_field` is required but not provided in the payload. <br/>
