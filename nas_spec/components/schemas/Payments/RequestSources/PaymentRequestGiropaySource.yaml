@@ -4,3 +4,6 @@ required:
 allOf:
   - $ref: '#/components/schemas/PaymentRequestSource'
   - type: object
+    properties:
+      account_holder:
+        $ref: '#/components/schemas/AccountHolderGiropay'

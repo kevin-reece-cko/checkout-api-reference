@@ -13,3 +13,5 @@ allOf:
         maxLength: 27
         type: string
         description: "Purpose of the payment as appearing on customer's bank statement."
+      account_holder:
+        $ref: '#/components/schemas/AccountHolderGiropay'
