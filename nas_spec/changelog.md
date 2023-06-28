@@ -2,9 +2,12 @@
 
 | Date       | Description of change                                                                                                   |
 |------------|-------------------------------------------------------------------------------------------------------------------------|
-| 2023/06/21 | Added new card testing endpoint to simulate refunds for Issuing
+| 2023/06/28 | Added new `MerchantInitiated` channel type and new object `InitialTransaction`                                          |
+| 2023/06/28 | Added `account_holder` object to Giropay payment create request and get payment response                                |
+| 2023/06/26 | Added `optimization` object to Authentication request and responses                                                     |
+| 2023/06/21 | Added new card testing endpoint to simulate refunds for Issuing                                                         |
 | 2023/06/14 | Added new props in `CardholderAccountInfo` and `MerchantRiskInfo`, and new object `ThreeDsRequestorAuthenticationInfo`  |
-| 2023/06/05 | Added LocalBillingDescriptor to NAS spec  
+| 2023/06/05 | Added LocalBillingDescriptor to NAS spec                                                                                |
 | 2023/05/31 | Removed Forex Quotes endpoint                                                                                           |
 | 2023/05/23 | Added new card testing endpoint to simulate clearing for Issuing                                                        |
 | 2023/05/17 | Added new card testing endpoints to simulate pre/incremental authorizations and reversals for Issuing                   |

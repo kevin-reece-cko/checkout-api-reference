@@ -6,6 +6,7 @@ discriminator:
   mapping:
     browser: '#/components/schemas/Browser'
     app: '#/components/schemas/App'
+    merchant_initiated: '#/components/schemas/MerchantInitiated'
 properties:
   channel:
     type: string
