@@ -2,15 +2,16 @@
 
 | Date       | Description of change                                                                                                                   |
 |------------|-----------------------------------------------------------------------------------------------------------------------------------------|
+| 2023/07/03 | Removed `charge id`, `track id`, and `reference` from Retrieve Events endpoint                                                           |
 | 2023/06/26 | Added `optimization` object to Authentication request and responses                                                                     |
 | 2023/03/07 | Updated `recipient.account_number` max length to 34 and amended description                                                             |
 | 2023/03/08 | Added `Go` code samples for both ABC and NAS                                                                                            |
-| 2023/02/24 | Removing `to` and `from` fields from Notifications > Events.
-| 2023/02/24 | Removing XML support for Notifications > Webhooks.
-| 2023/02/22 | Added `3ds.exemption` and `3ds.allow_upgrade` to Hosted Payments Page and Payment Links.
+| 2023/02/24 | Removed `to` and `from` fields from Notifications > Events                                                                            |
+| 2023/02/24 | Removed XML support for Notifications > Webhooks                                                                                      |
+| 2023/02/22 | Added `3ds.exemption` and `3ds.allow_upgrade` to Hosted Payments Page and Payment Links                                                |
 | 2023/02/10 | Added `resolved_reason` to get all disputes response for NAS and MBC.                                                                   |
 | 2023/02/07 | Added Portuguese and Greek locale options to Hosted Payments Page and Payment Links                                                     |
-| 2023/01/25 | Added `Unscheduled` payment_type to payment request
+| 2023/01/25 | Added `Unscheduled` payment_type to payment request                                                                                     |
 | 2023/01/24 | Added `WebhookRequestPut` & `WebhookRequestPatch` to distinguish between the required parameters for each request                       |
 | 2023/01/16 | Added `recipient.first_name` to ABC API Spec.                                                                                           |
 | 2022/09/29 | Added new GET Payments endpoint                                                                                                         |
