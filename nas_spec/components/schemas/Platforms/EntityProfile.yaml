@@ -27,8 +27,17 @@ properties:
   default_holding_currency:
     type: string
     description: |
-      The ISO 4217 currency code this sub-entity wants to hold funds in. Payments processed on behalf of this sub-entity will be routed to and held in this currency. <strong>This only applies if you have the Full account type.</strong><br><br>For example, the currency code 'AUD' represents the Australian Dollar in Australia. For more information, check out our <a href="https://www.checkout.com/docs/resources/codes/currency-codes" target="_blank">documentation on currency codes</a>.
+      The ISO 4217 currency code for the currency that payments will be routed to and held in, if processed on behalf of this sub-entity. For example, the currency code 'AUD' represents the Australian Dollar in Australia. Only applies if you have the Full account type.<br><br>For more information, see our <a href="https://www.checkout.com/docs/resources/codes/currency-codes" target="_blank">currency codes documentation</a>.
     format: ISO 4217
     minLength: 3
     maxLength: 3
     example: 'GBP'
+  holding_currencies:
+    type: array
+    description: |
+      The ISO 4217 currency codes for the currencies this sub-entity wants to hold funds in. For example, the currency code 'AUD' represents the Australian Dollar in Australia. Only applies if you have the Full account type.<br><br>For more information, see our <a href="https://www.checkout.com/docs/resources/codes/currency-codes" target="_blank">currency codes documentation</a>.
+    items:
+      format: ISO 4217
+      minLength: 3
+      maxLength: 3
+    example: [ 'GBP', 'EUR' ]
