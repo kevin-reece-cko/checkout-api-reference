@@ -1,0 +1,10 @@
+type: object
+properties:
+  reason:
+    description: The reason why the card is being revoked.
+    type: string
+    enum:
+      - expired
+      - reported_lost
+      - reported_stolen
+    example: reported_lost

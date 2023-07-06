@@ -1,0 +1,6 @@
+type: string
+pattern: "^cli_[a-z0-9]{26}$"
+description: The client's unique identifier.
+maxLength: 30
+minLength: 30
+example: cli_vkuhvk4vjn2edkps7dfsq6emqm

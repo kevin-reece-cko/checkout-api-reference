@@ -46,3 +46,7 @@ properties:
     description: The shipping information for the payment capture. Maximum 500 items.
     items:
       $ref: '#/components/schemas/ShippingInfo'
+  purchase_country:
+    type: string
+    description: The country where the goods are purchased or the seller is based. ISO 3166 alpha-2 purchase country code.
+    example: GB

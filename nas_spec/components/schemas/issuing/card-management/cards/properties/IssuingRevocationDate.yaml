@@ -1,0 +1,3 @@
+type: string
+description: Date for the card to be automatically revoked. Must be after the current date and date only in the form `yyyy-mm-dd`.
+example: "2027-03-12"

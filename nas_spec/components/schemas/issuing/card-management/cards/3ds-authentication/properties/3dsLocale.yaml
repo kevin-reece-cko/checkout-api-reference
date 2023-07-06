@@ -1,0 +1,11 @@
+type: string
+enum: [en-US, fr-FR]
+description: |
+  The card's locale, as one of the possible ISO 639-2 formatted enum values. 
+  
+  The locale determines the language that text messages and 3DS challenge prompts are displayed to the user in, as well as the format used for amounts and dates.
+format: language-COUNTRY
+example: en-US
+pattern: ^[a-z]{2}-[A-Z]{2}$
+maxLength: 5
+minLength: 5

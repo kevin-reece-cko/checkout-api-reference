@@ -98,16 +98,22 @@ get:
   parameters:
     - name: payment_id
       in: query
-      description: The ID of the payment you want to retrieve financial actions for. Required if `action_id` is not used.
+      description: The ID of the payment you want to retrieve financial actions for. Required if `action_id` or `reference` are not used.
       schema:
         type: string
         example: pay_qqufsd3rfnqufngwklghlxrzpm
     - name: action_id
       in: query
-      description: The ID of the action you want to retrieve financial actions for. Required if `payment_id` is not used.
+      description: The ID of the action you want to retrieve financial actions for. Required if `payment_id` or `reference` are not used.
       schema:
         type: string
         example: act_wsnyzbzmr2huxcekoj7qqhxwuy
+    - name: reference
+      in: query
+      description: An optional ID you submit in the gateway request to retrieve financial actions for. Required if `payment_id` or `action_id` are not used.
+      schema:
+        type: string
+        example: '8f13507d-60e1-455d-b700-4f1b39a35e23'
     - name: limit
       in: query
       description: The number of results to retrieve per page. </br> For example, if the total result count is 50, and you use `limit=10`, you will need to iterate over 5 pages containing 10 results each to retrieve all of the reports that match your query.

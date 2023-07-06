@@ -1,0 +1,9 @@
+type: object
+required:
+  - cards
+properties:
+  cards:
+    type: array
+    description: The list of cards associated with the specified cardholder.
+    items:
+      $ref: '#/components/schemas/get-card-response'

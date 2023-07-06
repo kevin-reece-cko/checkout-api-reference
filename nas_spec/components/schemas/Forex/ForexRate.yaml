@@ -1,0 +1,11 @@
+type: object
+properties:
+  exchange_rate:
+    description: The FX rate with Checkout.com margin applied. Up to eight decimal places provided in response.
+    type: number
+    format: double
+    example: '1.14208777'
+  currency_pair:
+    description: Currency pair
+    type: string
+    example: 'GBPUSD'

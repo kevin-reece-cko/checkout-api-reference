@@ -46,6 +46,13 @@ post:
               document:
                 type: bank_statement
                 file_id: file_wxglze3wwywujg4nna5fb7ldli
+          CardToken:
+            value:
+              label: Carol's Card
+              type: card_token
+              currency: GBP
+              instrument_details:
+                token: tok_ru6xnh53uovethkr2gy3gwpl2a
   security:
     - OAuth:
         - accounts

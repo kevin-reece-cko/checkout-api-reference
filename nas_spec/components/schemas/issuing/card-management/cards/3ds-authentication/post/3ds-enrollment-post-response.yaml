@@ -1,0 +1,12 @@
+type: object
+description: The card's 3DS authentication details.
+required:
+  - created_date
+properties:
+  created_date:
+    type: string
+    format: datetime
+    example: "2019-09-10T10:11:12Z"
+  _links:
+    allOf:
+      - $ref: '#/components/schemas/3dsLink'

@@ -1,0 +1,6 @@
+type: string
+pattern: "^ent_[a-z0-9]{26}$"
+description: The entity's unique identifier.
+maxLength: 30
+minLength: 30
+example: ent_fa6psq242dcd6fdn5gifcq1491

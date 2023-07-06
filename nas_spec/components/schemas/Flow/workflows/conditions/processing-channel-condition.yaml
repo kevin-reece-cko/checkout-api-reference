@@ -6,7 +6,7 @@ allOf:
   - $ref: '#/components/schemas/workflow-condition'
   - type: object
     required:
-      - processing_channels
+      - processing-channels
     properties:
       processing_channels:
         $ref: '#/components/schemas/source-processing-channel-hashmap'

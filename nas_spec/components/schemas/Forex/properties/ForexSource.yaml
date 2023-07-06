@@ -1,0 +1,6 @@
+type: string
+enum: 
+  - visa
+  - mastercard
+description: The source of provided rates
+example: 'visa'

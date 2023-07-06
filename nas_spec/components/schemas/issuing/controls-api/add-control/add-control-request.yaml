@@ -1,0 +1,20 @@
+type: object
+description: The control to create.
+discriminator:
+  propertyName: control_type
+  mapping:
+    velocity_limit: '#/components/schemas/velocity-limit-request'
+    mcc_limit: '#/components/schemas/mcc-limit-request'
+    mid_limit: '#/components/schemas/mid-limit-request'
+required:
+  - control_type
+  - target_id
+properties:
+  description:
+    type: string
+    maxLength: 256
+    description: A description for the control.
+  control_type:
+    $ref: '#/components/schemas/IssuingControlType'
+  target_id:
+    $ref: '#/components/schemas/IssuingTargetId'

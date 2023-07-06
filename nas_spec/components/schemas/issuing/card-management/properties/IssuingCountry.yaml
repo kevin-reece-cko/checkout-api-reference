@@ -1,0 +1,5 @@
+type: string
+description: The issuing country, as a two-letter <a href="https://www.checkout.com/docs/resources/codes/country-codes" target="blank" >ISO country code</a>.
+example: US
+maxLength: 2
+minLength: 2

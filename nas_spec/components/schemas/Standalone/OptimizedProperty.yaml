@@ -1,0 +1,19 @@
+type: object
+description: >
+  Optionally opt into request optimization
+properties:
+  field:
+    type: string
+    description: >
+      Name of the field which has been optimized.
+    example: challenge_indicator
+  original_value:
+    type: string
+    description: >
+      Value prior to optimization.
+    example: trusted_listing
+  optimized_value:
+    type: string
+    description: >
+      Value prior to optimization.
+    example: transaction_risk_assessment

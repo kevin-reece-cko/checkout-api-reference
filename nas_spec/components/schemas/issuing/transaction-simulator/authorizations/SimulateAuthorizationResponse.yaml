@@ -1,0 +1,19 @@
+type: object
+description: Authorization Response.
+required:
+  - status
+properties:
+  id:
+    type: string
+    description: |
+      The transaction's unique identifier. 
+      
+      This same ID is carried throughout all authorization, reversal, and clearing messages related to the given transaction.
+    example: trx_aaqc4uaaybigcaaqc4uaayfiga
+  status:
+    type: string
+    description: The transaction's status.
+    enum:
+      - Authorized
+      - Declined
+    example: Authorized

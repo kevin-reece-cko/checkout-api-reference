@@ -1,0 +1,10 @@
+type: object
+properties:
+  amount:
+    type: integer
+    description: |
+      The amount to refund. If not specified, the full cleared amount will be refunded.
+
+      The amount must be provided in the <a href="https://www.checkout.com/docs/resources/calculating-the-amount" target="blank">minor currency unit</a>.
+    minimum: 0
+    example: 2500

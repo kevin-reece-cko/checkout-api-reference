@@ -16,25 +16,6 @@ get:
         description: The identifier of a payment
         example: pay_ok2ynq6ubn3ufmo6jsdfmdvy5q
     - in: query
-      name: charge_id
-      schema:
-        type: string
-        pattern: "^(charge|charge_test)_(\\w{20})$"
-        description: The identifier of a charge
-        example: charge_FC1919EE547L23CC6BE1
-    - in: query
-      name: track_id
-      schema:
-        type: string
-        description: The tracking ID of a payment
-        example: TRK12345
-    - in: query
-      name: reference
-      schema:
-        type: string
-        description: The reference of a payment
-        example: ORD-5023-4E89
-    - in: query
       name: skip
       schema:
         type: integer
@@ -52,9 +33,7 @@ get:
       content:
         application/json:
           schema:
-            oneOf:
-              - $ref: '#/components/schemas/Payment_Id'
-              - $ref: '#/components/schemas/Charge_Id'
+            $ref: '#/components/schemas/Payment_Id'
       headers:
         Cko-Request-Id:
           $ref: '#/components/headers/Cko-Request-Id'
@@ -69,6 +48,4 @@ get:
       content:
         application/json:
           schema:
-            oneOf:
-              - $ref: '#/components/schemas/PaymentIdInvalidResponse'
-              - $ref: '#/components/schemas/ChargeIdInvalidResponse'
+            $ref: '#/components/schemas/PaymentIdInvalidResponse'

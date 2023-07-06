@@ -296,7 +296,8 @@ get:
   description: |
     <span style="font-size: 14px; font-weight: 500; color: rgb(60, 4, 133); background-color: rgb(237, 222, 255); border-radius: 4px; padding: 2px 6px" >Beta</span><p></p>
     Returns a list of your business' payments that match the specified reference. Results are returned in reverse chronological order, with the most recent payments shown first.
-    You can use the optional parameters below to skip or limit results.
+    
+    This will only return payments initiated from June 2022 onwards. Payments initiated before this date may return a `404` error code if you attempt to retrieve them.
   parameters:
     - in: query
       name: limit

@@ -1,0 +1,12 @@
+type: object
+required:
+  - security_pair
+  - locale
+  - phone_number
+properties:
+  security_pair:
+    $ref: '#/components/schemas/3dsSecurityPair'
+  locale:
+    $ref: '#/components/schemas/3dsLocale'
+  phone_number:
+    $ref: '#/components/schemas/3dsPhoneNumber'

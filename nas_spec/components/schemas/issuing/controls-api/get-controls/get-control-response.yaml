@@ -1,0 +1,29 @@
+type: object
+description: The card control's details.
+discriminator:
+  propertyName: control_type
+  mapping:
+    velocity_limit: '#/components/schemas/get-control-velocity-limit-response'
+    mcc_limit: '#/components/schemas/get-control-mcc-limit-response'
+    mid_limit: '#/components/schemas/get-control-mid-limit-response'
+required:
+  - id
+  - target_id
+  - description
+  - control_type
+properties:
+  id:
+    $ref: '#/components/schemas/IssuingControlId'
+  target_id:
+    $ref: '#/components/schemas/IssuingTargetId'
+  description:
+    type: string
+    maxLength: 256
+    description: A description for the control.
+    example: Max spend of 500€ per week for restaurants
+  control_type:
+    $ref: '#/components/schemas/IssuingControlType'
+  created_date:
+    $ref: '#/components/schemas/Datetime'
+  last_modified_date:
+    $ref: '#/components/schemas/Datetime'

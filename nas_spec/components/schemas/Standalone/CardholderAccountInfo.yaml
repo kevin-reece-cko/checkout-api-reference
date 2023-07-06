@@ -63,3 +63,79 @@ properties:
       - issuer_credentials
       - third_party_authentication
       - fido
+  cardholder_account_age_indicator:
+    type: string
+    description: The length of time the cardholder has held the account with the 3DS Requestor.
+    enum:
+      - no_account,
+      - this_transaction
+      - less_than_thirty_days
+      - thirty_to_sixty_days
+      - more_than_sixty_days
+  account_change:
+    type: string
+    format: date-time
+    description: |
+      The UTC date and time the cardholder’s account with the 3DS Requestor was last changed, in ISO 8601 format.
+      
+      Changes that affect this value include:
+      - updating the billing or shipping address
+      - adding a new payment account
+      - adding a new user
+  account_change_indicator:
+    type: string
+    description: |
+      The amount of time since the cardholder’s account information with the 3DS Requestor was last changed.
+      
+      Changes that affect this value include:
+      - updating the billing or shipping address
+      - adding a new payment account
+      - adding a new user
+    enum:
+      - this_transaction
+      - less_than_thirty_days
+      - thirty_to_sixty_days
+      - more_than_sixty_days
+  account_date:
+    type: string
+    format: date-time
+    description: The UTC date and time the cardholder opened the account with the 3DS Requestor, in ISO 8601 format.
+  account_password_change:
+    type: string
+    format: date-time
+    description: The UTC date and time the cardholder’s account with the 3DS Requestor was last reset or had a password change, in ISO 8601 format.
+  account_password_change_indicator:
+    type: string
+    description: The amount of time since the cardholder’s account with the 3DS Requestor was last reset or had a password change.
+    enum:
+      - no_change
+      - this_transaction
+      - less_than_thirty_days
+      - thirty_to_sixty_days
+      - more_than_sixty_days
+  transactions_per_year:
+    type: integer
+    description: The number of transactions associated with the cardholder's account with the 3DS Requestor in the previous year. This value includes both successful and abandoned transactions, across all payment accounts.
+    example: 002
+    maxLength: 3
+  payment_account_age:
+    type: string
+    format: date-time
+    description: The UTC date and time the payment account was enrolled in the cardholder’s account with the 3DS Requestor, in ISO 8601 format.
+  shipping_address_usage:
+    type: string
+    format: date-time
+    description: The UTC date and time the shipping address used for the transaction was first used with the 3DS Requestor, in ISO 8601 format.
+  account_type:
+    type: string
+    description: The type of account, in the case of a card product with multiple accounts.
+    enum:
+      - not_applicable
+      - credit
+      - debit
+  account_id:
+    type: string
+    description: Additional information about the account optionally provided by the 3DS Requestor.
+    maxLength: 64
+  three_ds_requestor_authentication_info:
+    $ref: '#/components/schemas/ThreeDsRequestorAuthenticationInfo'

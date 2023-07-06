@@ -1,0 +1,34 @@
+get:
+  tags:
+  - Cards
+  summary: Get card details
+  description: 'Retrieves the details for a card you issued previously.
+
+
+    The card''s credentials are not returned in the response.
+
+    '
+  servers:
+  - url: https://api.checkout.com/
+    description: Live API
+  - url: https://api.sandbox.checkout.com/
+    description: Sandbox API
+  parameters:
+  - in: path
+    name: cardId
+    required: true
+    schema:
+      $ref: '#/components/schemas/IssuingCardId'
+  responses:
+    '200':
+      description: Card returned successfully
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/get-card-response'
+    '401':
+      description: Unauthorized
+    '404':
+      description: Card not found
+    '500':
+      description: Internal Server Error

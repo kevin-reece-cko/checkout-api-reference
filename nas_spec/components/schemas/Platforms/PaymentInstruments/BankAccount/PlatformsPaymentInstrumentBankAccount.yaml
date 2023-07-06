@@ -1,0 +1,41 @@
+type: object
+title: PaymentInstrumentBankAccount
+allOf:
+  - $ref: '#/components/schemas/PlatformsPaymentInstrument'
+  - type: object
+    required:
+      - country
+      - document
+      - instrument_details
+    properties:
+      country:
+        title: Country
+        description: The account's country, as a two-letter ISO country code
+        type: string
+        format: ISO 3166-1
+        example: 'GB'
+      default:
+        title: Default
+        type: boolean
+        description: Specifies whether the payment instrument should be set as the default payout destination
+      document:
+        type: object
+        title: Document
+        description: A legal document used to verify the bank account
+        properties:
+          type:
+            type: string
+            description: The document type
+            enum:
+              - bank_statement
+            default: bank_statement
+            example: bank_statement
+          file_id:
+            type: string
+            description: The file ID of the uploaded document. The document must have been uploaded for the purpose of `"bank_verification"`.
+            example: file_wxglze3wwywujg4nna5fb7ldli
+      instrument_details:
+        description: Details of the payment instrument being created.
+        oneOf:
+          - $ref: '#/components/schemas/PlatformsInstrumentDetailsFasterPayments'
+          - $ref: '#/components/schemas/PlatformsInstrumentDetailsSepa'

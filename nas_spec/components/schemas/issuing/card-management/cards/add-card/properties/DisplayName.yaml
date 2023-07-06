@@ -1,0 +1,6 @@
+type: string
+pattern: ^[0-9a-zA-Z'- ]{2,26}$
+minLength: 2
+maxLength: 26
+example: JOHN KENNEDY
+description: The name to display on the card.

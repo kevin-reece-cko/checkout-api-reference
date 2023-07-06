@@ -98,8 +98,11 @@ properties:
   previous_payment_id:
     type: string
     description: |
-      For payments that use <a href="https://www.checkout.com/docs/payments/store-payment-details" target="blank">stored card details</a>, such as recurring payments –
-      an existing payment identifier from the recurring series or the Scheme Transaction ID
+      An identifier that can link the payment to an existing series of payments. Only for use with merchant-initiated transactions (MITs) that use <a href="https://www.checkout.com/docs/payments/store-payment-details" target="blank">stored card details</a>.
+      
+      To link the payment, pass one of the following as its value:
+      - a payment identifier (for example, `pay_cr4hxwizzp6k7biycuk2ibltnm`) from the recurring series, or
+      - the scheme transaction ID
     maxLength: 100
     example: 'pay_fun26akvvjjerahhctaq2uzhu4'
   risk:
@@ -117,7 +120,7 @@ properties:
     maxLength: 1024
     example: 'http://example.com/payments/fail'
   payment_ip:
-    description: The IP address used to make the payment. Used by our risk engine to check the customer's IP address – only accepts IPv4 addresses.
+    description: The IP address used to make the payment. Used by Checkout.com's risk engine to check the customer's IP address – only accepts IPv4 and IPv6 addresses.
     allOf:
       - $ref: '#/components/schemas/IPAddress'
   sender:
@@ -137,6 +140,6 @@ properties:
     description: |
       Allows you to store additional information about a transaction with custom fields and up to five user-defined fields (`udf1` to `udf5`), which can be used for reporting purposes. `udf1` is also used for some of our risk rules. 
       
-      Only primitive data types can be supplied within the `metadata` object, arrays and objects are not supported. The value of each field must not exceed 255 characters in length.
+      You can only supply primitive data types within the `metadata` object. Arrays and objects are not supported. You can provide up to 20 metadata fields per API call. The value of each field must not exceed 255 characters in length.
     example:
       coupon_code: 'NY2018'

@@ -1,0 +1,9 @@
+type: object
+allOf:
+  - $ref: '#/components/schemas/add-virtual-card-control-request'
+  - type: object
+    properties:
+      mid_limit:
+        $ref: '#/components/schemas/MidLimit'
+required:
+  - mid_limit

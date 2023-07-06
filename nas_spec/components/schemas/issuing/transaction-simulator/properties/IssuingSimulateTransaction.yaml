@@ -1,0 +1,15 @@
+type: object
+description: >
+  The transaction to simulate with the specified card. For example, a purchase.
+discriminator:
+  propertyName: type
+  mapping:
+    purchase: '#/components/schemas/Purchase'
+required:
+  - type
+properties:
+  type:
+    type: string
+    description: >
+      The transaction type.
+    example: 'purchase'

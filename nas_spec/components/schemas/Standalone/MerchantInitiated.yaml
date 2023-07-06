@@ -1,0 +1,24 @@
+allOf:
+  - $ref: '#/components/schemas/ChannelData'
+  - type: object
+    required:
+      - request_type
+    properties:
+      channel:
+        type: string
+        enum:
+          - merchant_initiated
+      request_type:
+        type: string
+        enum:
+          - recurring_transaction
+          - installment_transaction
+          - add_card
+          - maintain_card_information
+          - account_verification
+          - split_or_delayed_shipment
+          - top_up
+          - mail_order
+          - telephone_order
+          - whitelist_status_check
+          - other_payment

@@ -1,0 +1,10 @@
+type: object
+description: The list of card controls applied to the specified card.
+required:
+  - controls
+properties:
+  controls:
+    type: array
+    description: The list of card controls applied to the specified card.
+    items:
+      $ref: '#/components/schemas/get-control-response'

@@ -25,6 +25,13 @@ properties:
         * `A` - Authentication was processed by a stand-in service, and is classed as successful
         * `U` - Unable to perform authentication
     example: Y
+  authentication_status_reason:
+    type: string
+    description: |
+      The response from the Directory Server (DS) or Access Control Server (ACS), which provides information on why you received the given `authentication_response` value. 
+      
+      This field is only returned as a result of a 3DS2 authentication, and only if the returned `authentication_response` value was not `Y`.
+      Refer to our <a href="https://www.checkout.com/docs/risk-management/3d-secure/sessions/understand-authentication-failures#Common_authentication_failures" target="_blank">authentication failures</a> documentation for more information.
   cryptogram:
     type: string
     description: Base64 encoded cryptographic identifier (CAVV) used by the card schemes to validate the integrity of the 3D secure payment data

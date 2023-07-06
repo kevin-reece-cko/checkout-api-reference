@@ -54,10 +54,16 @@ properties:
     $ref: '#/components/schemas/Approved'
   protocol_version:
     $ref: '#/components/schemas/ProtocolVersion'
+  account_info:
+    $ref: '#/components/schemas/CardholderAccountInfo'
+  merchant_risk_info:
+    $ref: '#/components/schemas/MerchantRiskInfo'
   reference:
     $ref: '#/components/schemas/Reference'
   transaction_type:
     $ref: '#/components/schemas/TransactionType'
+  initial_transaction:
+    $ref: '#/components/schemas/InitialTransaction'
   next_actions:
     $ref: '#/components/schemas/NextActions'
   ds:

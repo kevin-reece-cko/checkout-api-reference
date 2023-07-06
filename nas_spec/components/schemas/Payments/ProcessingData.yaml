@@ -27,7 +27,8 @@ properties:
     example: 1000
   purchase_country:
     type: string
-    description: 'The purchase country of the customer, as an ISO 3166 alpha-2 country code.'
+    description: The country where the goods are purchased or the seller is based. ISO 3166 alpha-2 purchase country code.
+    example: GB
   locale:
     type: string
     pattern: '^[a-z]{2}(?:-[A-Z][a-z]{3})?(?:-(?:[A-Z]{2}))?$'

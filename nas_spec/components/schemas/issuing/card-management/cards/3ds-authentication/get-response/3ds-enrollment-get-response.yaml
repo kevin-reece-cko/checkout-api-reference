@@ -1,0 +1,23 @@
+type: object
+description: The card's 3DS enrollment details.
+required:
+  - locale
+  - phone_number
+  - created_date
+  - last_modified_date
+properties:
+  locale:
+    $ref: '#/components/schemas/3dsLocale'
+  phone_number:
+    $ref: '#/components/schemas/3dsPhoneNumber'
+  created_date:
+    type: string
+    format: datetime
+    example: "2019-09-10T10:11:12Z"
+  last_modified_date:
+    type: string
+    format: datetime
+    example: "2019-09-11T10:11:12Z"
+  _links:
+    allOf:
+      - $ref: '#/components/schemas/3dsLink'

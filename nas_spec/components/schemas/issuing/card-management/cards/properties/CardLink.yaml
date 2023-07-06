@@ -1,0 +1,20 @@
+type: object
+description: The links related to the card.
+minItems: 1
+required:
+  - self
+  - controls
+properties:
+  self:
+    type: object
+    $ref: '#/components/schemas/IssuingLink'
+    description: The URI to retrieve the card's details.
+  controls:
+    type: object
+    $ref: '#/components/schemas/IssuingLink'
+    description: The URI to retrieve the card's controls.
+example:
+  self:
+    href: "https://api.checkout.com/issuing/cards/crd_fa6psq42dcdd6fdn5gifcq1491"
+  controls:
+    href: "https://api.checkout.com/issuing/controls?target_id=crd_fa6psq42dcdd6fdn5gifcq1491"

@@ -1,0 +1,11 @@
+type: object
+allOf:
+  - $ref: '#/components/schemas/add-control-request'
+  - type: object
+    properties:
+      velocity_limit:
+        $ref: '#/components/schemas/VelocityLimit'
+      description:
+        example: Maximum spend of 500€ per week for restaurants
+required:
+  - velocity_limit

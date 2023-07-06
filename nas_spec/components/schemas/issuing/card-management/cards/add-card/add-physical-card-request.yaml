@@ -1,0 +1,19 @@
+type: object
+allOf:
+  - $ref: '#/components/schemas/add-card-request'
+  - type: object
+    properties:
+      display_name:
+        $ref: '#/components/schemas/DisplayName'
+      shipping_instructions:
+        $ref: '#/components/schemas/IssuingShippingInstruction'
+      activate_card:
+        type: bool
+        default: false
+        description: |
+          Sets whether to activate the newly created card upon creation. 
+          
+          If set to `false`, the cardholder will not be able to process transactions until you activate the card.   
+required:
+  - shipping_instructions
+  - display_name

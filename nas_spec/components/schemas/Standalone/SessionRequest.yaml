@@ -70,4 +70,8 @@ properties:
     $ref: '#/components/schemas/Recurring'
   installment:
     $ref: '#/components/schemas/Installment'
+  optimization:
+    $ref: '#/components/schemas/Optimization'
+  initial_transaction:
+    $ref: '#/components/schemas/InitialTransaction'
 

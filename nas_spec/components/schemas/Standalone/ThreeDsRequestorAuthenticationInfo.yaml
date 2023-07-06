@@ -1,0 +1,23 @@
+type: object
+description: Information about how the 3DS Requestor authenticated the cardholder before or during the transaction.
+properties:
+  three_ds_req_auth_method:
+    type: string
+    description: The mechanism used by the cardholder to authenticate with the 3DS Requestor.
+    enum:
+      - no_threeds_requestor_authentication_occurred,
+      - three3ds_requestor_own_credentials,
+      - federated_id,
+      - issuer_credentials,
+      - third_party_authentication,
+      - fido_authenticator,
+      - fido_authenticator_fido_assurance_data_signed,
+      - src_assurance_data
+  three_ds_req_auth_timestamp:
+    type: string
+    format: date-time
+    description: The UTC date and time the cardholder authenticated with the 3DS Requestor, in ISO 8601 format.
+  three_ds_req_auth_data:
+    type: string
+    description: Data that documents and supports a specific authentication process.
+    maxLength: 20000

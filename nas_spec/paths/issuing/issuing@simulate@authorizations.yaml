@@ -1,0 +1,57 @@
+post:
+  tags:
+  - Card testing
+  summary: Simulate authorization
+  description: Simulate an authorization request with a card you issued previously.
+  servers:
+  - url: https://api.sandbox.checkout.com/
+    description: Sandbox API
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: '#/components/schemas/SimulateAuthorizationRequest'
+        examples:
+          Purchase - Authorization:
+            value:
+              card:
+                id: crd_fa6psq242dcd6fdn5gifcq1491
+                expiry_month: 5
+                expiry_year: 2025
+              transaction:
+                type: purchase
+                amount: 2500
+                currency: GBP
+                merchant:
+                  category_code: '7399'
+          Purchase - Pre-authorization:
+            value:
+              card:
+                id: crd_fa6psq242dcd6fdn5gifcq1491
+                expiry_month: 5
+                expiry_year: 2025
+              transaction:
+                type: purchase
+                amount: 2500
+                currency: GBP
+                merchant:
+                  category_code: '7399'
+                authorization_type: pre_authorization
+  responses:
+    '201':
+      description: Authorization processed successfully
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/SimulateAuthorizationResponse'
+    '401':
+      description: Unauthorized
+    '422':
+      description: Invalid data was sent
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/IssuingValidationError'
+    '500':
+      description: Internal Server Error

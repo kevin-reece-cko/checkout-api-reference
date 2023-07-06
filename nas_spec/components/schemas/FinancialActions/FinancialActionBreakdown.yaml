@@ -35,7 +35,7 @@ properties:
     type: string
     description: The currency of the transaction.
     example: EUR
-  transaction_currency_account:
+  transaction_currency_amount:
     type: number
     description: The transaction amount, expressed in the transaction currency.
     example: 0.18031175

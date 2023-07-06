@@ -56,6 +56,10 @@ properties:
     $ref: '#/components/schemas/Approved'
   protocol_version:
     $ref: '#/components/schemas/ProtocolVersion'
+  account_info:
+    $ref: '#/components/schemas/CardholderAccountInfo'
+  merchant_risk_info:
+    $ref: '#/components/schemas/MerchantRiskInfo'
   reference:
     $ref: '#/components/schemas/Reference'
   transaction_type:
@@ -90,6 +94,8 @@ properties:
     $ref: '#/components/schemas/Recurring'
   installment:
     $ref: '#/components/schemas/Installment'
+  initial_transaction:
+    $ref: '#/components/schemas/InitialTransaction'
   customer_ip:
     type: string
     description: >
@@ -146,6 +152,28 @@ properties:
       - no_challenge_requested
       - challenge_requested
       - challenge_requested_mandate
+  optimization:
+    type: object
+    description: >
+      The information about the optimization options selected
+    properties:
+      optimized:
+        type: boolean
+        description: >
+          Indicates if any optimization has been applied
+        example: true
+      framework:
+        type: string
+        description: > 
+          The optimization framework applied
+        enum:
+          - acceptance_rates
+      optimized_properties:
+        type: array
+        title: OptimizedProperty
+        description: The collection of fields optimized
+        items:
+          $ref: '#/components/schemas/OptimizedProperty'
   scheme_info:
     type: object
     description: Indicates scheme-specific information

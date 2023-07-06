@@ -1,0 +1,12 @@
+type: object
+description: Reversal Response.
+required:
+  - status
+properties:
+  status:
+    type: string
+    description: The status of the transaction (either Reversed or Declined).
+    enum:
+      - Reversed
+      - Declined
+    example: Reversed

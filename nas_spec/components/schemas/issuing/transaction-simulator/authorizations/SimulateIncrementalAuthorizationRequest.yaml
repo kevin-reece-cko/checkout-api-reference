@@ -1,0 +1,8 @@
+type: object
+properties:
+  amount:
+    type: integer
+    description: |
+      You must provide the amount in the <a href="https://www.checkout.com/docs/resources/calculating-the-amount" target="blank">minor currency unit</a>.
+    minimum: 0
+    example: 3500

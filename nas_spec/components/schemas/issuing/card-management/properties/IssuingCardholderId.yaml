@@ -1,0 +1,6 @@
+type: string
+pattern: "^crh_[a-z0-9]{26}$"
+description: The cardholder's unique identifier.
+maxLength: 30
+minLength: 30
+example: crh_d3ozhf43pcq2xbldn2g45qnb44

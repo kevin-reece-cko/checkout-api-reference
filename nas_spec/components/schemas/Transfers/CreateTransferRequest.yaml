@@ -3,7 +3,7 @@ title: Create transfer request
 properties:
   reference:
     type: string
-    description: A unique reference you can later use to identify this transfer.<br>For Amex, the string limit is 30 characters.
+    description: A reference you can use later to identify this transfer
     maxLength: 50
     example: superhero1234
   transfer_type:
