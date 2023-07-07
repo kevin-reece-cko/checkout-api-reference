@@ -1,0 +1,19 @@
+type: object
+description: The workflow patch action
+discriminator:
+  propertyName: type
+  mapping:
+    webhook: '#/components/schemas/patch-response-webhook-action'
+    #email: '#/components/schemas/patch-response-email-action'
+required:
+  - id
+  - type
+properties:
+  id:
+    type: string
+    description: The workflow action identifier
+    example: wfa_itja4x7zgzye3andzqq62u4hvq
+  type:
+    type: string
+    description: The type of workflow action
+    example: webhook

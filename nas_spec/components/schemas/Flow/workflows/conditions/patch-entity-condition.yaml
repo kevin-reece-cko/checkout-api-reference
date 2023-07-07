@@ -3,7 +3,7 @@ description: The condition that filters, based on the NAS entity. It does not ap
 required:
   - entities
 allOf:
-  - $ref: '#/components/schemas/workflow-condition'
+  - $ref: '#/components/schemas/patch-workflow-condition'
   - type: object
     required:
       - entities

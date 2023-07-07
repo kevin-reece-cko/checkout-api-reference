@@ -87,7 +87,7 @@ patch:
     - Workflows
   summary: Patch a workflow
   description: |
-    Update the name of a workflow.
+    Update a workflow.
   parameters:
     - in: path
       name: workflowId
@@ -121,5 +121,11 @@ patch:
       description: Unauthorized
     '404':
       description: Workflow not found
+    '422':
+      description: Invalid data was sent
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ValidationError'
     '500':
       description: Internal Error
