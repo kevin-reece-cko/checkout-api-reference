@@ -55,7 +55,7 @@ For more information, see [here](https://checkout.atlassian.net/wiki/spaces/PD/p
 
 ## Preview changes locally
 
-Vercel preview sites are no longer generated for new API reference PRs. However, you can still run the project locally to preview your changes:
+Do not request Vercel access. Vercel preview sites are no longer generated for new API reference PRs. However, you can still run the project locally to preview your changes:
 
 1. From your command-line, `cd` into the directory where you cloned the project.
 2. Run `npm i` to install the required dependencies.
