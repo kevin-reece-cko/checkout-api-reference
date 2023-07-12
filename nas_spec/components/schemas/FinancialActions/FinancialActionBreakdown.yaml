@@ -69,6 +69,14 @@ properties:
     type: number
     description: The foreign exchange rate between the holding currency and the tax currency at the point the financial action was processed.
     example: 1.45
+  scheme_fx_adjustment_processing_currency:
+    type: string
+    description: The processing currency of the transactions covered by the scheme FX adjustment.
+    example: GBP
+  scheme_fx_adjustment_rate_applied:
+    type: number
+    description: The rate applied to calculate the scheme FX adjustment over eligible transactions.
+    example: 1.45
   entity_country_tax_currency:
     type: string
     description: The currency of the country your entity resides in for tax purposes, if applicable.

@@ -90,6 +90,18 @@ properties:
     type: string
     description: The unique ID of the foreign exchange trade executed in fulfillment of a financial action.
     example: trd_intsaxljgi6uzkxnv6lex3xayu
+  acquirer_reference_number:
+    type: string
+    description: The unique number assigned to a transaction when it moves through the payment flow between the merchant bank and the cardholder's bank.
+    example: 01234567890123456789012
+  account_funding_transaction:
+    type: boolean
+    description: A flag to mark if a transaction debited funds from an account to fund a non-merchant account. For example, to load a prepaid card or top up a wallet.
+    example: true
+  scheme_fx_adjustment_eligible:
+    type: boolean
+    description: A flag to mark if the transaction honors the scheme exchange rate applicable at the time of authorization for both authorization and settlement movements.
+    example: true
   processed_on:
     type: string
     description: An ISO 8601 timestamp of when the action was processed and impacted your balances, in UTC.

@@ -1,0 +1,18 @@
+type: object
+description: The workflow action
+discriminator:
+  propertyName: type
+  mapping:
+    webhook: '#/components/schemas/patch-webhook-action'
+    #email: '#/components/schemas/patch-email-action'
+required:
+  - type
+properties:
+  workflow_action_id:
+    type: string
+    description: The workflow action identifier needed to update an existing action ID. Do not include this property if you want to add a new action.
+    example: wfa_itja4x7zgzye3andzqq62u4hvq
+  type:
+    type: string
+    description: The type of workflow action
+    example: webhook
