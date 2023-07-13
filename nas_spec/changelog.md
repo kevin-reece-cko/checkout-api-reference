@@ -2,7 +2,9 @@
 
 | Date       | Description of change                                                                                                   |
 |------------|-------------------------------------------------------------------------------------------------------------------------|
-| 2023/07/06 | Added the available `product_type` options for Tamara payment method      
+| 2023/07/06 | Added the available `product_type` options for Tamara payment method                                                    |
+| 2023/07/10 | Remove `Beta` tag from Financial Actions API                                                                              |
+| 2023/07/05 | Remove deprecated `instruments` endpoint from Platforms API                                                                                          |
 | 2023/07/04 | Add `currency` property to `TransferSource`                                                                             |
 | 2023/07/03 | Add `holding_currencies` property to sub-entity onboarding profile                              | 
 | 2023/07/03 | Updated `processing-channel` type to `processing_channel` in Add/Update Workflow Condition                              | 
