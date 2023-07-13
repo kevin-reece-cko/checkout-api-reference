@@ -1,0 +1,5 @@
+name: q
+in: query
+schema:
+  type: string
+description: The partial search of the text fields.

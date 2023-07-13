@@ -1,0 +1,7 @@
+type: array
+minItems: 1
+pattern: ^pc_[a-z2-7]{26}$
+description: pc_axclravnqf5u5ejkweijnp5zc4
+example:
+    - pc_axclravnqf5u5ejkweijnp5zc4
+    - pc_aascravnas5u5ejkseijnp9zc2

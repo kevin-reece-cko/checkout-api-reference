@@ -1,0 +1,16 @@
+###
+# Warning: this file was auto generated from OpenAPI specs using 'npm run sync-generated-specs'. Do not manually edit.
+###
+type: object
+description: 'BenefitPay Source'
+allOf:
+  - $ref: '#/components/schemas/PaymentRequestSource'
+  - type: object
+    required:
+      - integration_type
+    properties:
+      integration_type:
+        enum:
+          - mobile
+        type: string
+        description: "Payment method integration type (platform wise)  \n* mobile:  \n  Payment requested for a purchase via an iOS / Android app.  \n  In case of successful creation, the request will return a transaction reference number.  \n  The reference number should be used to request a transaction creation via the Android SDK  \n  or the iOS SDK of BenefitPay."

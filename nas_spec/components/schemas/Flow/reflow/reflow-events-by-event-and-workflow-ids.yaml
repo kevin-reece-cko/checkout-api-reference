@@ -1,0 +1,22 @@
+type: object
+required:
+  - events
+properties:
+  events:
+    type: array
+    description: A list of IDs for the events you want reflowed.
+    items:
+      type: string
+      description: The identifiers of the events you want reflowed.
+      pattern: ^evt_[a-z0-9]{26}$
+      example: evt_hnmnr6hdbslqlc38jd8mn35bk9
+    example: [evt_lzmo6p0i3612judj754w1ngtil, evt_05z6xuagtti48ajyfbuekg6a0a]
+  workflows:
+    type: array
+    description: A list of IDs for the workflows whose actions you want to retrigger.
+    items:
+      type: string
+      description: The identifiers of the workflows you want retriggered.
+      pattern: ^wf_[a-z0-9]{26}$
+      example: wf_iiutwnpb1p8044f2aq2znez9c6
+    example: [wf_sq8jnqi9i749hhb470bu308uk2, wf_bz91q7i4ks4sr0kasmas2xhp56]

@@ -1,0 +1,25 @@
+type: object
+required:
+  - currency
+allOf:
+  - $ref: '#/components/schemas/IssuingSimulateTransaction'
+  - type: object
+    properties:
+      amount:
+        type: integer
+        description: |
+          The payment amount, in the <a href="https://www.checkout.com/docs/resources/calculating-the-amount" target="blank">minor currency unit</a>.
+          
+          To perform a card verification, set `amount` to `0`, or omit the field entirely.
+        minimum: 0
+        example: 6540
+      currency:
+        type: string
+        description: The currency to use for the transaction, as a three-letter <a href="https://www.checkout.com/docs/resources/codes/currency-codes" target="blank">ISO currency code</a>.
+        example: GBP
+        maxLength: 3
+        minLength: 3
+      merchant:
+        $ref: '#/components/schemas/IssuingMerchant'
+      authorization_type:
+        $ref: '#/components/schemas/IssuingAuthorizationTypes'

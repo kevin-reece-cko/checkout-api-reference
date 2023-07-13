@@ -1,0 +1,16 @@
+type: object
+title: Create transfer response
+properties:
+  id:
+    type: string
+    description: The `id` representing the initiated transfer.
+    example: tra_y3oqhf46pyzuxjbcn2giaqnb4
+  status:
+    $ref: '#/components/schemas/TransferStatus'
+  _links:
+    type: object
+    properties:
+      self:
+        $ref: '#/components/schemas/TransferLink'
+    example:
+      self: "https://transfers.checkout.com/transfers/tra_y3oqhf46pyzuxjbcn2giaqnb4"

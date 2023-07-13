@@ -1,0 +1,30 @@
+type: object
+description: A legal document used to verify the cardholder's identity.
+required:
+  - type
+  - front_document_id
+properties:
+  type:
+    type: string
+    description: The type of document being supplied for identity verification.
+    enum:
+      [
+        passport,
+        national_identity_card,
+        driving_license,
+        citizen_card,
+        residence_permit,
+        electoral_id,
+      ]
+    example: national_identity_card
+  front_document_id:
+    type: string
+    description: The ID displayed on the front of the document, as represented by Checkout.com systems.
+    example: file_6lbss42ezvoufcb2beo76rvwly
+  back_document_id:
+    type: string
+    description: |
+      The ID displayed on the back of the document, as represented by Checkout.com systems.
+      
+      If you're supplying a `passport` for identity verification, this field is optional.
+    example: file_aaz5pemp6326zbuvevp6qroqu4

@@ -1,0 +1,20 @@
+type: object
+description: |
+  An optional description that is displayed on the customer's statement identifying a purchase, in the specified local character set. 
+  
+  This does not override the value supplied in `BillingDescriptor`.
+properties:
+  name:
+    type: string
+    description: |
+      A dynamic description of the card payment. Other payment methods will not display this description.
+      
+      The character set specified will determine the maximum length of the field. For `katakana`, the maximum length is 23 characters, equivalent to 23 katakana characters. For `kanji`, the maximum length is 40 characters, equivalent to 20 kanji characters.
+    example: '漢字'
+  character_set:
+    allOf:
+      - $ref: '#/components/schemas/LocalCharacterSets'
+      - description: The character set of the descriptor
+required:
+  - name
+  - character_set

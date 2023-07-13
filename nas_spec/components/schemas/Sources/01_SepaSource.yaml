@@ -1,0 +1,47 @@
+type: object
+description: A SEPA payment source
+required:
+  - billing_address
+  - source_data
+allOf:
+  - $ref: '#/components/schemas/SourceRequest'
+  - type: object
+    properties:
+      source_data:
+        type: object
+        description: Additional data required to create SEPA payment sources
+        required:
+          - first_name
+          - last_name
+          - account_iban
+          - bic
+          - billing_descriptor
+          - mandate_type
+        properties:
+          first_name:
+            type: string
+            description: The account holder's first name
+            example: 'Marcus'
+          last_name:
+            type: string
+            description: The account holder's last name
+            example: 'Barrilius Maximus'
+          account_iban:
+            type: string
+            description: The account IBAN
+            example: 'DE25100100101234567893'
+          bic:
+            type: string
+            description: The account BIC
+            example: 'PBNKDEFFXXX'
+          billing_descriptor:
+            type: string
+            description: The billing descriptor
+            example: 'ExampleCompany.com'
+          mandate_type:
+            type: string
+            description: The type of mandate
+            enum:
+              - 'single'
+              - 'recurring'
+            example: 'recurring'

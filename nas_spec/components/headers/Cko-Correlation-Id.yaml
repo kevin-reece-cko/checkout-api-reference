@@ -1,0 +1,8 @@
+in: header
+name: Cko-Correlation-Id
+schema:
+  type: string
+required: true
+description:
+  A unique correlation ID for this request
+example: 09bce2c6-5ec1-40e3-91e2-9d8f170afa28

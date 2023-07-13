@@ -1,0 +1,65 @@
+###
+# Warning: this file was auto generated from OpenAPI specs. Do not manually edit. 
+###
+type: object
+description: 'Klarna Source'
+allOf:
+  -
+    $ref: '#/components/schemas/PaymentResponseSource'
+  -
+    type: object
+    properties:
+      account_holder:
+        type: object
+        properties:
+          title:
+            type: string
+            description: 'Title of the account holder.'
+            example: Mr
+          first_name:
+            type: string
+            description: 'First name of the account holder.'
+          last_name:
+            type: string
+            description: 'Last name of the account holder.'
+          billing_address:
+            required:
+              - zip
+              - city
+              - country
+            type: object
+            properties:
+              address_line1:
+                type: string
+                description: 'Street address of the account holder.'
+              address_line2:
+                type: string
+                description: 'Street address of the account holder.'
+              city:
+                type: string
+                description: 'City of the account holder.'
+              zip:
+                type: string
+                description: 'Postal code of the account holder.'
+              country:
+                type: string
+                description: 'ISO 3166 alpha-2 account holder country code.'
+            description: 'Address of the account holder.'
+          email:
+            type: string
+            description: 'Email address of the account holder.'
+          date_of_birth:
+            type: string
+            description: 'Date of birth of the account holder.'
+          gender:
+            type: string
+            description: 'Gender of the account holder.'
+          phone:
+            type: object
+            properties:
+              country_code:
+                type: string
+              number:
+                type: string
+            description: 'Phone number of the account holder.'
+        description: 'object describes payee details'

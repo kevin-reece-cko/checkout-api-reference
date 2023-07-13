@@ -1,0 +1,153 @@
+servers:
+  - url: https://api.sandbox.checkout.com
+    description: Sandbox
+  - url: https://api.checkout.com
+    description: Production
+get:
+  tags:
+    - Financial actions
+  security:
+    - OAuth:
+        - financial-actions
+        - financial-actions:view
+    - ApiSecretKey: [ ]
+  summary: Get financial actions
+  operationId: getFinancialActions
+  description: |
+    Returns the list of financial actions and their details.
+  x-codeSamples:
+    - lang: 'cURL'
+      label: 'curl'
+      source: |
+        curl -i -X GET \
+        'https://api.sandbox.checkout.com/financial-actions?payment_id=pay_qqufsd3rfnqufngwklghlxrzpm&limit=5' \
+        -H 'Authorization: Bearer <YOUR_TOKEN_HERE>'
+    - lang: 'Java'
+      label: 'Java'
+      source: |
+        import java.net.*;
+        import java.net.http.*;
+        import java.util.*;
+        import java.nio.charset.StandardCharsets;
+        import java.util.stream.Collectors;
+
+        public class App {
+          public static void main(String[] args) throws Exception {
+            var httpClient = HttpClient.newBuilder().build();
+
+            HashMap<String, String> params = new HashMap<>();
+            params.put("payment_id", "pay_qqufsd3rfnqufngwklghlxrzpm");
+            params.put("limit", "5");
+
+            var query = params.keySet().stream()
+              .map(key -> key + "=" + URLEncoder.encode(params.get(key), StandardCharsets.UTF_8))
+              .collect(Collectors.joining("&"));
+
+            var host = "https://api.sandbox.checkout.com";
+            var pathname = "/financial-actions";
+            var request = HttpRequest.newBuilder()
+              .GET()
+              .uri(URI.create(host + pathname + '?' + query))
+              .header("Authorization", "Bearer <YOUR_TOKEN_HERE>")
+              .build();
+
+            var response = httpClient.send(request, HttpResponse.BodyHandlers.ofString());
+
+            System.out.println(response.body());
+          }
+        }
+    - lang: 'C#'
+      label: 'C#'
+      source: |
+        using System;
+        using System.Net.Http;
+        using System.Threading.Tasks;
+
+        public class Program
+        {
+          private readonly IHttpClientFactory _httpClientFactory;
+          public static async Task Main(string[] args)
+          {
+            var client = _httpClientFactory.CreateClient();
+            client.DefaultRequestHeaders.Add("Authorization", "Bearer <YOUR_TOKEN_HERE>");
+            var request = await client.GetAsync("https://api.sandbox.checkout.com/financial-actions?payment_id=pay_qqufsd3rfnqufngwklghlxrzpm&limit=5");
+            var response = await request.Content.ReadAsStringAsync();
+
+            Console.WriteLine(response);
+          }
+        }
+    - lang: 'Python'
+      label: 'Python'
+      source: |
+        import requests
+
+        url = "https://api.sandbox.checkout.com/financial-actions"
+
+        query = {
+          "payment_id": "pay_qqufsd3rfnqufngwklghlxrzpm",
+          "limit": "5"
+        }
+
+        headers = {"Authorization": "Bearer <YOUR_TOKEN_HERE>"}
+
+        response = requests.get(url, headers=headers, params=query)
+
+        data = response.json()
+        print(data)
+  parameters:
+    - name: payment_id
+      in: query
+      description: The ID of the payment you want to retrieve financial actions for. Required if `action_id` or `reference` are not used.
+      schema:
+        type: string
+        example: pay_qqufsd3rfnqufngwklghlxrzpm
+    - name: action_id
+      in: query
+      description: The ID of the action you want to retrieve financial actions for. Required if `payment_id` or `reference` are not used.
+      schema:
+        type: string
+        example: act_wsnyzbzmr2huxcekoj7qqhxwuy
+    - name: reference
+      in: query
+      description: An optional ID you submit in the gateway request to retrieve financial actions for. Required if `payment_id` or `action_id` are not used.
+      schema:
+        type: string
+        example: '8f13507d-60e1-455d-b700-4f1b39a35e23'
+    - name: limit
+      in: query
+      description: The number of results to retrieve per page. </br> For example, if the total result count is 50, and you use `limit=10`, you will need to iterate over 5 pages containing 10 results each to retrieve all of the reports that match your query.
+      schema:
+        type: integer
+        format: int32
+        minimum: 1
+        maximum: 100
+        default: 100
+        example: 5
+    - name: pagination_token
+      in: query
+      description: A token used for pagination when a response contains results across multiple pages.
+      schema:
+        type: string
+  responses:
+    '200':
+      description: Financial actions retrieved successfully
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/FinancialActionListResponse'
+      headers:
+        Cko-Version:
+          $ref: '#/components/headers/Cko-Version'
+        Cko-Request-Id:
+          $ref: '#/components/headers/Cko-Request-Id'
+    '401':
+      description: Unauthorized. Likely cause is that access token is not valid or was not specified.
+    '422':
+      description: Unprocessable entity
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/FinancialActionErrorResponse'
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/FinancialActionErrorResponse'

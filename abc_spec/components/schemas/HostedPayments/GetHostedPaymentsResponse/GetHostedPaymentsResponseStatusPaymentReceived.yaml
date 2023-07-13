@@ -1,0 +1,25 @@
+type: object
+description: A Hosted Payments Page that has received a payment
+required:
+  - payment_id
+allOf:
+  - $ref: '#/components/schemas/GetHostedPaymentsResponse'
+  - type: object
+    properties:
+      payment_id:
+        example: pay_m3s3k65cfpl2hd2rv4by4vl4r4
+      _links:
+        required:
+          - payment
+          - payment_actions
+        allOf:
+          - $ref: '#/components/schemas/GetHostedPaymentsResponseLinks'
+        example:
+          self:
+            href: https://api.sandbox.checkout.com/hosted-payments/hpp_xGQBg0AXl3cM
+          redirect:
+            href: https://pay.sandbox.checkout.com/page/hpp_xGQBg0AXl3cM
+          payment:
+            href: https://api.sandbox.checkout.com/payments/pay_m3s3k65cfpl2hd2rv4by4vl4r4
+          payment_actions:
+            href: https://api.sandbox.checkout.com/payments/pay_m3s3k65cfpl2hd2rv4by4vl4r4/actions

@@ -1,0 +1,54 @@
+type: object
+description: Payout accepted response
+required:
+  - id
+  - status
+properties:
+  id:
+    type: string
+    description: The payment's unique identifier
+    pattern: '^(pay)_(\w{26})$'
+    maxLength: 30
+    minLength: 30
+    example: pay_8n2n4o4dsasergngxiq3cx4xtu
+  status:
+    type: string
+    enum:
+      - Accepted
+      - Rejected
+    description: The status of the payout
+    example: Accepted
+  reference:
+    type: string
+    description: Your reference for the payout request
+    maxLength: 50
+    example: example payout
+  destination:
+    type: object
+    description: The destination of the payout
+    properties:
+      account_holder:
+        type: object
+        description: The account holder details
+        properties:
+          id:
+            type: string
+            description: The payment destination identifier (e.g., a card source identifier)
+            pattern: '^(src)_(\w{26})$'
+            minLength: 30
+            maxLength: 30
+            example: src_nwd3m4in3hkuddfpjsaevunhdy
+  links:
+    type: object
+    description: The links related to the payout.
+    required:
+      - href
+    properties:
+      self:
+        type: object
+        description: 	The URI of the payout
+        properties:
+          href:
+            type: string
+            description: The link URL
+            example: https://api.sandbox.checkout.com/payments/pay_8n2n4o4dsasergngxiq3cx4xtu

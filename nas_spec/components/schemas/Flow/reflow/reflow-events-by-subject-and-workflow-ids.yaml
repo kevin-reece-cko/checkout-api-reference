@@ -1,0 +1,22 @@
+type: object
+required:
+  - subjects
+properties:
+  subjects:
+    type: array
+    description: A list of subject IDs (for example, payment IDs and disputes IDs). The events associated with these subjects will be reflowed.
+    items:
+      type: string
+      description: The identifiers of the subjects (for example, payment IDs and dispute IDs) whose events you want reflowed.
+      pattern: ^[a-z]{3}_[a-z0-9]{26}$
+      example: pay_hnmnr6hdbslqlc38jd8mn35bk9
+    example: [pay_lzmo6p0i3612judj754w1ngtil, pay_ol88zt9jviq4mkark1bo5b4i9sk]
+  workflows:
+    type: array
+    description: A list of IDs for the workflows whose actions you want to retrigger.
+    items:
+      type: string
+      description: The identifiers of the workflows you want retriggered.
+      pattern: ^wf_[a-z0-9]{26}$
+      example: wf_iiutwnpb1p8044f2aq2znez9c6
+    example: [wf_sq8jnqi9i749hhb470bu308uk2, wf_bz91q7i4ks4sr0kasmas2xhp56]

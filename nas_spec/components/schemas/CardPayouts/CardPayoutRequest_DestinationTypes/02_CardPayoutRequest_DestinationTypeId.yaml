@@ -1,0 +1,29 @@
+type: object
+description: The destination of the payout
+required:
+  - type
+  - id
+  - account_holder
+properties:
+  type:
+    type: string
+    description: The payout destination type
+  id:
+    type: string
+    pattern: ^(src)_(\w{26})$
+    maxLength: 30
+    minLength: 30
+    description: The payment source identifier (for example, a card source identifier)
+  account_holder:
+    type: object
+    description: Information about the payout destination owner (the recipient cardholder)
+    discriminator:
+      propertyName: type
+      mapping:
+        individual: '#/components/schemas/01_CardPayoutRequest_DestinationAccountHolderIndividual'
+        corporate: '#/components/schemas/02_CardPayoutRequest_DestinationAccountHolderCorporate'
+        government: '#/components/schemas/03_CardPayoutRequest_DestinationAccountHolderGovernment'
+    properties:
+      type:
+        type: string
+        example: 'individual'

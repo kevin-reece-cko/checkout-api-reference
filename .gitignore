@@ -32,9 +32,15 @@ node_modules
 # Optional REPL history
 .node_repl_history
 
-package-lock\.json
+# Postman collection
+cko_collection_beta.json
 
 src/OpenApiGenerator/bin/*
-
 src/OpenApiGenerator/obj/*
+/src/OpenApiGenerator/.vs/
+
 .DS_Store
+
+.idea
+*.iml
+.vscode/settings.json

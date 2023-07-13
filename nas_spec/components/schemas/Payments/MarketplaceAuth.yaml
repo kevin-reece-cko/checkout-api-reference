@@ -1,0 +1,11 @@
+type: object
+description: |
+  Replaced by `amount_allocations`
+  
+  Information related to marketplace payments
+deprecated: true
+properties:
+  sub_entity_id:
+    $ref: '#/components/schemas/MarketplaceNonSplit'
+  sub_entities:
+    $ref: '#/components/schemas/MarketplaceSplit'

@@ -1,0 +1,6 @@
+type: string
+pattern: "^(pay)_(\\w{26})$"
+description: The payment identifier
+maxLength: 30
+minLength: 30
+example: 'pay_mbabizu24mvu3mela5njyhpit4'

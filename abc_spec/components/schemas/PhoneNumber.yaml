@@ -1,0 +1,15 @@
+type: object
+description: A phone number
+properties:
+  number:
+    type: string
+    description: The phone number.
+    minLength: 6
+    maxLength: 25
+    example: '4155552671'
+  country_code:
+    type: string
+    description: The international <a href="https://www.checkout.com/docs/previous/resources/codes/country-codes" target="blank">country calling code</a>. Required for some risk checks.
+    minLength: 1
+    maxLength: 7
+    example: '+1'

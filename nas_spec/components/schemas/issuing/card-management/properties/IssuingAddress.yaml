@@ -1,0 +1,49 @@
+type: object
+required:
+  - address_line1
+  - city
+  - zip
+  - country
+properties:
+  address_line1: 
+    type: string
+    description: The first line of the address.
+    example: Checkout.com
+    pattern: ^[a-zA-Z0-9/àáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð \-,.'_#:]{1,256}$
+    maxLength: 256
+    minLength: 1
+  address_line2:
+    type: string
+    description: The second line of the address.
+    example: 90 Tottenham Court Road
+    pattern: ^[a-zA-Z0-9/àáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð \-,.'_#:]{1,256}$
+    maxLength: 256
+    minLength: 1
+  city:
+    type: string
+    description: The address city.
+    example: London
+    pattern: ^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'\-]{1,128}$
+    maxLength: 128
+    minLength: 1
+  state:
+    type: string
+    description: The address state.
+    example: London
+    pattern: ^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'\-]{1,128}$
+    maxLength: 128
+    minLength: 1
+  zip:
+    type: string
+    description: The address zip code, or postal code.
+    example: W1T 4TJ
+    pattern: ^[0-9a-zA-Z ]{1,10}$
+    maxLength: 10
+    minLength: 1
+  country:
+    type: string
+    description: The address country, as an <a href="https://www.checkout.com/docs/resources/codes/country-codes" target="blank">ISO country code</a>.
+    example: GB
+    pattern: ^[A-Z]{2}$
+    maxLength: 2
+    minLength: 2

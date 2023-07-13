@@ -1,0 +1,119 @@
+parameters:
+  - in: path
+    name: entityId
+    description: The sub-entity's ID.
+    required: true
+    allowEmptyValue: false
+    example: ent_w4jelhppmfiufdnatam37wrfc4
+    style: simple
+    schema:
+      type: string
+  - in: path
+    name: id
+    description: The payment instrument's ID.
+    required: true
+    allowEmptyValue: false
+    example: ppi_qn4nis4k3ykpzzu7cvtuvhqqga
+    style: simple
+    schema:
+      type: string
+get:
+  description: Retrieve the details of a specific payment instrument used for sub-entity payouts.
+  summary: Get payment instrument details
+  operationId: getPlatformsPaymentInstrument
+
+  security:
+    - OAuth:
+        - accounts
+    - ApiSecretKey:
+        - accounts
+  responses:
+    '200':
+      description: Payment instrument details
+      headers:
+        Cko-Version:
+          $ref: '#/components/headers/Cko-Version'
+        Cko-Request-Id:
+          $ref: '#/components/headers/Cko-Request-Id'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/PlatformsPaymentInstrumentRead'
+          examples:
+            BankAccount:
+              value:
+                id: ppi_qn4nis4k3ykpzzu7cvtuvhqqga
+                label: Bob's Bank Account
+                type: bank_account
+                currency: GBP
+                country: GB
+                document:
+                  type: bank_statement
+                  file_id: file_wxglze3wwywujg4nna5fb7ldli
+                status: 'verified'
+                default: true
+                instrument_id: 'src_pdasnoaxrtoevpyh3opgaxcrti'
+            CardToken:
+              value:
+                id: ppi_cwfekfw2d7mmcto5ql4lpjgrxq
+                instrument_id: 'src_jpu3ev6prk7utb5jonqgvvsshm'
+                label: Carol's Card
+                country: GB
+                currency: GBP
+                status: 'verified'
+                default: false
+                type: card_token
+    '400':
+      description: Bad Request
+    '401':
+      description: Unauthorized
+  tags:
+    - Payment instruments
+patch:
+  description: Set an existing payment instrument as default. This will make it the destination instrument when a scheduled payout is made. You can also update the label of a payment instrument.
+  summary: Update payment instrument details
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: '#/components/schemas/PlatformsPaymentInstrumentUpdate'
+  security:
+    - OAuth:
+        - accounts
+    - ApiSecretKey:
+        - accounts
+  responses:
+    '200':
+      description: Payment instrument updated successfully
+      content:
+        application/json:
+          schema:
+            allOf:
+              - $ref: '#/components/schemas/EntityLinks'
+              - type: object
+                properties:
+                  id:
+                    type: string
+                    example: ppi_qn4nis4k3ykpzzu7cvtuvhqqga
+      headers:
+        Cko-Request-Id:
+          $ref: '#/components/headers/Cko-Request-Id'
+        Cko-Version:
+          $ref: '#/components/headers/Cko-Version'
+    '401':
+      description: Unauthorized
+    '422':
+      description: Unprocessable entity
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ValidationError'
+    '428': 
+      description: Precondition required
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/PreconditionRequiredError'
+  tags:
+    - Payment instruments

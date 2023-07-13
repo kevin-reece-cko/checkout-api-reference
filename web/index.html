@@ -2,69 +2,244 @@
 <html>
 
 <head>
-  <title>Checkout.com API Reference</title>
-  <!-- needed for adaptive design -->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+	<script defer type="text/javascript"
+		src="https://cdn-ukwest.onetrust.com/consent/9be650fa-1b77-4848-b2d7-a3118f92e672-test/OtAutoBlock.js"></script>
+	<script defer src="https://cdn-ukwest.onetrust.com/scripttemplates/otSDKStub.js" data-language="en"
+		type="text/javascript" charset="UTF-8" data-domain-script="9be650fa-1b77-4848-b2d7-a3118f92e672-test"></script>
+	<!-- Hotjar Tracking Code for https://api-reference.checkout.com/ -->
+	<script>
+		(function (h, o, t, j, a, r) {
+			h.hj =
+				h.hj ||
+				function () {
+					(h.hj.q = h.hj.q || []).push(arguments);
+				};
+			h._hjSettings = { hjid: 2272523, hjsv: 6 };
+			a = o.getElementsByTagName('head')[0];
+			r = o.createElement('script');
+			r.async = 1;
+			r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
+			a.appendChild(r);
+		})(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
+	</script>
+	<script type="text/javascript">
+		function OptanonWrapper() { }
+	</script>
+	<script async type="text/plain" src="https://www.googletagmanager.com/gtag/js?id=UA-83886670-8"></script>
+	<script type="text/plain" class="optanon-category-C0002" src="./js/gtm.js"></script>
+	<title>Checkout.com API Reference</title>
 
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      color: #444;
-    }
-
-    p {
-      color: #444;
-    }
-
-    h1,
-    h1 a {
-      color: #000 !important;
-    }
-
-    a,
-    .active,
-    ul[role=navigation] label:hover,
-    .loading {
-      color: #35ad88 !important;
-    }
-
-    a:hover {
-      color: #305e4c !important;
-    }
-
-    /* For titles, use (rgb(0, 0, 0) / #000)
-For links and visited links, use (rgb(53,173,136) / #35ad88)
-For hovered links, use (rgb(48,94,76) / #305e4c) */
-
-    /* Version */
-    .api-info span {
-      display: none;
-    }
-
-    /* Download */
-    .api-info p > a {
-      border-color: #35ad88;
-    }
-
-    .api-info p > a {
-      border-color: #35ad88;
-    }
-
-    .api-info p > a:hover {
-      border-color: #305e4c;
-    }
-
-    .scrollbar-container ul:first-child+div {
-      display: none;
-    }
-  </style>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" type="text/css" href="./index.css" />
+	<link rel="apple-touch-icon" sizes="180x180" href="./favicons/apple-touch-icon-180x180.png" />
+	<link rel="icon" type="image/png" sizes="32x32" href="./favicons/favicon-32x32.png" />
+	<link rel="icon" type="image/png" sizes="16x16" href="./favicons/favicon-16x16.png" />
+	<link rel="mask-icon" href="./favicons/favicon.32.safari.svg" color="#00122C" />
+	<link rel="shortcut icon" href="./favicons/favicon.ico" />
+	<meta name="msapplication-TileColor" content="#00122C" />
+	<meta name="msapplication-config" content="./favicons/browserconfig.xml" />
+	<script type="text/plain" class="optanon-category-C0002" src="./js/heapio.js"></script>
+	<script type="text/javascript" src="./js/datadog.js"></script>
+	<script type="text/javascript" src="./js/ddRum.js"></script>
+	<script type="text/plain" class="optanon-category-C0002" src="./js/gcdc.js"></script>
 </head>
 
-<body>
-  <redoc spec-url="./swagger.yaml" hide-loading hide-download-button>
-  </redoc>
-  <script src="https://cdn.jsdelivr.net/npm/redoc@next/bundles/redoc.standalone.js"> </script>
+<body class="light">
+	<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MG7959V" height="0" width="0"
+		style="display: none; visibility: hidden">
+	</iframe>
+
+	<script src="./js/theme.js"></script>
+	<script src="./js/show-footer.js"></script>
+
+	<div id="banner" class="banner">
+		<div class="banner-text">
+			You're viewing our latest API reference with OAuth 2.0. We've emailed you if you need our
+			<a class="banner-link" href="/previous/">previous reference.</a> To find out
+			which you need,
+			<a class="banner-link" href="mailto:support@checkout.com?subject=API reference version support">contact
+				Support.</a>
+		</div>
+	</div>
+
+	<div id="redocly_container"></div>
+
+	<script src="https://cdn.redoc.ly/reference-docs/v2.38.2/redocly-reference-docs.min.js"></script>
+	<script>
+		RedoclyReferenceDocs.init(
+			'./swagger.yaml',
+			{
+				licenseKey:
+					'eyJ0IjpmYWxzZSwiaSI6MTY2NDM1OTQwNiwiZSI6MTY5NTkwMjc2NywiaCI6WyJyZWRvYy5seSIsImNoZWNrb3V0LmNvbSIsImNoZWNrb3V0LWFwaS1yZWZlcmVuY2UtKi1ja28tZnJvbnRlbmQudmVyY2VsLmFwcCJdLCJzIjoicG9ydGFsIn0=.ChY2shSxIaSN7RwrE0lQ81OENWzlRlpviH+bigtt4g7pEYPCBe5IP4N7crk5c0FV3U4NRyYk9O07fYNTl7GNyg==',
+				pagination: 'none',
+				sidebarLinks: {
+					beforeInfo: [
+						{
+							label: 'Changelog',
+							link: 'https://github.com/checkout/checkout-api-reference-changelog/blob/main/nas_spec/changelog.md',
+							target: '_blank',
+						},
+					],
+				},
+				generateCodeSamples: {
+					languages: [{ lang: 'curl' }, { lang: 'Java' }, { lang: 'C#' }, { lang: 'Python' }],
+				},
+				skipOptionalParameters: true,
+				ctrlFHijack: false,
+				hideLoading: true,
+				menuToggle: true,
+				nativeScrollbars: true,
+				sendXUserAgentInTryIt: true,
+				showChangeLayoutButton: false,
+				showSecuritySchemeType: true,
+				hideTryItPanel: true,
+				theme: {
+					codeBlock: {
+						backgroundColor: 'var(--code-background)!important',
+						borderRadius: '8px',
+						tokens: {
+							comment: {
+								color: '#998066!important',
+							},
+							keyword: {
+								color: 'var(--code-value-link)!important',
+							},
+							punctuation: {
+								color: 'var(--primary-text)!important',
+							},
+							operator: {
+								color: '#f5b83d!important',
+							},
+							string: {
+								color: 'var(--code-string)!important',
+							},
+							variable: {
+								color: 'var(--cko-code-light-purple)!important',
+							},
+							boolean: {
+								color: 'var(--code-value-bool)!important',
+							},
+							number: {
+								color: 'var(--code-value-number)!important',
+							},
+							function: {
+								color: 'var(--R800)!important',
+							},
+							property: {
+								color: 'var(--primary-text)!important',
+							},
+							'class-name': {
+								color: 'var(--cko-code-light-blue)!important',
+							},
+						}
+					},
+					colors: {
+						accent: {
+							main: '#0c1142',
+							light: '#ffffce',
+							dark: '#0c1142',
+							contrastText: '#ffffce'
+						},
+						http: {
+							get: '#2db388',
+							post: '#00aeef',
+							put: '#b77ba1',
+							patch: '#fab82b',
+							delete: '#fd755f'
+						},
+						primary: {
+							main: '#0c1142',
+							dark: '#0c1142',
+							light: '#2ad4db',
+							contrastText: '#ffffce',
+						},
+						secondary: {
+							main: '#e6e7ec',
+							light: '#f5f7fa',
+							contrastText: '#0c1142',
+						},
+					},
+					components: {
+						buttons: {
+							borderRadius: '4px',
+						}, 
+						logo: {
+							gutter: '12px'
+						},
+					}, 
+					sidebar: {
+						activeBgColor: '#ffffff',
+						activeTextColor: 'var(--primary-dark-blue)',
+						backgroundColor: 'var(--sidebar-background)',
+						textColor: '#1f2933', 
+						spacing: {
+							paddingHorizontal: '20.0',
+							paddingVertical: '12.5',
+							offsetTop: '0',
+							offsetLeft: '0',
+							offsetNesting: '0',
+						}
+					},
+					typography: {
+						fontFamily: 'Graphik LCG Web, Arial, sans-serif',
+						fontSize: '14px',
+						lineHeight: '24px',
+						heading1: {
+							color: 'var(--primary-text)',
+							fontSize: '40px',
+							lineHeight: '44px',
+							fontWeight: '600',
+						},
+						heading2: {
+							color: 'var(--primary-text)',
+							fontSize: '24px',
+							lineHeight: '32px',
+							fontWeight: '600',
+						},
+						heading3: {
+							color: 'var(--primary-text)',
+							fontSize: '18px',
+							lineHeight: '24px',
+							fontWeight: '400',
+						},
+						links: {
+							hoverTextDecoration: 'underline',
+							hover: 'var(--primary-text)'
+						},
+						code: {
+							fontSize: '13px',
+							color: 'var(--primary-text)!important',
+						}
+					}, 
+					rightPanel: {
+						panelControlsBackgroundColor: '#e6e7ec',
+						panelBackgroundColor: '#f0f3f7',
+						textColor: 'var(--primary-dark-blue)!important',
+					}
+				}
+			},
+			document.querySelector('#redocly_container')
+		);
+	</script>
+
+	<script src="js/show-footer.js"></script>
+
+	<div class="footerParent footer-main">
+		<footer class="footer-wrapper">
+			<div class="footer-item-cko">© 2023 Checkout.com</div>
+			<div class="footer-link-list">
+				<a class="footer-link" href="https://www.checkout.com/legal/terms-and-policies" target="_blank">Terms &
+					Policies</a>
+				<button class="ot-sdk-show-settings onetrust-button footer-link" id="ot-sdk-btn">Cookie settings</button>
+				<a class="footer-link" href="https://www.checkout.com/legal/certificates" target="_blank">Certificates</a>
+				<a class="footer-link" href="https://www.checkout.com/legal/privacy-policy" target="_blank">Privacy policy</a>
+				<a class="footer-link" href="https://www.checkout.com/Modern_Slavery_Statement.pdf" target="_blank">Modern
+					Slavery Statement</a>
+				<a class="footer-link" href="https://www.checkout.com/2019_Supplier_Code_of_Conduct.pdf"
+					target="_blank">Supplier Code of Conduct</a>
+			</div>
+		</footer>
+	</div>
 </body>
 
 </html>

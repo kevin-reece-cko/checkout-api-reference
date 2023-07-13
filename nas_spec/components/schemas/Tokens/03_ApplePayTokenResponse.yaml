@@ -1,0 +1,12 @@
+type: object
+description: Apple Pay Token Response
+allOf:
+  - $ref: '#/components/schemas/TokenResponse'
+  - type: object
+    properties:
+      token_format:
+        type: string
+        description: The format of the token.
+        enum:
+          - cryptogram_3ds
+        example: 'cryptogram_3ds'

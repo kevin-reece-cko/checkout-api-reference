@@ -1,0 +1,6 @@
+type: string
+pattern: "^(act)_(\\w{26})$"
+description: The action identifier
+maxLength: 30
+minLength: 30
+example: 'act_y3oqhf46pyzuxjbcn2giaqnb44'

@@ -1,0 +1,38 @@
+type: array
+items:
+  $ref: '#/components/schemas/PaymentAction'
+minItems: 1
+description: |
+  The payment actions
+example:
+  - 'id': 'act_fd3h6evhpn3uxdoqbuu3lqnqbm'
+    'type': 'Refund'
+    'processed_on': '2018-01-20T10:30:48Z'
+    'amount': 1000
+    'approved': true
+    'response_code': '10000'
+    'response_summary': 'Approved'
+  - 'id': 'act_gefycn3jcvuupboxfmqrhk2aym'
+    'type': 'Capture'
+    'processed_on': '2018-01-17T10:30:48Z'
+    'amount': 6540
+    'approved': true
+    'response_code': '10000'
+    'response_summary': 'Approved'
+    'processing':
+      'acquirer_reference_number': '24021219099007452440793'
+      'acquirer_transaction_id': '00745244079'
+    'metadata':
+      'shipping_ref': 'MQIBN2'
+  - 'id': 'act_y3oqhf46pyzuxjbcn2giaqnb44'
+    'type': 'Authorization'
+    'processed_on': '2018-01-17T09:30:48Z'
+    'amount': 6540
+    'approved': true
+    'auth_code': '643381'
+    'response_code': '10000'
+    'response_summary': 'Approved'
+    'reference': 'ORD-5023-4E89'
+    'processing':
+      'retrieval_reference_number': '909913440644'
+      'acquirer_transaction_id': '440644309099499894406'

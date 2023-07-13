@@ -1,0 +1,7 @@
+type: object
+description: Information related to authentication for payfac payments
+properties:
+  sub_entity_id:
+    type: string
+    description: The sub-entity that the authentication is being processed on behalf of
+    example: 'ent_rgyzti4x74xubmu72m6r3pvksa'

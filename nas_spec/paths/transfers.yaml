@@ -1,0 +1,55 @@
+servers:
+  - url: https://transfers.checkout.com
+    description: Production server
+  - url: https://transfers.sandbox.checkout.com
+    description: Sandbox server
+post:
+  security:
+    - OAuth:
+        - transfers:create
+    - ApiSecretKey:
+        - transfers:create
+  description: |
+    Initiate a transfer of funds from source entity to destination entity.
+  summary: Initiate a transfer of funds
+  operationId: createTransfer
+  parameters:
+    - $ref: '#/components/parameters/ckoIdempotencyKeyRequired'
+  requestBody:
+    required: true
+    description: The details of the transfer.
+    content:
+      application/json:
+        schema:
+          $ref: '#/components/schemas/CreateTransferRequest'
+  responses:
+    '201':
+      description: Transfer successfully created.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/CreateTransferResponse'
+      headers:
+        Cko-Request-Id:
+          $ref: '#/components/headers/Cko-Request-Id'
+        Cko-Version:
+          $ref: '#/components/headers/Cko-Version'
+    '400':
+      description: Bad Request
+    '401':
+      description: Unauthorized
+    '422':
+      description: Invalid data was sent
+      content:
+        application/json:
+          schema:
+            allOf:
+              - $ref: '#/components/schemas/ValidationError'
+              - type: object
+                properties:
+                  error_codes:
+                    example:
+                      - error_code1
+                      - error_code2
+  tags:
+    - Transfers

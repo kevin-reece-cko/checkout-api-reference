@@ -1,0 +1,59 @@
+type: object
+properties:
+  amount:
+    type: integer
+    description: The amount to capture. If not specified, the full payment amount will be captured.
+    minimum: 0
+    example: 6540
+  capture_type:
+    type: string
+    description: The type of capture. If set to `Final`, the remaining available-to-capture balance will be voided.
+    default: Final
+    enum:
+      - NonFinal
+      - Final
+    example: Final
+  reference:
+    type: string
+    description: A reference you can later use to identify this capture request.<br>For Amex, the string limit is 30 characters.
+    maxLength: 50
+    example: 'ORD-5023-4E89'
+  customer:
+    $ref: '#/components/schemas/CustomerRequest'
+  description:
+    type: string
+    description: A description of the payment.
+    maxLength: 100
+    example: 'Set of 3 masks'
+  billing_descriptor:
+    $ref: '#/components/schemas/BillingDescriptor'
+  shipping:
+    type: object
+    description: The shipping details.
+    properties:
+      address:
+        description: The shipping address.
+        allOf:
+          - $ref: '#/components/schemas/Address'
+      phone:
+        description: The phone number associated with the shipping address.
+        allOf:
+          - $ref: '#/components/schemas/PhoneNumber'
+      from_address_zip:
+        type: string
+        description: The postal code or zip code of the location being shipped from.
+        example: '10014'
+  items:
+    $ref: '#/components/schemas/Items'
+  marketplace:
+    $ref: '#/components/schemas/MarketplaceCapture'
+  amount_allocations:
+    $ref: '#/components/schemas/AmountAllocations'
+  processing:
+    $ref: '#/components/schemas/CaptureRequestProcessingSettings'
+  metadata:
+    type: object
+    description: A set of key-value pairs that you can attach to the capture request. This can be useful for storing additional information in a structured format. **Note** that this object only allows one level of depth, so cannot accept non-primitive data types such as objects or arrays.
+    example:
+      coupon_code: 'NY2018'
+      partner_id: 123989

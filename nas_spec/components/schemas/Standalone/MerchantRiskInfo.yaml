@@ -1,0 +1,74 @@
+type: object
+description: >
+  Additional information about the cardholder's purchase.
+properties:
+  delivery_email:
+    type: string
+    description: >
+      For Electronic delivery, the email address to which the merchandise was delivered.
+    maxLength: 254
+    example: brucewayne@email.com
+  delivery_timeframe:
+    type: string
+    description: >
+      Indicates the merchandise delivery timeframe.
+    enum:
+      - electronic_delivery
+      - same_day
+      - overnight
+      - two_day_or_more
+  is_preorder:
+    type: boolean
+    description: >
+      Indicates whether the cardholder is placing an order for merchandise with a future availability or release date.
+    example: true
+  is_reorder:
+    type: boolean
+    description: >
+      Indicates whether the cardholder is reordering previously purchased merchandise.
+    example: false
+  shipping_indicator:
+    type: string
+    description: >
+      Indicates the shipping method chosen for the transaction. Please choose an option that accurately describes the cardholder's specific transaction.
+    enum:
+      - billing_address
+      - another_address_on_file
+      - not_on_file
+      - store_pick_up
+      - digital_goods
+      - travel_and_event_no_shipping
+      - other
+  reorder_items_indicator:
+    type: string
+    description: Specifies whether the cardholder is reordering merchandise they've previously purchased.
+    enum:
+      - first_time_ordered
+      - reordered
+  pre_order_purchase_indicator:
+    type: string
+    description: Specifies whether the cardholder is placing an order for merchandise with an availability date or release date in the future.
+    enum:
+      - merchandise_available
+      - future_availability
+  pre_order_date:
+    type: string
+    format: date-time
+    description: The UTC date the pre-ordered merchandise is expected to be available, in ISO 8601 format.
+  gift_card_amount:
+    type: string
+    description: The total purchase amount, in major units. For example, the major unit amount for a gift card purchase of 135.20 USD is `135`. Only applicable for prepaid or gift card purchases.
+    maxLength: 15
+    example: 123
+  gift_card_currency:
+    type: string
+    maxLength: 3
+    minLength: 3
+    description: The currency code of the gift card,  as a three-digit ISO 4217 code. Only applicable for prepaid or gift card purchases.
+    example: USD
+  gift_card_count:
+    type: string
+    maxLength: 2
+    minLength: 2
+    description: The total number of individual prepaid cards, gift cards, or gift codes purchased. Only applicable for prepaid or gift card purchases.
+    example: 02

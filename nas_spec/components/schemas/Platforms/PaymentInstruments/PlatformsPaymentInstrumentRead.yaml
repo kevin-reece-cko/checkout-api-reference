@@ -1,0 +1,24 @@
+type: object
+title: PaymentInstrumentReadResponse
+allOf:
+  - type: object
+    properties:
+      id:
+        type: string
+        description: The ID of the sub-entity's payment instrument.
+        example: ppi_qn4nis4k3ykpzzu7cvtuvhqqga
+      status:
+        $ref: '#/components/schemas/PlatformsPaymentInstrumentStatus'
+      instrument_id:
+        type: string
+        title: Status
+        description: The payment instrument's ID. Only available once the instrument status is `verified`.
+        example: src_wmlfc3zyhqzehihu7giusaaawu
+  - $ref: '#/components/schemas/PlatformsPaymentInstrument'
+  - type: object
+    properties:
+      _links:
+        type: object
+        additionalProperties:
+          $ref: '#/components/schemas/Link'
+        

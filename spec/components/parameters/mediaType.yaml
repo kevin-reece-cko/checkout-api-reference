@@ -1,8 +1,0 @@
-name: Accept
-in: header
-schema:
-  type: string
-  enum:
-    - application/json
-  default: application/json
-description: The response media type

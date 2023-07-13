@@ -1,0 +1,58 @@
+get:
+  tags:
+    - Forex
+  security:
+    - OAuth:
+        - fx
+  summary: Get FX rates
+  operationId: getFxRates
+  description: |
+    Use the Forex (FX) rates API to get the indicative foreign exchange rates that Checkout.com uses to process payments for card payouts. You can query the rates and the related source of rates (for example, Visa, Mastercard).
+  parameters:
+    - name: product
+      in: query
+      required: true
+      schema:
+        $ref: '#/components/schemas/ForexProduct'
+    - name: source
+      in: query
+      required: true
+      schema:
+        $ref: '#/components/schemas/ForexSource'
+    - name: currency_pairs
+      in: query
+      required: true
+      schema:
+        type: string
+        description: Comma-separated list of currency pairs
+        example: 'GBPEUR,USDNOK,JPNCAD'
+    - name: processing_channel_id
+      in: query
+      required: true
+      schema:
+        $ref: '#/components/schemas/ForexProcessingChannelId'
+  responses:
+    '200':
+      description: Rates retrieved successfully
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ForexRatesResponse'
+      headers:
+        Cko-Request-Id:
+          $ref: '#/components/headers/Cko-Request-Id'
+    '401':
+      description: Unauthorized
+    '429':
+      description: Too many requests or duplicate requests detected
+    '422':
+      description: Invalid data was sent
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ValidationError'
+      headers:
+        Cko-Request-Id:
+          $ref: '#/components/headers/Cko-Request-Id'
+    '502':
+      description: Bad gateway

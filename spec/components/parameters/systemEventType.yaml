@@ -1,6 +1,0 @@
-name: eventType
-in: path
-description: The event type
-schema:
-  type: string
-required: true

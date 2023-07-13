@@ -1,0 +1,26 @@
+type: object
+description: |
+  The question and answer security pair used to support knowledge-based 3DS authentication.
+  
+  Security pairs are set per-card, not per-cardholder.
+required:
+  - question
+  - answer
+properties:
+  question: 
+    type: string
+    description: The cardholder’s security question. 
+    pattern: ^[a-zA-Z0-9àÀáÁâÂäÄçÇèÈéÉêÊëËìÌíÍîÎïÏñÑòÒóÓôÔõÕöÖùÙúÚûÛüÜýÝ+-*/%()=?!~#'\",;:$&\\s\\.]{4,45}$
+    maxLength: 45
+    minLength: 4
+    example: Who are you?
+  answer:
+    type: string
+    description: |
+      The cardholder’s answer to the security question.
+    
+      The answer is not case-sensitive. Leading and trailing white spaces will be ignored.
+    pattern: ^[a-zA-Z0-9àÀáÁâÂäÄçÇèÈéÉêÊëËìÌíÍîÎïÏñÑòÒóÓôÔõÕöÖùÙúÚûÛüÜýÝ+-*/%()=?!~#'\",;:$&\\s\\.]{4,30}$
+    maxLength: 30
+    minLength: 4
+    example: Bond. James Bond.

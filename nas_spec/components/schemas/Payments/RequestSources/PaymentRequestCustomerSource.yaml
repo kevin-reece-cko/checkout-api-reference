@@ -1,0 +1,13 @@
+type: object
+description: A customer source
+allOf:
+  - $ref: '#/components/schemas/PaymentRequestSource'
+  - type: object
+    required:
+      - id
+    properties:
+      id:
+        type: string
+        pattern: "^(cus)_(\\w{26})$"
+        description: The customer's identifier.
+        example: 'cus_y3oqhf46pyzuxjbcn2giaqnb44'

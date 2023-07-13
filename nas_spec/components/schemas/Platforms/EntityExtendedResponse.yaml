@@ -1,0 +1,15 @@
+type: object
+title: ExtendedResponse
+allOf:
+  - $ref: '#/components/schemas/EntityBasicResponse'
+  - type: object
+    properties:
+      contact_details:
+        $ref: '#/components/schemas/EntityContactDetails'
+      profile:
+        $ref: '#/components/schemas/EntityProfile'
+      company:
+        $ref: '#/components/schemas/EntityCompany'
+      individual:
+        $ref: '#/components/schemas/EntityIndividual'
+  - $ref: '#/components/schemas/EntityLinks'

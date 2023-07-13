@@ -1,0 +1,10 @@
+* @adam-young-cko @weronika-castiglione-cko 
+
+/abc_spec/ @cko-web/docs-writers
+/nas_spec/ @cko-web/docs-writers
+
+/abc_spec/components/schemas/Payments/ @cko-web/gateway-product-cko
+/nas_spec/components/schemas/Payments/ @cko-web/gateway-product-cko
+
+/nas_spec/components/schemas/PaymentLinks/ @cko-web/payment-experience-cko
+/nas_spec/components/schemas/HostedPayments/ @cko-web/payment-experience-cko

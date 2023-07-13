@@ -1,0 +1,12 @@
+type: object
+allOf:
+  - $ref: '#/components/schemas/SessionSource'
+  - type: object
+    required:
+      - token
+    properties:
+      token:
+        type: string
+        description: The Checkout.com card token
+        example: 'tok_4gzeau5o2uqubbk6fufs3m7p54'
+        maxLength: 100

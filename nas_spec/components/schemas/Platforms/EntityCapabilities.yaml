@@ -1,0 +1,29 @@
+type: object
+title: Capabilities
+properties:
+  payments:
+    type: object
+    description: 'Payment related capabilities of a sub-entity.'
+    properties:
+      available:
+        type: boolean
+        description: True if payments are available to the sub-entity.
+      enabled:
+        type: boolean
+        description: True if payments are enabled.
+    example:
+      available: true
+      enabled: false
+  payouts:
+    type: object
+    description: 'Payout related capabilities of a sub-entity.'
+    properties:
+      available:
+        type: boolean
+        description: 'True if payouts are available to the sub-entity.'
+      enabled:
+        type: boolean
+        description: 'True if payouts are enabled.'
+    example:
+      available: true
+      enabled: false

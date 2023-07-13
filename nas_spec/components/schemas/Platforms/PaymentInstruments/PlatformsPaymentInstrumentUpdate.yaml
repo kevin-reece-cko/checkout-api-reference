@@ -1,0 +1,23 @@
+type: object
+title: PaymentInstrumentUpdateRequest
+properties:
+  label:
+    title: Label
+    description: A reference that you can use to identify the payment instrument.
+    type: string
+    minLength: 1
+    maxLength: 50
+    example: Peter's Personal Account
+  default:
+    title: Default
+    type: boolean
+    description: Specifies whether the payment instrument should be set as the default payout destination.
+  headers:
+    required:
+      - if-match
+    type: object
+    properties:
+      if-match:
+        type: string
+        description: The payment instrument ETag value
+        example: 'Y3Y9MCZydj0w'

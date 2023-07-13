@@ -1,0 +1,7 @@
+allOf:
+  - $ref: '#/components/schemas/GetSessionResponse'
+required:
+  - session_secret
+properties:
+  session_secret:
+    $ref: '#/components/schemas/SessionSecret'

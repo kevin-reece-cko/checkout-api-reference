@@ -1,0 +1,15 @@
+type: object
+description: |
+  A destination for OpenPay payments
+properties:
+  id:
+    type: string
+    description: The OpenPay account identifier
+    example: 'vendor-123456'
+  amount:
+    type: integer
+    description: The amount to be credited to the destination in the major currency unit
+    example: 10.50
+required:
+  - id
+  - amount

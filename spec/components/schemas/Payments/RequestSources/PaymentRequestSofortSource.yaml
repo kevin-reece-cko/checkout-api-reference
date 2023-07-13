@@ -1,4 +1,0 @@
-type: object
-description: Sofort Source
-allOf:
-  - $ref: "#/components/schemas/PaymentRequestSource"

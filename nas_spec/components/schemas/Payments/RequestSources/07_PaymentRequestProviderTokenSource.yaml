@@ -1,0 +1,20 @@
+type: object
+description: A Provider Token source
+allOf:
+  - $ref: '#/components/schemas/PaymentRequestSource'
+  - type: object
+    required:
+      - payment_method
+      - token
+      - account_holder
+    properties:
+      payment_method:
+        type: string
+        description: The payment transfer method to use with the token data in this transaction
+      token:
+        type: string
+        description: Provider token for Checkout partner integration
+      account_holder:
+        description: The holder of the account
+        allOf:
+          - $ref: '#/components/schemas/AccountHolder'

@@ -1,0 +1,10 @@
+﻿type: string
+enum:
+  - regular
+  - recurring
+  - installment
+  - maintain_card
+  - add_card
+description: Indicates the type of payment this session is for. Please note the spelling of `installment` consists of two `l`s.
+example: regular
+default: regular

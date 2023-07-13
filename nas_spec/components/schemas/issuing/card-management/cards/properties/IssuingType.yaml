@@ -1,0 +1,6 @@
+type: string
+description: The card type.
+enum:
+  - virtual
+  - physical
+example: virtual

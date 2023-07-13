@@ -1,0 +1,27 @@
+type: object
+required:
+  - id
+  - status
+  - _links
+properties:
+  id:
+    type: string
+    description: Batch identifier
+    pattern: "^bat_(\\w{26})$"
+    example: bat_cyukd74c4xoezfuarvuwdcpzou
+  status:
+    type: string
+    description: The status of the batch
+    example: Processing
+  _links:
+    type: object
+    required:
+      - self
+    properties:
+      self:
+        type: object
+        allOf:
+          - $ref: '#/components/schemas/Link'
+        description: The URI of the batch
+        example:
+          href: 'https://api.checkout.com/batches/bat_fa72f568492b4d3eb6d81e0645e320f6'

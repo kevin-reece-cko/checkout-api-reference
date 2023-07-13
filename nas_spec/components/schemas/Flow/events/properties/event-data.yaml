@@ -1,0 +1,71 @@
+type: object
+description: The event data
+example:
+  {
+    'id': 'pay_mbabizu24mvu3mela5njyhpit4',
+    'action_id': 'act_y3oqhf46pyzuxjbcn2giaqnb44',
+    'amount': 6540,
+    'currency': 'USD',
+    'approved': true,
+    'status': 'Authorized',
+    'auth_code': '643381',
+    'payment_type': 'Regular',
+    'response_code': '10000',
+    'response_summary': 'Approved',
+    'scheme_id': '745664329470123',
+    '3ds': { 'downgraded': true, 'enrolled': 'N' },
+    'flagged': true,
+    'source':
+      {
+        'type': 'card',
+        'id': 'src_nwd3m4in3hkuddfpjsaevunhdy',
+        'billing_address':
+          {
+            'line1': 'Checkout.com',
+            'line2': '90 Tottenham Court Road',
+            'town_city': 'London',
+            'state': 'London',
+            'zip': 'W1T 4TJ',
+            'country': 'GB',
+          },
+        'phone': { 'country_code': '+1', 'number': '415 555 2671' },
+        'expiry_month': 12,
+        'expiry_year': 2025,
+        'scheme': VISA',
+        'last_4': '4242',
+        'fingerprint': '54710B428R6H190D29087FF265D8F48DF1AD34EDE41C27CBFF9D23C1A14D9876',
+        'bin': '424242',
+        'card_type': 'CREDIT',
+        'card_category': 'CONSUMER',
+        'issuer': 'MERCHANT UK',
+        'issuer_country': 'GB',
+        'product_id': 'F',
+        'product_type': 'Visa Classic',
+        'avs_check': 'G',
+        'cvv_check': 'Y'
+      },
+      'processing': 
+      {
+          'acquirer_transaction_id': '501979547418712947435',
+          'retrieval_reference_number': '682643929865'
+      },
+      'balances':
+      {
+            'total_authorized': 6540,
+            'total_voided': 0,
+            'available_to_void': 6540,
+            'total_captured': 0,
+            'available_to_capture': 6540,
+            'total_refunded': 0,
+            'available_to_refund': 0
+      },
+      'event_links': 
+      {
+          'payment': 'https://api.checkout.com/payments/pay_wlu3wxc26jounofs5iez75qaqa',
+          'dispute': 'https://api.checkout.com/disputes/dsp_jfh5iqceqau0qw3ccf3p'
+      },
+    'customer': { 'id': 'cus_y3oqhf46pyzuxjbcn2giaqnb44', 'email': 'brucewayne@gmail.com', 'name': 'Bruce Wayne' },
+    'processed_on': '2020-02-27T11:26:59Z',
+    'reference': 'ORD-5023-4E89',
+    'metadata': { 'coupon_code': 'NY2018', 'partner_id': 123989 },
+  }

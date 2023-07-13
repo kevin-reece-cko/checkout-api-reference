@@ -1,0 +1,72 @@
+type: object
+properties:
+  name:
+    type: string
+    description: A name you can use to describe your workflow
+    example: Webhooks workflow
+  active:
+    type: boolean
+    description: Indicates whether the workflow is currently active
+    default: true
+    example: true
+  conditions:
+    type: array
+    description: Only one condition of the same type is permitted
+    minItems: 1
+    items:
+      $ref: '#/components/schemas/workflow-condition'
+  actions:
+    type: array
+    description: One or more workflow actions
+    minItems: 1
+    items:
+      $ref: '#/components/schemas/workflow-action'
+example:
+  {
+    'name': 'Webhooks workflow',
+    'active': true,
+    'conditions':
+      [
+        {
+          'type': 'event',
+          'events':
+            {
+              'gateway':
+                [
+                    'payment_approved',
+                    'payment_declined',
+                    'card_verification_declined',
+                    'card_verified',
+                    'payment_authorization_incremented',
+                    'payment_authorization_increment_declined',
+                    'payment_capture_declined',
+                    'payment_captured',
+                    'payment_refund_declined',
+                    'payment_refunded',
+                    'payment_void_declined',
+                    'payment_voided',
+                ],
+              'dispute':
+                [
+                    'dispute_canceled',
+                    'dispute_evidence_required',
+                    'dispute_expired',
+                    'dispute_lost',
+                    'dispute_resolved',
+                    'dispute_won',
+                ],
+            },
+        },
+        { 'type': 'entity', 'entities': [ 'ent_xyfdshfudosfdshfdiosfds', 'ent_fidjosfjdisofdjsifdosfu' ] },
+        { 'type': 'processing_channel', 'processing_channels': [ 'pc_axclravnqf5u5ejkweijnp5zc4' ] },
+      ],
+    'actions':
+      [
+        {
+          'type': 'webhook',
+          'url': 'https://example.com/webhooks',
+          'headers': { 'Authorization': '<AUTHORIZATION_UUID>' },
+          'signature': { 'method': 'HMACSHA256', 'key': '8V8x0dLK%AyD*DNS8JJr' },
+        },
+      ],
+  }

@@ -1,0 +1,45 @@
+type: object
+description: Details related to the Session source. This property should always be in the response, unless a `card` source was used and communication with Checkout.com's Vault was not possible.
+required:
+  - instrument_id
+  - fingerprint
+properties:
+  instrument_id:
+    type: string
+    description: The identifier of the card instrument.
+    example: src_ubfj2q76miwundwlk72vxt2i7q
+  fingerprint:
+    type: string
+    description: A token that can uniquely identify this card across all customers.
+    example: vnsdrvikkvre3dtrjjvlm5du4q
+  metadata:
+    type: object
+    description: Additional details for this card
+    properties:
+      card_type:
+        type: string
+        description: The card type.
+        enum: ['DEBIT', 'CREDIT', 'PREPAID', 'CHARGE', 'DEFERRED DEBIT']
+        example: CREDIT
+      card_category:
+        type: string
+        description: The card category.
+        enum: ['COMMERCIAL', 'CONSUMER']
+        example: CONSUMER
+      issuer_name:
+        type: string
+        description: The card issuer's name.
+        example: Checkout
+      issuer_country:
+        type: string
+        pattern: ^[A-Z]{2}
+        description: The two letter alpha country code of the card issuer.
+        example: GB
+      product_id:
+        type: string
+        description: The issuer/card scheme product identifier.
+        example: MDS
+      product_type:
+        type: string
+        description: The issuer/card scheme product type.
+        example: 'Debit MasterCard® Card'

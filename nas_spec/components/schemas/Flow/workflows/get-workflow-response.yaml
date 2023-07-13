@@ -1,0 +1,91 @@
+type: object
+properties:
+  id:
+    type: string
+    description: The workflow identifier
+    example: wf_34pacj7ae6wexju4avpecxvp6e
+  name:
+    type: string
+    description: A name you can use to describe your workflow
+    example: Webhooks workflow
+  active:
+    type: boolean
+    description: Indicates whether the workflow is currently active
+    example: true
+  conditions:
+    type: array
+    description: One or more workflow conditions
+    minItems: 1
+    items:
+      $ref: '#/components/schemas/get-workflow-condition'
+  actions:
+    type: array
+    description: One or more workflow actions
+    minItems: 1
+    items:
+      $ref: '#/components/schemas/get-workflow-action'
+  _links:
+    $ref: '#/components/schemas/workflow-links'
+example:
+  {
+    'id': 'wf_34pacj7ae6wexju4avpecxvp6e',
+    'name': 'Webhooks workflow',
+    'active': true,
+    'conditions':
+      [
+        {
+          'id': 'wfc_tisekcawefze3l27uaai6hz74e',
+          'type': 'event',
+          'events': { 'gateway': ['payment_approved', 'payment_pending', 'payment_declined'] },
+          '_links':
+            {
+              'self':
+                {
+                  'href': 'https://api.checkout.com/workflows/wf_34pacj7ae6wexju4avpecxvp6e/conditions/wfc_tisekcawefze3l27uaai6hz74e',
+                },
+            },
+        },
+        {
+          'id': 'wfc_tisekcawefze3l27uaai6hz74y',
+          'type': 'entity',
+          'entities': ['ent_xyfdshfudosfdshfdiosfds', 'ent_fidjosfjdisofdjsifdosfu'],
+          '_links':
+            {
+              'self':
+                {
+                  'href': 'https://api.checkout.com/workflows/wf_34pacj7ae6wexju4avpecxvp6e/conditions/wfc_tisekcawefze3l27uaai6hz74y',
+                },
+            },
+        },
+        {
+          'id': 'wfc_tisekcawefze3l27uaai6hz26y',
+          'type': 'processing_channel',
+          'processing_channels': ['pc_axclravnqf5u5ejkweijnp5zc4'],
+          '_links':
+            {
+              'self':
+                {
+                  'href': 'https://api.checkout.com/workflows/wf_34pacj7ae6wexju4avpecxvp6e/conditions/wfc_tisekcawefze3l27uaai6hz26y',
+                },
+            },
+        },
+      ],
+    'actions':
+      [
+        {
+          'id': 'wfa_itja4x7zgzye3andzqq62u4hvq',
+          'type': 'webhook',
+          'url': 'https://example.com/webhooks',
+          'headers': { 'Authorization': '<AUTHORIZATION_UUID>' },
+          'signature': { 'method': 'HMACSHA256', 'key': '8V8x0dLK%AyD*DNS8JJr' },
+          '_links':
+            {
+              'self':
+                {
+                  'href': 'https://api.checkout.com/workflows/wf_34pacj7ae6wexju4avpecxvp6e/actions/wfa_itja4x7zgzye3andzqq62u4hvq',
+                },
+            },
+        },
+      ],
+    '_links': { 'self': { 'href': 'https://api.checkout.com/workflows/wf_wlu3wxc26jounofs5iez75qaqa' } },
+  }

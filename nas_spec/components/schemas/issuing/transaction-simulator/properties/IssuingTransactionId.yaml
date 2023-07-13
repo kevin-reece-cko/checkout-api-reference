@@ -1,0 +1,6 @@
+type: string
+pattern: "^trx_[a-z0-9]{26}$"
+description: The transaction's unique identifier.
+maxLength: 30
+minLength: 30
+example: trx_aayhhfwbdyxwcaeyhhfwbd4xga

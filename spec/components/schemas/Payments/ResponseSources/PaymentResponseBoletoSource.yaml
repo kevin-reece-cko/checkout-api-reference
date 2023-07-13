@@ -1,4 +1,0 @@
-type: object
-description: An AstroPay Boleto payment source
-allOf:
-  - $ref: "#/components/schemas/PaymentResponseSource"

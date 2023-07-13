@@ -1,0 +1,23 @@
+type: object
+description: Store token details
+allOf:
+  - $ref: '#/components/schemas/StoreInstrumentRequest'
+  - type: object
+required:
+  - token
+properties:
+  type:
+    description: The type of instrument
+    type: string
+
+  token:
+    type: string
+    description: The Checkout.com token
+    pattern: ^(tok)_(\w{26})$ | ^(card_tok)_(\w{12})$
+    example: tok_asoto22g2fsu7prwomy12sgfsa
+
+  account_holder:
+    $ref: '#/components/schemas/StoreAccountHolderTokenRequest'
+
+  customer:
+    $ref: '#/components/schemas/StoreCustomerInstrumentRequest'

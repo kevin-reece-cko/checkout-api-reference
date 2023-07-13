@@ -1,0 +1,47 @@
+type: object
+title: Integrated authentication
+description: Required information to process a 3DS authentication with the payment request
+required:
+  - enabled
+  - 
+properties:
+  enabled:
+    type: boolean
+    description: Whether to process this payment as a 3D Secure payment
+    default: false
+    example: true
+  attempt_n3d:
+    type: boolean
+    description: |
+      Specifies whether to attempt a 3D Secure payment as non-3D Secure if the card issuer is not enrolled, or there is a technical issue during authentication
+    default: false
+    example: true
+  exemption:
+    type: string
+    enum:
+      - low_value
+      - secure_corporate_payment
+      - trusted_listing
+      - transaction_risk_assessment
+      - 3ds_outage
+      - sca_delegation
+      - out_of_sca_scope
+      - other
+      - low_risk_program
+      - recurring_operation
+    description: Specifies an exemption reason so that the payment is not processed using 3D Secure authentication. Learn more about exemptions in our <a href="https://docs.checkout.com/four/payments/regulation-support/sca-compliance-guide#SCAcomplianceguide-PossibleSCAexemptionsexemptions" target="_blank">SCA compliance guide</a>
+    example: 'low_value'
+  challenge_indicator:
+    type: string
+    description: Indicates the preference for whether or not a 3DS challenge should be performed. The customer’s bank has the final say on whether or not the customer receives the challenge.
+    enum:
+      - no_preference
+      - no_challenge_requested
+      - challenge_requested
+      - challenge_requested_mandate
+    default: no_preference
+  allow_upgrade:
+    type: boolean
+    description: Indicates whether to process this payment as 3D Secure if the authorization was soft declined due to 3DS authentication required. For processing channels created before October 12, 2022, the value will default to `false`.
+    default: true
+    example: true

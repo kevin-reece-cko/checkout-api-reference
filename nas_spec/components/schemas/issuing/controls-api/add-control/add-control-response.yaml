@@ -1,0 +1,33 @@
+type: object
+description: The control's details.
+discriminator:
+  propertyName: control_type
+  mapping:
+    velocity_limit: '#/components/schemas/velocity-limit-response'
+    mcc_limit: '#/components/schemas/mcc-limit-response'
+    mid_limit: '#/components/schemas/mid-limit-response'
+required:
+  - id
+  - control_type
+  - target_id
+  - created_date
+  - last_modified_date
+properties:
+  id:
+    $ref: '#/components/schemas/IssuingControlId'
+  description:
+    type: string
+    maxLength: 256
+    description: A description for the control.
+  control_type:
+    $ref: '#/components/schemas/IssuingControlType'
+  target_id:
+    $ref: '#/components/schemas/IssuingTargetId'
+  created_date:
+    type: string
+    format: datetime
+    example: "2023-03-12T18:20:12Z"
+  last_modified_date:
+    type: string
+    format: datetime
+    example: "2023-03-12T18:20:12Z"

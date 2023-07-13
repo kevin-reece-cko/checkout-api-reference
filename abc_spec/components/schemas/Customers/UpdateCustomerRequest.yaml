@@ -1,0 +1,26 @@
+type: object
+description: The customer attached to the instrument
+properties:
+  email:
+    description: The email address of the customer
+    type: string
+    example: JohnTest@test.com
+  name:
+    description: The name of the customer
+    type: string
+    example: John Test
+  default:
+    description: The instrument ID for this customer’s default instrument
+    type: string
+    example: src_imu3wifxfvlebpqqq5usjrze6y
+  phone:
+    type: object
+    description: The customer's phone number
+    allOf:
+      - $ref: '#/components/schemas/PhoneNumber'
+  metadata:
+    type: object
+    description: Allows you to store additional information about a customer. You can include a maximum of 10 key-value pairs. Each key and value can be up to 100 characters long.
+    example:
+      coupon_code: 'NY2018'
+      partner_id: 123989

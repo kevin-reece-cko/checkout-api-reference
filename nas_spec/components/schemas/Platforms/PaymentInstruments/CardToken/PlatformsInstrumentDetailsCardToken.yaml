@@ -1,0 +1,18 @@
+description: Card Token Request
+allOf:
+  - $ref: '#/components/schemas/PlatformsPaymentInstrument'
+  - type: object
+    required:
+      - token
+      - instrument_details
+    properties:
+      instrument_details:
+        description: Details of the payment instrument being created
+        type: object
+        properties:
+          token:
+            title: Token
+            description: The token that identifies the card
+            type: string
+            example: 'tok_4gzeau5o2uqubbk6fufs3m7p54'
+        

@@ -1,0 +1,9 @@
+type: object
+allOf:
+  - $ref: '#/components/schemas/add-virtual-card-control-request'
+  - type: object
+    properties:
+      velocity_limit:
+        $ref: '#/components/schemas/VelocityLimit'
+required:
+  - velocity_limit

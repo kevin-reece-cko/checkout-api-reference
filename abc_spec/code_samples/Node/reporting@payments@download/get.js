@@ -1,0 +1,12 @@
+import { Checkout } from 'checkout-sdk-node';
+
+const cko = new Checkout('sk_XXXX');
+
+try {
+	const reconciliation = await cko.reconciliation.getPaymentsCsv({
+		from: '2019-05-17T16:48:52Z',
+		to: '2019-06-17T16:48:52Z',
+	});
+} catch (err) {
+	console.log(err.name);
+}

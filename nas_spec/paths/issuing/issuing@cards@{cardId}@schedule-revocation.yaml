@@ -1,0 +1,35 @@
+post:
+  tags:
+  - Cards
+  summary: Schedule card revocation
+  description: Schedules a card to be revoked on a specific date.
+  servers:
+  - url: https://api.checkout.com/
+    description: Live API
+  - url: https://api.sandbox.checkout.com/
+    description: Sandbox API
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: '#/components/schemas/schedule-revocation-request'
+  responses:
+    '200':
+      description: Revocation scheduled successfully
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/schedule-revocation-response'
+    '401':
+      description: Unauthorized
+    '422':
+      description: Invalid data was sent
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/IssuingValidationError'
+    '500':
+      description: Internal Server Error
+    '503':
+      description: Service Unavailable

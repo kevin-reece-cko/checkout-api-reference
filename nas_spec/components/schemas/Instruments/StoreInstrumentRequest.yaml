@@ -1,0 +1,13 @@
+type: object
+description: The type of instrument to be stored
+discriminator:
+  propertyName: type
+  mapping:
+    bank_account: '#/components/schemas/StoreBankAccountInstrumentRequest'
+    token: '#/components/schemas/StoreTokenInstrumentRequest'
+required:
+  - type
+properties:
+  type:
+    description: The type of instrument
+    type: string

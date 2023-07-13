@@ -1,0 +1,6 @@
+type: string
+pattern: "^(qte)_(\\w{26})$"
+description: The FX quote identifier
+maxLength: 30
+minLength: 30
+example: 'qte_mbabizu24mvu3mela5njyhpit4'

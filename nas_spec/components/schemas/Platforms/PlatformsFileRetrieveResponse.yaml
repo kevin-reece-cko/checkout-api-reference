@@ -1,0 +1,46 @@
+type: object
+properties:
+  id:
+    type: string
+    description: The ID of the file.
+    example: file_6lbss42ezvoufcb2beo76rvwly
+  status:
+    type: string
+    description: The current status of the file.
+    example: invalid
+  status_reasons:
+    type: array
+    description: If `status` is `Invalid`, returns the reasons why the file was invalid. If `status` is any other value, returns `Null`.
+    example: ["InvalidMimeType"]
+  size:
+    type: number
+    description: The size of the file in KB.
+    example: 1024
+  mime_type:
+    type: string
+    description: The MIME type of the file.
+    example: application/pdf
+  uploaded_on:
+    type: string
+    format: date-time
+    description: The date and time the file was uploaded, in ISO 8601 UTC format.
+    example: "2020-12-01T15:01:01Z"
+  purpose:
+    type: string
+    description: The purpose of the file, as provided in the initial request.
+    example: identity_verification
+    enum:
+      - identity_verification
+      - dispute_evidence
+      - bank_verification
+      - company_verification
+      - financial_verification
+  _links:
+    additionalProperties:
+      $ref: '#/components/schemas/Link'
+    example:
+      download:
+        href: "https://s3.eu-west-1.amazonaws.com/mp-files-api-clean-prod/ent_ociwguf5a5fe3ndmpnvpnwsi3e/file_6lbss42ezvoufcb2beo76rvwly?X-Amz-Expires=3600&x-amz-security-token=some_token"
+      self:
+        href: "https://files.checkout.com/files/file_6lbss42ezvoufcb2beo76rvwly"
+

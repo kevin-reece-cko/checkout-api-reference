@@ -1,0 +1,49 @@
+type: object
+title: Individual
+description: 'Information about the individual represented by the sub-entity. Include this object if you are onboarding a sole proprietor. This is required if the company object is omitted.'
+properties:
+  first_name:
+    type: string
+    description: "The person's first name."
+    minLength: 2
+    maxLength: 50
+    example: 'John'
+  middle_name:
+    type: string
+    description: "The person's middle name."
+    maxLength: 50
+    example: 'Paul'
+  last_name:
+    type: string
+    description: "The person's last name."
+    minLength: 2
+    maxLength: 50
+    example: 'Doe'
+  legal_name:
+    type: string
+    description: 'The legal name of the person.'
+    example: John Paul Doe
+    readOnly: true
+  trading_name:
+    type: string
+    description: "If applicable, the person's trading name."
+    minLength: 2
+    maxLength: 300
+    example: Super Hero Masks
+  national_tax_id:
+    type: string
+    description: "The sub-entity's Tax Identification Code. For example, a Value Added Tax (VAT) number in the UK."
+    minLength: 2
+    maxLength: 16
+    example: '1234567'
+  registered_address:
+    title: Address
+    description: 'The registered address of the person.'
+    allOf:
+      - $ref: '#/components/schemas/EntityAddress'
+  date_of_birth:
+    $ref: '#/components/schemas/DateOfBirth'
+  place_of_birth:
+    $ref: '#/components/schemas/PlaceOfBirth'
+  identification:
+    $ref: '#/components/schemas/EntityIdentification'

@@ -1,0 +1,6 @@
+type: object
+required:
+  - revocation_date
+properties:
+  revocation_date:
+    $ref: '#/components/schemas/IssuingRevocationDate'

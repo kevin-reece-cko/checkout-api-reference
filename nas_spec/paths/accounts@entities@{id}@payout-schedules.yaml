@@ -1,0 +1,83 @@
+get:
+  tags:
+    - Payout schedules
+  parameters:
+    - in: path
+      name: id
+      description: The ID of the sub-entity.
+      required: true
+      allowEmptyValue: false
+      example: ent_w4jelhppmfiufdnatam37wrfc4
+      style: simple
+      schema:
+        type: string
+  security:
+    - OAuth:
+        - accounts
+    - ApiSecretKey:
+        - accounts
+  summary: Retrieve a sub-entity's payout schedule
+  operationId: getSubEntitysPayoutSchedule
+  description: >-
+    You can schedule when your sub-entities receive their funds using our <a href="https://checkout.com/docs/platforms" target="_blank">Platforms solution</a>. Use this endpoint to retrieve information about a sub-entity's schedule.
+  responses:
+    '200':
+      description: Schedule retrieved successfully
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/GetScheduleResponse'
+      headers:
+        Cko-Request-Id:
+          $ref: '#/components/headers/Cko-Request-Id'
+        Cko-Version:
+          $ref: '#/components/headers/Cko-Version'
+    '401':
+      description: Unauthorized.
+    '404':
+      description: Sub-entity not found, or scheduled payouts are not available to the sub-entity.
+    '422':
+      description: Invalid data sent.
+    '429':
+      description: Too many requests.
+
+put:
+  tags:
+    - Payout schedules
+  security:
+    - OAuth:
+        - accounts
+    - ApiSecretKey:
+        - accounts
+  summary: Update a sub-entity's payout schedule
+  operationId: putSubEntitysPayoutSchedule
+  description: >-
+    You can schedule when your sub-entities receive their funds using our <a href="https://checkout.com/docs/platforms" target="_blank">Platforms solution</a>. Use this endpoint to update a sub-entity's schedule.
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: '#/components/schemas/UpdateScheduleRequest'
+  responses:
+    '200':
+      description: Schedule updated successfully
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/EntityLinks'
+      headers:
+        Cko-Request-Id:
+          $ref: '#/components/headers/Cko-Request-Id'
+        Cko-Version:
+          $ref: '#/components/headers/Cko-Version'
+    '401':
+      description: Unauthorized
+    '422':
+      description: Unprocessable entity
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ValidationError'
+    '429':
+      description: Too many requests

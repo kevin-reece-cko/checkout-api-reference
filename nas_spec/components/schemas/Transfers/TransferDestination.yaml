@@ -1,0 +1,8 @@
+type: object
+title: Transfer destination
+description: The object representing the destination of the funds involved in the transfer.
+properties:
+  id:
+    type: string
+    description: The identifier representing the destination of the funds. Currently this should be an entity ID.
+    example: ent_w4jelhppmfiufdnatam37wrfc4

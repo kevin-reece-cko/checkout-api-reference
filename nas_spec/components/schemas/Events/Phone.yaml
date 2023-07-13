@@ -1,0 +1,8 @@
+type: object
+properties:
+  country_code:
+    type: string
+    example: '975'
+  number:
+    type: string
+    example: '174217187'

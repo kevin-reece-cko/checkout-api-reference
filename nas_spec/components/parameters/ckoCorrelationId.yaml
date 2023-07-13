@@ -1,0 +1,3 @@
+description: The unique correlation ID for the request
+schema:
+  type: string

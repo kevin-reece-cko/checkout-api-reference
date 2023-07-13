@@ -1,0 +1,10 @@
+type: object
+description: The period of time over which the card can spend the specified `amount_limit`.
+required:
+  - value
+properties:
+  type:
+    type: string
+    enum: [daily, weekly, monthly, all_time]
+    description: The velocity window's unit of time.
+    example: weekly

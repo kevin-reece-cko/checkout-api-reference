@@ -1,0 +1,19 @@
+type: object
+description: Details about the sender of the payout's funds. **This object is only required if the sender is different from the client entity.**
+discriminator:
+  propertyName: type
+  mapping:
+    individual: '#/components/schemas/01_PaymentRequestIndividualSender'
+    corporate: '#/components/schemas/02_PaymentRequestCorporateSender'
+    instrument: '#/components/schemas/03_PaymentRequestInstrumentSender'
+properties:
+  type:
+    type: string
+    enum:
+      - individual
+      - corporate
+      - instrument
+    description: The type of sender. If set to `instrument`, the sender information (name and address) will be retrieved from the payment instrument. This is for the cases where the sender and recipient are the same entity. The only field that needs to be provided is the sender reference to uniquely identify the sender.
+  reference:
+    type: string
+    description: The unique reference for the sender.

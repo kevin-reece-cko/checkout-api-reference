@@ -1,0 +1,4 @@
+type: object
+description: 'WeChat Pay payment source'
+allOf:
+  - $ref: '#/components/schemas/PaymentResponseSource'

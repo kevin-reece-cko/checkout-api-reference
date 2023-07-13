@@ -1,0 +1,6 @@
+type: integer
+format: int32
+description: The card's expiration month.
+minimum: 1
+maximum: 12
+example: 5

@@ -1,0 +1,25 @@
+type: object
+properties:
+  id:
+    $ref: '#/components/schemas/EventId'
+  type:
+    type: string
+    description: The event type
+    example: payment_approved
+  version:
+    type: string
+    description: Determines the version of the event sent
+    example: '2.0'
+  created_on:
+    description: The date/time the event occurred
+    allOf:
+      - $ref: '#/components/schemas/ServerTimestamp'
+  data:
+    $ref: '#/components/schemas/Data'
+  notifications:
+    type: array
+    description: The notifications (e.g., webhooks) that have been sent for the event
+    items:
+      $ref: '#/components/schemas/NotificationSummary'
+  _links:
+    $ref: '#/components/schemas/EventLinks'

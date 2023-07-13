@@ -1,0 +1,7 @@
+type: string
+description: The issuing currency, as a three-letter <a href="https://docs.checkout.com/docs/currency-codes" target="blank">ISO currency code</a>.
+format: ISO4217
+example: USD
+pattern: ^[a-zA-Z]{3}$
+maxLength: 3
+minLength: 3

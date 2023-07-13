@@ -1,0 +1,18 @@
+type: object
+description: The customer to which this payment is linked
+required:
+  - id
+properties:
+  id:
+    type: string
+    pattern: "^(cus)_(\\w{26})$"
+    description: The customer's unique identifier. This can be passed as a source when making a payment
+    example: 'cus_y3oqhf46pyzuxjbcn2giaqnb44'
+  email:
+    type: string
+    description: The customer's email address
+    example: 'brucewayne@gmail.com'
+  name:
+    type: string
+    description: The customer's name
+    example: 'Bruce Wayne'

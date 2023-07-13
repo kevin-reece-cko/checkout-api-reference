@@ -1,0 +1,18 @@
+type: object
+properties:
+  id:
+    type: string
+    maxLength: 30
+    minLength: 30
+    description: The event identifier
+    example: evt_az5sblvku4ge3dwpztvyizgcau
+  type:
+    type: string
+    description: The event type
+    example: payment_approved
+  created_on:
+    description: The date/time the event occurred
+    allOf:
+      - $ref: '#/components/schemas/ServerTimestamp'
+  _links:
+    $ref: '#/components/schemas/EventLinks'

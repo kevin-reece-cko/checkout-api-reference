@@ -1,0 +1,12 @@
+description: |
+  The digital card's current status, which determines whether it can approve incoming authorizations:
+  
+  - `inactive`: the default state - authorizations will be declined until the card is activated
+  - `active`: authorization requests can be approved
+  - `deleted`: incoming authorization requests will be declined, permanently — the card cannot be reactivated from this state
+type: string
+enum:
+  - active
+  - inactive
+  - deleted
+example: active

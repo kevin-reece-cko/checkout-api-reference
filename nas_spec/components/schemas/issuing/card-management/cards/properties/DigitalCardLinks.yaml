@@ -1,0 +1,13 @@
+type: object
+description: The links related to the digital card.
+minItems: 1
+required:
+  - self
+properties:
+  self:
+    type: object
+    $ref: '#/components/schemas/IssuingLink'
+    description: The URI to retrieve the digital card's details.
+example:
+  self:
+    href: "https://api.checkout.com/issuing/digital-cards/dcr_5ngxzsynm2me3oxf73esbhda6q"

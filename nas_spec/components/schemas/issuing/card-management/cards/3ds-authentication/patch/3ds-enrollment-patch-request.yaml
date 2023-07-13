@@ -1,0 +1,10 @@
+type: object
+properties:
+  security_pair:
+    $ref: '#/components/schemas/3dsSecurityPair'
+  password:
+    $ref: '#/components/schemas/3dsPassword'
+  locale:
+    $ref: '#/components/schemas/3dsLocale'
+  phone_number:
+    $ref: '#/components/schemas/3dsPhoneNumber'

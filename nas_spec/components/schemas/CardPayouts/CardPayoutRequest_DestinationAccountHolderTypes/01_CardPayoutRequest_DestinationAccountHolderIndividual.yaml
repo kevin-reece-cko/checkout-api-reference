@@ -1,0 +1,32 @@
+type: object
+description: The account holder details
+required:
+  - type
+  - first_name
+  - last_name
+properties:
+  type:
+    type: string
+    description: The type of payout destination owner
+    example: 'individual'
+  first_name:
+    type: string
+    description: |
+      The payout destination owner's first name
+
+      *A valid and legal name must be populated in this field. The populated value cannot be only one character or all numeric.*
+    maxLength: 35
+  middle_name:
+    type: string
+    description: |
+      The payout destination owner's middle name
+      
+      ***Conditional*** - required when the [card metadata](https://api-reference.checkout.com/#operation/requestCardMetadata!c=200&path=issuer_country&t=response) `issuer_country` = `SA` (South Africa)
+    maxLength: 35    
+  last_name:
+    type: string
+    description: |
+      The payout destination owner's last name
+
+      *A valid and legal name must be populated in this field. The populated value cannot be only one character or all numeric.*
+    maxLength: 35

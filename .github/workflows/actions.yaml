@@ -1,0 +1,33 @@
+name: Node.js CI
+
+on: [ pull_request ]
+
+env:
+  CI: true
+
+jobs:
+  run-checks:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16.x
+
+      - name: Install node modules
+        run: npm ci --ignore-scripts
+
+      - name: Build ABC & NAS specs
+        run: npm run build:all
+
+      - name: Validate schema
+        run: |
+          npm run test:abc
+          npm run test:nas
+
+      - uses: actions/upload-artifact@master
+        with:
+          name: my-artifact
+          path: web_deploy

@@ -1,30 +1,48 @@
 {
-  "name": "gateway-openapi-spec",
+  "name": "checkout-openapi-spec",
   "version": "0.0.1",
+  "private": true,
+  "engines": {
+    "node": "16.x"
+  },
   "dependencies": {
-    "bower": "^1.7.7",
-    "connect": "^3.4.1",
-    "cors": "^2.7.1",
-    "deploy-to-gh-pages": "^1.1.0",
-    "gulp": "^3.9.1",
-    "gulp-connect": "^4.2.0",
-    "gulp-util": "^3.0.7",
-    "portfinder": "^1.0.3",
+    "connect": "^3.7.0",
+    "cors": "^2.8.5",
+    "cross-env": "^7.0.3",
+    "dotnet-sdk-3.1": "^3.1.1007",
+    "gulp": "^4.0.2",
+    "gulp-connect": "^5.7.0",
+    "gulp-exec": "^5.0.0",
+    "gulp-util": "^3.0.8",
+    "openapi-types": "^12.1.0",
+    "portfinder": "^1.0.28",
+    "prettier": "^2.3.1",
     "request": "2.88.0",
-    "shelljs": "^0.7.0",
-    "swagger-repo": "^1.0.0",
-    "swagger-ui": "^2.1.4",
-    "swagger-cli": "2.1.0",
+    "shelljs": "^0.8.5",
+    "swagger-cli": "4.0.4",
+    "swagger-repo": "^2.0.0-rc.15",
+    "swagger-ui": "^4.18.0",
     "yamljs": "0.3.0"
   },
-  "private": true,
   "scripts": {
-    "deploy": "npm run build && deploy-to-gh-pages --update web_deploy",
-    "build": "node ./scripts/build.js",
-    "swagger": "swagger-repo",
-    "test": "swagger-cli validate --no-schema web_deploy/swagger.yaml",
+    "build:abc": "cross-env ACCOUNT=abc node ./scripts/build.js",
+    "build:all": "cross-env ACCOUNT=abc node ./scripts/build.js && cross-env ACCOUNT=nas node ./scripts/build.js",
+    "build:nas": "cross-env ACCOUNT=nas node ./scripts/build.js",
+    "test:abc": "swagger-cli validate --no-schema web_deploy/previous/swagger.yaml",
+    "test:nas": "swagger-cli validate --no-schema web_deploy/swagger.yaml",
+    "prettier": "npx prettier --write '**/*.{js,yaml}'",
     "start": "gulp serve",
-    "deploy-branch": "node ./scripts/deploy-branch.js",
-    "sync-generated-specs": "node ./scripts/sync-generated-specs.js"
+    "swagger": "swagger-repo",
+    "sync-generated-apm-specs": "node ./scripts/sync-generated-apm-specs.js",
+    "sync-generated-apm-specs-legacy-aws-env": "node ./scripts/sync-generated-apm-specs-legacy-aws-env.js"
+  },
+  "prettier": {
+    "printWidth": 120,
+    "tabWidth": 2,
+    "useTabs": true,
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "es5",
+    "bracketSpacing": true
   }
 }

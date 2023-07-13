@@ -1,0 +1,6 @@
+type: string
+pattern: "^crd_[a-z0-9]{26}$"
+description: The card's unique identifier.
+maxLength: 30
+minLength: 30
+example: crd_fa6psq242dcd6fdn5gifcq1491

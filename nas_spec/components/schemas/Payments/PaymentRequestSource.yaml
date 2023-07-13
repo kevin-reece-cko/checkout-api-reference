@@ -1,0 +1,52 @@
+type: object
+description: The source of the payment
+discriminator:
+  propertyName: type
+  mapping:
+    token: '#/components/schemas/01_PaymentRequestTokenSource'
+    id: '#/components/schemas/02_PaymentRequestIdSource'
+    card: '#/components/schemas/03_PaymentRequestCardSource'
+    customer: '#/components/schemas/PaymentRequestCustomerSource'
+    network_token: '#/components/schemas/04_PaymentRequestNetworkTokenSource'
+    provider_token: '#/components/schemas/07_PaymentRequestProviderTokenSource'
+    bank_account: '#/components/schemas/PaymentRequestBankAccountSource'
+    wechatpay: '#/components/schemas/08_PaymentRequestWeChatPaySource'
+    eps: '#/components/schemas/PaymentRequestEpsSource'
+    giropay: '#/components/schemas/PaymentRequestGiropaySource'
+    paypal: '#/components/schemas/PaymentRequestPayPalSource'
+    alipay_hk: '#/components/schemas/PaymentRequestAlipayPlusSource'
+    alipay_cn: '#/components/schemas/PaymentRequestAlipayPlusSource'
+    alipay_plus: '#/components/schemas/PaymentRequestAlipayPlusSource'
+    gcash: '#/components/schemas/PaymentRequestAlipayPlusSource'
+    benefit: '#/components/schemas/PaymentRequestBenefitSource'
+    fawry: '#/components/schemas/PaymentRequestFawrySource'
+    ideal: '#/components/schemas/PaymentRequestIdealSource'
+    sofort: '#/components/schemas/PaymentRequestSofortSource'
+    dana: '#/components/schemas/PaymentRequestAlipayPlusSource'
+    kakaopay: '#/components/schemas/PaymentRequestAlipayPlusSource'
+    truemoney: '#/components/schemas/PaymentRequestAlipayPlusSource'
+    tng: '#/components/schemas/PaymentRequestAlipayPlusSource'
+    qpay: '#/components/schemas/PaymentRequestQPaySource'
+    afterpay: '#/components/schemas/PaymentRequestAfterPaySource'
+    mbway: '#/components/schemas/PaymentRequestMbwaySource'
+    stcpay: '#/components/schemas/PaymentRequestStcPaySource'
+    klarna: '#/components/schemas/PaymentRequestKlarnaSource'
+    p24: '#/components/schemas/PaymentRequestP24Source'
+    knet: '#/components/schemas/PaymentRequestKnetSource'
+    multibanco: '#/components/schemas/PaymentRequestMultibancoSource'
+    postfinance: '#/components/schemas/PaymentRequestPostfinanceSource'
+    bancontact: '#/components/schemas/PaymentRequestBancontactSource'
+    alma: '#/components/schemas/PaymentRequestAlmaSource'
+    illicado: '#/components/schemas/PaymentRequestIllicadoSource'
+    cvconnect: '#/components/schemas/PaymentRequestCvConnectSource'
+    tamara: '#/components/schemas/PaymentRequestTamaraSource'
+    trustly: '#/components/schemas/PaymentRequestTrustlySource'
+    sepa: '#/components/schemas/PaymentRequestSEPAV4Source'
+required:
+  - type
+properties:
+  type:
+    type: string
+    description: The payment source type.<br> *Note:* *To make a payment with full card details, you must be <a href="https://www.checkout.com/docs/payments/regulation-support/pci-compliance" target="_blank">SAQ D PCI compliant</a>*
+    
+    example: 'card'

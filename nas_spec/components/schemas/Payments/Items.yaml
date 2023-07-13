@@ -1,0 +1,61 @@
+type: array
+description: The order line items
+items:
+  type: object
+  description: The order line item or product that is being purchased
+  properties:
+    name:
+      type: string
+      description: The descriptive name of the line item
+      example: Kevlar batterang
+      maxLength: 255
+    quantity:
+      type: integer
+      description: The number of line items
+      minimum: 1
+      example: 2
+    unit_price:
+      type: integer
+      description: The unit price of the item the <a href="https://www.checkout.com/docs/resources/calculating-the-amount" target="blank">minor currency unit</a>
+      minimum: 0
+      example: 50
+    reference:
+      type: string
+      description: The item reference or product SKU (stock-keeping unit).
+      example: 858818ac
+      maxLength: 255
+    commodity_code:
+      type: string
+      description: A code identifying a Commodity for value-added tax (VAT) purposes.
+      maxLength: 12
+      example: 'DEF123'
+    unit_of_measure:
+      type: string
+      description: Unit of Measure code used for an item in transaction.
+      maxLength: 12
+      example: 'metres'
+    total_amount:
+      type: number
+      description: The total amount for the line item.
+      example: 29000
+    tax_amount:
+      type: number
+      description: Contains the total amount of sales tax or value-added tax (VAT) on the total purchase amount. Tax should be included in the total purchase.
+      example: 1000
+    discount_amount:
+      type: number
+      description: The discount applied to each invoice line item.
+      example: 1000
+    wxpay_goods_id:
+      type: string
+      description: Unified product No. defined by WeChat Pay
+      maxLength: 32
+      example: 1001
+    url:
+      type: string
+      maxLength: 1024
+      description: Link to the line item's product page
+    image_url:
+      type: string
+      maxLength: 1024
+      description: Link to the line item's prodcut page

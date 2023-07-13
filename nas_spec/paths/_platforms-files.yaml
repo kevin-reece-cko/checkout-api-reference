@@ -1,0 +1,86 @@
+post:
+  servers:
+  - url: https://files.checkout.com/files
+    description: Production server
+  - url: https://files.sandbox.checkout.com/files
+    description: Sandbox server
+  tags:
+    - Platforms
+  security:
+    - OAuth:
+        - files
+    - ApiSecretKey:
+        - files
+  summary: Upload a file
+  operationId: uploadAFile
+  description: |
+    Our Platforms solution provides an easy way to upload documentation required for full due diligence.
+    
+    Use this endpoint to generate a file upload link, which you can then upload a file to using a data-binary type request.
+    
+    Please note that the sub-domain – https://files.checkout.com – is slightly different to Checkout.com's other endpoints. See the <a href="https://checkout.com/docs/platforms/onboarding/api/full/upload-a-file" target="_blank">documentation</a> for more information.
+  requestBody:
+    content:
+      multipart/form-data:
+        schema:
+          $ref: '#/components/schemas/PlatformsFileUpload'
+  responses:
+    '200':
+      description: File uploaded successfully
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/PlatformsFileUploadResponse'
+      headers:
+        Cko-Request-Id:
+          $ref: '#/components/headers/Cko-Request-Id'
+        Cko-Version:
+          $ref: '#/components/headers/Cko-Version'
+    '401':
+      description: Unauthorized
+    '422':
+      description: Unprocessable
+    '429':
+      description: Too many requests
+
+get:
+  servers:
+  - url: https://files.checkout.com/files/{file_id}
+    description: Production server
+  - url: https://files.sandbox.checkout.com/files/{file_id}
+    description: Sandbox server
+  tags:
+    - Platforms
+  security:
+    - OAuth:
+        - files
+        - files:retrieve
+    - ApiSecretKey:
+        - files
+  summary: Retrieve a file
+  operationId: retrieveAFile        
+  description: >-
+    Retrieve information about a previously uploaded file. 
+  parameters:
+    - in: path
+      name: file_id
+      schema:
+        type: string
+      required: true
+      description: The ID of the file. The value is always prefixed by `file_`.
+  responses:
+    '200':
+      description: OK
+      headers:
+        Cko-Version:
+          $ref: '#/components/headers/Cko-Version'
+        Cko-Request-Id:
+          $ref: '#/components/headers/Cko-Request-Id'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/PlatformsFileRetrieveResponse'                
+    '404':
+      description: File not found
+    '401':
+      description: Unauthorized

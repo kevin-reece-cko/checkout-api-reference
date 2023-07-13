@@ -1,0 +1,29 @@
+type: object
+description: Details of a previous transaction
+properties:
+  acs_transaction_id:
+    type: string
+    minLength: 36
+    maxlength: 36
+    description:  The Access Control Server (ACS) transaction ID for a previously authenticated transaction
+  authentication_method:
+    type: string
+    enum:
+      - frictionless_authentication
+      - challenge_occurred
+      - avs_verified
+      - other_issuer_methods
+  authentication_timestamp:
+    type: string
+    description:  The timestamp of the previous authentication, in ISO 8601 format.
+    example: "2023-02-06T15:00:00.000Z"
+  authentication_data:
+    type: string
+    maxLength: 2048
+    description:  Data that documents and supports a specific authentication process
+  initial_session_id:
+    type: string
+    description: The ID for a previous session, which is used for retrieve the initial transaction's properties
+    example: sid_p6prbhogijnuxgv4grm3ber55u
+    minLength: 30
+    maxLength: 30

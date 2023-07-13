@@ -1,0 +1,21 @@
+type: object
+description: The workflow action
+discriminator:
+  propertyName: type
+  mapping:
+    webhook: '#/components/schemas/webhook-action'
+    #email: '#/components/schemas/email-action'
+    #simulator: '#/components/schemas/simulator-action'
+required:
+  - type
+properties:
+  type:
+    type: string
+    description: The type of workflow action
+    example: webhook
+example:
+  {
+    'type': 'webhook',
+    'url': 'https://example.com/webhooks',
+    'headers': { 'Authorization': '<AUTHORIZATION_UUID>' },
+  }

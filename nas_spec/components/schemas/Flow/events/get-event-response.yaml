@@ -1,0 +1,65 @@
+type: object
+additionalProperties: true
+properties:
+  id:
+    type: string
+    description: The unique event identifier
+    example: evt_az5sblvku4ge3dwpztvyizgcau
+  source:
+    type: string
+    description: The source of the event
+    example: gateway
+  type:
+    type: string
+    description: The event type
+    example: payment_approved
+  timestamp:
+    type: string
+    format: date-time
+    description: The date/time the event occurred
+  version:
+    type: string
+    description: The version of the event
+    example: 1.0.0
+  data:
+    $ref: '#/components/schemas/event-data'
+  action_invocations:
+    type: array
+    description: The list of the actions that trigger this event.
+    items:
+      type: object
+      properties:
+        workflow_id:
+          type: string
+          pattern: ^wf_[a-z0-9]{26}$
+          description: The workflow identifier
+          example: wf_c7svxlvo2bbuva4f6s3xu4f7wm
+        workflow_action_id:
+          type: string
+          description: The worfklow action identifier
+          example: wfa_uzkxpffkvpiu5fe3h5ira7sqpa
+        status:
+          type: string
+          description: The status of the workflow action.
+          enum:
+            - pending
+            - successful
+            - failed
+        _links:
+            type: object
+            description: Links related to the workflow action
+            minItems: 1
+            required:
+              - self
+            properties:
+              self:
+                type: object
+                allOf:
+                - $ref: '#/components/schemas/Link'
+                description: Workflow action results for this event
+            example:
+              self:
+                href: "https://api.checkout.com/events/evt_az5sblvku4ge3dwpztvyizgcau/actions/wfa_uzkxpffkvpiu5fe3h5ira7sqpa"
+  _links:
+    allOf:
+      - $ref: '#/components/schemas/event-links'

@@ -1,0 +1,22 @@
+type: object
+properties:
+  request_id:
+    type: string
+    description: Request ID
+    example: '0HMJGFVAQ35TL:00000117'
+  error_type:
+    type: string
+    description: >
+      The type of error. <br/>
+      • `invalid_request`: Usually occurs with an HTTP status code `422`. The request payload failed validation. <br/>
+      • `not_found`: Usually occurs with an HTTP status code `404`. The requested resource was not found. <br/>
+  error_codes:
+    type: array
+    items:
+      type: string
+    description: >
+      Error response code. Full list of error codes below: <br/>
+      • `invalid_some_field`: Usually occurs with an error type `invalid_request` and HTTP status code `422 Unprocessable entity`. The field `some_field` failed validation. Please consult the API spec. <br/>
+      • `some_resource_not_found`: Usually occurs with an error type `not_found`. The resource you are trying to retrieve does not exist. <br/>
+additionalProperties: false
+description: Error Response

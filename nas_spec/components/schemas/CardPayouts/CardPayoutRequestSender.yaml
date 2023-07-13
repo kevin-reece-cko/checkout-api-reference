@@ -1,0 +1,18 @@
+type: object
+description: |
+  The sender of the payout
+
+  ***Conditional*** - required for Money Transfer and Third-Party Funds Disbursement Card Payout requests
+required:
+  - type  
+discriminator:
+  propertyName: type
+  mapping:
+    individual: '#/components/schemas/01_CardPayoutRequest_SenderAccountHolderIndividual'
+    corporate: '#/components/schemas/02_CardPayoutRequest_SenderAccountHolderCorporate'
+    government: '#/components/schemas/03_CardPayoutRequest_SenderAccountHolderGovernment'
+properties:
+  type:
+    type: string
+    description: The type of card holder
+    example: 'individual'

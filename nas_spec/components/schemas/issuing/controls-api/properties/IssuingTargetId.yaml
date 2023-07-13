@@ -1,0 +1,6 @@
+type: string
+pattern: ^crd_[a-z0-9]{26}$
+description: The ID of the card to apply the control to.
+maxLength: 30
+minLength: 30
+example: crd_fa6psq42dcdd6fdn5gifcq1491

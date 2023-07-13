@@ -1,0 +1,40 @@
+﻿type: object
+allOf:
+  - $ref: '#/components/schemas/SessionSource'
+  - type: object
+    required:
+      - type
+      - token
+      - expiry_month
+      - expiry_year
+    properties:
+      token:
+        type: string
+        description: The network token PAN
+        example: '4543474002249996'
+        minLength: 9
+        maxLength: 19
+      expiry_month:
+        type: integer
+        description: The expiry month of the token
+        minimum: 1
+        example: 6
+        minLength: 1
+        maxLength: 2
+      expiry_year:
+        type: integer
+        description: The expiry year of the token
+        example: 2025
+        minLength: 4
+        maxLength: 4
+      name:
+        type: string
+        description: The customer's name. Any special characters will be replaced.
+        minLength: 2
+        maxLength: 45
+        example: 'Bruce Wayne'
+      stored:
+        type: boolean
+        description: This must be set to `true` for authentications that use <a href="https://www.checkout.com/docs/payments/accept-payments/use-saved-details/about-stored-card-details">stored card details</a>
+        default: false
+        example: true

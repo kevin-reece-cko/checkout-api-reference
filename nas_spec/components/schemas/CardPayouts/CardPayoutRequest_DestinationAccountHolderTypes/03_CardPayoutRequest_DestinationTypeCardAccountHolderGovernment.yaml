@@ -1,0 +1,116 @@
+type: object
+description: The account holder details
+required:
+  - type
+  - company_name
+properties:
+  type:
+    type: string
+    description: The type of payout destination owner
+    example: 'government'
+  company_name:
+    type: string
+    description: |
+      The payout destination owner's company name
+      
+      *A valid and legal name must be populated in this field. The populated value cannot be only one character or all numeric*
+    maxLength: 35
+  billing_address:
+    type: object
+    description: |
+      Information about the payout destination owner's billing address
+
+      ***Conditional*** - required for all Card Payouts requests by merchants incorporated in the US    
+    properties:
+      address_line1:
+        type: string
+        description: |
+          The first line of the address
+
+          ***Conditional*** - required for all Card Payouts requests by merchants incorporated in the US
+        maxLength: 50
+      address_line2:
+        type: string
+        description: The second line of the address
+        maxLength: 50
+      city:
+        type: string
+        description: |
+          The address city
+
+          ***Conditional*** - required for all Card Payouts requests by merchants incorporated in the US 
+        maxLength: 25
+      state:
+        type: string
+        description: |
+          The address state
+
+          ***Conditional*** - required for all Card Payouts requests by merchants incorporated in the US  
+        maxLength: 3
+        minLength: 2
+      zip:
+        type: string
+        description: |
+          The address ZIP (postal) code
+
+          ***Conditional*** - required for all Card Payouts requests by merchants incorporated in the US; the format for US ZIPs must `nnnnn` or `nnnnn-nnnn`
+        maxLength: 10
+      country:
+        type: string
+        description: |
+          The [two-letter ISO country code](https://checkout.com/docs/four/resources/codes/country-codes) of the address
+
+          ***Conditional*** - required for all Card Payouts requests by merchants incorporated in the US
+        maxLength: 2
+        minLength: 2           
+  phone:
+    type: object
+    description: The payout destination owner's phone number
+    required:
+      - country_code
+      - number
+    properties:
+      country_code:
+        type: string
+        description: The [international country calling code](https://checkout.com/docs/four/resources/codes/country-codes) of the address
+        maxLength: 7
+        minLength: 1
+      number:
+        type: string
+        description: The phone number
+        maxLength: 25
+        minLength: 6
+  identification:
+    type: object
+    required:
+      - type
+      - number
+    description: The payout destination owner's identification
+    properties:
+      type:
+        type: string
+        description: The payout destination owner's identification type
+        enum:
+          - passport
+          - driving_license
+          - national_id
+          - company_registration
+          - tax_id
+      number:
+        type: string
+        description: The payout destination owner's identification number
+        maxLength: 25
+      issuing_country:
+        type: string
+        description: If applicable, [two-letter ISO country code](https://checkout.com/docs/four/resources/codes/country-codes) of the issuing country of the payout destination owner's identification
+        maxLength: 2
+        minLength: 2
+      date_of_expiry:
+        type: string
+        description: If applicable, the expiration date of the payout destination owner's identification. Format `yyyy-mm-dd`
+        maxLength: 10
+        minLength: 10
+  email:
+    type: string
+    description: The payout destination owner's email address
+    maxLength: 255

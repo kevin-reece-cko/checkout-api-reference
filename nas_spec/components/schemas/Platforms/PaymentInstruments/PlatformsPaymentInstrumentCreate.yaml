@@ -1,0 +1,17 @@
+type: object
+title: PaymentInstrumentCreateRequest
+discriminator:
+  propertyName: type
+  mapping:
+    card_token: '#/components/schemas/PlatformsInstrumentDetailsCardToken'
+    bank_account: '#/components/schemas/PlatformsPaymentInstrumentBankAccount'
+required:
+  - label
+  - type
+  - currency
+  - instrument_details
+properties:
+  type:
+    type: string
+    description: The type of instrument
+    example: 'bank_account'

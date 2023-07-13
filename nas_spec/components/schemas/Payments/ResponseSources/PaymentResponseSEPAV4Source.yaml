@@ -1,0 +1,18 @@
+###
+# Warning: this file was auto generated from OpenAPI specs. Do not manually edit. 
+###
+type: object
+description: 'SEPA DD Source'
+allOf:
+  -
+    $ref: '#/components/schemas/PaymentResponseSource'
+  -
+    type: object
+    required:
+      - id
+    properties:
+      id:
+        type: string
+        description: 'The instrument ID'
+        example: src_q2euotsbrciupfgmwxkyzuoevq
+

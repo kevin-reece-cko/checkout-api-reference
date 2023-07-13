@@ -1,0 +1,20 @@
+type: object
+description: The get workflow condition
+discriminator:
+  propertyName: type
+  mapping:
+    event: '#/components/schemas/get-event-condition'
+    entity: '#/components/schemas/get-entity-condition'
+    processing_channel: '#/components/schemas/get-processing-channel-condition'
+required:
+  - id
+  - type
+properties:
+  id:
+    type: string
+    description: The workflow condition identifier
+    example: wfc_tisekcawefze3l27uaai6hz74y
+  type:
+    type: string
+    description: The type of the workflow condition
+    example: event

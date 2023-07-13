@@ -1,0 +1,29 @@
+type: object
+description: |
+  User's metadata
+properties:
+  udf1:
+    type: string
+    description: User defined field 1
+    pattern: ^[.*]{255}$
+    example: metadata1
+  udf2:
+    type: string
+    description: User defined field 2
+    pattern: ^[.*]{255}$
+    example: metadata2
+  udf3:
+    type: string
+    description: User defined field 3
+    pattern: ^[.*]{255}$
+    example: metadata3
+  udf4:
+    type: string
+    description: User defined field 4
+    pattern: ^[.*]{255}$
+    example: metadata4
+  udf5:
+    type: string
+    description: User defined field 5
+    pattern: ^[.*]{255}$
+    example: metadata5

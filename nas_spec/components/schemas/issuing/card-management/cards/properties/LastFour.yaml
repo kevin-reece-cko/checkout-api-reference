@@ -1,0 +1,6 @@
+type: string
+minimum: 4
+maximum: 4
+pattern: ^[0-9]{4}$
+description: The last four digits of the card number, also known as the PAN.
+example: 1234

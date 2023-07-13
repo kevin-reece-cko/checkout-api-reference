@@ -1,0 +1,65 @@
+type: object
+description: Payment response
+required:
+  - id
+  - status
+properties:
+  id:
+    description: The payment's unique identifier
+    readOnly: true
+    allOf:
+      - $ref: '#/components/schemas/PaymentId'
+  status:
+    type: string
+    description: The status of the payment
+    enum:
+      - Pending
+  reference:
+    type: string
+    description: Your reference for the payment request
+    example: ORD-5023-4E89
+  customer:
+    type: object
+    description: The customer associated with the payment, if provided in the request
+    allOf:
+      - $ref: '#/components/schemas/CustomerResponse'
+  3ds:
+    type: object
+    description: Provides 3D Secure enrollment status
+    allOf:
+      - $ref: '#/components/schemas/3dsEnrollmentData'
+  processing:
+    type: object
+    description: Returns information related to the processing of the payment
+    readOnly: true
+    properties:
+      continuation_payload:
+        type: string
+        description: The payload for an in-app payment the merchant can use to continue a payments.
+        example: '{\"prepay_id\":\"wx02161421698644ab471821297252eb0000\",\"partner_id\":\"1900012731\",\"timestamp\":1651479262,\"app_id\":\"sub_application_id\",\"nonce\":\"476d17edadf44915ad533107bd3c71c2\",\"sign\":\"QM1CCVAkexZLq00Uz/IxgbqC2ke7Xl9xUayutALc1EebLT1cI85H0biNNjhzQrzFdJ0YCq8KR2Hc9bD01vxRsn18fHzE5bhvn2qlUSOeY7hATfaLYS7+f+gKVj+0iIuUp3qamquErrKYl1g1Vhvlwn1U8TrcjhU0w666YYJuwIP9qPNy6F8wj3ORWM1uYmB9D4v09sTnmZfBPFwuGJzj2PTBGyvoKLu+V1T1HzlC2rwhpDmrSCq0rcFL2smztWGVktpZ2NoggEAVWLjHWsvS8OmzgeosM3ltoCeWjlp1SusmXtlMtUJWyjiVQYHnjb/a42NYk/qynZ/w+BAqLTlDKA==\",\"pkg\":\"Sign=WXPay\"}'
+      partner_payment_id:
+        type: string
+        description: 'The partner-originated unique payment identifier'
+        example: '440644309099499894406'
+  _links:
+    type: object
+    description: The links related to the payment
+    readOnly: true
+    minItems: 2
+    properties:
+      self:
+        type: object
+        allOf:
+          - $ref: '#/components/schemas/Link'
+        description: The URI of the payment
+        example:
+          href: 'https://api.checkout.com/payments/pay_mbabizu24mvu3mela5njyhpit4'
+      redirect:
+        type: object
+        allOf:
+          - $ref: '#/components/schemas/Link'
+        description: The URI that the customer should be redirected to in order to complete the payment
+        example:
+          href: 'https://api.checkout.com/3ds/pay_mbabizu24mvu3mela5njyhpit4'
+    required:
+      - self

@@ -1,0 +1,19 @@
+type: object
+title: FinancialDetails
+properties:
+  annual_processing_volume:
+    description: The estimated annual processing volume. In Euros without decimals in minor units.
+    type: number
+    example: 120000
+  average_transaction_value:
+    description: The expected average transaction value. In Euros without decimals in minor units.
+    type: number
+    example: 2500
+  highest_transaction_value:
+    description: The expected highest transaction value. In Euros without decimals in minor units.
+    type: number
+    example: 10000
+  documents:
+    description: Documents needed to support the financial details that exceed thresholds.
+    allOf:
+      - $ref: '#/components/schemas/EntityFinancialDocuments'

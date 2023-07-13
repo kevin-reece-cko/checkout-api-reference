@@ -1,0 +1,25 @@
+type: object
+title: Create transfer request
+properties:
+  reference:
+    type: string
+    description: A reference you can use later to identify this transfer
+    maxLength: 50
+    example: superhero1234
+  transfer_type:
+    $ref: '#/components/schemas/TransferType'
+  source:
+    allOf:
+      - $ref: '#/components/schemas/TransferSource'
+    required:
+      - id
+      - amount
+  destination:
+    allOf:
+      - $ref: '#/components/schemas/TransferDestination'
+    required:
+      - id
+required:
+  - transfer_type
+  - source
+  - destination

@@ -1,0 +1,8 @@
+description: >
+  Only available as a result of a 3DS2 authentication. 
+
+  The response from the DS or ACS which provides information on why the `response_code` field has the specified value.  <br/>
+  Only available when `response_code` is not `Y`.  <br/>
+  Learn more about the reasons for <a href="https://www.checkout.com/docs/risk-management/3d-secure/sessions/understand-authentication-failures" target="_blank">authentication failures</a>.<br/><br/>
+example: '01'
+type: string

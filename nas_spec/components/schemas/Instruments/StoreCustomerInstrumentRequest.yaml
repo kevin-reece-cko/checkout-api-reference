@@ -1,0 +1,27 @@
+type: object
+description: The customer's details
+properties:
+  id:
+    type: string
+    pattern: "^(cus)_(\\w{26})$"
+    description: The identifier of an existing customer
+    example: 'cus_y3oqhf46pyzuxjbcn2giaqnb44'
+  email:
+    type: string
+    format: email
+    description: An optional email address to associate with the customer
+    maxLength: 255
+    example: 'brucewayne@gmail.com'
+  name:
+    type: string
+    description: The customer's name. This will only set the name for *new* customers.
+    maxLength: 255
+    example: 'Bruce Wayne'
+  phone:
+    description: The customer's phone number. This will only set the phone number for *new* customers.
+    allOf:
+      - $ref: '#/components/schemas/PhoneNumber'
+  default:
+    type: boolean
+    description: If true, this instrument will become the default for the customer. If a *new* customer is created as a result of this request, the instrument will automatically be the default.
+    example: true

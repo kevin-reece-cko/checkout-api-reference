@@ -1,0 +1,50 @@
+type: object
+description: Store a previously tokenized instrument
+allOf:
+  - $ref: '#/components/schemas/PaymentRequestSender'
+required:
+  - type
+  - first_name
+  - last_name
+  - address 
+properties:
+  type:
+    type: string
+    description: The sender type. If set to `instrument`, the sender information (name and address) will be retrieved from the payment instrument.
+  first_name:
+    type: string
+    description: The sender's first name
+    example: 'John'
+  last_name:
+    type: string
+    description: The sender's last name
+    example: 'Jones'
+  dob:
+    type: string
+    format: date
+    description: The sender's date of birth (yyyy-mm-dd)
+    maxLength: 10
+    example: '1985-05-15'
+  address:
+    description: The sender's address
+    allOf:
+      - $ref: '#/components/schemas/Address'
+  identification:
+    type: object
+    properties:
+      type:
+        type: string
+        description: The type of identification used to identify the sender
+        enum:
+          - passport
+          - driving_licence
+          - national_id
+        example: driving_licence
+      number:
+        type: string
+        description: The identification number
+        example: 1234
+      issuing_country:
+        type: string
+        description: The two-letter ISO country code of the country that issued the identification
+        example: GT

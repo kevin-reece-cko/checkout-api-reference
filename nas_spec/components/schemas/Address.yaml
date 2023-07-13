@@ -1,0 +1,32 @@
+type: object
+properties:
+  address_line1:
+    type: string
+    description: The first line of the address. Required if `source.type` is `tamara`
+    maxLength: 200
+    example: Checkout.com
+  address_line2:
+    type: string
+    description: The second line of the address
+    maxLength: 200
+    example: 90 Tottenham Court Road
+  city:
+    type: string
+    description: The address city. Required if `source.type` is `tamara`, `giropay`
+    maxLength: 50
+    example: London
+  state:
+    type: string
+    description: The state or province of the address country (<a href="https://en.wikipedia.org/wiki/ISO_3166-2" target="_blank">ISO 3166-2 code</a> of up to two alphanumeric characters).
+    maxLength: 2
+  zip:
+    type: string
+    description: The address zip/postal code. Required if `source.type` is `giropay`
+    maxLength: 50
+    example: W1T 4TJ
+  country:
+    type: string
+    description: The two-letter <a href="https://www.checkout.com/docs/resources/codes/country-codes" target="_blank">ISO country code</a> of the address. Required if `source.type` is `tamara`, `giropay`
+    example: GB
+    maxLength: 2
+    minLength: 2

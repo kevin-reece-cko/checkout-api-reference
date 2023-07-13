@@ -1,0 +1,13 @@
+type: object
+description: An existing payment source
+required:
+  - id
+allOf:
+  - $ref: '#/components/schemas/CardMetadataRequestSource'
+  - type: object
+    properties:
+      id:
+        type: string
+        pattern: "^(src)_(\\w{26})$"
+        description: The unique ID for the payment instrument that was created using the card's details
+        example: src_wmlfc3zyhqzehihu7giusaaawu

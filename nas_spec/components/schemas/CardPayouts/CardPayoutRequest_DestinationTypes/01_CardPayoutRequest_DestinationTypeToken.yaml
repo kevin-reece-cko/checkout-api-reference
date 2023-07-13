@@ -1,0 +1,29 @@
+type: object
+description: The destination of the payout
+required:
+  - type
+  - token
+  - account_holder
+properties:
+  type:
+    type: string
+    description: The payout destination type
+  token:
+    type: string
+    pattern: ^(tok)_(\w{26})$
+    maxLength: 30
+    minLength: 30
+    description: The Checkout.com token (for example, a card token)
+  account_holder:
+    type: object
+    description: Information about the payout destination owner (the recipient cardholder)
+    discriminator:
+      propertyName: type
+      mapping:
+        individual: '#/components/schemas/01_CardPayoutRequest_DestinationAccountHolderIndividual'
+        corporate: '#/components/schemas/02_CardPayoutRequest_DestinationAccountHolderCorporate'
+        government: '#/components/schemas/03_CardPayoutRequest_DestinationAccountHolderGovernment'
+    properties:
+      type:
+        type: string
+        example: 'individual'

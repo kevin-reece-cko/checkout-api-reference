@@ -1,0 +1,14 @@
+type: object
+description: Condition that filters based on the processing channel
+required:
+  - processing_channels
+allOf:
+  - $ref: '#/components/schemas/get-workflow-condition'
+  - type: object
+    required:
+      - processing_channels
+    properties:
+      processing_channels:
+        $ref: '#/components/schemas/source-processing-channel-hashmap'
+      _links:
+        $ref: '#/components/schemas/workflow-condition-links'

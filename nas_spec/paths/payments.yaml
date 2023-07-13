@@ -1,0 +1,339 @@
+post:
+  security:
+    - OAuth:
+        - gateway
+        - gateway:payment
+    - ApiSecretKey: [ ]
+  tags:
+    - Payments
+  summary: Request a payment or payout
+  operationId: requestAPaymentOrPayout
+  description: |
+    Send a payment or payout.<br><br><b>Note</b>: successful payout requests will always return a 202 response.
+  parameters:
+    - $ref: '#/components/parameters/ckoIdempotencyKey'
+  requestBody:
+    content:
+      application/json:
+        schema:
+          oneOf:
+            - $ref: '#/components/schemas/PaymentRequest'
+            # - $ref: '#/components/schemas/PayoutRequest'
+            - $ref: '#/components/schemas/CardPayoutRequest'
+            - $ref: '#/components/schemas/BankPayoutRequest'
+        examples:
+          Payment:
+            value:
+              source:
+                type: token
+                token: tok_4gzeau5o2uqubbk6fufs3m7p54
+              amount: 6540
+              currency: USD
+              payment_type: Recurring
+              reference: 'ORD-5023-4E89'
+              description: 'Set of 3 masks'
+              capture: true
+              capture_on: '2019-09-10T10:11:12Z'
+              customer:
+                id: 'cus_udst2tfldj6upmye2reztkmm4i'
+                email: 'brucewayne@gmail.com'
+                name: 'Bruce Wayne'
+                phone:
+                  country_code: '+1'
+                  number: '415 555 2671'
+              billing_descriptor:
+                name: SUPERHEROES.COM
+                city: GOTHAM
+              shipping:
+                address:
+                  address_line1: Checkout.com
+                  address_line2: 90 Tottenham Court Road
+                  city: London
+                  state: London
+                  zip: W1T 4TJ
+                  country: GB
+                phone:
+                  country_code: '+1'
+                  number: 415 555 2671
+              3ds:
+                enabled: true
+                attempt_n3d: true
+                eci: '05'
+                cryptogram: AgAAAAAAAIR8CQrXcIhbQAAAAAA=
+                xid: MDAwMDAwMDAwMDAwMDAwMzIyNzY=
+                version: '2.0.1'
+              previous_payment_id: 'pay_fun26akvvjjerahhctaq2uzhu4'
+              risk:
+                enabled: false
+              success_url: 'http://example.com/payments/success'
+              failure_url: 'http://example.com/payments/fail'
+              payment_ip: '90.197.169.245'
+              recipient:
+                dob: '1985-05-15'
+                account_number: '5555554444'
+                zip: W1T
+                last_name: Jones
+              metadata:
+                coupon_code: 'NY2018'
+                partner_id: 123989
+          Bank Payout:
+            value:
+              source:
+                type: 'currency_account'
+                id: 'ca_y3oqhf46pyzuxjbcn2giaqnb44'
+              destination:
+                type: 'id'
+                id: 'src_gsd2agaqd2sernz5tpcfv555nq'
+              amount: 1000
+              currency: GBP
+              reference: 'PO-215-5721'
+              billing_descriptor:
+                reference: 'Withdrawal'
+              sender:
+                type: 'instrument'
+                reference: '8285282045818'
+              instruction:
+                purpose: 'Withdrawal'
+                scheme: 'local'
+                quote_id: 'qte_mbabizu24mvu3mela5njyhpit4'
+              processing_channel_id: 'pc_hpswyyx23geezflc2ocz3exn4y'
+          Card Payout - Money Transfer:
+            value:
+              source:
+                type: 'currency_account'
+                id: 'ca_y3oqhf46pyzuxjbcn2giaqnb44'
+              destination:
+                type: 'card'
+                number: '4242424242424242'
+                expiry_month: 12
+                expiry_year: 2024
+                account_holder:
+                  type: 'individual'
+                  first_name: 'John'
+                  last_name: 'Smith'
+              amount: 1000
+              currency: GBP
+              instruction:
+                funds_transfer_type: 'AA'
+              processing_channel_id: 'pc_hpswyyx23geezflc2ocz3exn4y'              
+              sender:
+                type: 'individual'
+                first_name: 'Hayley'
+                last_name: 'Jones'
+                address:
+                  address_line1: 'A House'
+                  address_line2: 'A Street'
+                  city: 'A City'
+                  zip: 'AA12 1AA'
+                  country: 'GB'
+                reference: '1234567ABCDEFG'
+                reference_type: 'other'             
+                date_of_birth: '1939-05-27'
+                source_of_funds: 'debit'
+          Card Payout - Direct Funds Disbursement:
+            value:
+              source:
+                type: 'currency_account'
+                id: 'ca_y3oqhf46pyzuxjbcn2giaqnb44'
+              destination:
+                type: 'id'
+                id: 'src_y3oqhf46pyzuxjbcn2giaqnb44'
+                account_holder:
+                  type: 'corporate'
+                  company_name: 'Checkout.com'
+              amount: 1000
+              currency: GBP
+              instruction:
+                funds_transfer_type: 'OG'
+              processing_channel_id: 'pc_hpswyyx23geezflc2ocz3exn4y'
+          Card Payout - Third-Party Funds Disbursement:
+            value:
+              source:
+                type: 'currency_account'
+                id: 'ca_y3oqhf46pyzuxjbcn2giaqnb44'
+              destination:
+                type: 'token'
+                token: 'tok_y3oqhf46pyzuxjbcn2giaqnb44'
+                account_holder:
+                  type: 'corporate'
+                  company_name: 'Checkout.com'
+              amount: 1000
+              currency: GBP
+              instruction:
+                funds_transfer_type: 'FD'
+              processing_channel_id: 'pc_hpswyyx23geezflc2ocz3exn4y'
+              sender:
+                type: 'corporate'
+                company_name: 'A Company'
+                address:
+                  address_line1: 'A House'
+                  address_line2: 'A Street'
+                  city: 'A City'
+                  zip: 'AA12 1AA'
+                  country: 'GB'
+                reference: '1234567ABCDEFG'
+                reference_type: 'other'             
+                source_of_funds: 'debit'
+         
+  responses:
+    '201':
+      description: Payment processed successfully
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/PaymentResponse'
+          example:
+            id: 'pay_mbabizu24mvu3mela5njyhpit4'
+            action_id: 'act_mbabizu24mvu3mela5njyhpit4'
+            amount: 6540
+            currency: 'USD'
+            approved: true
+            status: 'Authorized'
+            auth_code: '770687'
+            response_code: '10000'
+            response_summary: 'Approved'
+            3ds:
+              downgraded: true
+              enrolled: 'N'
+            risk:
+              flagged: true
+            source:
+              type: 'card'
+              id: 'src_nwd3m4in3hkuddfpjsaevunhdy'
+              billing_address:
+                address_line1: 'Checkout.com'
+                address_line2: '90 Tottenham Court Road'
+                city: 'London'
+                state: 'London'
+                zip: 'W1T 4TJ'
+                country: 'GB'
+              phone:
+                country_code: '+1'
+                number: '415 555 2671'
+              last4: '4242'
+              fingerprint: 'F31828E2BDABAE63EB694903825CDD36041CC6ED461440B81415895855502832'
+              bin: '424242'
+            customer:
+              id: 'cus_udst2tfldj6upmye2reztkmm4i'
+              email: 'brucewayne@gmail.com'
+              name: 'Bruce Wayne'
+              phone:
+                country_code: '+1'
+                number: '415 555 2671'
+            processed_on: '2019-09-10T10:11:12Z'
+            reference: 'ORD-5023-4E89'
+            processing:
+              retrieval_reference_number: '909913440644'
+              acquirer_transaction_id: '440644309099499894406'
+              recommendation_code: "02"
+            eci: '06'
+            scheme_id: '489341065491658'
+            _links:
+              self:
+                href: 'https://api.sandbox.checkout.com/payments/pay_mbabizu24mvu3mela5njyhpit4'
+              action:
+                href: 'https://api.sandbox.checkout.com/payments/pay_mbabizu24mvu3mela5njyhpit4/actions'
+              void:
+                href: 'https://api.sandbox.checkout.com/payments/pay_mbabizu24mvu3mela5njyhpit4/voids'
+              capture:
+                href: 'https://api.sandbox.checkout.com/payments/pay_mbabizu24mvu3mela5njyhpit4/captures'
+      headers:
+        Cko-Request-Id:
+          $ref: '#/components/headers/Cko-Request-Id'
+        Cko-Version:
+          $ref: '#/components/headers/Cko-Version'
+    '202':
+      description: Payment asynchronous or further action required
+      content:
+        application/json:
+          schema:
+            oneOf:
+              - $ref: '#/components/schemas/PaymentAcceptedResponse'
+              - $ref: '#/components/schemas/PayoutAcceptedResponse'
+              - $ref: '#/components/schemas/CardPayoutAcceptedResponse'
+      headers:
+        Cko-Request-Id:
+          $ref: '#/components/headers/Cko-Request-Id'
+        Cko-Version:
+          $ref: '#/components/headers/Cko-Version'
+    '401':
+      description: Unauthorized
+    '429':
+      description: Too many requests or duplicate request detected
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              request_id:
+                type: string
+                example: 0HL80RJLS76I7
+              error_type:
+                type: string
+                example: request_invalid
+              error_codes:
+                type: array
+                items:
+                  type: string
+                  example: duplicate_request
+    '422':
+      description: Invalid data was sent
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ValidationError'
+    '502':
+      description: Bad gateway
+get:
+  tags:
+    - Payments
+  security:
+    - OAuth:
+        - gateway
+        - gateway:payment-details
+    - ApiSecretKey: [ ]
+  summary: Get payment lists
+  description: |
+    <span style="font-size: 14px; font-weight: 500; color: rgb(60, 4, 133); background-color: rgb(237, 222, 255); border-radius: 4px; padding: 2px 6px" >Beta</span><p></p>
+    Returns a list of your business' payments that match the specified reference. Results are returned in reverse chronological order, with the most recent payments shown first.
+    
+    This will only return payments initiated from June 2022 onwards. Payments initiated before this date may return a `404` error code if you attempt to retrieve them.
+  parameters:
+    - in: query
+      name: limit
+      schema:
+        type: integer
+        minimum: 1
+        maximum: 100
+        default: 10
+      required: false
+      description: The numbers of results to retrieve
+    - in: query
+      name: skip
+      schema:
+        type: integer
+        minimum: 0
+        default: 0
+      required: false
+      description: The number of results to skip
+    - in: query
+      name: reference
+      schema:
+        type: string
+      required: true
+      description: A reference, such as an order ID, that can be used to identify the payment
+  responses:
+    '200':
+      description: Payments retrieved successfully
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/PaymentPaged'
+    '401':
+      description: Unauthorized
+    '422':
+      description: Unprocessable paging
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/PagingError'

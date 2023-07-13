@@ -1,0 +1,21 @@
+type: object
+properties:
+  status_code:
+    type: integer
+    description: The HTTP status code returned from the target server
+    example: 400
+  response_body:
+    type: string
+    description: The response body returned from the target server
+    example: Bad Request
+  retry_mode:
+    type: string
+    description: Whether the notification was sent automatically or requested manually
+    enum:
+      - Automatic
+      - Manual
+  timestamp:
+    type: string
+    description: The date/time the attempt was made
+    allOf:
+      - $ref: '#/components/schemas/ServerTimestamp'

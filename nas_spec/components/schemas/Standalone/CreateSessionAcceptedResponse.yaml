@@ -1,0 +1,103 @@
+required:
+  - session_secret
+  - id
+  - transaction_id
+  - scheme
+  - amount
+  - currency
+  - authentication_type
+  - authentication_category
+  - status
+  - protocol_version
+  - _links
+  - exemption
+  - recurring
+  - installment
+properties:
+  session_secret:
+    $ref: '#/components/schemas/SessionSecret'
+  id:
+    $ref: '#/components/schemas/SessionId'
+  transaction_id:
+    description: The transaction identifier that needs to be provided when communicating directly with the Access Control Server (ACS)
+    type: string
+    minLength: 36
+    maxLength: 36
+    example: 9aea641d-0549-4222-9ca9-d90b43a4f38c
+  scheme:
+    type: string
+    description: Indicates the scheme this authentication is carried out against
+    enum:
+      - visa
+      - mastercard
+      - jcb
+      - amex
+      - diners
+      - cartes_bancaires
+  amount:
+    $ref: '#/components/schemas/Amount'
+  currency:
+    $ref: '#/components/schemas/Currency'
+  authentication_type:
+    $ref: '#/components/schemas/AuthenticationType'
+  authentication_category:
+    $ref: '#/components/schemas/Category'
+  status:
+    $ref: '#/components/schemas/Status'
+  status_reason:
+    $ref: '#/components/schemas/StatusReason'
+  next_actions:
+    $ref: '#/components/schemas/NextActions'
+  protocol_version:
+    $ref: '#/components/schemas/ProtocolVersion'
+  account_info:
+    $ref: '#/components/schemas/CardholderAccountInfo'
+  merchant_risk_info:
+    $ref: '#/components/schemas/MerchantRiskInfo'
+  reference:
+    $ref: '#/components/schemas/Reference'
+  card:
+    $ref: '#/components/schemas/CardInfo'
+  recurring:
+    $ref: '#/components/schemas/Recurring'
+  installment:
+    $ref: '#/components/schemas/Installment'
+  initial_transaction:
+    $ref: '#/components/schemas/InitialTransaction'
+  _links:
+    $ref: '#/components/schemas/CreateSessionLinks'
+  authentication_date:
+    type: string
+    format: date-time
+    description: Authentication date and time
+  challenge_indicator:
+    type: string
+    default: no_preference
+    description: Indicates the preference for whether or not a 3DS challenge should be performed. The customer’s bank has the final say on whether or not the customer receives the challenge
+    enum:
+      - no_preference
+      - no_challenge_requested
+      - challenge_requested
+      - challenge_requested_mandate
+  optimization:
+    type: object
+    description: >
+      The information about the optimization options selected
+    properties:
+      optimized:
+        type: boolean
+        description: >
+          Indicates if any optimization has been applied
+        example: true
+      framework:
+        type: string
+        description: > 
+          The optimization framework applied
+        enum:
+          - acceptance_rates
+      optimized_properties:
+        type: array
+        title: OptimizedProperty
+        description: The collection of optimized fields
+        items:
+          $ref: '#/components/schemas/OptimizedProperty'

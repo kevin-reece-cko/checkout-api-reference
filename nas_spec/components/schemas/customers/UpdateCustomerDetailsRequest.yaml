@@ -1,0 +1,34 @@
+type: object
+description: The customer's details
+properties:
+  email:
+    type: string
+    format: email
+    description: The email address of the customer
+    maxLength: 255
+    example: 'brucewayne@gmail.com'
+  name:
+    type: string
+    description: The name of the customer
+    maxLength: 255
+    example: 'Bruce Wayne'
+  phone:
+    description: The customer's phone number
+    allOf:
+      - $ref: '#/components/schemas/PhoneNumber'
+  metadata:
+    type: object
+    description: Allows you to store additional information about a customer. You can include a maximum of 10 key-value pairs. Each key and value can be up to 100 characters long. Providing metadata in this request will replace any existing stored for this customer.
+    example:
+      coupon_code: 'NY2018'
+      partner_id: 123989
+  default:
+    type: string
+    description: The ID of this customer's default instrument
+    example: 'src_wmlfc3zyhqzehihu7giusaaawu'
+  instruments:
+    type: array
+    items:
+      type: string
+    description: The IDs of the instruments you want to link to this customer
+    example: ['src_y3oqhf46pyzuxjbcn2giaqnb44', 'src_wmlfc3zyhqzehihu7giusaaawu']

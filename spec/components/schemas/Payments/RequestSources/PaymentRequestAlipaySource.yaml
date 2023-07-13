@@ -1,4 +1,0 @@
-type: object
-description: Alipay Source
-allOf:
-  - $ref: "#/components/schemas/PaymentRequestSource"
